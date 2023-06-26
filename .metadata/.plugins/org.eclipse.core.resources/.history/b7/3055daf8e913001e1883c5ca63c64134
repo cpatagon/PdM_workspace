@@ -79,6 +79,7 @@ int main(void)
 			BSP_LED_On(LED1);
 			HAL_Delay(500);
 			BSP_LED_Off(LED1);
+			HAL_Delay(500);
 			count +=1;
 
 		}
@@ -86,6 +87,7 @@ int main(void)
 			BSP_LED_On(LED2);
 			HAL_Delay(500);
 			BSP_LED_Off(LED2);
+			HAL_Delay(500);
 			count +=1;
 
 		}
@@ -93,6 +95,7 @@ int main(void)
 			BSP_LED_On(LED3);
 			HAL_Delay(500);
 			BSP_LED_Off(LED3);
+			HAL_Delay(500);
 			count =0;
 
 		}
