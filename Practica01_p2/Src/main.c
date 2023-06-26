@@ -27,6 +27,7 @@
 
 /* Private typedef -----------------------------------------------------------*/
 /* Private define ------------------------------------------------------------*/
+#define time 200
 
 /* Private macro -------------------------------------------------------------*/
 /* Private variables ---------------------------------------------------------*/
@@ -77,21 +78,21 @@ int main(void)
 	{
 		if(BSP_PB_GetState(BUTTON_USER) && count == 0){
 			BSP_LED_On(LED1);
-			HAL_Delay(500);
+			HAL_Delay(time);
 			BSP_LED_Off(LED1);
 			count +=1;
 
 		}
 		else if(BSP_PB_GetState(BUTTON_USER) && count == 1){
 			BSP_LED_On(LED2);
-			HAL_Delay(500);
+			HAL_Delay(time);
 			BSP_LED_Off(LED2);
 			count +=1;
 
 		}
 		else if(BSP_PB_GetState(BUTTON_USER) && count == 2){
 			BSP_LED_On(LED3);
-			HAL_Delay(500);
+			HAL_Delay(time);
 			BSP_LED_Off(LED3);
 			count =0;
 
