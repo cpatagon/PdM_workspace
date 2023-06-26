@@ -79,12 +79,12 @@ int main(void)
   while (1)
   {
 
-	  BSP_LED_Toggle(LED2);
-	  HAL_Delay(time);
-	  BSP_LED_Toggle(LED2);
 	  BSP_LED_Toggle(LED1);
 	  HAL_Delay(time);
 	  BSP_LED_Toggle(LED1);
+	  BSP_LED_Toggle(LED2);
+	  HAL_Delay(time);
+	  BSP_LED_Toggle(LED2);
 	  BSP_LED_Toggle(LED3);
 	  HAL_Delay(time);
 	  BSP_LED_Toggle(LED3);
