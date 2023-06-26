@@ -27,6 +27,7 @@
 
 /* Private typedef -----------------------------------------------------------*/
 /* Private define ------------------------------------------------------------*/
+
 /* Private macro -------------------------------------------------------------*/
 /* Private variables ---------------------------------------------------------*/
 
@@ -61,18 +62,31 @@ int main(void)
 
 	/* Initialize BSP Led for LED1 */
 	BSP_LED_Init(LED1);
+	/* Initialize BSP Led for LED1 */
+	BSP_LED_Init(LED2);
 	/* Initialize BSP PB for BUTTON_USER */
 	BSP_PB_Init(BUTTON_USER, BUTTON_MODE_GPIO);
+
+	int count = 0;
 
 
 	/* Infinite loop */
 	while (1)
 	{
-		if(BSP_PB_GetState(BUTTON_USER)){
+		if(BSP_PB_GetState(BUTTON_USER) && count == 0){
 			BSP_LED_On(LED1);
-			HAL_Delay(100);
+			HAL_Delay(500);
 			BSP_LED_Off(LED1);
-			HAL_Delay(100);
+			HAL_Delay(500);
+			count +=1;
+
+		}
+		else if(BSP_PB_GetState(BUTTON_USER) && count == 1){
+			BSP_LED_On(LED2);
+			HAL_Delay(500);
+			BSP_LED_Off(LED2);
+			HAL_Delay(500);
+			count =0;
 
 		}
 	}
