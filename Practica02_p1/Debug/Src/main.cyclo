@@ -1,0 +1,6 @@
+main.c:51:5:main	4
+main.c:111:6:delayInit	1
+main.c:126:8:delayRead	3
+main.c:142:6:delayWrite	1
+main.c:148:13:SystemClock_Config	4
+main.c:200:13:Error_Handler	1
