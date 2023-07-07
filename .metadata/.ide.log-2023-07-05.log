@@ -1,0 +1,102 @@
+2023-07-05 00:43:23,806 [INFO] UtilMem:75 - End SaveConfig() Used Memory: 449535184 Bytes (789577728)
+2023-07-05 00:43:26,517 [INFO] UtilMem:75 - End SaveConfig() Used Memory: 550724816 Bytes (789577728)
+2023-07-05 00:43:28,501 [INFO] UtilMem:75 - End SaveConfig() Used Memory: 691234000 Bytes (789577728)
+2023-07-05 00:43:28,800 [INFO] BlockDiagram:2759 - set Specific Code input for plugin: SPI
+2023-07-05 00:43:28,800 [INFO] BlockDiagram:2759 - set Specific Code input for plugin: RCC
+2023-07-05 00:43:28,800 [INFO] BlockDiagram:2759 - set Specific Code input for plugin: NVIC
+2023-07-05 00:43:28,801 [INFO] BlockDiagram:2759 - set Specific Code input for plugin: GPIO
+2023-07-05 00:43:28,801 [INFO] CodeGenerator:793 - code generatio: config db path: /opt/st/stm32cubeide_1.12.1/plugins/com.st.stm32cube.common.mx_6.8.1.202304191431//db/
+2023-07-05 00:43:29,093 [INFO] CodeEngine:255 - oldGeneratedFile, /home/lgomez/maestriauba/SMT32/PdM_workspace/SPI_SD/MXTmpFiles/license.tmp_save
+2023-07-05 00:43:29,235 [INFO] CodeEngine:279 - Generated code: /home/lgomez/maestriauba/SMT32/PdM_workspace/SPI_SD/MXTmpFiles/license.tmp
+2023-07-05 00:43:29,265 [INFO] CodeEngine:255 - oldGeneratedFile, /home/lgomez/maestriauba/SMT32/PdM_workspace/SPI_SD/MXTmpFiles/gpio.tmp_save
+2023-07-05 00:43:29,343 [INFO] CodeEngine:279 - Generated code: /home/lgomez/maestriauba/SMT32/PdM_workspace/SPI_SD/MXTmpFiles/gpio.tmp
+2023-07-05 00:43:29,384 [INFO] CodeEngine:255 - oldGeneratedFile, /home/lgomez/maestriauba/SMT32/PdM_workspace/SPI_SD/Core/Src/stm32f4xx_it.c_save
+2023-07-05 00:43:29,590 [INFO] CodeEngine:279 - Generated code: /home/lgomez/maestriauba/SMT32/PdM_workspace/SPI_SD/Core/Src/stm32f4xx_it.c
+2023-07-05 00:43:29,592 [INFO] CodeEngine:255 - oldGeneratedFile, /home/lgomez/maestriauba/SMT32/PdM_workspace/SPI_SD/Core/Inc/stm32f4xx_it.h_save
+2023-07-05 00:43:29,649 [INFO] CodeEngine:279 - Generated code: /home/lgomez/maestriauba/SMT32/PdM_workspace/SPI_SD/Core/Inc/stm32f4xx_it.h
+2023-07-05 00:43:29,659 [INFO] CodeEngine:255 - oldGeneratedFile, /home/lgomez/maestriauba/SMT32/PdM_workspace/SPI_SD/Core/Src/stm32f4xx_hal_msp.c_save
+2023-07-05 00:43:29,758 [INFO] CodeEngine:279 - Generated code: /home/lgomez/maestriauba/SMT32/PdM_workspace/SPI_SD/Core/Src/stm32f4xx_hal_msp.c
+2023-07-05 00:43:29,760 [INFO] CodeEngine:255 - oldGeneratedFile, /home/lgomez/maestriauba/SMT32/PdM_workspace/SPI_SD/MXTmpFiles/system.tmp_save
+2023-07-05 00:43:29,856 [INFO] CodeEngine:279 - Generated code: /home/lgomez/maestriauba/SMT32/PdM_workspace/SPI_SD/MXTmpFiles/system.tmp
+2023-07-05 00:43:29,859 [INFO] CodeEngine:311 - oldGeneratedFile, /home/lgomez/maestriauba/SMT32/PdM_workspace/SPI_SD/Core/Inc/stm32f4xx_hal_conf.h_save
+2023-07-05 00:43:29,949 [INFO] CodeEngine:335 - Generated code: /home/lgomez/maestriauba/SMT32/PdM_workspace/SPI_SD/Core/Inc/stm32f4xx_hal_conf.h
+2023-07-05 00:43:29,963 [INFO] CodeEngine:255 - oldGeneratedFile, /home/lgomez/maestriauba/SMT32/PdM_workspace/SPI_SD/Core/Inc/main.h_save
+2023-07-05 00:43:30,059 [INFO] CodeEngine:279 - Generated code: /home/lgomez/maestriauba/SMT32/PdM_workspace/SPI_SD/Core/Inc/main.h
+2023-07-05 00:43:30,060 [INFO] CodeEngine:255 - oldGeneratedFile, /home/lgomez/maestriauba/SMT32/PdM_workspace/SPI_SD/Core/Src/main.c_save
+2023-07-05 00:43:30,170 [INFO] CodeEngine:279 - Generated code: /home/lgomez/maestriauba/SMT32/PdM_workspace/SPI_SD/Core/Src/main.c
+2023-07-05 00:43:30,631 [INFO] ProjectBuilder:2996 - Time for Copy HAL[1] : 53mS.
+2023-07-05 00:43:30,632 [INFO] ProjectBuilder:4304 - Project Generator version: 3.19.2
+2023-07-05 00:43:31,092 [INFO] ConfigFileManager:1483 - The Die is : DIE419
+2023-07-05 00:43:32,343 [INFO] ProjectBuilder:4505 - Time for Generating toolchain IDE Files: 1711mS.
+2023-07-05 00:43:32,343 [INFO] ProjectBuilder:2867 - Time for Copy CMSIS : 0mS.
+2023-07-05 00:43:32,343 [INFO] ProjectBuilder:2867 - Time for Copy CMSIS : 0mS.
+2023-07-05 22:30:00,077 [INFO] Gpio:273 - dependency for GPIO [SPI1]
+2023-07-05 22:31:14,991 [INFO] PinOutViewColor:267 - [PINOUTVIEW COLOR] - (Default color) Pinout view option name = PinInUseBkgColor, color value = java.awt.Color[r=0,g=204,b=68]
+2023-07-05 22:31:14,991 [INFO] PinOutViewColor:267 - [PINOUTVIEW COLOR] - (Default color) Pinout view option name = PinInUseTxtColor, color value = java.awt.Color[r=255,g=255,b=255]
+2023-07-05 22:31:14,991 [INFO] PinOutViewColor:267 - [PINOUTVIEW COLOR] - (Default color) Pinout view option name = PinNotInUseBkgColor, color value = java.awt.Color[r=185,g=196,b=202]
+2023-07-05 22:31:14,992 [INFO] PinOutViewColor:267 - [PINOUTVIEW COLOR] - (Default color) Pinout view option name = PinNotInUseTxtColor, color value = java.awt.Color[r=0,g=0,b=0]
+2023-07-05 22:31:14,992 [INFO] PinOutViewColor:267 - [PINOUTVIEW COLOR] - (Default color) Pinout view option name = PopupInUseColor, color value = java.awt.Color[r=0,g=204,b=68]
+2023-07-05 22:31:14,992 [INFO] PinOutViewColor:267 - [PINOUTVIEW COLOR] - (Default color) Pinout view option name = PopupNotInUseColor, color value = java.awt.Color[r=226,g=230,b=233]
+2023-07-05 22:31:14,992 [INFO] PinOutViewColor:267 - [PINOUTVIEW COLOR] - (Default color) Pinout view option name = PinSingleMappedColor, color value = java.awt.Color[r=255,g=211,b=0]
+2023-07-05 22:31:14,992 [INFO] PinOutViewColor:267 - [PINOUTVIEW COLOR] - (Default color) Pinout view option name = PinAlimBkgColor, color value = java.awt.Color[r=255,g=246,b=204]
+2023-07-05 22:31:14,992 [INFO] PinOutViewColor:267 - [PINOUTVIEW COLOR] - (Default color) Pinout view option name = PinAlimTextColor, color value = java.awt.Color[r=0,g=0,b=0]
+2023-07-05 22:31:14,993 [INFO] PinOutViewColor:267 - [PINOUTVIEW COLOR] - (Default color) Pinout view option name = BlockPinBkgColor, color value = java.awt.Color[r=0,g=92,b=230]
+2023-07-05 22:31:14,993 [INFO] PinOutViewColor:267 - [PINOUTVIEW COLOR] - (Default color) Pinout view option name = BlockPinTxtColor, color value = java.awt.Color[r=0,g=0,b=0]
+2023-07-05 22:31:14,993 [INFO] PinOutViewColor:267 - [PINOUTVIEW COLOR] - (Default color) Pinout view option name = ReservedPinBkgColor, color value = java.awt.Color[r=187,g=204,b=0]
+2023-07-05 22:31:14,993 [INFO] PinOutViewColor:267 - [PINOUTVIEW COLOR] - (Default color) Pinout view option name = ReservedPinTxtColor, color value = java.awt.Color[r=0,g=0,b=0]
+2023-07-05 22:31:14,993 [INFO] PinOutViewColor:267 - [PINOUTVIEW COLOR] - (Default color) Pinout view option name = MonoIOPinBkgColor, color value = java.awt.Color[r=153,g=255,b=185]
+2023-07-05 22:31:14,994 [INFO] PinOutViewColor:267 - [PINOUTVIEW COLOR] - (Default color) Pinout view option name = UnmappedLockPinBkgColor, color value = java.awt.Color[r=230,g=0,b=126]
+2023-07-05 22:31:14,994 [INFO] PinOutViewColor:267 - [PINOUTVIEW COLOR] - (Default color) Pinout view option name = UnmappedLockPinTxtColor, color value = java.awt.Color[r=0,g=0,b=0]
+2023-07-05 22:31:14,994 [INFO] PinOutViewColor:267 - [PINOUTVIEW COLOR] - (Default color) Pinout view option name = PinMovedBkgColor, color value = java.awt.Color[r=255,g=255,b=255]
+2023-07-05 22:31:14,995 [INFO] PinOutViewColor:267 - [PINOUTVIEW COLOR] - (Default color) Pinout view option name = PinMovedTxtColor, color value = java.awt.Color[r=0,g=0,b=0]
+2023-07-05 22:31:14,995 [INFO] PinOutViewColor:267 - [PINOUTVIEW COLOR] - (Default color) Pinout view option name = Chip3DBorder1Color, color value = java.awt.Color[r=255,g=255,b=255]
+2023-07-05 22:31:14,995 [INFO] PinOutViewColor:267 - [PINOUTVIEW COLOR] - (Default color) Pinout view option name = Chip3DBorder2Color, color value = java.awt.Color[r=0,g=0,b=0]
+2023-07-05 22:31:14,995 [INFO] PinOutViewColor:267 - [PINOUTVIEW COLOR] - (Default color) Pinout view option name = ChipGradient1Color, color value = java.awt.Color[r=79,g=82,b=81]
+2023-07-05 22:31:14,995 [INFO] PinOutViewColor:267 - [PINOUTVIEW COLOR] - (Default color) Pinout view option name = ChipGradient2Color, color value = java.awt.Color[r=144,g=152,b=158]
+2023-07-05 22:31:14,996 [INFO] PinOutViewColor:267 - [PINOUTVIEW COLOR] - (Default color) Pinout view option name = ZeroPinCircleFgdColor, color value = java.awt.Color[r=48,g=54,b=54]
+2023-07-05 22:31:14,996 [INFO] PinOutViewColor:284 - [PINOUTVIEW COLOR] - (Registered color) Pinout view option name = PinInUseBkgColor, color value = java.awt.Color[r=0,g=204,b=68]
+2023-07-05 22:31:14,996 [INFO] PinOutViewColor:284 - [PINOUTVIEW COLOR] - (Registered color) Pinout view option name = PinInUseTxtColor, color value = java.awt.Color[r=255,g=255,b=255]
+2023-07-05 22:31:14,996 [INFO] PinOutViewColor:284 - [PINOUTVIEW COLOR] - (Registered color) Pinout view option name = PinNotInUseBkgColor, color value = java.awt.Color[r=185,g=196,b=202]
+2023-07-05 22:31:14,996 [INFO] PinOutViewColor:284 - [PINOUTVIEW COLOR] - (Registered color) Pinout view option name = PinNotInUseTxtColor, color value = java.awt.Color[r=0,g=0,b=0]
+2023-07-05 22:31:14,997 [INFO] PinOutViewColor:284 - [PINOUTVIEW COLOR] - (Registered color) Pinout view option name = PopupInUseColor, color value = java.awt.Color[r=0,g=204,b=68]
+2023-07-05 22:31:14,997 [INFO] PinOutViewColor:284 - [PINOUTVIEW COLOR] - (Registered color) Pinout view option name = PopupNotInUseColor, color value = java.awt.Color[r=226,g=230,b=233]
+2023-07-05 22:31:14,997 [INFO] PinOutViewColor:284 - [PINOUTVIEW COLOR] - (Registered color) Pinout view option name = PinSingleMappedColor, color value = java.awt.Color[r=255,g=211,b=0]
+2023-07-05 22:31:14,997 [INFO] PinOutViewColor:284 - [PINOUTVIEW COLOR] - (Registered color) Pinout view option name = PinAlimBkgColor, color value = java.awt.Color[r=255,g=246,b=204]
+2023-07-05 22:31:14,997 [INFO] PinOutViewColor:284 - [PINOUTVIEW COLOR] - (Registered color) Pinout view option name = PinAlimTextColor, color value = java.awt.Color[r=0,g=0,b=0]
+2023-07-05 22:31:14,997 [INFO] PinOutViewColor:284 - [PINOUTVIEW COLOR] - (Registered color) Pinout view option name = BlockPinBkgColor, color value = java.awt.Color[r=0,g=92,b=230]
+2023-07-05 22:31:14,997 [INFO] PinOutViewColor:284 - [PINOUTVIEW COLOR] - (Registered color) Pinout view option name = BlockPinTxtColor, color value = java.awt.Color[r=0,g=0,b=0]
+2023-07-05 22:31:14,997 [INFO] PinOutViewColor:284 - [PINOUTVIEW COLOR] - (Registered color) Pinout view option name = ReservedPinBkgColor, color value = java.awt.Color[r=187,g=204,b=0]
+2023-07-05 22:31:14,998 [INFO] PinOutViewColor:284 - [PINOUTVIEW COLOR] - (Registered color) Pinout view option name = ReservedPinTxtColor, color value = java.awt.Color[r=0,g=0,b=0]
+2023-07-05 22:31:14,998 [INFO] PinOutViewColor:284 - [PINOUTVIEW COLOR] - (Registered color) Pinout view option name = MonoIOPinBkgColor, color value = java.awt.Color[r=153,g=255,b=185]
+2023-07-05 22:31:14,998 [INFO] PinOutViewColor:284 - [PINOUTVIEW COLOR] - (Registered color) Pinout view option name = UnmappedLockPinBkgColor, color value = java.awt.Color[r=230,g=0,b=126]
+2023-07-05 22:31:14,998 [INFO] PinOutViewColor:284 - [PINOUTVIEW COLOR] - (Registered color) Pinout view option name = UnmappedLockPinTxtColor, color value = java.awt.Color[r=0,g=0,b=0]
+2023-07-05 22:31:14,998 [INFO] PinOutViewColor:284 - [PINOUTVIEW COLOR] - (Registered color) Pinout view option name = PinMovedBkgColor, color value = java.awt.Color[r=255,g=255,b=255]
+2023-07-05 22:31:14,998 [INFO] PinOutViewColor:284 - [PINOUTVIEW COLOR] - (Registered color) Pinout view option name = PinMovedTxtColor, color value = java.awt.Color[r=0,g=0,b=0]
+2023-07-05 22:31:14,998 [INFO] PinOutViewColor:284 - [PINOUTVIEW COLOR] - (Registered color) Pinout view option name = Chip3DBorder1Color, color value = java.awt.Color[r=255,g=255,b=255]
+2023-07-05 22:31:14,998 [INFO] PinOutViewColor:284 - [PINOUTVIEW COLOR] - (Registered color) Pinout view option name = Chip3DBorder2Color, color value = java.awt.Color[r=0,g=0,b=0]
+2023-07-05 22:31:14,999 [INFO] PinOutViewColor:284 - [PINOUTVIEW COLOR] - (Registered color) Pinout view option name = ChipGradient1Color, color value = java.awt.Color[r=79,g=82,b=81]
+2023-07-05 22:31:14,999 [INFO] PinOutViewColor:284 - [PINOUTVIEW COLOR] - (Registered color) Pinout view option name = ChipGradient2Color, color value = java.awt.Color[r=144,g=152,b=158]
+2023-07-05 22:31:14,999 [INFO] PinOutViewColor:284 - [PINOUTVIEW COLOR] - (Registered color) Pinout view option name = ZeroPinCircleFgdColor, color value = java.awt.Color[r=48,g=54,b=54]
+2023-07-05 22:31:24,909 [INFO] ColorsManager:198 - setColor colorID: PinInUseBkgColor, newColor: java.awt.Color[r=0,g=204,b=68]
+2023-07-05 22:31:24,944 [INFO] ColorsManager:198 - setColor colorID: PinInUseTxtColor, newColor: java.awt.Color[r=255,g=255,b=255]
+2023-07-05 22:31:24,959 [INFO] ColorsManager:198 - setColor colorID: PinNotInUseBkgColor, newColor: java.awt.Color[r=185,g=196,b=202]
+2023-07-05 22:31:24,975 [INFO] ColorsManager:198 - setColor colorID: PinNotInUseTxtColor, newColor: java.awt.Color[r=0,g=0,b=0]
+2023-07-05 22:31:24,991 [INFO] ColorsManager:198 - setColor colorID: PopupInUseColor, newColor: java.awt.Color[r=0,g=204,b=68]
+2023-07-05 22:31:25,009 [INFO] ColorsManager:198 - setColor colorID: PopupNotInUseColor, newColor: java.awt.Color[r=226,g=230,b=233]
+2023-07-05 22:31:25,033 [INFO] ColorsManager:198 - setColor colorID: PinSingleMappedColor, newColor: java.awt.Color[r=255,g=211,b=0]
+2023-07-05 22:31:25,045 [INFO] ColorsManager:198 - setColor colorID: PinAlimBkgColor, newColor: java.awt.Color[r=255,g=246,b=204]
+2023-07-05 22:31:25,056 [INFO] ColorsManager:198 - setColor colorID: PinAlimTextColor, newColor: java.awt.Color[r=0,g=0,b=0]
+2023-07-05 22:31:25,068 [INFO] ColorsManager:198 - setColor colorID: BlockPinBkgColor, newColor: java.awt.Color[r=0,g=92,b=230]
+2023-07-05 22:31:25,080 [INFO] ColorsManager:198 - setColor colorID: BlockPinTxtColor, newColor: java.awt.Color[r=0,g=0,b=0]
+2023-07-05 22:31:25,091 [INFO] ColorsManager:198 - setColor colorID: ReservedPinBkgColor, newColor: java.awt.Color[r=187,g=204,b=0]
+2023-07-05 22:31:25,103 [INFO] ColorsManager:198 - setColor colorID: ReservedPinTxtColor, newColor: java.awt.Color[r=0,g=0,b=0]
+2023-07-05 22:31:25,115 [INFO] ColorsManager:198 - setColor colorID: MonoIOPinBkgColor, newColor: java.awt.Color[r=153,g=255,b=185]
+2023-07-05 22:31:25,126 [INFO] ColorsManager:198 - setColor colorID: UnmappedLockPinBkgColor, newColor: java.awt.Color[r=230,g=0,b=126]
+2023-07-05 22:31:25,138 [INFO] ColorsManager:198 - setColor colorID: UnmappedLockPinTxtColor, newColor: java.awt.Color[r=0,g=0,b=0]
+2023-07-05 22:31:25,149 [INFO] ColorsManager:198 - setColor colorID: PinMovedBkgColor, newColor: java.awt.Color[r=255,g=255,b=255]
+2023-07-05 22:31:25,161 [INFO] ColorsManager:198 - setColor colorID: PinMovedTxtColor, newColor: java.awt.Color[r=0,g=0,b=0]
+2023-07-05 22:31:25,173 [INFO] ColorsManager:198 - setColor colorID: Chip3DBorder1Color, newColor: java.awt.Color[r=255,g=255,b=255]
+2023-07-05 22:31:25,184 [INFO] ColorsManager:198 - setColor colorID: Chip3DBorder2Color, newColor: java.awt.Color[r=0,g=0,b=0]
+2023-07-05 22:31:25,196 [INFO] ColorsManager:198 - setColor colorID: ChipGradient1Color, newColor: java.awt.Color[r=79,g=82,b=81]
+2023-07-05 22:31:25,207 [INFO] ColorsManager:198 - setColor colorID: ChipGradient2Color, newColor: java.awt.Color[r=144,g=152,b=158]
+2023-07-05 22:31:25,219 [INFO] ColorsManager:198 - setColor colorID: ZeroPinCircleFgdColor, newColor: java.awt.Color[r=48,g=54,b=54]

@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename resource &apos;Practica03_p1/Drivers/API/inc/API_delay&apos; to &apos;API_delay.h&apos;" description="Rename resource &apos;API_delay&apos;" flags="7" id="org.eclipse.ltk.core.refactoring.rename.resource" input="Drivers/API/inc/API_delay" name="API_delay.h" stamp="1688690207795" updateReferences="true"/>
+</session>

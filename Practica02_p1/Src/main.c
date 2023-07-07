@@ -22,6 +22,7 @@
 
 /* Includes ------------------------------------------------------------------*/
 #include "main.h"
+#include <assert.h>
 
 /** @addtogroup STM32F4xx_HAL_Examples
  * @{
@@ -110,6 +111,8 @@ correspondiente. No debe iniciar el conteo del retardo. Debe inicializar el flag
 en `false´. */
 void delayInit( delay_t * delay, tick_t duration )
 {
+	assert(delay != NULL);
+	assert(duration != NULL);
 	delay->duration = duration;
 	delay->running = false;
 }
@@ -124,6 +127,10 @@ y devolver un valor booleano que indique si el tiempo se cumplió o no.
 Cuando el tiempo se cumple se debe cambiar el flag running a false.*/
 
 bool_t delayRead( delay_t * delay ){
+
+	bool_t retValue = false;
+
+	assert(delay !=NULL);
 	if (delay->running == false){
 		delay->startTime = HAL_GetTick();
 		delay->running = true;
@@ -131,15 +138,17 @@ bool_t delayRead( delay_t * delay ){
 	else{
 		 if((HAL_GetTick()-delay->startTime) >= delay->duration){
 			 delay->running = false;
-			 return true;
+			 retValue = true;
 		 }
 	}
-	return false;
+	return retValue;
 }
 
 /*delayWrite permite cambiar el tiempo de duración de un delay existente*/
 
 void delayWrite( delay_t * delay, tick_t duration ){
+	assert(delay != NULL);
+	assert(duration >=0);
 	delay->duration=duration;
 }
 

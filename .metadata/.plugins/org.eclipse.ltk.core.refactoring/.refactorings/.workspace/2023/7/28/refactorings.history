@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Delete resource &apos;Practica03_p1/Drivers/API/src/API_delay.c&apos;" deleteContents="false" description="Delete resource &apos;Practica03_p1/Drivers/API/src/API_delay.c&apos;" element1="/Practica03_p1/Drivers/API/src/API_delay.c" flags="7" id="org.eclipse.ltk.core.refactoring.delete.resources" resources="1" stamp="1688690160100"/>
+</session>
