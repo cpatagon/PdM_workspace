@@ -93,50 +93,48 @@ int main(void)
     delayInit(&Delay3, TIME3); //
 
 
+    int LED_select = LED_init; // LED inicial
+    int Estado_LED = OFF ; // EStado de LED  inicial
+
 	/* Infinite loop */
-
-    int LED_select = LED_init;
-    int Estado_LED = OFF ;
-
     while (1) {
-        if (delayRead(&Delay1) && LED_select == 1) { // El retardo se ha cumplido, encender o apagar LED1
-        	if (Estado_LED == OFF){
+        if (delayRead(&Delay1) && LED_select == 1) { // El retardo se ha cumplido, encender o apaga LED1
+        	if (Estado_LED == OFF){ // se prende el led 1 y se mantiene en LED 1
         		BSP_LED_On(LED1);
         		Estado_LED = ON;
         		LED_select = 1;
         	}
-        	else{
+        	else{ // la segunda vez que pasa apaga el LED 1 y selecciona el LED2 para encender
         		BSP_LED_Off(LED1);
         		LED_select = 2;
         		Estado_LED = OFF;
         	}
         }
-        if (delayRead(&Delay2) && LED_select == 2 ) { // El retardo se ha cumplido, encender o apagar LED2
-        	if (Estado_LED == OFF){
+        if (delayRead(&Delay2) && LED_select == 2 ) { // El retardo se ha cumplido, encender o apaga LED2
+        	if (Estado_LED == OFF){ // Enciende LED2
         		BSP_LED_On(LED2);
         		Estado_LED = ON;
         		LED_select = 2;
         	}
-        	else{
+        	else{ // APAGA LED2 y Seleciona LED3
         		BSP_LED_Off(LED2);
         		LED_select = 3;
         		Estado_LED = OFF;
         	}
         }
         if (delayRead(&Delay3) && LED_select == 3) { // El retardo se ha cumplido, encender o apagar LED3
-        	if (Estado_LED == OFF){
+        	if (Estado_LED == OFF){ // Enciende LED3
         		BSP_LED_On(LED3);
         		Estado_LED = ON;
         		LED_select = 3;
         	}
-        	else{
+        	else{  // APAGA LED3 y Seleciona LED1
         		BSP_LED_Off(LED3);
         		LED_select = 1;
         		Estado_LED = OFF;
         	}
 
         }
-        // Otro código
     }
     return 0;
 }
