@@ -34,6 +34,9 @@
 #define TIME1 200
 #define TIME2 200
 #define TIME3 200
+#define ON 1
+#define OFF 0
+#define LED_init 1
 
 /* Private macro -------------------------------------------------------------*/
 /* Private variables ---------------------------------------------------------*/
@@ -92,45 +95,44 @@ int main(void)
 
 	/* Infinite loop */
 
-    int cont = 0;
-    int estado = 0 ;
+    int LED_select = LED_init;
+    int Estado_LED = OFF ;
 
     while (1) {
-        if (delayRead(&Delay1) && cont == 0) { // El retardo se ha cumplido, encender o apagar LED1
-        	if (estado == 0){
+        if (delayRead(&Delay1) && LED_select == 1) { // El retardo se ha cumplido, encender o apagar LED1
+        	if (Estado_LED == OFF){
         		BSP_LED_On(LED1);
-        		estado = 1;
-        		cont = 0;
+        		Estado_LED = ON;
+        		LED_select = 1;
         	}
         	else{
         		BSP_LED_Off(LED1);
-        		cont = 1;
-        		estado = 0;
+        		LED_select = 2;
+        		Estado_LED = OFF;
         	}
         }
-        if (delayRead(&Delay2) && cont == 1 ) { // El retardo se ha cumplido, encender o apagar LED2
-        	if (estado == 0){
+        if (delayRead(&Delay2) && LED_select == 2 ) { // El retardo se ha cumplido, encender o apagar LED2
+        	if (Estado_LED == OFF){
         		BSP_LED_On(LED2);
-        		estado = 1;
-        		cont =1;
+        		Estado_LED = ON;
+        		LED_select = 2;
         	}
         	else{
         		BSP_LED_Off(LED2);
-        		cont = 2;
-        		estado = 0;
+        		LED_select = 3;
+        		Estado_LED = OFF;
         	}
-
         }
-        if (delayRead(&Delay3) && cont == 2) { // El retardo se ha cumplido, encender o apagar LED3
-        	if (estado == 0){
+        if (delayRead(&Delay3) && LED_select == 3) { // El retardo se ha cumplido, encender o apagar LED3
+        	if (Estado_LED == OFF){
         		BSP_LED_On(LED3);
-        		estado = 1;
-        		cont = 2;
+        		Estado_LED = ON;
+        		LED_select = 3;
         	}
         	else{
         		BSP_LED_Off(LED3);
-        		cont = 0;
-        		estado = 0;
+        		LED_select = 1;
+        		Estado_LED = OFF;
         	}
 
         }

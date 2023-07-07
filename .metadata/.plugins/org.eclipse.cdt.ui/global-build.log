@@ -716,3 +716,107 @@ arm-none-eabi-size   Practica03_p2.elf
   11380	    132	   1588	  13100	   332c	Practica03_p2.elf
 Finished building: default.size.stdout
  
+00:29:48 **** Incremental Build of configuration Debug for project Practica03_p2 ****
+make -j8 all 
+arm-none-eabi-gcc "../Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F429ZITx -DSTM32F4 -DNUCLEO_F429ZI -DUSE_HAL_DRIVER -DSTM32F429xx -c -I../Inc -I"/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica03_p2/Drivers/STM32F4xx_HAL_Driver/Inc" -I"/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica03_p2/Drivers/CMSIS/Include" -I"/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica03_p2/Drivers/CMSIS/Device/ST/STM32F4xx/Include" -I"/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica03_p2/Drivers/BSP/STM32F4xx_Nucleo_144" -I"/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica03_p2/Drivers/Core/Inc" -I"/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica03_p2/Drivers/API" -I"/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica03_p2/Drivers/API/inc" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Src/main.d" -MT"Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Src/main.o"
+../Src/main.c: In function 'main':
+../Src/main.c:98:23: warning: multi-character character constant [-Wmultichar]
+   98 |     char LED_select = LED_init;
+      |                       ^~~~~~~~
+../Src/main.c:39:18: warning: unsigned conversion from 'int' to 'char' changes value from '19505' to '49' [-Woverflow]
+   39 | #define LED_init 'L1'
+      |                  ^~~~
+../Src/main.c:98:23: note: in expansion of macro 'LED_init'
+   98 |     char LED_select = LED_init;
+      |                       ^~~~~~~~
+../Src/main.c:102:49: warning: multi-character character constant [-Wmultichar]
+  102 |         if (delayRead(&Delay1) && LED_select == 'L1') { // El retardo se ha cumplido, encender o apagar LED1
+      |                                                 ^~~~
+../Src/main.c:106:24: warning: multi-character character constant [-Wmultichar]
+  106 |           LED_select = 'L1';
+      |                        ^~~~
+../Src/main.c:106:24: warning: unsigned conversion from 'int' to 'char' changes value from '19505' to '49' [-Woverflow]
+../Src/main.c:110:24: warning: multi-character character constant [-Wmultichar]
+  110 |           LED_select = 'L2';
+      |                        ^~~~
+../Src/main.c:110:24: warning: unsigned conversion from 'int' to 'char' changes value from '19506' to '50' [-Woverflow]
+../Src/main.c:114:49: warning: multi-character character constant [-Wmultichar]
+  114 |         if (delayRead(&Delay2) && LED_select == 'L2' ) { // El retardo se ha cumplido, encender o apagar LED2
+      |                                                 ^~~~
+../Src/main.c:118:24: warning: multi-character character constant [-Wmultichar]
+  118 |           LED_select = 'L2';
+      |                        ^~~~
+../Src/main.c:118:24: warning: unsigned conversion from 'int' to 'char' changes value from '19506' to '50' [-Woverflow]
+../Src/main.c:122:24: warning: multi-character character constant [-Wmultichar]
+  122 |           LED_select = 'L3';
+      |                        ^~~~
+../Src/main.c:122:24: warning: unsigned conversion from 'int' to 'char' changes value from '19507' to '51' [-Woverflow]
+../Src/main.c:123:11: error: 'estado' undeclared (first use in this function)
+  123 |           estado = OFF;
+      |           ^~~~~~
+../Src/main.c:123:11: note: each undeclared identifier is reported only once for each function it appears in
+../Src/main.c:126:49: warning: multi-character character constant [-Wmultichar]
+  126 |         if (delayRead(&Delay3) && LED_select == 'L3') { // El retardo se ha cumplido, encender o apagar LED3
+      |                                                 ^~~~
+../Src/main.c:130:24: warning: multi-character character constant [-Wmultichar]
+  130 |           LED_select = 'L3';
+      |                        ^~~~
+../Src/main.c:130:24: warning: unsigned conversion from 'int' to 'char' changes value from '19507' to '51' [-Woverflow]
+../Src/main.c:134:24: warning: multi-character character constant [-Wmultichar]
+  134 |           LED_select = 'L1';
+      |                        ^~~~
+../Src/main.c:134:24: warning: unsigned conversion from 'int' to 'char' changes value from '19505' to '49' [-Woverflow]
+make: *** [Src/subdir.mk:19: Src/main.o] Error 1
+"make -j8 all" terminated with exit code 2. Build might be incomplete.
+00:31:40 **** Incremental Build of configuration Debug for project Practica03_p2 ****
+make -j8 all 
+arm-none-eabi-gcc "../Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F429ZITx -DSTM32F4 -DNUCLEO_F429ZI -DUSE_HAL_DRIVER -DSTM32F429xx -c -I../Inc -I"/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica03_p2/Drivers/STM32F4xx_HAL_Driver/Inc" -I"/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica03_p2/Drivers/CMSIS/Include" -I"/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica03_p2/Drivers/CMSIS/Device/ST/STM32F4xx/Include" -I"/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica03_p2/Drivers/BSP/STM32F4xx_Nucleo_144" -I"/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica03_p2/Drivers/Core/Inc" -I"/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica03_p2/Drivers/API" -I"/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica03_p2/Drivers/API/inc" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Src/main.d" -MT"Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Src/main.o"
+../Src/main.c: In function 'main':
+../Src/main.c:123:11: error: 'estado' undeclared (first use in this function)
+  123 |           estado = OFF;
+      |           ^~~~~~
+../Src/main.c:123:11: note: each undeclared identifier is reported only once for each function it appears in
+make: *** [Src/subdir.mk:19: Src/main.o] Error 1
+"make -j8 all" terminated with exit code 2. Build might be incomplete.
+00:32:08 **** Incremental Build of configuration Debug for project Practica03_p2 ****
+make -j8 all 
+arm-none-eabi-gcc "../Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F429ZITx -DSTM32F4 -DNUCLEO_F429ZI -DUSE_HAL_DRIVER -DSTM32F429xx -c -I../Inc -I"/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica03_p2/Drivers/STM32F4xx_HAL_Driver/Inc" -I"/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica03_p2/Drivers/CMSIS/Include" -I"/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica03_p2/Drivers/CMSIS/Device/ST/STM32F4xx/Include" -I"/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica03_p2/Drivers/BSP/STM32F4xx_Nucleo_144" -I"/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica03_p2/Drivers/Core/Inc" -I"/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica03_p2/Drivers/API" -I"/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica03_p2/Drivers/API/inc" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Src/main.d" -MT"Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Src/main.o"
+arm-none-eabi-gcc -o "Practica03_p2.elf" @"objects.list"   -mcpu=cortex-m4 -T"/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica03_p2/STM32F429ZITX_FLASH.ld" --specs=nosys.specs -Wl,-Map="Practica03_p2.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: Practica03_p2.elf
+ 
+arm-none-eabi-size   Practica03_p2.elf 
+arm-none-eabi-objdump -h -S  Practica03_p2.elf  > "Practica03_p2.list"
+   text	   data	    bss	    dec	    hex	filename
+  11380	    132	   1588	  13100	   332c	Practica03_p2.elf
+Finished building: default.size.stdout
+ 
+Finished building: Practica03_p2.list
+ 
+00:32:13 **** Incremental Build of configuration Debug for project Practica03_p2 ****
+make -j8 all 
+arm-none-eabi-size   Practica03_p2.elf 
+   text	   data	    bss	    dec	    hex	filename
+  11380	    132	   1588	  13100	   332c	Practica03_p2.elf
+Finished building: default.size.stdout
+ 
+00:32:22 **** Incremental Build of configuration Debug for project Practica03_p2 ****
+make -j8 all 
+arm-none-eabi-size   Practica03_p2.elf 
+   text	   data	    bss	    dec	    hex	filename
+  11380	    132	   1588	  13100	   332c	Practica03_p2.elf
+Finished building: default.size.stdout
+ 
+00:32:32 **** Incremental Build of configuration Debug for project Practica03_p2 ****
+make -j8 all 
+arm-none-eabi-size   Practica03_p2.elf 
+   text	   data	    bss	    dec	    hex	filename
+  11380	    132	   1588	  13100	   332c	Practica03_p2.elf
+Finished building: default.size.stdout
+ 
+00:32:49 **** Incremental Build of configuration Debug for project Practica03_p2 ****
+make -j8 all 
+arm-none-eabi-size   Practica03_p2.elf 
+   text	   data	    bss	    dec	    hex	filename
+  11380	    132	   1588	  13100	   332c	Practica03_p2.elf
+Finished building: default.size.stdout
+ 
