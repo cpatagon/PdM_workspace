@@ -1,11 +1,8 @@
-2023-07-06 19:06:59,593 [INFO] Activator:176 - 
+2023-07-09 00:01:16,853 [INFO] Activator:176 - 
 
 
-2023-07-06 19:06:59,601 [INFO] Activator:177 - !SESSION log4j initialized
-2023-07-06 19:07:07,000 [INFO] LogOutputStream:77 - [STDOUT_REDIRECT] 
-2023-07-06 19:07:29,032 [ERROR] LogOutputStream:75 - [STDERR_REDIRECT] SLF4J: Failed to load class "org.slf4j.impl.StaticLoggerBinder".
-2023-07-06 19:07:29,034 [ERROR] LogOutputStream:75 - [STDERR_REDIRECT] SLF4J: Defaulting to no-operation (NOP) logger implementation
-2023-07-06 19:07:29,034 [ERROR] LogOutputStream:75 - [STDERR_REDIRECT] SLF4J: See http://www.slf4j.org/codes.html#StaticLoggerBinder for further details.
-2023-07-06 20:23:56,488 [ERROR] LogOutputStream:75 - [STDERR_REDIRECT] Warning: NLS missing message: ExternalToolsPreferencePage_External_tool_project_builders_migration_2 in: org.eclipse.ui.externaltools.internal.ui.ExternalToolsUIMessages
-2023-07-06 20:23:56,490 [ERROR] LogOutputStream:75 - [STDERR_REDIRECT] Warning: NLS missing message: ExternalToolsPreferencePage_Prompt_before_migrating_3 in: org.eclipse.ui.externaltools.internal.ui.ExternalToolsUIMessages
-2023-07-06 20:23:56,490 [ERROR] LogOutputStream:75 - [STDERR_REDIRECT] Warning: NLS missing message: ExternalToolsPreferencePage_1 in: org.eclipse.ui.externaltools.internal.ui.ExternalToolsUIMessages
+2023-07-09 00:01:16,857 [INFO] Activator:177 - !SESSION log4j initialized
+2023-07-09 00:01:22,122 [INFO] LogOutputStream:77 - [STDOUT_REDIRECT] 
+2023-07-09 00:01:43,517 [ERROR] LogOutputStream:75 - [STDERR_REDIRECT] SLF4J: Failed to load class "org.slf4j.impl.StaticLoggerBinder".
+2023-07-09 00:01:43,518 [ERROR] LogOutputStream:75 - [STDERR_REDIRECT] SLF4J: Defaulting to no-operation (NOP) logger implementation
+2023-07-09 00:01:43,519 [ERROR] LogOutputStream:75 - [STDERR_REDIRECT] SLF4J: See http://www.slf4j.org/codes.html#StaticLoggerBinder for further details.
