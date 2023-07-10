@@ -2,9 +2,9 @@
  ******************************************************************************
  * @file
  * @author  Luis Gómez
- * Objetivo : Implementar un módulo de software para trabajar con retardos no bloqueantes
- * que son aplicados a LEDs de la placa STM32F4
- *
+ * Objetivo : Implementar un módulo de software para trabajar con retardos no bloqueantes a partir de las funciones creadas en la práctica 2.
+ * Implementar un programa que utilice retardos no bloqueantes y haga titilar en forma periódica e independiente los tres leds de la placa NUCLEO-F429ZI de acuerdo a una secuencia predeterminada como en la práctica 1.
+ * Cada led debe permanecer encendido 200 ms.  No debe encenderse más de un led simultáneamente en ningún momento.
  *
  ******************************************************************************
  * @attention

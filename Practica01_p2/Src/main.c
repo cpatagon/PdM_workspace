@@ -1,9 +1,11 @@
 /**
  ******************************************************************************
- * @file    UART/UART_Printf/Src/main.c
- * @author  MCD Application Team
- * @brief   This example shows how to retarget the C library printf function
- *          to the UART.
+ * @file    main.c
+ * @author  Luis Gómez
+ * @Objetivo Familiarizarse con el entorno de trabajo STM32CubeIDE + NUCLEO-F429ZI + firmware.
+ * Punto 2:
+ * Utilizar el pulsador azul (USER_BUTTON) para controlar cómo se recorre la secuencia de leds.  Cada vez que se presiona el pulsador se debe alternar el orden de la secuencia entre:
+ *
  ******************************************************************************
  * @attention
  *

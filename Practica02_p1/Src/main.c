@@ -4,6 +4,8 @@
  * @author  Luis Gómez
  * Objetivo : Implementar un módulo de software para trabajar con retardos no bloqueantes
  * que son aplicados a LEDs de la placa STM32F4
+ * Crear una carpeta API dentro de la carpeta Drivers en la estructura de directorios
+ * del nuevo proyecto. Crear dentro de la carpeta API, subcapetas /Src y /Inc.
  *
  *
  ******************************************************************************
