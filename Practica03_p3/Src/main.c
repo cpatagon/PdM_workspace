@@ -32,7 +32,7 @@
 /* Private typedef -----------------------------------------------------------*/
 /* Private define ------------------------------------------------------------*/
 #define time 200
-#define TIME1 200 // TIEMPO ESPERA LED1
+#define TIME1 200 // TIEMPO ESPERA LED1 en tics
 #define ON 1
 #define OFF 0
 #define PRIMERO 1 // LED1
@@ -86,40 +86,31 @@ int main(void)
 	 * delayWrite() podriamos haber cambiado el tiempo de retardo */
 
     delay_t Delay1;
-    delay_t Delay2;
-    delay_t Delay3;
 
     Led_TypeDef leds[3]={LED1,LED2,LED3};
     /* Inicializamos las tres estructuras con distinto tiempo (100,500,1000)*/
 
-    delayInit(&Delay1, TIME1); // Inicializa el retardo a 100 ticks
-    delayInit(&Delay2, TIME1); // Inicializa el retardo a 100 ticks
-    delayInit(&Delay3, TIME1); // Inicializa el retardo a 100 ticks
+    delayInit(&Delay1, TIME1); // Inicializa el retardo a ticks
 
-    int LED_select = LED_init; // LED inicial
-    int Estado_LED = OFF ; // EStado de LED  inicial
 
-    // esto funciona
-    //HAL_GPIO_ReadPin (LED1,LED1_PIN) != 0x0001
-    GPIO_PinState state = HAL_GPIO_ReadPin (LED1,LED1_PIN);
-    //BSP_LED_Off(LED1);
+    uint16_t LED_select = LED_init; // LED inicial
+    uint16_t Estado_LED = OFF ; // EStado de LED  inicial
+
+    uint32_t encendido[3] = {ON, ON, ON}; //  Partimos con una marca para que los tres LED para que sean encendidos la primera posición es LED1, la segunda es LED2 y así sucesivamente
+    uint32_t i = 0; // generamos un contador que nos permite recorrer las posiciones de cada uno de los LED en la lista desde la posición 1
 
 	/* Infinite loop */
-    int encendido[3] = {1, 1, 1};
-    int i = 0;
 
     while (1) {
-    	state = HAL_GPIO_ReadPin (LED1,LED1_PIN);
-
-        if (delayRead(&Delay1)){
-            if (encendido[i]){
-                BSP_LED_On(leds[i]);
-                encendido[i] = 0;
+        if (delayRead(&Delay1)){ //retardos no bloqueantes
+            if (encendido[i]){    // verifica la marca si hay que encender  o apagar el LED en la posición i
+                BSP_LED_On(leds[i]);  // Si la marca dice ON (1), Enciende el LED de la posición i
+                encendido[i] = OFF;   // y deja una marca para lueg apagar el LED i una vez que volvamos a entrar
             }
             else
-            {
-                BSP_LED_Off(leds[i]);
-                encendido[i] = 1;
+            {  // si la marca dice OFF apaga el led de la posición i
+                BSP_LED_Off(leds[i]); // apaga LED i
+                encendido[i] = ON; // deja una marca para encenderlo
                 i = (i + 1) % 3;   // avanza al siguiente LED, y vuelve al primero después del tercero
             }
         }
