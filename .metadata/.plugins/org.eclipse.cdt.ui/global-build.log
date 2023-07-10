@@ -1,1475 +1,247 @@
-23:57:25 **** Incremental Build of configuration Debug for project Practica03_p3 ****
+18:47:43 **** Incremental Build of configuration Debug for project Practica03_p1 ****
 make -j8 all 
-arm-none-eabi-gcc "../Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F429ZITx -DSTM32F4 -DNUCLEO_F429ZI -DUSE_HAL_DRIVER -DSTM32F429xx -c -I../Inc -I"/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica03_p3/Drivers/STM32F4xx_HAL_Driver/Inc" -I"/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica03_p3/Drivers/CMSIS/Include" -I"/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica03_p3/Drivers/CMSIS/Device/ST/STM32F4xx/Include" -I"/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica03_p3/Drivers/BSP/STM32F4xx_Nucleo_144" -I"/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica03_p3/Drivers/Core/Inc" -I"/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica03_p3/Drivers/API" -I"/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica03_p3/Drivers/API/inc" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Src/main.d" -MT"Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Src/main.o"
-../Src/main.c: In function 'main':
-../Src/main.c:128:13: error: invalid storage class for function 'SystemClock_Config'
-  128 | static void SystemClock_Config(void)
-      |             ^~~~~~~~~~~~~~~~~~
-../Src/main.c:180:13: error: invalid storage class for function 'Error_Handler'
-  180 | static void Error_Handler(void)
-      |             ^~~~~~~~~~~~~
-../Src/main.c:187:1: error: expected declaration or statement at end of input
-  187 | }
-      | ^
-../Src/main.c:187:1: error: expected declaration or statement at end of input
-../Src/main.c: At top level:
-../Src/main.c:48:13: warning: 'SystemClock_Config' used but never defined
-   48 | static void SystemClock_Config(void);
-      |             ^~~~~~~~~~~~~~~~~~
-../Src/main.c:49:13: warning: 'Error_Handler' used but never defined
-   49 | static void Error_Handler(void);
-      |             ^~~~~~~~~~~~~
-../Src/main.c:180:13: warning: 'Error_Handler' defined but not used [-Wunused-function]
-  180 | static void Error_Handler(void)
-      |             ^~~~~~~~~~~~~
-../Src/main.c:128:13: warning: 'SystemClock_Config' defined but not used [-Wunused-function]
-  128 | static void SystemClock_Config(void)
-      |             ^~~~~~~~~~~~~~~~~~
-make: *** [Src/subdir.mk:19: Src/main.o] Error 1
-"make -j8 all" terminated with exit code 2. Build might be incomplete.
-00:01:40 **** Incremental Build of configuration Debug for project Practica03_p3 ****
-make -j8 all 
-arm-none-eabi-gcc "../Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F429ZITx -DSTM32F4 -DNUCLEO_F429ZI -DUSE_HAL_DRIVER -DSTM32F429xx -c -I../Inc -I"/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica03_p3/Drivers/STM32F4xx_HAL_Driver/Inc" -I"/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica03_p3/Drivers/CMSIS/Include" -I"/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica03_p3/Drivers/CMSIS/Device/ST/STM32F4xx/Include" -I"/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica03_p3/Drivers/BSP/STM32F4xx_Nucleo_144" -I"/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica03_p3/Drivers/Core/Inc" -I"/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica03_p3/Drivers/API" -I"/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica03_p3/Drivers/API/inc" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Src/main.d" -MT"Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Src/main.o"
-../Src/main.c: In function 'main':
-../Src/main.c:94:9: warning: unused variable 'Estado_LED' [-Wunused-variable]
-   94 |     int Estado_LED = OFF ; // EStado de LED  inicial
-      |         ^~~~~~~~~~
-arm-none-eabi-gcc -o "Practica03_p3.elf" @"objects.list"   -mcpu=cortex-m4 -T"/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica03_p3/STM32F429ZITX_FLASH.ld" --specs=nosys.specs -Wl,-Map="Practica03_p3.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
-Finished building target: Practica03_p3.elf
- 
-arm-none-eabi-size   Practica03_p3.elf 
-arm-none-eabi-objdump -h -S  Practica03_p3.elf  > "Practica03_p3.list"
-   text	   data	    bss	    dec	    hex	filename
-  11280	    132	   1588	  13000	   32c8	Practica03_p3.elf
-Finished building: default.size.stdout
- 
-Finished building: Practica03_p3.list
- 
-00:01:51 **** Incremental Build of configuration Debug for project Practica03_p3 ****
-make -j8 all 
-arm-none-eabi-size   Practica03_p3.elf 
-   text	   data	    bss	    dec	    hex	filename
-  11280	    132	   1588	  13000	   32c8	Practica03_p3.elf
-Finished building: default.size.stdout
- 
-00:06:52 **** Incremental Build of configuration Debug for project Practica03_p3 ****
-make -j8 all 
-arm-none-eabi-gcc "../Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F429ZITx -DSTM32F4 -DNUCLEO_F429ZI -DUSE_HAL_DRIVER -DSTM32F429xx -c -I../Inc -I"/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica03_p3/Drivers/STM32F4xx_HAL_Driver/Inc" -I"/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica03_p3/Drivers/CMSIS/Include" -I"/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica03_p3/Drivers/CMSIS/Device/ST/STM32F4xx/Include" -I"/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica03_p3/Drivers/BSP/STM32F4xx_Nucleo_144" -I"/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica03_p3/Drivers/Core/Inc" -I"/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica03_p3/Drivers/API" -I"/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica03_p3/Drivers/API/inc" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Src/main.d" -MT"Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Src/main.o"
-../Src/main.c: In function 'main':
-../Src/main.c:94:9: warning: unused variable 'Estado_LED' [-Wunused-variable]
-   94 |     int Estado_LED = OFF ; // EStado de LED  inicial
-      |         ^~~~~~~~~~
-arm-none-eabi-gcc -o "Practica03_p3.elf" @"objects.list"   -mcpu=cortex-m4 -T"/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica03_p3/STM32F429ZITX_FLASH.ld" --specs=nosys.specs -Wl,-Map="Practica03_p3.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
-Finished building target: Practica03_p3.elf
- 
-arm-none-eabi-size   Practica03_p3.elf 
-arm-none-eabi-objdump -h -S  Practica03_p3.elf  > "Practica03_p3.list"
-   text	   data	    bss	    dec	    hex	filename
-  11292	    132	   1588	  13012	   32d4	Practica03_p3.elf
-Finished building: default.size.stdout
- 
-Finished building: Practica03_p3.list
- 
-00:07:06 **** Incremental Build of configuration Debug for project Practica03_p3 ****
-make -j8 all 
-arm-none-eabi-size   Practica03_p3.elf 
-   text	   data	    bss	    dec	    hex	filename
-  11292	    132	   1588	  13012	   32d4	Practica03_p3.elf
-Finished building: default.size.stdout
- 
-00:12:49 **** Incremental Build of configuration Debug for project Practica03_p3 ****
-make -j8 all 
-arm-none-eabi-gcc "../Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F429ZITx -DSTM32F4 -DNUCLEO_F429ZI -DUSE_HAL_DRIVER -DSTM32F429xx -c -I../Inc -I"/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica03_p3/Drivers/STM32F4xx_HAL_Driver/Inc" -I"/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica03_p3/Drivers/CMSIS/Include" -I"/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica03_p3/Drivers/CMSIS/Device/ST/STM32F4xx/Include" -I"/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica03_p3/Drivers/BSP/STM32F4xx_Nucleo_144" -I"/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica03_p3/Drivers/Core/Inc" -I"/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica03_p3/Drivers/API" -I"/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica03_p3/Drivers/API/inc" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Src/main.d" -MT"Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Src/main.o"
-../Src/main.c: In function 'main':
-../Src/main.c:94:9: warning: unused variable 'Estado_LED' [-Wunused-variable]
-   94 |     int Estado_LED = OFF ; // EStado de LED  inicial
-      |         ^~~~~~~~~~
-arm-none-eabi-gcc -o "Practica03_p3.elf" @"objects.list"   -mcpu=cortex-m4 -T"/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica03_p3/STM32F429ZITX_FLASH.ld" --specs=nosys.specs -Wl,-Map="Practica03_p3.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
-Finished building target: Practica03_p3.elf
- 
-arm-none-eabi-size   Practica03_p3.elf 
-arm-none-eabi-objdump -h -S  Practica03_p3.elf  > "Practica03_p3.list"
-   text	   data	    bss	    dec	    hex	filename
-  11308	    132	   1588	  13028	   32e4	Practica03_p3.elf
-Finished building: default.size.stdout
- 
-Finished building: Practica03_p3.list
- 
-00:12:56 **** Incremental Build of configuration Debug for project Practica03_p3 ****
-make -j8 all 
-arm-none-eabi-size   Practica03_p3.elf 
-   text	   data	    bss	    dec	    hex	filename
-  11308	    132	   1588	  13028	   32e4	Practica03_p3.elf
-Finished building: default.size.stdout
- 
-00:13:18 **** Incremental Build of configuration Debug for project Practica03_p3 ****
-make -j8 all 
-arm-none-eabi-size   Practica03_p3.elf 
-   text	   data	    bss	    dec	    hex	filename
-  11308	    132	   1588	  13028	   32e4	Practica03_p3.elf
-Finished building: default.size.stdout
- 
-00:16:29 **** Incremental Build of configuration Debug for project Practica03_p3 ****
-make -j8 all 
-arm-none-eabi-gcc "../Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F429ZITx -DSTM32F4 -DNUCLEO_F429ZI -DUSE_HAL_DRIVER -DSTM32F429xx -c -I../Inc -I"/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica03_p3/Drivers/STM32F4xx_HAL_Driver/Inc" -I"/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica03_p3/Drivers/CMSIS/Include" -I"/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica03_p3/Drivers/CMSIS/Device/ST/STM32F4xx/Include" -I"/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica03_p3/Drivers/BSP/STM32F4xx_Nucleo_144" -I"/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica03_p3/Drivers/Core/Inc" -I"/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica03_p3/Drivers/API" -I"/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica03_p3/Drivers/API/inc" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Src/main.d" -MT"Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Src/main.o"
-../Src/main.c: In function 'main':
-../Src/main.c:92:16: error: 'Delay2' undeclared (first use in this function); did you mean 'Delay1'?
-   92 |     delayInit(&Delay2, TIME1); // Inicializa el retardo a 100 ticks
-      |                ^~~~~~
-      |                Delay1
-../Src/main.c:92:16: note: each undeclared identifier is reported only once for each function it appears in
-../Src/main.c:93:16: error: 'Delay3' undeclared (first use in this function); did you mean 'Delay1'?
-   93 |     delayInit(&Delay3, TIME1); // Inicializa el retardo a 100 ticks
-      |                ^~~~~~
-      |                Delay1
-../Src/main.c:96:9: warning: unused variable 'Estado_LED' [-Wunused-variable]
-   96 |     int Estado_LED = OFF ; // EStado de LED  inicial
-      |         ^~~~~~~~~~
-make: *** [Src/subdir.mk:19: Src/main.o] Error 1
-"make -j8 all" terminated with exit code 2. Build might be incomplete.
-00:17:03 **** Incremental Build of configuration Debug for project Practica03_p3 ****
-make -j8 all 
-arm-none-eabi-gcc "../Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F429ZITx -DSTM32F4 -DNUCLEO_F429ZI -DUSE_HAL_DRIVER -DSTM32F429xx -c -I../Inc -I"/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica03_p3/Drivers/STM32F4xx_HAL_Driver/Inc" -I"/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica03_p3/Drivers/CMSIS/Include" -I"/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica03_p3/Drivers/CMSIS/Device/ST/STM32F4xx/Include" -I"/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica03_p3/Drivers/BSP/STM32F4xx_Nucleo_144" -I"/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica03_p3/Drivers/Core/Inc" -I"/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica03_p3/Drivers/API" -I"/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica03_p3/Drivers/API/inc" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Src/main.d" -MT"Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Src/main.o"
-../Src/main.c: In function 'main':
-../Src/main.c:98:9: warning: unused variable 'Estado_LED' [-Wunused-variable]
-   98 |     int Estado_LED = OFF ; // EStado de LED  inicial
-      |         ^~~~~~~~~~
-arm-none-eabi-gcc -o "Practica03_p3.elf" @"objects.list"   -mcpu=cortex-m4 -T"/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica03_p3/STM32F429ZITX_FLASH.ld" --specs=nosys.specs -Wl,-Map="Practica03_p3.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
-Finished building target: Practica03_p3.elf
- 
-arm-none-eabi-size   Practica03_p3.elf 
-arm-none-eabi-objdump -h -S  Practica03_p3.elf  > "Practica03_p3.list"
-   text	   data	    bss	    dec	    hex	filename
-  11336	    132	   1588	  13056	   3300	Practica03_p3.elf
-Finished building: default.size.stdout
- 
-Finished building: Practica03_p3.list
- 
-00:17:08 **** Incremental Build of configuration Debug for project Practica03_p3 ****
-make -j8 all 
-arm-none-eabi-size   Practica03_p3.elf 
-   text	   data	    bss	    dec	    hex	filename
-  11336	    132	   1588	  13056	   3300	Practica03_p3.elf
-Finished building: default.size.stdout
- 
-00:29:45 **** Incremental Build of configuration Debug for project Practica03_p3 ****
-make -j8 all 
-arm-none-eabi-gcc "../Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F429ZITx -DSTM32F4 -DNUCLEO_F429ZI -DUSE_HAL_DRIVER -DSTM32F429xx -c -I../Inc -I"/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica03_p3/Drivers/STM32F4xx_HAL_Driver/Inc" -I"/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica03_p3/Drivers/CMSIS/Include" -I"/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica03_p3/Drivers/CMSIS/Device/ST/STM32F4xx/Include" -I"/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica03_p3/Drivers/BSP/STM32F4xx_Nucleo_144" -I"/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica03_p3/Drivers/Core/Inc" -I"/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica03_p3/Drivers/API" -I"/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica03_p3/Drivers/API/inc" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Src/main.d" -MT"Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Src/main.o"
-../Src/main.c: In function 'main':
-../Src/main.c:98:9: warning: unused variable 'Estado_LED' [-Wunused-variable]
-   98 |     int Estado_LED = OFF ; // EStado de LED  inicial
-      |         ^~~~~~~~~~
-../Src/main.c:97:9: warning: unused variable 'LED_select' [-Wunused-variable]
-   97 |     int LED_select = LED_init; // LED inicial
-      |         ^~~~~~~~~~
-arm-none-eabi-gcc -o "Practica03_p3.elf" @"objects.list"   -mcpu=cortex-m4 -T"/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica03_p3/STM32F429ZITX_FLASH.ld" --specs=nosys.specs -Wl,-Map="Practica03_p3.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
-Finished building target: Practica03_p3.elf
- 
-arm-none-eabi-size   Practica03_p3.elf 
-arm-none-eabi-objdump -h -S  Practica03_p3.elf  > "Practica03_p3.list"
-   text	   data	    bss	    dec	    hex	filename
-  11296	    132	   1588	  13016	   32d8	Practica03_p3.elf
-Finished building: default.size.stdout
- 
-Finished building: Practica03_p3.list
- 
-00:29:58 **** Incremental Build of configuration Debug for project Practica03_p3 ****
-make -j8 all 
-arm-none-eabi-size   Practica03_p3.elf 
-   text	   data	    bss	    dec	    hex	filename
-  11296	    132	   1588	  13016	   32d8	Practica03_p3.elf
-Finished building: default.size.stdout
- 
-00:30:31 **** Incremental Build of configuration Debug for project Practica03_p3 ****
-make -j8 all 
-arm-none-eabi-gcc "../Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F429ZITx -DSTM32F4 -DNUCLEO_F429ZI -DUSE_HAL_DRIVER -DSTM32F429xx -c -I../Inc -I"/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica03_p3/Drivers/STM32F4xx_HAL_Driver/Inc" -I"/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica03_p3/Drivers/CMSIS/Include" -I"/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica03_p3/Drivers/CMSIS/Device/ST/STM32F4xx/Include" -I"/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica03_p3/Drivers/BSP/STM32F4xx_Nucleo_144" -I"/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica03_p3/Drivers/Core/Inc" -I"/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica03_p3/Drivers/API" -I"/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica03_p3/Drivers/API/inc" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Src/main.d" -MT"Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Src/main.o"
-../Src/main.c: In function 'main':
-../Src/main.c:98:9: warning: unused variable 'Estado_LED' [-Wunused-variable]
-   98 |     int Estado_LED = OFF ; // EStado de LED  inicial
-      |         ^~~~~~~~~~
-../Src/main.c:97:9: warning: unused variable 'LED_select' [-Wunused-variable]
-   97 |     int LED_select = LED_init; // LED inicial
-      |         ^~~~~~~~~~
-arm-none-eabi-gcc -o "Practica03_p3.elf" @"objects.list"   -mcpu=cortex-m4 -T"/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica03_p3/STM32F429ZITX_FLASH.ld" --specs=nosys.specs -Wl,-Map="Practica03_p3.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
-Finished building target: Practica03_p3.elf
- 
-arm-none-eabi-size   Practica03_p3.elf 
-arm-none-eabi-objdump -h -S  Practica03_p3.elf  > "Practica03_p3.list"
-   text	   data	    bss	    dec	    hex	filename
-  11296	    132	   1588	  13016	   32d8	Practica03_p3.elf
-Finished building: default.size.stdout
- 
-Finished building: Practica03_p3.list
- 
-00:30:39 **** Incremental Build of configuration Debug for project Practica03_p3 ****
-make -j8 all 
-arm-none-eabi-size   Practica03_p3.elf 
-   text	   data	    bss	    dec	    hex	filename
-  11296	    132	   1588	  13016	   32d8	Practica03_p3.elf
-Finished building: default.size.stdout
- 
-00:40:44 **** Incremental Build of configuration Debug for project Practica03_p3 ****
-make -j8 all 
-arm-none-eabi-gcc "../Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F429ZITx -DSTM32F4 -DNUCLEO_F429ZI -DUSE_HAL_DRIVER -DSTM32F429xx -c -I../Inc -I"/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica03_p3/Drivers/STM32F4xx_HAL_Driver/Inc" -I"/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica03_p3/Drivers/CMSIS/Include" -I"/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica03_p3/Drivers/CMSIS/Device/ST/STM32F4xx/Include" -I"/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica03_p3/Drivers/BSP/STM32F4xx_Nucleo_144" -I"/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica03_p3/Drivers/Core/Inc" -I"/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica03_p3/Drivers/API" -I"/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica03_p3/Drivers/API/inc" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Src/main.d" -MT"Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Src/main.o"
-../Src/main.c: In function 'main':
-../Src/main.c:98:9: warning: unused variable 'Estado_LED' [-Wunused-variable]
-   98 |     int Estado_LED = OFF ; // EStado de LED  inicial
-      |         ^~~~~~~~~~
-../Src/main.c:97:9: warning: unused variable 'LED_select' [-Wunused-variable]
-   97 |     int LED_select = LED_init; // LED inicial
-      |         ^~~~~~~~~~
-arm-none-eabi-gcc -o "Practica03_p3.elf" @"objects.list"   -mcpu=cortex-m4 -T"/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica03_p3/STM32F429ZITX_FLASH.ld" --specs=nosys.specs -Wl,-Map="Practica03_p3.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
-Finished building target: Practica03_p3.elf
- 
-arm-none-eabi-size   Practica03_p3.elf 
-arm-none-eabi-objdump -h -S  Practica03_p3.elf  > "Practica03_p3.list"
-   text	   data	    bss	    dec	    hex	filename
-  11280	    132	   1588	  13000	   32c8	Practica03_p3.elf
-Finished building: default.size.stdout
- 
-Finished building: Practica03_p3.list
- 
-00:40:59 **** Incremental Build of configuration Debug for project Practica03_p3 ****
-make -j8 all 
-arm-none-eabi-size   Practica03_p3.elf 
-   text	   data	    bss	    dec	    hex	filename
-  11280	    132	   1588	  13000	   32c8	Practica03_p3.elf
-Finished building: default.size.stdout
- 
-00:42:01 **** Incremental Build of configuration Debug for project Practica03_p3 ****
-make -j8 all 
-arm-none-eabi-gcc "../Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F429ZITx -DSTM32F4 -DNUCLEO_F429ZI -DUSE_HAL_DRIVER -DSTM32F429xx -c -I../Inc -I"/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica03_p3/Drivers/STM32F4xx_HAL_Driver/Inc" -I"/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica03_p3/Drivers/CMSIS/Include" -I"/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica03_p3/Drivers/CMSIS/Device/ST/STM32F4xx/Include" -I"/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica03_p3/Drivers/BSP/STM32F4xx_Nucleo_144" -I"/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica03_p3/Drivers/Core/Inc" -I"/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica03_p3/Drivers/API" -I"/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica03_p3/Drivers/API/inc" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Src/main.d" -MT"Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Src/main.o"
-../Src/main.c: In function 'main':
-../Src/main.c:98:9: warning: unused variable 'Estado_LED' [-Wunused-variable]
-   98 |     int Estado_LED = OFF ; // EStado de LED  inicial
-      |         ^~~~~~~~~~
-../Src/main.c:97:9: warning: unused variable 'LED_select' [-Wunused-variable]
-   97 |     int LED_select = LED_init; // LED inicial
-      |         ^~~~~~~~~~
-arm-none-eabi-gcc -o "Practica03_p3.elf" @"objects.list"   -mcpu=cortex-m4 -T"/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica03_p3/STM32F429ZITX_FLASH.ld" --specs=nosys.specs -Wl,-Map="Practica03_p3.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
-Finished building target: Practica03_p3.elf
- 
-arm-none-eabi-size   Practica03_p3.elf 
-arm-none-eabi-objdump -h -S  Practica03_p3.elf  > "Practica03_p3.list"
-   text	   data	    bss	    dec	    hex	filename
-  11296	    132	   1588	  13016	   32d8	Practica03_p3.elf
-Finished building: default.size.stdout
- 
-Finished building: Practica03_p3.list
- 
-00:42:15 **** Incremental Build of configuration Debug for project Practica03_p3 ****
-make -j8 all 
-arm-none-eabi-size   Practica03_p3.elf 
-   text	   data	    bss	    dec	    hex	filename
-  11296	    132	   1588	  13016	   32d8	Practica03_p3.elf
-Finished building: default.size.stdout
- 
-00:42:34 **** Incremental Build of configuration Debug for project Practica03_p3 ****
-make -j8 all 
-arm-none-eabi-size   Practica03_p3.elf 
-   text	   data	    bss	    dec	    hex	filename
-  11296	    132	   1588	  13016	   32d8	Practica03_p3.elf
-Finished building: default.size.stdout
- 
-00:43:26 **** Incremental Build of configuration Debug for project Practica03_p3 ****
-make -j8 all 
-arm-none-eabi-gcc "../Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F429ZITx -DSTM32F4 -DNUCLEO_F429ZI -DUSE_HAL_DRIVER -DSTM32F429xx -c -I../Inc -I"/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica03_p3/Drivers/STM32F4xx_HAL_Driver/Inc" -I"/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica03_p3/Drivers/CMSIS/Include" -I"/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica03_p3/Drivers/CMSIS/Device/ST/STM32F4xx/Include" -I"/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica03_p3/Drivers/BSP/STM32F4xx_Nucleo_144" -I"/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica03_p3/Drivers/Core/Inc" -I"/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica03_p3/Drivers/API" -I"/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica03_p3/Drivers/API/inc" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Src/main.d" -MT"Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Src/main.o"
-../Src/main.c: In function 'main':
-../Src/main.c:98:9: warning: unused variable 'Estado_LED' [-Wunused-variable]
-   98 |     int Estado_LED = OFF ; // EStado de LED  inicial
-      |         ^~~~~~~~~~
-../Src/main.c:97:9: warning: unused variable 'LED_select' [-Wunused-variable]
-   97 |     int LED_select = LED_init; // LED inicial
-      |         ^~~~~~~~~~
-arm-none-eabi-gcc -o "Practica03_p3.elf" @"objects.list"   -mcpu=cortex-m4 -T"/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica03_p3/STM32F429ZITX_FLASH.ld" --specs=nosys.specs -Wl,-Map="Practica03_p3.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
-Finished building target: Practica03_p3.elf
- 
-arm-none-eabi-size   Practica03_p3.elf 
-arm-none-eabi-objdump -h -S  Practica03_p3.elf  > "Practica03_p3.list"
-   text	   data	    bss	    dec	    hex	filename
-  11296	    132	   1588	  13016	   32d8	Practica03_p3.elf
-Finished building: default.size.stdout
- 
-Finished building: Practica03_p3.list
- 
-00:43:33 **** Incremental Build of configuration Debug for project Practica03_p3 ****
-make -j8 all 
-arm-none-eabi-size   Practica03_p3.elf 
-   text	   data	    bss	    dec	    hex	filename
-  11296	    132	   1588	  13016	   32d8	Practica03_p3.elf
-Finished building: default.size.stdout
- 
-00:46:44 **** Incremental Build of configuration Debug for project Practica03_p3 ****
-make -j8 all 
-arm-none-eabi-gcc "../Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F429ZITx -DSTM32F4 -DNUCLEO_F429ZI -DUSE_HAL_DRIVER -DSTM32F429xx -c -I../Inc -I"/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica03_p3/Drivers/STM32F4xx_HAL_Driver/Inc" -I"/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica03_p3/Drivers/CMSIS/Include" -I"/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica03_p3/Drivers/CMSIS/Device/ST/STM32F4xx/Include" -I"/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica03_p3/Drivers/BSP/STM32F4xx_Nucleo_144" -I"/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica03_p3/Drivers/Core/Inc" -I"/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica03_p3/Drivers/API" -I"/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica03_p3/Drivers/API/inc" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Src/main.d" -MT"Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Src/main.o"
-../Src/main.c: In function 'main':
-../Src/main.c:131:13: error: invalid storage class for function 'SystemClock_Config'
-  131 | static void SystemClock_Config(void)
-      |             ^~~~~~~~~~~~~~~~~~
-../Src/main.c:183:13: error: invalid storage class for function 'Error_Handler'
-  183 | static void Error_Handler(void)
-      |             ^~~~~~~~~~~~~
-../Src/main.c:190:1: error: expected declaration or statement at end of input
-  190 | }
-      | ^
-../Src/main.c:98:9: warning: unused variable 'Estado_LED' [-Wunused-variable]
-   98 |     int Estado_LED = OFF ; // EStado de LED  inicial
-      |         ^~~~~~~~~~
-../Src/main.c:97:9: warning: unused variable 'LED_select' [-Wunused-variable]
-   97 |     int LED_select = LED_init; // LED inicial
-      |         ^~~~~~~~~~
-../Src/main.c: At top level:
-../Src/main.c:48:13: warning: 'SystemClock_Config' used but never defined
-   48 | static void SystemClock_Config(void);
-      |             ^~~~~~~~~~~~~~~~~~
-../Src/main.c:49:13: warning: 'Error_Handler' used but never defined
-   49 | static void Error_Handler(void);
-      |             ^~~~~~~~~~~~~
-../Src/main.c:183:13: warning: 'Error_Handler' defined but not used [-Wunused-function]
-  183 | static void Error_Handler(void)
-      |             ^~~~~~~~~~~~~
-../Src/main.c:131:13: warning: 'SystemClock_Config' defined but not used [-Wunused-function]
-  131 | static void SystemClock_Config(void)
-      |             ^~~~~~~~~~~~~~~~~~
-make: *** [Src/subdir.mk:19: Src/main.o] Error 1
-"make -j8 all" terminated with exit code 2. Build might be incomplete.
-00:47:37 **** Incremental Build of configuration Debug for project Practica03_p3 ****
-make -j8 all 
-arm-none-eabi-gcc "../Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F429ZITx -DSTM32F4 -DNUCLEO_F429ZI -DUSE_HAL_DRIVER -DSTM32F429xx -c -I../Inc -I"/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica03_p3/Drivers/STM32F4xx_HAL_Driver/Inc" -I"/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica03_p3/Drivers/CMSIS/Include" -I"/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica03_p3/Drivers/CMSIS/Device/ST/STM32F4xx/Include" -I"/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica03_p3/Drivers/BSP/STM32F4xx_Nucleo_144" -I"/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica03_p3/Drivers/Core/Inc" -I"/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica03_p3/Drivers/API" -I"/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica03_p3/Drivers/API/inc" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Src/main.d" -MT"Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Src/main.o"
-../Src/main.c: In function 'main':
-../Src/main.c:98:9: warning: unused variable 'Estado_LED' [-Wunused-variable]
-   98 |     int Estado_LED = OFF ; // EStado de LED  inicial
-      |         ^~~~~~~~~~
-../Src/main.c:97:9: warning: unused variable 'LED_select' [-Wunused-variable]
-   97 |     int LED_select = LED_init; // LED inicial
-      |         ^~~~~~~~~~
-arm-none-eabi-gcc -o "Practica03_p3.elf" @"objects.list"   -mcpu=cortex-m4 -T"/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica03_p3/STM32F429ZITX_FLASH.ld" --specs=nosys.specs -Wl,-Map="Practica03_p3.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
-Finished building target: Practica03_p3.elf
- 
-arm-none-eabi-size   Practica03_p3.elf 
-arm-none-eabi-objdump -h -S  Practica03_p3.elf  > "Practica03_p3.list"
-   text	   data	    bss	    dec	    hex	filename
-  11296	    132	   1588	  13016	   32d8	Practica03_p3.elf
-Finished building: default.size.stdout
- 
-Finished building: Practica03_p3.list
- 
-00:47:43 **** Incremental Build of configuration Debug for project Practica03_p3 ****
-make -j8 all 
-arm-none-eabi-size   Practica03_p3.elf 
-   text	   data	    bss	    dec	    hex	filename
-  11296	    132	   1588	  13016	   32d8	Practica03_p3.elf
-Finished building: default.size.stdout
- 
-00:48:35 **** Incremental Build of configuration Debug for project Practica03_p3 ****
-make -j8 all 
-arm-none-eabi-gcc "../Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F429ZITx -DSTM32F4 -DNUCLEO_F429ZI -DUSE_HAL_DRIVER -DSTM32F429xx -c -I../Inc -I"/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica03_p3/Drivers/STM32F4xx_HAL_Driver/Inc" -I"/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica03_p3/Drivers/CMSIS/Include" -I"/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica03_p3/Drivers/CMSIS/Device/ST/STM32F4xx/Include" -I"/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica03_p3/Drivers/BSP/STM32F4xx_Nucleo_144" -I"/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica03_p3/Drivers/Core/Inc" -I"/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica03_p3/Drivers/API" -I"/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica03_p3/Drivers/API/inc" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Src/main.d" -MT"Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Src/main.o"
-../Src/main.c: In function 'main':
-../Src/main.c:98:9: warning: unused variable 'Estado_LED' [-Wunused-variable]
-   98 |     int Estado_LED = OFF ; // EStado de LED  inicial
-      |         ^~~~~~~~~~
-../Src/main.c:97:9: warning: unused variable 'LED_select' [-Wunused-variable]
-   97 |     int LED_select = LED_init; // LED inicial
-      |         ^~~~~~~~~~
-arm-none-eabi-gcc -o "Practica03_p3.elf" @"objects.list"   -mcpu=cortex-m4 -T"/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica03_p3/STM32F429ZITX_FLASH.ld" --specs=nosys.specs -Wl,-Map="Practica03_p3.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
-Finished building target: Practica03_p3.elf
- 
-arm-none-eabi-size   Practica03_p3.elf 
-arm-none-eabi-objdump -h -S  Practica03_p3.elf  > "Practica03_p3.list"
-   text	   data	    bss	    dec	    hex	filename
-  11296	    132	   1588	  13016	   32d8	Practica03_p3.elf
-Finished building: default.size.stdout
- 
-Finished building: Practica03_p3.list
- 
-00:48:51 **** Incremental Build of configuration Debug for project Practica03_p3 ****
-make -j8 all 
-arm-none-eabi-size   Practica03_p3.elf 
-   text	   data	    bss	    dec	    hex	filename
-  11296	    132	   1588	  13016	   32d8	Practica03_p3.elf
-Finished building: default.size.stdout
- 
-00:50:52 **** Incremental Build of configuration Debug for project Practica03_p3 ****
-make -j8 all 
-arm-none-eabi-gcc "../Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F429ZITx -DSTM32F4 -DNUCLEO_F429ZI -DUSE_HAL_DRIVER -DSTM32F429xx -c -I../Inc -I"/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica03_p3/Drivers/STM32F4xx_HAL_Driver/Inc" -I"/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica03_p3/Drivers/CMSIS/Include" -I"/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica03_p3/Drivers/CMSIS/Device/ST/STM32F4xx/Include" -I"/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica03_p3/Drivers/BSP/STM32F4xx_Nucleo_144" -I"/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica03_p3/Drivers/Core/Inc" -I"/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica03_p3/Drivers/API" -I"/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica03_p3/Drivers/API/inc" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Src/main.d" -MT"Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Src/main.o"
-../Src/main.c: In function 'main':
-../Src/main.c:98:9: warning: unused variable 'Estado_LED' [-Wunused-variable]
-   98 |     int Estado_LED = OFF ; // EStado de LED  inicial
-      |         ^~~~~~~~~~
-../Src/main.c:97:9: warning: unused variable 'LED_select' [-Wunused-variable]
-   97 |     int LED_select = LED_init; // LED inicial
-      |         ^~~~~~~~~~
-arm-none-eabi-gcc -o "Practica03_p3.elf" @"objects.list"   -mcpu=cortex-m4 -T"/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica03_p3/STM32F429ZITX_FLASH.ld" --specs=nosys.specs -Wl,-Map="Practica03_p3.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
-Finished building target: Practica03_p3.elf
- 
-arm-none-eabi-size   Practica03_p3.elf 
-arm-none-eabi-objdump -h -S  Practica03_p3.elf  > "Practica03_p3.list"
-   text	   data	    bss	    dec	    hex	filename
-  11332	    132	   1588	  13052	   32fc	Practica03_p3.elf
-Finished building: default.size.stdout
- 
-Finished building: Practica03_p3.list
- 
-00:51:03 **** Incremental Build of configuration Debug for project Practica03_p3 ****
-make -j8 all 
-arm-none-eabi-size   Practica03_p3.elf 
-   text	   data	    bss	    dec	    hex	filename
-  11332	    132	   1588	  13052	   32fc	Practica03_p3.elf
-Finished building: default.size.stdout
- 
-00:55:01 **** Incremental Build of configuration Debug for project Practica03_p3 ****
-make -j8 all 
-arm-none-eabi-gcc "../Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F429ZITx -DSTM32F4 -DNUCLEO_F429ZI -DUSE_HAL_DRIVER -DSTM32F429xx -c -I../Inc -I"/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica03_p3/Drivers/STM32F4xx_HAL_Driver/Inc" -I"/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica03_p3/Drivers/CMSIS/Include" -I"/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica03_p3/Drivers/CMSIS/Device/ST/STM32F4xx/Include" -I"/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica03_p3/Drivers/BSP/STM32F4xx_Nucleo_144" -I"/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica03_p3/Drivers/Core/Inc" -I"/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica03_p3/Drivers/API" -I"/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica03_p3/Drivers/API/inc" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Src/main.d" -MT"Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Src/main.o"
-../Src/main.c: In function 'main':
-../Src/main.c:98:9: warning: unused variable 'Estado_LED' [-Wunused-variable]
-   98 |     int Estado_LED = OFF ; // EStado de LED  inicial
-      |         ^~~~~~~~~~
-../Src/main.c:97:9: warning: unused variable 'LED_select' [-Wunused-variable]
-   97 |     int LED_select = LED_init; // LED inicial
-      |         ^~~~~~~~~~
-arm-none-eabi-gcc -o "Practica03_p3.elf" @"objects.list"   -mcpu=cortex-m4 -T"/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica03_p3/STM32F429ZITX_FLASH.ld" --specs=nosys.specs -Wl,-Map="Practica03_p3.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
-Finished building target: Practica03_p3.elf
- 
-arm-none-eabi-size   Practica03_p3.elf 
-arm-none-eabi-objdump -h -S  Practica03_p3.elf  > "Practica03_p3.list"
-   text	   data	    bss	    dec	    hex	filename
-  11296	    132	   1588	  13016	   32d8	Practica03_p3.elf
-Finished building: default.size.stdout
- 
-Finished building: Practica03_p3.list
- 
-00:55:31 **** Incremental Build of configuration Debug for project Practica03_p3 ****
-make -j8 all 
-arm-none-eabi-size   Practica03_p3.elf 
-   text	   data	    bss	    dec	    hex	filename
-  11296	    132	   1588	  13016	   32d8	Practica03_p3.elf
-Finished building: default.size.stdout
- 
-00:57:55 **** Incremental Build of configuration Debug for project Practica03_p3 ****
-make -j8 all 
-arm-none-eabi-gcc "../Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F429ZITx -DSTM32F4 -DNUCLEO_F429ZI -DUSE_HAL_DRIVER -DSTM32F429xx -c -I../Inc -I"/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica03_p3/Drivers/STM32F4xx_HAL_Driver/Inc" -I"/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica03_p3/Drivers/CMSIS/Include" -I"/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica03_p3/Drivers/CMSIS/Device/ST/STM32F4xx/Include" -I"/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica03_p3/Drivers/BSP/STM32F4xx_Nucleo_144" -I"/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica03_p3/Drivers/Core/Inc" -I"/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica03_p3/Drivers/API" -I"/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica03_p3/Drivers/API/inc" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Src/main.d" -MT"Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Src/main.o"
-../Src/main.c: In function 'main':
-../Src/main.c:107:10: error: 'i' undeclared (first use in this function)
-  107 |      for(i=0;i++;i<3){
-      |          ^
-../Src/main.c:107:10: note: each undeclared identifier is reported only once for each function it appears in
-../Src/main.c:98:9: warning: unused variable 'Estado_LED' [-Wunused-variable]
-   98 |     int Estado_LED = OFF ; // EStado de LED  inicial
-      |         ^~~~~~~~~~
-../Src/main.c:97:9: warning: unused variable 'LED_select' [-Wunused-variable]
-   97 |     int LED_select = LED_init; // LED inicial
-      |         ^~~~~~~~~~
-make: *** [Src/subdir.mk:19: Src/main.o] Error 1
-"make -j8 all" terminated with exit code 2. Build might be incomplete.
-00:58:24 **** Incremental Build of configuration Debug for project Practica03_p3 ****
-make -j8 all 
-arm-none-eabi-gcc "../Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F429ZITx -DSTM32F4 -DNUCLEO_F429ZI -DUSE_HAL_DRIVER -DSTM32F429xx -c -I../Inc -I"/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica03_p3/Drivers/STM32F4xx_HAL_Driver/Inc" -I"/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica03_p3/Drivers/CMSIS/Include" -I"/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica03_p3/Drivers/CMSIS/Device/ST/STM32F4xx/Include" -I"/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica03_p3/Drivers/BSP/STM32F4xx_Nucleo_144" -I"/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica03_p3/Drivers/Core/Inc" -I"/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica03_p3/Drivers/API" -I"/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica03_p3/Drivers/API/inc" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Src/main.d" -MT"Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Src/main.o"
-../Src/main.c: In function 'main':
-../Src/main.c:107:23: warning: statement with no effect [-Wunused-value]
-  107 |      for(int i=0;i++;i<3){
-      |                      ~^~
-../Src/main.c:98:9: warning: unused variable 'Estado_LED' [-Wunused-variable]
-   98 |     int Estado_LED = OFF ; // EStado de LED  inicial
-      |         ^~~~~~~~~~
-../Src/main.c:97:9: warning: unused variable 'LED_select' [-Wunused-variable]
-   97 |     int LED_select = LED_init; // LED inicial
-      |         ^~~~~~~~~~
-arm-none-eabi-gcc -o "Practica03_p3.elf" @"objects.list"   -mcpu=cortex-m4 -T"/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica03_p3/STM32F429ZITX_FLASH.ld" --specs=nosys.specs -Wl,-Map="Practica03_p3.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
-Finished building target: Practica03_p3.elf
- 
-arm-none-eabi-size   Practica03_p3.elf 
-arm-none-eabi-objdump -h -S  Practica03_p3.elf  > "Practica03_p3.list"
-   text	   data	    bss	    dec	    hex	filename
-  11312	    132	   1588	  13032	   32e8	Practica03_p3.elf
-Finished building: default.size.stdout
- 
-Finished building: Practica03_p3.list
- 
-00:58:42 **** Incremental Build of configuration Debug for project Practica03_p3 ****
-make -j8 all 
-arm-none-eabi-size   Practica03_p3.elf 
-   text	   data	    bss	    dec	    hex	filename
-  11312	    132	   1588	  13032	   32e8	Practica03_p3.elf
-Finished building: default.size.stdout
- 
-00:59:57 **** Incremental Build of configuration Debug for project Practica03_p3 ****
-make -j8 all 
-arm-none-eabi-gcc "../Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F429ZITx -DSTM32F4 -DNUCLEO_F429ZI -DUSE_HAL_DRIVER -DSTM32F429xx -c -I../Inc -I"/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica03_p3/Drivers/STM32F4xx_HAL_Driver/Inc" -I"/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica03_p3/Drivers/CMSIS/Include" -I"/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica03_p3/Drivers/CMSIS/Device/ST/STM32F4xx/Include" -I"/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica03_p3/Drivers/BSP/STM32F4xx_Nucleo_144" -I"/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica03_p3/Drivers/Core/Inc" -I"/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica03_p3/Drivers/API" -I"/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica03_p3/Drivers/API/inc" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Src/main.d" -MT"Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Src/main.o"
-../Src/main.c: In function 'main':
-../Src/main.c:98:9: warning: unused variable 'Estado_LED' [-Wunused-variable]
-   98 |     int Estado_LED = OFF ; // EStado de LED  inicial
-      |         ^~~~~~~~~~
-../Src/main.c:97:9: warning: unused variable 'LED_select' [-Wunused-variable]
-   97 |     int LED_select = LED_init; // LED inicial
-      |         ^~~~~~~~~~
-arm-none-eabi-gcc -o "Practica03_p3.elf" @"objects.list"   -mcpu=cortex-m4 -T"/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica03_p3/STM32F429ZITX_FLASH.ld" --specs=nosys.specs -Wl,-Map="Practica03_p3.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
-Finished building target: Practica03_p3.elf
- 
-arm-none-eabi-size   Practica03_p3.elf 
-arm-none-eabi-objdump -h -S  Practica03_p3.elf  > "Practica03_p3.list"
-   text	   data	    bss	    dec	    hex	filename
-  11316	    132	   1588	  13036	   32ec	Practica03_p3.elf
-Finished building: default.size.stdout
- 
-Finished building: Practica03_p3.list
- 
-01:00:02 **** Incremental Build of configuration Debug for project Practica03_p3 ****
-make -j8 all 
-arm-none-eabi-size   Practica03_p3.elf 
-   text	   data	    bss	    dec	    hex	filename
-  11316	    132	   1588	  13036	   32ec	Practica03_p3.elf
-Finished building: default.size.stdout
- 
-01:05:48 **** Incremental Build of configuration Debug for project Practica03_p3 ****
-make -j8 all 
-arm-none-eabi-gcc "../Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F429ZITx -DSTM32F4 -DNUCLEO_F429ZI -DUSE_HAL_DRIVER -DSTM32F429xx -c -I../Inc -I"/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica03_p3/Drivers/STM32F4xx_HAL_Driver/Inc" -I"/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica03_p3/Drivers/CMSIS/Include" -I"/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica03_p3/Drivers/CMSIS/Device/ST/STM32F4xx/Include" -I"/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica03_p3/Drivers/BSP/STM32F4xx_Nucleo_144" -I"/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica03_p3/Drivers/Core/Inc" -I"/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica03_p3/Drivers/API" -I"/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica03_p3/Drivers/API/inc" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Src/main.d" -MT"Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Src/main.o"
-../Src/main.c: In function 'main':
-../Src/main.c:92:14: error: expected identifier or '(' before '[' token
-   92 |     enum leds[3]={LED1,LED2,LED3};
-      |              ^
-../Src/main.c:100:9: warning: unused variable 'Estado_LED' [-Wunused-variable]
-  100 |     int Estado_LED = OFF ; // EStado de LED  inicial
-      |         ^~~~~~~~~~
-../Src/main.c:99:9: warning: unused variable 'LED_select' [-Wunused-variable]
-   99 |     int LED_select = LED_init; // LED inicial
-      |         ^~~~~~~~~~
-make: *** [Src/subdir.mk:19: Src/main.o] Error 1
-"make -j8 all" terminated with exit code 2. Build might be incomplete.
-01:06:09 **** Incremental Build of configuration Debug for project Practica03_p3 ****
-make -j8 all 
-arm-none-eabi-gcc "../Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F429ZITx -DSTM32F4 -DNUCLEO_F429ZI -DUSE_HAL_DRIVER -DSTM32F429xx -c -I../Inc -I"/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica03_p3/Drivers/STM32F4xx_HAL_Driver/Inc" -I"/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica03_p3/Drivers/CMSIS/Include" -I"/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica03_p3/Drivers/CMSIS/Device/ST/STM32F4xx/Include" -I"/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica03_p3/Drivers/BSP/STM32F4xx_Nucleo_144" -I"/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica03_p3/Drivers/Core/Inc" -I"/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica03_p3/Drivers/API" -I"/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica03_p3/Drivers/API/inc" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Src/main.d" -MT"Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Src/main.o"
-../Src/main.c: In function 'main':
-../Src/main.c:92:14: error: expected identifier or '(' before '[' token
-   92 |     enum leds[]={LED1,LED2,LED3};
-      |              ^
-../Src/main.c:100:9: warning: unused variable 'Estado_LED' [-Wunused-variable]
-  100 |     int Estado_LED = OFF ; // EStado de LED  inicial
-      |         ^~~~~~~~~~
-../Src/main.c:99:9: warning: unused variable 'LED_select' [-Wunused-variable]
-   99 |     int LED_select = LED_init; // LED inicial
-      |         ^~~~~~~~~~
-make: *** [Src/subdir.mk:19: Src/main.o] Error 1
-"make -j8 all" terminated with exit code 2. Build might be incomplete.
-01:06:22 **** Incremental Build of configuration Debug for project Practica03_p3 ****
-make -j8 all 
-arm-none-eabi-gcc "../Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F429ZITx -DSTM32F4 -DNUCLEO_F429ZI -DUSE_HAL_DRIVER -DSTM32F429xx -c -I../Inc -I"/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica03_p3/Drivers/STM32F4xx_HAL_Driver/Inc" -I"/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica03_p3/Drivers/CMSIS/Include" -I"/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica03_p3/Drivers/CMSIS/Device/ST/STM32F4xx/Include" -I"/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica03_p3/Drivers/BSP/STM32F4xx_Nucleo_144" -I"/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica03_p3/Drivers/Core/Inc" -I"/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica03_p3/Drivers/API" -I"/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica03_p3/Drivers/API/inc" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Src/main.d" -MT"Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Src/main.o"
-../Src/main.c: In function 'main':
-../Src/main.c:92:14: error: expected identifier or '(' before '=' token
-   92 |     enum leds={LED1,LED2,LED3};
-      |              ^
-../Src/main.c:100:9: warning: unused variable 'Estado_LED' [-Wunused-variable]
-  100 |     int Estado_LED = OFF ; // EStado de LED  inicial
-      |         ^~~~~~~~~~
-../Src/main.c:99:9: warning: unused variable 'LED_select' [-Wunused-variable]
-   99 |     int LED_select = LED_init; // LED inicial
-      |         ^~~~~~~~~~
-make: *** [Src/subdir.mk:19: Src/main.o] Error 1
-"make -j8 all" terminated with exit code 2. Build might be incomplete.
-01:06:34 **** Incremental Build of configuration Debug for project Practica03_p3 ****
-make -j8 all 
-arm-none-eabi-gcc "../Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F429ZITx -DSTM32F4 -DNUCLEO_F429ZI -DUSE_HAL_DRIVER -DSTM32F429xx -c -I../Inc -I"/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica03_p3/Drivers/STM32F4xx_HAL_Driver/Inc" -I"/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica03_p3/Drivers/CMSIS/Include" -I"/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica03_p3/Drivers/CMSIS/Device/ST/STM32F4xx/Include" -I"/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica03_p3/Drivers/BSP/STM32F4xx_Nucleo_144" -I"/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica03_p3/Drivers/Core/Inc" -I"/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica03_p3/Drivers/API" -I"/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica03_p3/Drivers/API/inc" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Src/main.d" -MT"Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Src/main.o"
-../Src/main.c: In function 'main':
-../Src/main.c:100:9: warning: unused variable 'Estado_LED' [-Wunused-variable]
-  100 |     int Estado_LED = OFF ; // EStado de LED  inicial
-      |         ^~~~~~~~~~
-../Src/main.c:99:9: warning: unused variable 'LED_select' [-Wunused-variable]
-   99 |     int LED_select = LED_init; // LED inicial
-      |         ^~~~~~~~~~
-arm-none-eabi-gcc -o "Practica03_p3.elf" @"objects.list"   -mcpu=cortex-m4 -T"/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica03_p3/STM32F429ZITX_FLASH.ld" --specs=nosys.specs -Wl,-Map="Practica03_p3.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
-Finished building target: Practica03_p3.elf
- 
-arm-none-eabi-size   Practica03_p3.elf 
-arm-none-eabi-objdump -h -S  Practica03_p3.elf  > "Practica03_p3.list"
-   text	   data	    bss	    dec	    hex	filename
-  11316	    132	   1588	  13036	   32ec	Practica03_p3.elf
-Finished building: default.size.stdout
- 
-Finished building: Practica03_p3.list
- 
-01:10:24 **** Incremental Build of configuration Debug for project Practica03_p3 ****
-make -j8 all 
-arm-none-eabi-gcc "../Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F429ZITx -DSTM32F4 -DNUCLEO_F429ZI -DUSE_HAL_DRIVER -DSTM32F429xx -c -I../Inc -I"/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica03_p3/Drivers/STM32F4xx_HAL_Driver/Inc" -I"/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica03_p3/Drivers/CMSIS/Include" -I"/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica03_p3/Drivers/CMSIS/Device/ST/STM32F4xx/Include" -I"/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica03_p3/Drivers/BSP/STM32F4xx_Nucleo_144" -I"/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica03_p3/Drivers/Core/Inc" -I"/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica03_p3/Drivers/API" -I"/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica03_p3/Drivers/API/inc" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Src/main.d" -MT"Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Src/main.o"
-../Src/main.c: In function 'main':
-../Src/main.c:92:28: warning: excess elements in scalar initializer
-   92 |     Led_TypeDef leds={LED1,LED2,LED3};
-      |                            ^~~~
-../Src/main.c:92:28: note: (near initialization for 'leds')
-../Src/main.c:92:33: warning: excess elements in scalar initializer
-   92 |     Led_TypeDef leds={LED1,LED2,LED3};
-      |                                 ^~~~
-../Src/main.c:92:33: note: (near initialization for 'leds')
-../Src/main.c:100:9: warning: unused variable 'Estado_LED' [-Wunused-variable]
-  100 |     int Estado_LED = OFF ; // EStado de LED  inicial
-      |         ^~~~~~~~~~
-../Src/main.c:99:9: warning: unused variable 'LED_select' [-Wunused-variable]
-   99 |     int LED_select = LED_init; // LED inicial
-      |         ^~~~~~~~~~
-../Src/main.c:92:17: warning: unused variable 'leds' [-Wunused-variable]
-   92 |     Led_TypeDef leds={LED1,LED2,LED3};
-      |                 ^~~~
-arm-none-eabi-gcc -o "Practica03_p3.elf" @"objects.list"   -mcpu=cortex-m4 -T"/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica03_p3/STM32F429ZITX_FLASH.ld" --specs=nosys.specs -Wl,-Map="Practica03_p3.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
-Finished building target: Practica03_p3.elf
- 
-arm-none-eabi-size   Practica03_p3.elf 
-arm-none-eabi-objdump -h -S  Practica03_p3.elf  > "Practica03_p3.list"
-   text	   data	    bss	    dec	    hex	filename
-  11320	    132	   1588	  13040	   32f0	Practica03_p3.elf
-Finished building: default.size.stdout
- 
-Finished building: Practica03_p3.list
- 
-01:11:28 **** Incremental Build of configuration Debug for project Practica03_p3 ****
-make -j8 all 
-arm-none-eabi-gcc "../Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F429ZITx -DSTM32F4 -DNUCLEO_F429ZI -DUSE_HAL_DRIVER -DSTM32F429xx -c -I../Inc -I"/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica03_p3/Drivers/STM32F4xx_HAL_Driver/Inc" -I"/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica03_p3/Drivers/CMSIS/Include" -I"/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica03_p3/Drivers/CMSIS/Device/ST/STM32F4xx/Include" -I"/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica03_p3/Drivers/BSP/STM32F4xx_Nucleo_144" -I"/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica03_p3/Drivers/Core/Inc" -I"/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica03_p3/Drivers/API" -I"/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica03_p3/Drivers/API/inc" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Src/main.d" -MT"Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Src/main.o"
-../Src/main.c: In function 'main':
-../Src/main.c:92:28: warning: excess elements in scalar initializer
-   92 |     Led_TypeDef leds={LED1,LED2,LED3};
-      |                            ^~~~
-../Src/main.c:92:28: note: (near initialization for 'leds')
-../Src/main.c:92:33: warning: excess elements in scalar initializer
-   92 |     Led_TypeDef leds={LED1,LED2,LED3};
-      |                                 ^~~~
-../Src/main.c:92:33: note: (near initialization for 'leds')
-../Src/main.c:111:23: error: subscripted value is neither array nor pointer nor vector
-  111 |        BSP_LED_On(leds[i]);
-      |                       ^
-../Src/main.c:114:24: error: subscripted value is neither array nor pointer nor vector
-  114 |        BSP_LED_Off(leds[i]);
-      |                        ^
-../Src/main.c:123:13: error: invalid storage class for function 'SystemClock_Config'
-  123 | static void SystemClock_Config(void)
-      |             ^~~~~~~~~~~~~~~~~~
-../Src/main.c:175:13: error: invalid storage class for function 'Error_Handler'
-  175 | static void Error_Handler(void)
-      |             ^~~~~~~~~~~~~
-../Src/main.c:182:1: error: expected declaration or statement at end of input
-  182 | }
-      | ^
-../Src/main.c:100:9: warning: unused variable 'Estado_LED' [-Wunused-variable]
-  100 |     int Estado_LED = OFF ; // EStado de LED  inicial
-      |         ^~~~~~~~~~
-../Src/main.c:99:9: warning: unused variable 'LED_select' [-Wunused-variable]
-   99 |     int LED_select = LED_init; // LED inicial
-      |         ^~~~~~~~~~
-../Src/main.c:92:17: warning: variable 'leds' set but not used [-Wunused-but-set-variable]
-   92 |     Led_TypeDef leds={LED1,LED2,LED3};
-      |                 ^~~~
-../Src/main.c: At top level:
-../Src/main.c:48:13: warning: 'SystemClock_Config' used but never defined
-   48 | static void SystemClock_Config(void);
-      |             ^~~~~~~~~~~~~~~~~~
-../Src/main.c:49:13: warning: 'Error_Handler' used but never defined
-   49 | static void Error_Handler(void);
-      |             ^~~~~~~~~~~~~
-../Src/main.c:175:13: warning: 'Error_Handler' defined but not used [-Wunused-function]
-  175 | static void Error_Handler(void)
-      |             ^~~~~~~~~~~~~
-../Src/main.c:123:13: warning: 'SystemClock_Config' defined but not used [-Wunused-function]
-  123 | static void SystemClock_Config(void)
-      |             ^~~~~~~~~~~~~~~~~~
-make: *** [Src/subdir.mk:19: Src/main.o] Error 1
-"make -j8 all" terminated with exit code 2. Build might be incomplete.
-01:12:03 **** Incremental Build of configuration Debug for project Practica03_p3 ****
-make -j8 all 
-arm-none-eabi-gcc "../Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F429ZITx -DSTM32F4 -DNUCLEO_F429ZI -DUSE_HAL_DRIVER -DSTM32F429xx -c -I../Inc -I"/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica03_p3/Drivers/STM32F4xx_HAL_Driver/Inc" -I"/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica03_p3/Drivers/CMSIS/Include" -I"/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica03_p3/Drivers/CMSIS/Device/ST/STM32F4xx/Include" -I"/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica03_p3/Drivers/BSP/STM32F4xx_Nucleo_144" -I"/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica03_p3/Drivers/Core/Inc" -I"/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica03_p3/Drivers/API" -I"/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica03_p3/Drivers/API/inc" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Src/main.d" -MT"Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Src/main.o"
-../Src/main.c: In function 'main':
-../Src/main.c:92:28: warning: excess elements in scalar initializer
-   92 |     Led_TypeDef leds={LED1,LED2,LED3};
-      |                            ^~~~
-../Src/main.c:92:28: note: (near initialization for 'leds')
-../Src/main.c:92:33: warning: excess elements in scalar initializer
-   92 |     Led_TypeDef leds={LED1,LED2,LED3};
-      |                                 ^~~~
-../Src/main.c:92:33: note: (near initialization for 'leds')
-../Src/main.c:111:23: error: subscripted value is neither array nor pointer nor vector
-  111 |        BSP_LED_On(leds[i]);
-      |                       ^
-../Src/main.c:114:24: error: subscripted value is neither array nor pointer nor vector
-  114 |        BSP_LED_Off(leds[i]);
-      |                        ^
-../Src/main.c:100:9: warning: unused variable 'Estado_LED' [-Wunused-variable]
-  100 |     int Estado_LED = OFF ; // EStado de LED  inicial
-      |         ^~~~~~~~~~
-../Src/main.c:99:9: warning: unused variable 'LED_select' [-Wunused-variable]
-   99 |     int LED_select = LED_init; // LED inicial
-      |         ^~~~~~~~~~
-../Src/main.c:92:17: warning: variable 'leds' set but not used [-Wunused-but-set-variable]
-   92 |     Led_TypeDef leds={LED1,LED2,LED3};
-      |                 ^~~~
-make: *** [Src/subdir.mk:19: Src/main.o] Error 1
-"make -j8 all" terminated with exit code 2. Build might be incomplete.
-01:13:15 **** Incremental Build of configuration Debug for project Practica03_p3 ****
-make -j8 all 
-arm-none-eabi-gcc "../Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F429ZITx -DSTM32F4 -DNUCLEO_F429ZI -DUSE_HAL_DRIVER -DSTM32F429xx -c -I../Inc -I"/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica03_p3/Drivers/STM32F4xx_HAL_Driver/Inc" -I"/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica03_p3/Drivers/CMSIS/Include" -I"/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica03_p3/Drivers/CMSIS/Device/ST/STM32F4xx/Include" -I"/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica03_p3/Drivers/BSP/STM32F4xx_Nucleo_144" -I"/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica03_p3/Drivers/Core/Inc" -I"/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica03_p3/Drivers/API" -I"/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica03_p3/Drivers/API/inc" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Src/main.d" -MT"Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Src/main.o"
-../Src/main.c: In function 'main':
-../Src/main.c:100:9: warning: unused variable 'Estado_LED' [-Wunused-variable]
-  100 |     int Estado_LED = OFF ; // EStado de LED  inicial
-      |         ^~~~~~~~~~
-../Src/main.c:99:9: warning: unused variable 'LED_select' [-Wunused-variable]
-   99 |     int LED_select = LED_init; // LED inicial
-      |         ^~~~~~~~~~
-arm-none-eabi-gcc -o "Practica03_p3.elf" @"objects.list"   -mcpu=cortex-m4 -T"/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica03_p3/STM32F429ZITX_FLASH.ld" --specs=nosys.specs -Wl,-Map="Practica03_p3.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
-Finished building target: Practica03_p3.elf
- 
-arm-none-eabi-size   Practica03_p3.elf 
-arm-none-eabi-objdump -h -S  Practica03_p3.elf  > "Practica03_p3.list"
-   text	   data	    bss	    dec	    hex	filename
-  11284	    132	   1588	  13004	   32cc	Practica03_p3.elf
-Finished building: default.size.stdout
- 
-Finished building: Practica03_p3.list
- 
-01:13:22 **** Incremental Build of configuration Debug for project Practica03_p3 ****
-make -j8 all 
-arm-none-eabi-size   Practica03_p3.elf 
-   text	   data	    bss	    dec	    hex	filename
-  11284	    132	   1588	  13004	   32cc	Practica03_p3.elf
-Finished building: default.size.stdout
- 
-01:14:34 **** Incremental Build of configuration Debug for project Practica03_p3 ****
-make -j8 all 
-arm-none-eabi-gcc "../Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F429ZITx -DSTM32F4 -DNUCLEO_F429ZI -DUSE_HAL_DRIVER -DSTM32F429xx -c -I../Inc -I"/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica03_p3/Drivers/STM32F4xx_HAL_Driver/Inc" -I"/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica03_p3/Drivers/CMSIS/Include" -I"/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica03_p3/Drivers/CMSIS/Device/ST/STM32F4xx/Include" -I"/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica03_p3/Drivers/BSP/STM32F4xx_Nucleo_144" -I"/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica03_p3/Drivers/Core/Inc" -I"/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica03_p3/Drivers/API" -I"/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica03_p3/Drivers/API/inc" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Src/main.d" -MT"Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Src/main.o"
-../Src/main.c: In function 'main':
-../Src/main.c:100:9: warning: unused variable 'Estado_LED' [-Wunused-variable]
-  100 |     int Estado_LED = OFF ; // EStado de LED  inicial
-      |         ^~~~~~~~~~
-../Src/main.c:99:9: warning: unused variable 'LED_select' [-Wunused-variable]
-   99 |     int LED_select = LED_init; // LED inicial
-      |         ^~~~~~~~~~
-../Src/main.c:92:17: warning: unused variable 'leds' [-Wunused-variable]
-   92 |     Led_TypeDef leds[3]={LED1,LED2,LED3};
-      |                 ^~~~
-arm-none-eabi-gcc -o "Practica03_p3.elf" @"objects.list"   -mcpu=cortex-m4 -T"/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica03_p3/STM32F429ZITX_FLASH.ld" --specs=nosys.specs -Wl,-Map="Practica03_p3.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
-Finished building target: Practica03_p3.elf
- 
-arm-none-eabi-size   Practica03_p3.elf 
-arm-none-eabi-objdump -h -S  Practica03_p3.elf  > "Practica03_p3.list"
-   text	   data	    bss	    dec	    hex	filename
-  11268	    132	   1588	  12988	   32bc	Practica03_p3.elf
-Finished building: default.size.stdout
- 
-Finished building: Practica03_p3.list
- 
-01:14:43 **** Incremental Build of configuration Debug for project Practica03_p3 ****
-make -j8 all 
-arm-none-eabi-size   Practica03_p3.elf 
-   text	   data	    bss	    dec	    hex	filename
-  11268	    132	   1588	  12988	   32bc	Practica03_p3.elf
-Finished building: default.size.stdout
- 
-01:15:24 **** Incremental Build of configuration Debug for project Practica03_p3 ****
-make -j8 all 
-arm-none-eabi-gcc "../Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F429ZITx -DSTM32F4 -DNUCLEO_F429ZI -DUSE_HAL_DRIVER -DSTM32F429xx -c -I../Inc -I"/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica03_p3/Drivers/STM32F4xx_HAL_Driver/Inc" -I"/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica03_p3/Drivers/CMSIS/Include" -I"/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica03_p3/Drivers/CMSIS/Device/ST/STM32F4xx/Include" -I"/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica03_p3/Drivers/BSP/STM32F4xx_Nucleo_144" -I"/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica03_p3/Drivers/Core/Inc" -I"/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica03_p3/Drivers/API" -I"/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica03_p3/Drivers/API/inc" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Src/main.d" -MT"Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Src/main.o"
-../Src/main.c: In function 'main':
-../Src/main.c:100:9: warning: unused variable 'Estado_LED' [-Wunused-variable]
-  100 |     int Estado_LED = OFF ; // EStado de LED  inicial
-      |         ^~~~~~~~~~
-../Src/main.c:99:9: warning: unused variable 'LED_select' [-Wunused-variable]
-   99 |     int LED_select = LED_init; // LED inicial
-      |         ^~~~~~~~~~
-../Src/main.c:92:17: warning: unused variable 'leds' [-Wunused-variable]
-   92 |     Led_TypeDef leds[3]={LED1,LED2,LED3};
-      |                 ^~~~
-arm-none-eabi-gcc -o "Practica03_p3.elf" @"objects.list"   -mcpu=cortex-m4 -T"/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica03_p3/STM32F429ZITX_FLASH.ld" --specs=nosys.specs -Wl,-Map="Practica03_p3.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
-Finished building target: Practica03_p3.elf
- 
-arm-none-eabi-size   Practica03_p3.elf 
-arm-none-eabi-objdump -h -S  Practica03_p3.elf  > "Practica03_p3.list"
-   text	   data	    bss	    dec	    hex	filename
-  11264	    132	   1588	  12984	   32b8	Practica03_p3.elf
-Finished building: default.size.stdout
- 
-Finished building: Practica03_p3.list
- 
-01:15:38 **** Incremental Build of configuration Debug for project Practica03_p3 ****
-make -j8 all 
-arm-none-eabi-size   Practica03_p3.elf 
-   text	   data	    bss	    dec	    hex	filename
-  11264	    132	   1588	  12984	   32b8	Practica03_p3.elf
-Finished building: default.size.stdout
- 
-01:16:08 **** Incremental Build of configuration Debug for project Practica03_p3 ****
-make -j8 all 
-arm-none-eabi-size   Practica03_p3.elf 
-   text	   data	    bss	    dec	    hex	filename
-  11264	    132	   1588	  12984	   32b8	Practica03_p3.elf
-Finished building: default.size.stdout
- 
-01:17:05 **** Incremental Build of configuration Debug for project Practica03_p3 ****
-make -j8 all 
-arm-none-eabi-gcc "../Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F429ZITx -DSTM32F4 -DNUCLEO_F429ZI -DUSE_HAL_DRIVER -DSTM32F429xx -c -I../Inc -I"/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica03_p3/Drivers/STM32F4xx_HAL_Driver/Inc" -I"/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica03_p3/Drivers/CMSIS/Include" -I"/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica03_p3/Drivers/CMSIS/Device/ST/STM32F4xx/Include" -I"/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica03_p3/Drivers/BSP/STM32F4xx_Nucleo_144" -I"/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica03_p3/Drivers/Core/Inc" -I"/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica03_p3/Drivers/API" -I"/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica03_p3/Drivers/API/inc" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Src/main.d" -MT"Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Src/main.o"
-../Src/main.c: In function 'main':
-../Src/main.c:100:9: warning: unused variable 'Estado_LED' [-Wunused-variable]
-  100 |     int Estado_LED = OFF ; // EStado de LED  inicial
-      |         ^~~~~~~~~~
-../Src/main.c:99:9: warning: unused variable 'LED_select' [-Wunused-variable]
-   99 |     int LED_select = LED_init; // LED inicial
-      |         ^~~~~~~~~~
-../Src/main.c:92:17: warning: unused variable 'leds' [-Wunused-variable]
-   92 |     Led_TypeDef leds[3]={LED1,LED2,LED3};
-      |                 ^~~~
-arm-none-eabi-gcc -o "Practica03_p3.elf" @"objects.list"   -mcpu=cortex-m4 -T"/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica03_p3/STM32F429ZITX_FLASH.ld" --specs=nosys.specs -Wl,-Map="Practica03_p3.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
-Finished building target: Practica03_p3.elf
- 
-arm-none-eabi-size   Practica03_p3.elf 
-arm-none-eabi-objdump -h -S  Practica03_p3.elf  > "Practica03_p3.list"
-   text	   data	    bss	    dec	    hex	filename
-  11264	    132	   1588	  12984	   32b8	Practica03_p3.elf
-Finished building: default.size.stdout
- 
-Finished building: Practica03_p3.list
- 
-01:17:15 **** Incremental Build of configuration Debug for project Practica03_p3 ****
-make -j8 all 
-arm-none-eabi-size   Practica03_p3.elf 
-   text	   data	    bss	    dec	    hex	filename
-  11264	    132	   1588	  12984	   32b8	Practica03_p3.elf
-Finished building: default.size.stdout
- 
-01:18:47 **** Incremental Build of configuration Debug for project Practica03_p3 ****
-make -j8 all 
-arm-none-eabi-gcc "../Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F429ZITx -DSTM32F4 -DNUCLEO_F429ZI -DUSE_HAL_DRIVER -DSTM32F429xx -c -I../Inc -I"/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica03_p3/Drivers/STM32F4xx_HAL_Driver/Inc" -I"/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica03_p3/Drivers/CMSIS/Include" -I"/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica03_p3/Drivers/CMSIS/Device/ST/STM32F4xx/Include" -I"/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica03_p3/Drivers/BSP/STM32F4xx_Nucleo_144" -I"/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica03_p3/Drivers/Core/Inc" -I"/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica03_p3/Drivers/API" -I"/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica03_p3/Drivers/API/inc" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Src/main.d" -MT"Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Src/main.o"
-../Src/main.c: In function 'main':
-../Src/main.c:109:6: error: 'i' undeclared (first use in this function)
-  109 |      i=0;
-      |      ^
-../Src/main.c:109:6: note: each undeclared identifier is reported only once for each function it appears in
-../Src/main.c:100:9: warning: unused variable 'Estado_LED' [-Wunused-variable]
-  100 |     int Estado_LED = OFF ; // EStado de LED  inicial
-      |         ^~~~~~~~~~
-../Src/main.c:99:9: warning: unused variable 'LED_select' [-Wunused-variable]
-   99 |     int LED_select = LED_init; // LED inicial
-      |         ^~~~~~~~~~
-../Src/main.c:92:17: warning: unused variable 'leds' [-Wunused-variable]
-   92 |     Led_TypeDef leds[3]={LED1,LED2,LED3};
-      |                 ^~~~
-make: *** [Src/subdir.mk:19: Src/main.o] Error 1
-"make -j8 all" terminated with exit code 2. Build might be incomplete.
-01:18:53 **** Incremental Build of configuration Debug for project Practica03_p3 ****
-make -j8 all 
-arm-none-eabi-gcc "../Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F429ZITx -DSTM32F4 -DNUCLEO_F429ZI -DUSE_HAL_DRIVER -DSTM32F429xx -c -I../Inc -I"/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica03_p3/Drivers/STM32F4xx_HAL_Driver/Inc" -I"/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica03_p3/Drivers/CMSIS/Include" -I"/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica03_p3/Drivers/CMSIS/Device/ST/STM32F4xx/Include" -I"/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica03_p3/Drivers/BSP/STM32F4xx_Nucleo_144" -I"/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica03_p3/Drivers/Core/Inc" -I"/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica03_p3/Drivers/API" -I"/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica03_p3/Drivers/API/inc" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Src/main.d" -MT"Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Src/main.o"
-../Src/main.c: In function 'main':
-../Src/main.c:109:6: error: 'i' undeclared (first use in this function)
-  109 |      i=0;
-      |      ^
-../Src/main.c:109:6: note: each undeclared identifier is reported only once for each function it appears in
-../Src/main.c:100:9: warning: unused variable 'Estado_LED' [-Wunused-variable]
-  100 |     int Estado_LED = OFF ; // EStado de LED  inicial
-      |         ^~~~~~~~~~
-../Src/main.c:99:9: warning: unused variable 'LED_select' [-Wunused-variable]
-   99 |     int LED_select = LED_init; // LED inicial
-      |         ^~~~~~~~~~
-../Src/main.c:92:17: warning: unused variable 'leds' [-Wunused-variable]
-   92 |     Led_TypeDef leds[3]={LED1,LED2,LED3};
-      |                 ^~~~
-make: *** [Src/subdir.mk:19: Src/main.o] Error 1
-"make -j8 all" terminated with exit code 2. Build might be incomplete.
-01:19:13 **** Incremental Build of configuration Debug for project Practica03_p3 ****
-make -j8 all 
-arm-none-eabi-gcc "../Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F429ZITx -DSTM32F4 -DNUCLEO_F429ZI -DUSE_HAL_DRIVER -DSTM32F429xx -c -I../Inc -I"/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica03_p3/Drivers/STM32F4xx_HAL_Driver/Inc" -I"/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica03_p3/Drivers/CMSIS/Include" -I"/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica03_p3/Drivers/CMSIS/Device/ST/STM32F4xx/Include" -I"/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica03_p3/Drivers/BSP/STM32F4xx_Nucleo_144" -I"/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica03_p3/Drivers/Core/Inc" -I"/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica03_p3/Drivers/API" -I"/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica03_p3/Drivers/API/inc" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Src/main.d" -MT"Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Src/main.o"
-../Src/main.c: In function 'main':
-../Src/main.c:100:9: warning: unused variable 'Estado_LED' [-Wunused-variable]
-  100 |     int Estado_LED = OFF ; // EStado de LED  inicial
-      |         ^~~~~~~~~~
-../Src/main.c:99:9: warning: unused variable 'LED_select' [-Wunused-variable]
-   99 |     int LED_select = LED_init; // LED inicial
-      |         ^~~~~~~~~~
-../Src/main.c:92:17: warning: unused variable 'leds' [-Wunused-variable]
-   92 |     Led_TypeDef leds[3]={LED1,LED2,LED3};
-      |                 ^~~~
-arm-none-eabi-gcc -o "Practica03_p3.elf" @"objects.list"   -mcpu=cortex-m4 -T"/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica03_p3/STM32F429ZITX_FLASH.ld" --specs=nosys.specs -Wl,-Map="Practica03_p3.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
-Finished building target: Practica03_p3.elf
- 
-arm-none-eabi-size   Practica03_p3.elf 
-arm-none-eabi-objdump -h -S  Practica03_p3.elf  > "Practica03_p3.list"
-   text	   data	    bss	    dec	    hex	filename
-  11268	    132	   1588	  12988	   32bc	Practica03_p3.elf
-Finished building: default.size.stdout
- 
-Finished building: Practica03_p3.list
- 
-01:19:20 **** Incremental Build of configuration Debug for project Practica03_p3 ****
-make -j8 all 
-arm-none-eabi-size   Practica03_p3.elf 
-   text	   data	    bss	    dec	    hex	filename
-  11268	    132	   1588	  12988	   32bc	Practica03_p3.elf
-Finished building: default.size.stdout
- 
-01:19:31 **** Incremental Build of configuration Debug for project Practica03_p3 ****
-make -j8 all 
-arm-none-eabi-size   Practica03_p3.elf 
-   text	   data	    bss	    dec	    hex	filename
-  11268	    132	   1588	  12988	   32bc	Practica03_p3.elf
-Finished building: default.size.stdout
- 
-01:19:37 **** Incremental Build of configuration Debug for project Practica03_p3 ****
-make -j8 all 
-arm-none-eabi-size   Practica03_p3.elf 
-   text	   data	    bss	    dec	    hex	filename
-  11268	    132	   1588	  12988	   32bc	Practica03_p3.elf
-Finished building: default.size.stdout
- 
-01:20:33 **** Incremental Build of configuration Debug for project Practica03_p3 ****
-make -j8 all 
-arm-none-eabi-gcc "../Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F429ZITx -DSTM32F4 -DNUCLEO_F429ZI -DUSE_HAL_DRIVER -DSTM32F429xx -c -I../Inc -I"/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica03_p3/Drivers/STM32F4xx_HAL_Driver/Inc" -I"/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica03_p3/Drivers/CMSIS/Include" -I"/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica03_p3/Drivers/CMSIS/Device/ST/STM32F4xx/Include" -I"/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica03_p3/Drivers/BSP/STM32F4xx_Nucleo_144" -I"/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica03_p3/Drivers/Core/Inc" -I"/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica03_p3/Drivers/API" -I"/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica03_p3/Drivers/API/inc" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Src/main.d" -MT"Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Src/main.o"
-../Src/main.c: In function 'main':
-../Src/main.c:100:9: warning: unused variable 'Estado_LED' [-Wunused-variable]
-  100 |     int Estado_LED = OFF ; // EStado de LED  inicial
-      |         ^~~~~~~~~~
-../Src/main.c:99:9: warning: unused variable 'LED_select' [-Wunused-variable]
-   99 |     int LED_select = LED_init; // LED inicial
-      |         ^~~~~~~~~~
-../Src/main.c:92:17: warning: unused variable 'leds' [-Wunused-variable]
-   92 |     Led_TypeDef leds[3]={LED1,LED2,LED3};
-      |                 ^~~~
-arm-none-eabi-gcc -o "Practica03_p3.elf" @"objects.list"   -mcpu=cortex-m4 -T"/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica03_p3/STM32F429ZITX_FLASH.ld" --specs=nosys.specs -Wl,-Map="Practica03_p3.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
-Finished building target: Practica03_p3.elf
- 
-arm-none-eabi-size   Practica03_p3.elf 
-arm-none-eabi-objdump -h -S  Practica03_p3.elf  > "Practica03_p3.list"
-   text	   data	    bss	    dec	    hex	filename
-  11272	    132	   1588	  12992	   32c0	Practica03_p3.elf
-Finished building: default.size.stdout
- 
-Finished building: Practica03_p3.list
- 
-01:20:40 **** Incremental Build of configuration Debug for project Practica03_p3 ****
-make -j8 all 
-arm-none-eabi-size   Practica03_p3.elf 
-   text	   data	    bss	    dec	    hex	filename
-  11272	    132	   1588	  12992	   32c0	Practica03_p3.elf
-Finished building: default.size.stdout
- 
-01:22:17 **** Incremental Build of configuration Debug for project Practica03_p3 ****
-make -j8 all 
-arm-none-eabi-gcc "../Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F429ZITx -DSTM32F4 -DNUCLEO_F429ZI -DUSE_HAL_DRIVER -DSTM32F429xx -c -I../Inc -I"/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica03_p3/Drivers/STM32F4xx_HAL_Driver/Inc" -I"/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica03_p3/Drivers/CMSIS/Include" -I"/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica03_p3/Drivers/CMSIS/Device/ST/STM32F4xx/Include" -I"/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica03_p3/Drivers/BSP/STM32F4xx_Nucleo_144" -I"/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica03_p3/Drivers/Core/Inc" -I"/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica03_p3/Drivers/API" -I"/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica03_p3/Drivers/API/inc" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Src/main.d" -MT"Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Src/main.o"
-../Src/main.c: In function 'main':
-../Src/main.c:100:9: warning: unused variable 'Estado_LED' [-Wunused-variable]
-  100 |     int Estado_LED = OFF ; // EStado de LED  inicial
-      |         ^~~~~~~~~~
-../Src/main.c:99:9: warning: unused variable 'LED_select' [-Wunused-variable]
-   99 |     int LED_select = LED_init; // LED inicial
-      |         ^~~~~~~~~~
-../Src/main.c:92:17: warning: unused variable 'leds' [-Wunused-variable]
-   92 |     Led_TypeDef leds[3]={LED1,LED2,LED3};
-      |                 ^~~~
-arm-none-eabi-gcc -o "Practica03_p3.elf" @"objects.list"   -mcpu=cortex-m4 -T"/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica03_p3/STM32F429ZITX_FLASH.ld" --specs=nosys.specs -Wl,-Map="Practica03_p3.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
-Finished building target: Practica03_p3.elf
- 
-arm-none-eabi-size   Practica03_p3.elf 
-arm-none-eabi-objdump -h -S  Practica03_p3.elf  > "Practica03_p3.list"
-   text	   data	    bss	    dec	    hex	filename
-  11268	    132	   1588	  12988	   32bc	Practica03_p3.elf
-Finished building: default.size.stdout
- 
-Finished building: Practica03_p3.list
- 
-01:22:23 **** Incremental Build of configuration Debug for project Practica03_p3 ****
-make -j8 all 
-arm-none-eabi-size   Practica03_p3.elf 
-   text	   data	    bss	    dec	    hex	filename
-  11268	    132	   1588	  12988	   32bc	Practica03_p3.elf
-Finished building: default.size.stdout
- 
-01:23:12 **** Incremental Build of configuration Debug for project Practica03_p3 ****
-make -j8 all 
-arm-none-eabi-gcc "../Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F429ZITx -DSTM32F4 -DNUCLEO_F429ZI -DUSE_HAL_DRIVER -DSTM32F429xx -c -I../Inc -I"/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica03_p3/Drivers/STM32F4xx_HAL_Driver/Inc" -I"/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica03_p3/Drivers/CMSIS/Include" -I"/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica03_p3/Drivers/CMSIS/Device/ST/STM32F4xx/Include" -I"/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica03_p3/Drivers/BSP/STM32F4xx_Nucleo_144" -I"/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica03_p3/Drivers/Core/Inc" -I"/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica03_p3/Drivers/API" -I"/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica03_p3/Drivers/API/inc" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Src/main.d" -MT"Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Src/main.o"
-../Src/main.c: In function 'main':
-../Src/main.c:100:9: warning: unused variable 'Estado_LED' [-Wunused-variable]
-  100 |     int Estado_LED = OFF ; // EStado de LED  inicial
-      |         ^~~~~~~~~~
-../Src/main.c:99:9: warning: unused variable 'LED_select' [-Wunused-variable]
-   99 |     int LED_select = LED_init; // LED inicial
-      |         ^~~~~~~~~~
-../Src/main.c:92:17: warning: unused variable 'leds' [-Wunused-variable]
-   92 |     Led_TypeDef leds[3]={LED1,LED2,LED3};
-      |                 ^~~~
-arm-none-eabi-gcc -o "Practica03_p3.elf" @"objects.list"   -mcpu=cortex-m4 -T"/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica03_p3/STM32F429ZITX_FLASH.ld" --specs=nosys.specs -Wl,-Map="Practica03_p3.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
-Finished building target: Practica03_p3.elf
- 
-arm-none-eabi-size   Practica03_p3.elf 
-arm-none-eabi-objdump -h -S  Practica03_p3.elf  > "Practica03_p3.list"
-   text	   data	    bss	    dec	    hex	filename
-  11264	    132	   1588	  12984	   32b8	Practica03_p3.elf
-Finished building: default.size.stdout
- 
-Finished building: Practica03_p3.list
- 
-01:23:23 **** Incremental Build of configuration Debug for project Practica03_p3 ****
-make -j8 all 
-arm-none-eabi-size   Practica03_p3.elf 
-   text	   data	    bss	    dec	    hex	filename
-  11264	    132	   1588	  12984	   32b8	Practica03_p3.elf
-Finished building: default.size.stdout
- 
-01:23:56 **** Incremental Build of configuration Debug for project Practica03_p3 ****
-make -j8 all 
-arm-none-eabi-gcc "../Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F429ZITx -DSTM32F4 -DNUCLEO_F429ZI -DUSE_HAL_DRIVER -DSTM32F429xx -c -I../Inc -I"/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica03_p3/Drivers/STM32F4xx_HAL_Driver/Inc" -I"/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica03_p3/Drivers/CMSIS/Include" -I"/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica03_p3/Drivers/CMSIS/Device/ST/STM32F4xx/Include" -I"/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica03_p3/Drivers/BSP/STM32F4xx_Nucleo_144" -I"/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica03_p3/Drivers/Core/Inc" -I"/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica03_p3/Drivers/API" -I"/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica03_p3/Drivers/API/inc" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Src/main.d" -MT"Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Src/main.o"
-../Src/main.c: In function 'main':
-../Src/main.c:100:9: warning: unused variable 'Estado_LED' [-Wunused-variable]
-  100 |     int Estado_LED = OFF ; // EStado de LED  inicial
-      |         ^~~~~~~~~~
-../Src/main.c:99:9: warning: unused variable 'LED_select' [-Wunused-variable]
-   99 |     int LED_select = LED_init; // LED inicial
-      |         ^~~~~~~~~~
-../Src/main.c:92:17: warning: unused variable 'leds' [-Wunused-variable]
-   92 |     Led_TypeDef leds[3]={LED1,LED2,LED3};
-      |                 ^~~~
-arm-none-eabi-gcc -o "Practica03_p3.elf" @"objects.list"   -mcpu=cortex-m4 -T"/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica03_p3/STM32F429ZITX_FLASH.ld" --specs=nosys.specs -Wl,-Map="Practica03_p3.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
-Finished building target: Practica03_p3.elf
- 
-arm-none-eabi-size   Practica03_p3.elf 
-arm-none-eabi-objdump -h -S  Practica03_p3.elf  > "Practica03_p3.list"
-   text	   data	    bss	    dec	    hex	filename
-  11268	    132	   1588	  12988	   32bc	Practica03_p3.elf
-Finished building: default.size.stdout
- 
-Finished building: Practica03_p3.list
- 
-01:24:08 **** Incremental Build of configuration Debug for project Practica03_p3 ****
-make -j8 all 
-arm-none-eabi-size   Practica03_p3.elf 
-   text	   data	    bss	    dec	    hex	filename
-  11268	    132	   1588	  12988	   32bc	Practica03_p3.elf
-Finished building: default.size.stdout
- 
-01:24:58 **** Incremental Build of configuration Debug for project Practica03_p3 ****
-make -j8 all 
-arm-none-eabi-gcc "../Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F429ZITx -DSTM32F4 -DNUCLEO_F429ZI -DUSE_HAL_DRIVER -DSTM32F429xx -c -I../Inc -I"/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica03_p3/Drivers/STM32F4xx_HAL_Driver/Inc" -I"/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica03_p3/Drivers/CMSIS/Include" -I"/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica03_p3/Drivers/CMSIS/Device/ST/STM32F4xx/Include" -I"/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica03_p3/Drivers/BSP/STM32F4xx_Nucleo_144" -I"/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica03_p3/Drivers/Core/Inc" -I"/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica03_p3/Drivers/API" -I"/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica03_p3/Drivers/API/inc" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Src/main.d" -MT"Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Src/main.o"
-../Src/main.c: In function 'main':
-../Src/main.c:109:10: warning: unused variable 'i' [-Wunused-variable]
-  109 |      int i=0;
-      |          ^
-../Src/main.c:100:9: warning: unused variable 'Estado_LED' [-Wunused-variable]
-  100 |     int Estado_LED = OFF ; // EStado de LED  inicial
-      |         ^~~~~~~~~~
-../Src/main.c:99:9: warning: unused variable 'LED_select' [-Wunused-variable]
-   99 |     int LED_select = LED_init; // LED inicial
-      |         ^~~~~~~~~~
-../Src/main.c:92:17: warning: unused variable 'leds' [-Wunused-variable]
-   92 |     Led_TypeDef leds[3]={LED1,LED2,LED3};
-      |                 ^~~~
-arm-none-eabi-gcc -o "Practica03_p3.elf" @"objects.list"   -mcpu=cortex-m4 -T"/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica03_p3/STM32F429ZITX_FLASH.ld" --specs=nosys.specs -Wl,-Map="Practica03_p3.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
-Finished building target: Practica03_p3.elf
- 
-arm-none-eabi-size   Practica03_p3.elf 
-arm-none-eabi-objdump -h -S  Practica03_p3.elf  > "Practica03_p3.list"
-   text	   data	    bss	    dec	    hex	filename
-  11044	    132	   1588	  12764	   31dc	Practica03_p3.elf
-Finished building: default.size.stdout
- 
-Finished building: Practica03_p3.list
- 
-01:25:07 **** Incremental Build of configuration Debug for project Practica03_p3 ****
-make -j8 all 
-arm-none-eabi-size   Practica03_p3.elf 
-   text	   data	    bss	    dec	    hex	filename
-  11044	    132	   1588	  12764	   31dc	Practica03_p3.elf
-Finished building: default.size.stdout
- 
-01:25:41 **** Incremental Build of configuration Debug for project Practica03_p3 ****
-make -j8 all 
-arm-none-eabi-gcc "../Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F429ZITx -DSTM32F4 -DNUCLEO_F429ZI -DUSE_HAL_DRIVER -DSTM32F429xx -c -I../Inc -I"/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica03_p3/Drivers/STM32F4xx_HAL_Driver/Inc" -I"/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica03_p3/Drivers/CMSIS/Include" -I"/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica03_p3/Drivers/CMSIS/Device/ST/STM32F4xx/Include" -I"/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica03_p3/Drivers/BSP/STM32F4xx_Nucleo_144" -I"/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica03_p3/Drivers/Core/Inc" -I"/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica03_p3/Drivers/API" -I"/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica03_p3/Drivers/API/inc" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Src/main.d" -MT"Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Src/main.o"
-../Src/main.c: In function 'main':
-../Src/main.c:100:9: warning: unused variable 'Estado_LED' [-Wunused-variable]
-  100 |     int Estado_LED = OFF ; // EStado de LED  inicial
-      |         ^~~~~~~~~~
-../Src/main.c:99:9: warning: unused variable 'LED_select' [-Wunused-variable]
-   99 |     int LED_select = LED_init; // LED inicial
-      |         ^~~~~~~~~~
-../Src/main.c:92:17: warning: unused variable 'leds' [-Wunused-variable]
-   92 |     Led_TypeDef leds[3]={LED1,LED2,LED3};
-      |                 ^~~~
-arm-none-eabi-gcc -o "Practica03_p3.elf" @"objects.list"   -mcpu=cortex-m4 -T"/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica03_p3/STM32F429ZITX_FLASH.ld" --specs=nosys.specs -Wl,-Map="Practica03_p3.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
-Finished building target: Practica03_p3.elf
- 
-arm-none-eabi-size   Practica03_p3.elf 
-arm-none-eabi-objdump -h -S  Practica03_p3.elf  > "Practica03_p3.list"
-   text	   data	    bss	    dec	    hex	filename
-  11216	    132	   1588	  12936	   3288	Practica03_p3.elf
-Finished building: default.size.stdout
- 
-Finished building: Practica03_p3.list
- 
-01:25:54 **** Incremental Build of configuration Debug for project Practica03_p3 ****
-make -j8 all 
-arm-none-eabi-size   Practica03_p3.elf 
-   text	   data	    bss	    dec	    hex	filename
-  11216	    132	   1588	  12936	   3288	Practica03_p3.elf
-Finished building: default.size.stdout
- 
-01:26:21 **** Incremental Build of configuration Debug for project Practica03_p3 ****
-make -j8 all 
-arm-none-eabi-gcc "../Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F429ZITx -DSTM32F4 -DNUCLEO_F429ZI -DUSE_HAL_DRIVER -DSTM32F429xx -c -I../Inc -I"/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica03_p3/Drivers/STM32F4xx_HAL_Driver/Inc" -I"/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica03_p3/Drivers/CMSIS/Include" -I"/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica03_p3/Drivers/CMSIS/Device/ST/STM32F4xx/Include" -I"/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica03_p3/Drivers/BSP/STM32F4xx_Nucleo_144" -I"/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica03_p3/Drivers/Core/Inc" -I"/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica03_p3/Drivers/API" -I"/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica03_p3/Drivers/API/inc" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Src/main.d" -MT"Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Src/main.o"
-../Src/main.c: In function 'main':
-../Src/main.c:100:9: warning: unused variable 'Estado_LED' [-Wunused-variable]
-  100 |     int Estado_LED = OFF ; // EStado de LED  inicial
-      |         ^~~~~~~~~~
-../Src/main.c:99:9: warning: unused variable 'LED_select' [-Wunused-variable]
-   99 |     int LED_select = LED_init; // LED inicial
-      |         ^~~~~~~~~~
-../Src/main.c:92:17: warning: unused variable 'leds' [-Wunused-variable]
-   92 |     Led_TypeDef leds[3]={LED1,LED2,LED3};
-      |                 ^~~~
-arm-none-eabi-gcc -o "Practica03_p3.elf" @"objects.list"   -mcpu=cortex-m4 -T"/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica03_p3/STM32F429ZITX_FLASH.ld" --specs=nosys.specs -Wl,-Map="Practica03_p3.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
-Finished building target: Practica03_p3.elf
- 
-arm-none-eabi-size   Practica03_p3.elf 
-arm-none-eabi-objdump -h -S  Practica03_p3.elf  > "Practica03_p3.list"
-   text	   data	    bss	    dec	    hex	filename
-  11268	    132	   1588	  12988	   32bc	Practica03_p3.elf
-Finished building: default.size.stdout
- 
-Finished building: Practica03_p3.list
- 
-01:26:35 **** Incremental Build of configuration Debug for project Practica03_p3 ****
-make -j8 all 
-arm-none-eabi-size   Practica03_p3.elf 
-   text	   data	    bss	    dec	    hex	filename
-  11268	    132	   1588	  12988	   32bc	Practica03_p3.elf
-Finished building: default.size.stdout
- 
-01:27:42 **** Incremental Build of configuration Debug for project Practica03_p3 ****
-make -j8 all 
-arm-none-eabi-gcc "../Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F429ZITx -DSTM32F4 -DNUCLEO_F429ZI -DUSE_HAL_DRIVER -DSTM32F429xx -c -I../Inc -I"/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica03_p3/Drivers/STM32F4xx_HAL_Driver/Inc" -I"/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica03_p3/Drivers/CMSIS/Include" -I"/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica03_p3/Drivers/CMSIS/Device/ST/STM32F4xx/Include" -I"/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica03_p3/Drivers/BSP/STM32F4xx_Nucleo_144" -I"/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica03_p3/Drivers/Core/Inc" -I"/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica03_p3/Drivers/API" -I"/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica03_p3/Drivers/API/inc" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Src/main.d" -MT"Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Src/main.o"
-../Src/main.c: In function 'main':
-../Src/main.c:100:9: warning: unused variable 'Estado_LED' [-Wunused-variable]
-  100 |     int Estado_LED = OFF ; // EStado de LED  inicial
-      |         ^~~~~~~~~~
-../Src/main.c:99:9: warning: unused variable 'LED_select' [-Wunused-variable]
-   99 |     int LED_select = LED_init; // LED inicial
-      |         ^~~~~~~~~~
-../Src/main.c:92:17: warning: unused variable 'leds' [-Wunused-variable]
-   92 |     Led_TypeDef leds[3]={LED1,LED2,LED3};
-      |                 ^~~~
-arm-none-eabi-gcc -o "Practica03_p3.elf" @"objects.list"   -mcpu=cortex-m4 -T"/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica03_p3/STM32F429ZITX_FLASH.ld" --specs=nosys.specs -Wl,-Map="Practica03_p3.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
-Finished building target: Practica03_p3.elf
- 
-arm-none-eabi-size   Practica03_p3.elf 
-arm-none-eabi-objdump -h -S  Practica03_p3.elf  > "Practica03_p3.list"
-   text	   data	    bss	    dec	    hex	filename
-  11264	    132	   1588	  12984	   32b8	Practica03_p3.elf
-Finished building: default.size.stdout
- 
-Finished building: Practica03_p3.list
- 
-01:27:49 **** Incremental Build of configuration Debug for project Practica03_p3 ****
-make -j8 all 
-arm-none-eabi-size   Practica03_p3.elf 
-   text	   data	    bss	    dec	    hex	filename
-  11264	    132	   1588	  12984	   32b8	Practica03_p3.elf
-Finished building: default.size.stdout
- 
-01:28:28 **** Incremental Build of configuration Debug for project Practica03_p3 ****
-make -j8 all 
-arm-none-eabi-gcc "../Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F429ZITx -DSTM32F4 -DNUCLEO_F429ZI -DUSE_HAL_DRIVER -DSTM32F429xx -c -I../Inc -I"/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica03_p3/Drivers/STM32F4xx_HAL_Driver/Inc" -I"/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica03_p3/Drivers/CMSIS/Include" -I"/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica03_p3/Drivers/CMSIS/Device/ST/STM32F4xx/Include" -I"/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica03_p3/Drivers/BSP/STM32F4xx_Nucleo_144" -I"/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica03_p3/Drivers/Core/Inc" -I"/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica03_p3/Drivers/API" -I"/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica03_p3/Drivers/API/inc" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Src/main.d" -MT"Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Src/main.o"
-../Src/main.c: In function 'main':
-../Src/main.c:100:9: warning: unused variable 'Estado_LED' [-Wunused-variable]
-  100 |     int Estado_LED = OFF ; // EStado de LED  inicial
-      |         ^~~~~~~~~~
-../Src/main.c:99:9: warning: unused variable 'LED_select' [-Wunused-variable]
-   99 |     int LED_select = LED_init; // LED inicial
-      |         ^~~~~~~~~~
-../Src/main.c:92:17: warning: unused variable 'leds' [-Wunused-variable]
-   92 |     Led_TypeDef leds[3]={LED1,LED2,LED3};
-      |                 ^~~~
-../Src/main.c: At top level:
-../Src/main.c:121:5: error: expected identifier or '(' before 'return'
-  121 |     return 0;
-      |     ^~~~~~
-../Src/main.c:122:1: error: expected identifier or '(' before '}' token
-  122 | }
-      | ^
-make: *** [Src/subdir.mk:19: Src/main.o] Error 1
-"make -j8 all" terminated with exit code 2. Build might be incomplete.
-01:28:49 **** Incremental Build of configuration Debug for project Practica03_p3 ****
-make -j8 all 
-arm-none-eabi-gcc "../Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F429ZITx -DSTM32F4 -DNUCLEO_F429ZI -DUSE_HAL_DRIVER -DSTM32F429xx -c -I../Inc -I"/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica03_p3/Drivers/STM32F4xx_HAL_Driver/Inc" -I"/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica03_p3/Drivers/CMSIS/Include" -I"/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica03_p3/Drivers/CMSIS/Device/ST/STM32F4xx/Include" -I"/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica03_p3/Drivers/BSP/STM32F4xx_Nucleo_144" -I"/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica03_p3/Drivers/Core/Inc" -I"/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica03_p3/Drivers/API" -I"/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica03_p3/Drivers/API/inc" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Src/main.d" -MT"Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Src/main.o"
-../Src/main.c: In function 'main':
-../Src/main.c:100:9: warning: unused variable 'Estado_LED' [-Wunused-variable]
-  100 |     int Estado_LED = OFF ; // EStado de LED  inicial
-      |         ^~~~~~~~~~
-../Src/main.c:99:9: warning: unused variable 'LED_select' [-Wunused-variable]
-   99 |     int LED_select = LED_init; // LED inicial
-      |         ^~~~~~~~~~
-../Src/main.c:92:17: warning: unused variable 'leds' [-Wunused-variable]
-   92 |     Led_TypeDef leds[3]={LED1,LED2,LED3};
-      |                 ^~~~
-arm-none-eabi-gcc -o "Practica03_p3.elf" @"objects.list"   -mcpu=cortex-m4 -T"/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica03_p3/STM32F429ZITX_FLASH.ld" --specs=nosys.specs -Wl,-Map="Practica03_p3.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
-Finished building target: Practica03_p3.elf
- 
-arm-none-eabi-size   Practica03_p3.elf 
-arm-none-eabi-objdump -h -S  Practica03_p3.elf  > "Practica03_p3.list"
-   text	   data	    bss	    dec	    hex	filename
-  11256	    132	   1588	  12976	   32b0	Practica03_p3.elf
-Finished building: default.size.stdout
- 
-Finished building: Practica03_p3.list
- 
-01:29:06 **** Incremental Build of configuration Debug for project Practica03_p3 ****
-make -j8 all 
-arm-none-eabi-size   Practica03_p3.elf 
-   text	   data	    bss	    dec	    hex	filename
-  11256	    132	   1588	  12976	   32b0	Practica03_p3.elf
-Finished building: default.size.stdout
- 
-01:31:36 **** Incremental Build of configuration Debug for project Practica03_p3 ****
-make -j8 all 
-arm-none-eabi-gcc "../Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F429ZITx -DSTM32F4 -DNUCLEO_F429ZI -DUSE_HAL_DRIVER -DSTM32F429xx -c -I../Inc -I"/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica03_p3/Drivers/STM32F4xx_HAL_Driver/Inc" -I"/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica03_p3/Drivers/CMSIS/Include" -I"/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica03_p3/Drivers/CMSIS/Device/ST/STM32F4xx/Include" -I"/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica03_p3/Drivers/BSP/STM32F4xx_Nucleo_144" -I"/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica03_p3/Drivers/Core/Inc" -I"/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica03_p3/Drivers/API" -I"/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica03_p3/Drivers/API/inc" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Src/main.d" -MT"Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Src/main.o"
-../Src/main.c: In function 'main':
-../Src/main.c:113:8: warning: implicit declaration of function 'BSP_LED_Togle'; did you mean 'BSP_LED_Toggle'? [-Wimplicit-function-declaration]
-  113 |        BSP_LED_Togle(LED1);
-      |        ^~~~~~~~~~~~~
-      |        BSP_LED_Toggle
-../Src/main.c:100:9: warning: unused variable 'Estado_LED' [-Wunused-variable]
-  100 |     int Estado_LED = OFF ; // EStado de LED  inicial
-      |         ^~~~~~~~~~
-../Src/main.c:99:9: warning: unused variable 'LED_select' [-Wunused-variable]
-   99 |     int LED_select = LED_init; // LED inicial
-      |         ^~~~~~~~~~
-../Src/main.c:92:17: warning: unused variable 'leds' [-Wunused-variable]
-   92 |     Led_TypeDef leds[3]={LED1,LED2,LED3};
-      |                 ^~~~
-arm-none-eabi-gcc -o "Practica03_p3.elf" @"objects.list"   -mcpu=cortex-m4 -T"/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica03_p3/STM32F429ZITX_FLASH.ld" --specs=nosys.specs -Wl,-Map="Practica03_p3.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
-/opt/st/stm32cubeide_1.12.1/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.10.3-2021.10.linux64_1.0.200.202301161003/tools/bin/../lib/gcc/arm-none-eabi/10.3.1/../../../../arm-none-eabi/bin/ld: ./Src/main.o: in function `main':
-/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica03_p3/Debug/../Src/main.c:113: undefined reference to `BSP_LED_Togle'
-collect2: error: ld returned 1 exit status
-make: *** [makefile:69: Practica03_p3.elf] Error 1
-"make -j8 all" terminated with exit code 2. Build might be incomplete.
-01:33:05 **** Incremental Build of configuration Debug for project Practica03_p3 ****
-make -j8 all 
-arm-none-eabi-gcc "../Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F429ZITx -DSTM32F4 -DNUCLEO_F429ZI -DUSE_HAL_DRIVER -DSTM32F429xx -c -I../Inc -I"/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica03_p3/Drivers/STM32F4xx_HAL_Driver/Inc" -I"/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica03_p3/Drivers/CMSIS/Include" -I"/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica03_p3/Drivers/CMSIS/Device/ST/STM32F4xx/Include" -I"/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica03_p3/Drivers/BSP/STM32F4xx_Nucleo_144" -I"/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica03_p3/Drivers/Core/Inc" -I"/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica03_p3/Drivers/API" -I"/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica03_p3/Drivers/API/inc" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Src/main.d" -MT"Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Src/main.o"
-../Src/main.c: In function 'main':
-../Src/main.c:100:9: warning: unused variable 'Estado_LED' [-Wunused-variable]
-  100 |     int Estado_LED = OFF ; // EStado de LED  inicial
-      |         ^~~~~~~~~~
-../Src/main.c:99:9: warning: unused variable 'LED_select' [-Wunused-variable]
-   99 |     int LED_select = LED_init; // LED inicial
-      |         ^~~~~~~~~~
-../Src/main.c:92:17: warning: unused variable 'leds' [-Wunused-variable]
-   92 |     Led_TypeDef leds[3]={LED1,LED2,LED3};
-      |                 ^~~~
-arm-none-eabi-gcc -o "Practica03_p3.elf" @"objects.list"   -mcpu=cortex-m4 -T"/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica03_p3/STM32F429ZITX_FLASH.ld" --specs=nosys.specs -Wl,-Map="Practica03_p3.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
-Finished building target: Practica03_p3.elf
- 
-arm-none-eabi-size   Practica03_p3.elf 
-arm-none-eabi-objdump -h -S  Practica03_p3.elf  > "Practica03_p3.list"
+arm-none-eabi-size   Practica03_p1.elf 
    text	   data	    bss	    dec	    hex	filename
-  11300	    132	   1588	  13020	   32dc	Practica03_p3.elf
+  11320	    132	   1588	  13040	   32f0	Practica03_p1.elf
 Finished building: default.size.stdout
  
-Finished building: Practica03_p3.list
- 
-01:33:12 **** Incremental Build of configuration Debug for project Practica03_p3 ****
-make -j8 all 
-arm-none-eabi-size   Practica03_p3.elf 
-   text	   data	    bss	    dec	    hex	filename
-  11300	    132	   1588	  13020	   32dc	Practica03_p3.elf
-Finished building: default.size.stdout
- 
-01:40:19 **** Incremental Build of configuration Debug for project Practica03_p3 ****
-make -j8 all 
-arm-none-eabi-gcc "../Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F429ZITx -DSTM32F4 -DNUCLEO_F429ZI -DUSE_HAL_DRIVER -DSTM32F429xx -c -I../Inc -I"/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica03_p3/Drivers/STM32F4xx_HAL_Driver/Inc" -I"/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica03_p3/Drivers/CMSIS/Include" -I"/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica03_p3/Drivers/CMSIS/Device/ST/STM32F4xx/Include" -I"/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica03_p3/Drivers/BSP/STM32F4xx_Nucleo_144" -I"/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica03_p3/Drivers/Core/Inc" -I"/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica03_p3/Drivers/API" -I"/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica03_p3/Drivers/API/inc" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Src/main.d" -MT"Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Src/main.o"
-../Src/main.c: In function 'main':
-../Src/main.c:116:18: warning: statement with no effect [-Wunused-value]
-  116 |         encendido==0;
-      |         ~~~~~~~~~^~~
-../Src/main.c:120:17: warning: statement with no effect [-Wunused-value]
-  120 |        encendido==1;
-      |        ~~~~~~~~~^~~
-../Src/main.c:100:9: warning: unused variable 'Estado_LED' [-Wunused-variable]
-  100 |     int Estado_LED = OFF ; // EStado de LED  inicial
-      |         ^~~~~~~~~~
-../Src/main.c:99:9: warning: unused variable 'LED_select' [-Wunused-variable]
-   99 |     int LED_select = LED_init; // LED inicial
-      |         ^~~~~~~~~~
-../Src/main.c:92:17: warning: unused variable 'leds' [-Wunused-variable]
-   92 |     Led_TypeDef leds[3]={LED1,LED2,LED3};
-      |                 ^~~~
-arm-none-eabi-gcc -o "Practica03_p3.elf" @"objects.list"   -mcpu=cortex-m4 -T"/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica03_p3/STM32F429ZITX_FLASH.ld" --specs=nosys.specs -Wl,-Map="Practica03_p3.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
-Finished building target: Practica03_p3.elf
- 
-arm-none-eabi-size   Practica03_p3.elf 
-arm-none-eabi-objdump -h -S  Practica03_p3.elf  > "Practica03_p3.list"
-   text	   data	    bss	    dec	    hex	filename
-  11264	    132	   1588	  12984	   32b8	Practica03_p3.elf
-Finished building: default.size.stdout
- 
-Finished building: Practica03_p3.list
- 
-01:40:23 **** Incremental Build of configuration Debug for project Practica03_p3 ****
-make -j8 all 
-arm-none-eabi-size   Practica03_p3.elf 
-   text	   data	    bss	    dec	    hex	filename
-  11264	    132	   1588	  12984	   32b8	Practica03_p3.elf
-Finished building: default.size.stdout
- 
-01:41:16 **** Incremental Build of configuration Debug for project Practica03_p3 ****
-make -j8 all 
-arm-none-eabi-gcc "../Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F429ZITx -DSTM32F4 -DNUCLEO_F429ZI -DUSE_HAL_DRIVER -DSTM32F429xx -c -I../Inc -I"/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica03_p3/Drivers/STM32F4xx_HAL_Driver/Inc" -I"/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica03_p3/Drivers/CMSIS/Include" -I"/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica03_p3/Drivers/CMSIS/Device/ST/STM32F4xx/Include" -I"/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica03_p3/Drivers/BSP/STM32F4xx_Nucleo_144" -I"/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica03_p3/Drivers/Core/Inc" -I"/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica03_p3/Drivers/API" -I"/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica03_p3/Drivers/API/inc" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Src/main.d" -MT"Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Src/main.o"
-../Src/main.c: In function 'main':
-../Src/main.c:116:18: warning: statement with no effect [-Wunused-value]
-  116 |         encendido==0;
-      |         ~~~~~~~~~^~~
-../Src/main.c:121:21: warning: statement with no effect [-Wunused-value]
-  121 |            encendido==1;
-      |            ~~~~~~~~~^~~
-../Src/main.c:100:9: warning: unused variable 'Estado_LED' [-Wunused-variable]
-  100 |     int Estado_LED = OFF ; // EStado de LED  inicial
-      |         ^~~~~~~~~~
-../Src/main.c:99:9: warning: unused variable 'LED_select' [-Wunused-variable]
-   99 |     int LED_select = LED_init; // LED inicial
-      |         ^~~~~~~~~~
-../Src/main.c:92:17: warning: unused variable 'leds' [-Wunused-variable]
-   92 |     Led_TypeDef leds[3]={LED1,LED2,LED3};
-      |                 ^~~~
-arm-none-eabi-gcc -o "Practica03_p3.elf" @"objects.list"   -mcpu=cortex-m4 -T"/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica03_p3/STM32F429ZITX_FLASH.ld" --specs=nosys.specs -Wl,-Map="Practica03_p3.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
-Finished building target: Practica03_p3.elf
- 
-arm-none-eabi-size   Practica03_p3.elf 
-arm-none-eabi-objdump -h -S  Practica03_p3.elf  > "Practica03_p3.list"
-   text	   data	    bss	    dec	    hex	filename
-  11264	    132	   1588	  12984	   32b8	Practica03_p3.elf
-Finished building: default.size.stdout
- 
-Finished building: Practica03_p3.list
- 
-01:41:27 **** Incremental Build of configuration Debug for project Practica03_p3 ****
-make -j8 all 
-arm-none-eabi-size   Practica03_p3.elf 
-   text	   data	    bss	    dec	    hex	filename
-  11264	    132	   1588	  12984	   32b8	Practica03_p3.elf
-Finished building: default.size.stdout
- 
-01:42:22 **** Incremental Build of configuration Debug for project Practica03_p3 ****
-make -j8 all 
-arm-none-eabi-gcc "../Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F429ZITx -DSTM32F4 -DNUCLEO_F429ZI -DUSE_HAL_DRIVER -DSTM32F429xx -c -I../Inc -I"/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica03_p3/Drivers/STM32F4xx_HAL_Driver/Inc" -I"/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica03_p3/Drivers/CMSIS/Include" -I"/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica03_p3/Drivers/CMSIS/Device/ST/STM32F4xx/Include" -I"/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica03_p3/Drivers/BSP/STM32F4xx_Nucleo_144" -I"/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica03_p3/Drivers/Core/Inc" -I"/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica03_p3/Drivers/API" -I"/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica03_p3/Drivers/API/inc" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Src/main.d" -MT"Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Src/main.o"
-../Src/main.c: In function 'main':
-../Src/main.c:100:9: warning: unused variable 'Estado_LED' [-Wunused-variable]
-  100 |     int Estado_LED = OFF ; // EStado de LED  inicial
-      |         ^~~~~~~~~~
-../Src/main.c:99:9: warning: unused variable 'LED_select' [-Wunused-variable]
-   99 |     int LED_select = LED_init; // LED inicial
-      |         ^~~~~~~~~~
-../Src/main.c:92:17: warning: unused variable 'leds' [-Wunused-variable]
-   92 |     Led_TypeDef leds[3]={LED1,LED2,LED3};
-      |                 ^~~~
-arm-none-eabi-gcc -o "Practica03_p3.elf" @"objects.list"   -mcpu=cortex-m4 -T"/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica03_p3/STM32F429ZITX_FLASH.ld" --specs=nosys.specs -Wl,-Map="Practica03_p3.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
-Finished building target: Practica03_p3.elf
- 
-arm-none-eabi-size   Practica03_p3.elf 
-arm-none-eabi-objdump -h -S  Practica03_p3.elf  > "Practica03_p3.list"
-   text	   data	    bss	    dec	    hex	filename
-  11272	    132	   1588	  12992	   32c0	Practica03_p3.elf
-Finished building: default.size.stdout
- 
-Finished building: Practica03_p3.list
- 
-01:42:29 **** Incremental Build of configuration Debug for project Practica03_p3 ****
-make -j8 all 
-arm-none-eabi-size   Practica03_p3.elf 
-   text	   data	    bss	    dec	    hex	filename
-  11272	    132	   1588	  12992	   32c0	Practica03_p3.elf
-Finished building: default.size.stdout
- 
-01:46:41 **** Incremental Build of configuration Debug for project Practica03_p3 ****
-make -j8 all 
-arm-none-eabi-gcc "../Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F429ZITx -DSTM32F4 -DNUCLEO_F429ZI -DUSE_HAL_DRIVER -DSTM32F429xx -c -I../Inc -I"/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica03_p3/Drivers/STM32F4xx_HAL_Driver/Inc" -I"/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica03_p3/Drivers/CMSIS/Include" -I"/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica03_p3/Drivers/CMSIS/Device/ST/STM32F4xx/Include" -I"/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica03_p3/Drivers/BSP/STM32F4xx_Nucleo_144" -I"/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica03_p3/Drivers/Core/Inc" -I"/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica03_p3/Drivers/API" -I"/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica03_p3/Drivers/API/inc" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Src/main.d" -MT"Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Src/main.o"
-../Src/main.c: In function 'main':
-../Src/main.c:100:9: warning: unused variable 'Estado_LED' [-Wunused-variable]
-  100 |     int Estado_LED = OFF ; // EStado de LED  inicial
-      |         ^~~~~~~~~~
-../Src/main.c:99:9: warning: unused variable 'LED_select' [-Wunused-variable]
-   99 |     int LED_select = LED_init; // LED inicial
-      |         ^~~~~~~~~~
-../Src/main.c:92:17: warning: unused variable 'leds' [-Wunused-variable]
-   92 |     Led_TypeDef leds[3]={LED1,LED2,LED3};
-      |                 ^~~~
-arm-none-eabi-gcc -o "Practica03_p3.elf" @"objects.list"   -mcpu=cortex-m4 -T"/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica03_p3/STM32F429ZITX_FLASH.ld" --specs=nosys.specs -Wl,-Map="Practica03_p3.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
-Finished building target: Practica03_p3.elf
- 
-arm-none-eabi-size   Practica03_p3.elf 
-arm-none-eabi-objdump -h -S  Practica03_p3.elf  > "Practica03_p3.list"
-   text	   data	    bss	    dec	    hex	filename
-  11280	    132	   1588	  13000	   32c8	Practica03_p3.elf
-Finished building: default.size.stdout
- 
-Finished building: Practica03_p3.list
- 
-01:47:03 **** Incremental Build of configuration Debug for project Practica03_p3 ****
-make -j8 all 
-arm-none-eabi-size   Practica03_p3.elf 
-   text	   data	    bss	    dec	    hex	filename
-  11280	    132	   1588	  13000	   32c8	Practica03_p3.elf
-Finished building: default.size.stdout
- 
-01:48:01 **** Incremental Build of configuration Debug for project Practica03_p3 ****
+18:48:07 **** Incremental Build of configuration Debug for project Practica03_p1 ****
 make -j8 all 
-arm-none-eabi-gcc "../Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F429ZITx -DSTM32F4 -DNUCLEO_F429ZI -DUSE_HAL_DRIVER -DSTM32F429xx -c -I../Inc -I"/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica03_p3/Drivers/STM32F4xx_HAL_Driver/Inc" -I"/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica03_p3/Drivers/CMSIS/Include" -I"/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica03_p3/Drivers/CMSIS/Device/ST/STM32F4xx/Include" -I"/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica03_p3/Drivers/BSP/STM32F4xx_Nucleo_144" -I"/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica03_p3/Drivers/Core/Inc" -I"/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica03_p3/Drivers/API" -I"/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica03_p3/Drivers/API/inc" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Src/main.d" -MT"Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Src/main.o"
-../Src/main.c: In function 'main':
-../Src/main.c:100:9: warning: unused variable 'Estado_LED' [-Wunused-variable]
-  100 |     int Estado_LED = OFF ; // EStado de LED  inicial
-      |         ^~~~~~~~~~
-../Src/main.c:99:9: warning: unused variable 'LED_select' [-Wunused-variable]
-   99 |     int LED_select = LED_init; // LED inicial
-      |         ^~~~~~~~~~
-arm-none-eabi-gcc -o "Practica03_p3.elf" @"objects.list"   -mcpu=cortex-m4 -T"/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica03_p3/STM32F429ZITX_FLASH.ld" --specs=nosys.specs -Wl,-Map="Practica03_p3.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
-Finished building target: Practica03_p3.elf
- 
-arm-none-eabi-size   Practica03_p3.elf 
-arm-none-eabi-objdump -h -S  Practica03_p3.elf  > "Practica03_p3.list"
+arm-none-eabi-size   Practica03_p1.elf 
    text	   data	    bss	    dec	    hex	filename
-  11296	    132	   1588	  13016	   32d8	Practica03_p3.elf
+  11320	    132	   1588	  13040	   32f0	Practica03_p1.elf
 Finished building: default.size.stdout
- 
-Finished building: Practica03_p3.list
  
-01:48:14 **** Incremental Build of configuration Debug for project Practica03_p3 ****
+18:48:18 **** Incremental Build of configuration Debug for project Practica03_p1 ****
 make -j8 all 
-arm-none-eabi-size   Practica03_p3.elf 
+arm-none-eabi-size   Practica03_p1.elf 
    text	   data	    bss	    dec	    hex	filename
-  11296	    132	   1588	  13016	   32d8	Practica03_p3.elf
+  11320	    132	   1588	  13040	   32f0	Practica03_p1.elf
 Finished building: default.size.stdout
  
-01:53:34 **** Incremental Build of configuration Debug for project Practica03_p3 ****
+18:48:29 **** Incremental Build of configuration Debug for project Practica03_p1 ****
 make -j8 all 
-arm-none-eabi-gcc "../Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F429ZITx -DSTM32F4 -DNUCLEO_F429ZI -DUSE_HAL_DRIVER -DSTM32F429xx -c -I../Inc -I"/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica03_p3/Drivers/STM32F4xx_HAL_Driver/Inc" -I"/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica03_p3/Drivers/CMSIS/Include" -I"/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica03_p3/Drivers/CMSIS/Device/ST/STM32F4xx/Include" -I"/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica03_p3/Drivers/BSP/STM32F4xx_Nucleo_144" -I"/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica03_p3/Drivers/Core/Inc" -I"/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica03_p3/Drivers/API" -I"/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica03_p3/Drivers/API/inc" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Src/main.d" -MT"Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Src/main.o"
-../Src/main.c: In function 'main':
-../Src/main.c:100:9: warning: unused variable 'Estado_LED' [-Wunused-variable]
-  100 |     int Estado_LED = OFF ; // EStado de LED  inicial
-      |         ^~~~~~~~~~
-../Src/main.c:99:9: warning: unused variable 'LED_select' [-Wunused-variable]
-   99 |     int LED_select = LED_init; // LED inicial
-      |         ^~~~~~~~~~
-arm-none-eabi-gcc -o "Practica03_p3.elf" @"objects.list"   -mcpu=cortex-m4 -T"/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica03_p3/STM32F429ZITX_FLASH.ld" --specs=nosys.specs -Wl,-Map="Practica03_p3.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
-Finished building target: Practica03_p3.elf
- 
-arm-none-eabi-size   Practica03_p3.elf 
-arm-none-eabi-objdump -h -S  Practica03_p3.elf  > "Practica03_p3.list"
+arm-none-eabi-size   Practica03_p1.elf 
    text	   data	    bss	    dec	    hex	filename
-  11368	    132	   1588	  13088	   3320	Practica03_p3.elf
+  11320	    132	   1588	  13040	   32f0	Practica03_p1.elf
 Finished building: default.size.stdout
- 
-Finished building: Practica03_p3.list
  
-01:53:39 **** Incremental Build of configuration Debug for project Practica03_p3 ****
+18:53:12 **** Incremental Build of configuration Debug for project Practica03_p3 ****
 make -j8 all 
 arm-none-eabi-size   Practica03_p3.elf 
    text	   data	    bss	    dec	    hex	filename
   11368	    132	   1588	  13088	   3320	Practica03_p3.elf
 Finished building: default.size.stdout
  
-01:53:54 **** Incremental Build of configuration Debug for project Practica03_p3 ****
+18:59:33 **** Incremental Build of configuration Debug for project Practica03_p3 ****
 make -j8 all 
+arm-none-eabi-gcc "../Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F429ZITx -DSTM32F4 -DNUCLEO_F429ZI -DUSE_HAL_DRIVER -DSTM32F429xx -c -I../Inc -I"/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica03_p3/Drivers/STM32F4xx_HAL_Driver/Inc" -I"/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica03_p3/Drivers/CMSIS/Include" -I"/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica03_p3/Drivers/CMSIS/Device/ST/STM32F4xx/Include" -I"/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica03_p3/Drivers/BSP/STM32F4xx_Nucleo_144" -I"/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica03_p3/Drivers/Core/Inc" -I"/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica03_p3/Drivers/API" -I"/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica03_p3/Drivers/API/inc" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Src/main.d" -MT"Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Src/main.o"
+../Src/main.c: In function 'main':
+../Src/main.c:104:19: warning: variable 'state' set but not used [-Wunused-but-set-variable]
+  104 |     GPIO_PinState state = HAL_GPIO_ReadPin (LED1,LED1_PIN);
+      |                   ^~~~~
+../Src/main.c:100:9: warning: unused variable 'Estado_LED' [-Wunused-variable]
+  100 |     int Estado_LED = OFF ; // EStado de LED  inicial
+      |         ^~~~~~~~~~
+../Src/main.c:99:9: warning: unused variable 'LED_select' [-Wunused-variable]
+   99 |     int LED_select = LED_init; // LED inicial
+      |         ^~~~~~~~~~
+arm-none-eabi-gcc -o "Practica03_p3.elf" @"objects.list"   -mcpu=cortex-m4 -T"/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica03_p3/STM32F429ZITX_FLASH.ld" --specs=nosys.specs -Wl,-Map="Practica03_p3.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: Practica03_p3.elf
+ 
 arm-none-eabi-size   Practica03_p3.elf 
+arm-none-eabi-objdump -h -S  Practica03_p3.elf  > "Practica03_p3.list"
    text	   data	    bss	    dec	    hex	filename
-  11368	    132	   1588	  13088	   3320	Practica03_p3.elf
+  11444	    132	   1588	  13164	   336c	Practica03_p3.elf
 Finished building: default.size.stdout
  
-01:54:04 **** Incremental Build of configuration Debug for project Practica03_p3 ****
+Finished building: Practica03_p3.list
+ 
+19:00:07 **** Incremental Build of configuration Debug for project Practica03_p3 ****
 make -j8 all 
 arm-none-eabi-size   Practica03_p3.elf 
    text	   data	    bss	    dec	    hex	filename
-  11368	    132	   1588	  13088	   3320	Practica03_p3.elf
+  11444	    132	   1588	  13164	   336c	Practica03_p3.elf
+Finished building: default.size.stdout
+ 
+19:00:21 **** Incremental Build of configuration Debug for project Practica03_p3 ****
+make -j8 all 
+arm-none-eabi-size   Practica03_p3.elf 
+   text	   data	    bss	    dec	    hex	filename
+  11444	    132	   1588	  13164	   336c	Practica03_p3.elf
+Finished building: default.size.stdout
+ 
+19:01:16 **** Incremental Build of configuration Debug for project Practica03_p3 ****
+make -j8 all 
+arm-none-eabi-size   Practica03_p3.elf 
+   text	   data	    bss	    dec	    hex	filename
+  11444	    132	   1588	  13164	   336c	Practica03_p3.elf
+Finished building: default.size.stdout
+ 
+19:02:57 **** Incremental Build of configuration Debug for project Practica03_p3 ****
+make -j8 all 
+arm-none-eabi-size   Practica03_p3.elf 
+   text	   data	    bss	    dec	    hex	filename
+  11444	    132	   1588	  13164	   336c	Practica03_p3.elf
+Finished building: default.size.stdout
+ 
+19:03:32 **** Incremental Build of configuration Debug for project Practica03_p3 ****
+make -j8 all 
+arm-none-eabi-size   Practica03_p3.elf 
+   text	   data	    bss	    dec	    hex	filename
+  11444	    132	   1588	  13164	   336c	Practica03_p3.elf
+Finished building: default.size.stdout
+ 
+19:04:48 **** Incremental Build of configuration Debug for project Practica03_p3 ****
+make -j8 all 
+arm-none-eabi-gcc "../Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F429ZITx -DSTM32F4 -DNUCLEO_F429ZI -DUSE_HAL_DRIVER -DSTM32F429xx -c -I../Inc -I"/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica03_p3/Drivers/STM32F4xx_HAL_Driver/Inc" -I"/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica03_p3/Drivers/CMSIS/Include" -I"/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica03_p3/Drivers/CMSIS/Device/ST/STM32F4xx/Include" -I"/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica03_p3/Drivers/BSP/STM32F4xx_Nucleo_144" -I"/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica03_p3/Drivers/Core/Inc" -I"/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica03_p3/Drivers/API" -I"/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica03_p3/Drivers/API/inc" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Src/main.d" -MT"Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Src/main.o"
+../Src/main.c: In function 'main':
+../Src/main.c:104:19: warning: variable 'state' set but not used [-Wunused-but-set-variable]
+  104 |     GPIO_PinState state = HAL_GPIO_ReadPin (LED1,LED1_PIN);
+      |                   ^~~~~
+../Src/main.c:100:9: warning: unused variable 'Estado_LED' [-Wunused-variable]
+  100 |     int Estado_LED = OFF ; // EStado de LED  inicial
+      |         ^~~~~~~~~~
+../Src/main.c:99:9: warning: unused variable 'LED_select' [-Wunused-variable]
+   99 |     int LED_select = LED_init; // LED inicial
+      |         ^~~~~~~~~~
+arm-none-eabi-gcc -o "Practica03_p3.elf" @"objects.list"   -mcpu=cortex-m4 -T"/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica03_p3/STM32F429ZITX_FLASH.ld" --specs=nosys.specs -Wl,-Map="Practica03_p3.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: Practica03_p3.elf
+ 
+arm-none-eabi-size   Practica03_p3.elf 
+arm-none-eabi-objdump -h -S  Practica03_p3.elf  > "Practica03_p3.list"
+   text	   data	    bss	    dec	    hex	filename
+  11444	    132	   1588	  13164	   336c	Practica03_p3.elf
+Finished building: default.size.stdout
+ 
+Finished building: Practica03_p3.list
+ 
+19:05:04 **** Incremental Build of configuration Debug for project Practica03_p3 ****
+make -j8 all 
+arm-none-eabi-size   Practica03_p3.elf 
+   text	   data	    bss	    dec	    hex	filename
+  11444	    132	   1588	  13164	   336c	Practica03_p3.elf
+Finished building: default.size.stdout
+ 
+19:09:08 **** Incremental Build of configuration Debug for project Practica03_p3 ****
+make -j8 all 
+arm-none-eabi-size   Practica03_p3.elf 
+   text	   data	    bss	    dec	    hex	filename
+  11444	    132	   1588	  13164	   336c	Practica03_p3.elf
+Finished building: default.size.stdout
+ 
+19:10:58 **** Incremental Build of configuration Debug for project Practica03_p3 ****
+make -j8 all 
+arm-none-eabi-size   Practica03_p3.elf 
+   text	   data	    bss	    dec	    hex	filename
+  11444	    132	   1588	  13164	   336c	Practica03_p3.elf
+Finished building: default.size.stdout
+ 
+19:11:26 **** Incremental Build of configuration Debug for project Practica03_p3 ****
+make -j8 all 
+arm-none-eabi-size   Practica03_p3.elf 
+   text	   data	    bss	    dec	    hex	filename
+  11444	    132	   1588	  13164	   336c	Practica03_p3.elf
+Finished building: default.size.stdout
+ 
+19:12:56 **** Incremental Build of configuration Debug for project Practica03_p3 ****
+make -j8 all 
+arm-none-eabi-size   Practica03_p3.elf 
+   text	   data	    bss	    dec	    hex	filename
+  11444	    132	   1588	  13164	   336c	Practica03_p3.elf
+Finished building: default.size.stdout
+ 
+19:13:02 **** Incremental Build of configuration Debug for project Practica03_p3 ****
+make -j8 all 
+arm-none-eabi-size   Practica03_p3.elf 
+   text	   data	    bss	    dec	    hex	filename
+  11444	    132	   1588	  13164	   336c	Practica03_p3.elf
+Finished building: default.size.stdout
+ 
+19:14:06 **** Incremental Build of configuration Debug for project Practica03_p3 ****
+make -j8 all 
+arm-none-eabi-size   Practica03_p3.elf 
+   text	   data	    bss	    dec	    hex	filename
+  11444	    132	   1588	  13164	   336c	Practica03_p3.elf
+Finished building: default.size.stdout
+ 
+19:14:32 **** Incremental Build of configuration Debug for project Practica03_p3 ****
+make -j8 all 
+arm-none-eabi-size   Practica03_p3.elf 
+   text	   data	    bss	    dec	    hex	filename
+  11444	    132	   1588	  13164	   336c	Practica03_p3.elf
+Finished building: default.size.stdout
+ 
+19:14:48 **** Incremental Build of configuration Debug for project Practica03_p3 ****
+make -j8 all 
+arm-none-eabi-size   Practica03_p3.elf 
+   text	   data	    bss	    dec	    hex	filename
+  11444	    132	   1588	  13164	   336c	Practica03_p3.elf
+Finished building: default.size.stdout
+ 
+19:16:13 **** Incremental Build of configuration Debug for project Practica03_p3 ****
+make -j8 all 
+arm-none-eabi-size   Practica03_p3.elf 
+   text	   data	    bss	    dec	    hex	filename
+  11444	    132	   1588	  13164	   336c	Practica03_p3.elf
+Finished building: default.size.stdout
+ 
+19:16:34 **** Incremental Build of configuration Debug for project Practica03_p3 ****
+make -j8 all 
+arm-none-eabi-size   Practica03_p3.elf 
+   text	   data	    bss	    dec	    hex	filename
+  11444	    132	   1588	  13164	   336c	Practica03_p3.elf
+Finished building: default.size.stdout
+ 
+19:16:59 **** Incremental Build of configuration Debug for project Practica03_p3 ****
+make -j8 all 
+arm-none-eabi-size   Practica03_p3.elf 
+   text	   data	    bss	    dec	    hex	filename
+  11444	    132	   1588	  13164	   336c	Practica03_p3.elf
+Finished building: default.size.stdout
+ 
+19:17:26 **** Incremental Build of configuration Debug for project Practica03_p3 ****
+make -j8 all 
+arm-none-eabi-size   Practica03_p3.elf 
+   text	   data	    bss	    dec	    hex	filename
+  11444	    132	   1588	  13164	   336c	Practica03_p3.elf
+Finished building: default.size.stdout
+ 
+19:21:36 **** Incremental Build of configuration Debug for project Practica03_p3 ****
+make -j8 all 
+arm-none-eabi-gcc "../Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F429ZITx -DSTM32F4 -DNUCLEO_F429ZI -DUSE_HAL_DRIVER -DSTM32F429xx -c -I../Inc -I"/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica03_p3/Drivers/STM32F4xx_HAL_Driver/Inc" -I"/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica03_p3/Drivers/CMSIS/Include" -I"/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica03_p3/Drivers/CMSIS/Device/ST/STM32F4xx/Include" -I"/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica03_p3/Drivers/BSP/STM32F4xx_Nucleo_144" -I"/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica03_p3/Drivers/Core/Inc" -I"/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica03_p3/Drivers/API" -I"/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica03_p3/Drivers/API/inc" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Src/main.d" -MT"Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Src/main.o"
+../Src/main.c: In function 'main':
+../Src/main.c:104:19: warning: variable 'state' set but not used [-Wunused-but-set-variable]
+  104 |     GPIO_PinState state = HAL_GPIO_ReadPin (LED1,LED1_PIN);
+      |                   ^~~~~
+../Src/main.c:100:9: warning: unused variable 'Estado_LED' [-Wunused-variable]
+  100 |     int Estado_LED = OFF ; // EStado de LED  inicial
+      |         ^~~~~~~~~~
+../Src/main.c:99:9: warning: unused variable 'LED_select' [-Wunused-variable]
+   99 |     int LED_select = LED_init; // LED inicial
+      |         ^~~~~~~~~~
+arm-none-eabi-gcc -o "Practica03_p3.elf" @"objects.list"   -mcpu=cortex-m4 -T"/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica03_p3/STM32F429ZITX_FLASH.ld" --specs=nosys.specs -Wl,-Map="Practica03_p3.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: Practica03_p3.elf
+ 
+arm-none-eabi-size   Practica03_p3.elf 
+arm-none-eabi-objdump -h -S  Practica03_p3.elf  > "Practica03_p3.list"
+   text	   data	    bss	    dec	    hex	filename
+  11444	    132	   1588	  13164	   336c	Practica03_p3.elf
+Finished building: default.size.stdout
+ 
+Finished building: Practica03_p3.list
+ 
+19:22:22 **** Incremental Build of configuration Debug for project Practica03_p3 ****
+make -j8 all 
+arm-none-eabi-size   Practica03_p3.elf 
+   text	   data	    bss	    dec	    hex	filename
+  11444	    132	   1588	  13164	   336c	Practica03_p3.elf
+Finished building: default.size.stdout
+ 
+21:48:58 **** Incremental Build of configuration Debug for project Practica03_p3 ****
+make -j8 all 
+arm-none-eabi-size   Practica03_p3.elf 
+   text	   data	    bss	    dec	    hex	filename
+  11444	    132	   1588	  13164	   336c	Practica03_p3.elf
 Finished building: default.size.stdout
  

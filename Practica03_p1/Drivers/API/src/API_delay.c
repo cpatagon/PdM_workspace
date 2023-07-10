@@ -16,7 +16,7 @@ en `false´. */
 void delayInit( delay_t * delay, tick_t duration )
 {
 	assert(delay != NULL);
-	assert(duration != NULL);
+	assert(duration >= 0);
 	delay->duration = duration;
 	delay->running = false;
 }

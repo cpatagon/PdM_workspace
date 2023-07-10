@@ -101,7 +101,7 @@ int main(void)
 
     // esto funciona
     //HAL_GPIO_ReadPin (LED1,LED1_PIN) != 0x0001
-    //GPIO_PinState state = HAL_GPIO_ReadPin (LED1,LED1_PIN);
+    GPIO_PinState state = HAL_GPIO_ReadPin (LED1,LED1_PIN);
     //BSP_LED_Off(LED1);
 
 	/* Infinite loop */
@@ -109,6 +109,8 @@ int main(void)
     int i = 0;
 
     while (1) {
+    	state = HAL_GPIO_ReadPin (LED1,LED1_PIN);
+
         if (delayRead(&Delay1)){
             if (encendido[i]){
                 BSP_LED_On(leds[i]);
