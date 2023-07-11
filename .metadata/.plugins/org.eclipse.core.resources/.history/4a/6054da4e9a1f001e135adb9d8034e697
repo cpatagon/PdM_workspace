@@ -24,6 +24,7 @@
 #include "main.h"
 #include "stm32f4xx_hal.h"
 
+
 /** @addtogroup STM32F4xx_HAL_Examples
  * @{
  */
@@ -91,6 +92,9 @@ int main(void)
     Led_TypeDef leds[3]={LED1,LED2,LED3};
 
     delayInit(&Delay1, TIME1); // Inicializa el retardo a ticks
+
+    /* uint16_t LED_select = LED_init; // LED inicial
+    uint16_t Estado_LED = OFF ; // EStado de LED  inicial */
 
     /* Partimos con una marca ON  para que los tres LED para que sean
      * encendidos, la primera posición es para el LED1, la segunda es LED2
