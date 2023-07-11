@@ -106,7 +106,9 @@ int main(void)
         }
         if (delayRead(&Delay1000)) { // El retardo se ha cumplido, encender o apagar LED3
               BSP_LED_Toggle(LED3);
+
         }
+        // Otro código
     }
     return 0;
 }
