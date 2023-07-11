@@ -28,12 +28,9 @@ void delayInit( delay_t * delay, tick_t duration )
 del retardo y devolver un valor booleano que indique si el tiempo se cumplió o no.
 ○ Cuando el tiempo se cumple se debe cambiar el flag running a false.*/
 
-
-
 bool_t delayRead( delay_t * delay ){
 
-	static bool_t retValue;
-	retValue = false;
+	bool_t retValue = false;
 
 	assert(delay !=NULL);
 	assert(delay->duration >= 0);
