@@ -2,9 +2,9 @@
  ******************************************************************************
  * @file
  * @author  Luis Gómez
- * Objetivo : Implementar un módulo de software para trabajar
- * con retardos no bloqueantes que son aplicados a LEDs de la
- * placa STM32F4
+ * Objetivo : Implementar un módulo de software para trabajar con retardos no bloqueantes
+ * que son aplicados a LEDs de la placa STM32F4
+ *
  *
  ******************************************************************************
  * @attention
@@ -92,6 +92,7 @@ int main(void)
 
     delayInit(&Delay1, TIME1); // Inicializa el retardo a ticks
 
+
     uint16_t LED_select = LED_init; // LED inicial
     uint16_t Estado_LED = OFF ; // EStado de LED  inicial
 
@@ -104,7 +105,7 @@ int main(void)
         if (delayRead(&Delay1)){ //retardos no bloqueantes
             if (encendido[i]){    // verifica la marca si hay que encender  o apagar el LED en la posición i
                 BSP_LED_On(leds[i]);  // Si la marca dice ON (1), Enciende el LED de la posición i
-                encendido[i] = OFF;   // y deja una marca OFF para luego apagar el LED i una vez que volvamos a entrar
+                encendido[i] = OFF;   // y deja una marca para lueg apagar el LED i una vez que volvamos a entrar
             }
             else
             {  // si la marca dice OFF apaga el led de la posición i
@@ -114,6 +115,7 @@ int main(void)
             }
         }
     }
+
     return 0;
 }
 
