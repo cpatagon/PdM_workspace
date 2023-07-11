@@ -924,3 +924,101 @@ arm-none-eabi-size   Practica03_p3.elf
   11344	    132	   1596	  13072	   3310	Practica03_p3.elf
 Finished building: default.size.stdout
  
+23:45:57 **** Incremental Build of configuration Debug for project Practica03_p3 ****
+make -j8 all 
+arm-none-eabi-size   Practica03_p3.elf 
+   text	   data	    bss	    dec	    hex	filename
+  11344	    132	   1596	  13072	   3310	Practica03_p3.elf
+Finished building: default.size.stdout
+ 
+23:46:43 **** Build of configuration Debug for project Practica03_p2 ****
+make -j8 all 
+arm-none-eabi-gcc "../Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F429ZITx -DSTM32F4 -DNUCLEO_F429ZI -DUSE_HAL_DRIVER -DSTM32F429xx -c -I../Inc -I"/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica03_p2/Drivers/STM32F4xx_HAL_Driver/Inc" -I"/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica03_p2/Drivers/CMSIS/Include" -I"/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica03_p2/Drivers/CMSIS/Device/ST/STM32F4xx/Include" -I"/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica03_p2/Drivers/BSP/STM32F4xx_Nucleo_144" -I"/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica03_p2/Drivers/Core/Inc" -I"/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica03_p2/Drivers/API" -I"/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica03_p2/Drivers/API/inc" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Src/main.d" -MT"Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Src/main.o"
+arm-none-eabi-gcc "../Drivers/API/src/API_delay.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F429ZITx -DSTM32F4 -DNUCLEO_F429ZI -DUSE_HAL_DRIVER -DSTM32F429xx -c -I../Inc -I"/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica03_p2/Drivers/STM32F4xx_HAL_Driver/Inc" -I"/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica03_p2/Drivers/CMSIS/Include" -I"/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica03_p2/Drivers/CMSIS/Device/ST/STM32F4xx/Include" -I"/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica03_p2/Drivers/BSP/STM32F4xx_Nucleo_144" -I"/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica03_p2/Drivers/Core/Inc" -I"/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica03_p2/Drivers/API" -I"/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica03_p2/Drivers/API/inc" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Drivers/API/src/API_delay.d" -MT"Drivers/API/src/API_delay.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Drivers/API/src/API_delay.o"
+arm-none-eabi-gcc -o "Practica03_p2.elf" @"objects.list"   -mcpu=cortex-m4 -T"/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica03_p2/STM32F429ZITX_FLASH.ld" --specs=nosys.specs -Wl,-Map="Practica03_p2.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: Practica03_p2.elf
+ 
+arm-none-eabi-size   Practica03_p2.elf 
+arm-none-eabi-objdump -h -S  Practica03_p2.elf  > "Practica03_p2.list"
+   text	   data	    bss	    dec	    hex	filename
+  11312	    132	   1596	  13040	   32f0	Practica03_p2.elf
+Finished building: default.size.stdout
+ 
+Finished building: Practica03_p2.list
+ 
+23:46:59 **** Incremental Build of configuration Debug for project Practica03_p2 ****
+make -j8 all 
+arm-none-eabi-size   Practica03_p2.elf 
+   text	   data	    bss	    dec	    hex	filename
+  11312	    132	   1596	  13040	   32f0	Practica03_p2.elf
+Finished building: default.size.stdout
+ 
+23:47:16 **** Incremental Build of configuration Debug for project Practica03_p2 ****
+make -j8 all 
+arm-none-eabi-size   Practica03_p2.elf 
+   text	   data	    bss	    dec	    hex	filename
+  11312	    132	   1596	  13040	   32f0	Practica03_p2.elf
+Finished building: default.size.stdout
+ 
+23:49:56 **** Incremental Build of configuration Debug for project Practica03_p2 ****
+make -j8 all 
+arm-none-eabi-gcc "../Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F429ZITx -DSTM32F4 -DNUCLEO_F429ZI -DUSE_HAL_DRIVER -DSTM32F429xx -c -I../Inc -I"/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica03_p2/Drivers/STM32F4xx_HAL_Driver/Inc" -I"/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica03_p2/Drivers/CMSIS/Include" -I"/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica03_p2/Drivers/CMSIS/Device/ST/STM32F4xx/Include" -I"/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica03_p2/Drivers/BSP/STM32F4xx_Nucleo_144" -I"/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica03_p2/Drivers/Core/Inc" -I"/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica03_p2/Drivers/API" -I"/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica03_p2/Drivers/API/inc" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Src/main.d" -MT"Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Src/main.o"
+arm-none-eabi-gcc -o "Practica03_p2.elf" @"objects.list"   -mcpu=cortex-m4 -T"/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica03_p2/STM32F429ZITX_FLASH.ld" --specs=nosys.specs -Wl,-Map="Practica03_p2.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: Practica03_p2.elf
+ 
+arm-none-eabi-size   Practica03_p2.elf 
+arm-none-eabi-objdump -h -S  Practica03_p2.elf  > "Practica03_p2.list"
+   text	   data	    bss	    dec	    hex	filename
+  11312	    132	   1596	  13040	   32f0	Practica03_p2.elf
+Finished building: default.size.stdout
+ 
+Finished building: Practica03_p2.list
+ 
+23:50:18 **** Incremental Build of configuration Debug for project Practica03_p2 ****
+make -j8 all 
+arm-none-eabi-size   Practica03_p2.elf 
+   text	   data	    bss	    dec	    hex	filename
+  11312	    132	   1596	  13040	   32f0	Practica03_p2.elf
+Finished building: default.size.stdout
+ 
+23:53:57 **** Build of configuration Debug for project Practica03_p1 ****
+make -j8 all 
+arm-none-eabi-gcc "../Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F429ZITx -DSTM32F4 -DNUCLEO_F429ZI -DUSE_HAL_DRIVER -DSTM32F429xx -c -I../Inc -I"/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica03_p1/Drivers/STM32F4xx_HAL_Driver/Inc" -I"/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica03_p1/Drivers/CMSIS/Include" -I"/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica03_p1/Drivers/CMSIS/Device/ST/STM32F4xx/Include" -I"/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica03_p1/Drivers/BSP/STM32F4xx_Nucleo_144" -I"/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica03_p1/Drivers/Core/Inc" -I"/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica03_p1/Drivers/API" -I"/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica03_p1/Drivers/API/inc" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Src/main.d" -MT"Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Src/main.o"
+arm-none-eabi-gcc "../Drivers/API/src/API_delay.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F429ZITx -DSTM32F4 -DNUCLEO_F429ZI -DUSE_HAL_DRIVER -DSTM32F429xx -c -I../Inc -I"/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica03_p1/Drivers/STM32F4xx_HAL_Driver/Inc" -I"/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica03_p1/Drivers/CMSIS/Include" -I"/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica03_p1/Drivers/CMSIS/Device/ST/STM32F4xx/Include" -I"/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica03_p1/Drivers/BSP/STM32F4xx_Nucleo_144" -I"/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica03_p1/Drivers/Core/Inc" -I"/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica03_p1/Drivers/API" -I"/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica03_p1/Drivers/API/inc" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Drivers/API/src/API_delay.d" -MT"Drivers/API/src/API_delay.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Drivers/API/src/API_delay.o"
+In file included from ../Drivers/API/src/API_delay.c:10:
+../Drivers/API/src/API_delay.c: In function 'delayWrite':
+../Drivers/API/src/API_delay.c:54:18: warning: comparison between pointer and integer
+   54 |  assert(duration != NULL);
+      |                  ^~
+arm-none-eabi-gcc -o "Practica03_p1.elf" @"objects.list"   -mcpu=cortex-m4 -T"/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica03_p1/STM32F429ZITX_FLASH.ld" --specs=nosys.specs -Wl,-Map="Practica03_p1.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: Practica03_p1.elf
+ 
+arm-none-eabi-size   Practica03_p1.elf 
+arm-none-eabi-objdump -h -S  Practica03_p1.elf  > "Practica03_p1.list"
+   text	   data	    bss	    dec	    hex	filename
+  11328	    132	   1596	  13056	   3300	Practica03_p1.elf
+Finished building: default.size.stdout
+ 
+Finished building: Practica03_p1.list
+ 
+23:54:32 **** Incremental Build of configuration Debug for project Practica03_p1 ****
+make -j8 all 
+arm-none-eabi-size   Practica03_p1.elf 
+   text	   data	    bss	    dec	    hex	filename
+  11328	    132	   1596	  13056	   3300	Practica03_p1.elf
+Finished building: default.size.stdout
+ 
+23:54:50 **** Incremental Build of configuration Debug for project Practica03_p1 ****
+make -j8 all 
+arm-none-eabi-size   Practica03_p1.elf 
+   text	   data	    bss	    dec	    hex	filename
+  11328	    132	   1596	  13056	   3300	Practica03_p1.elf
+Finished building: default.size.stdout
+ 
+23:54:59 **** Incremental Build of configuration Debug for project Practica03_p1 ****
+make -j8 all 
+arm-none-eabi-size   Practica03_p1.elf 
+   text	   data	    bss	    dec	    hex	filename
+  11328	    132	   1596	  13056	   3300	Practica03_p1.elf
+Finished building: default.size.stdout
+ 

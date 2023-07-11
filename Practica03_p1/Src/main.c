@@ -2,10 +2,14 @@
  ******************************************************************************
  * @file
  * @author  Luis Gómez
- * Objetivo : Implementar un módulo de software para trabajar con retardos no bloqueantes
+ * Objetivo : Implementar un módulo de software para trabajar con retardos
+ * no bloqueantes
  * que son aplicados a LEDs de la placa STM32F4
- * Implementar un programa que utilice retardos no bloqueantes y haga titilar en forma periódica e independiente los tres leds de la placa NUCLEO-F429ZI de acuerdo a una secuencia predeterminada como en la práctica 1.
- * Cada led debe permanecer encendido 200 ms.  No debe encenderse más de un led simultáneamente en ningún momento.
+ * Implementar un programa que utilice retardos no bloqueantes y haga titilar
+ * en forma periódica e independiente los tres leds de la placa NUCLEO-F429ZI
+ * de acuerdo a una secuencia predeterminada como en la práctica 1.
+ * Cada led debe permanecer encendido 200 ms.  No debe encenderse más de un l
+ * ed simultáneamente en ningún momento.
  *
  *
  ******************************************************************************
@@ -85,8 +89,8 @@ int main(void)
     /* Inicializamos las tres estructuras con distinto tiempo (100,500,1000)*/
 
     delayInit(&Delay100, 100); // Inicializa el retardo a 100 ticks
-    delayInit(&Delay500, 500); //
-    delayInit(&Delay1000, 1000); //
+    delayInit(&Delay500, 500); // Inicializa el retardo a 500 ticks
+    delayInit(&Delay1000, 1000); // Inicializa el retardo a 1000 ticks
 
 
 	/* Infinite loop */
