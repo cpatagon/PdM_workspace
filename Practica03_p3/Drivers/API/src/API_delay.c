@@ -25,10 +25,8 @@ void delayInit( delay_t * delay, tick_t duration )
 ○ false, tomar marca de tiempo y cambiar running a ‘true’
 ○ true, hacer la cuenta para saber si el tiempo del retardo se cumplió o no:
 ‘marca de tiempo actual - marca de tiempo inicial es mayor o igual a duración
-del retardo’?
-y devolver un valor booleano que indique si el tiempo se cumplió o no.
-○
-Cuando el tiempo se cumple se debe cambiar el flag running a false.*/
+del retardo y devolver un valor booleano que indique si el tiempo se cumplió o no.
+○ Cuando el tiempo se cumple se debe cambiar el flag running a false.*/
 
 bool_t delayRead( delay_t * delay ){
 

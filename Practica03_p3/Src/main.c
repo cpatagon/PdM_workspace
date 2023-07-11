@@ -87,17 +87,24 @@ int main(void)
 
     delay_t Delay1;
 
-    Led_TypeDef leds[3]={LED1,LED2,LED3};
     /* Inicializamos las tres estructuras con distinto tiempo (100,500,1000)*/
+
+    Led_TypeDef leds[3]={LED1,LED2,LED3};
 
     delayInit(&Delay1, TIME1); // Inicializa el retardo a ticks
 
-    uint16_t LED_select = LED_init; // LED inicial
-    uint16_t Estado_LED = OFF ; // EStado de LED  inicial
+    /* uint16_t LED_select = LED_init; // LED inicial
+    uint16_t Estado_LED = OFF ; // EStado de LED  inicial */
 
-    uint32_t encendido[3] = {ON, ON, ON}; //  Partimos con una marca para que los tres LED para que sean encendidos la primera posición es LED1, la segunda es LED2 y así sucesivamente
-    uint32_t i = 0; // generamos un contador que nos permite recorrer las posiciones de cada uno de los LED en la lista desde la posición 1
+    /* Partimos con una marca ON  para que los tres LED para que sean
+     * encendidos, la primera posición es para el LED1, la segunda es LED2
+     * y así sucesivamente */
 
+    uint32_t encendido[3] = {ON, ON, ON};
+
+    /* generamos un contador (i) que nos permite recorrer las posiciones de
+     cada uno de los LED en la lista desde la posición 1 */
+    uint32_t i = 0;
 	/* Infinite loop */
 
     while (1) {
