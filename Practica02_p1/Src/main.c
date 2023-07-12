@@ -104,7 +104,7 @@ int main(void)
               BSP_LED_Toggle(LED3);
 
         }
-        // Otro código
+
     }
     return 0;
 }
