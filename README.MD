@@ -1,5 +1,7 @@
 Autor: Luis Alberto Gómez Parada
 
+Placa: STM32F429ZI
+
 
 Objetivo: desarrollo de prácticas del curso de programación   en sistemas embebidos de la especialidad en sistemas embebidos. Este archivo ayuda a entender la estructura de archivos que contiene los ejercicios realizados durante la especialización. Las prácticas se organizan en los siguientes archivos:
 
