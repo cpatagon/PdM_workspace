@@ -1,7 +1,7 @@
 LaunchTargetManager/org.eclipse.launchbar.core.launchTargetType.local,Local/arch=x86_64
 LaunchTargetManager/org.eclipse.launchbar.core.launchTargetType.local,Local/name=Local
 LaunchTargetManager/org.eclipse.launchbar.core.launchTargetType.local,Local/os=linux
-configDescList=org.eclipse.launchbar.core.descriptorType.default\:New_configuration,org.eclipse.launchbar.core.descriptorType.default\:New_configuration (1),org.eclipse.cdt.dsf.gdb.gdbRemotedescriptorType\:Ej1_pushButton Debug,org.eclipse.cdt.dsf.gdb.gdbRemotedescriptorType\:Practica01_p2,org.eclipse.cdt.dsf.gdb.gdbRemotedescriptorType\:Practica02_p1
+configDescList=org.eclipse.launchbar.core.descriptorType.default\:New_configuration,org.eclipse.launchbar.core.descriptorType.default\:New_configuration (1),org.eclipse.cdt.dsf.gdb.gdbRemotedescriptorType\:Ejercicio_2 Debug,org.eclipse.cdt.dsf.gdb.gdbRemotedescriptorType\:Ejercicio_3 Debug
 eclipse.preferences.version=1
 org.eclipse.cdt.dsf.gdb.gdbRemotedescriptorType\:1.Ejemplo_led\ Debug/activeLaunchMode=run
 org.eclipse.cdt.dsf.gdb.gdbRemotedescriptorType\:1.Ejemplo_led\ Debug/activeLaunchTarget=null\:---
@@ -16,6 +16,7 @@ org.eclipse.cdt.dsf.gdb.gdbRemotedescriptorType\:Ej1_pushButton/activeLaunchTarg
 org.eclipse.cdt.dsf.gdb.gdbRemotedescriptorType\:Ej2_uart/activeLaunchMode=debug
 org.eclipse.cdt.dsf.gdb.gdbRemotedescriptorType\:Ej2_uart/activeLaunchTarget=null\:---
 org.eclipse.cdt.dsf.gdb.gdbRemotedescriptorType\:Ejercicio1/activeLaunchMode=debug
+org.eclipse.cdt.dsf.gdb.gdbRemotedescriptorType\:Ejercicio_2\ Debug/activeLaunchTarget=null\:---
 org.eclipse.cdt.dsf.gdb.gdbRemotedescriptorType\:Ejercicio_delayNB_1\ Debug/activeLaunchMode=debug
 org.eclipse.cdt.dsf.gdb.gdbRemotedescriptorType\:Ejercicio_delayNB_1\ Debug/activeLaunchTarget=null\:---
 org.eclipse.cdt.dsf.gdb.gdbRemotedescriptorType\:PDM_E1\ Debug/activeLaunchTarget=null\:---

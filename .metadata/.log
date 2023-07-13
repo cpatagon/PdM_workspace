@@ -6981,3 +6981,6 @@ java.lang.Exception: Project 'Practica01_p1' is not open.
 
 !ENTRY com.st.stm32cube.common.projectcreation 4 0 2023-07-12 20:32:33.853
 !MESSAGE Project is null
+
+!ENTRY org.eclipse.cdt.core 1 0 2023-07-12 20:52:06.436
+!MESSAGE Indexed 'Ejercicio_3' (26 sources, 63 headers) in 1.36 sec: 5,768 declarations; 13,720 references; 34 unresolved inclusions; 516 syntax errors; 7,757 unresolved names (28%)
