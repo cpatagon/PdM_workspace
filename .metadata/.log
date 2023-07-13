@@ -6650,3 +6650,334 @@ java.lang.Exception: Project 'Practica01_p1' is not open.
 
 !ENTRY com.st.stm32cube.ide.mcu.debug.launch 2 0 2023-07-12 19:32:08.826
 !MESSAGE Won't launch debug session since we failed to locate the binary.
+
+!ENTRY org.eclipse.core.resources 4 77 2023-07-12 19:50:43.110
+!MESSAGE Invalid project description.
+!SUBENTRY 1 unknown 0 0 2023-07-12 19:50:43.110
+!MESSAGE OK
+!SUBENTRY 1 org.eclipse.core.resources 4 77 2023-07-12 19:50:43.110
+!MESSAGE /home/lgomez/maestriauba/SMT32/revisiones/2/CESE_PdM_workspace-main/Practica_1 overlaps the location of another project: 'Practica_1'
+
+!ENTRY com.st.stm32cube.common.projectcreation 4 0 2023-07-12 19:50:43.110
+!MESSAGE Project is null
+
+!ENTRY org.eclipse.core.resources 4 77 2023-07-12 19:50:45.381
+!MESSAGE Invalid project description.
+!SUBENTRY 1 unknown 0 0 2023-07-12 19:50:45.381
+!MESSAGE OK
+!SUBENTRY 1 org.eclipse.core.resources 4 77 2023-07-12 19:50:45.381
+!MESSAGE /home/lgomez/maestriauba/SMT32/revisiones/2/CESE_PdM_workspace-main/Practica_1 overlaps the location of another project: 'Practica_1'
+
+!ENTRY com.st.stm32cube.common.projectcreation 4 0 2023-07-12 19:50:45.381
+!MESSAGE Project is null
+
+!ENTRY org.eclipse.core.resources 4 77 2023-07-12 19:50:45.702
+!MESSAGE Invalid project description.
+!SUBENTRY 1 unknown 0 0 2023-07-12 19:50:45.702
+!MESSAGE OK
+!SUBENTRY 1 org.eclipse.core.resources 4 77 2023-07-12 19:50:45.702
+!MESSAGE /home/lgomez/maestriauba/SMT32/revisiones/2/CESE_PdM_workspace-main/Practica_1 overlaps the location of another project: 'Practica_1'
+
+!ENTRY com.st.stm32cube.common.projectcreation 4 0 2023-07-12 19:50:45.703
+!MESSAGE Project is null
+
+!ENTRY org.eclipse.cdt.core 1 0 2023-07-12 19:50:52.236
+!MESSAGE Indexed 'Practica_1' (102 sources, 290 headers) in 9.07 sec: 22,537 declarations; 50,019 references; 2 unresolved inclusions; 392 syntax errors; 5,182 unresolved names (6.7%)
+
+!ENTRY org.eclipse.core.resources 4 77 2023-07-12 19:51:33.775
+!MESSAGE Invalid project description.
+!SUBENTRY 1 unknown 0 0 2023-07-12 19:51:33.775
+!MESSAGE OK
+!SUBENTRY 1 org.eclipse.core.resources 4 77 2023-07-12 19:51:33.775
+!MESSAGE /home/lgomez/maestriauba/SMT32/revisiones/2/CESE_PdM_workspace-main/Practica_1 overlaps the location of another project: 'Practica_1'
+
+!ENTRY com.st.stm32cube.common.projectcreation 4 0 2023-07-12 19:51:33.776
+!MESSAGE Project is null
+
+!ENTRY org.eclipse.core.resources 4 77 2023-07-12 19:51:52.847
+!MESSAGE Invalid project description.
+!SUBENTRY 1 unknown 0 0 2023-07-12 19:51:52.847
+!MESSAGE OK
+!SUBENTRY 1 org.eclipse.core.resources 4 77 2023-07-12 19:51:52.847
+!MESSAGE /home/lgomez/maestriauba/SMT32/revisiones/2/CESE_PdM_workspace-main/Practica_1 overlaps the location of another project: 'Practica_1'
+
+!ENTRY com.st.stm32cube.common.projectcreation 4 0 2023-07-12 19:51:52.847
+!MESSAGE Project is null
+
+!ENTRY org.eclipse.core.resources 4 77 2023-07-12 19:55:12.853
+!MESSAGE Invalid project description.
+!SUBENTRY 1 unknown 0 0 2023-07-12 19:55:12.854
+!MESSAGE OK
+!SUBENTRY 1 org.eclipse.core.resources 4 77 2023-07-12 19:55:12.854
+!MESSAGE /home/lgomez/maestriauba/SMT32/revisiones/2/CESE_PdM_workspace-main/Practica_1 overlaps the location of another project: 'Practica_1'
+
+!ENTRY com.st.stm32cube.common.projectcreation 4 0 2023-07-12 19:55:12.854
+!MESSAGE Project is null
+
+!ENTRY org.eclipse.core.resources 4 77 2023-07-12 19:56:13.073
+!MESSAGE Invalid project description.
+!SUBENTRY 1 unknown 0 0 2023-07-12 19:56:13.073
+!MESSAGE OK
+!SUBENTRY 1 org.eclipse.core.resources 4 77 2023-07-12 19:56:13.073
+!MESSAGE /home/lgomez/maestriauba/SMT32/revisiones/2/CESE_PdM_workspace-main/Practica_1 overlaps the location of another project: 'Practica_1'
+
+!ENTRY com.st.stm32cube.common.projectcreation 4 0 2023-07-12 19:56:13.074
+!MESSAGE Project is null
+
+!ENTRY org.eclipse.core.resources 4 77 2023-07-12 19:56:26.886
+!MESSAGE Invalid project description.
+!SUBENTRY 1 unknown 0 0 2023-07-12 19:56:26.886
+!MESSAGE OK
+!SUBENTRY 1 org.eclipse.core.resources 4 77 2023-07-12 19:56:26.886
+!MESSAGE /home/lgomez/maestriauba/SMT32/revisiones/2/CESE_PdM_workspace-main/Practica_1 overlaps the location of another project: 'Practica_1'
+
+!ENTRY com.st.stm32cube.common.projectcreation 4 0 2023-07-12 19:56:26.886
+!MESSAGE Project is null
+
+!ENTRY org.eclipse.core.resources 4 77 2023-07-12 19:56:31.680
+!MESSAGE Invalid project description.
+!SUBENTRY 1 unknown 0 0 2023-07-12 19:56:31.680
+!MESSAGE OK
+!SUBENTRY 1 org.eclipse.core.resources 4 77 2023-07-12 19:56:31.680
+!MESSAGE /home/lgomez/maestriauba/SMT32/revisiones/2/CESE_PdM_workspace-main/Practica_1 overlaps the location of another project: 'Practica_1'
+
+!ENTRY com.st.stm32cube.common.projectcreation 4 0 2023-07-12 19:56:31.681
+!MESSAGE Project is null
+
+!ENTRY org.eclipse.core.resources 4 77 2023-07-12 19:56:38.700
+!MESSAGE Invalid project description.
+!SUBENTRY 1 unknown 0 0 2023-07-12 19:56:38.700
+!MESSAGE OK
+!SUBENTRY 1 org.eclipse.core.resources 4 77 2023-07-12 19:56:38.700
+!MESSAGE /home/lgomez/maestriauba/SMT32/revisiones/2/CESE_PdM_workspace-main/Practica_1 overlaps the location of another project: 'Practica_1'
+
+!ENTRY com.st.stm32cube.common.projectcreation 4 0 2023-07-12 19:56:38.700
+!MESSAGE Project is null
+
+!ENTRY org.eclipse.core.resources 4 77 2023-07-12 19:57:00.976
+!MESSAGE Invalid project description.
+!SUBENTRY 1 unknown 0 0 2023-07-12 19:57:00.976
+!MESSAGE OK
+!SUBENTRY 1 org.eclipse.core.resources 4 77 2023-07-12 19:57:00.976
+!MESSAGE /home/lgomez/maestriauba/SMT32/revisiones/2/CESE_PdM_workspace-main/Practica_1 overlaps the location of another project: 'Practica_1'
+
+!ENTRY com.st.stm32cube.common.projectcreation 4 0 2023-07-12 19:57:00.976
+!MESSAGE Project is null
+
+!ENTRY org.eclipse.core.resources 4 77 2023-07-12 19:57:26.139
+!MESSAGE Invalid project description.
+!SUBENTRY 1 unknown 0 0 2023-07-12 19:57:26.139
+!MESSAGE OK
+!SUBENTRY 1 org.eclipse.core.resources 4 77 2023-07-12 19:57:26.139
+!MESSAGE /home/lgomez/maestriauba/SMT32/revisiones/2/CESE_PdM_workspace-main/Practica_1 overlaps the location of another project: 'Practica_1'
+
+!ENTRY com.st.stm32cube.common.projectcreation 4 0 2023-07-12 19:57:26.140
+!MESSAGE Project is null
+
+!ENTRY org.eclipse.core.resources 4 77 2023-07-12 20:08:43.438
+!MESSAGE Invalid project description.
+!SUBENTRY 1 unknown 0 0 2023-07-12 20:08:43.438
+!MESSAGE OK
+!SUBENTRY 1 org.eclipse.core.resources 4 77 2023-07-12 20:08:43.438
+!MESSAGE /home/lgomez/maestriauba/SMT32/revisiones/2/CESE_PdM_workspace-main/Practica_1 overlaps the location of another project: 'Practica_1'
+
+!ENTRY com.st.stm32cube.common.projectcreation 4 0 2023-07-12 20:08:43.438
+!MESSAGE Project is null
+
+!ENTRY org.eclipse.core.resources 4 77 2023-07-12 20:08:50.918
+!MESSAGE Invalid project description.
+!SUBENTRY 1 unknown 0 0 2023-07-12 20:08:50.918
+!MESSAGE OK
+!SUBENTRY 1 org.eclipse.core.resources 4 77 2023-07-12 20:08:50.918
+!MESSAGE /home/lgomez/maestriauba/SMT32/revisiones/2/CESE_PdM_workspace-main/Practica_1 overlaps the location of another project: 'Practica_1'
+
+!ENTRY com.st.stm32cube.common.projectcreation 4 0 2023-07-12 20:08:50.918
+!MESSAGE Project is null
+
+!ENTRY org.eclipse.core.resources 4 77 2023-07-12 20:08:57.340
+!MESSAGE Invalid project description.
+!SUBENTRY 1 unknown 0 0 2023-07-12 20:08:57.340
+!MESSAGE OK
+!SUBENTRY 1 org.eclipse.core.resources 4 77 2023-07-12 20:08:57.340
+!MESSAGE /home/lgomez/maestriauba/SMT32/revisiones/2/CESE_PdM_workspace-main/Practica_1 overlaps the location of another project: 'Practica_1'
+
+!ENTRY com.st.stm32cube.common.projectcreation 4 0 2023-07-12 20:08:57.340
+!MESSAGE Project is null
+
+!ENTRY org.eclipse.core.resources 4 77 2023-07-12 20:09:51.618
+!MESSAGE Invalid project description.
+!SUBENTRY 1 unknown 0 0 2023-07-12 20:09:51.618
+!MESSAGE OK
+!SUBENTRY 1 org.eclipse.core.resources 4 77 2023-07-12 20:09:51.619
+!MESSAGE /home/lgomez/maestriauba/SMT32/revisiones/2/CESE_PdM_workspace-main/Practica_2 overlaps the location of another project: 'Practica_2'
+
+!ENTRY com.st.stm32cube.common.projectcreation 4 0 2023-07-12 20:09:51.619
+!MESSAGE Project is null
+
+!ENTRY org.eclipse.core.resources 4 77 2023-07-12 20:09:52.311
+!MESSAGE Invalid project description.
+!SUBENTRY 1 unknown 0 0 2023-07-12 20:09:52.311
+!MESSAGE OK
+!SUBENTRY 1 org.eclipse.core.resources 4 77 2023-07-12 20:09:52.311
+!MESSAGE /home/lgomez/maestriauba/SMT32/revisiones/2/CESE_PdM_workspace-main/Practica_2 overlaps the location of another project: 'Practica_2'
+
+!ENTRY com.st.stm32cube.common.projectcreation 4 0 2023-07-12 20:09:52.311
+!MESSAGE Project is null
+
+!ENTRY org.eclipse.cdt.core 1 0 2023-07-12 20:09:57.647
+!MESSAGE Indexed 'Practica_2' (102 sources, 250 headers) in 6.01 sec: 21,603 declarations; 48,642 references; 2 unresolved inclusions; 366 syntax errors; 4,046 unresolved names (5.4%)
+
+!ENTRY com.st.stm32cube.ide.mcu.debug.launch 2 0 2023-07-12 20:09:58.202
+!MESSAGE Won't launch debug session since we failed to locate the binary.
+
+!ENTRY org.eclipse.core.resources 4 77 2023-07-12 20:10:02.190
+!MESSAGE Invalid project description.
+!SUBENTRY 1 unknown 0 0 2023-07-12 20:10:02.190
+!MESSAGE OK
+!SUBENTRY 1 org.eclipse.core.resources 4 77 2023-07-12 20:10:02.190
+!MESSAGE /home/lgomez/maestriauba/SMT32/revisiones/2/CESE_PdM_workspace-main/Practica_2 overlaps the location of another project: 'Practica_2'
+
+!ENTRY com.st.stm32cube.common.projectcreation 4 0 2023-07-12 20:10:02.190
+!MESSAGE Project is null
+
+!ENTRY com.st.stm32cube.ide.mcu.debug.launch 2 0 2023-07-12 20:10:06.349
+!MESSAGE Won't launch debug session since we failed to locate the binary.
+
+!ENTRY org.eclipse.core.resources 4 77 2023-07-12 20:10:15.566
+!MESSAGE Invalid project description.
+!SUBENTRY 1 unknown 0 0 2023-07-12 20:10:15.566
+!MESSAGE OK
+!SUBENTRY 1 org.eclipse.core.resources 4 77 2023-07-12 20:10:15.566
+!MESSAGE /home/lgomez/maestriauba/SMT32/revisiones/2/CESE_PdM_workspace-main/Practica_2 overlaps the location of another project: 'Practica_2'
+
+!ENTRY com.st.stm32cube.common.projectcreation 4 0 2023-07-12 20:10:15.566
+!MESSAGE Project is null
+
+!ENTRY org.eclipse.core.resources 4 77 2023-07-12 20:10:22.028
+!MESSAGE Invalid project description.
+!SUBENTRY 1 unknown 0 0 2023-07-12 20:10:22.028
+!MESSAGE OK
+!SUBENTRY 1 org.eclipse.core.resources 4 77 2023-07-12 20:10:22.028
+!MESSAGE /home/lgomez/maestriauba/SMT32/revisiones/2/CESE_PdM_workspace-main/Practica_2 overlaps the location of another project: 'Practica_2'
+
+!ENTRY com.st.stm32cube.common.projectcreation 4 0 2023-07-12 20:10:22.028
+!MESSAGE Project is null
+
+!ENTRY com.st.stm32cube.ide.mcu.debug.launch 2 0 2023-07-12 20:10:30.148
+!MESSAGE Won't launch debug session since we failed to locate the binary.
+
+!ENTRY org.eclipse.core.resources 4 77 2023-07-12 20:11:46.636
+!MESSAGE Invalid project description.
+!SUBENTRY 1 unknown 0 0 2023-07-12 20:11:46.636
+!MESSAGE OK
+!SUBENTRY 1 org.eclipse.core.resources 4 77 2023-07-12 20:11:46.636
+!MESSAGE /home/lgomez/maestriauba/SMT32/revisiones/2/CESE_PdM_workspace-main/Practica_2 overlaps the location of another project: 'Practica_2'
+
+!ENTRY com.st.stm32cube.common.projectcreation 4 0 2023-07-12 20:11:46.636
+!MESSAGE Project is null
+
+!ENTRY com.st.stm32cube.ide.mcu.debug.launch 2 0 2023-07-12 20:11:54.018
+!MESSAGE Won't launch debug session since we failed to locate the binary.
+
+!ENTRY org.eclipse.core.resources 4 77 2023-07-12 20:12:07.866
+!MESSAGE Invalid project description.
+!SUBENTRY 1 unknown 0 0 2023-07-12 20:12:07.866
+!MESSAGE OK
+!SUBENTRY 1 org.eclipse.core.resources 4 77 2023-07-12 20:12:07.866
+!MESSAGE /home/lgomez/maestriauba/SMT32/revisiones/2/CESE_PdM_workspace-main/Practica_2 overlaps the location of another project: 'Practica_2'
+
+!ENTRY com.st.stm32cube.common.projectcreation 4 0 2023-07-12 20:12:07.866
+!MESSAGE Project is null
+
+!ENTRY org.eclipse.core.resources 4 77 2023-07-12 20:12:15.570
+!MESSAGE Invalid project description.
+!SUBENTRY 1 unknown 0 0 2023-07-12 20:12:15.570
+!MESSAGE OK
+!SUBENTRY 1 org.eclipse.core.resources 4 77 2023-07-12 20:12:15.570
+!MESSAGE /home/lgomez/maestriauba/SMT32/revisiones/2/CESE_PdM_workspace-main/Practica_2 overlaps the location of another project: 'Practica_2'
+
+!ENTRY com.st.stm32cube.common.projectcreation 4 0 2023-07-12 20:12:15.570
+!MESSAGE Project is null
+
+!ENTRY org.eclipse.core.resources 4 77 2023-07-12 20:12:26.958
+!MESSAGE Invalid project description.
+!SUBENTRY 1 unknown 0 0 2023-07-12 20:12:26.959
+!MESSAGE OK
+!SUBENTRY 1 org.eclipse.core.resources 4 77 2023-07-12 20:12:26.959
+!MESSAGE /home/lgomez/maestriauba/SMT32/revisiones/2/CESE_PdM_workspace-main/Practica_2 overlaps the location of another project: 'Practica_2'
+
+!ENTRY com.st.stm32cube.common.projectcreation 4 0 2023-07-12 20:12:26.959
+!MESSAGE Project is null
+
+!ENTRY com.st.stm32cube.ide.mcu.debug.launch 2 0 2023-07-12 20:12:34.082
+!MESSAGE Won't launch debug session since we failed to locate the binary.
+
+!ENTRY org.eclipse.core.resources 4 77 2023-07-12 20:13:05.420
+!MESSAGE Invalid project description.
+!SUBENTRY 1 unknown 0 0 2023-07-12 20:13:05.420
+!MESSAGE OK
+!SUBENTRY 1 org.eclipse.core.resources 4 77 2023-07-12 20:13:05.420
+!MESSAGE /home/lgomez/maestriauba/SMT32/revisiones/2/CESE_PdM_workspace-main/Practica_2 overlaps the location of another project: 'Practica_2'
+
+!ENTRY com.st.stm32cube.common.projectcreation 4 0 2023-07-12 20:13:05.420
+!MESSAGE Project is null
+
+!ENTRY org.eclipse.core.resources 4 77 2023-07-12 20:13:16.672
+!MESSAGE Invalid project description.
+!SUBENTRY 1 unknown 0 0 2023-07-12 20:13:16.672
+!MESSAGE OK
+!SUBENTRY 1 org.eclipse.core.resources 4 77 2023-07-12 20:13:16.672
+!MESSAGE /home/lgomez/maestriauba/SMT32/revisiones/2/CESE_PdM_workspace-main/Practica_2 overlaps the location of another project: 'Practica_2'
+
+!ENTRY com.st.stm32cube.common.projectcreation 4 0 2023-07-12 20:13:16.673
+!MESSAGE Project is null
+
+!ENTRY org.eclipse.core.resources 4 77 2023-07-12 20:13:39.718
+!MESSAGE Invalid project description.
+!SUBENTRY 1 unknown 0 0 2023-07-12 20:13:39.718
+!MESSAGE OK
+!SUBENTRY 1 org.eclipse.core.resources 4 77 2023-07-12 20:13:39.719
+!MESSAGE /home/lgomez/maestriauba/SMT32/revisiones/2/CESE_PdM_workspace-main/Practica_2 overlaps the location of another project: 'Practica_2'
+
+!ENTRY com.st.stm32cube.common.projectcreation 4 0 2023-07-12 20:13:39.719
+!MESSAGE Project is null
+
+!ENTRY org.eclipse.core.resources 4 77 2023-07-12 20:14:34.688
+!MESSAGE Invalid project description.
+!SUBENTRY 1 unknown 0 0 2023-07-12 20:14:34.688
+!MESSAGE OK
+!SUBENTRY 1 org.eclipse.core.resources 4 77 2023-07-12 20:14:34.688
+!MESSAGE /home/lgomez/maestriauba/SMT32/revisiones/2/CESE_PdM_workspace-main/Practica_2 overlaps the location of another project: 'Practica_2'
+
+!ENTRY com.st.stm32cube.common.projectcreation 4 0 2023-07-12 20:14:34.688
+!MESSAGE Project is null
+
+!ENTRY org.eclipse.core.resources 4 77 2023-07-12 20:25:12.562
+!MESSAGE Invalid project description.
+!SUBENTRY 1 unknown 0 0 2023-07-12 20:25:12.562
+!MESSAGE OK
+!SUBENTRY 1 org.eclipse.core.resources 4 77 2023-07-12 20:25:12.562
+!MESSAGE /home/lgomez/maestriauba/SMT32/revisiones/2/CESE_PdM_workspace-main/Practica_2 overlaps the location of another project: 'Practica_2'
+
+!ENTRY com.st.stm32cube.common.projectcreation 4 0 2023-07-12 20:25:12.563
+!MESSAGE Project is null
+
+!ENTRY org.eclipse.core.resources 4 77 2023-07-12 20:25:22.456
+!MESSAGE Invalid project description.
+!SUBENTRY 1 unknown 0 0 2023-07-12 20:25:22.456
+!MESSAGE OK
+!SUBENTRY 1 org.eclipse.core.resources 4 77 2023-07-12 20:25:22.456
+!MESSAGE /home/lgomez/maestriauba/SMT32/revisiones/2/CESE_PdM_workspace-main/Practica_2 overlaps the location of another project: 'Practica_2'
+
+!ENTRY com.st.stm32cube.common.projectcreation 4 0 2023-07-12 20:25:22.456
+!MESSAGE Project is null
+
+!ENTRY org.eclipse.core.resources 4 77 2023-07-12 20:32:33.853
+!MESSAGE Invalid project description.
+!SUBENTRY 1 unknown 0 0 2023-07-12 20:32:33.853
+!MESSAGE OK
+!SUBENTRY 1 org.eclipse.core.resources 4 77 2023-07-12 20:32:33.853
+!MESSAGE /home/lgomez/maestriauba/SMT32/revisiones/2/CESE_PdM_workspace-main/Practica_2 overlaps the location of another project: 'Practica_2'
+
+!ENTRY com.st.stm32cube.common.projectcreation 4 0 2023-07-12 20:32:33.853
+!MESSAGE Project is null

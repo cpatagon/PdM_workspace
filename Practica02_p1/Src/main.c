@@ -33,6 +33,9 @@
 /* Private typedef -----------------------------------------------------------*/
 /* Private define ------------------------------------------------------------*/
 #define time 200
+#define retardo100 100
+#define retardo500 500
+#define retardo1000 1000
 
 /* Private macro -------------------------------------------------------------*/
 /* Private variables ---------------------------------------------------------*/
@@ -84,9 +87,9 @@ int main(void)
 
     /* Inicializamos las tres estructuras con distinto tiempo (100,500,1000)*/
 
-    delayInit(&Delay100, 100); // Inicializa el retardo a 100 ticks
-    delayInit(&Delay500, 500); //
-    delayInit(&Delay1000, 1000); //
+    delayInit(&Delay100, retardo100); // Inicializa el retardo a 100 ticks
+    delayInit(&Delay500, retardo500); //
+    delayInit(&Delay1000, retardo1000); //
 
 
 	/* Infinite loop */
@@ -114,7 +117,7 @@ en `false´. */
 void delayInit( delay_t * delay, tick_t duration )
 {
 	assert(delay != NULL);
-	assert(duration != NULL);
+	assert(delay->duration >=0);
 	delay->duration = duration;
 	delay->running = false;
 }
@@ -150,7 +153,7 @@ bool_t delayRead( delay_t * delay ){
 
 void delayWrite( delay_t * delay, tick_t duration ){
 	assert(delay != NULL);
-	assert(duration >=0);
+	assert(delay->duration >=0);
 	delay->duration=duration;
 }
 

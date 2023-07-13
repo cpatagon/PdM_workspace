@@ -37,8 +37,8 @@
 /* Exported constants --------------------------------------------------------*/
 /* User can use this section to tailor USARTx/UARTx instance used and associated
    resources */
-typedef uint32_t tick_t; // Qué biblioteca se debe incluir para que esto compile?
-typedef bool bool_t; // Qué biblioteca se debe incluir para que esto compile?
+typedef uint32_t tick_t; // iblioteca se debe incluir para que esto compile
+typedef bool bool_t; // biblioteca se debe incluir para que esto compile
 typedef struct{
 		tick_t startTime;
 		tick_t duration;
