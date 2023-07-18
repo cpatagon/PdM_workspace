@@ -1,0 +1,143 @@
+20:04:54 **** Incremental Build of configuration Debug for project Practica03_p4 ****
+make -j8 all 
+arm-none-eabi-gcc "../Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F429ZITx -DSTM32F4 -DNUCLEO_F429ZI -DUSE_HAL_DRIVER -DSTM32F429xx -c -I../Inc -I"/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica03_p4/Drivers/STM32F4xx_HAL_Driver/Inc" -I"/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica03_p4/Drivers/CMSIS/Include" -I"/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica03_p4/Drivers/CMSIS/Device/ST/STM32F4xx/Include" -I"/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica03_p4/Drivers/BSP/STM32F4xx_Nucleo_144" -I"/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica03_p4/Drivers/Core/Inc" -I"/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica03_p4/Drivers/API" -I"/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica03_p4/Drivers/API/inc" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Src/main.d" -MT"Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Src/main.o"
+In file included from ../Src/main.c:21:
+/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica03_p4/Drivers/API/inc/API_delay.h:13:4: error: conflicting types for 'delay_t'
+   13 |  } delay_t;
+      |    ^~~~~~~
+In file included from ../Inc/main.h:26,
+                 from ../Src/main.c:20:
+/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica03_p4/Drivers/API/inc/API_delay.h:13:4: note: previous declaration of 'delay_t' was here
+   13 |  } delay_t;
+      |    ^~~~~~~
+In file included from ../Src/main.c:21:
+/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica03_p4/Drivers/API/inc/API_delay.h:15:6: error: conflicting types for 'delayInit'
+   15 | void delayInit( delay_t * delay, tick_t duration );
+      |      ^~~~~~~~~
+In file included from ../Inc/main.h:26,
+                 from ../Src/main.c:20:
+/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica03_p4/Drivers/API/inc/API_delay.h:15:6: note: previous declaration of 'delayInit' was here
+   15 | void delayInit( delay_t * delay, tick_t duration );
+      |      ^~~~~~~~~
+In file included from ../Src/main.c:21:
+/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica03_p4/Drivers/API/inc/API_delay.h:16:8: error: conflicting types for 'delayRead'
+   16 | bool_t delayRead( delay_t * delay );
+      |        ^~~~~~~~~
+In file included from ../Inc/main.h:26,
+                 from ../Src/main.c:20:
+/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica03_p4/Drivers/API/inc/API_delay.h:16:8: note: previous declaration of 'delayRead' was here
+   16 | bool_t delayRead( delay_t * delay );
+      |        ^~~~~~~~~
+In file included from ../Src/main.c:21:
+/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica03_p4/Drivers/API/inc/API_delay.h:17:6: error: conflicting types for 'delayWrite'
+   17 | void delayWrite( delay_t * delay, tick_t duration );
+      |      ^~~~~~~~~~
+In file included from ../Inc/main.h:26,
+                 from ../Src/main.c:20:
+/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica03_p4/Drivers/API/inc/API_delay.h:17:6: note: previous declaration of 'delayWrite' was here
+   17 | void delayWrite( delay_t * delay, tick_t duration );
+      |      ^~~~~~~~~~
+../Src/main.c:45:1: error: unknown type name 'PCD_HandleTypeDef'; did you mean 'LTDC_HandleTypeDef'?
+   45 | PCD_HandleTypeDef hpcd_USB_OTG_FS;
+      | ^~~~~~~~~~~~~~~~~
+      | LTDC_HandleTypeDef
+../Src/main.c: In function 'main':
+../Src/main.c:102:20: error: 'LD1_Pin' undeclared (first use in this function)
+  102 | uint16_t led[3] = {LD1_Pin,LD2_Pin,LD3_Pin};
+      |                    ^~~~~~~
+../Src/main.c:102:20: note: each undeclared identifier is reported only once for each function it appears in
+../Src/main.c:102:28: error: 'LD2_Pin' undeclared (first use in this function)
+  102 | uint16_t led[3] = {LD1_Pin,LD2_Pin,LD3_Pin};
+      |                            ^~~~~~~
+../Src/main.c:102:36: error: 'LD3_Pin' undeclared (first use in this function)
+  102 | uint16_t led[3] = {LD1_Pin,LD2_Pin,LD3_Pin};
+      |                                    ^~~~~~~
+../Src/main.c: In function 'SystemClock_Config':
+../Src/main.c:196:25: error: 'RCC_PLLInitTypeDef' has no member named 'PLLR'; did you mean 'PLLM'?
+  196 |   RCC_OscInitStruct.PLL.PLLR = 2;
+      |                         ^~~~
+      |                         PLLM
+../Src/main.c:199:5: warning: implicit declaration of function 'Error_Handler' [-Wimplicit-function-declaration]
+  199 |     Error_Handler();
+      |     ^~~~~~~~~~~~~
+../Src/main.c: In function 'MX_USB_OTG_FS_PCD_Init':
+../Src/main.c:265:18: error: request for member 'Instance' in something not a structure or union
+  265 |   hpcd_USB_OTG_FS.Instance = USB_OTG_FS;
+      |                  ^
+../Src/main.c:266:18: error: request for member 'Init' in something not a structure or union
+  266 |   hpcd_USB_OTG_FS.Init.dev_endpoints = 6;
+      |                  ^
+../Src/main.c:267:18: error: request for member 'Init' in something not a structure or union
+  267 |   hpcd_USB_OTG_FS.Init.speed = PCD_SPEED_FULL;
+      |                  ^
+../Src/main.c:267:32: error: 'PCD_SPEED_FULL' undeclared (first use in this function)
+  267 |   hpcd_USB_OTG_FS.Init.speed = PCD_SPEED_FULL;
+      |                                ^~~~~~~~~~~~~~
+../Src/main.c:268:18: error: request for member 'Init' in something not a structure or union
+  268 |   hpcd_USB_OTG_FS.Init.dma_enable = DISABLE;
+      |                  ^
+../Src/main.c:269:18: error: request for member 'Init' in something not a structure or union
+  269 |   hpcd_USB_OTG_FS.Init.phy_itface = PCD_PHY_EMBEDDED;
+      |                  ^
+../Src/main.c:269:37: error: 'PCD_PHY_EMBEDDED' undeclared (first use in this function)
+  269 |   hpcd_USB_OTG_FS.Init.phy_itface = PCD_PHY_EMBEDDED;
+      |                                     ^~~~~~~~~~~~~~~~
+../Src/main.c:270:18: error: request for member 'Init' in something not a structure or union
+  270 |   hpcd_USB_OTG_FS.Init.Sof_enable = ENABLE;
+      |                  ^
+../Src/main.c:271:18: error: request for member 'Init' in something not a structure or union
+  271 |   hpcd_USB_OTG_FS.Init.low_power_enable = DISABLE;
+      |                  ^
+../Src/main.c:272:18: error: request for member 'Init' in something not a structure or union
+  272 |   hpcd_USB_OTG_FS.Init.lpm_enable = DISABLE;
+      |                  ^
+../Src/main.c:273:18: error: request for member 'Init' in something not a structure or union
+  273 |   hpcd_USB_OTG_FS.Init.vbus_sensing_enable = ENABLE;
+      |                  ^
+../Src/main.c:274:18: error: request for member 'Init' in something not a structure or union
+  274 |   hpcd_USB_OTG_FS.Init.use_dedicated_ep1 = DISABLE;
+      |                  ^
+../Src/main.c:275:7: warning: implicit declaration of function 'HAL_PCD_Init'; did you mean 'HAL_DeInit'? [-Wimplicit-function-declaration]
+  275 |   if (HAL_PCD_Init(&hpcd_USB_OTG_FS) != HAL_OK)
+      |       ^~~~~~~~~~~~
+      |       HAL_DeInit
+../Src/main.c: In function 'MX_GPIO_Init':
+../Src/main.c:305:28: error: 'LD1_Pin' undeclared (first use in this function)
+  305 |   HAL_GPIO_WritePin(GPIOB, LD1_Pin|LD3_Pin|LD2_Pin, GPIO_PIN_RESET);
+      |                            ^~~~~~~
+../Src/main.c:305:36: error: 'LD3_Pin' undeclared (first use in this function)
+  305 |   HAL_GPIO_WritePin(GPIOB, LD1_Pin|LD3_Pin|LD2_Pin, GPIO_PIN_RESET);
+      |                                    ^~~~~~~
+../Src/main.c:305:44: error: 'LD2_Pin' undeclared (first use in this function)
+  305 |   HAL_GPIO_WritePin(GPIOB, LD1_Pin|LD3_Pin|LD2_Pin, GPIO_PIN_RESET);
+      |                                            ^~~~~~~
+../Src/main.c:308:21: error: 'USB_PowerSwitchOn_GPIO_Port' undeclared (first use in this function)
+  308 |   HAL_GPIO_WritePin(USB_PowerSwitchOn_GPIO_Port, USB_PowerSwitchOn_Pin, GPIO_PIN_RESET);
+      |                     ^~~~~~~~~~~~~~~~~~~~~~~~~~~
+../Src/main.c:308:50: error: 'USB_PowerSwitchOn_Pin' undeclared (first use in this function)
+  308 |   HAL_GPIO_WritePin(USB_PowerSwitchOn_GPIO_Port, USB_PowerSwitchOn_Pin, GPIO_PIN_RESET);
+      |                                                  ^~~~~~~~~~~~~~~~~~~~~
+../Src/main.c:311:25: error: 'USER_Btn_Pin' undeclared (first use in this function)
+  311 |   GPIO_InitStruct.Pin = USER_Btn_Pin;
+      |                         ^~~~~~~~~~~~
+../Src/main.c:314:17: error: 'USER_Btn_GPIO_Port' undeclared (first use in this function)
+  314 |   HAL_GPIO_Init(USER_Btn_GPIO_Port, &GPIO_InitStruct);
+      |                 ^~~~~~~~~~~~~~~~~~
+../Src/main.c:331:25: error: 'USB_OverCurrent_Pin' undeclared (first use in this function)
+  331 |   GPIO_InitStruct.Pin = USB_OverCurrent_Pin;
+      |                         ^~~~~~~~~~~~~~~~~~~
+../Src/main.c:334:17: error: 'USB_OverCurrent_GPIO_Port' undeclared (first use in this function)
+  334 |   HAL_GPIO_Init(USB_OverCurrent_GPIO_Port, &GPIO_InitStruct);
+      |                 ^~~~~~~~~~~~~~~~~~~~~~~~~
+../Src/main.c: At top level:
+../Src/main.c:348:6: warning: conflicting types for 'Error_Handler'
+  348 | void Error_Handler(void)
+      |      ^~~~~~~~~~~~~
+../Src/main.c:199:5: note: previous implicit declaration of 'Error_Handler' was here
+  199 |     Error_Handler();
+      |     ^~~~~~~~~~~~~
+make: *** [Src/subdir.mk:19: Src/main.o] Error 1
+"make -j8 all" terminated with exit code 2. Build might be incomplete.
+
+20:04:55 Build Failed. 31 errors, 3 warnings. (took 1s.467ms)
+

@@ -1,4 +1,14 @@
-20:53:50 **** Incremental Build of configuration Default for project Ejercicio_3 ****
-make all 
-make: *** No hay ninguna regla para construir el objetivo 'all'.  Alto.
-"make all" terminated with exit code 2. Build might be incomplete.
+17:02:39 **** Build of configuration Debug for project Practica02_p1 ****
+make -j8 all 
+arm-none-eabi-size   Practica02_p1.elf 
+   text	   data	    bss	    dec	    hex	filename
+  11284	    132	   1588	  13004	   32cc	Practica02_p1.elf
+Finished building: default.size.stdout
+ 
+17:02:55 **** Incremental Build of configuration Debug for project Practica03_p1 ****
+make -j8 all 
+arm-none-eabi-size   Practica03_p1.elf 
+   text	   data	    bss	    dec	    hex	filename
+  11328	    132	   1596	  13056	   3300	Practica03_p1.elf
+Finished building: default.size.stdout
+ 

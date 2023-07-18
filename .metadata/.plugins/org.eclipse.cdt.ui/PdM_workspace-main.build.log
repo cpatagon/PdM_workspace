@@ -1,0 +1,7 @@
+22:04:42 **** Incremental Build of configuration Default for project PdM_workspace-main ****
+make all 
+make: *** No hay ninguna regla para construir el objetivo 'all'.  Alto.
+"make all" terminated with exit code 2. Build might be incomplete.
+
+22:04:43 Build Failed. 1 errors, 0 warnings. (took 726ms)
+
