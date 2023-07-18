@@ -1,14 +1,21 @@
-17:02:39 **** Build of configuration Debug for project Practica02_p1 ****
+17:44:37 **** Incremental Build of configuration Debug for project Practica04_p1 ****
 make -j8 all 
-arm-none-eabi-size   Practica02_p1.elf 
+arm-none-eabi-size   Practica04_p1.elf 
    text	   data	    bss	    dec	    hex	filename
-  11284	    132	   1588	  13004	   32cc	Practica02_p1.elf
+  11836	    136	   1592	  13564	   34fc	Practica04_p1.elf
 Finished building: default.size.stdout
  
-17:02:55 **** Incremental Build of configuration Debug for project Practica03_p1 ****
+17:44:49 **** Incremental Build of configuration Debug for project Practica04_p1 ****
 make -j8 all 
-arm-none-eabi-size   Practica03_p1.elf 
+arm-none-eabi-size   Practica04_p1.elf 
    text	   data	    bss	    dec	    hex	filename
-  11328	    132	   1596	  13056	   3300	Practica03_p1.elf
+  11836	    136	   1592	  13564	   34fc	Practica04_p1.elf
+Finished building: default.size.stdout
+ 
+17:44:59 **** Incremental Build of configuration Debug for project Practica04_p1 ****
+make -j8 all 
+arm-none-eabi-size   Practica04_p1.elf 
+   text	   data	    bss	    dec	    hex	filename
+  11836	    136	   1592	  13564	   34fc	Practica04_p1.elf
 Finished building: default.size.stdout
  

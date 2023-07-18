@@ -1,7 +1,7 @@
 # Práctica 3 parte 1
 
-** Autor: ** Luis Alberto Gómez Parada
-** Placa:** STM32F429ZI
+## Autor: Luis Alberto Gómez Parada
+## Placa: STM32F429ZI
 
 ### Objetivo
 Desarrollo de prácticas del curso de programación en sistemas embebidos de la especialidad en sistemas embebidos. Este archivo ayuda a entender la estructura de archivos que contiene los ejercicios realizados durante la especialización. 
