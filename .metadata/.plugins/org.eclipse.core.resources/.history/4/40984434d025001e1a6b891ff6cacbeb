@@ -1,0 +1,35 @@
+/*
+ * API_delay.c
+ *
+ *  Created on: 06-07-2023
+ *      Author: lgomez
+ */
+#include "stm32f4xx_hal.h"  		/* <- HAL include */
+#include "stm32f4xx_nucleo_144.h" 	/* <- BSP include */
+
+#include <assert.h>
+#include "API_debounce.h"
+#include "API_delay.h"
+
+
+/* funciones propias
+ *
+ * Función Inicializar MEF con el valor definido
+ * en el inicio del modelo
+ * */
+
+void debounceFSM_init(debounceState_t * EstadoActual, debounceState_t Valor){
+	/* Initialize Estado */
+	*EstadoActual=Valor;
+}
+
+/* función que invierte  el estado del LED1 */
+void buttonPressed(){
+	BSP_LED_Toggle(LED1);
+}
+
+/* función que invierte  el estado del LED3 */
+void buttonReleased()
+{
+	BSP_LED_Toggle(LED3);
+}
