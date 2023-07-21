@@ -1,10 +1,33 @@
-23:14:23 **** Incremental Build of configuration Debug for project Practica04_p2 ****
+23:28:28 **** Incremental Build of configuration Debug for project Practica04_p2 ****
 make -j8 all 
+arm-none-eabi-gcc "../Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F429ZITx -DSTM32F4 -DNUCLEO_F429ZI -DUSE_HAL_DRIVER -DSTM32F429xx -c -I../Inc -I"/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica04_p2/Drivers/STM32F4xx_HAL_Driver/Inc" -I"/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica04_p2/Drivers/CMSIS/Include" -I"/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica04_p2/Drivers/CMSIS/Device/ST/STM32F4xx/Include" -I"/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica04_p2/Drivers/BSP/STM32F4xx_Nucleo_144" -I"/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica04_p2/Drivers/Core/Inc" -I"/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica04_p2/Drivers/API" -I"/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica04_p2/Drivers/API/inc" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Src/main.d" -MT"Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Src/main.o"
+../Src/main.c: In function 'main':
+../Src/main.c:94:21: warning: variable 'Estado_f' set but not used [-Wunused-but-set-variable]
+   94 |  estadofrecuencia_t Estado_f;
+      |                     ^~~~~~~~
+In file included from ../Inc/main.h:27,
+                 from ../Src/main.c:29:
+../Src/main.c: At top level:
+/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica04_p2/Drivers/API/inc/API_debounce.h:28:13: warning: 'buttonPressed' declared 'static' but never defined [-Wunused-function]
+   28 | static void buttonPressed();   // debe invertir el estado del LED1
+      |             ^~~~~~~~~~~~~
+/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica04_p2/Drivers/API/inc/API_debounce.h:29:13: warning: 'buttonReleased' declared 'static' but never defined [-Wunused-function]
+   29 | static void buttonReleased();// debe invertir el estado del LED3
+      |             ^~~~~~~~~~~~~~
+/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica04_p2/Drivers/API/inc/API_debounce.h:21:24: warning: 'debounceState' defined but not used [-Wunused-variable]
+   21 | static debounceState_t debounceState;
+      |                        ^~~~~~~~~~~~~
+arm-none-eabi-gcc -o "Practica04_p2.elf" @"objects.list"   -mcpu=cortex-m4 -T"/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica04_p2/STM32F429ZITX_FLASH.ld" --specs=nosys.specs -Wl,-Map="Practica04_p2.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: Practica04_p2.elf
+ 
 arm-none-eabi-size   Practica04_p2.elf 
+arm-none-eabi-objdump -h -S  Practica04_p2.elf  > "Practica04_p2.list"
    text	   data	    bss	    dec	    hex	filename
-  11920	    136	   1592	  13648	   3550	Practica04_p2.elf
+  12040	    140	   1596	  13776	   35d0	Practica04_p2.elf
 Finished building: default.size.stdout
  
+Finished building: Practica04_p2.list
+ 
 
-23:14:24 Build Finished. 0 errors, 0 warnings. (took 774ms)
+23:28:29 Build Finished. 0 errors, 4 warnings. (took 1s.161ms)
 

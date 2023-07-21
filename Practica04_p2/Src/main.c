@@ -2,12 +2,15 @@
  ******************************************************************************
  * @file Práctica 4 Punto 2
  * @author  Luis Gómez
- * Objetivo : Implementar un MEF para trabajar con anti-rebotes por software.
- * @ actividad : Crear un nuevo proyecto como copia del proyecto realizado para
- * la práctica 3.
- * Implementar una MEF anti-rebote que permita leer el estado del pulsador de la
- * placa NUCLEO-F429ZI y generar acciones o eventos ante un flanco descendente
- * o ascendente, de acuerdo al diagrama
+ * @Hardware: STM32F429ZI
+ * @Objetivo: Implementar un programa que cambie la
+ *      frecuencia de toggleo del LED2 entre 100 ms y 500
+ *      ms cada vez que se presione la tecla.  El programa
+ *      debe usar las funciones anti-rebote del módulo API
+ *      debounce y los retardos no bloqueantes del módulo
+ *      API_delay.
+ *
+ *//*
  ******************************************************************************
  * @attention
  *
@@ -29,10 +32,15 @@
  */
 
 /* Private typedef -----------------------------------------------------------*/
+typedef enum{
+	PRIMERO, // primera frecuancia
+	SEGUNDO, // segunda frecuencia
+} estadofrecuencia_t;
 
 /* Private define ------------------------------------------------------------*/
-#define TIME1 40 // TIEMPO ESPERA O RETARDO
-
+#define TIME1 40 // TIEMPO antirrebote
+#define TIME2 100 // TIEMPO parpadeo 1
+#define TIME3 500 // TIEMPO parpadeo 2
 
 /* Private macro -------------------------------------------------------------*/
 /* Private variables ---------------------------------------------------------*/
@@ -40,6 +48,8 @@
 
 static void SystemClock_Config(void);
 static void Error_Handler(void);
+
+void frecuencia_update(estadofrecuencia_t *,delay_t*,delay_t*,Led_TypeDef);
 
 /* Private functions ---------------------------------------------------------*/
 
@@ -69,31 +79,53 @@ int main(void)
 	/* Initialize LED and BSP PB for BUTTON_USER */
 	BSP_PB_Init(BUTTON_USER, BUTTON_MODE_GPIO);
 	BSP_LED_Init(LED1);
+	BSP_LED_Init(LED2);
 	BSP_LED_Init(LED3);
 
 	/* Declaramos variable que contendrá el tiempo de retardo*/
 	delay_t Delay1;
+	delay_t tiempo1;
+	delay_t tiempo2;
+
 
     /* definimos la variable que contendra el estado del modelo*/
 	debounceState_t Estado;
+
+	estadofrecuencia_t Estado_f;
+
+	Estado_f=PRIMERO;
 
 	/* definimos el estado inicial de modelo como BUTTON_UP*/
 	debounceFSM_init(&Estado, BUTTON_UP);
 
    /* Inicializa el retardo en 40 ms */
 	delayInit(&Delay1, TIME1);
+	delayInit(&tiempo1, TIME2);
+	delayInit(&tiempo2, TIME3);
 
 	/* Infinite loop */
     while (1) {
     	/* llamamos a la función que evaluara el estado de
     	 * nuestro modelo MEF*/
     	debounceFSM_update(&Estado,&Delay1);
+
+    	//frecuencia_update(&Estado_f,&tiempo1,&tiempo2,LED2);
+    	if (readKey()){
+    		if (delayRead(&tiempo1)){
+    			BSP_LED_Toggle(LED2);
+    		}
+    	}
+    	else{
+    		if (delayRead(&tiempo2)){
+    			BSP_LED_Toggle(LED2);
+    		}
+    	}
     }
     return 0;
 }
 
-
 /* FIN FUNCIONES PROPIAS */
+
 
 static void SystemClock_Config(void)
 {

@@ -20,8 +20,10 @@ typedef enum{
 // Declaración de la variable de estado global y privada
 static debounceState_t debounceState;
 
+bool_t readKey();
+
 void debounceFSM_init(debounceState_t*, debounceState_t);		// debe cargar el estado inicial
-void debounceFSM_update(debounceState_t*, delay_t* );	// debe leer las entradas, resolver la lógica de
+void debounceFSM_update(debounceState_t*, delay_t*);	// debe leer las entradas, resolver la lógica de
 					// transición de estados y actualizar las salidas
 static void buttonPressed();			// debe invertir el estado del LED1
 static void buttonReleased();// debe invertir el estado del LED3
