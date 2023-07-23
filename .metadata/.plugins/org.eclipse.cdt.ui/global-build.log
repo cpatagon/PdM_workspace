@@ -5607,3 +5607,1257 @@ Finished building: default.size.stdout
  
 Finished building: Practica04_p2.list
  
+22:16:14 **** Incremental Build of configuration Debug for project Practica04_p2 ****
+make -j8 all 
+arm-none-eabi-gcc "../Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F429ZITx -DSTM32F4 -DNUCLEO_F429ZI -DUSE_HAL_DRIVER -DSTM32F429xx -c -I../Inc -I"/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica04_p2/Drivers/STM32F4xx_HAL_Driver/Inc" -I"/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica04_p2/Drivers/CMSIS/Include" -I"/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica04_p2/Drivers/CMSIS/Device/ST/STM32F4xx/Include" -I"/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica04_p2/Drivers/BSP/STM32F4xx_Nucleo_144" -I"/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica04_p2/Drivers/Core/Inc" -I"/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica04_p2/Drivers/API" -I"/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica04_p2/Drivers/API/inc" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Src/main.d" -MT"Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Src/main.o"
+arm-none-eabi-gcc "../Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_msp.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F429ZITx -DSTM32F4 -DNUCLEO_F429ZI -DUSE_HAL_DRIVER -DSTM32F429xx -c -I../Inc -I"/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica04_p2/Drivers/STM32F4xx_HAL_Driver/Inc" -I"/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica04_p2/Drivers/CMSIS/Include" -I"/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica04_p2/Drivers/CMSIS/Device/ST/STM32F4xx/Include" -I"/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica04_p2/Drivers/BSP/STM32F4xx_Nucleo_144" -I"/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica04_p2/Drivers/Core/Inc" -I"/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica04_p2/Drivers/API" -I"/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica04_p2/Drivers/API/inc" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_msp.d" -MT"Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_msp.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_msp.o"
+arm-none-eabi-gcc "../Drivers/Core/Src/stm32f4xx_it.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F429ZITx -DSTM32F4 -DNUCLEO_F429ZI -DUSE_HAL_DRIVER -DSTM32F429xx -c -I../Inc -I"/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica04_p2/Drivers/STM32F4xx_HAL_Driver/Inc" -I"/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica04_p2/Drivers/CMSIS/Include" -I"/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica04_p2/Drivers/CMSIS/Device/ST/STM32F4xx/Include" -I"/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica04_p2/Drivers/BSP/STM32F4xx_Nucleo_144" -I"/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica04_p2/Drivers/Core/Inc" -I"/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica04_p2/Drivers/API" -I"/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica04_p2/Drivers/API/inc" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Drivers/Core/Src/stm32f4xx_it.d" -MT"Drivers/Core/Src/stm32f4xx_it.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Drivers/Core/Src/stm32f4xx_it.o"
+arm-none-eabi-gcc "../Drivers/API/src/API_debounce.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F429ZITx -DSTM32F4 -DNUCLEO_F429ZI -DUSE_HAL_DRIVER -DSTM32F429xx -c -I../Inc -I"/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica04_p2/Drivers/STM32F4xx_HAL_Driver/Inc" -I"/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica04_p2/Drivers/CMSIS/Include" -I"/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica04_p2/Drivers/CMSIS/Device/ST/STM32F4xx/Include" -I"/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica04_p2/Drivers/BSP/STM32F4xx_Nucleo_144" -I"/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica04_p2/Drivers/Core/Inc" -I"/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica04_p2/Drivers/API" -I"/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica04_p2/Drivers/API/inc" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Drivers/API/src/API_debounce.d" -MT"Drivers/API/src/API_debounce.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Drivers/API/src/API_debounce.o"
+../Drivers/API/src/API_debounce.c:108:13: warning: 'buttonReleased' defined but not used [-Wunused-function]
+  108 | static void buttonReleased()
+      |             ^~~~~~~~~~~~~~
+../Drivers/API/src/API_debounce.c:100:13: warning: 'buttonPressed' defined but not used [-Wunused-function]
+  100 | static void buttonPressed(){
+      |             ^~~~~~~~~~~~~
+In file included from ../Drivers/API/src/API_debounce.c:19:
+/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica04_p2/Drivers/API/inc/API_debounce.h:21:24: warning: 'debounceState' defined but not used [-Wunused-variable]
+   21 | static debounceState_t debounceState;
+      |                        ^~~~~~~~~~~~~
+../Src/main.c: In function 'main':
+../Src/main.c:96:2: error: 'Estado_f' undeclared (first use in this function); did you mean 'Estado'?
+   96 |  Estado_f=PRIMERO;
+      |  ^~~~~~~~
+      |  Estado
+../Src/main.c:96:2: note: each undeclared identifier is reported only once for each function it appears in
+In file included from ../Inc/main.h:27,
+                 from ../Src/main.c:29:
+../Src/main.c: At top level:
+/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica04_p2/Drivers/API/inc/API_debounce.h:33:13: warning: 'buttonPressed' declared 'static' but never defined [-Wunused-function]
+   33 | static void buttonPressed();   // debe invertir el estado del LED1
+      |             ^~~~~~~~~~~~~
+/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica04_p2/Drivers/API/inc/API_debounce.h:34:13: warning: 'buttonReleased' declared 'static' but never defined [-Wunused-function]
+   34 | static void buttonReleased();// debe invertir el estado del LED3
+      |             ^~~~~~~~~~~~~~
+In file included from ../Inc/main.h:27,
+                 from ../Drivers/Core/Src/stm32f4xx_it.c:23:
+/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica04_p2/Drivers/API/inc/API_debounce.h:33:13: warning: 'buttonPressed' declared 'static' but never defined [-Wunused-function]
+   33 | static void buttonPressed();   // debe invertir el estado del LED1
+      |             ^~~~~~~~~~~~~
+/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica04_p2/Drivers/API/inc/API_debounce.h:34:13: warning: 'buttonReleased' declared 'static' but never defined [-Wunused-function]
+   34 | static void buttonReleased();// debe invertir el estado del LED3
+      |             ^~~~~~~~~~~~~~
+/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica04_p2/Drivers/API/inc/API_debounce.h:21:24: warning: 'debounceState' defined but not used [-Wunused-variable]
+   21 | static debounceState_t debounceState;
+      |                        ^~~~~~~~~~~~~
+/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica04_p2/Drivers/API/inc/API_debounce.h:21:24: warning: 'debounceState' defined but not used [-Wunused-variable]
+   21 | static debounceState_t debounceState;
+      |                        ^~~~~~~~~~~~~
+In file included from ../Inc/main.h:27,
+                 from ../Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_msp.c:21:
+/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica04_p2/Drivers/API/inc/API_debounce.h:33:13: warning: 'buttonPressed' declared 'static' but never defined [-Wunused-function]
+   33 | static void buttonPressed();   // debe invertir el estado del LED1
+      |             ^~~~~~~~~~~~~
+/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica04_p2/Drivers/API/inc/API_debounce.h:34:13: warning: 'buttonReleased' declared 'static' but never defined [-Wunused-function]
+   34 | static void buttonReleased();// debe invertir el estado del LED3
+      |             ^~~~~~~~~~~~~~
+/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica04_p2/Drivers/API/inc/API_debounce.h:21:24: warning: 'debounceState' defined but not used [-Wunused-variable]
+   21 | static debounceState_t debounceState;
+      |                        ^~~~~~~~~~~~~
+make: *** [Src/subdir.mk:19: Src/main.o] Error 1
+make: *** Waiting for unfinished jobs....
+"make -j8 all" terminated with exit code 2. Build might be incomplete.
+22:16:32 **** Incremental Build of configuration Debug for project Practica04_p2 ****
+make -j8 all 
+arm-none-eabi-gcc "../Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F429ZITx -DSTM32F4 -DNUCLEO_F429ZI -DUSE_HAL_DRIVER -DSTM32F429xx -c -I../Inc -I"/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica04_p2/Drivers/STM32F4xx_HAL_Driver/Inc" -I"/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica04_p2/Drivers/CMSIS/Include" -I"/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica04_p2/Drivers/CMSIS/Device/ST/STM32F4xx/Include" -I"/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica04_p2/Drivers/BSP/STM32F4xx_Nucleo_144" -I"/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica04_p2/Drivers/Core/Inc" -I"/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica04_p2/Drivers/API" -I"/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica04_p2/Drivers/API/inc" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Src/main.d" -MT"Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Src/main.o"
+../Src/main.c: In function 'main':
+../Src/main.c:96:2: error: 'Estado_f' undeclared (first use in this function); did you mean 'Estado'?
+   96 |  Estado_f=PRIMERO;
+      |  ^~~~~~~~
+      |  Estado
+../Src/main.c:96:2: note: each undeclared identifier is reported only once for each function it appears in
+In file included from ../Inc/main.h:27,
+                 from ../Src/main.c:29:
+../Src/main.c: At top level:
+/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica04_p2/Drivers/API/inc/API_debounce.h:33:13: warning: 'buttonPressed' declared 'static' but never defined [-Wunused-function]
+   33 | static void buttonPressed();   // debe invertir el estado del LED1
+      |             ^~~~~~~~~~~~~
+/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica04_p2/Drivers/API/inc/API_debounce.h:34:13: warning: 'buttonReleased' declared 'static' but never defined [-Wunused-function]
+   34 | static void buttonReleased();// debe invertir el estado del LED3
+      |             ^~~~~~~~~~~~~~
+/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica04_p2/Drivers/API/inc/API_debounce.h:21:24: warning: 'debounceState' defined but not used [-Wunused-variable]
+   21 | static debounceState_t debounceState;
+      |                        ^~~~~~~~~~~~~
+make: *** [Src/subdir.mk:19: Src/main.o] Error 1
+"make -j8 all" terminated with exit code 2. Build might be incomplete.
+22:17:01 **** Incremental Build of configuration Debug for project Practica04_p2 ****
+make -j8 all 
+arm-none-eabi-gcc "../Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F429ZITx -DSTM32F4 -DNUCLEO_F429ZI -DUSE_HAL_DRIVER -DSTM32F429xx -c -I../Inc -I"/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica04_p2/Drivers/STM32F4xx_HAL_Driver/Inc" -I"/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica04_p2/Drivers/CMSIS/Include" -I"/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica04_p2/Drivers/CMSIS/Device/ST/STM32F4xx/Include" -I"/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica04_p2/Drivers/BSP/STM32F4xx_Nucleo_144" -I"/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica04_p2/Drivers/Core/Inc" -I"/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica04_p2/Drivers/API" -I"/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica04_p2/Drivers/API/inc" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Src/main.d" -MT"Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Src/main.o"
+In file included from ../Inc/main.h:27,
+                 from ../Src/main.c:29:
+/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica04_p2/Drivers/API/inc/API_debounce.h:33:13: warning: 'buttonPressed' declared 'static' but never defined [-Wunused-function]
+   33 | static void buttonPressed();   // debe invertir el estado del LED1
+      |             ^~~~~~~~~~~~~
+/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica04_p2/Drivers/API/inc/API_debounce.h:34:13: warning: 'buttonReleased' declared 'static' but never defined [-Wunused-function]
+   34 | static void buttonReleased();// debe invertir el estado del LED3
+      |             ^~~~~~~~~~~~~~
+/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica04_p2/Drivers/API/inc/API_debounce.h:21:24: warning: 'debounceState' defined but not used [-Wunused-variable]
+   21 | static debounceState_t debounceState;
+      |                        ^~~~~~~~~~~~~
+arm-none-eabi-gcc -o "Practica04_p2.elf" @"objects.list"   -mcpu=cortex-m4 -T"/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica04_p2/STM32F429ZITX_FLASH.ld" --specs=nosys.specs -Wl,-Map="Practica04_p2.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: Practica04_p2.elf
+ 
+arm-none-eabi-size   Practica04_p2.elf 
+arm-none-eabi-objdump -h -S  Practica04_p2.elf  > "Practica04_p2.list"
+   text	   data	    bss	    dec	    hex	filename
+  12028	    140	   1596	  13764	   35c4	Practica04_p2.elf
+Finished building: default.size.stdout
+ 
+Finished building: Practica04_p2.list
+ 
+22:17:08 **** Incremental Build of configuration Debug for project Practica04_p2 ****
+make -j8 all 
+arm-none-eabi-size   Practica04_p2.elf 
+   text	   data	    bss	    dec	    hex	filename
+  12028	    140	   1596	  13764	   35c4	Practica04_p2.elf
+Finished building: default.size.stdout
+ 
+22:20:29 **** Incremental Build of configuration Debug for project Practica04_p2 ****
+make -j8 all 
+arm-none-eabi-gcc "../Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F429ZITx -DSTM32F4 -DNUCLEO_F429ZI -DUSE_HAL_DRIVER -DSTM32F429xx -c -I../Inc -I"/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica04_p2/Drivers/STM32F4xx_HAL_Driver/Inc" -I"/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica04_p2/Drivers/CMSIS/Include" -I"/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica04_p2/Drivers/CMSIS/Device/ST/STM32F4xx/Include" -I"/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica04_p2/Drivers/BSP/STM32F4xx_Nucleo_144" -I"/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica04_p2/Drivers/Core/Inc" -I"/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica04_p2/Drivers/API" -I"/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica04_p2/Drivers/API/inc" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Src/main.d" -MT"Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Src/main.o"
+arm-none-eabi-gcc "../Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_msp.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F429ZITx -DSTM32F4 -DNUCLEO_F429ZI -DUSE_HAL_DRIVER -DSTM32F429xx -c -I../Inc -I"/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica04_p2/Drivers/STM32F4xx_HAL_Driver/Inc" -I"/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica04_p2/Drivers/CMSIS/Include" -I"/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica04_p2/Drivers/CMSIS/Device/ST/STM32F4xx/Include" -I"/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica04_p2/Drivers/BSP/STM32F4xx_Nucleo_144" -I"/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica04_p2/Drivers/Core/Inc" -I"/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica04_p2/Drivers/API" -I"/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica04_p2/Drivers/API/inc" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_msp.d" -MT"Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_msp.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_msp.o"
+arm-none-eabi-gcc "../Drivers/Core/Src/stm32f4xx_it.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F429ZITx -DSTM32F4 -DNUCLEO_F429ZI -DUSE_HAL_DRIVER -DSTM32F429xx -c -I../Inc -I"/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica04_p2/Drivers/STM32F4xx_HAL_Driver/Inc" -I"/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica04_p2/Drivers/CMSIS/Include" -I"/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica04_p2/Drivers/CMSIS/Device/ST/STM32F4xx/Include" -I"/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica04_p2/Drivers/BSP/STM32F4xx_Nucleo_144" -I"/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica04_p2/Drivers/Core/Inc" -I"/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica04_p2/Drivers/API" -I"/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica04_p2/Drivers/API/inc" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Drivers/Core/Src/stm32f4xx_it.d" -MT"Drivers/Core/Src/stm32f4xx_it.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Drivers/Core/Src/stm32f4xx_it.o"
+arm-none-eabi-gcc "../Drivers/API/src/API_debounce.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F429ZITx -DSTM32F4 -DNUCLEO_F429ZI -DUSE_HAL_DRIVER -DSTM32F429xx -c -I../Inc -I"/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica04_p2/Drivers/STM32F4xx_HAL_Driver/Inc" -I"/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica04_p2/Drivers/CMSIS/Include" -I"/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica04_p2/Drivers/CMSIS/Device/ST/STM32F4xx/Include" -I"/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica04_p2/Drivers/BSP/STM32F4xx_Nucleo_144" -I"/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica04_p2/Drivers/Core/Inc" -I"/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica04_p2/Drivers/API" -I"/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica04_p2/Drivers/API/inc" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Drivers/API/src/API_debounce.d" -MT"Drivers/API/src/API_debounce.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Drivers/API/src/API_debounce.o"
+In file included from ../Drivers/API/src/API_debounce.c:19:
+/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica04_p2/Drivers/API/inc/API_debounce.h:22:23: error: unknown type name 'debounceState_t'
+   22 | void debounceFSM_init(debounceState_t*, debounceState_t);  // debe cargar el estado inicial
+      |                       ^~~~~~~~~~~~~~~
+In file included from ../Inc/main.h:27,
+                 from ../Drivers/Core/Src/stm32f4xx_it.c:23:
+/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica04_p2/Drivers/API/inc/API_debounce.h:22:23: error: unknown type name 'debounceState_t'
+   22 | void debounceFSM_init(debounceState_t*, debounceState_t);  // debe cargar el estado inicial
+      |                       ^~~~~~~~~~~~~~~
+/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica04_p2/Drivers/API/inc/API_debounce.h:22:41: error: unknown type name 'debounceState_t'
+   22 | void debounceFSM_init(debounceState_t*, debounceState_t);  // debe cargar el estado inicial
+      |                                         ^~~~~~~~~~~~~~~
+In file included from ../Inc/main.h:27,
+                 from ../Src/main.c:29:
+/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica04_p2/Drivers/API/inc/API_debounce.h:22:23: error: unknown type name 'debounceState_t'
+   22 | void debounceFSM_init(debounceState_t*, debounceState_t);  // debe cargar el estado inicial
+      |                       ^~~~~~~~~~~~~~~
+/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica04_p2/Drivers/API/inc/API_debounce.h:22:41: error: unknown type name 'debounceState_t'
+   22 | void debounceFSM_init(debounceState_t*, debounceState_t);  // debe cargar el estado inicial
+      |                                         ^~~~~~~~~~~~~~~
+/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica04_p2/Drivers/API/inc/API_debounce.h:23:25: error: unknown type name 'debounceState_t'
+   23 | void debounceFSM_update(debounceState_t*, delay_t*); // debe leer las entradas, resolver la lógica de
+      |                         ^~~~~~~~~~~~~~~
+../Drivers/API/src/API_debounce.c:118:13: warning: 'buttonReleased' defined but not used [-Wunused-function]
+  118 | static void buttonReleased()
+      |             ^~~~~~~~~~~~~~
+../Drivers/API/src/API_debounce.c:110:13: warning: 'buttonPressed' defined but not used [-Wunused-function]
+  110 | static void buttonPressed(){
+      |             ^~~~~~~~~~~~~
+../Drivers/API/src/API_debounce.c:35:24: warning: 'debounceState' defined but not used [-Wunused-variable]
+   35 | static debounceState_t debounceState;
+      |                        ^~~~~~~~~~~~~
+In file included from ../Inc/main.h:27,
+                 from ../Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_msp.c:21:
+/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica04_p2/Drivers/API/inc/API_debounce.h:22:23: error: unknown type name 'debounceState_t'
+   22 | void debounceFSM_init(debounceState_t*, debounceState_t);  // debe cargar el estado inicial
+      |                       ^~~~~~~~~~~~~~~
+make: *** [Drivers/API/src/subdir.mk:22: Drivers/API/src/API_debounce.o] Error 1
+make: *** Waiting for unfinished jobs....
+/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica04_p2/Drivers/API/inc/API_debounce.h:23:25: error: unknown type name 'debounceState_t'
+   23 | void debounceFSM_update(debounceState_t*, delay_t*); // debe leer las entradas, resolver la lógica de
+      |                         ^~~~~~~~~~~~~~~
+/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica04_p2/Drivers/API/inc/API_debounce.h:25:13: warning: 'buttonPressed' declared 'static' but never defined [-Wunused-function]
+   25 | static void buttonPressed();   // debe invertir el estado del LED1
+      |             ^~~~~~~~~~~~~
+/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica04_p2/Drivers/API/inc/API_debounce.h:26:13: warning: 'buttonReleased' declared 'static' but never defined [-Wunused-function]
+   26 | static void buttonReleased();// debe invertir el estado del LED3
+      |             ^~~~~~~~~~~~~~
+make: *** [Drivers/Core/Src/subdir.mk:25: Drivers/Core/Src/stm32f4xx_it.o] Error 1
+/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica04_p2/Drivers/API/inc/API_debounce.h:22:41: error: unknown type name 'debounceState_t'
+   22 | void debounceFSM_init(debounceState_t*, debounceState_t);  // debe cargar el estado inicial
+      |                                         ^~~~~~~~~~~~~~~
+/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica04_p2/Drivers/API/inc/API_debounce.h:22:41: error: unknown type name 'debounceState_t'
+   22 | void debounceFSM_init(debounceState_t*, debounceState_t);  // debe cargar el estado inicial
+      |                                         ^~~~~~~~~~~~~~~
+/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica04_p2/Drivers/API/inc/API_debounce.h:23:25: error: unknown type name 'debounceState_t'
+   23 | void debounceFSM_update(debounceState_t*, delay_t*); // debe leer las entradas, resolver la lógica de
+      |                         ^~~~~~~~~~~~~~~
+/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica04_p2/Drivers/API/inc/API_debounce.h:23:25: error: unknown type name 'debounceState_t'
+   23 | void debounceFSM_update(debounceState_t*, delay_t*); // debe leer las entradas, resolver la lógica de
+      |                         ^~~~~~~~~~~~~~~
+/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica04_p2/Drivers/API/inc/API_debounce.h:25:13: warning: 'buttonPressed' declared 'static' but never defined [-Wunused-function]
+   25 | static void buttonPressed();   // debe invertir el estado del LED1
+      |             ^~~~~~~~~~~~~
+/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica04_p2/Drivers/API/inc/API_debounce.h:26:13: warning: 'buttonReleased' declared 'static' but never defined [-Wunused-function]
+   26 | static void buttonReleased();// debe invertir el estado del LED3
+      |             ^~~~~~~~~~~~~~
+make: *** [Drivers/STM32F4xx_HAL_Driver/Src/subdir.mk:292: Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_msp.o] Error 1
+../Src/main.c: In function 'main':
+../Src/main.c:92:2: error: unknown type name 'debounceState_t'
+   92 |  debounceState_t Estado;
+      |  ^~~~~~~~~~~~~~~
+../Src/main.c:99:2: warning: implicit declaration of function 'debounceFSM_init' [-Wimplicit-function-declaration]
+   99 |  debounceFSM_init(&Estado, BUTTON_UP);
+      |  ^~~~~~~~~~~~~~~~
+../Src/main.c:99:28: error: 'BUTTON_UP' undeclared (first use in this function); did you mean 'BUTTON_KEY'?
+   99 |  debounceFSM_init(&Estado, BUTTON_UP);
+      |                            ^~~~~~~~~
+      |                            BUTTON_KEY
+../Src/main.c:99:28: note: each undeclared identifier is reported only once for each function it appears in
+../Src/main.c:116:6: warning: implicit declaration of function 'debounceFSM_update' [-Wimplicit-function-declaration]
+  116 |      debounceFSM_update(&Estado,&Delay1);
+      |      ^~~~~~~~~~~~~~~~~~
+In file included from ../Inc/main.h:27,
+                 from ../Src/main.c:29:
+../Src/main.c: At top level:
+/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica04_p2/Drivers/API/inc/API_debounce.h:25:13: warning: 'buttonPressed' declared 'static' but never defined [-Wunused-function]
+   25 | static void buttonPressed();   // debe invertir el estado del LED1
+      |             ^~~~~~~~~~~~~
+/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica04_p2/Drivers/API/inc/API_debounce.h:26:13: warning: 'buttonReleased' declared 'static' but never defined [-Wunused-function]
+   26 | static void buttonReleased();// debe invertir el estado del LED3
+      |             ^~~~~~~~~~~~~~
+make: *** [Src/subdir.mk:19: Src/main.o] Error 1
+"make -j8 all" terminated with exit code 2. Build might be incomplete.
+22:22:21 **** Incremental Build of configuration Debug for project Practica04_p2 ****
+make -j8 all 
+arm-none-eabi-gcc "../Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F429ZITx -DSTM32F4 -DNUCLEO_F429ZI -DUSE_HAL_DRIVER -DSTM32F429xx -c -I../Inc -I"/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica04_p2/Drivers/STM32F4xx_HAL_Driver/Inc" -I"/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica04_p2/Drivers/CMSIS/Include" -I"/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica04_p2/Drivers/CMSIS/Device/ST/STM32F4xx/Include" -I"/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica04_p2/Drivers/BSP/STM32F4xx_Nucleo_144" -I"/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica04_p2/Drivers/Core/Inc" -I"/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica04_p2/Drivers/API" -I"/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica04_p2/Drivers/API/inc" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Src/main.d" -MT"Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Src/main.o"
+arm-none-eabi-gcc "../Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_msp.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F429ZITx -DSTM32F4 -DNUCLEO_F429ZI -DUSE_HAL_DRIVER -DSTM32F429xx -c -I../Inc -I"/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica04_p2/Drivers/STM32F4xx_HAL_Driver/Inc" -I"/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica04_p2/Drivers/CMSIS/Include" -I"/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica04_p2/Drivers/CMSIS/Device/ST/STM32F4xx/Include" -I"/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica04_p2/Drivers/BSP/STM32F4xx_Nucleo_144" -I"/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica04_p2/Drivers/Core/Inc" -I"/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica04_p2/Drivers/API" -I"/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica04_p2/Drivers/API/inc" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_msp.d" -MT"Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_msp.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_msp.o"
+arm-none-eabi-gcc "../Drivers/Core/Src/stm32f4xx_it.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F429ZITx -DSTM32F4 -DNUCLEO_F429ZI -DUSE_HAL_DRIVER -DSTM32F429xx -c -I../Inc -I"/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica04_p2/Drivers/STM32F4xx_HAL_Driver/Inc" -I"/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica04_p2/Drivers/CMSIS/Include" -I"/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica04_p2/Drivers/CMSIS/Device/ST/STM32F4xx/Include" -I"/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica04_p2/Drivers/BSP/STM32F4xx_Nucleo_144" -I"/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica04_p2/Drivers/Core/Inc" -I"/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica04_p2/Drivers/API" -I"/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica04_p2/Drivers/API/inc" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Drivers/Core/Src/stm32f4xx_it.d" -MT"Drivers/Core/Src/stm32f4xx_it.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Drivers/Core/Src/stm32f4xx_it.o"
+arm-none-eabi-gcc "../Drivers/API/src/API_debounce.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F429ZITx -DSTM32F4 -DNUCLEO_F429ZI -DUSE_HAL_DRIVER -DSTM32F429xx -c -I../Inc -I"/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica04_p2/Drivers/STM32F4xx_HAL_Driver/Inc" -I"/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica04_p2/Drivers/CMSIS/Include" -I"/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica04_p2/Drivers/CMSIS/Device/ST/STM32F4xx/Include" -I"/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica04_p2/Drivers/BSP/STM32F4xx_Nucleo_144" -I"/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica04_p2/Drivers/Core/Inc" -I"/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica04_p2/Drivers/API" -I"/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica04_p2/Drivers/API/inc" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Drivers/API/src/API_debounce.d" -MT"Drivers/API/src/API_debounce.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Drivers/API/src/API_debounce.o"
+In file included from ../Drivers/API/src/API_debounce.c:19:
+/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica04_p2/Drivers/API/inc/API_debounce.h:22:23: error: unknown type name 'debounceState_t'
+   22 | void debounceFSM_init(debounceState_t*);  // debe cargar el estado inicial
+      |                       ^~~~~~~~~~~~~~~
+In file included from ../Inc/main.h:27,
+                 from ../Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_msp.c:21:
+/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica04_p2/Drivers/API/inc/API_debounce.h:22:23: error: unknown type name 'debounceState_t'
+   22 | void debounceFSM_init(debounceState_t*);  // debe cargar el estado inicial
+      |                       ^~~~~~~~~~~~~~~
+/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica04_p2/Drivers/API/inc/API_debounce.h:23:25: error: unknown type name 'debounceState_t'
+   23 | void debounceFSM_update(debounceState_t*, delay_t*); // debe leer las entradas, resolver la lógica de
+      |                         ^~~~~~~~~~~~~~~
+../Drivers/API/src/API_debounce.c:118:13: warning: 'buttonReleased' defined but not used [-Wunused-function]
+  118 | static void buttonReleased()
+      |             ^~~~~~~~~~~~~~
+../Drivers/API/src/API_debounce.c:110:13: warning: 'buttonPressed' defined but not used [-Wunused-function]
+  110 | static void buttonPressed(){
+      |             ^~~~~~~~~~~~~
+../Drivers/API/src/API_debounce.c:35:24: warning: 'debounceState' defined but not used [-Wunused-variable]
+   35 | static debounceState_t debounceState;
+      |                        ^~~~~~~~~~~~~
+In file included from ../Inc/main.h:27,
+                 from ../Src/main.c:29:
+/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica04_p2/Drivers/API/inc/API_debounce.h:22:23: error: unknown type name 'debounceState_t'
+   22 | void debounceFSM_init(debounceState_t*);  // debe cargar el estado inicial
+      |                       ^~~~~~~~~~~~~~~
+/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica04_p2/Drivers/API/inc/API_debounce.h:23:25: error: unknown type name 'debounceState_t'
+   23 | void debounceFSM_update(debounceState_t*, delay_t*); // debe leer las entradas, resolver la lógica de
+      |                         ^~~~~~~~~~~~~~~
+In file included from ../Inc/main.h:27,
+                 from ../Drivers/Core/Src/stm32f4xx_it.c:23:
+/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica04_p2/Drivers/API/inc/API_debounce.h:22:23: error: unknown type name 'debounceState_t'
+   22 | void debounceFSM_init(debounceState_t*);  // debe cargar el estado inicial
+      |                       ^~~~~~~~~~~~~~~
+/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica04_p2/Drivers/API/inc/API_debounce.h:25:13: warning: 'buttonPressed' declared 'static' but never defined [-Wunused-function]
+   25 | static void buttonPressed();   // debe invertir el estado del LED1
+      |             ^~~~~~~~~~~~~
+/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica04_p2/Drivers/API/inc/API_debounce.h:26:13: warning: 'buttonReleased' declared 'static' but never defined [-Wunused-function]
+   26 | static void buttonReleased();// debe invertir el estado del LED3
+      |             ^~~~~~~~~~~~~~
+make: *** [Drivers/STM32F4xx_HAL_Driver/Src/subdir.mk:292: Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_msp.o] Error 1
+make: *** Waiting for unfinished jobs....
+make: *** [Drivers/API/src/subdir.mk:22: Drivers/API/src/API_debounce.o] Error 1
+/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica04_p2/Drivers/API/inc/API_debounce.h:23:25: error: unknown type name 'debounceState_t'
+   23 | void debounceFSM_update(debounceState_t*, delay_t*); // debe leer las entradas, resolver la lógica de
+      |                         ^~~~~~~~~~~~~~~
+/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica04_p2/Drivers/API/inc/API_debounce.h:25:13: warning: 'buttonPressed' declared 'static' but never defined [-Wunused-function]
+   25 | static void buttonPressed();   // debe invertir el estado del LED1
+      |             ^~~~~~~~~~~~~
+/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica04_p2/Drivers/API/inc/API_debounce.h:26:13: warning: 'buttonReleased' declared 'static' but never defined [-Wunused-function]
+   26 | static void buttonReleased();// debe invertir el estado del LED3
+      |             ^~~~~~~~~~~~~~
+make: *** [Drivers/Core/Src/subdir.mk:25: Drivers/Core/Src/stm32f4xx_it.o] Error 1
+/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica04_p2/Drivers/API/inc/API_debounce.h:23:25: error: unknown type name 'debounceState_t'
+   23 | void debounceFSM_update(debounceState_t*, delay_t*); // debe leer las entradas, resolver la lógica de
+      |                         ^~~~~~~~~~~~~~~
+../Src/main.c: In function 'main':
+../Src/main.c:92:2: error: unknown type name 'debounceState_t'
+   92 |  debounceState_t Estado;
+      |  ^~~~~~~~~~~~~~~
+../Src/main.c:99:2: warning: implicit declaration of function 'debounceFSM_init' [-Wimplicit-function-declaration]
+   99 |  debounceFSM_init(&Estado);
+      |  ^~~~~~~~~~~~~~~~
+../Src/main.c:116:6: warning: implicit declaration of function 'debounceFSM_update' [-Wimplicit-function-declaration]
+  116 |      debounceFSM_update(&Estado,&Delay1);
+      |      ^~~~~~~~~~~~~~~~~~
+In file included from ../Inc/main.h:27,
+                 from ../Src/main.c:29:
+../Src/main.c: At top level:
+/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica04_p2/Drivers/API/inc/API_debounce.h:25:13: warning: 'buttonPressed' declared 'static' but never defined [-Wunused-function]
+   25 | static void buttonPressed();   // debe invertir el estado del LED1
+      |             ^~~~~~~~~~~~~
+/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica04_p2/Drivers/API/inc/API_debounce.h:26:13: warning: 'buttonReleased' declared 'static' but never defined [-Wunused-function]
+   26 | static void buttonReleased();// debe invertir el estado del LED3
+      |             ^~~~~~~~~~~~~~
+make: *** [Src/subdir.mk:19: Src/main.o] Error 1
+"make -j8 all" terminated with exit code 2. Build might be incomplete.
+22:24:32 **** Incremental Build of configuration Debug for project Practica04_p2 ****
+make -j8 all 
+arm-none-eabi-gcc "../Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F429ZITx -DSTM32F4 -DNUCLEO_F429ZI -DUSE_HAL_DRIVER -DSTM32F429xx -c -I../Inc -I"/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica04_p2/Drivers/STM32F4xx_HAL_Driver/Inc" -I"/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica04_p2/Drivers/CMSIS/Include" -I"/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica04_p2/Drivers/CMSIS/Device/ST/STM32F4xx/Include" -I"/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica04_p2/Drivers/BSP/STM32F4xx_Nucleo_144" -I"/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica04_p2/Drivers/Core/Inc" -I"/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica04_p2/Drivers/API" -I"/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica04_p2/Drivers/API/inc" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Src/main.d" -MT"Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Src/main.o"
+arm-none-eabi-gcc "../Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_msp.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F429ZITx -DSTM32F4 -DNUCLEO_F429ZI -DUSE_HAL_DRIVER -DSTM32F429xx -c -I../Inc -I"/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica04_p2/Drivers/STM32F4xx_HAL_Driver/Inc" -I"/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica04_p2/Drivers/CMSIS/Include" -I"/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica04_p2/Drivers/CMSIS/Device/ST/STM32F4xx/Include" -I"/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica04_p2/Drivers/BSP/STM32F4xx_Nucleo_144" -I"/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica04_p2/Drivers/Core/Inc" -I"/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica04_p2/Drivers/API" -I"/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica04_p2/Drivers/API/inc" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_msp.d" -MT"Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_msp.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_msp.o"
+arm-none-eabi-gcc "../Drivers/Core/Src/stm32f4xx_it.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F429ZITx -DSTM32F4 -DNUCLEO_F429ZI -DUSE_HAL_DRIVER -DSTM32F429xx -c -I../Inc -I"/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica04_p2/Drivers/STM32F4xx_HAL_Driver/Inc" -I"/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica04_p2/Drivers/CMSIS/Include" -I"/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica04_p2/Drivers/CMSIS/Device/ST/STM32F4xx/Include" -I"/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica04_p2/Drivers/BSP/STM32F4xx_Nucleo_144" -I"/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica04_p2/Drivers/Core/Inc" -I"/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica04_p2/Drivers/API" -I"/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica04_p2/Drivers/API/inc" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Drivers/Core/Src/stm32f4xx_it.d" -MT"Drivers/Core/Src/stm32f4xx_it.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Drivers/Core/Src/stm32f4xx_it.o"
+arm-none-eabi-gcc "../Drivers/API/src/API_debounce.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F429ZITx -DSTM32F4 -DNUCLEO_F429ZI -DUSE_HAL_DRIVER -DSTM32F429xx -c -I../Inc -I"/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica04_p2/Drivers/STM32F4xx_HAL_Driver/Inc" -I"/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica04_p2/Drivers/CMSIS/Include" -I"/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica04_p2/Drivers/CMSIS/Device/ST/STM32F4xx/Include" -I"/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica04_p2/Drivers/BSP/STM32F4xx_Nucleo_144" -I"/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica04_p2/Drivers/Core/Inc" -I"/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica04_p2/Drivers/API" -I"/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica04_p2/Drivers/API/inc" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Drivers/API/src/API_debounce.d" -MT"Drivers/API/src/API_debounce.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Drivers/API/src/API_debounce.o"
+../Src/main.c: In function 'main':
+../Src/main.c:96:2: error: 'Estado_f' undeclared (first use in this function); did you mean 'Estado'?
+   96 |  Estado_f=PRIMERO;
+      |  ^~~~~~~~
+      |  Estado
+../Src/main.c:96:2: note: each undeclared identifier is reported only once for each function it appears in
+In file included from ../Inc/main.h:27,
+                 from ../Src/main.c:29:
+../Src/main.c: At top level:
+/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica04_p2/Drivers/API/inc/API_debounce.h:35:13: warning: 'buttonPressed' declared 'static' but never defined [-Wunused-function]
+   35 | static void buttonPressed();   // debe invertir el estado del LED1
+      |             ^~~~~~~~~~~~~
+/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica04_p2/Drivers/API/inc/API_debounce.h:36:13: warning: 'buttonReleased' declared 'static' but never defined [-Wunused-function]
+   36 | static void buttonReleased();// debe invertir el estado del LED3
+      |             ^~~~~~~~~~~~~~
+/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica04_p2/Drivers/API/inc/API_debounce.h:21:24: warning: 'debounceState' defined but not used [-Wunused-variable]
+   21 | static debounceState_t debounceState;
+      |                        ^~~~~~~~~~~~~
+../Drivers/API/src/API_debounce.c:36:6: error: conflicting types for 'debounceFSM_init'
+   36 | void debounceFSM_init(debounceState_t * EstadoActual){
+      |      ^~~~~~~~~~~~~~~~
+In file included from ../Drivers/API/src/API_debounce.c:19:
+/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica04_p2/Drivers/API/inc/API_debounce.h:32:6: note: previous declaration of 'debounceFSM_init' was here
+   32 | void debounceFSM_init(debounceState_t*, debounceState_t);  // debe cargar el estado inicial
+      |      ^~~~~~~~~~~~~~~~
+../Drivers/API/src/API_debounce.c:110:13: warning: 'buttonReleased' defined but not used [-Wunused-function]
+  110 | static void buttonReleased()
+      |             ^~~~~~~~~~~~~~
+../Drivers/API/src/API_debounce.c:102:13: warning: 'buttonPressed' defined but not used [-Wunused-function]
+  102 | static void buttonPressed(){
+      |             ^~~~~~~~~~~~~
+In file included from ../Drivers/API/src/API_debounce.c:19:
+/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica04_p2/Drivers/API/inc/API_debounce.h:21:24: warning: 'debounceState' defined but not used [-Wunused-variable]
+   21 | static debounceState_t debounceState;
+      |                        ^~~~~~~~~~~~~
+In file included from ../Inc/main.h:27,
+                 from ../Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_msp.c:21:
+/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica04_p2/Drivers/API/inc/API_debounce.h:35:13: warning: 'buttonPressed' declared 'static' but never defined [-Wunused-function]
+   35 | static void buttonPressed();   // debe invertir el estado del LED1
+      |             ^~~~~~~~~~~~~
+/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica04_p2/Drivers/API/inc/API_debounce.h:36:13: warning: 'buttonReleased' declared 'static' but never defined [-Wunused-function]
+   36 | static void buttonReleased();// debe invertir el estado del LED3
+      |             ^~~~~~~~~~~~~~
+make: *** [Src/subdir.mk:19: Src/main.o] Error 1
+make: *** Waiting for unfinished jobs....
+/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica04_p2/Drivers/API/inc/API_debounce.h:21:24: warning: 'debounceState' defined but not used [-Wunused-variable]
+   21 | static debounceState_t debounceState;
+      |                        ^~~~~~~~~~~~~
+make: *** [Drivers/API/src/subdir.mk:22: Drivers/API/src/API_debounce.o] Error 1
+In file included from ../Inc/main.h:27,
+                 from ../Drivers/Core/Src/stm32f4xx_it.c:23:
+/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica04_p2/Drivers/API/inc/API_debounce.h:35:13: warning: 'buttonPressed' declared 'static' but never defined [-Wunused-function]
+   35 | static void buttonPressed();   // debe invertir el estado del LED1
+      |             ^~~~~~~~~~~~~
+/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica04_p2/Drivers/API/inc/API_debounce.h:36:13: warning: 'buttonReleased' declared 'static' but never defined [-Wunused-function]
+   36 | static void buttonReleased();// debe invertir el estado del LED3
+      |             ^~~~~~~~~~~~~~
+/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica04_p2/Drivers/API/inc/API_debounce.h:21:24: warning: 'debounceState' defined but not used [-Wunused-variable]
+   21 | static debounceState_t debounceState;
+      |                        ^~~~~~~~~~~~~
+"make -j8 all" terminated with exit code 2. Build might be incomplete.
+22:25:02 **** Incremental Build of configuration Debug for project Practica04_p2 ****
+make -j8 all 
+arm-none-eabi-gcc "../Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F429ZITx -DSTM32F4 -DNUCLEO_F429ZI -DUSE_HAL_DRIVER -DSTM32F429xx -c -I../Inc -I"/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica04_p2/Drivers/STM32F4xx_HAL_Driver/Inc" -I"/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica04_p2/Drivers/CMSIS/Include" -I"/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica04_p2/Drivers/CMSIS/Device/ST/STM32F4xx/Include" -I"/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica04_p2/Drivers/BSP/STM32F4xx_Nucleo_144" -I"/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica04_p2/Drivers/Core/Inc" -I"/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica04_p2/Drivers/API" -I"/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica04_p2/Drivers/API/inc" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Src/main.d" -MT"Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Src/main.o"
+arm-none-eabi-gcc "../Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_msp.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F429ZITx -DSTM32F4 -DNUCLEO_F429ZI -DUSE_HAL_DRIVER -DSTM32F429xx -c -I../Inc -I"/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica04_p2/Drivers/STM32F4xx_HAL_Driver/Inc" -I"/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica04_p2/Drivers/CMSIS/Include" -I"/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica04_p2/Drivers/CMSIS/Device/ST/STM32F4xx/Include" -I"/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica04_p2/Drivers/BSP/STM32F4xx_Nucleo_144" -I"/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica04_p2/Drivers/Core/Inc" -I"/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica04_p2/Drivers/API" -I"/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica04_p2/Drivers/API/inc" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_msp.d" -MT"Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_msp.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_msp.o"
+arm-none-eabi-gcc "../Drivers/Core/Src/stm32f4xx_it.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F429ZITx -DSTM32F4 -DNUCLEO_F429ZI -DUSE_HAL_DRIVER -DSTM32F429xx -c -I../Inc -I"/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica04_p2/Drivers/STM32F4xx_HAL_Driver/Inc" -I"/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica04_p2/Drivers/CMSIS/Include" -I"/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica04_p2/Drivers/CMSIS/Device/ST/STM32F4xx/Include" -I"/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica04_p2/Drivers/BSP/STM32F4xx_Nucleo_144" -I"/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica04_p2/Drivers/Core/Inc" -I"/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica04_p2/Drivers/API" -I"/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica04_p2/Drivers/API/inc" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Drivers/Core/Src/stm32f4xx_it.d" -MT"Drivers/Core/Src/stm32f4xx_it.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Drivers/Core/Src/stm32f4xx_it.o"
+arm-none-eabi-gcc "../Drivers/API/src/API_debounce.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F429ZITx -DSTM32F4 -DNUCLEO_F429ZI -DUSE_HAL_DRIVER -DSTM32F429xx -c -I../Inc -I"/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica04_p2/Drivers/STM32F4xx_HAL_Driver/Inc" -I"/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica04_p2/Drivers/CMSIS/Include" -I"/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica04_p2/Drivers/CMSIS/Device/ST/STM32F4xx/Include" -I"/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica04_p2/Drivers/BSP/STM32F4xx_Nucleo_144" -I"/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica04_p2/Drivers/Core/Inc" -I"/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica04_p2/Drivers/API" -I"/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica04_p2/Drivers/API/inc" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Drivers/API/src/API_debounce.d" -MT"Drivers/API/src/API_debounce.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Drivers/API/src/API_debounce.o"
+In file included from ../Inc/main.h:27,
+                 from ../Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_msp.c:21:
+/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica04_p2/Drivers/API/inc/API_debounce.h:32:13: warning: 'buttonPressed' declared 'static' but never defined [-Wunused-function]
+   32 | static void buttonPressed();   // debe invertir el estado del LED1
+      |             ^~~~~~~~~~~~~
+/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica04_p2/Drivers/API/inc/API_debounce.h:33:13: warning: 'buttonReleased' declared 'static' but never defined [-Wunused-function]
+   33 | static void buttonReleased();// debe invertir el estado del LED3
+      |             ^~~~~~~~~~~~~~
+/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica04_p2/Drivers/API/inc/API_debounce.h:21:24: warning: 'debounceState' defined but not used [-Wunused-variable]
+   21 | static debounceState_t debounceState;
+      |                        ^~~~~~~~~~~~~
+In file included from ../Inc/main.h:27,
+                 from ../Drivers/Core/Src/stm32f4xx_it.c:23:
+/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica04_p2/Drivers/API/inc/API_debounce.h:32:13: warning: 'buttonPressed' declared 'static' but never defined [-Wunused-function]
+   32 | static void buttonPressed();   // debe invertir el estado del LED1
+      |             ^~~~~~~~~~~~~
+/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica04_p2/Drivers/API/inc/API_debounce.h:33:13: warning: 'buttonReleased' declared 'static' but never defined [-Wunused-function]
+   33 | static void buttonReleased();// debe invertir el estado del LED3
+      |             ^~~~~~~~~~~~~~
+/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica04_p2/Drivers/API/inc/API_debounce.h:21:24: warning: 'debounceState' defined but not used [-Wunused-variable]
+   21 | static debounceState_t debounceState;
+      |                        ^~~~~~~~~~~~~
+../Src/main.c: In function 'main':
+../Src/main.c:96:2: error: 'Estado_f' undeclared (first use in this function); did you mean 'Estado'?
+   96 |  Estado_f=PRIMERO;
+      |  ^~~~~~~~
+      |  Estado
+../Src/main.c:96:2: note: each undeclared identifier is reported only once for each function it appears in
+In file included from ../Inc/main.h:27,
+                 from ../Src/main.c:29:
+../Src/main.c: At top level:
+/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica04_p2/Drivers/API/inc/API_debounce.h:32:13: warning: 'buttonPressed' declared 'static' but never defined [-Wunused-function]
+   32 | static void buttonPressed();   // debe invertir el estado del LED1
+      |             ^~~~~~~~~~~~~
+/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica04_p2/Drivers/API/inc/API_debounce.h:33:13: warning: 'buttonReleased' declared 'static' but never defined [-Wunused-function]
+   33 | static void buttonReleased();// debe invertir el estado del LED3
+      |             ^~~~~~~~~~~~~~
+/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica04_p2/Drivers/API/inc/API_debounce.h:21:24: warning: 'debounceState' defined but not used [-Wunused-variable]
+   21 | static debounceState_t debounceState;
+      |                        ^~~~~~~~~~~~~
+../Drivers/API/src/API_debounce.c:36:6: error: conflicting types for 'debounceFSM_init'
+   36 | void debounceFSM_init(debounceState_t * EstadoActual){
+      |      ^~~~~~~~~~~~~~~~
+In file included from ../Drivers/API/src/API_debounce.c:19:
+/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica04_p2/Drivers/API/inc/API_debounce.h:29:6: note: previous declaration of 'debounceFSM_init' was here
+   29 | void debounceFSM_init(debounceState_t*, debounceState_t);  // debe cargar el estado inicial
+      |      ^~~~~~~~~~~~~~~~
+../Drivers/API/src/API_debounce.c:110:13: warning: 'buttonReleased' defined but not used [-Wunused-function]
+  110 | static void buttonReleased()
+      |             ^~~~~~~~~~~~~~
+../Drivers/API/src/API_debounce.c:102:13: warning: 'buttonPressed' defined but not used [-Wunused-function]
+  102 | static void buttonPressed(){
+      |             ^~~~~~~~~~~~~
+In file included from ../Drivers/API/src/API_debounce.c:19:
+/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica04_p2/Drivers/API/inc/API_debounce.h:21:24: warning: 'debounceState' defined but not used [-Wunused-variable]
+   21 | static debounceState_t debounceState;
+      |                        ^~~~~~~~~~~~~
+make: *** [Src/subdir.mk:19: Src/main.o] Error 1
+make: *** Waiting for unfinished jobs....
+make: *** [Drivers/API/src/subdir.mk:22: Drivers/API/src/API_debounce.o] Error 1
+"make -j8 all" terminated with exit code 2. Build might be incomplete.
+22:25:39 **** Incremental Build of configuration Debug for project Practica04_p2 ****
+make -j8 all 
+arm-none-eabi-gcc "../Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F429ZITx -DSTM32F4 -DNUCLEO_F429ZI -DUSE_HAL_DRIVER -DSTM32F429xx -c -I../Inc -I"/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica04_p2/Drivers/STM32F4xx_HAL_Driver/Inc" -I"/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica04_p2/Drivers/CMSIS/Include" -I"/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica04_p2/Drivers/CMSIS/Device/ST/STM32F4xx/Include" -I"/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica04_p2/Drivers/BSP/STM32F4xx_Nucleo_144" -I"/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica04_p2/Drivers/Core/Inc" -I"/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica04_p2/Drivers/API" -I"/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica04_p2/Drivers/API/inc" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Src/main.d" -MT"Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Src/main.o"
+arm-none-eabi-gcc "../Drivers/API/src/API_debounce.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F429ZITx -DSTM32F4 -DNUCLEO_F429ZI -DUSE_HAL_DRIVER -DSTM32F429xx -c -I../Inc -I"/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica04_p2/Drivers/STM32F4xx_HAL_Driver/Inc" -I"/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica04_p2/Drivers/CMSIS/Include" -I"/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica04_p2/Drivers/CMSIS/Device/ST/STM32F4xx/Include" -I"/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica04_p2/Drivers/BSP/STM32F4xx_Nucleo_144" -I"/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica04_p2/Drivers/Core/Inc" -I"/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica04_p2/Drivers/API" -I"/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica04_p2/Drivers/API/inc" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Drivers/API/src/API_debounce.d" -MT"Drivers/API/src/API_debounce.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Drivers/API/src/API_debounce.o"
+../Drivers/API/src/API_debounce.c:36:6: error: conflicting types for 'debounceFSM_init'
+   36 | void debounceFSM_init(debounceState_t * EstadoActual){
+      |      ^~~~~~~~~~~~~~~~
+In file included from ../Drivers/API/src/API_debounce.c:19:
+/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica04_p2/Drivers/API/inc/API_debounce.h:29:6: note: previous declaration of 'debounceFSM_init' was here
+   29 | void debounceFSM_init(debounceState_t*, debounceState_t);  // debe cargar el estado inicial
+      |      ^~~~~~~~~~~~~~~~
+../Drivers/API/src/API_debounce.c:110:13: warning: 'buttonReleased' defined but not used [-Wunused-function]
+  110 | static void buttonReleased()
+      |             ^~~~~~~~~~~~~~
+../Drivers/API/src/API_debounce.c:102:13: warning: 'buttonPressed' defined but not used [-Wunused-function]
+  102 | static void buttonPressed(){
+      |             ^~~~~~~~~~~~~
+In file included from ../Drivers/API/src/API_debounce.c:19:
+/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica04_p2/Drivers/API/inc/API_debounce.h:21:24: warning: 'debounceState' defined but not used [-Wunused-variable]
+   21 | static debounceState_t debounceState;
+      |                        ^~~~~~~~~~~~~
+In file included from ../Inc/main.h:27,
+                 from ../Src/main.c:29:
+/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica04_p2/Drivers/API/inc/API_debounce.h:32:13: warning: 'buttonPressed' declared 'static' but never defined [-Wunused-function]
+   32 | static void buttonPressed();   // debe invertir el estado del LED1
+      |             ^~~~~~~~~~~~~
+/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica04_p2/Drivers/API/inc/API_debounce.h:33:13: warning: 'buttonReleased' declared 'static' but never defined [-Wunused-function]
+   33 | static void buttonReleased();// debe invertir el estado del LED3
+      |             ^~~~~~~~~~~~~~
+/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica04_p2/Drivers/API/inc/API_debounce.h:21:24: warning: 'debounceState' defined but not used [-Wunused-variable]
+   21 | static debounceState_t debounceState;
+      |                        ^~~~~~~~~~~~~
+make: *** [Drivers/API/src/subdir.mk:22: Drivers/API/src/API_debounce.o] Error 1
+make: *** Waiting for unfinished jobs....
+"make -j8 all" terminated with exit code 2. Build might be incomplete.
+22:26:23 **** Incremental Build of configuration Debug for project Practica04_p2 ****
+make -j8 all 
+arm-none-eabi-gcc "../Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F429ZITx -DSTM32F4 -DNUCLEO_F429ZI -DUSE_HAL_DRIVER -DSTM32F429xx -c -I../Inc -I"/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica04_p2/Drivers/STM32F4xx_HAL_Driver/Inc" -I"/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica04_p2/Drivers/CMSIS/Include" -I"/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica04_p2/Drivers/CMSIS/Device/ST/STM32F4xx/Include" -I"/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica04_p2/Drivers/BSP/STM32F4xx_Nucleo_144" -I"/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica04_p2/Drivers/Core/Inc" -I"/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica04_p2/Drivers/API" -I"/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica04_p2/Drivers/API/inc" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Src/main.d" -MT"Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Src/main.o"
+arm-none-eabi-gcc "../Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_msp.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F429ZITx -DSTM32F4 -DNUCLEO_F429ZI -DUSE_HAL_DRIVER -DSTM32F429xx -c -I../Inc -I"/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica04_p2/Drivers/STM32F4xx_HAL_Driver/Inc" -I"/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica04_p2/Drivers/CMSIS/Include" -I"/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica04_p2/Drivers/CMSIS/Device/ST/STM32F4xx/Include" -I"/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica04_p2/Drivers/BSP/STM32F4xx_Nucleo_144" -I"/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica04_p2/Drivers/Core/Inc" -I"/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica04_p2/Drivers/API" -I"/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica04_p2/Drivers/API/inc" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_msp.d" -MT"Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_msp.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_msp.o"
+arm-none-eabi-gcc "../Drivers/Core/Src/stm32f4xx_it.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F429ZITx -DSTM32F4 -DNUCLEO_F429ZI -DUSE_HAL_DRIVER -DSTM32F429xx -c -I../Inc -I"/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica04_p2/Drivers/STM32F4xx_HAL_Driver/Inc" -I"/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica04_p2/Drivers/CMSIS/Include" -I"/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica04_p2/Drivers/CMSIS/Device/ST/STM32F4xx/Include" -I"/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica04_p2/Drivers/BSP/STM32F4xx_Nucleo_144" -I"/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica04_p2/Drivers/Core/Inc" -I"/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica04_p2/Drivers/API" -I"/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica04_p2/Drivers/API/inc" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Drivers/Core/Src/stm32f4xx_it.d" -MT"Drivers/Core/Src/stm32f4xx_it.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Drivers/Core/Src/stm32f4xx_it.o"
+arm-none-eabi-gcc "../Drivers/API/src/API_debounce.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F429ZITx -DSTM32F4 -DNUCLEO_F429ZI -DUSE_HAL_DRIVER -DSTM32F429xx -c -I../Inc -I"/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica04_p2/Drivers/STM32F4xx_HAL_Driver/Inc" -I"/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica04_p2/Drivers/CMSIS/Include" -I"/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica04_p2/Drivers/CMSIS/Device/ST/STM32F4xx/Include" -I"/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica04_p2/Drivers/BSP/STM32F4xx_Nucleo_144" -I"/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica04_p2/Drivers/Core/Inc" -I"/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica04_p2/Drivers/API" -I"/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica04_p2/Drivers/API/inc" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Drivers/API/src/API_debounce.d" -MT"Drivers/API/src/API_debounce.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Drivers/API/src/API_debounce.o"
+In file included from ../Inc/main.h:27,
+                 from ../Src/main.c:29:
+/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica04_p2/Drivers/API/inc/API_debounce.h:32:13: warning: 'buttonPressed' declared 'static' but never defined [-Wunused-function]
+   32 | static void buttonPressed();   // debe invertir el estado del LED1
+      |             ^~~~~~~~~~~~~
+/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica04_p2/Drivers/API/inc/API_debounce.h:33:13: warning: 'buttonReleased' declared 'static' but never defined [-Wunused-function]
+   33 | static void buttonReleased();// debe invertir el estado del LED3
+      |             ^~~~~~~~~~~~~~
+/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica04_p2/Drivers/API/inc/API_debounce.h:21:24: warning: 'debounceState' defined but not used [-Wunused-variable]
+   21 | static debounceState_t debounceState;
+      |                        ^~~~~~~~~~~~~
+In file included from ../Inc/main.h:27,
+                 from ../Drivers/Core/Src/stm32f4xx_it.c:23:
+/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica04_p2/Drivers/API/inc/API_debounce.h:32:13: warning: 'buttonPressed' declared 'static' but never defined [-Wunused-function]
+   32 | static void buttonPressed();   // debe invertir el estado del LED1
+      |             ^~~~~~~~~~~~~
+/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica04_p2/Drivers/API/inc/API_debounce.h:33:13: warning: 'buttonReleased' declared 'static' but never defined [-Wunused-function]
+   33 | static void buttonReleased();// debe invertir el estado del LED3
+      |             ^~~~~~~~~~~~~~
+/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica04_p2/Drivers/API/inc/API_debounce.h:21:24: warning: 'debounceState' defined but not used [-Wunused-variable]
+   21 | static debounceState_t debounceState;
+      |                        ^~~~~~~~~~~~~
+../Drivers/API/src/API_debounce.c:110:13: warning: 'buttonReleased' defined but not used [-Wunused-function]
+  110 | static void buttonReleased()
+      |             ^~~~~~~~~~~~~~
+../Drivers/API/src/API_debounce.c:102:13: warning: 'buttonPressed' defined but not used [-Wunused-function]
+  102 | static void buttonPressed(){
+      |             ^~~~~~~~~~~~~
+In file included from ../Drivers/API/src/API_debounce.c:19:
+/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica04_p2/Drivers/API/inc/API_debounce.h:21:24: warning: 'debounceState' defined but not used [-Wunused-variable]
+   21 | static debounceState_t debounceState;
+      |                        ^~~~~~~~~~~~~
+In file included from ../Inc/main.h:27,
+                 from ../Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_msp.c:21:
+/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica04_p2/Drivers/API/inc/API_debounce.h:32:13: warning: 'buttonPressed' declared 'static' but never defined [-Wunused-function]
+   32 | static void buttonPressed();   // debe invertir el estado del LED1
+      |             ^~~~~~~~~~~~~
+/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica04_p2/Drivers/API/inc/API_debounce.h:33:13: warning: 'buttonReleased' declared 'static' but never defined [-Wunused-function]
+   33 | static void buttonReleased();// debe invertir el estado del LED3
+      |             ^~~~~~~~~~~~~~
+/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica04_p2/Drivers/API/inc/API_debounce.h:21:24: warning: 'debounceState' defined but not used [-Wunused-variable]
+   21 | static debounceState_t debounceState;
+      |                        ^~~~~~~~~~~~~
+arm-none-eabi-gcc -o "Practica04_p2.elf" @"objects.list"   -mcpu=cortex-m4 -T"/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica04_p2/STM32F429ZITX_FLASH.ld" --specs=nosys.specs -Wl,-Map="Practica04_p2.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: Practica04_p2.elf
+ 
+arm-none-eabi-size   Practica04_p2.elf 
+arm-none-eabi-objdump -h -S  Practica04_p2.elf  > "Practica04_p2.list"
+   text	   data	    bss	    dec	    hex	filename
+  12024	    140	   1596	  13760	   35c0	Practica04_p2.elf
+Finished building: default.size.stdout
+ 
+Finished building: Practica04_p2.list
+ 
+22:35:27 **** Incremental Build of configuration Debug for project Practica04_p2 ****
+make -j8 all 
+arm-none-eabi-gcc "../Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F429ZITx -DSTM32F4 -DNUCLEO_F429ZI -DUSE_HAL_DRIVER -DSTM32F429xx -c -I../Inc -I"/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica04_p2/Drivers/STM32F4xx_HAL_Driver/Inc" -I"/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica04_p2/Drivers/CMSIS/Include" -I"/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica04_p2/Drivers/CMSIS/Device/ST/STM32F4xx/Include" -I"/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica04_p2/Drivers/BSP/STM32F4xx_Nucleo_144" -I"/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica04_p2/Drivers/Core/Inc" -I"/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica04_p2/Drivers/API" -I"/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica04_p2/Drivers/API/inc" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Src/main.d" -MT"Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Src/main.o"
+arm-none-eabi-gcc "../Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_msp.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F429ZITx -DSTM32F4 -DNUCLEO_F429ZI -DUSE_HAL_DRIVER -DSTM32F429xx -c -I../Inc -I"/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica04_p2/Drivers/STM32F4xx_HAL_Driver/Inc" -I"/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica04_p2/Drivers/CMSIS/Include" -I"/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica04_p2/Drivers/CMSIS/Device/ST/STM32F4xx/Include" -I"/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica04_p2/Drivers/BSP/STM32F4xx_Nucleo_144" -I"/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica04_p2/Drivers/Core/Inc" -I"/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica04_p2/Drivers/API" -I"/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica04_p2/Drivers/API/inc" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_msp.d" -MT"Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_msp.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_msp.o"
+arm-none-eabi-gcc "../Drivers/Core/Src/stm32f4xx_it.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F429ZITx -DSTM32F4 -DNUCLEO_F429ZI -DUSE_HAL_DRIVER -DSTM32F429xx -c -I../Inc -I"/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica04_p2/Drivers/STM32F4xx_HAL_Driver/Inc" -I"/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica04_p2/Drivers/CMSIS/Include" -I"/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica04_p2/Drivers/CMSIS/Device/ST/STM32F4xx/Include" -I"/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica04_p2/Drivers/BSP/STM32F4xx_Nucleo_144" -I"/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica04_p2/Drivers/Core/Inc" -I"/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica04_p2/Drivers/API" -I"/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica04_p2/Drivers/API/inc" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Drivers/Core/Src/stm32f4xx_it.d" -MT"Drivers/Core/Src/stm32f4xx_it.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Drivers/Core/Src/stm32f4xx_it.o"
+arm-none-eabi-gcc "../Drivers/API/src/API_debounce.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F429ZITx -DSTM32F4 -DNUCLEO_F429ZI -DUSE_HAL_DRIVER -DSTM32F429xx -c -I../Inc -I"/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica04_p2/Drivers/STM32F4xx_HAL_Driver/Inc" -I"/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica04_p2/Drivers/CMSIS/Include" -I"/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica04_p2/Drivers/CMSIS/Device/ST/STM32F4xx/Include" -I"/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica04_p2/Drivers/BSP/STM32F4xx_Nucleo_144" -I"/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica04_p2/Drivers/Core/Inc" -I"/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica04_p2/Drivers/API" -I"/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica04_p2/Drivers/API/inc" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Drivers/API/src/API_debounce.d" -MT"Drivers/API/src/API_debounce.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Drivers/API/src/API_debounce.o"
+../Src/main.c: In function 'main':
+../Src/main.c:92:18: warning: unused variable 'Estado' [-Wunused-variable]
+   92 |  debounceState_t Estado;
+      |                  ^~~~~~
+In file included from ../Inc/main.h:27,
+                 from ../Src/main.c:29:
+../Src/main.c: At top level:
+/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica04_p2/Drivers/API/inc/API_debounce.h:32:13: warning: 'buttonPressed' declared 'static' but never defined [-Wunused-function]
+   32 | static void buttonPressed();   // debe invertir el estado del LED1
+      |             ^~~~~~~~~~~~~
+/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica04_p2/Drivers/API/inc/API_debounce.h:33:13: warning: 'buttonReleased' declared 'static' but never defined [-Wunused-function]
+   33 | static void buttonReleased();// debe invertir el estado del LED3
+      |             ^~~~~~~~~~~~~~
+/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica04_p2/Drivers/API/inc/API_debounce.h:21:24: warning: 'debounceState' defined but not used [-Wunused-variable]
+   21 | static debounceState_t debounceState;
+      |                        ^~~~~~~~~~~~~
+../Drivers/API/src/API_debounce.c:112:13: warning: 'buttonReleased' defined but not used [-Wunused-function]
+  112 | static void buttonReleased()
+      |             ^~~~~~~~~~~~~~
+../Drivers/API/src/API_debounce.c:104:13: warning: 'buttonPressed' defined but not used [-Wunused-function]
+  104 | static void buttonPressed(){
+      |             ^~~~~~~~~~~~~
+In file included from ../Drivers/API/src/API_debounce.c:19:
+/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica04_p2/Drivers/API/inc/API_debounce.h:21:24: warning: 'debounceState' defined but not used [-Wunused-variable]
+   21 | static debounceState_t debounceState;
+      |                        ^~~~~~~~~~~~~
+In file included from ../Inc/main.h:27,
+                 from ../Drivers/Core/Src/stm32f4xx_it.c:23:
+/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica04_p2/Drivers/API/inc/API_debounce.h:32:13: warning: 'buttonPressed' declared 'static' but never defined [-Wunused-function]
+   32 | static void buttonPressed();   // debe invertir el estado del LED1
+      |             ^~~~~~~~~~~~~
+/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica04_p2/Drivers/API/inc/API_debounce.h:33:13: warning: 'buttonReleased' declared 'static' but never defined [-Wunused-function]
+   33 | static void buttonReleased();// debe invertir el estado del LED3
+      |             ^~~~~~~~~~~~~~
+/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica04_p2/Drivers/API/inc/API_debounce.h:21:24: warning: 'debounceState' defined but not used [-Wunused-variable]
+   21 | static debounceState_t debounceState;
+      |                        ^~~~~~~~~~~~~
+In file included from ../Inc/main.h:27,
+                 from ../Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_msp.c:21:
+/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica04_p2/Drivers/API/inc/API_debounce.h:32:13: warning: 'buttonPressed' declared 'static' but never defined [-Wunused-function]
+   32 | static void buttonPressed();   // debe invertir el estado del LED1
+      |             ^~~~~~~~~~~~~
+/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica04_p2/Drivers/API/inc/API_debounce.h:33:13: warning: 'buttonReleased' declared 'static' but never defined [-Wunused-function]
+   33 | static void buttonReleased();// debe invertir el estado del LED3
+      |             ^~~~~~~~~~~~~~
+/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica04_p2/Drivers/API/inc/API_debounce.h:21:24: warning: 'debounceState' defined but not used [-Wunused-variable]
+   21 | static debounceState_t debounceState;
+      |                        ^~~~~~~~~~~~~
+arm-none-eabi-gcc -o "Practica04_p2.elf" @"objects.list"   -mcpu=cortex-m4 -T"/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica04_p2/STM32F429ZITX_FLASH.ld" --specs=nosys.specs -Wl,-Map="Practica04_p2.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: Practica04_p2.elf
+ 
+arm-none-eabi-size   Practica04_p2.elf 
+arm-none-eabi-objdump -h -S  Practica04_p2.elf  > "Practica04_p2.list"
+   text	   data	    bss	    dec	    hex	filename
+  12032	    140	   1596	  13768	   35c8	Practica04_p2.elf
+Finished building: default.size.stdout
+ 
+Finished building: Practica04_p2.list
+ 
+22:35:37 **** Incremental Build of configuration Debug for project Practica04_p2 ****
+make -j8 all 
+arm-none-eabi-size   Practica04_p2.elf 
+   text	   data	    bss	    dec	    hex	filename
+  12032	    140	   1596	  13768	   35c8	Practica04_p2.elf
+Finished building: default.size.stdout
+ 
+22:35:43 **** Incremental Build of configuration Debug for project Practica04_p2 ****
+make -j8 all 
+arm-none-eabi-size   Practica04_p2.elf 
+   text	   data	    bss	    dec	    hex	filename
+  12032	    140	   1596	  13768	   35c8	Practica04_p2.elf
+Finished building: default.size.stdout
+ 
+22:38:06 **** Incremental Build of configuration Debug for project Practica04_p2 ****
+make -j8 all 
+arm-none-eabi-size   Practica04_p2.elf 
+   text	   data	    bss	    dec	    hex	filename
+  12032	    140	   1596	  13768	   35c8	Practica04_p2.elf
+Finished building: default.size.stdout
+ 
+22:40:16 **** Incremental Build of configuration Debug for project Practica04_p2 ****
+make -j8 all 
+arm-none-eabi-gcc "../Drivers/API/src/API_debounce.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F429ZITx -DSTM32F4 -DNUCLEO_F429ZI -DUSE_HAL_DRIVER -DSTM32F429xx -c -I../Inc -I"/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica04_p2/Drivers/STM32F4xx_HAL_Driver/Inc" -I"/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica04_p2/Drivers/CMSIS/Include" -I"/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica04_p2/Drivers/CMSIS/Device/ST/STM32F4xx/Include" -I"/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica04_p2/Drivers/BSP/STM32F4xx_Nucleo_144" -I"/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica04_p2/Drivers/Core/Inc" -I"/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica04_p2/Drivers/API" -I"/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica04_p2/Drivers/API/inc" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Drivers/API/src/API_debounce.d" -MT"Drivers/API/src/API_debounce.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Drivers/API/src/API_debounce.o"
+../Drivers/API/src/API_debounce.c: In function 'debounceFSM_update':
+../Drivers/API/src/API_debounce.c:48:10: error: switch quantity not an integer
+   48 |  switch (currentState){
+      |          ^~~~~~~~~~~~
+At top level:
+../Drivers/API/src/API_debounce.c:112:13: warning: 'buttonReleased' defined but not used [-Wunused-function]
+  112 | static void buttonReleased()
+      |             ^~~~~~~~~~~~~~
+../Drivers/API/src/API_debounce.c:104:13: warning: 'buttonPressed' defined but not used [-Wunused-function]
+  104 | static void buttonPressed(){
+      |             ^~~~~~~~~~~~~
+In file included from ../Drivers/API/src/API_debounce.c:19:
+/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica04_p2/Drivers/API/inc/API_debounce.h:21:24: warning: 'debounceState' defined but not used [-Wunused-variable]
+   21 | static debounceState_t debounceState;
+      |                        ^~~~~~~~~~~~~
+make: *** [Drivers/API/src/subdir.mk:22: Drivers/API/src/API_debounce.o] Error 1
+"make -j8 all" terminated with exit code 2. Build might be incomplete.
+22:40:28 **** Incremental Build of configuration Debug for project Practica04_p2 ****
+make -j8 all 
+arm-none-eabi-gcc "../Drivers/API/src/API_debounce.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F429ZITx -DSTM32F4 -DNUCLEO_F429ZI -DUSE_HAL_DRIVER -DSTM32F429xx -c -I../Inc -I"/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica04_p2/Drivers/STM32F4xx_HAL_Driver/Inc" -I"/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica04_p2/Drivers/CMSIS/Include" -I"/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica04_p2/Drivers/CMSIS/Device/ST/STM32F4xx/Include" -I"/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica04_p2/Drivers/BSP/STM32F4xx_Nucleo_144" -I"/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica04_p2/Drivers/Core/Inc" -I"/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica04_p2/Drivers/API" -I"/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica04_p2/Drivers/API/inc" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Drivers/API/src/API_debounce.d" -MT"Drivers/API/src/API_debounce.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Drivers/API/src/API_debounce.o"
+../Drivers/API/src/API_debounce.c: In function 'debounceFSM_update':
+../Drivers/API/src/API_debounce.c:48:10: error: switch quantity not an integer
+   48 |  switch (&currentState){
+      |          ^
+At top level:
+../Drivers/API/src/API_debounce.c:112:13: warning: 'buttonReleased' defined but not used [-Wunused-function]
+  112 | static void buttonReleased()
+      |             ^~~~~~~~~~~~~~
+../Drivers/API/src/API_debounce.c:104:13: warning: 'buttonPressed' defined but not used [-Wunused-function]
+  104 | static void buttonPressed(){
+      |             ^~~~~~~~~~~~~
+In file included from ../Drivers/API/src/API_debounce.c:19:
+/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica04_p2/Drivers/API/inc/API_debounce.h:21:24: warning: 'debounceState' defined but not used [-Wunused-variable]
+   21 | static debounceState_t debounceState;
+      |                        ^~~~~~~~~~~~~
+make: *** [Drivers/API/src/subdir.mk:22: Drivers/API/src/API_debounce.o] Error 1
+"make -j8 all" terminated with exit code 2. Build might be incomplete.
+22:40:41 **** Incremental Build of configuration Debug for project Practica04_p2 ****
+make -j8 all 
+arm-none-eabi-gcc "../Drivers/API/src/API_debounce.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F429ZITx -DSTM32F4 -DNUCLEO_F429ZI -DUSE_HAL_DRIVER -DSTM32F429xx -c -I../Inc -I"/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica04_p2/Drivers/STM32F4xx_HAL_Driver/Inc" -I"/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica04_p2/Drivers/CMSIS/Include" -I"/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica04_p2/Drivers/CMSIS/Device/ST/STM32F4xx/Include" -I"/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica04_p2/Drivers/BSP/STM32F4xx_Nucleo_144" -I"/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica04_p2/Drivers/Core/Inc" -I"/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica04_p2/Drivers/API" -I"/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica04_p2/Drivers/API/inc" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Drivers/API/src/API_debounce.d" -MT"Drivers/API/src/API_debounce.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Drivers/API/src/API_debounce.o"
+../Drivers/API/src/API_debounce.c:112:13: warning: 'buttonReleased' defined but not used [-Wunused-function]
+  112 | static void buttonReleased()
+      |             ^~~~~~~~~~~~~~
+../Drivers/API/src/API_debounce.c:104:13: warning: 'buttonPressed' defined but not used [-Wunused-function]
+  104 | static void buttonPressed(){
+      |             ^~~~~~~~~~~~~
+In file included from ../Drivers/API/src/API_debounce.c:19:
+/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica04_p2/Drivers/API/inc/API_debounce.h:21:24: warning: 'debounceState' defined but not used [-Wunused-variable]
+   21 | static debounceState_t debounceState;
+      |                        ^~~~~~~~~~~~~
+arm-none-eabi-gcc -o "Practica04_p2.elf" @"objects.list"   -mcpu=cortex-m4 -T"/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica04_p2/STM32F429ZITX_FLASH.ld" --specs=nosys.specs -Wl,-Map="Practica04_p2.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: Practica04_p2.elf
+ 
+arm-none-eabi-size   Practica04_p2.elf 
+arm-none-eabi-objdump -h -S  Practica04_p2.elf  > "Practica04_p2.list"
+   text	   data	    bss	    dec	    hex	filename
+  12032	    140	   1596	  13768	   35c8	Practica04_p2.elf
+Finished building: default.size.stdout
+ 
+Finished building: Practica04_p2.list
+ 
+22:41:12 **** Incremental Build of configuration Debug for project Practica04_p2 ****
+make -j8 all 
+arm-none-eabi-size   Practica04_p2.elf 
+   text	   data	    bss	    dec	    hex	filename
+  12032	    140	   1596	  13768	   35c8	Practica04_p2.elf
+Finished building: default.size.stdout
+ 
+22:41:55 **** Incremental Build of configuration Debug for project Practica04_p2 ****
+make -j8 all 
+arm-none-eabi-gcc "../Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F429ZITx -DSTM32F4 -DNUCLEO_F429ZI -DUSE_HAL_DRIVER -DSTM32F429xx -c -I../Inc -I"/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica04_p2/Drivers/STM32F4xx_HAL_Driver/Inc" -I"/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica04_p2/Drivers/CMSIS/Include" -I"/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica04_p2/Drivers/CMSIS/Device/ST/STM32F4xx/Include" -I"/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica04_p2/Drivers/BSP/STM32F4xx_Nucleo_144" -I"/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica04_p2/Drivers/Core/Inc" -I"/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica04_p2/Drivers/API" -I"/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica04_p2/Drivers/API/inc" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Src/main.d" -MT"Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Src/main.o"
+arm-none-eabi-gcc "../Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_msp.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F429ZITx -DSTM32F4 -DNUCLEO_F429ZI -DUSE_HAL_DRIVER -DSTM32F429xx -c -I../Inc -I"/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica04_p2/Drivers/STM32F4xx_HAL_Driver/Inc" -I"/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica04_p2/Drivers/CMSIS/Include" -I"/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica04_p2/Drivers/CMSIS/Device/ST/STM32F4xx/Include" -I"/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica04_p2/Drivers/BSP/STM32F4xx_Nucleo_144" -I"/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica04_p2/Drivers/Core/Inc" -I"/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica04_p2/Drivers/API" -I"/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica04_p2/Drivers/API/inc" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_msp.d" -MT"Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_msp.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_msp.o"
+arm-none-eabi-gcc "../Drivers/Core/Src/stm32f4xx_it.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F429ZITx -DSTM32F4 -DNUCLEO_F429ZI -DUSE_HAL_DRIVER -DSTM32F429xx -c -I../Inc -I"/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica04_p2/Drivers/STM32F4xx_HAL_Driver/Inc" -I"/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica04_p2/Drivers/CMSIS/Include" -I"/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica04_p2/Drivers/CMSIS/Device/ST/STM32F4xx/Include" -I"/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica04_p2/Drivers/BSP/STM32F4xx_Nucleo_144" -I"/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica04_p2/Drivers/Core/Inc" -I"/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica04_p2/Drivers/API" -I"/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica04_p2/Drivers/API/inc" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Drivers/Core/Src/stm32f4xx_it.d" -MT"Drivers/Core/Src/stm32f4xx_it.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Drivers/Core/Src/stm32f4xx_it.o"
+arm-none-eabi-gcc "../Drivers/API/src/API_debounce.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F429ZITx -DSTM32F4 -DNUCLEO_F429ZI -DUSE_HAL_DRIVER -DSTM32F429xx -c -I../Inc -I"/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica04_p2/Drivers/STM32F4xx_HAL_Driver/Inc" -I"/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica04_p2/Drivers/CMSIS/Include" -I"/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica04_p2/Drivers/CMSIS/Device/ST/STM32F4xx/Include" -I"/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica04_p2/Drivers/BSP/STM32F4xx_Nucleo_144" -I"/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica04_p2/Drivers/Core/Inc" -I"/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica04_p2/Drivers/API" -I"/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica04_p2/Drivers/API/inc" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Drivers/API/src/API_debounce.d" -MT"Drivers/API/src/API_debounce.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Drivers/API/src/API_debounce.o"
+In file included from ../Inc/main.h:27,
+                 from ../Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_msp.c:21:
+/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica04_p2/Drivers/API/inc/API_debounce.h:24:13: warning: 'buttonPressed' declared 'static' but never defined [-Wunused-function]
+   24 | static void buttonPressed();   // debe invertir el estado del LED1
+      |             ^~~~~~~~~~~~~
+/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica04_p2/Drivers/API/inc/API_debounce.h:25:13: warning: 'buttonReleased' declared 'static' but never defined [-Wunused-function]
+   25 | static void buttonReleased();// debe invertir el estado del LED3
+      |             ^~~~~~~~~~~~~~
+In file included from ../Inc/main.h:27,
+                 from ../Drivers/Core/Src/stm32f4xx_it.c:23:
+/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica04_p2/Drivers/API/inc/API_debounce.h:24:13: warning: 'buttonPressed' declared 'static' but never defined [-Wunused-function]
+   24 | static void buttonPressed();   // debe invertir el estado del LED1
+      |             ^~~~~~~~~~~~~
+/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica04_p2/Drivers/API/inc/API_debounce.h:25:13: warning: 'buttonReleased' declared 'static' but never defined [-Wunused-function]
+   25 | static void buttonReleased();// debe invertir el estado del LED3
+      |             ^~~~~~~~~~~~~~
+../Drivers/API/src/API_debounce.c:120:13: warning: 'buttonReleased' defined but not used [-Wunused-function]
+  120 | static void buttonReleased()
+      |             ^~~~~~~~~~~~~~
+../Drivers/API/src/API_debounce.c:112:13: warning: 'buttonPressed' defined but not used [-Wunused-function]
+  112 | static void buttonPressed(){
+      |             ^~~~~~~~~~~~~
+../Drivers/API/src/API_debounce.c:35:24: warning: 'debounceState' defined but not used [-Wunused-variable]
+   35 | static debounceState_t debounceState;
+      |                        ^~~~~~~~~~~~~
+../Src/main.c: In function 'main':
+../Src/main.c:92:2: error: unknown type name 'debounceState_t'
+   92 |  debounceState_t Estado;
+      |  ^~~~~~~~~~~~~~~
+../Src/main.c:92:18: warning: unused variable 'Estado' [-Wunused-variable]
+   92 |  debounceState_t Estado;
+      |                  ^~~~~~
+In file included from ../Inc/main.h:27,
+                 from ../Src/main.c:29:
+../Src/main.c: At top level:
+/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica04_p2/Drivers/API/inc/API_debounce.h:24:13: warning: 'buttonPressed' declared 'static' but never defined [-Wunused-function]
+   24 | static void buttonPressed();   // debe invertir el estado del LED1
+      |             ^~~~~~~~~~~~~
+/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica04_p2/Drivers/API/inc/API_debounce.h:25:13: warning: 'buttonReleased' declared 'static' but never defined [-Wunused-function]
+   25 | static void buttonReleased();// debe invertir el estado del LED3
+      |             ^~~~~~~~~~~~~~
+make: *** [Src/subdir.mk:19: Src/main.o] Error 1
+make: *** Waiting for unfinished jobs....
+"make -j8 all" terminated with exit code 2. Build might be incomplete.
+22:42:33 **** Incremental Build of configuration Debug for project Practica04_p2 ****
+make -j8 all 
+arm-none-eabi-gcc "../Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F429ZITx -DSTM32F4 -DNUCLEO_F429ZI -DUSE_HAL_DRIVER -DSTM32F429xx -c -I../Inc -I"/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica04_p2/Drivers/STM32F4xx_HAL_Driver/Inc" -I"/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica04_p2/Drivers/CMSIS/Include" -I"/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica04_p2/Drivers/CMSIS/Device/ST/STM32F4xx/Include" -I"/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica04_p2/Drivers/BSP/STM32F4xx_Nucleo_144" -I"/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica04_p2/Drivers/Core/Inc" -I"/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica04_p2/Drivers/API" -I"/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica04_p2/Drivers/API/inc" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Src/main.d" -MT"Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Src/main.o"
+In file included from ../Inc/main.h:27,
+                 from ../Src/main.c:29:
+/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica04_p2/Drivers/API/inc/API_debounce.h:24:13: warning: 'buttonPressed' declared 'static' but never defined [-Wunused-function]
+   24 | static void buttonPressed();   // debe invertir el estado del LED1
+      |             ^~~~~~~~~~~~~
+/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica04_p2/Drivers/API/inc/API_debounce.h:25:13: warning: 'buttonReleased' declared 'static' but never defined [-Wunused-function]
+   25 | static void buttonReleased();// debe invertir el estado del LED3
+      |             ^~~~~~~~~~~~~~
+arm-none-eabi-gcc -o "Practica04_p2.elf" @"objects.list"   -mcpu=cortex-m4 -T"/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica04_p2/STM32F429ZITX_FLASH.ld" --specs=nosys.specs -Wl,-Map="Practica04_p2.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: Practica04_p2.elf
+ 
+arm-none-eabi-size   Practica04_p2.elf 
+arm-none-eabi-objdump -h -S  Practica04_p2.elf  > "Practica04_p2.list"
+   text	   data	    bss	    dec	    hex	filename
+  12032	    140	   1596	  13768	   35c8	Practica04_p2.elf
+Finished building: default.size.stdout
+ 
+Finished building: Practica04_p2.list
+ 
+22:42:39 **** Incremental Build of configuration Debug for project Practica04_p2 ****
+make -j8 all 
+arm-none-eabi-size   Practica04_p2.elf 
+   text	   data	    bss	    dec	    hex	filename
+  12032	    140	   1596	  13768	   35c8	Practica04_p2.elf
+Finished building: default.size.stdout
+ 
+22:44:09 **** Incremental Build of configuration Debug for project Practica04_p2 ****
+make -j8 all 
+arm-none-eabi-gcc "../Drivers/API/src/API_debounce.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F429ZITx -DSTM32F4 -DNUCLEO_F429ZI -DUSE_HAL_DRIVER -DSTM32F429xx -c -I../Inc -I"/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica04_p2/Drivers/STM32F4xx_HAL_Driver/Inc" -I"/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica04_p2/Drivers/CMSIS/Include" -I"/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica04_p2/Drivers/CMSIS/Device/ST/STM32F4xx/Include" -I"/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica04_p2/Drivers/BSP/STM32F4xx_Nucleo_144" -I"/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica04_p2/Drivers/Core/Inc" -I"/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica04_p2/Drivers/API" -I"/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica04_p2/Drivers/API/inc" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Drivers/API/src/API_debounce.d" -MT"Drivers/API/src/API_debounce.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Drivers/API/src/API_debounce.o"
+../Drivers/API/src/API_debounce.c:119:13: warning: 'buttonReleased' defined but not used [-Wunused-function]
+  119 | static void buttonReleased()
+      |             ^~~~~~~~~~~~~~
+../Drivers/API/src/API_debounce.c:111:13: warning: 'buttonPressed' defined but not used [-Wunused-function]
+  111 | static void buttonPressed(){
+      |             ^~~~~~~~~~~~~
+arm-none-eabi-gcc -o "Practica04_p2.elf" @"objects.list"   -mcpu=cortex-m4 -T"/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica04_p2/STM32F429ZITX_FLASH.ld" --specs=nosys.specs -Wl,-Map="Practica04_p2.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: Practica04_p2.elf
+ 
+arm-none-eabi-size   Practica04_p2.elf 
+arm-none-eabi-objdump -h -S  Practica04_p2.elf  > "Practica04_p2.list"
+   text	   data	    bss	    dec	    hex	filename
+  12032	    140	   1596	  13768	   35c8	Practica04_p2.elf
+Finished building: default.size.stdout
+ 
+Finished building: Practica04_p2.list
+ 
+22:44:16 **** Incremental Build of configuration Debug for project Practica04_p2 ****
+make -j8 all 
+arm-none-eabi-size   Practica04_p2.elf 
+   text	   data	    bss	    dec	    hex	filename
+  12032	    140	   1596	  13768	   35c8	Practica04_p2.elf
+Finished building: default.size.stdout
+ 
+22:48:16 **** Incremental Build of configuration Debug for project Practica04_p2 ****
+make -j8 all 
+arm-none-eabi-gcc "../Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F429ZITx -DSTM32F4 -DNUCLEO_F429ZI -DUSE_HAL_DRIVER -DSTM32F429xx -c -I../Inc -I"/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica04_p2/Drivers/STM32F4xx_HAL_Driver/Inc" -I"/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica04_p2/Drivers/CMSIS/Include" -I"/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica04_p2/Drivers/CMSIS/Device/ST/STM32F4xx/Include" -I"/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica04_p2/Drivers/BSP/STM32F4xx_Nucleo_144" -I"/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica04_p2/Drivers/Core/Inc" -I"/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica04_p2/Drivers/API" -I"/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica04_p2/Drivers/API/inc" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Src/main.d" -MT"Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Src/main.o"
+arm-none-eabi-gcc "../Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_msp.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F429ZITx -DSTM32F4 -DNUCLEO_F429ZI -DUSE_HAL_DRIVER -DSTM32F429xx -c -I../Inc -I"/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica04_p2/Drivers/STM32F4xx_HAL_Driver/Inc" -I"/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica04_p2/Drivers/CMSIS/Include" -I"/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica04_p2/Drivers/CMSIS/Device/ST/STM32F4xx/Include" -I"/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica04_p2/Drivers/BSP/STM32F4xx_Nucleo_144" -I"/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica04_p2/Drivers/Core/Inc" -I"/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica04_p2/Drivers/API" -I"/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica04_p2/Drivers/API/inc" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_msp.d" -MT"Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_msp.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_msp.o"
+arm-none-eabi-gcc "../Drivers/Core/Src/stm32f4xx_it.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F429ZITx -DSTM32F4 -DNUCLEO_F429ZI -DUSE_HAL_DRIVER -DSTM32F429xx -c -I../Inc -I"/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica04_p2/Drivers/STM32F4xx_HAL_Driver/Inc" -I"/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica04_p2/Drivers/CMSIS/Include" -I"/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica04_p2/Drivers/CMSIS/Device/ST/STM32F4xx/Include" -I"/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica04_p2/Drivers/BSP/STM32F4xx_Nucleo_144" -I"/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica04_p2/Drivers/Core/Inc" -I"/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica04_p2/Drivers/API" -I"/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica04_p2/Drivers/API/inc" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Drivers/Core/Src/stm32f4xx_it.d" -MT"Drivers/Core/Src/stm32f4xx_it.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Drivers/Core/Src/stm32f4xx_it.o"
+arm-none-eabi-gcc "../Drivers/API/src/API_debounce.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F429ZITx -DSTM32F4 -DNUCLEO_F429ZI -DUSE_HAL_DRIVER -DSTM32F429xx -c -I../Inc -I"/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica04_p2/Drivers/STM32F4xx_HAL_Driver/Inc" -I"/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica04_p2/Drivers/CMSIS/Include" -I"/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica04_p2/Drivers/CMSIS/Device/ST/STM32F4xx/Include" -I"/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica04_p2/Drivers/BSP/STM32F4xx_Nucleo_144" -I"/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica04_p2/Drivers/Core/Inc" -I"/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica04_p2/Drivers/API" -I"/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica04_p2/Drivers/API/inc" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Drivers/API/src/API_debounce.d" -MT"Drivers/API/src/API_debounce.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Drivers/API/src/API_debounce.o"
+In file included from ../Inc/main.h:27,
+                 from ../Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_msp.c:21:
+/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica04_p2/Drivers/API/inc/API_debounce.h:23:13: warning: 'buttonPressed' declared 'static' but never defined [-Wunused-function]
+   23 | static void buttonPressed();   // debe invertir el estado del LED1
+      |             ^~~~~~~~~~~~~
+/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica04_p2/Drivers/API/inc/API_debounce.h:24:13: warning: 'buttonReleased' declared 'static' but never defined [-Wunused-function]
+   24 | static void buttonReleased();// debe invertir el estado del LED3
+      |             ^~~~~~~~~~~~~~
+../Drivers/API/src/API_debounce.c:119:13: warning: 'buttonReleased' defined but not used [-Wunused-function]
+  119 | static void buttonReleased()
+      |             ^~~~~~~~~~~~~~
+../Drivers/API/src/API_debounce.c:111:13: warning: 'buttonPressed' defined but not used [-Wunused-function]
+  111 | static void buttonPressed(){
+      |             ^~~~~~~~~~~~~
+In file included from ../Inc/main.h:27,
+                 from ../Src/main.c:29:
+/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica04_p2/Drivers/API/inc/API_debounce.h:23:13: warning: 'buttonPressed' declared 'static' but never defined [-Wunused-function]
+   23 | static void buttonPressed();   // debe invertir el estado del LED1
+      |             ^~~~~~~~~~~~~
+/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica04_p2/Drivers/API/inc/API_debounce.h:24:13: warning: 'buttonReleased' declared 'static' but never defined [-Wunused-function]
+   24 | static void buttonReleased();// debe invertir el estado del LED3
+      |             ^~~~~~~~~~~~~~
+In file included from ../Inc/main.h:27,
+                 from ../Drivers/Core/Src/stm32f4xx_it.c:23:
+/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica04_p2/Drivers/API/inc/API_debounce.h:23:13: warning: 'buttonPressed' declared 'static' but never defined [-Wunused-function]
+   23 | static void buttonPressed();   // debe invertir el estado del LED1
+      |             ^~~~~~~~~~~~~
+/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica04_p2/Drivers/API/inc/API_debounce.h:24:13: warning: 'buttonReleased' declared 'static' but never defined [-Wunused-function]
+   24 | static void buttonReleased();// debe invertir el estado del LED3
+      |             ^~~~~~~~~~~~~~
+arm-none-eabi-gcc -o "Practica04_p2.elf" @"objects.list"   -mcpu=cortex-m4 -T"/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica04_p2/STM32F429ZITX_FLASH.ld" --specs=nosys.specs -Wl,-Map="Practica04_p2.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: Practica04_p2.elf
+ 
+arm-none-eabi-size   Practica04_p2.elf 
+arm-none-eabi-objdump -h -S  Practica04_p2.elf  > "Practica04_p2.list"
+   text	   data	    bss	    dec	    hex	filename
+  12032	    140	   1596	  13768	   35c8	Practica04_p2.elf
+Finished building: default.size.stdout
+ 
+Finished building: Practica04_p2.list
+ 
+22:49:37 **** Incremental Build of configuration Debug for project Practica04_p2 ****
+make -j8 all 
+arm-none-eabi-gcc "../Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F429ZITx -DSTM32F4 -DNUCLEO_F429ZI -DUSE_HAL_DRIVER -DSTM32F429xx -c -I../Inc -I"/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica04_p2/Drivers/STM32F4xx_HAL_Driver/Inc" -I"/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica04_p2/Drivers/CMSIS/Include" -I"/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica04_p2/Drivers/CMSIS/Device/ST/STM32F4xx/Include" -I"/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica04_p2/Drivers/BSP/STM32F4xx_Nucleo_144" -I"/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica04_p2/Drivers/Core/Inc" -I"/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica04_p2/Drivers/API" -I"/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica04_p2/Drivers/API/inc" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Src/main.d" -MT"Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Src/main.o"
+In file included from ../Inc/main.h:27,
+                 from ../Src/main.c:29:
+/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica04_p2/Drivers/API/inc/API_debounce.h:23:13: warning: 'buttonPressed' declared 'static' but never defined [-Wunused-function]
+   23 | static void buttonPressed();   // debe invertir el estado del LED1
+      |             ^~~~~~~~~~~~~
+/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica04_p2/Drivers/API/inc/API_debounce.h:24:13: warning: 'buttonReleased' declared 'static' but never defined [-Wunused-function]
+   24 | static void buttonReleased();// debe invertir el estado del LED3
+      |             ^~~~~~~~~~~~~~
+arm-none-eabi-gcc -o "Practica04_p2.elf" @"objects.list"   -mcpu=cortex-m4 -T"/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica04_p2/STM32F429ZITX_FLASH.ld" --specs=nosys.specs -Wl,-Map="Practica04_p2.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: Practica04_p2.elf
+ 
+arm-none-eabi-size   Practica04_p2.elf 
+arm-none-eabi-objdump -h -S  Practica04_p2.elf  > "Practica04_p2.list"
+   text	   data	    bss	    dec	    hex	filename
+  12032	    140	   1596	  13768	   35c8	Practica04_p2.elf
+Finished building: default.size.stdout
+ 
+Finished building: Practica04_p2.list
+ 
+22:50:39 **** Incremental Build of configuration Debug for project Practica04_p2 ****
+make -j8 all 
+arm-none-eabi-gcc "../Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F429ZITx -DSTM32F4 -DNUCLEO_F429ZI -DUSE_HAL_DRIVER -DSTM32F429xx -c -I../Inc -I"/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica04_p2/Drivers/STM32F4xx_HAL_Driver/Inc" -I"/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica04_p2/Drivers/CMSIS/Include" -I"/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica04_p2/Drivers/CMSIS/Device/ST/STM32F4xx/Include" -I"/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica04_p2/Drivers/BSP/STM32F4xx_Nucleo_144" -I"/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica04_p2/Drivers/Core/Inc" -I"/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica04_p2/Drivers/API" -I"/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica04_p2/Drivers/API/inc" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Src/main.d" -MT"Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Src/main.o"
+arm-none-eabi-gcc "../Drivers/API/src/API_debounce.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F429ZITx -DSTM32F4 -DNUCLEO_F429ZI -DUSE_HAL_DRIVER -DSTM32F429xx -c -I../Inc -I"/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica04_p2/Drivers/STM32F4xx_HAL_Driver/Inc" -I"/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica04_p2/Drivers/CMSIS/Include" -I"/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica04_p2/Drivers/CMSIS/Device/ST/STM32F4xx/Include" -I"/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica04_p2/Drivers/BSP/STM32F4xx_Nucleo_144" -I"/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica04_p2/Drivers/Core/Inc" -I"/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica04_p2/Drivers/API" -I"/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica04_p2/Drivers/API/inc" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Drivers/API/src/API_debounce.d" -MT"Drivers/API/src/API_debounce.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Drivers/API/src/API_debounce.o"
+../Drivers/API/src/API_debounce.c:119:13: warning: 'buttonReleased' defined but not used [-Wunused-function]
+  119 | static void buttonReleased()
+      |             ^~~~~~~~~~~~~~
+../Drivers/API/src/API_debounce.c:111:13: warning: 'buttonPressed' defined but not used [-Wunused-function]
+  111 | static void buttonPressed(){
+      |             ^~~~~~~~~~~~~
+In file included from ../Inc/main.h:27,
+                 from ../Src/main.c:29:
+/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica04_p2/Drivers/API/inc/API_debounce.h:23:13: warning: 'buttonPressed' declared 'static' but never defined [-Wunused-function]
+   23 | static void buttonPressed();   // debe invertir el estado del LED1
+      |             ^~~~~~~~~~~~~
+/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica04_p2/Drivers/API/inc/API_debounce.h:24:13: warning: 'buttonReleased' declared 'static' but never defined [-Wunused-function]
+   24 | static void buttonReleased();// debe invertir el estado del LED3
+      |             ^~~~~~~~~~~~~~
+arm-none-eabi-gcc -o "Practica04_p2.elf" @"objects.list"   -mcpu=cortex-m4 -T"/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica04_p2/STM32F429ZITX_FLASH.ld" --specs=nosys.specs -Wl,-Map="Practica04_p2.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: Practica04_p2.elf
+ 
+arm-none-eabi-size   Practica04_p2.elf 
+arm-none-eabi-objdump -h -S  Practica04_p2.elf  > "Practica04_p2.list"
+   text	   data	    bss	    dec	    hex	filename
+  12032	    136	   1600	  13768	   35c8	Practica04_p2.elf
+Finished building: default.size.stdout
+ 
+Finished building: Practica04_p2.list
+ 
+22:59:31 **** Incremental Build of configuration Debug for project Practica04_p2 ****
+make -j8 all 
+arm-none-eabi-gcc "../Drivers/API/src/API_debounce.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F429ZITx -DSTM32F4 -DNUCLEO_F429ZI -DUSE_HAL_DRIVER -DSTM32F429xx -c -I../Inc -I"/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica04_p2/Drivers/STM32F4xx_HAL_Driver/Inc" -I"/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica04_p2/Drivers/CMSIS/Include" -I"/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica04_p2/Drivers/CMSIS/Device/ST/STM32F4xx/Include" -I"/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica04_p2/Drivers/BSP/STM32F4xx_Nucleo_144" -I"/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica04_p2/Drivers/Core/Inc" -I"/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica04_p2/Drivers/API" -I"/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica04_p2/Drivers/API/inc" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Drivers/API/src/API_debounce.d" -MT"Drivers/API/src/API_debounce.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Drivers/API/src/API_debounce.o"
+../Drivers/API/src/API_debounce.c:119:13: warning: 'buttonReleased' defined but not used [-Wunused-function]
+  119 | static void buttonReleased()
+      |             ^~~~~~~~~~~~~~
+../Drivers/API/src/API_debounce.c:111:13: warning: 'buttonPressed' defined but not used [-Wunused-function]
+  111 | static void buttonPressed(){
+      |             ^~~~~~~~~~~~~
+arm-none-eabi-gcc -o "Practica04_p2.elf" @"objects.list"   -mcpu=cortex-m4 -T"/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica04_p2/STM32F429ZITX_FLASH.ld" --specs=nosys.specs -Wl,-Map="Practica04_p2.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: Practica04_p2.elf
+ 
+arm-none-eabi-size   Practica04_p2.elf 
+arm-none-eabi-objdump -h -S  Practica04_p2.elf  > "Practica04_p2.list"
+   text	   data	    bss	    dec	    hex	filename
+  12016	    136	   1592	  13744	   35b0	Practica04_p2.elf
+Finished building: default.size.stdout
+ 
+Finished building: Practica04_p2.list
+ 
+23:10:29 **** Incremental Build of configuration Debug for project Practica04_p2 ****
+make -j8 all 
+arm-none-eabi-gcc "../Drivers/API/src/API_debounce.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F429ZITx -DSTM32F4 -DNUCLEO_F429ZI -DUSE_HAL_DRIVER -DSTM32F429xx -c -I../Inc -I"/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica04_p2/Drivers/STM32F4xx_HAL_Driver/Inc" -I"/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica04_p2/Drivers/CMSIS/Include" -I"/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica04_p2/Drivers/CMSIS/Device/ST/STM32F4xx/Include" -I"/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica04_p2/Drivers/BSP/STM32F4xx_Nucleo_144" -I"/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica04_p2/Drivers/Core/Inc" -I"/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica04_p2/Drivers/API" -I"/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica04_p2/Drivers/API/inc" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Drivers/API/src/API_debounce.d" -MT"Drivers/API/src/API_debounce.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Drivers/API/src/API_debounce.o"
+../Drivers/API/src/API_debounce.c:120:13: warning: 'buttonReleased' defined but not used [-Wunused-function]
+  120 | static void buttonReleased()
+      |             ^~~~~~~~~~~~~~
+../Drivers/API/src/API_debounce.c:112:13: warning: 'buttonPressed' defined but not used [-Wunused-function]
+  112 | static void buttonPressed(){
+      |             ^~~~~~~~~~~~~
+arm-none-eabi-gcc -o "Practica04_p2.elf" @"objects.list"   -mcpu=cortex-m4 -T"/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica04_p2/STM32F429ZITX_FLASH.ld" --specs=nosys.specs -Wl,-Map="Practica04_p2.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: Practica04_p2.elf
+ 
+arm-none-eabi-size   Practica04_p2.elf 
+arm-none-eabi-objdump -h -S  Practica04_p2.elf  > "Practica04_p2.list"
+   text	   data	    bss	    dec	    hex	filename
+  12016	    136	   1592	  13744	   35b0	Practica04_p2.elf
+Finished building: default.size.stdout
+ 
+Finished building: Practica04_p2.list
+ 
+23:10:49 **** Incremental Build of configuration Debug for project Practica04_p2 ****
+make -j8 all 
+arm-none-eabi-gcc "../Drivers/API/src/API_debounce.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F429ZITx -DSTM32F4 -DNUCLEO_F429ZI -DUSE_HAL_DRIVER -DSTM32F429xx -c -I../Inc -I"/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica04_p2/Drivers/STM32F4xx_HAL_Driver/Inc" -I"/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica04_p2/Drivers/CMSIS/Include" -I"/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica04_p2/Drivers/CMSIS/Device/ST/STM32F4xx/Include" -I"/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica04_p2/Drivers/BSP/STM32F4xx_Nucleo_144" -I"/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica04_p2/Drivers/Core/Inc" -I"/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica04_p2/Drivers/API" -I"/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica04_p2/Drivers/API/inc" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Drivers/API/src/API_debounce.d" -MT"Drivers/API/src/API_debounce.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Drivers/API/src/API_debounce.o"
+../Drivers/API/src/API_debounce.c:120:13: warning: 'buttonReleased' defined but not used [-Wunused-function]
+  120 | static void buttonReleased()
+      |             ^~~~~~~~~~~~~~
+../Drivers/API/src/API_debounce.c:112:13: warning: 'buttonPressed' defined but not used [-Wunused-function]
+  112 | static void buttonPressed(){
+      |             ^~~~~~~~~~~~~
+arm-none-eabi-gcc -o "Practica04_p2.elf" @"objects.list"   -mcpu=cortex-m4 -T"/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica04_p2/STM32F429ZITX_FLASH.ld" --specs=nosys.specs -Wl,-Map="Practica04_p2.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: Practica04_p2.elf
+ 
+arm-none-eabi-size   Practica04_p2.elf 
+arm-none-eabi-objdump -h -S  Practica04_p2.elf  > "Practica04_p2.list"
+   text	   data	    bss	    dec	    hex	filename
+  12016	    140	   1596	  13752	   35b8	Practica04_p2.elf
+Finished building: default.size.stdout
+ 
+Finished building: Practica04_p2.list
+ 
+23:12:12 **** Incremental Build of configuration Debug for project Practica04_p2 ****
+make -j8 all 
+arm-none-eabi-gcc "../Drivers/API/src/API_debounce.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F429ZITx -DSTM32F4 -DNUCLEO_F429ZI -DUSE_HAL_DRIVER -DSTM32F429xx -c -I../Inc -I"/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica04_p2/Drivers/STM32F4xx_HAL_Driver/Inc" -I"/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica04_p2/Drivers/CMSIS/Include" -I"/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica04_p2/Drivers/CMSIS/Device/ST/STM32F4xx/Include" -I"/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica04_p2/Drivers/BSP/STM32F4xx_Nucleo_144" -I"/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica04_p2/Drivers/Core/Inc" -I"/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica04_p2/Drivers/API" -I"/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica04_p2/Drivers/API/inc" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Drivers/API/src/API_debounce.d" -MT"Drivers/API/src/API_debounce.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Drivers/API/src/API_debounce.o"
+In file included from ../Drivers/API/src/API_debounce.c:19:
+/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica04_p2/Drivers/API/inc/API_debounce.h:23:13: warning: 'buttonPressed' declared 'static' but never defined [-Wunused-function]
+   23 | static void buttonPressed();   // debe invertir el estado del LED1
+      |             ^~~~~~~~~~~~~
+/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica04_p2/Drivers/API/inc/API_debounce.h:24:13: warning: 'buttonReleased' declared 'static' but never defined [-Wunused-function]
+   24 | static void buttonReleased();// debe invertir el estado del LED3
+      |             ^~~~~~~~~~~~~~
+arm-none-eabi-gcc -o "Practica04_p2.elf" @"objects.list"   -mcpu=cortex-m4 -T"/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica04_p2/STM32F429ZITX_FLASH.ld" --specs=nosys.specs -Wl,-Map="Practica04_p2.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: Practica04_p2.elf
+ 
+arm-none-eabi-size   Practica04_p2.elf 
+arm-none-eabi-objdump -h -S  Practica04_p2.elf  > "Practica04_p2.list"
+   text	   data	    bss	    dec	    hex	filename
+  12016	    140	   1596	  13752	   35b8	Practica04_p2.elf
+Finished building: default.size.stdout
+ 
+Finished building: Practica04_p2.list
+ 
+23:12:50 **** Incremental Build of configuration Debug for project Practica04_p2 ****
+make -j8 all 
+arm-none-eabi-gcc "../Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F429ZITx -DSTM32F4 -DNUCLEO_F429ZI -DUSE_HAL_DRIVER -DSTM32F429xx -c -I../Inc -I"/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica04_p2/Drivers/STM32F4xx_HAL_Driver/Inc" -I"/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica04_p2/Drivers/CMSIS/Include" -I"/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica04_p2/Drivers/CMSIS/Device/ST/STM32F4xx/Include" -I"/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica04_p2/Drivers/BSP/STM32F4xx_Nucleo_144" -I"/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica04_p2/Drivers/Core/Inc" -I"/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica04_p2/Drivers/API" -I"/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica04_p2/Drivers/API/inc" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Src/main.d" -MT"Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Src/main.o"
+arm-none-eabi-gcc "../Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_msp.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F429ZITx -DSTM32F4 -DNUCLEO_F429ZI -DUSE_HAL_DRIVER -DSTM32F429xx -c -I../Inc -I"/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica04_p2/Drivers/STM32F4xx_HAL_Driver/Inc" -I"/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica04_p2/Drivers/CMSIS/Include" -I"/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica04_p2/Drivers/CMSIS/Device/ST/STM32F4xx/Include" -I"/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica04_p2/Drivers/BSP/STM32F4xx_Nucleo_144" -I"/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica04_p2/Drivers/Core/Inc" -I"/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica04_p2/Drivers/API" -I"/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica04_p2/Drivers/API/inc" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_msp.d" -MT"Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_msp.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_msp.o"
+arm-none-eabi-gcc "../Drivers/Core/Src/stm32f4xx_it.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F429ZITx -DSTM32F4 -DNUCLEO_F429ZI -DUSE_HAL_DRIVER -DSTM32F429xx -c -I../Inc -I"/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica04_p2/Drivers/STM32F4xx_HAL_Driver/Inc" -I"/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica04_p2/Drivers/CMSIS/Include" -I"/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica04_p2/Drivers/CMSIS/Device/ST/STM32F4xx/Include" -I"/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica04_p2/Drivers/BSP/STM32F4xx_Nucleo_144" -I"/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica04_p2/Drivers/Core/Inc" -I"/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica04_p2/Drivers/API" -I"/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica04_p2/Drivers/API/inc" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Drivers/Core/Src/stm32f4xx_it.d" -MT"Drivers/Core/Src/stm32f4xx_it.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Drivers/Core/Src/stm32f4xx_it.o"
+arm-none-eabi-gcc "../Drivers/API/src/API_debounce.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F429ZITx -DSTM32F4 -DNUCLEO_F429ZI -DUSE_HAL_DRIVER -DSTM32F429xx -c -I../Inc -I"/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica04_p2/Drivers/STM32F4xx_HAL_Driver/Inc" -I"/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica04_p2/Drivers/CMSIS/Include" -I"/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica04_p2/Drivers/CMSIS/Device/ST/STM32F4xx/Include" -I"/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica04_p2/Drivers/BSP/STM32F4xx_Nucleo_144" -I"/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica04_p2/Drivers/Core/Inc" -I"/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica04_p2/Drivers/API" -I"/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica04_p2/Drivers/API/inc" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Drivers/API/src/API_debounce.d" -MT"Drivers/API/src/API_debounce.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Drivers/API/src/API_debounce.o"
+arm-none-eabi-gcc -o "Practica04_p2.elf" @"objects.list"   -mcpu=cortex-m4 -T"/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica04_p2/STM32F429ZITX_FLASH.ld" --specs=nosys.specs -Wl,-Map="Practica04_p2.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: Practica04_p2.elf
+ 
+arm-none-eabi-size   Practica04_p2.elf 
+arm-none-eabi-objdump -h -S  Practica04_p2.elf  > "Practica04_p2.list"
+   text	   data	    bss	    dec	    hex	filename
+  12016	    140	   1596	  13752	   35b8	Practica04_p2.elf
+Finished building: default.size.stdout
+ 
+Finished building: Practica04_p2.list
+ 
+23:14:35 **** Incremental Build of configuration Debug for project Practica04_p2 ****
+make -j8 all 
+arm-none-eabi-gcc "../Drivers/API/src/API_debounce.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F429ZITx -DSTM32F4 -DNUCLEO_F429ZI -DUSE_HAL_DRIVER -DSTM32F429xx -c -I../Inc -I"/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica04_p2/Drivers/STM32F4xx_HAL_Driver/Inc" -I"/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica04_p2/Drivers/CMSIS/Include" -I"/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica04_p2/Drivers/CMSIS/Device/ST/STM32F4xx/Include" -I"/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica04_p2/Drivers/BSP/STM32F4xx_Nucleo_144" -I"/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica04_p2/Drivers/Core/Inc" -I"/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica04_p2/Drivers/API" -I"/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica04_p2/Drivers/API/inc" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Drivers/API/src/API_debounce.d" -MT"Drivers/API/src/API_debounce.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Drivers/API/src/API_debounce.o"
+arm-none-eabi-gcc -o "Practica04_p2.elf" @"objects.list"   -mcpu=cortex-m4 -T"/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica04_p2/STM32F429ZITX_FLASH.ld" --specs=nosys.specs -Wl,-Map="Practica04_p2.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: Practica04_p2.elf
+ 
+arm-none-eabi-size   Practica04_p2.elf 
+arm-none-eabi-objdump -h -S  Practica04_p2.elf  > "Practica04_p2.list"
+   text	   data	    bss	    dec	    hex	filename
+  12016	    140	   1596	  13752	   35b8	Practica04_p2.elf
+Finished building: default.size.stdout
+ 
+Finished building: Practica04_p2.list
+ 
+23:16:53 **** Incremental Build of configuration Debug for project Practica04_p2 ****
+make -j8 all 
+arm-none-eabi-gcc "../Drivers/API/src/API_debounce.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F429ZITx -DSTM32F4 -DNUCLEO_F429ZI -DUSE_HAL_DRIVER -DSTM32F429xx -c -I../Inc -I"/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica04_p2/Drivers/STM32F4xx_HAL_Driver/Inc" -I"/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica04_p2/Drivers/CMSIS/Include" -I"/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica04_p2/Drivers/CMSIS/Device/ST/STM32F4xx/Include" -I"/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica04_p2/Drivers/BSP/STM32F4xx_Nucleo_144" -I"/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica04_p2/Drivers/Core/Inc" -I"/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica04_p2/Drivers/API" -I"/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica04_p2/Drivers/API/inc" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Drivers/API/src/API_debounce.d" -MT"Drivers/API/src/API_debounce.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Drivers/API/src/API_debounce.o"
+In file included from ../Drivers/API/src/API_debounce.c:18:
+../Drivers/API/src/API_debounce.c: In function 'debounceFSM_init':
+../Drivers/API/src/API_debounce.c:46:9: error: 'dcurrentState' undeclared (first use in this function); did you mean 'currentState'?
+   46 |  assert(dcurrentState != NULL);
+      |         ^~~~~~~~~~~~~
+../Drivers/API/src/API_debounce.c:46:9: note: each undeclared identifier is reported only once for each function it appears in
+make: *** [Drivers/API/src/subdir.mk:22: Drivers/API/src/API_debounce.o] Error 1
+"make -j8 all" terminated with exit code 2. Build might be incomplete.
+23:17:38 **** Incremental Build of configuration Debug for project Practica04_p2 ****
+make -j8 all 
+arm-none-eabi-gcc "../Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F429ZITx -DSTM32F4 -DNUCLEO_F429ZI -DUSE_HAL_DRIVER -DSTM32F429xx -c -I../Inc -I"/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica04_p2/Drivers/STM32F4xx_HAL_Driver/Inc" -I"/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica04_p2/Drivers/CMSIS/Include" -I"/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica04_p2/Drivers/CMSIS/Device/ST/STM32F4xx/Include" -I"/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica04_p2/Drivers/BSP/STM32F4xx_Nucleo_144" -I"/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica04_p2/Drivers/Core/Inc" -I"/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica04_p2/Drivers/API" -I"/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica04_p2/Drivers/API/inc" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Src/main.d" -MT"Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Src/main.o"
+arm-none-eabi-gcc "../Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_msp.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F429ZITx -DSTM32F4 -DNUCLEO_F429ZI -DUSE_HAL_DRIVER -DSTM32F429xx -c -I../Inc -I"/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica04_p2/Drivers/STM32F4xx_HAL_Driver/Inc" -I"/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica04_p2/Drivers/CMSIS/Include" -I"/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica04_p2/Drivers/CMSIS/Device/ST/STM32F4xx/Include" -I"/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica04_p2/Drivers/BSP/STM32F4xx_Nucleo_144" -I"/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica04_p2/Drivers/Core/Inc" -I"/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica04_p2/Drivers/API" -I"/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica04_p2/Drivers/API/inc" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_msp.d" -MT"Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_msp.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_msp.o"
+arm-none-eabi-gcc "../Drivers/Core/Src/stm32f4xx_it.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F429ZITx -DSTM32F4 -DNUCLEO_F429ZI -DUSE_HAL_DRIVER -DSTM32F429xx -c -I../Inc -I"/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica04_p2/Drivers/STM32F4xx_HAL_Driver/Inc" -I"/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica04_p2/Drivers/CMSIS/Include" -I"/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica04_p2/Drivers/CMSIS/Device/ST/STM32F4xx/Include" -I"/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica04_p2/Drivers/BSP/STM32F4xx_Nucleo_144" -I"/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica04_p2/Drivers/Core/Inc" -I"/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica04_p2/Drivers/API" -I"/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica04_p2/Drivers/API/inc" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Drivers/Core/Src/stm32f4xx_it.d" -MT"Drivers/Core/Src/stm32f4xx_it.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Drivers/Core/Src/stm32f4xx_it.o"
+arm-none-eabi-gcc "../Drivers/API/src/API_debounce.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F429ZITx -DSTM32F4 -DNUCLEO_F429ZI -DUSE_HAL_DRIVER -DSTM32F429xx -c -I../Inc -I"/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica04_p2/Drivers/STM32F4xx_HAL_Driver/Inc" -I"/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica04_p2/Drivers/CMSIS/Include" -I"/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica04_p2/Drivers/CMSIS/Device/ST/STM32F4xx/Include" -I"/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica04_p2/Drivers/BSP/STM32F4xx_Nucleo_144" -I"/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica04_p2/Drivers/Core/Inc" -I"/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica04_p2/Drivers/API" -I"/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica04_p2/Drivers/API/inc" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Drivers/API/src/API_debounce.d" -MT"Drivers/API/src/API_debounce.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Drivers/API/src/API_debounce.o"
+In file included from ../Drivers/API/src/API_debounce.c:18:
+../Drivers/API/src/API_debounce.c: In function 'debounceFSM_init':
+../Drivers/API/src/API_debounce.c:46:22: warning: comparison between pointer and integer
+   46 |  assert(currentState != NULL);
+      |                      ^~
+arm-none-eabi-gcc -o "Practica04_p2.elf" @"objects.list"   -mcpu=cortex-m4 -T"/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica04_p2/STM32F429ZITX_FLASH.ld" --specs=nosys.specs -Wl,-Map="Practica04_p2.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: Practica04_p2.elf
+ 
+arm-none-eabi-size   Practica04_p2.elf 
+arm-none-eabi-objdump -h -S  Practica04_p2.elf  > "Practica04_p2.list"
+   text	   data	    bss	    dec	    hex	filename
+  12088	    140	   1596	  13824	   3600	Practica04_p2.elf
+Finished building: default.size.stdout
+ 
+Finished building: Practica04_p2.list
+ 
+23:17:43 **** Incremental Build of configuration Debug for project Practica04_p2 ****
+make -j8 all 
+arm-none-eabi-size   Practica04_p2.elf 
+   text	   data	    bss	    dec	    hex	filename
+  12088	    140	   1596	  13824	   3600	Practica04_p2.elf
+Finished building: default.size.stdout
+ 
+23:17:59 **** Incremental Build of configuration Debug for project Practica04_p2 ****
+make -j8 all 
+arm-none-eabi-size   Practica04_p2.elf 
+   text	   data	    bss	    dec	    hex	filename
+  12088	    140	   1596	  13824	   3600	Practica04_p2.elf
+Finished building: default.size.stdout
+ 
+23:18:35 **** Incremental Build of configuration Debug for project Practica04_p2 ****
+make -j8 all 
+arm-none-eabi-gcc "../Drivers/API/src/API_debounce.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F429ZITx -DSTM32F4 -DNUCLEO_F429ZI -DUSE_HAL_DRIVER -DSTM32F429xx -c -I../Inc -I"/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica04_p2/Drivers/STM32F4xx_HAL_Driver/Inc" -I"/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica04_p2/Drivers/CMSIS/Include" -I"/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica04_p2/Drivers/CMSIS/Device/ST/STM32F4xx/Include" -I"/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica04_p2/Drivers/BSP/STM32F4xx_Nucleo_144" -I"/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica04_p2/Drivers/Core/Inc" -I"/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica04_p2/Drivers/API" -I"/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica04_p2/Drivers/API/inc" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Drivers/API/src/API_debounce.d" -MT"Drivers/API/src/API_debounce.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Drivers/API/src/API_debounce.o"
+arm-none-eabi-gcc -o "Practica04_p2.elf" @"objects.list"   -mcpu=cortex-m4 -T"/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica04_p2/STM32F429ZITX_FLASH.ld" --specs=nosys.specs -Wl,-Map="Practica04_p2.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: Practica04_p2.elf
+ 
+arm-none-eabi-size   Practica04_p2.elf 
+arm-none-eabi-objdump -h -S  Practica04_p2.elf  > "Practica04_p2.list"
+   text	   data	    bss	    dec	    hex	filename
+  12016	    140	   1596	  13752	   35b8	Practica04_p2.elf
+Finished building: default.size.stdout
+ 
+Finished building: Practica04_p2.list
+ 
+23:19:53 **** Incremental Build of configuration Debug for project Practica04_p2 ****
+make -j8 all 
+arm-none-eabi-gcc "../Drivers/API/src/API_debounce.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F429ZITx -DSTM32F4 -DNUCLEO_F429ZI -DUSE_HAL_DRIVER -DSTM32F429xx -c -I../Inc -I"/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica04_p2/Drivers/STM32F4xx_HAL_Driver/Inc" -I"/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica04_p2/Drivers/CMSIS/Include" -I"/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica04_p2/Drivers/CMSIS/Device/ST/STM32F4xx/Include" -I"/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica04_p2/Drivers/BSP/STM32F4xx_Nucleo_144" -I"/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica04_p2/Drivers/Core/Inc" -I"/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica04_p2/Drivers/API" -I"/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica04_p2/Drivers/API/inc" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Drivers/API/src/API_debounce.d" -MT"Drivers/API/src/API_debounce.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Drivers/API/src/API_debounce.o"
+../Drivers/API/src/API_debounce.c:110:13: warning: 'Error_Handler' defined but not used [-Wunused-function]
+  110 | static void Error_Handler(void)
+      |             ^~~~~~~~~~~~~
+arm-none-eabi-gcc -o "Practica04_p2.elf" @"objects.list"   -mcpu=cortex-m4 -T"/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica04_p2/STM32F429ZITX_FLASH.ld" --specs=nosys.specs -Wl,-Map="Practica04_p2.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: Practica04_p2.elf
+ 
+arm-none-eabi-size   Practica04_p2.elf 
+arm-none-eabi-objdump -h -S  Practica04_p2.elf  > "Practica04_p2.list"
+   text	   data	    bss	    dec	    hex	filename
+  12016	    140	   1596	  13752	   35b8	Practica04_p2.elf
+Finished building: default.size.stdout
+ 
+Finished building: Practica04_p2.list
+ 
+23:22:13 **** Incremental Build of configuration Debug for project Practica04_p2 ****
+make -j8 all 
+arm-none-eabi-gcc "../Drivers/API/src/API_debounce.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F429ZITx -DSTM32F4 -DNUCLEO_F429ZI -DUSE_HAL_DRIVER -DSTM32F429xx -c -I../Inc -I"/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica04_p2/Drivers/STM32F4xx_HAL_Driver/Inc" -I"/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica04_p2/Drivers/CMSIS/Include" -I"/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica04_p2/Drivers/CMSIS/Device/ST/STM32F4xx/Include" -I"/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica04_p2/Drivers/BSP/STM32F4xx_Nucleo_144" -I"/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica04_p2/Drivers/Core/Inc" -I"/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica04_p2/Drivers/API" -I"/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica04_p2/Drivers/API/inc" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Drivers/API/src/API_debounce.d" -MT"Drivers/API/src/API_debounce.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Drivers/API/src/API_debounce.o"
+In file included from ../Drivers/API/src/API_debounce.c:18:
+../Drivers/API/src/API_debounce.c: In function 'readKey':
+../Drivers/API/src/API_debounce.c:41:20: warning: comparison between pointer and integer
+   41 |  assert(PressButton!= NULL);
+      |                    ^~
+At top level:
+../Drivers/API/src/API_debounce.c:111:13: warning: 'Error_Handler' defined but not used [-Wunused-function]
+  111 | static void Error_Handler(void)
+      |             ^~~~~~~~~~~~~
+arm-none-eabi-gcc -o "Practica04_p2.elf" @"objects.list"   -mcpu=cortex-m4 -T"/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica04_p2/STM32F429ZITX_FLASH.ld" --specs=nosys.specs -Wl,-Map="Practica04_p2.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: Practica04_p2.elf
+ 
+arm-none-eabi-size   Practica04_p2.elf 
+arm-none-eabi-objdump -h -S  Practica04_p2.elf  > "Practica04_p2.list"
+   text	   data	    bss	    dec	    hex	filename
+  12068	    140	   1596	  13804	   35ec	Practica04_p2.elf
+Finished building: default.size.stdout
+ 
+Finished building: Practica04_p2.list
+ 
+23:22:36 **** Incremental Build of configuration Debug for project Practica04_p2 ****
+make -j8 all 
+arm-none-eabi-size   Practica04_p2.elf 
+   text	   data	    bss	    dec	    hex	filename
+  12068	    140	   1596	  13804	   35ec	Practica04_p2.elf
+Finished building: default.size.stdout
+ 
+23:23:08 **** Incremental Build of configuration Debug for project Practica04_p2 ****
+make -j8 all 
+arm-none-eabi-gcc "../Drivers/API/src/API_debounce.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F429ZITx -DSTM32F4 -DNUCLEO_F429ZI -DUSE_HAL_DRIVER -DSTM32F429xx -c -I../Inc -I"/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica04_p2/Drivers/STM32F4xx_HAL_Driver/Inc" -I"/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica04_p2/Drivers/CMSIS/Include" -I"/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica04_p2/Drivers/CMSIS/Device/ST/STM32F4xx/Include" -I"/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica04_p2/Drivers/BSP/STM32F4xx_Nucleo_144" -I"/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica04_p2/Drivers/Core/Inc" -I"/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica04_p2/Drivers/API" -I"/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica04_p2/Drivers/API/inc" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Drivers/API/src/API_debounce.d" -MT"Drivers/API/src/API_debounce.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Drivers/API/src/API_debounce.o"
+../Drivers/API/src/API_debounce.c:110:13: warning: 'Error_Handler' defined but not used [-Wunused-function]
+  110 | static void Error_Handler(void)
+      |             ^~~~~~~~~~~~~
+arm-none-eabi-gcc -o "Practica04_p2.elf" @"objects.list"   -mcpu=cortex-m4 -T"/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica04_p2/STM32F429ZITX_FLASH.ld" --specs=nosys.specs -Wl,-Map="Practica04_p2.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: Practica04_p2.elf
+ 
+arm-none-eabi-size   Practica04_p2.elf 
+arm-none-eabi-objdump -h -S  Practica04_p2.elf  > "Practica04_p2.list"
+   text	   data	    bss	    dec	    hex	filename
+  12016	    140	   1596	  13752	   35b8	Practica04_p2.elf
+Finished building: default.size.stdout
+ 
+Finished building: Practica04_p2.list
+ 
+23:24:41 **** Incremental Build of configuration Debug for project Practica04_p2 ****
+make -j8 all 
+arm-none-eabi-gcc "../Drivers/API/src/API_debounce.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F429ZITx -DSTM32F4 -DNUCLEO_F429ZI -DUSE_HAL_DRIVER -DSTM32F429xx -c -I../Inc -I"/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica04_p2/Drivers/STM32F4xx_HAL_Driver/Inc" -I"/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica04_p2/Drivers/CMSIS/Include" -I"/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica04_p2/Drivers/CMSIS/Device/ST/STM32F4xx/Include" -I"/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica04_p2/Drivers/BSP/STM32F4xx_Nucleo_144" -I"/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica04_p2/Drivers/Core/Inc" -I"/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica04_p2/Drivers/API" -I"/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica04_p2/Drivers/API/inc" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Drivers/API/src/API_debounce.d" -MT"Drivers/API/src/API_debounce.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Drivers/API/src/API_debounce.o"
+In file included from ../Drivers/API/src/API_debounce.c:18:
+../Drivers/API/src/API_debounce.c: In function 'debounceFSM_init':
+../Drivers/API/src/API_debounce.c:46:20: warning: comparison between pointer and integer
+   46 |  assert(PressButton!=NULL)
+      |                    ^~
+../Drivers/API/src/API_debounce.c:47:2: error: expected ';' before 'currentState'
+   47 |  currentState=BUTTON_UP;
+      |  ^~~~~~~~~~~~
+make: *** [Drivers/API/src/subdir.mk:22: Drivers/API/src/API_debounce.o] Error 1
+"make -j8 all" terminated with exit code 2. Build might be incomplete.
+23:24:59 **** Incremental Build of configuration Debug for project Practica04_p2 ****
+make -j8 all 
+arm-none-eabi-gcc "../Drivers/API/src/API_debounce.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F429ZITx -DSTM32F4 -DNUCLEO_F429ZI -DUSE_HAL_DRIVER -DSTM32F429xx -c -I../Inc -I"/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica04_p2/Drivers/STM32F4xx_HAL_Driver/Inc" -I"/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica04_p2/Drivers/CMSIS/Include" -I"/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica04_p2/Drivers/CMSIS/Device/ST/STM32F4xx/Include" -I"/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica04_p2/Drivers/BSP/STM32F4xx_Nucleo_144" -I"/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica04_p2/Drivers/Core/Inc" -I"/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica04_p2/Drivers/API" -I"/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica04_p2/Drivers/API/inc" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Drivers/API/src/API_debounce.d" -MT"Drivers/API/src/API_debounce.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Drivers/API/src/API_debounce.o"
+In file included from ../Drivers/API/src/API_debounce.c:18:
+../Drivers/API/src/API_debounce.c: In function 'debounceFSM_init':
+../Drivers/API/src/API_debounce.c:46:20: warning: comparison between pointer and integer
+   46 |  assert(PressButton!=NULL);
+      |                    ^~
+arm-none-eabi-gcc -o "Practica04_p2.elf" @"objects.list"   -mcpu=cortex-m4 -T"/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica04_p2/STM32F429ZITX_FLASH.ld" --specs=nosys.specs -Wl,-Map="Practica04_p2.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: Practica04_p2.elf
+ 
+arm-none-eabi-size   Practica04_p2.elf 
+arm-none-eabi-objdump -h -S  Practica04_p2.elf  > "Practica04_p2.list"
+   text	   data	    bss	    dec	    hex	filename
+  12088	    140	   1596	  13824	   3600	Practica04_p2.elf
+Finished building: default.size.stdout
+ 
+Finished building: Practica04_p2.list
+ 
+23:26:43 **** Incremental Build of configuration Debug for project Practica04_p2 ****
+make -j8 all 
+arm-none-eabi-gcc "../Drivers/API/src/API_debounce.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F429ZITx -DSTM32F4 -DNUCLEO_F429ZI -DUSE_HAL_DRIVER -DSTM32F429xx -c -I../Inc -I"/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica04_p2/Drivers/STM32F4xx_HAL_Driver/Inc" -I"/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica04_p2/Drivers/CMSIS/Include" -I"/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica04_p2/Drivers/CMSIS/Device/ST/STM32F4xx/Include" -I"/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica04_p2/Drivers/BSP/STM32F4xx_Nucleo_144" -I"/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica04_p2/Drivers/Core/Inc" -I"/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica04_p2/Drivers/API" -I"/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica04_p2/Drivers/API/inc" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Drivers/API/src/API_debounce.d" -MT"Drivers/API/src/API_debounce.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Drivers/API/src/API_debounce.o"
+In file included from ../Drivers/API/src/API_debounce.c:18:
+../Drivers/API/src/API_debounce.c: In function 'debounceFSM_init':
+../Drivers/API/src/API_debounce.c:46:20: warning: comparison between pointer and integer
+   46 |  assert(PressButton!=NULL);
+      |                    ^~
+../Drivers/API/src/API_debounce.c: In function 'debounceFSM_update':
+../Drivers/API/src/API_debounce.c:56:21: warning: comparison between pointer and integer
+   56 |  assert(currentState!=NULL);
+      |                     ^~
+arm-none-eabi-gcc -o "Practica04_p2.elf" @"objects.list"   -mcpu=cortex-m4 -T"/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica04_p2/STM32F429ZITX_FLASH.ld" --specs=nosys.specs -Wl,-Map="Practica04_p2.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: Practica04_p2.elf
+ 
+arm-none-eabi-size   Practica04_p2.elf 
+arm-none-eabi-objdump -h -S  Practica04_p2.elf  > "Practica04_p2.list"
+   text	   data	    bss	    dec	    hex	filename
+  12164	    140	   1596	  13900	   364c	Practica04_p2.elf
+Finished building: default.size.stdout
+ 
+Finished building: Practica04_p2.list
+ 
+23:27:08 **** Incremental Build of configuration Debug for project Practica04_p2 ****
+make -j8 all 
+arm-none-eabi-size   Practica04_p2.elf 
+   text	   data	    bss	    dec	    hex	filename
+  12164	    140	   1596	  13900	   364c	Practica04_p2.elf
+Finished building: default.size.stdout
+ 
+23:27:47 **** Incremental Build of configuration Debug for project Practica04_p2 ****
+make -j8 all 
+arm-none-eabi-gcc "../Drivers/API/src/API_debounce.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F429ZITx -DSTM32F4 -DNUCLEO_F429ZI -DUSE_HAL_DRIVER -DSTM32F429xx -c -I../Inc -I"/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica04_p2/Drivers/STM32F4xx_HAL_Driver/Inc" -I"/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica04_p2/Drivers/CMSIS/Include" -I"/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica04_p2/Drivers/CMSIS/Device/ST/STM32F4xx/Include" -I"/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica04_p2/Drivers/BSP/STM32F4xx_Nucleo_144" -I"/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica04_p2/Drivers/Core/Inc" -I"/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica04_p2/Drivers/API" -I"/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica04_p2/Drivers/API/inc" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Drivers/API/src/API_debounce.d" -MT"Drivers/API/src/API_debounce.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Drivers/API/src/API_debounce.o"
+In file included from ../Drivers/API/src/API_debounce.c:18:
+../Drivers/API/src/API_debounce.c: In function 'debounceFSM_init':
+../Drivers/API/src/API_debounce.c:46:20: warning: comparison between pointer and integer
+   46 |  assert(PressButton!=NULL);
+      |                    ^~
+arm-none-eabi-gcc -o "Practica04_p2.elf" @"objects.list"   -mcpu=cortex-m4 -T"/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica04_p2/STM32F429ZITX_FLASH.ld" --specs=nosys.specs -Wl,-Map="Practica04_p2.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: Practica04_p2.elf
+ 
+arm-none-eabi-size   Practica04_p2.elf 
+arm-none-eabi-objdump -h -S  Practica04_p2.elf  > "Practica04_p2.list"
+   text	   data	    bss	    dec	    hex	filename
+  12120	    140	   1596	  13856	   3620	Practica04_p2.elf
+Finished building: default.size.stdout
+ 
+Finished building: Practica04_p2.list
+ 
+23:29:00 **** Incremental Build of configuration Debug for project Practica04_p2 ****
+make -j8 all 
+arm-none-eabi-gcc "../Drivers/API/src/API_debounce.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F429ZITx -DSTM32F4 -DNUCLEO_F429ZI -DUSE_HAL_DRIVER -DSTM32F429xx -c -I../Inc -I"/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica04_p2/Drivers/STM32F4xx_HAL_Driver/Inc" -I"/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica04_p2/Drivers/CMSIS/Include" -I"/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica04_p2/Drivers/CMSIS/Device/ST/STM32F4xx/Include" -I"/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica04_p2/Drivers/BSP/STM32F4xx_Nucleo_144" -I"/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica04_p2/Drivers/Core/Inc" -I"/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica04_p2/Drivers/API" -I"/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica04_p2/Drivers/API/inc" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Drivers/API/src/API_debounce.d" -MT"Drivers/API/src/API_debounce.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Drivers/API/src/API_debounce.o"
+arm-none-eabi-gcc -o "Practica04_p2.elf" @"objects.list"   -mcpu=cortex-m4 -T"/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica04_p2/STM32F429ZITX_FLASH.ld" --specs=nosys.specs -Wl,-Map="Practica04_p2.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: Practica04_p2.elf
+ 
+arm-none-eabi-size   Practica04_p2.elf 
+arm-none-eabi-objdump -h -S  Practica04_p2.elf  > "Practica04_p2.list"
+   text	   data	    bss	    dec	    hex	filename
+  12048	    140	   1596	  13784	   35d8	Practica04_p2.elf
+Finished building: default.size.stdout
+ 
+Finished building: Practica04_p2.list
+ 
+23:29:55 **** Incremental Build of configuration Debug for project Practica04_p2 ****
+make -j8 all 
+arm-none-eabi-gcc "../Drivers/API/src/API_debounce.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F429ZITx -DSTM32F4 -DNUCLEO_F429ZI -DUSE_HAL_DRIVER -DSTM32F429xx -c -I../Inc -I"/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica04_p2/Drivers/STM32F4xx_HAL_Driver/Inc" -I"/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica04_p2/Drivers/CMSIS/Include" -I"/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica04_p2/Drivers/CMSIS/Device/ST/STM32F4xx/Include" -I"/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica04_p2/Drivers/BSP/STM32F4xx_Nucleo_144" -I"/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica04_p2/Drivers/Core/Inc" -I"/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica04_p2/Drivers/API" -I"/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica04_p2/Drivers/API/inc" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Drivers/API/src/API_debounce.d" -MT"Drivers/API/src/API_debounce.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Drivers/API/src/API_debounce.o"
+arm-none-eabi-gcc -o "Practica04_p2.elf" @"objects.list"   -mcpu=cortex-m4 -T"/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica04_p2/STM32F429ZITX_FLASH.ld" --specs=nosys.specs -Wl,-Map="Practica04_p2.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: Practica04_p2.elf
+ 
+arm-none-eabi-size   Practica04_p2.elf 
+arm-none-eabi-objdump -h -S  Practica04_p2.elf  > "Practica04_p2.list"
+   text	   data	    bss	    dec	    hex	filename
+  12048	    140	   1596	  13784	   35d8	Practica04_p2.elf
+Finished building: default.size.stdout
+ 
+Finished building: Practica04_p2.list
+ 
+23:30:13 **** Incremental Build of configuration Debug for project Practica04_p2 ****
+make -j8 all 
+arm-none-eabi-size   Practica04_p2.elf 
+   text	   data	    bss	    dec	    hex	filename
+  12048	    140	   1596	  13784	   35d8	Practica04_p2.elf
+Finished building: default.size.stdout
+ 
+23:34:11 **** Incremental Build of configuration Debug for project Practica04_p2 ****
+make -j8 all 
+arm-none-eabi-gcc "../Drivers/API/src/API_debounce.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F429ZITx -DSTM32F4 -DNUCLEO_F429ZI -DUSE_HAL_DRIVER -DSTM32F429xx -c -I../Inc -I"/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica04_p2/Drivers/STM32F4xx_HAL_Driver/Inc" -I"/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica04_p2/Drivers/CMSIS/Include" -I"/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica04_p2/Drivers/CMSIS/Device/ST/STM32F4xx/Include" -I"/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica04_p2/Drivers/BSP/STM32F4xx_Nucleo_144" -I"/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica04_p2/Drivers/Core/Inc" -I"/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica04_p2/Drivers/API" -I"/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica04_p2/Drivers/API/inc" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Drivers/API/src/API_debounce.d" -MT"Drivers/API/src/API_debounce.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Drivers/API/src/API_debounce.o"
+arm-none-eabi-gcc -o "Practica04_p2.elf" @"objects.list"   -mcpu=cortex-m4 -T"/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica04_p2/STM32F429ZITX_FLASH.ld" --specs=nosys.specs -Wl,-Map="Practica04_p2.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: Practica04_p2.elf
+ 
+arm-none-eabi-size   Practica04_p2.elf 
+arm-none-eabi-objdump -h -S  Practica04_p2.elf  > "Practica04_p2.list"
+   text	   data	    bss	    dec	    hex	filename
+  12048	    140	   1596	  13784	   35d8	Practica04_p2.elf
+Finished building: default.size.stdout
+ 
+Finished building: Practica04_p2.list
+ 

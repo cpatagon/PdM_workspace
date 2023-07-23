@@ -24,31 +24,51 @@
  * en el inicio del modelo
  * */
 
-bool_t PressButton=true;
+typedef enum{
+	BUTTON_UP, // Botón suelto
+	BUTTON_FALLING, // Apretando botón
+	BUTTON_DOWN,  // Boton precionado
+	BUTTON_RAISING, // soltando botón
+} debounceState_t;
 
+// Declaración de la variable de estado global y privada
+/* Declarar una variable tipo bool_t global privada que
+ * se ponga en true cuando ocurre un flanco descendente
+ * y se ponga en false cuando se llame a la función readKey();
+ */
+static bool_t PressButton=true;
+static debounceState_t  currentState;
 
+/*
+ * Funcion que entrega un cambio de true a false o de false
+ * a true si se precional el boton sin rebote
+ */
 bool_t readKey(){
  return PressButton;
 }
 
-void debounceFSM_init(debounceState_t * EstadoActual, debounceState_t Valor){
+void debounceFSM_init(){
 	/* Initialize Estado */
-	*EstadoActual=Valor;
+	assert(&PressButton!=NULL);
+	currentState=BUTTON_UP;
 }
 
 /*
  * This function reads inputs, manages the transition between states,
  * and updates the outputs accordingly.
  */
-void debounceFSM_update(debounceState_t * currentState, delay_t* delay){
-	switch (*currentState){
+void debounceFSM_update(delay_t* delay){
+	assert(delay!=NULL);
+	assert(&currentState!=NULL);
+
+	switch (currentState){
 	/*
 	 * In the BUTTON_UP state, it checks whether the button remains unpressed.
 	 * Otherwise, that is, if the button is pressed, the state changes to BUTTON_FALLING.
 	 */
 	case BUTTON_UP:
 		if (BSP_PB_GetState(BUTTON_USER)){
-	    	*currentState=BUTTON_FALLING;
+	    	currentState=BUTTON_FALLING;
 		}
 		break;
 		/*
@@ -59,12 +79,12 @@ void debounceFSM_update(debounceState_t * currentState, delay_t* delay){
 		 */
 	case BUTTON_FALLING:
 		if (BSP_PB_GetState(BUTTON_USER) && delayRead(delay)){
-	    	*currentState=BUTTON_DOWN;
+	    	currentState=BUTTON_DOWN;
 	    	//buttonPressed();
 	    	PressButton = !(PressButton);
 		}
 		else {
-			*currentState=BUTTON_UP;
+			currentState=BUTTON_UP;
 		}
 		break;
 	/*
@@ -72,7 +92,7 @@ void debounceFSM_update(debounceState_t * currentState, delay_t* delay){
 	 */
 	case BUTTON_DOWN:
 		if (!BSP_PB_GetState(BUTTON_USER)){
-	    	*currentState=BUTTON_RAISING;
+	    	currentState=BUTTON_RAISING;
 		}
 		break;
 	/*
@@ -83,11 +103,11 @@ void debounceFSM_update(debounceState_t * currentState, delay_t* delay){
 	 */
 	case BUTTON_RAISING:
 		if (!BSP_PB_GetState(BUTTON_USER) && delayRead(delay)){
-	    	*currentState=BUTTON_UP;
+	    	currentState=BUTTON_UP;
 	    	//buttonReleased();
 		}
 		else {
-			*currentState=BUTTON_DOWN;
+			currentState=BUTTON_DOWN;
 		}
 		break;
 	default:
@@ -96,18 +116,14 @@ void debounceFSM_update(debounceState_t * currentState, delay_t* delay){
 	}
 }
 
-/* función que invierte  el estado del LED1 */
+
+/* función que invierte  el estado del LED1
 static void buttonPressed(){
-	if (readKey()){
-	BSP_LED_Toggle(LED2);
-	}
-	else {BSP_LED_Toggle(LED1);}
 }
 
-/* función que invierte  el estado del LED3 */
+función que invierte  el estado del LED3
 static void buttonReleased()
 {
-	//BSP_LED_Toggle(LED3);
 }
-
+*/
 
