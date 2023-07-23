@@ -1,25 +1,38 @@
-#include <stdint.h>  /* esta para incluir los tipos uint32_t */
-#include <stdbool.h> /* esta para incluir los tipos bool (boolianos) */
+#include <stdint.h>  /* For standard uint32_t types */
+#include <stdbool.h> /* For standard boolean types */
 
-#include "stm32f4xx_hal.h"  		/* <- HAL include */
-#include "stm32f4xx_nucleo_144.h" 	/* <- BSP include */
+#include "stm32f4xx_hal.h"          /* HAL library inclusion */
+#include "stm32f4xx_nucleo_144.h"   /* BSP library inclusion */
 
-#include "API_delay.h" /* <- Aquí está la inclusión del archivo que define delay_t */
+#include "API_delay.h" /* Inclusion of the file defining delay_t */
 
+typedef uint32_t tick_t; // Which library should be included for this to compile?
+typedef bool bool_t; // Which library should be included for this to compile?
 
-typedef uint32_t tick_t; // Qué biblioteca se debe incluir para que esto compile?
-typedef bool bool_t; // Qué biblioteca se debe incluir para que esto compile?
-
- /* La función readKey debe leer una variable interna
-  * del módulo y devolver true o false si la tecla fue
-  * presionada.  Si devuelve true, debe resetear
-  * (poner en false) el estado de la variable.*/
-
+/**
+ * @brief   Reads an internal variable and returns whether the key was pressed.
+ *          If the function returns true, it resets the state of the variable (sets it to false).
+ *
+ * @param   None
+ * @retval  bool_t: the state of the key (true if the key was pressed, false otherwise)
+ */
 bool_t readKey();
 
-void debounceFSM_init();		// debe cargar el estado inicial
-void debounceFSM_update( delay_t*);	// debe leer las entradas, resolver la lógica de
-					// transición de estados y actualizar las salidas
-/*static void buttonPressed();			// debe invertir el estado del LED1
-static void buttonReleased();// debe invertir el estado del LED3
-*/
+/**
+ * @brief   Initializes the debounce FSM, setting the initial state.
+ *
+ * @param   None
+ * @retval  None
+ */
+void debounceFSM_init();
+
+/**
+ * @brief   Updates the debounce FSM.
+ *          This function reads the inputs, evaluates the transition conditions according to the FSM's current state,
+ *          and updates the current state and outputs accordingly.
+ *
+ * @param   delay: pointer to the delay instance
+ * @retval  None
+ */
+void debounceFSM_update(delay_t* delay);
+

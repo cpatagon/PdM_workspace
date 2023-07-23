@@ -1,10 +1,17 @@
-20:22:09 **** Incremental Build of configuration Debug for project Practica04_p1 ****
+18:59:49 **** Incremental Build of configuration Debug for project Practica04_p1 ****
 make -j8 all 
+arm-none-eabi-gcc "../Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F429ZITx -DSTM32F4 -DNUCLEO_F429ZI -DUSE_HAL_DRIVER -DSTM32F429xx -c -I../Inc -I"/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica04_p1/Drivers/STM32F4xx_HAL_Driver/Inc" -I"/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica04_p1/Drivers/CMSIS/Include" -I"/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica04_p1/Drivers/CMSIS/Device/ST/STM32F4xx/Include" -I"/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica04_p1/Drivers/BSP/STM32F4xx_Nucleo_144" -I"/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica04_p1/Drivers/Core/Inc" -I"/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica04_p1/Drivers/API" -I"/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica04_p1/Drivers/API/inc" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Src/main.d" -MT"Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Src/main.o"
+arm-none-eabi-gcc -o "Practica04_p1.elf" @"objects.list"   -mcpu=cortex-m4 -T"/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica04_p1/STM32F429ZITX_FLASH.ld" --specs=nosys.specs -Wl,-Map="Practica04_p1.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: Practica04_p1.elf
+ 
 arm-none-eabi-size   Practica04_p1.elf 
+arm-none-eabi-objdump -h -S  Practica04_p1.elf  > "Practica04_p1.list"
    text	   data	    bss	    dec	    hex	filename
   11840	    136	   1592	  13568	   3500	Practica04_p1.elf
 Finished building: default.size.stdout
  
+Finished building: Practica04_p1.list
+ 
 
-20:22:10 Build Finished. 0 errors, 0 warnings. (took 769ms)
+18:59:50 Build Finished. 0 errors, 0 warnings. (took 1s.24ms)
 

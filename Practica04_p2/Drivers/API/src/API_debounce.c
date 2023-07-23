@@ -4,13 +4,10 @@
  *  Created on: 18-07-2023
  *      @Author: Luis Gómez
  *      @Hardware: STM32F429ZI
- *      @Objetivo: Implementar un programa que cambie la
- *      frecuencia de toggleo del LED2 entre 100 ms y 500
- *      ms cada vez que se presione la tecla.  El programa
- *      debe usar las funciones anti-rebote del módulo API
- *      debounce y los retardos no bloqueantes del módulo
- *      API_delay.
- *
+ *      @Objective: Implement a program that toggles the LED2 frequency
+ *      between 100 ms and 500 ms each time the key is pressed. The
+ *      program should use the debounce functions of the API debounce module
+ *      and the non-blocking delays of the API_delay module.
  */
 #include "stm32f4xx_hal.h"  		/* <- HAL include */
 #include "stm32f4xx_nucleo_144.h" 	/* <- BSP include */
@@ -18,44 +15,58 @@
 #include <assert.h>
 #include "API_debounce.h"
 
-/* funciones propias
- *
- * Función Inicializar MEF con el valor definido
- * en el inicio del modelo
- * */
+/*
+ * Definition of the states for the state machine
+ */
 
 typedef enum{
-	BUTTON_UP, // Botón suelto
-	BUTTON_FALLING, // Apretando botón
-	BUTTON_DOWN,  // Boton precionado
-	BUTTON_RAISING, // soltando botón
+	BUTTON_UP,       // Button released
+	BUTTON_FALLING,  // Button being pressed
+	BUTTON_DOWN,     // Button pressed
+	BUTTON_RAISING,  // Button being released
 } debounceState_t;
 
-// Declaración de la variable de estado global y privada
-/* Declarar una variable tipo bool_t global privada que
- * se ponga en true cuando ocurre un flanco descendente
- * y se ponga en false cuando se llame a la función readKey();
- */
-static bool_t PressButton=true;
+// Global and private state variable declaration
 static debounceState_t  currentState;
 
 /*
- * Funcion que entrega un cambio de true a false o de false
- * a true si se precional el boton sin rebote
+ * Declare a global private variable of type bool_t that
+ * is set to true when a falling edge occurs
+ * and is set to false when the readKey() function is called.
+ */
+static bool_t PressButton=true;
+
+/*
+ * Function that changes from true to false or from false to true
+ * if the button is pressed without bouncing.
  */
 bool_t readKey(){
- return PressButton;
+    return PressButton;
 }
 
+static void buttonPressed(void);
+
+/*
+ * @brief   Initializes the FSM with the defined value
+ *          at the start of the model.
+ *
+ * @param   None
+ * @retval  None
+ */
 void debounceFSM_init(){
 	/* Initialize Estado */
 	assert(&PressButton!=NULL);
 	currentState=BUTTON_UP;
+	return;
 }
 
 /*
- * This function reads inputs, manages the transition between states,
- * and updates the outputs accordingly.
+ * @brief   Updates the debounce FSM.
+ *          This function reads the inputs, evaluates the transition conditions according to the FSM's current state,
+ *          and updates the current state and outputs accordingly.
+ *
+ * @param   delay: pointer to the delay instance
+ * @retval  None
  */
 void debounceFSM_update(delay_t* delay){
 	assert(delay!=NULL);
@@ -80,8 +91,8 @@ void debounceFSM_update(delay_t* delay){
 	case BUTTON_FALLING:
 		if (BSP_PB_GetState(BUTTON_USER) && delayRead(delay)){
 	    	currentState=BUTTON_DOWN;
-	    	//buttonPressed();
-	    	PressButton = !(PressButton);
+	    	buttonPressed();
+	    	//PressButton = !(PressButton);
 		}
 		else {
 			currentState=BUTTON_UP;
@@ -114,15 +125,22 @@ void debounceFSM_update(delay_t* delay){
 			/* Handle unexpected state */
 		assert(0);
 	}
+	return;
 }
 
-
-/* función que invierte  el estado del LED1
+/*
+ * @brief   Toggles the state of LED2.
+ *
+ * @param   None
+ * @retval  None
+ */
 static void buttonPressed(){
+	PressButton = !(PressButton);
+	return;
 }
 
-función que invierte  el estado del LED3
-static void buttonReleased()
+/*función que invierte  el estado del LED3 */
+/*static void buttonReleased()
 {
 }
 */

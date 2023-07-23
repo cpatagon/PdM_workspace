@@ -1,13 +1,12 @@
 /**
  ******************************************************************************
- * @file Práctica 4 Punto 1
+ * @file    Practice 4 Point 1
  * @author  Luis Gómez
- * Objetivo : Implementar un MEF para trabajar con anti-rebotes por software.
- * @ actividad : Crear un nuevo proyecto como copia del proyecto realizado para
- * la práctica 3.
- * Implementar una MEF anti-rebote que permita leer el estado del pulsador de la
- * placa NUCLEO-F429ZI y generar acciones o eventos ante un flanco descendente
- * o ascendente, de acuerdo al diagrama
+ * @brief   Implement a FSM (Finite State Machine) for software debounce.
+ * @task    Create a new project as a copy of the project completed for
+ *          practice 3. Implement a software debounce FSM that allows you to read
+ *          the state of the NUCLEO-F429ZI board push-button and generate actions or
+ *          events against a falling or rising edge, according to the diagram.
  ******************************************************************************
  * @attention
  *
@@ -29,18 +28,17 @@
  */
 
 /* Private typedef -----------------------------------------------------------*/
-/* Estado del modelo
-*/
-
+// FSM state
 typedef enum{
-BUTTON_UP, // Botón suelto
-BUTTON_FALLING, // Apretando botón
-BUTTON_DOWN,  // Boton precionado
-BUTTON_RAISING, // soltando botón
+    BUTTON_UP,       // Button released
+    BUTTON_FALLING,  // Pressing button
+    BUTTON_DOWN,     // Button pressed
+    BUTTON_RAISING   // Releasing button
 } debounceState_t;
 
+
 /* Private define ------------------------------------------------------------*/
-#define TIME1 40 // TIEMPO ESPERA O RETARDO
+#define TIME1 40 // Time delay or debounce
 
 
 /* Private macro -------------------------------------------------------------*/
@@ -52,10 +50,41 @@ static void Error_Handler(void);
 
 /* Private functions ---------------------------------------------------------*/
 
+/**
+ * @brief This function initializes the FSM with the defined value at the start of the model
+ *
+ * @param currentState: a pointer to the current state of the FSM
+ * @param initial_state: the initial state of the FSM
+ * @retval None
+ */
 void debounceFSM_init(debounceState_t*, debounceState_t);		// debe cargar el estado inicial
+
+/**
+ * @brief This function reads inputs, manages the transition between states,
+ * and updates the outputs accordingly.
+ * The input is the currentState of button and debounce delay
+ * the output is the change the states and that LED1 and LED2
+ *
+ * @param currentState: a pointer to the current state of the FSM
+ * @param delay: a pointer to the delay instance
+ * @retval None
+ */
 void debounceFSM_update(debounceState_t*, delay_t* );	// debe leer las entradas, resolver la lógica de
 					// transición de estados y actualizar las salidas
+/**
+ * @brief This function toggles the state of LED1
+ *
+ * @param None
+ * @retval None
+ */
 void buttonPressed();			// debe invertir el estado del LED1
+
+/**
+ * @brief This function toggles the state of LED3
+ *
+ * @param None
+ * @retval None
+ */
 void buttonReleased();		// debe invertir el estado del LED3
 
 /**
@@ -65,28 +94,21 @@ void buttonReleased();		// debe invertir el estado del LED3
  */
 int main(void)
 {
-	/* STM32F4xx HAL library initialization:
-       - Configure the Flash prefetch
-       - Systick timer is configured by default as source of time base, but user 
-         can eventually implement his proper time base source (a general purpose 
-         timer for example or other time source), keeping in mind that Time base 
-         duration should be kept 1ms since PPP_TIMEOUT_VALUEs are defined and 
-         handled in milliseconds basis.
-       - Set NVIC Group Priority to 4
-       - Low Level Initialization
-	 */
-	//HAL_Init();
-	/* Configure the system clock to 180 MHz */
+	/* STM32F4xx HAL library initialization */
 	SystemClock_Config();
 
 	/*Inicialisamos variables */
 
-	/* Initialize LED and BSP PB for BUTTON_USER */
+	/* Initialize LED and BSP PB for
+	 * BUTTON_USER */
 	BSP_PB_Init(BUTTON_USER, BUTTON_MODE_GPIO);
 	BSP_LED_Init(LED1);
 	BSP_LED_Init(LED3);
 
-	/* Declaramos variable que contendrá el tiempo de retardo*/
+	 /* Initialize variables */
+
+	/* Declaramos variable que contendrá el
+	 * tiempo de retardo*/
 	delay_t Delay1;
 
     /* definimos la variable que contendra el estado del modelo*/
@@ -117,9 +139,15 @@ void debounceFSM_init(debounceState_t * EstadoActual, debounceState_t Valor){
 	*EstadoActual=Valor;
 }
 
-/*
- * This function reads inputs, manages the transition between states,
- * and updates the outputs accordingly.
+/**
+ * @brief   Manages the transitions of the debounce FSM.
+ *          This function reads the inputs (current state of the button and debounce delay),
+ *          evaluates the transition conditions according to the FSM's current state,
+ *          and updates the current state and outputs (LED1 and LED3) accordingly.
+ *
+ * @param   currentState: pointer to the current state of the FSM
+ * @param   delay: pointer to the delay instance
+ * @retval  None
  */
 void debounceFSM_update(debounceState_t * currentState, delay_t* delay){
 	switch (*currentState){
@@ -128,6 +156,7 @@ void debounceFSM_update(debounceState_t * currentState, delay_t* delay){
 	 * Otherwise, that is, if the button is pressed, the state changes to BUTTON_FALLING.
 	 */
 	case BUTTON_UP:
+		// Checks if the button has been pressed and, if so, transitions to the BUTTON_FALLING state
 		if (BSP_PB_GetState(BUTTON_USER)){
 	    	*currentState=BUTTON_FALLING;
 		}
@@ -174,17 +203,33 @@ void debounceFSM_update(debounceState_t * currentState, delay_t* delay){
 			/* Handle unexpected state */
 		Error_Handler();
 	}
+	return;
 }
 
-/* función que invierte  el estado del LED1 */
+/**
+ * @brief   Toggles the state of LED1.
+ *          When this function is called, it switches the state of LED1 from ON to OFF or vice versa.
+ *
+ * @param   None
+ * @retval  None
+ */
 void buttonPressed(){
 	BSP_LED_Toggle(LED1);
+	return;
 }
+/**
 
-/* función que invierte  el estado del LED3 */
+
+ * @brief   Toggles the state of LED3.
+ *          When this function is called, it switches the state of LED3 from ON to OFF or vice versa.
+ *
+ * @param   None
+ * @retval  None
+ */
 void buttonReleased()
 {
 	BSP_LED_Toggle(LED3);
+	return;
 }
 
 /* FIN FUNCIONES PROPIAS */

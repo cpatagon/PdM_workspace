@@ -49,7 +49,6 @@ typedef enum{
 static void SystemClock_Config(void);
 static void Error_Handler(void);
 
-void frecuencia_update(estadofrecuencia_t *,delay_t*,delay_t*,Led_TypeDef);
 
 /* Private functions ---------------------------------------------------------*/
 
@@ -60,17 +59,16 @@ void frecuencia_update(estadofrecuencia_t *,delay_t*,delay_t*,Led_TypeDef);
  */
 int main(void)
 {
-	/* STM32F4xx HAL library initialization:
-       - Configure the Flash prefetch
-       - Systick timer is configured by default as source of time base, but user 
-         can eventually implement his proper time base source (a general purpose 
-         timer for example or other time source), keeping in mind that Time base 
-         duration should be kept 1ms since PPP_TIMEOUT_VALUEs are defined and 
-         handled in milliseconds basis.
-       - Set NVIC Group Priority to 4
-       - Low Level Initialization
-	 */
-	//HAL_Init();
+    /* STM32F4xx HAL library initialization:
+       - Configures the Flash prefetch
+       - The Systick timer is configured as the source of the time base by default,
+         but the user can use his own time base source (like a general-purpose
+         timer or other time source), keeping in mind that the Time base duration
+         should be 1ms because PPP_TIMEOUT_VALUEs are defined and handled in milliseconds.
+       - Sets the NVIC Group Priority to 4
+       - Performs a low-level initialization
+    */
+	HAL_Init();
 	/* Configure the system clock to 180 MHz */
 	SystemClock_Config();
 
@@ -82,60 +80,47 @@ int main(void)
 	BSP_LED_Init(LED2);
 	BSP_LED_Init(LED3);
 
-	/* Declaramos variable que contendrá el tiempo de retardo*/
+	 /* Declares delay variables */
 	delay_t Delay1;
 	delay_t Delay2;
 	delay_t Delay3;
 
+    /* Initializes debounce finite state machine (FSM) */
+    debounceFSM_init();
 
-    /* definimos la variable que contendra el estado del modelo*/
-	//debounceState_t Estado;
-
-	//estadofrecuencia_t Estado_f;
-
-	//Estado_f=PRIMERO;
-
-	/* definimos el estado inicial de modelo como BUTTON_UP*/
-	debounceFSM_init();
-
-   /* Inicializa el retardo en 40 ms */
-	delayInit(&Delay1, TIME1);
-	delayInit(&Delay2, TIME2);
-	delayInit(&Delay3, TIME3);
+    /* Initializes the delay to 40 ms, 100 ms, and 500 ms respectively */
+    delayInit(&Delay1, TIME1);
+    delayInit(&Delay2, TIME2);
+    delayInit(&Delay3, TIME3);
 
 	/* Infinite loop */
     while (1) {
-    	/* llamamos a la función que evaluara el estado de
-    	 * nuestro modelo MEF antirrebote. Si se presiona el
-    	 * boton por un tiempo mayor al antirrebote (Delay1)
-    	 * cambiara de estado la variable Estado. Tambien se
-    	 * generara un cambio de retorno de la función eadKey()
-    	 * de true -> false o de false a true cada ves que se
-    	 * detecte un BUTTON_FALLING válido.
+    	/* Calls debounce FSM update function. If the button is pressed for a duration
+    	 * longer than the debounce delay (Delay1), it will change the state of the FSM.
+    	 * This also results in a change in the return of the readKey() function from
+    	 * true -> false or from false to true each time a valid BUTTON_FALLING is detected.
     	 * */
     	debounceFSM_update(&Delay1);
 
-    	/*Si el estado el estado de readKey() cambia a Falso
-    	 * o verdadero producto de precionar un boton de manera
-    	 * válida de acuerdo a las normas del antirrebote. En ambos
-    	 * casos generara un cambio en la frecuencia de parpadeo
-    	 * del LED2
-    	*/
+        /* If the state of readKey() changes to false or true as a result of pressing
+         * a button validly according to the debounce rules, it will trigger a change
+         * in the blink frequency of LED2.
+         * */
     	if (readKey()){
     		if (delayRead(&Delay2)){
-    			BSP_LED_Toggle(LED2);
+    			BSP_LED_Toggle(LED2); // Toggles LED2 with a blink frequency determined by Delay2
     		}
     	}
     	else{
     		if (delayRead(&Delay3)){
-    			BSP_LED_Toggle(LED2);
+    			BSP_LED_Toggle(LED2); // Toggles LED2 with a blink frequency determined by Delay3
     		}
     	}
     }
     return 0;
 }
 
-/* FIN FUNCIONES PROPIAS */
+
 
 
 static void SystemClock_Config(void)
