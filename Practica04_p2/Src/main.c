@@ -3,7 +3,7 @@
  * @file Práctica 4 Punto 2
  * @author  Luis Gómez
  * @Hardware: STM32F429ZI
- * @Objetivo: Implementar un programa que cambie la
+ * @Objetivo: programa que cambie la
  *      frecuencia de toggleo del LED2 entre 100 ms y 500
  *      ms cada vez que se presione la tecla.  El programa
  *      debe usar las funciones anti-rebote del módulo API
