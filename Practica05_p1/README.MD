@@ -16,12 +16,12 @@ Implementar un módulo de software sencillo para trabajar con la UART.
 En API_uart.h se deben ubicar los prototipos de las funciones públicas.
 
 
-'''c 
+``` cpp
 bool_t uartInit();
 void uartSendString(uint8_t * pstring);
 void uartSendStringSize(uint8_t * pstring, uint16_t size);
 void uartReceiveStringSize(uint8_t * pstring, uint16_t size);
-'''
+``` 
 
 En API_uart.c se deben ubicar los prototipos de las funciones privadas y la implementación de todas las funciones de módulo, privadas y públicas.
 
