@@ -1,0 +1,5 @@
+API_uart.c:19:8:uartInit	2
+API_uart.c:47:6:uartSendString	1
+API_uart.c:51:6:uartSendStringSize	1
+API_uart.c:54:6:uartReceiveStringSize	1
+API_uart.c:72:1:__io_putchar	1

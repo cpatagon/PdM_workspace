@@ -1,9 +1,0 @@
- * @file Práctica 4 Punto 1
- * @author  Luis Alberto Gómez Parada
- * @hardware : STM32F429ZI
- * Objetivo : Implementar un MEF para trabajar con anti-rebotes por software.
- * @ actividad : Crear un nuevo proyecto como copia del proyecto realizado para
- * la práctica 3.
- * Implementar una MEF anti-rebote que permita leer el estado del pulsador de la
- * placa NUCLEO-F429ZI y generar acciones o eventos ante un flanco descendente
- * o ascendente, de acuerdo al diagrama

@@ -27,4 +27,6 @@
 		<item key="includedBy" value="false"/>
 		<item key="showFolders" value="false"/>
 	</section>
+	<section name="OptionalMessageDialog.hide.">
+	</section>
 </section>
