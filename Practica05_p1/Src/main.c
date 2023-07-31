@@ -1,9 +1,13 @@
 /**
   ******************************************************************************
-  * @file    UART/UART_Printf/Src/main.c
-  * @author  MCD Application Team
-  * @brief   This example shows how to retarget the C library printf function
-  *          to the UART.
+  * @file    Practica05_p1
+  * @author  Luis Gómez
+  * @brief   Implementar un módulo de software sencillo para trabajar con la UART.
+  *  Implementar un módulo de software en un archivos fuente `API_uart.c` con su
+  *  correspondiente archivo de cabecera API_uart.h y ubicarlos en el proyecto
+  *  dentro de  las carpetas `/drivers/API/src` y `/drivers/API/inc`, respectivamente.
+  *  En API_uart.h se deben ubicar los prototipos de las funciones públicas.
+  *
   ******************************************************************************
   * @attention
   *

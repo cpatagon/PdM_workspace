@@ -53,6 +53,7 @@ bool_t readKey(){
  * @retval  puntero de caracteres
  */
 char *readStatus(){
+	assert(&currentState!=NULL);
 	char * state_name;
 	switch (currentState){
 	case BUTTON_UP:
@@ -67,6 +68,9 @@ char *readStatus(){
 	case BUTTON_RAISING:
 		state_name="EDGE RAISING\n";
 		break;
+	default:
+			/* Handle unexpected state */
+		assert(0);
 	}
     return state_name;
 }

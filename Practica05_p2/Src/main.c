@@ -1,9 +1,12 @@
 /**
   ******************************************************************************
-  * @file    UART/UART_Printf/Src/main.c
-  * @author  MCD Application Team
-  * @brief   This example shows how to retarget the C library printf function
-  *          to the UART.
+  * @file    Practica05_p2
+  * @author  Luis Gómez
+  * @brief   Implementar un módulo de software sencillo para trabajar con la UART.
+  *  Sobre el ejercicio de la práctica 4, implementar un programa que utilice el
+  *  módulo de uart para informar al usuario cuando se producen los flancos ascendente
+  *  y descendente.
+  *
   ******************************************************************************
   * @attention
   *
@@ -94,7 +97,7 @@ int main(void)
        Error_Handler();
    }
    else{
-	   BSP_LED_Toggle(LED1); // LED 1 que me indica que se inicialiso las trasnmición UART
+	   BSP_LED_Toggle(LED1); // LED 1 que indica que se inicialiso las trasnmición UART correctamente
    }
 
    char *status0;
@@ -126,7 +129,7 @@ int main(void)
 	      	else{
 	      		if (delayRead(&Delay3)){
 	      			BSP_LED_Toggle(LED2); // Toggles LED2 with a blink frequency determined by Delay3
-	      			BSP_LED_Off(LED1); // LED 1 que me indica que se inicialiso las trasnmición UART
+	      			BSP_LED_Off(LED1); // apaga LED 1 que indica que se inicialiso la trasnmición UART
 	      		}
 	      	}
 	      }
