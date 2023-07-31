@@ -26,7 +26,7 @@ typedef enum{
 	BUTTON_RAISING,  // Button being released
 } debounceState_t;
 
-char *state_name2;
+
 
 // Global and private state variable declaration
 static debounceState_t  currentState;
@@ -50,16 +50,16 @@ char *readStatus(){
 	char * state_name;
 	switch (currentState){
 	case BUTTON_UP:
-		state_name="BUTTON_UP ";
+		state_name="";
 		break;
 	case BUTTON_FALLING:
-		state_name="BUTTON_FALLING ";
+		state_name="EDGE FALLING\n";
 		break;
 	case BUTTON_DOWN:
-		state_name="BUTTON_DOWN ";
+		state_name="";
 		break;
 	case BUTTON_RAISING:
-		state_name="BUTTON_RAISING ";
+		state_name="EDGE RAISING\n";
 		break;
 	}
     return state_name;
@@ -101,7 +101,6 @@ void debounceFSM_update(delaydebounce_t * delay){
 	case BUTTON_UP:
 		if (BSP_PB_GetState(BUTTON_USER)){
 	    	currentState=BUTTON_FALLING;
-	    	state_name2="BUTTON_FALLING ";
 		}
 		break;
 		/*
@@ -113,13 +112,11 @@ void debounceFSM_update(delaydebounce_t * delay){
 	case BUTTON_FALLING:
 		if (BSP_PB_GetState(BUTTON_USER) && delayRead(delay)){
 	    	currentState=BUTTON_DOWN;
-	    	state_name2="BUTTON_DOWN ";
 	    	buttonPressed();
 	    	//PressButton = !(PressButton);
 		}
 		else {
 			currentState=BUTTON_UP;
-			state_name2="";
 		}
 		break;
 	/*
@@ -128,7 +125,6 @@ void debounceFSM_update(delaydebounce_t * delay){
 	case BUTTON_DOWN:
 		if (!BSP_PB_GetState(BUTTON_USER)){
 	    	currentState=BUTTON_RAISING;
-	    	state_name2="BUTTON_RAISING ";
 		}
 		break;
 	/*
@@ -140,12 +136,10 @@ void debounceFSM_update(delaydebounce_t * delay){
 	case BUTTON_RAISING:
 		if (!BSP_PB_GetState(BUTTON_USER) && delayRead(delay)){
 	    	currentState=BUTTON_UP;
-	    	state_name2="BUTTON_RAISING ";
 	    	//buttonReleased();
 		}
 		else {
 			currentState=BUTTON_DOWN;
-			state_name2="";
 		}
 		break;
 	default:

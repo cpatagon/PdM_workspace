@@ -114,7 +114,7 @@ int main(void)
 	      	if (status != readStatus()){
       			status=readStatus();
       			uartSendString(status);
-      			uartSendString("\n");
+      			//uartSendString("\r");
 	      	}
 	          /* If the state of readKey() changes to false or true as a result of pressing
 	           * a button validly according to the debounce rules, it will trigger a change
