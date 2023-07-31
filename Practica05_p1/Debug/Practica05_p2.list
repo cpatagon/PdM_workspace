@@ -1,5 +1,5 @@
 
-Practica05_p1.elf:     file format elf32-littlearm
+Practica05_p2.elf:     file format elf32-littlearm
 
 Sections:
 Idx Name          Size      VMA       LMA       File off  Algn
@@ -5238,7 +5238,7 @@ int main(void)
  8002302:	4603      	mov	r3, r0
  8002304:	2b00      	cmp	r3, #0
  8002306:	d0f8      	beq.n	80022fa <main+0x46>
-	  BSP_LED_Toggle(LED2); // LED 2 que me indica que se está ejecutanto el programa
+		  BSP_LED_Toggle(LED2); // LED 2 que me indica que se está ejecutanto el programa
  8002308:	2001      	movs	r0, #1
  800230a:	f7fe fa59 	bl	80007c0 <BSP_LED_Toggle>
 	  if (delayRead(&Delay1)){
