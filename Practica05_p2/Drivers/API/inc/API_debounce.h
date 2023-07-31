@@ -36,6 +36,13 @@ void debounceFSM_init();
  */
 void debounceFSM_update(delaydebounce_t* delay);
 
+
+/**
+ * @brief   Funcion que identifica si es flanco de subida o flanco de bajada
+ *
+ * @param
+ * @retval  puntero de caracteres
+ */
 char *readStatus();
 
 

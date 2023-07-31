@@ -442,7 +442,11 @@ bool_t readKey(){
  80005b8:	20000000 	.word	0x20000000
 
 080005bc <readStatus>:
-
+ * @brief   Funcion que identifica si es flanco de subida o flanco de bajada
+ *
+ * @param
+ * @retval  puntero de caracteres
+ */
 char *readStatus(){
  80005bc:	b480      	push	{r7}
  80005be:	b083      	sub	sp, #12
@@ -538,7 +542,7 @@ void debounceFSM_update(delaydebounce_t * delay){
  800063c:	d105      	bne.n	800064a <debounceFSM_update+0x1a>
  800063e:	4b30      	ldr	r3, [pc, #192]	; (8000700 <debounceFSM_update+0xd0>)
  8000640:	4a30      	ldr	r2, [pc, #192]	; (8000704 <debounceFSM_update+0xd4>)
- 8000642:	215d      	movs	r1, #93	; 0x5d
+ 8000642:	2163      	movs	r1, #99	; 0x63
  8000644:	4830      	ldr	r0, [pc, #192]	; (8000708 <debounceFSM_update+0xd8>)
  8000646:	f002 f8c9 	bl	80027dc <__assert_func>
 	assert(&currentState!=NULL);
@@ -662,7 +666,7 @@ void debounceFSM_update(delaydebounce_t * delay){
 		assert(0);
  80006e4:	4b0a      	ldr	r3, [pc, #40]	; (8000710 <debounceFSM_update+0xe0>)
  80006e6:	4a07      	ldr	r2, [pc, #28]	; (8000704 <debounceFSM_update+0xd4>)
- 80006e8:	2193      	movs	r1, #147	; 0x93
+ 80006e8:	2199      	movs	r1, #153	; 0x99
  80006ea:	4807      	ldr	r0, [pc, #28]	; (8000708 <debounceFSM_update+0xd8>)
  80006ec:	f002 f876 	bl	80027dc <__assert_func>
 		break;

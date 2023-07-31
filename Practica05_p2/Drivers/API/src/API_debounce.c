@@ -46,6 +46,12 @@ bool_t readKey(){
     return PressButton;
 }
 
+/**
+ * @brief   Funcion que identifica si es flanco de subida o flanco de bajada
+ *
+ * @param
+ * @retval  puntero de caracteres
+ */
 char *readStatus(){
 	char * state_name;
 	switch (currentState){
