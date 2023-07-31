@@ -45,7 +45,7 @@ La función devuelve:
 
 3. `uartSendStringSize(uint8_t * pstring, uint16_t size)` recibe un puntero a un string que se desea enviar por la UART y un entero con la cantidad de caracteres que debe enviar. La función debe utilizar `HAL_UART_Transmit(...)` para transmitir el string.
 
-* Implementacion [uartSendStringSize(uint8_t * pstring, uint16_t size)][https://github.com/cpatagon/PdM_workspace/blob/b164601fc8f2019ecc6eaddef94abf93963aa3f3/Practica05_p1/Drivers/API/src/API_uart.c#L76C1-L85C2]
+* Implementacion [uartSendStringSize(uint8_t * pstring, uint16_t size)](https://github.com/cpatagon/PdM_workspace/blob/b164601fc8f2019ecc6eaddef94abf93963aa3f3/Practica05_p1/Drivers/API/src/API_uart.c#L76C1-L85C2)
 
 ## RESULTADOS 
 ***Configuracion Terminal UART con cutecom***
