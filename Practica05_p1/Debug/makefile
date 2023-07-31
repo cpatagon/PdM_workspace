@@ -39,34 +39,34 @@ $(wildcard ../makefile.init) \
 $(wildcard ../makefile.targets) \
 
 
-BUILD_ARTIFACT_NAME := Ej2_uart
+BUILD_ARTIFACT_NAME := Practica05_p1
 BUILD_ARTIFACT_EXTENSION := elf
 BUILD_ARTIFACT_PREFIX :=
 BUILD_ARTIFACT := $(BUILD_ARTIFACT_PREFIX)$(BUILD_ARTIFACT_NAME)$(if $(BUILD_ARTIFACT_EXTENSION),.$(BUILD_ARTIFACT_EXTENSION),)
 
 # Add inputs and outputs from these tool invocations to the build variables 
 EXECUTABLES += \
-Ej2_uart.elf \
+Practica05_p1.elf \
 
 MAP_FILES += \
-Ej2_uart.map \
+Practica05_p1.map \
 
 SIZE_OUTPUT += \
 default.size.stdout \
 
 OBJDUMP_LIST += \
-Ej2_uart.list \
+Practica05_p1.list \
 
 
 # All Target
 all: main-build
 
 # Main-build Target
-main-build: Ej2_uart.elf secondary-outputs
+main-build: Practica05_p1.elf secondary-outputs
 
 # Tool invocations
-Ej2_uart.elf Ej2_uart.map: $(OBJS) $(USER_OBJS) /home/lgomez/maestriauba/SMT32/Ej2_uart/STM32F429ZITX_FLASH.ld makefile objects.list $(OPTIONAL_TOOL_DEPS)
-	arm-none-eabi-gcc -o "Ej2_uart.elf" @"objects.list" $(USER_OBJS) $(LIBS) -mcpu=cortex-m4 -T"/home/lgomez/maestriauba/SMT32/Ej2_uart/STM32F429ZITX_FLASH.ld" --specs=nosys.specs -Wl,-Map="Ej2_uart.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Practica05_p1.elf Practica05_p1.map: $(OBJS) $(USER_OBJS) /home/lgomez/maestriauba/SMT32/PdM_workspace/Practica05_p1/STM32F429ZITX_FLASH.ld makefile objects.list $(OPTIONAL_TOOL_DEPS)
+	arm-none-eabi-gcc -o "Practica05_p1.elf" @"objects.list" $(USER_OBJS) $(LIBS) -mcpu=cortex-m4 -T"/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica05_p1/STM32F429ZITX_FLASH.ld" --specs=nosys.specs -Wl,-Map="Practica05_p1.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
 	@echo 'Finished building target: $@'
 	@echo ' '
 
@@ -75,14 +75,14 @@ default.size.stdout: $(EXECUTABLES) makefile objects.list $(OPTIONAL_TOOL_DEPS)
 	@echo 'Finished building: $@'
 	@echo ' '
 
-Ej2_uart.list: $(EXECUTABLES) makefile objects.list $(OPTIONAL_TOOL_DEPS)
-	arm-none-eabi-objdump -h -S $(EXECUTABLES) > "Ej2_uart.list"
+Practica05_p1.list: $(EXECUTABLES) makefile objects.list $(OPTIONAL_TOOL_DEPS)
+	arm-none-eabi-objdump -h -S $(EXECUTABLES) > "Practica05_p1.list"
 	@echo 'Finished building: $@'
 	@echo ' '
 
 # Other Targets
 clean:
-	-$(RM) Ej2_uart.elf Ej2_uart.list Ej2_uart.map default.size.stdout
+	-$(RM) Practica05_p1.elf Practica05_p1.list Practica05_p1.map default.size.stdout
 	-@echo ' '
 
 secondary-outputs: $(SIZE_OUTPUT) $(OBJDUMP_LIST)

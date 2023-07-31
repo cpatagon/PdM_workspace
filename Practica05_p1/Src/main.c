@@ -21,20 +21,14 @@
 /* Includes ------------------------------------------------------------------*/
 #include "main.h"
 #include "API_uart.h"
-
-// Si estás utilizando STM32CubeMX, es posible que ya tengas una declaración externa para huart1.
-//extern UART_HandleTypeDef huart1;
-
-/** @addtogroup STM32F4xx_HAL_Examples
-  * @{
-  */
-
-/** @addtogroup UART_Printf
-  * @{
-  */
+#include "API_delay.h"
 
 /* Private typedef -----------------------------------------------------------*/
+
+
 /* Private define ------------------------------------------------------------*/
+#define TIME1 100 // TIEMPO  flash del leD 3 que indica que esta funcionando
+
 /* Private macro -------------------------------------------------------------*/
 /* Private variables ---------------------------------------------------------*/
 /* UART handler declaration */
@@ -70,64 +64,32 @@ int main(void)
   SystemClock_Config();
 
   /* Initialize BSP Led for LED2 and LED3*/
-  BSP_LED_Init(LED2);
-  BSP_LED_Init(LED3);
+  BSP_LED_Init(LED1); // Initializes UART
+  BSP_LED_Init(LED2); // Function program
+  BSP_LED_Init(LED3); // Error not Initializes UART F
 
-  // Inicialización de todos los periféricos configurados
-//MX_GPIO_Init();
- //  MX_USART1_UART_Init(); // Asume que la UART1 está configurada aquí
+	 /* Declares delay variables */
+	delay_t Delay1;
+
+
+  /* Initializes the delay flashing led3 */
+  delayInit(&Delay1, TIME1);
 
    // Inicialización de la UART utilizando la biblioteca creada
    if (uartInit() != true) {
        // Manejo de error si la inicialización no fue exitosa
        Error_Handler();
    }
-
-   // Cadena de ejemplo para enviar
-    uint8_t message[] = "Hola, mundo!";
-
-
-
-  /*##-1- Configure the UART peripheral ######################################*/
-  /* Put the USART peripheral in the Asynchronous mode (UART Mode) */
-  /* UART configured as follows:
-      - Word Length = 8 Bits (7 data bit + 1 parity bit) : 
-	                  BE CAREFUL : Program 7 data bits + 1 parity bit in PC HyperTerminal
-      - Stop Bit    = One Stop bit
-      - Parity      = ODD parity
-      - BaudRate    = 9600 baud
-      - Hardware flow control disabled (RTS and CTS signals) */
-  /*
-  UartHandle.Instance        = USARTx;
-
-  UartHandle.Init.BaudRate   = 9600;
-  UartHandle.Init.WordLength = UART_WORDLENGTH_8B;
-  UartHandle.Init.StopBits   = UART_STOPBITS_1;
-  UartHandle.Init.Parity     = UART_PARITY_ODD;
-  UartHandle.Init.HwFlowCtl  = UART_HWCONTROL_NONE;
-  UartHandle.Init.Mode       = UART_MODE_TX_RX;
-  UartHandle.Init.OverSampling = UART_OVERSAMPLING_16;
-  if (HAL_UART_Init(&UartHandle) != HAL_OK)
-  {*/
-    /* Initialization Error */
-   /* Error_Handler();
-  }*/
-
-
-  /* Output a message on Hyperterminal using printf function */
-  //printf("\n\r UART Printf Example: retarget the C library printf function to the UART\n\r");
-  //printf("** Test finished successfully. ** \n\r");
+   else{BSP_LED_Toggle(LED1);} // LED 2 que me indica que se inicialiso las trasnmición UART
 
   /* Infinite loop */
   while (1)
   {
-      // Envía el mensaje completo
-     uartSendString(message);
-
       // Pausa entre envíos
-
-	  BSP_LED_Toggle(LED3);
-	  HAL_Delay(100);
+	  if (delayRead(&Delay1)){
+		  BSP_LED_Toggle(LED2); // LED 2 que me indica que se está ejecutanto el programa
+	  }
+	  //HAL_Delay(100);
   }
 }
 
@@ -209,7 +171,7 @@ static void SystemClock_Config(void)
 static void Error_Handler(void)
 {
   /* Turn LED2 on */
-  BSP_LED_On(LED2);
+  BSP_LED_On(LED3);
   while (1)
   {
   }

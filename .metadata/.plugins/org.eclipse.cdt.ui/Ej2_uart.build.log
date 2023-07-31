@@ -1,26 +1,17 @@
-00:41:43 **** Incremental Build of configuration Debug for project Ej2_uart ****
+19:02:18 **** Incremental Build of configuration Debug for project Ej2_uart ****
 make -j8 all 
-arm-none-eabi-gcc "../Drivers/API/src/API_uart.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F429ZITx -DSTM32F4 -DNUCLEO_F429ZI -DUSE_HAL_DRIVER -DSTM32F429xx -c -I../Inc -I"/home/lgomez/maestriauba/SMT32/Ej2_uart/Drivers/STM32F4xx_HAL_Driver/Inc" -I"/home/lgomez/maestriauba/SMT32/Ej2_uart/Drivers/CMSIS/Include" -I"/home/lgomez/maestriauba/SMT32/Ej2_uart/Drivers/CMSIS/Device/ST/STM32F4xx/Include" -I"/home/lgomez/maestriauba/SMT32/Ej2_uart/Drivers/BSP/STM32F4xx_Nucleo_144" -I"/home/lgomez/maestriauba/SMT32/Ej2_uart/Drivers/Core/Inc" -I"/home/lgomez/maestriauba/SMT32/Ej2_uart/Drivers/API/inc" -I"/home/lgomez/maestriauba/SMT32/Ej2_uart/Drivers/API/src" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Drivers/API/src/API_uart.d" -MT"Drivers/API/src/API_uart.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Drivers/API/src/API_uart.o"
-../Drivers/API/src/API_uart.c: In function 'uartSendString':
-../Drivers/API/src/API_uart.c:48:45: warning: implicit declaration of function 'strlen' [-Wimplicit-function-declaration]
-   48 |     HAL_UART_Transmit(&UartHandle, pstring, strlen((char *)pstring), HAL_MAX_DELAY);
-      |                                             ^~~~~~
-../Drivers/API/src/API_uart.c:48:45: warning: incompatible implicit declaration of built-in function 'strlen'
-../Drivers/API/src/API_uart.c:4:1: note: include '<string.h>' or provide a declaration of 'strlen'
-    3 | #include "API_uart.h"
-  +++ |+#include <string.h>
-    4 | 
+arm-none-eabi-gcc "../Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F429ZITx -DSTM32F4 -DNUCLEO_F429ZI -DUSE_HAL_DRIVER -DSTM32F429xx -c -I../Inc -I"/home/lgomez/maestriauba/SMT32/Ej2_uart/Drivers/STM32F4xx_HAL_Driver/Inc" -I"/home/lgomez/maestriauba/SMT32/Ej2_uart/Drivers/CMSIS/Include" -I"/home/lgomez/maestriauba/SMT32/Ej2_uart/Drivers/CMSIS/Device/ST/STM32F4xx/Include" -I"/home/lgomez/maestriauba/SMT32/Ej2_uart/Drivers/BSP/STM32F4xx_Nucleo_144" -I"/home/lgomez/maestriauba/SMT32/Ej2_uart/Drivers/Core/Inc" -I"/home/lgomez/maestriauba/SMT32/Ej2_uart/Drivers/API/inc" -I"/home/lgomez/maestriauba/SMT32/Ej2_uart/Drivers/API/src" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Src/main.d" -MT"Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Src/main.o"
 arm-none-eabi-gcc -o "Ej2_uart.elf" @"objects.list"   -mcpu=cortex-m4 -T"/home/lgomez/maestriauba/SMT32/Ej2_uart/STM32F429ZITX_FLASH.ld" --specs=nosys.specs -Wl,-Map="Ej2_uart.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
 Finished building target: Ej2_uart.elf
  
 arm-none-eabi-size   Ej2_uart.elf 
 arm-none-eabi-objdump -h -S  Ej2_uart.elf  > "Ej2_uart.list"
    text	   data	    bss	    dec	    hex	filename
-  13356	    132	   1660	  15148	   3b2c	Ej2_uart.elf
+   9220	     36	   1636	  10892	   2a8c	Ej2_uart.elf
 Finished building: default.size.stdout
  
 Finished building: Ej2_uart.list
  
 
-00:41:44 Build Finished. 0 errors, 2 warnings. (took 1s.151ms)
+19:02:19 Build Finished. 0 errors, 0 warnings. (took 1s.87ms)
 

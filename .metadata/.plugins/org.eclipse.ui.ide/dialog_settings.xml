@@ -25,9 +25,10 @@
 	<section name="SmartImportWizard">
 		<item key="SmartImportRootWizardPage.STORE_HIDE_ALREADY_OPEN" value="false"/>
 		<item key="SmartImportRootWizardPage.STORE_CLOSE_IMPORTED" value="false"/>
-		<item key="SmartImportRootWizardPage.STORE_NESTED_PROJECTS" value="false"/>
-		<item key="SmartImportRootWizardPage.STORE_CONFIGURE_NATURES" value="false"/>
+		<item key="SmartImportRootWizardPage.STORE_NESTED_PROJECTS" value="true"/>
+		<item key="SmartImportRootWizardPage.STORE_CONFIGURE_NATURES" value="true"/>
 		<list key="org.eclipse.ui.internal.wizards.datatransfer.SmartImportRootWizardPage.knownSources">
+			<item value="/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica05_p1"/>
 			<item value="/home/lgomez/maestriauba/SMT32/Ej2_uart"/>
 			<item value="/home/lgomez/maestriauba/SMT32/PdM_workspace/PW4_Exercise1"/>
 			<item value="/home/lgomez/maestriauba/SMT32/PdM-main/PW4_Excercise1"/>
@@ -42,5 +43,8 @@
 		<list key="NewWizardSelectionPage.STORE_EXPANDED_CATEGORIES_ID">
 			<item value="org.eclipse.cdt.ui.newCWizards"/>
 		</list>
+	</section>
+	<section name="org.eclipse.ui.internal.ide.dialogs.ProjectContentsLocationArea">
+		<item key="OUTSIDE_LOCATION" value="/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica01_p2"/>
 	</section>
 </section>

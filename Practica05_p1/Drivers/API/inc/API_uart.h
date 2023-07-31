@@ -11,12 +11,37 @@
 
 typedef bool bool_t;
 
+//extern UART_HandleTypeDef UartHandle;
 
-extern UART_HandleTypeDef UartHandle;
+/* funcion de inicialización de la UART. Adicionalmente, debe imprimime
+ * por la terminal serie un mensaje con los parámetros de
+ * configuración*/
 
 bool_t uartInit();
+
+/* uartSendString(uint8_t *pstring) recibe un puntero a un
+ * string que se desea enviar por la UART completo (hasta
+ * el caracter ‘\0’) y debe utilizar la función de la
+ * HAL HAL_UART_Transmit(...) para transmitir el string.*/
+
 void uartSendString(uint8_t * pstring);
+
+/* uartSendStringSize(uint8_t * pstring, uint16_t size)
+ * recibe un puntero a un string que se desea enviar por
+ * la UART y un entero con la cantidad de caracteres que
+ * debe enviar. La función debe utilizar
+ * HAL_UART_Transmit(...) para transmitir el string.
+ * */
+
 void uartSendStringSize(uint8_t * pstring, uint16_t size);
+
+/* uartReceiveStringSize(uint8_t * pstring, uint16_t size)
+ * recibe un puntero a un string que se desea enviar por
+ * la UART y un entero con la cantidad de caracteres que
+ * debe enviar. La función debe utilizar
+ * HAL_UART_Transmit(...) para transmitir el string.
+ * */
+
 void uartReceiveStringSize(uint8_t * pstring, uint16_t size);
 
 
