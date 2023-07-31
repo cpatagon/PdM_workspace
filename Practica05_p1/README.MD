@@ -37,6 +37,8 @@ La función devuelve:
 
 2. `uartSendString(uint8_t *pstring)` recibe un puntero a un string que se desea enviar por la UART completo (hasta el caracter ‘\0’) y debe utilizar la función de la `HAL HAL_UART_Transmit(...)` para transmitir el string.
 
+* Implementacion [uartSendString(uint8_t *pstring)](https://github.com/cpatagon/PdM_workspace/blob/b164601fc8f2019ecc6eaddef94abf93963aa3f3/Practica05_p1/Drivers/API/src/API_uart.c#L67C1-L75C1)
+
 3. `uartSendStringSize(uint8_t * pstring, uint16_t size)` recibe un puntero a un string que se desea enviar por la UART y un entero con la cantidad de caracteres que debe enviar. La función debe utilizar `HAL_UART_Transmit(...)` para transmitir el string.
 
 ## RESULTADOS 
@@ -47,6 +49,7 @@ La función devuelve:
 ***Salida Configuración UART en placa STM32***
  
 ![Texto alternativo](cutecom.png)
+
 
 
 
