@@ -94,7 +94,7 @@ int main(void)
        Error_Handler();
    }
    else{
-	   BSP_LED_Toggle(LED1); // LED 2 que me indica que se inicialiso las trasnmición UART
+	   BSP_LED_Toggle(LED1); // LED 1 que me indica que se inicialiso las trasnmición UART
    }
 
    char *status0;
@@ -108,13 +108,11 @@ int main(void)
 	      	 * This also results in a change in the return of the readKey() function from
 	      	 * true -> false or from false to true each time a valid BUTTON_FALLING is detected.
 	      	 * */
-	      	//;
-
 	        debounceFSM_update(&Delay1);
+	        // Imprime cuando ocurre un cambio
 	      	if (status != readStatus()){
-      			status=readStatus();
-      			uartSendString(status);
-      			//uartSendString("\r");
+      			status=readStatus(); //lee estatus del pulsador
+      			uartSendString(status); // envía estatus al puerto con UART
 	      	}
 	          /* If the state of readKey() changes to false or true as a result of pressing
 	           * a button validly according to the debounce rules, it will trigger a change
@@ -123,13 +121,12 @@ int main(void)
 	      	if (readKey()){
 	      		if (delayRead(&Delay2)){
 	      			BSP_LED_Toggle(LED2); // Toggles LED2 with a blink frequency determined by Delay2
-
 	      		}
 	      	}
 	      	else{
 	      		if (delayRead(&Delay3)){
-
 	      			BSP_LED_Toggle(LED2); // Toggles LED2 with a blink frequency determined by Delay3
+	      			BSP_LED_Off(LED1); // LED 1 que me indica que se inicialiso las trasnmición UART
 	      		}
 	      	}
 	      }
