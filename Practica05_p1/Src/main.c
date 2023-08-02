@@ -76,6 +76,7 @@ int main(void)
 	delay_t Delay1;
 
 
+
   /* Initializes the delay flashing led3 */
   delayInit(&Delay1, TIME1);
 

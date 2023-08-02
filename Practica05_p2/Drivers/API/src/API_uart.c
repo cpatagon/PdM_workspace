@@ -85,7 +85,7 @@ void uartSendStringSize(uint8_t * pstring, uint16_t size){
 }
 
 /* uartReceiveStringSize(uint8_t * pstring, uint16_t size)
- * recibe un puntero a un string que se desea enviar por
+ * recibe un puntero a un string que se desea resivir por
  * la UART y un entero con la cantidad de caracteres que
  * debe enviar. La función debe utilizar
  * HAL_UART_Transmit(...) para transmitir el string.

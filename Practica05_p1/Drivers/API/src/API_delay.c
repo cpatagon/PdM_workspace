@@ -14,6 +14,7 @@
 correspondiente. No debe iniciar el conteo del retardo. Debe inicializar el flag running
 en `false´. */
 
+
 void delayInit( delay_t * delay, tick_t duration )
 {
 	assert(delay != NULL);
