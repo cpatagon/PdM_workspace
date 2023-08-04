@@ -100,8 +100,13 @@ int main(void)
 	   BSP_LED_Toggle(LED1); // LED 1 que indica que se inicialiso las trasnmición UART correctamente
    }
 
-   char *status0;
    char *status;
+
+   uint8_t myString[] = "Hello, World!";
+   uint16_t sizeToSend = strlen((char *)myString) / 2;
+   uartSendStringSize(myString, sizeToSend);
+
+
 
   /* Infinite loop */
   while (1)

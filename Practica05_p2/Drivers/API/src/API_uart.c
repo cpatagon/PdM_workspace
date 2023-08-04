@@ -1,6 +1,7 @@
 #include <stdint.h>  /* For standard uint32_t types */
 #include <stdbool.h> /* For standard boolean types */
 #include "API_uart.h"
+#include <string.h>
 
 #include "stm32f4xx_hal.h"          /* HAL library inclusion */
 #include "stm32f4xx_nucleo_144.h"   /* BSP library inclusion */
@@ -18,7 +19,7 @@ static UART_HandleTypeDef UartHandle;
 //extern UART_HandleTypeDef huart1;
 
 /* mensaje con los parametros de configuracion de la UART */
-static const char *message =
+static uint8_t *message = (uint8_t *)
 	"\n\n"
 	"-----------------------------------------------------------\n"
 	"*** UART port initialization successful !!! ***\n"
@@ -56,8 +57,9 @@ bool_t uartInit(){
 	  UartHandle.Init.Mode       = UART_MODE_TX_RX;
 	  UartHandle.Init.OverSampling = UART_OVERSAMPLING_16;
 
+	  // Envy mensaje con los parametros de configuración UART
 	  	if (HAL_UART_Init(&UartHandle) == HAL_OK) {
-	  		uartSendString(message); // envia mensaje con los parametros de configuración UART
+	  		uartSendString(message);
 	  		return true;
 	  	} else {
 	  		return false;
@@ -69,8 +71,9 @@ bool_t uartInit(){
  * el caracter ‘\0’) y debe utilizar la función de la
  * HAL HAL_UART_Transmit(...) para transmitir el string.*/
 
-void uartSendString(uint8_t * pstring){
-    HAL_UART_Transmit(&UartHandle, pstring, strlen((char *)pstring), HAL_MAX_DELAY);
+void uartSendString(char * pstring){
+	assert(pstring!=NULL);
+    HAL_UART_Transmit(&UartHandle, (uint8_t *)pstring, strlen(pstring), HAL_MAX_DELAY);
 }
 
 /* uartSendStringSize(uint8_t * pstring, uint16_t size)
@@ -81,6 +84,7 @@ void uartSendString(uint8_t * pstring){
  * */
 
 void uartSendStringSize(uint8_t * pstring, uint16_t size){
+	assert(pstring!=NULL);
     HAL_UART_Transmit(&UartHandle, pstring, size, HAL_MAX_DELAY);
 }
 

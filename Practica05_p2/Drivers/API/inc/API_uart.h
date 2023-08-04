@@ -24,7 +24,7 @@ bool_t uartInit();
  * el caracter ‘\0’) y debe utilizar la función de la
  * HAL HAL_UART_Transmit(...) para transmitir el string.*/
 
-void uartSendString(uint8_t * pstring);
+void uartSendString(char * pstring);
 
 /* uartSendStringSize(uint8_t * pstring, uint16_t size)
  * recibe un puntero a un string que se desea enviar por

@@ -1,0 +1,44 @@
+2023-08-01 23:41:34,359 [INFO] Activator:176 - 
+
+
+2023-08-01 23:41:34,363 [INFO] Activator:177 - !SESSION log4j initialized
+2023-08-01 23:41:38,981 [INFO] LogOutputStream:77 - [STDOUT_REDIRECT] 
+2023-08-01 23:41:40,346 [ERROR] ConfigurationRetriever:142 - IOException on connection: La red es inaccesible (connect failed)
+2023-08-01 23:41:40,348 [ERROR] ConfigurationRetriever:142 - IOException on connection: La red es inaccesible (connect failed)
+2023-08-01 23:41:40,349 [ERROR] ConfigurationRetriever:142 - IOException on connection: La red es inaccesible (connect failed)
+2023-08-01 23:42:01,319 [ERROR] LogOutputStream:75 - [STDERR_REDIRECT] SLF4J: Failed to load class "org.slf4j.impl.StaticLoggerBinder".
+2023-08-01 23:42:01,320 [ERROR] LogOutputStream:75 - [STDERR_REDIRECT] SLF4J: Defaulting to no-operation (NOP) logger implementation
+2023-08-01 23:42:01,320 [ERROR] LogOutputStream:75 - [STDERR_REDIRECT] SLF4J: See http://www.slf4j.org/codes.html#StaticLoggerBinder for further details.
+2023-08-01 23:43:03,364 [ERROR] ConfigurationRetriever:142 - IOException on connection: La red es inaccesible (connect failed)
+2023-08-01 23:43:03,366 [ERROR] ConfigurationRetriever:142 - IOException on connection: La red es inaccesible (connect failed)
+2023-08-01 23:43:03,367 [ERROR] ConfigurationRetriever:142 - IOException on connection: La red es inaccesible (connect failed)
+2023-08-01 23:47:23,089 [ERROR] ConfigurationRetriever:142 - IOException on connection: La red es inaccesible (connect failed)
+2023-08-01 23:47:23,091 [ERROR] ConfigurationRetriever:142 - IOException on connection: La red es inaccesible (connect failed)
+2023-08-01 23:47:23,092 [ERROR] ConfigurationRetriever:142 - IOException on connection: La red es inaccesible (connect failed)
+2023-08-01 23:48:04,981 [ERROR] ConfigurationRetriever:142 - IOException on connection: La red es inaccesible (connect failed)
+2023-08-01 23:48:04,983 [ERROR] ConfigurationRetriever:142 - IOException on connection: La red es inaccesible (connect failed)
+2023-08-01 23:48:04,984 [ERROR] ConfigurationRetriever:142 - IOException on connection: La red es inaccesible (connect failed)
+2023-08-01 23:48:05,809 [ERROR] ConfigurationRetriever:142 - IOException on connection: La red es inaccesible (connect failed)
+2023-08-01 23:48:05,811 [ERROR] ConfigurationRetriever:142 - IOException on connection: La red es inaccesible (connect failed)
+2023-08-01 23:48:05,813 [ERROR] ConfigurationRetriever:142 - IOException on connection: La red es inaccesible (connect failed)
+2023-08-01 23:49:15,527 [ERROR] ConfigurationRetriever:142 - IOException on connection: La red es inaccesible (connect failed)
+2023-08-01 23:49:15,528 [ERROR] ConfigurationRetriever:142 - IOException on connection: La red es inaccesible (connect failed)
+2023-08-01 23:49:15,528 [ERROR] ConfigurationRetriever:142 - IOException on connection: La red es inaccesible (connect failed)
+2023-08-01 23:49:57,132 [ERROR] ConfigurationRetriever:142 - IOException on connection: La red es inaccesible (connect failed)
+2023-08-01 23:49:57,133 [ERROR] ConfigurationRetriever:142 - IOException on connection: La red es inaccesible (connect failed)
+2023-08-01 23:49:57,134 [ERROR] ConfigurationRetriever:142 - IOException on connection: La red es inaccesible (connect failed)
+2023-08-01 23:49:57,920 [ERROR] ConfigurationRetriever:142 - IOException on connection: La red es inaccesible (connect failed)
+2023-08-01 23:49:57,922 [ERROR] ConfigurationRetriever:142 - IOException on connection: La red es inaccesible (connect failed)
+2023-08-01 23:49:57,922 [ERROR] ConfigurationRetriever:142 - IOException on connection: La red es inaccesible (connect failed)
+2023-08-01 23:50:36,270 [ERROR] ConfigurationRetriever:142 - IOException on connection: La red es inaccesible (connect failed)
+2023-08-01 23:50:36,271 [ERROR] ConfigurationRetriever:142 - IOException on connection: La red es inaccesible (connect failed)
+2023-08-01 23:50:36,271 [ERROR] ConfigurationRetriever:142 - IOException on connection: La red es inaccesible (connect failed)
+2023-08-01 23:51:03,079 [ERROR] ConfigurationRetriever:142 - IOException on connection: La red es inaccesible (connect failed)
+2023-08-01 23:51:03,079 [ERROR] ConfigurationRetriever:142 - IOException on connection: La red es inaccesible (connect failed)
+2023-08-01 23:51:03,080 [ERROR] ConfigurationRetriever:142 - IOException on connection: La red es inaccesible (connect failed)
+2023-08-01 23:55:51,160 [ERROR] ConfigurationRetriever:142 - IOException on connection: La red es inaccesible (connect failed)
+2023-08-01 23:55:51,161 [ERROR] ConfigurationRetriever:142 - IOException on connection: La red es inaccesible (connect failed)
+2023-08-01 23:55:51,161 [ERROR] ConfigurationRetriever:142 - IOException on connection: La red es inaccesible (connect failed)
+2023-08-01 23:55:59,923 [ERROR] ConfigurationRetriever:142 - IOException on connection: La red es inaccesible (connect failed)
+2023-08-01 23:55:59,924 [ERROR] ConfigurationRetriever:142 - IOException on connection: La red es inaccesible (connect failed)
+2023-08-01 23:55:59,924 [ERROR] ConfigurationRetriever:142 - IOException on connection: La red es inaccesible (connect failed)

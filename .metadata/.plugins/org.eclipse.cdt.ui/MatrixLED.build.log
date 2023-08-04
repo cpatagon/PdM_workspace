@@ -1,0 +1,10 @@
+21:09:13 **** Incremental Build of configuration Debug for project MatrixLED ****
+make -j8 all 
+arm-none-eabi-size   MatrixLED.elf 
+   text	   data	    bss	    dec	    hex	filename
+   8936	     20	   1724	  10680	   29b8	MatrixLED.elf
+Finished building: default.size.stdout
+ 
+
+21:09:14 Build Finished. 0 errors, 0 warnings. (took 780ms)
+

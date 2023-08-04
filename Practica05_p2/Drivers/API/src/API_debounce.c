@@ -26,10 +26,17 @@ typedef enum{
 	BUTTON_RAISING,  // Button being released
 } debounceState_t;
 
+typedef enum{
+	EDGE_RAISING,
+	EDGE_FALLING,
+	EDGE_INIT,
+} Edge_State_t;
+
 
 
 // Global and private state variable declaration
 static debounceState_t  currentState;
+static Edge_State_t current_edge_state;
 
 /*
  * Declare a global private variable of type bool_t that
@@ -52,21 +59,20 @@ bool_t readKey(){
  * @param
  * @retval  puntero de caracteres
  */
+
+
 char *readStatus(){
-	assert(&currentState!=NULL);
+	assert(&current_edge_state!=NULL);
 	char * state_name;
-	switch (currentState){
-	case BUTTON_UP:
-		state_name="";
+	switch (current_edge_state){
+	case EDGE_RAISING:
+		state_name="EDGE RAISING\n";
 		break;
-	case BUTTON_FALLING:
+	case EDGE_FALLING:
 		state_name="EDGE FALLING\n";
 		break;
-	case BUTTON_DOWN:
-		state_name="";
-		break;
-	case BUTTON_RAISING:
-		state_name="EDGE RAISING\n";
+	case EDGE_INIT:
+		state_name="\n";
 		break;
 	default:
 			/* Handle unexpected state */
@@ -88,6 +94,7 @@ void debounceFSM_init(){
 	/* Initialize Estado */
 	assert(&PressButton!=NULL);
 	currentState=BUTTON_UP;
+	current_edge_state=EDGE_INIT;
 	return;
 }
 
@@ -120,12 +127,14 @@ void debounceFSM_update(delaydebounce_t * delay){
 		 * the state changes back to BUTTON_UP, interpreting this event as a bounce.
 		 */
 	case BUTTON_FALLING:
-		if (BSP_PB_GetState(BUTTON_USER) && delayRead(delay)){
+		if (BSP_PB_GetState(BUTTON_USER) && delayReadD(delay)){
 	    	currentState=BUTTON_DOWN;
 	    	buttonPressed();
+	    	current_edge_state=EDGE_FALLING;
 	    	//PressButton = !(PressButton);
 		}
 		else {
+			//currentState=BUTTON_DOWN;
 			currentState=BUTTON_UP;
 		}
 		break;
@@ -135,6 +144,7 @@ void debounceFSM_update(delaydebounce_t * delay){
 	case BUTTON_DOWN:
 		if (!BSP_PB_GetState(BUTTON_USER)){
 	    	currentState=BUTTON_RAISING;
+
 		}
 		break;
 	/*
@@ -144,11 +154,13 @@ void debounceFSM_update(delaydebounce_t * delay){
 	 * the state changes back to BUTTON_DOWN.
 	 */
 	case BUTTON_RAISING:
-		if (!BSP_PB_GetState(BUTTON_USER) && delayRead(delay)){
+		if (!BSP_PB_GetState(BUTTON_USER) && delayReadD(delay)){
 	    	currentState=BUTTON_UP;
+	    	current_edge_state=EDGE_RAISING;
 	    	//buttonReleased();
 		}
 		else {
+
 			currentState=BUTTON_DOWN;
 		}
 		break;

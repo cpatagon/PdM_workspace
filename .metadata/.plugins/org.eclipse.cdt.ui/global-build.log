@@ -1,7 +1,372 @@
-23:56:35 **** Incremental Build of configuration Debug for project Practica05_p2 ****
+23:00:49 **** Incremental Build of configuration Debug for project Practica05_p2 ****
 make -j8 all 
 arm-none-eabi-size   Practica05_p2.elf 
    text	   data	    bss	    dec	    hex	filename
-  15524	    144	   1664	  17332	   43b4	Practica05_p2.elf
+  15764	    144	   1664	  17572	   44a4	Practica05_p2.elf
 Finished building: default.size.stdout
+ 
+23:01:00 **** Incremental Build of configuration Debug for project Practica05_p2 ****
+make -j8 all 
+arm-none-eabi-size   Practica05_p2.elf 
+   text	   data	    bss	    dec	    hex	filename
+  15764	    144	   1664	  17572	   44a4	Practica05_p2.elf
+Finished building: default.size.stdout
+ 
+23:01:25 **** Incremental Build of configuration Debug for project Practica05_p2 ****
+make -j8 all 
+arm-none-eabi-size   Practica05_p2.elf 
+   text	   data	    bss	    dec	    hex	filename
+  15764	    144	   1664	  17572	   44a4	Practica05_p2.elf
+Finished building: default.size.stdout
+ 
+23:02:53 **** Incremental Build of configuration Debug for project Practica05_p2 ****
+make -j8 all 
+arm-none-eabi-size   Practica05_p2.elf 
+   text	   data	    bss	    dec	    hex	filename
+  15764	    144	   1664	  17572	   44a4	Practica05_p2.elf
+Finished building: default.size.stdout
+ 
+23:04:14 **** Incremental Build of configuration Debug for project Practica05_p2 ****
+make -j8 all 
+arm-none-eabi-gcc "../Drivers/API/src/API_uart.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F429ZITx -DSTM32F4 -DNUCLEO_F429ZI -DUSE_HAL_DRIVER -DSTM32F429xx -c -I../Inc -I"/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica05_p2/Drivers/STM32F4xx_HAL_Driver/Inc" -I"/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica05_p2/Drivers/CMSIS/Include" -I"/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica05_p2/Drivers/CMSIS/Device/ST/STM32F4xx/Include" -I"/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica05_p2/Drivers/BSP/STM32F4xx_Nucleo_144" -I"/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica05_p2/Drivers/Core/Inc" -I"/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica05_p2/Drivers/API/inc" -I"/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica05_p2/Drivers/API/src" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Drivers/API/src/API_uart.d" -MT"Drivers/API/src/API_uart.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Drivers/API/src/API_uart.o"
+../Drivers/API/src/API_uart.c: In function 'uartInit':
+../Drivers/API/src/API_uart.c:60:21: warning: passing argument 1 of 'uartSendString' discards 'const' qualifier from pointer target type [-Wdiscarded-qualifiers]
+   60 |      uartSendString(message); // envia mensaje con los parametros de configuración UART
+      |                     ^~~~~~~
+In file included from ../Drivers/API/src/API_uart.c:3:
+/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica05_p2/Drivers/API/inc/API_uart.h:27:31: note: expected 'uint8_t *' {aka 'unsigned char *'} but argument is of type 'const char *'
+   27 | void uartSendString(uint8_t * pstring);
+      |                     ~~~~~~~~~~^~~~~~~
+../Drivers/API/src/API_uart.c: In function 'uartSendString':
+../Drivers/API/src/API_uart.c:74:45: warning: implicit declaration of function 'strlen' [-Wimplicit-function-declaration]
+   74 |     HAL_UART_Transmit(&UartHandle, pstring, strlen((char *)pstring), HAL_MAX_DELAY);
+      |                                             ^~~~~~
+../Drivers/API/src/API_uart.c:74:45: warning: incompatible implicit declaration of built-in function 'strlen'
+../Drivers/API/src/API_uart.c:4:1: note: include '<string.h>' or provide a declaration of 'strlen'
+    3 | #include "API_uart.h"
+  +++ |+#include <string.h>
+    4 | 
+arm-none-eabi-gcc -o "Practica05_p2.elf" @"objects.list"   -mcpu=cortex-m4 -T"/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica05_p2/STM32F429ZITX_FLASH.ld" --specs=nosys.specs -Wl,-Map="Practica05_p2.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: Practica05_p2.elf
+ 
+arm-none-eabi-size   Practica05_p2.elf 
+arm-none-eabi-objdump -h -S  Practica05_p2.elf  > "Practica05_p2.list"
+   text	   data	    bss	    dec	    hex	filename
+  15764	    144	   1664	  17572	   44a4	Practica05_p2.elf
+Finished building: default.size.stdout
+ 
+Finished building: Practica05_p2.list
+ 
+23:09:57 **** Incremental Build of configuration Debug for project Practica05_p2 ****
+make -j8 all 
+arm-none-eabi-gcc "../Drivers/API/src/API_uart.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F429ZITx -DSTM32F4 -DNUCLEO_F429ZI -DUSE_HAL_DRIVER -DSTM32F429xx -c -I../Inc -I"/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica05_p2/Drivers/STM32F4xx_HAL_Driver/Inc" -I"/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica05_p2/Drivers/CMSIS/Include" -I"/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica05_p2/Drivers/CMSIS/Device/ST/STM32F4xx/Include" -I"/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica05_p2/Drivers/BSP/STM32F4xx_Nucleo_144" -I"/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica05_p2/Drivers/Core/Inc" -I"/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica05_p2/Drivers/API/inc" -I"/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica05_p2/Drivers/API/src" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Drivers/API/src/API_uart.d" -MT"Drivers/API/src/API_uart.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Drivers/API/src/API_uart.o"
+../Drivers/API/src/API_uart.c: In function 'uartInit':
+../Drivers/API/src/API_uart.c:61:21: warning: passing argument 1 of 'uartSendString' discards 'const' qualifier from pointer target type [-Wdiscarded-qualifiers]
+   61 |      uartSendString(message); // Envy mensaje con los parametros de configuración UART
+      |                     ^~~~~~~
+In file included from ../Drivers/API/src/API_uart.c:3:
+/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica05_p2/Drivers/API/inc/API_uart.h:27:31: note: expected 'uint8_t *' {aka 'unsigned char *'} but argument is of type 'const char *'
+   27 | void uartSendString(uint8_t * pstring);
+      |                     ~~~~~~~~~~^~~~~~~
+arm-none-eabi-gcc -o "Practica05_p2.elf" @"objects.list"   -mcpu=cortex-m4 -T"/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica05_p2/STM32F429ZITX_FLASH.ld" --specs=nosys.specs -Wl,-Map="Practica05_p2.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: Practica05_p2.elf
+ 
+arm-none-eabi-size   Practica05_p2.elf 
+arm-none-eabi-objdump -h -S  Practica05_p2.elf  > "Practica05_p2.list"
+   text	   data	    bss	    dec	    hex	filename
+  15764	    144	   1664	  17572	   44a4	Practica05_p2.elf
+Finished building: default.size.stdout
+ 
+Finished building: Practica05_p2.list
+ 
+23:13:27 **** Incremental Build of configuration Debug for project Practica05_p2 ****
+make -j8 all 
+arm-none-eabi-gcc "../Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F429ZITx -DSTM32F4 -DNUCLEO_F429ZI -DUSE_HAL_DRIVER -DSTM32F429xx -c -I../Inc -I"/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica05_p2/Drivers/STM32F4xx_HAL_Driver/Inc" -I"/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica05_p2/Drivers/CMSIS/Include" -I"/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica05_p2/Drivers/CMSIS/Device/ST/STM32F4xx/Include" -I"/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica05_p2/Drivers/BSP/STM32F4xx_Nucleo_144" -I"/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica05_p2/Drivers/Core/Inc" -I"/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica05_p2/Drivers/API/inc" -I"/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica05_p2/Drivers/API/src" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Src/main.d" -MT"Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Src/main.o"
+arm-none-eabi-gcc "../Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_msp.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F429ZITx -DSTM32F4 -DNUCLEO_F429ZI -DUSE_HAL_DRIVER -DSTM32F429xx -c -I../Inc -I"/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica05_p2/Drivers/STM32F4xx_HAL_Driver/Inc" -I"/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica05_p2/Drivers/CMSIS/Include" -I"/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica05_p2/Drivers/CMSIS/Device/ST/STM32F4xx/Include" -I"/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica05_p2/Drivers/BSP/STM32F4xx_Nucleo_144" -I"/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica05_p2/Drivers/Core/Inc" -I"/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica05_p2/Drivers/API/inc" -I"/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica05_p2/Drivers/API/src" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_msp.d" -MT"Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_msp.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_msp.o"
+arm-none-eabi-gcc "../Drivers/Core/Src/stm32f4xx_it.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F429ZITx -DSTM32F4 -DNUCLEO_F429ZI -DUSE_HAL_DRIVER -DSTM32F429xx -c -I../Inc -I"/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica05_p2/Drivers/STM32F4xx_HAL_Driver/Inc" -I"/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica05_p2/Drivers/CMSIS/Include" -I"/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica05_p2/Drivers/CMSIS/Device/ST/STM32F4xx/Include" -I"/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica05_p2/Drivers/BSP/STM32F4xx_Nucleo_144" -I"/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica05_p2/Drivers/Core/Inc" -I"/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica05_p2/Drivers/API/inc" -I"/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica05_p2/Drivers/API/src" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Drivers/Core/Src/stm32f4xx_it.d" -MT"Drivers/Core/Src/stm32f4xx_it.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Drivers/Core/Src/stm32f4xx_it.o"
+arm-none-eabi-gcc "../Drivers/API/src/API_uart.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F429ZITx -DSTM32F4 -DNUCLEO_F429ZI -DUSE_HAL_DRIVER -DSTM32F429xx -c -I../Inc -I"/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica05_p2/Drivers/STM32F4xx_HAL_Driver/Inc" -I"/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica05_p2/Drivers/CMSIS/Include" -I"/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica05_p2/Drivers/CMSIS/Device/ST/STM32F4xx/Include" -I"/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica05_p2/Drivers/BSP/STM32F4xx_Nucleo_144" -I"/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica05_p2/Drivers/Core/Inc" -I"/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica05_p2/Drivers/API/inc" -I"/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica05_p2/Drivers/API/src" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Drivers/API/src/API_uart.d" -MT"Drivers/API/src/API_uart.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Drivers/API/src/API_uart.o"
+In file included from ../Inc/main.h:26,
+                 from ../Src/main.c:25:
+/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica05_p2/Drivers/API/inc/API_uart.h:27:21: error: expected declaration specifiers or '...' before '(' token
+   27 | void uartSendString((uint8_t *) pstring);
+      |                     ^
+../Src/main.c: In function 'main':
+../Src/main.c:118:10: warning: implicit declaration of function 'uartSendString'; did you mean 'uartSendStringSize'? [-Wimplicit-function-declaration]
+  118 |          uartSendString(status); // envía estatus al puerto con UART
+      |          ^~~~~~~~~~~~~~
+      |          uartSendStringSize
+../Src/main.c:103:10: warning: unused variable 'status0' [-Wunused-variable]
+  103 |    char *status0;
+      |          ^~~~~~~
+make: *** [Src/subdir.mk:19: Src/main.o] Error 1
+make: *** Waiting for unfinished jobs....
+In file included from ../Drivers/API/src/API_uart.c:3:
+/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica05_p2/Drivers/API/inc/API_uart.h:27:21: error: expected declaration specifiers or '...' before '(' token
+   27 | void uartSendString((uint8_t *) pstring);
+      |                     ^
+In file included from ../Inc/main.h:26,
+                 from ../Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_msp.c:21:
+/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica05_p2/Drivers/API/inc/API_uart.h:27:21: error: expected declaration specifiers or '...' before '(' token
+   27 | void uartSendString((uint8_t *) pstring);
+      |                     ^
+In file included from ../Inc/main.h:26,
+                 from ../Drivers/Core/Src/stm32f4xx_it.c:23:
+/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica05_p2/Drivers/API/inc/API_uart.h:27:21: error: expected declaration specifiers or '...' before '(' token
+   27 | void uartSendString((uint8_t *) pstring);
+      |                     ^
+make: *** [Drivers/STM32F4xx_HAL_Driver/Src/subdir.mk:292: Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_msp.o] Error 1
+../Drivers/API/src/API_uart.c: In function 'uartInit':
+../Drivers/API/src/API_uart.c:61:6: warning: implicit declaration of function 'uartSendString'; did you mean 'uartSendStringSize'? [-Wimplicit-function-declaration]
+   61 |      uartSendString(message); // Envy mensaje con los parametros de configuración UART
+      |      ^~~~~~~~~~~~~~
+      |      uartSendStringSize
+../Drivers/API/src/API_uart.c: At top level:
+../Drivers/API/src/API_uart.c:73:21: error: expected declaration specifiers or '...' before '(' token
+   73 | void uartSendString((uint8_t *) pstring){
+      |                     ^
+make: *** [Drivers/Core/Src/subdir.mk:25: Drivers/Core/Src/stm32f4xx_it.o] Error 1
+make: *** [Drivers/API/src/subdir.mk:28: Drivers/API/src/API_uart.o] Error 1
+"make -j8 all" terminated with exit code 2. Build might be incomplete.
+23:13:41 **** Incremental Build of configuration Debug for project Practica05_p2 ****
+make -j8 all 
+arm-none-eabi-gcc "../Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F429ZITx -DSTM32F4 -DNUCLEO_F429ZI -DUSE_HAL_DRIVER -DSTM32F429xx -c -I../Inc -I"/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica05_p2/Drivers/STM32F4xx_HAL_Driver/Inc" -I"/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica05_p2/Drivers/CMSIS/Include" -I"/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica05_p2/Drivers/CMSIS/Device/ST/STM32F4xx/Include" -I"/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica05_p2/Drivers/BSP/STM32F4xx_Nucleo_144" -I"/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica05_p2/Drivers/Core/Inc" -I"/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica05_p2/Drivers/API/inc" -I"/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica05_p2/Drivers/API/src" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Src/main.d" -MT"Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Src/main.o"
+arm-none-eabi-gcc "../Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_msp.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F429ZITx -DSTM32F4 -DNUCLEO_F429ZI -DUSE_HAL_DRIVER -DSTM32F429xx -c -I../Inc -I"/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica05_p2/Drivers/STM32F4xx_HAL_Driver/Inc" -I"/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica05_p2/Drivers/CMSIS/Include" -I"/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica05_p2/Drivers/CMSIS/Device/ST/STM32F4xx/Include" -I"/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica05_p2/Drivers/BSP/STM32F4xx_Nucleo_144" -I"/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica05_p2/Drivers/Core/Inc" -I"/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica05_p2/Drivers/API/inc" -I"/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica05_p2/Drivers/API/src" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_msp.d" -MT"Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_msp.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_msp.o"
+arm-none-eabi-gcc "../Drivers/Core/Src/stm32f4xx_it.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F429ZITx -DSTM32F4 -DNUCLEO_F429ZI -DUSE_HAL_DRIVER -DSTM32F429xx -c -I../Inc -I"/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica05_p2/Drivers/STM32F4xx_HAL_Driver/Inc" -I"/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica05_p2/Drivers/CMSIS/Include" -I"/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica05_p2/Drivers/CMSIS/Device/ST/STM32F4xx/Include" -I"/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica05_p2/Drivers/BSP/STM32F4xx_Nucleo_144" -I"/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica05_p2/Drivers/Core/Inc" -I"/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica05_p2/Drivers/API/inc" -I"/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica05_p2/Drivers/API/src" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Drivers/Core/Src/stm32f4xx_it.d" -MT"Drivers/Core/Src/stm32f4xx_it.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Drivers/Core/Src/stm32f4xx_it.o"
+arm-none-eabi-gcc "../Drivers/API/src/API_uart.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F429ZITx -DSTM32F4 -DNUCLEO_F429ZI -DUSE_HAL_DRIVER -DSTM32F429xx -c -I../Inc -I"/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica05_p2/Drivers/STM32F4xx_HAL_Driver/Inc" -I"/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica05_p2/Drivers/CMSIS/Include" -I"/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica05_p2/Drivers/CMSIS/Device/ST/STM32F4xx/Include" -I"/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica05_p2/Drivers/BSP/STM32F4xx_Nucleo_144" -I"/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica05_p2/Drivers/Core/Inc" -I"/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica05_p2/Drivers/API/inc" -I"/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica05_p2/Drivers/API/src" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Drivers/API/src/API_uart.d" -MT"Drivers/API/src/API_uart.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Drivers/API/src/API_uart.o"
+../Src/main.c: In function 'main':
+../Src/main.c:118:25: warning: pointer targets in passing argument 1 of 'uartSendString' differ in signedness [-Wpointer-sign]
+  118 |          uartSendString(status); // envía estatus al puerto con UART
+      |                         ^~~~~~
+      |                         |
+      |                         char *
+In file included from ../Inc/main.h:26,
+                 from ../Src/main.c:25:
+/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica05_p2/Drivers/API/inc/API_uart.h:27:31: note: expected 'uint8_t *' {aka 'unsigned char *'} but argument is of type 'char *'
+   27 | void uartSendString(uint8_t * pstring);
+      |                     ~~~~~~~~~~^~~~~~~
+../Src/main.c:103:10: warning: unused variable 'status0' [-Wunused-variable]
+  103 |    char *status0;
+      |          ^~~~~~~
+../Drivers/API/src/API_uart.c: In function 'uartInit':
+../Drivers/API/src/API_uart.c:61:21: warning: passing argument 1 of 'uartSendString' discards 'const' qualifier from pointer target type [-Wdiscarded-qualifiers]
+   61 |      uartSendString(message); // Envy mensaje con los parametros de configuración UART
+      |                     ^~~~~~~
+In file included from ../Drivers/API/src/API_uart.c:3:
+/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica05_p2/Drivers/API/inc/API_uart.h:27:31: note: expected 'uint8_t *' {aka 'unsigned char *'} but argument is of type 'const char *'
+   27 | void uartSendString(uint8_t * pstring);
+      |                     ~~~~~~~~~~^~~~~~~
+../Drivers/API/src/API_uart.c: At top level:
+../Drivers/API/src/API_uart.c:73:21: error: expected declaration specifiers or '...' before '(' token
+   73 | void uartSendString((uint8_t *) pstring){
+      |                     ^
+make: *** [Drivers/API/src/subdir.mk:28: Drivers/API/src/API_uart.o] Error 1
+make: *** Waiting for unfinished jobs....
+"make -j8 all" terminated with exit code 2. Build might be incomplete.
+23:14:05 **** Incremental Build of configuration Debug for project Practica05_p2 ****
+make -j8 all 
+arm-none-eabi-gcc "../Drivers/API/src/API_uart.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F429ZITx -DSTM32F4 -DNUCLEO_F429ZI -DUSE_HAL_DRIVER -DSTM32F429xx -c -I../Inc -I"/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica05_p2/Drivers/STM32F4xx_HAL_Driver/Inc" -I"/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica05_p2/Drivers/CMSIS/Include" -I"/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica05_p2/Drivers/CMSIS/Device/ST/STM32F4xx/Include" -I"/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica05_p2/Drivers/BSP/STM32F4xx_Nucleo_144" -I"/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica05_p2/Drivers/Core/Inc" -I"/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica05_p2/Drivers/API/inc" -I"/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica05_p2/Drivers/API/src" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Drivers/API/src/API_uart.d" -MT"Drivers/API/src/API_uart.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Drivers/API/src/API_uart.o"
+../Drivers/API/src/API_uart.c: In function 'uartInit':
+../Drivers/API/src/API_uart.c:61:21: warning: passing argument 1 of 'uartSendString' discards 'const' qualifier from pointer target type [-Wdiscarded-qualifiers]
+   61 |      uartSendString(message); // Envy mensaje con los parametros de configuración UART
+      |                     ^~~~~~~
+In file included from ../Drivers/API/src/API_uart.c:3:
+/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica05_p2/Drivers/API/inc/API_uart.h:27:31: note: expected 'uint8_t *' {aka 'unsigned char *'} but argument is of type 'const char *'
+   27 | void uartSendString(uint8_t * pstring);
+      |                     ~~~~~~~~~~^~~~~~~
+arm-none-eabi-gcc -o "Practica05_p2.elf" @"objects.list"   -mcpu=cortex-m4 -T"/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica05_p2/STM32F429ZITX_FLASH.ld" --specs=nosys.specs -Wl,-Map="Practica05_p2.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: Practica05_p2.elf
+ 
+arm-none-eabi-size   Practica05_p2.elf 
+arm-none-eabi-objdump -h -S  Practica05_p2.elf  > "Practica05_p2.list"
+   text	   data	    bss	    dec	    hex	filename
+  15764	    144	   1664	  17572	   44a4	Practica05_p2.elf
+Finished building: default.size.stdout
+ 
+Finished building: Practica05_p2.list
+ 
+23:15:47 **** Incremental Build of configuration Debug for project Practica05_p2 ****
+make -j8 all 
+arm-none-eabi-gcc "../Drivers/API/src/API_uart.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F429ZITx -DSTM32F4 -DNUCLEO_F429ZI -DUSE_HAL_DRIVER -DSTM32F429xx -c -I../Inc -I"/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica05_p2/Drivers/STM32F4xx_HAL_Driver/Inc" -I"/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica05_p2/Drivers/CMSIS/Include" -I"/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica05_p2/Drivers/CMSIS/Device/ST/STM32F4xx/Include" -I"/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica05_p2/Drivers/BSP/STM32F4xx_Nucleo_144" -I"/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica05_p2/Drivers/Core/Inc" -I"/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica05_p2/Drivers/API/inc" -I"/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica05_p2/Drivers/API/src" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Drivers/API/src/API_uart.d" -MT"Drivers/API/src/API_uart.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Drivers/API/src/API_uart.o"
+../Drivers/API/src/API_uart.c: In function 'uartInit':
+../Drivers/API/src/API_uart.c:62:21: warning: passing argument 1 of 'uartSendString' discards 'const' qualifier from pointer target type [-Wdiscarded-qualifiers]
+   62 |      uartSendString(message);
+      |                     ^~~~~~~
+In file included from ../Drivers/API/src/API_uart.c:3:
+/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica05_p2/Drivers/API/inc/API_uart.h:27:31: note: expected 'uint8_t *' {aka 'unsigned char *'} but argument is of type 'const char *'
+   27 | void uartSendString(uint8_t * pstring);
+      |                     ~~~~~~~~~~^~~~~~~
+arm-none-eabi-gcc -o "Practica05_p2.elf" @"objects.list"   -mcpu=cortex-m4 -T"/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica05_p2/STM32F429ZITX_FLASH.ld" --specs=nosys.specs -Wl,-Map="Practica05_p2.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: Practica05_p2.elf
+ 
+arm-none-eabi-size   Practica05_p2.elf 
+arm-none-eabi-objdump -h -S  Practica05_p2.elf  > "Practica05_p2.list"
+   text	   data	    bss	    dec	    hex	filename
+  15764	    144	   1664	  17572	   44a4	Practica05_p2.elf
+Finished building: default.size.stdout
+ 
+Finished building: Practica05_p2.list
+ 
+23:18:30 **** Incremental Build of configuration Debug for project Practica05_p2 ****
+make -j8 all 
+arm-none-eabi-gcc "../Drivers/API/src/API_uart.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F429ZITx -DSTM32F4 -DNUCLEO_F429ZI -DUSE_HAL_DRIVER -DSTM32F429xx -c -I../Inc -I"/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica05_p2/Drivers/STM32F4xx_HAL_Driver/Inc" -I"/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica05_p2/Drivers/CMSIS/Include" -I"/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica05_p2/Drivers/CMSIS/Device/ST/STM32F4xx/Include" -I"/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica05_p2/Drivers/BSP/STM32F4xx_Nucleo_144" -I"/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica05_p2/Drivers/Core/Inc" -I"/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica05_p2/Drivers/API/inc" -I"/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica05_p2/Drivers/API/src" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Drivers/API/src/API_uart.d" -MT"Drivers/API/src/API_uart.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Drivers/API/src/API_uart.o"
+../Drivers/API/src/API_uart.c: In function 'uartInit':
+../Drivers/API/src/API_uart.c:62:21: warning: passing argument 1 of 'uartSendString' from incompatible pointer type [-Wincompatible-pointer-types]
+   62 |      uartSendString(&message);
+      |                     ^~~~~~~~
+      |                     |
+      |                     const char **
+In file included from ../Drivers/API/src/API_uart.c:3:
+/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica05_p2/Drivers/API/inc/API_uart.h:27:31: note: expected 'uint8_t *' {aka 'unsigned char *'} but argument is of type 'const char **'
+   27 | void uartSendString(uint8_t * pstring);
+      |                     ~~~~~~~~~~^~~~~~~
+arm-none-eabi-gcc -o "Practica05_p2.elf" @"objects.list"   -mcpu=cortex-m4 -T"/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica05_p2/STM32F429ZITX_FLASH.ld" --specs=nosys.specs -Wl,-Map="Practica05_p2.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: Practica05_p2.elf
+ 
+arm-none-eabi-size   Practica05_p2.elf 
+arm-none-eabi-objdump -h -S  Practica05_p2.elf  > "Practica05_p2.list"
+   text	   data	    bss	    dec	    hex	filename
+  15760	    144	   1664	  17568	   44a0	Practica05_p2.elf
+Finished building: default.size.stdout
+ 
+Finished building: Practica05_p2.list
+ 
+23:19:13 **** Incremental Build of configuration Debug for project Practica05_p2 ****
+make -j8 all 
+arm-none-eabi-gcc "../Drivers/API/src/API_uart.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F429ZITx -DSTM32F4 -DNUCLEO_F429ZI -DUSE_HAL_DRIVER -DSTM32F429xx -c -I../Inc -I"/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica05_p2/Drivers/STM32F4xx_HAL_Driver/Inc" -I"/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica05_p2/Drivers/CMSIS/Include" -I"/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica05_p2/Drivers/CMSIS/Device/ST/STM32F4xx/Include" -I"/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica05_p2/Drivers/BSP/STM32F4xx_Nucleo_144" -I"/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica05_p2/Drivers/Core/Inc" -I"/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica05_p2/Drivers/API/inc" -I"/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica05_p2/Drivers/API/src" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Drivers/API/src/API_uart.d" -MT"Drivers/API/src/API_uart.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Drivers/API/src/API_uart.o"
+../Drivers/API/src/API_uart.c: In function 'uartInit':
+../Drivers/API/src/API_uart.c:62:21: warning: pointer targets in passing argument 1 of 'uartSendString' differ in signedness [-Wpointer-sign]
+   62 |      uartSendString(message);
+      |                     ^~~~~~~
+      |                     |
+      |                     char *
+In file included from ../Drivers/API/src/API_uart.c:3:
+/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica05_p2/Drivers/API/inc/API_uart.h:27:31: note: expected 'uint8_t *' {aka 'unsigned char *'} but argument is of type 'char *'
+   27 | void uartSendString(uint8_t * pstring);
+      |                     ~~~~~~~~~~^~~~~~~
+arm-none-eabi-gcc -o "Practica05_p2.elf" @"objects.list"   -mcpu=cortex-m4 -T"/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica05_p2/STM32F429ZITX_FLASH.ld" --specs=nosys.specs -Wl,-Map="Practica05_p2.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: Practica05_p2.elf
+ 
+arm-none-eabi-size   Practica05_p2.elf 
+arm-none-eabi-objdump -h -S  Practica05_p2.elf  > "Practica05_p2.list"
+   text	   data	    bss	    dec	    hex	filename
+  15764	    144	   1664	  17572	   44a4	Practica05_p2.elf
+Finished building: default.size.stdout
+ 
+Finished building: Practica05_p2.list
+ 
+23:25:20 **** Incremental Build of configuration Debug for project Practica05_p2 ****
+make -j8 all 
+arm-none-eabi-gcc "../Drivers/API/src/API_uart.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F429ZITx -DSTM32F4 -DNUCLEO_F429ZI -DUSE_HAL_DRIVER -DSTM32F429xx -c -I../Inc -I"/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica05_p2/Drivers/STM32F4xx_HAL_Driver/Inc" -I"/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica05_p2/Drivers/CMSIS/Include" -I"/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica05_p2/Drivers/CMSIS/Device/ST/STM32F4xx/Include" -I"/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica05_p2/Drivers/BSP/STM32F4xx_Nucleo_144" -I"/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica05_p2/Drivers/Core/Inc" -I"/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica05_p2/Drivers/API/inc" -I"/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica05_p2/Drivers/API/src" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Drivers/API/src/API_uart.d" -MT"Drivers/API/src/API_uart.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Drivers/API/src/API_uart.o"
+../Drivers/API/src/API_uart.c:23:2: warning: pointer targets in initialization of 'uint8_t *' {aka 'unsigned char *'} from 'char *' differ in signedness [-Wpointer-sign]
+   23 |  "\n\n"
+      |  ^~~~~~
+../Drivers/API/src/API_uart.c:74:6: error: conflicting types for 'uartSendString'
+   74 | void uartSendString(char * pstring){
+      |      ^~~~~~~~~~~~~~
+In file included from ../Drivers/API/src/API_uart.c:3:
+/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica05_p2/Drivers/API/inc/API_uart.h:27:6: note: previous declaration of 'uartSendString' was here
+   27 | void uartSendString(uint8_t * pstring);
+      |      ^~~~~~~~~~~~~~
+make: *** [Drivers/API/src/subdir.mk:28: Drivers/API/src/API_uart.o] Error 1
+"make -j8 all" terminated with exit code 2. Build might be incomplete.
+23:27:10 **** Incremental Build of configuration Debug for project Practica05_p2 ****
+make -j8 all 
+arm-none-eabi-gcc "../Drivers/API/src/API_uart.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F429ZITx -DSTM32F4 -DNUCLEO_F429ZI -DUSE_HAL_DRIVER -DSTM32F429xx -c -I../Inc -I"/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica05_p2/Drivers/STM32F4xx_HAL_Driver/Inc" -I"/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica05_p2/Drivers/CMSIS/Include" -I"/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica05_p2/Drivers/CMSIS/Device/ST/STM32F4xx/Include" -I"/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica05_p2/Drivers/BSP/STM32F4xx_Nucleo_144" -I"/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica05_p2/Drivers/Core/Inc" -I"/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica05_p2/Drivers/API/inc" -I"/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica05_p2/Drivers/API/src" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Drivers/API/src/API_uart.d" -MT"Drivers/API/src/API_uart.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Drivers/API/src/API_uart.o"
+../Drivers/API/src/API_uart.c:74:6: error: conflicting types for 'uartSendString'
+   74 | void uartSendString(char * pstring){
+      |      ^~~~~~~~~~~~~~
+In file included from ../Drivers/API/src/API_uart.c:3:
+/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica05_p2/Drivers/API/inc/API_uart.h:27:6: note: previous declaration of 'uartSendString' was here
+   27 | void uartSendString(uint8_t * pstring);
+      |      ^~~~~~~~~~~~~~
+make: *** [Drivers/API/src/subdir.mk:28: Drivers/API/src/API_uart.o] Error 1
+"make -j8 all" terminated with exit code 2. Build might be incomplete.
+23:27:58 **** Incremental Build of configuration Debug for project Practica05_p2 ****
+make -j8 all 
+arm-none-eabi-gcc "../Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F429ZITx -DSTM32F4 -DNUCLEO_F429ZI -DUSE_HAL_DRIVER -DSTM32F429xx -c -I../Inc -I"/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica05_p2/Drivers/STM32F4xx_HAL_Driver/Inc" -I"/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica05_p2/Drivers/CMSIS/Include" -I"/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica05_p2/Drivers/CMSIS/Device/ST/STM32F4xx/Include" -I"/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica05_p2/Drivers/BSP/STM32F4xx_Nucleo_144" -I"/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica05_p2/Drivers/Core/Inc" -I"/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica05_p2/Drivers/API/inc" -I"/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica05_p2/Drivers/API/src" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Src/main.d" -MT"Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Src/main.o"
+arm-none-eabi-gcc "../Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_msp.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F429ZITx -DSTM32F4 -DNUCLEO_F429ZI -DUSE_HAL_DRIVER -DSTM32F429xx -c -I../Inc -I"/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica05_p2/Drivers/STM32F4xx_HAL_Driver/Inc" -I"/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica05_p2/Drivers/CMSIS/Include" -I"/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica05_p2/Drivers/CMSIS/Device/ST/STM32F4xx/Include" -I"/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica05_p2/Drivers/BSP/STM32F4xx_Nucleo_144" -I"/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica05_p2/Drivers/Core/Inc" -I"/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica05_p2/Drivers/API/inc" -I"/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica05_p2/Drivers/API/src" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_msp.d" -MT"Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_msp.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_msp.o"
+arm-none-eabi-gcc "../Drivers/Core/Src/stm32f4xx_it.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F429ZITx -DSTM32F4 -DNUCLEO_F429ZI -DUSE_HAL_DRIVER -DSTM32F429xx -c -I../Inc -I"/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica05_p2/Drivers/STM32F4xx_HAL_Driver/Inc" -I"/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica05_p2/Drivers/CMSIS/Include" -I"/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica05_p2/Drivers/CMSIS/Device/ST/STM32F4xx/Include" -I"/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica05_p2/Drivers/BSP/STM32F4xx_Nucleo_144" -I"/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica05_p2/Drivers/Core/Inc" -I"/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica05_p2/Drivers/API/inc" -I"/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica05_p2/Drivers/API/src" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Drivers/Core/Src/stm32f4xx_it.d" -MT"Drivers/Core/Src/stm32f4xx_it.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Drivers/Core/Src/stm32f4xx_it.o"
+arm-none-eabi-gcc "../Drivers/API/src/API_uart.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F429ZITx -DSTM32F4 -DNUCLEO_F429ZI -DUSE_HAL_DRIVER -DSTM32F429xx -c -I../Inc -I"/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica05_p2/Drivers/STM32F4xx_HAL_Driver/Inc" -I"/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica05_p2/Drivers/CMSIS/Include" -I"/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica05_p2/Drivers/CMSIS/Device/ST/STM32F4xx/Include" -I"/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica05_p2/Drivers/BSP/STM32F4xx_Nucleo_144" -I"/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica05_p2/Drivers/Core/Inc" -I"/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica05_p2/Drivers/API/inc" -I"/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica05_p2/Drivers/API/src" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Drivers/API/src/API_uart.d" -MT"Drivers/API/src/API_uart.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Drivers/API/src/API_uart.o"
+../Src/main.c: In function 'main':
+../Src/main.c:103:10: warning: unused variable 'status0' [-Wunused-variable]
+  103 |    char *status0;
+      |          ^~~~~~~
+../Drivers/API/src/API_uart.c: In function 'uartInit':
+../Drivers/API/src/API_uart.c:62:21: warning: pointer targets in passing argument 1 of 'uartSendString' differ in signedness [-Wpointer-sign]
+   62 |      uartSendString(message);
+      |                     ^~~~~~~
+      |                     |
+      |                     uint8_t * {aka unsigned char *}
+In file included from ../Drivers/API/src/API_uart.c:3:
+/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica05_p2/Drivers/API/inc/API_uart.h:27:28: note: expected 'char *' but argument is of type 'uint8_t *' {aka 'unsigned char *'}
+   27 | void uartSendString(char * pstring);
+      |                     ~~~~~~~^~~~~~~
+arm-none-eabi-gcc -o "Practica05_p2.elf" @"objects.list"   -mcpu=cortex-m4 -T"/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica05_p2/STM32F429ZITX_FLASH.ld" --specs=nosys.specs -Wl,-Map="Practica05_p2.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: Practica05_p2.elf
+ 
+arm-none-eabi-size   Practica05_p2.elf 
+arm-none-eabi-objdump -h -S  Practica05_p2.elf  > "Practica05_p2.list"
+   text	   data	    bss	    dec	    hex	filename
+  15764	    144	   1664	  17572	   44a4	Practica05_p2.elf
+Finished building: default.size.stdout
+ 
+Finished building: Practica05_p2.list
+ 
+23:31:00 **** Incremental Build of configuration Debug for project Practica05_p2 ****
+make -j8 all 
+arm-none-eabi-gcc "../Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F429ZITx -DSTM32F4 -DNUCLEO_F429ZI -DUSE_HAL_DRIVER -DSTM32F429xx -c -I../Inc -I"/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica05_p2/Drivers/STM32F4xx_HAL_Driver/Inc" -I"/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica05_p2/Drivers/CMSIS/Include" -I"/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica05_p2/Drivers/CMSIS/Device/ST/STM32F4xx/Include" -I"/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica05_p2/Drivers/BSP/STM32F4xx_Nucleo_144" -I"/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica05_p2/Drivers/Core/Inc" -I"/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica05_p2/Drivers/API/inc" -I"/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica05_p2/Drivers/API/src" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Src/main.d" -MT"Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Src/main.o"
+arm-none-eabi-gcc -o "Practica05_p2.elf" @"objects.list"   -mcpu=cortex-m4 -T"/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica05_p2/STM32F429ZITX_FLASH.ld" --specs=nosys.specs -Wl,-Map="Practica05_p2.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: Practica05_p2.elf
+ 
+arm-none-eabi-size   Practica05_p2.elf 
+arm-none-eabi-objdump -h -S  Practica05_p2.elf  > "Practica05_p2.list"
+   text	   data	    bss	    dec	    hex	filename
+  15764	    144	   1664	  17572	   44a4	Practica05_p2.elf
+Finished building: default.size.stdout
+ 
+Finished building: Practica05_p2.list
+ 
+23:34:31 **** Incremental Build of configuration Debug for project Practica05_p2 ****
+make -j8 all 
+arm-none-eabi-size   Practica05_p2.elf 
+   text	   data	    bss	    dec	    hex	filename
+  15764	    144	   1664	  17572	   44a4	Practica05_p2.elf
+Finished building: default.size.stdout
+ 
+23:44:37 **** Incremental Build of configuration Debug for project Practica05_p2 ****
+make -j8 all 
+arm-none-eabi-gcc "../Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F429ZITx -DSTM32F4 -DNUCLEO_F429ZI -DUSE_HAL_DRIVER -DSTM32F429xx -c -I../Inc -I"/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica05_p2/Drivers/STM32F4xx_HAL_Driver/Inc" -I"/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica05_p2/Drivers/CMSIS/Include" -I"/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica05_p2/Drivers/CMSIS/Device/ST/STM32F4xx/Include" -I"/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica05_p2/Drivers/BSP/STM32F4xx_Nucleo_144" -I"/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica05_p2/Drivers/Core/Inc" -I"/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica05_p2/Drivers/API/inc" -I"/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica05_p2/Drivers/API/src" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Src/main.d" -MT"Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Src/main.o"
+../Src/main.c: In function 'main':
+../Src/main.c:106:26: warning: implicit declaration of function 'strlen' [-Wimplicit-function-declaration]
+  106 |    uint16_t sizeToSend = strlen((char *)myString) / 2;
+      |                          ^~~~~~
+../Src/main.c:106:26: warning: incompatible implicit declaration of built-in function 'strlen'
+../Src/main.c:29:1: note: include '<string.h>' or provide a declaration of 'strlen'
+   28 | #include "API_debounce.h"
+  +++ |+#include <string.h>
+   29 | 
+arm-none-eabi-gcc -o "Practica05_p2.elf" @"objects.list"   -mcpu=cortex-m4 -T"/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica05_p2/STM32F429ZITX_FLASH.ld" --specs=nosys.specs -Wl,-Map="Practica05_p2.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: Practica05_p2.elf
+ 
+arm-none-eabi-size   Practica05_p2.elf 
+arm-none-eabi-objdump -h -S  Practica05_p2.elf  > "Practica05_p2.list"
+   text	   data	    bss	    dec	    hex	filename
+  15912	    144	   1664	  17720	   4538	Practica05_p2.elf
+Finished building: default.size.stdout
+ 
+Finished building: Practica05_p2.list
+ 
+23:46:42 **** Incremental Build of configuration Debug for project Practica05_p2 ****
+make -j8 all 
+arm-none-eabi-gcc "../Drivers/API/src/API_debounce.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F429ZITx -DSTM32F4 -DNUCLEO_F429ZI -DUSE_HAL_DRIVER -DSTM32F429xx -c -I../Inc -I"/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica05_p2/Drivers/STM32F4xx_HAL_Driver/Inc" -I"/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica05_p2/Drivers/CMSIS/Include" -I"/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica05_p2/Drivers/CMSIS/Device/ST/STM32F4xx/Include" -I"/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica05_p2/Drivers/BSP/STM32F4xx_Nucleo_144" -I"/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica05_p2/Drivers/Core/Inc" -I"/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica05_p2/Drivers/API/inc" -I"/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica05_p2/Drivers/API/src" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Drivers/API/src/API_debounce.d" -MT"Drivers/API/src/API_debounce.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Drivers/API/src/API_debounce.o"
+arm-none-eabi-gcc -o "Practica05_p2.elf" @"objects.list"   -mcpu=cortex-m4 -T"/home/lgomez/maestriauba/SMT32/PdM_workspace/Practica05_p2/STM32F429ZITX_FLASH.ld" --specs=nosys.specs -Wl,-Map="Practica05_p2.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: Practica05_p2.elf
+ 
+arm-none-eabi-size   Practica05_p2.elf 
+arm-none-eabi-objdump -h -S  Practica05_p2.elf  > "Practica05_p2.list"
+   text	   data	    bss	    dec	    hex	filename
+  15912	    144	   1664	  17720	   4538	Practica05_p2.elf
+Finished building: default.size.stdout
+ 
+Finished building: Practica05_p2.list
  
