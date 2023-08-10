@@ -4,16 +4,26 @@
  *  Created on: Aug 6, 2023
  *      Author: lgomez
  */
-#include "API_delaydebounce.h" /* Inclusion of the file defining delay_t */
 
 #ifndef API_INC_APP_MEF_H_
 #define API_INC_APP_MEF_H_
 
+//#include "API_led.h"
+#include "API_delay.h" /* Inclusion of the file defining delay_t */
+
+typedef enum{
+	SET_ini,
+	FIRST,
+	SECOND,
+	THIRD,
+	GOOD,
+	BAD
+} State_MEF_t;
 
 void inicializarMEF(void);
 
-void actualizarMEF(delaydebounce_t * delay);
+State_MEF_t actualizarMEF(delay_t * delay);
 
-char *Lee_estado();
+//char *Lee_estado();
 
 #endif /* API_INC_APP_MEF_H_ */

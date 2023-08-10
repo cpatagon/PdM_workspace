@@ -10,19 +10,12 @@
 
 #include <assert.h>
 #include "App_MEF.h"
-//#include "API_Led.h"
 
 
-typedef enum{
-	SET_ini,
-	A,
-	B,
-	C,
-	GOOD,
-	BAD
-} State_MEF_t;
 
-static State_MEF_t  estadoMEF;
+
+
+State_MEF_t  estadoMEF;
 
 void inicializarMEF(void){
 	/* Initialize Estado */
@@ -30,49 +23,55 @@ void inicializarMEF(void){
 	return;
 };
 
-void actualizarMEF(delaydebounce_t * delay){
-
+State_MEF_t actualizarMEF(delay_t * delay){
 		assert(&estadoMEF!=NULL);
 		switch (estadoMEF){
 		case SET_ini:
-			if (!BSP_PB_GetState(BUTTON_USER) && delayReadD(delay)){
-			    	estadoMEF=A;
+			if (!BSP_PB_GetState(BUTTON_USER) && delayRead(delay)){
+			    	estadoMEF=FIRST;
 				}
-
 			break;
-		case A:
-			if (!BSP_PB_GetState(BUTTON_USER) && delayReadD(delay)){
-				    	estadoMEF=B;
+		case FIRST:
+			if (!BSP_PB_GetState(BUTTON_USER) && delayRead(delay)){
+				    	estadoMEF=SECOND;
 					}
+			else if(BSP_PB_GetState(BUTTON_USER) && !delayRead(delay)){
+				estadoMEF=BAD;
+			}
 			break;
-		case B:
-			if (!BSP_PB_GetState(BUTTON_USER) && delayReadD(delay)){
-				    	estadoMEF=C;
+		case SECOND:
+			if (!BSP_PB_GetState(BUTTON_USER) && delayRead(delay)){
+				    	estadoMEF=THIRD;
 					}
+			else if(BSP_PB_GetState(BUTTON_USER) && !delayRead(delay)){
+					estadoMEF=BAD;
+				}
 			break;
-		case C:
-			if (!BSP_PB_GetState(BUTTON_USER) && delayReadD(delay)){
-				    	estadoMEF=A;
-					}
-
+		case THIRD:
+			if (!BSP_PB_GetState(BUTTON_USER) && delayRead(delay)){
+				estadoMEF=FIRST;
+			}
+			else if(BSP_PB_GetState(BUTTON_USER) && !delayRead(delay)){
+					estadoMEF=GOOD;
+				}
 			break;
 		case GOOD:
-			if (!BSP_PB_GetState(BUTTON_USER) && delayReadD(delay)){
-						    	estadoMEF=SET;
-							}
+			if (!BSP_PB_GetState(BUTTON_USER) && delayRead(delay)){
+				estadoMEF=SET;
+			}
 
 			break;
 		case BAD:
-			if (!BSP_PB_GetState(BUTTON_USER) && delayReadD(delay)){
-								    	estadoMEF=SET;
-									}
+			if (!BSP_PB_GetState(BUTTON_USER) && delayRead(delay)){
+				estadoMEF=SET;
+			}
 
 			break;
 		default:
 				/* Handle unexpected state */
 			assert(0);
 		}
-
+ return(estadoMEF);
 };
 
 //char *Lee_estado(){};

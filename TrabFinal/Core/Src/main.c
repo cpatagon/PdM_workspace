@@ -25,9 +25,12 @@
 
 #include <stdint.h>  /* esta para incluir los tipos uint32_t */
 #include "main.h"
-#include "string.h"
+#include "string.h" // permite que el codigo corra sin error
 #include "API_spi.h"
+
+#include "API_delay.h"
 #include "API_led.h"
+#include "App_MEF.h"
 
 /* USER CODE END Includes */
 
@@ -38,6 +41,9 @@
 
 /* Private define ------------------------------------------------------------*/
 /* USER CODE BEGIN PD */
+
+#define TIME1 1000
+#define TIME2 300
 
 /* USER CODE END PD */
 
@@ -61,6 +67,9 @@ UART_HandleTypeDef huart3;
 PCD_HandleTypeDef hpcd_USB_OTG_FS;
 
 /* USER CODE BEGIN PV */
+
+delay_t Delay1;
+delay_t Delay2;
 
 /* USER CODE END PV */
 
@@ -97,6 +106,11 @@ int main(void)
 
   /* USER CODE BEGIN Init */
 
+  delayInit(&Delay1, TIME1);
+  delayInit(&Delay2, TIME2);
+
+  inicializarMEF();
+
   /* USER CODE END Init */
 
   /* Configure the system clock */
@@ -118,10 +132,14 @@ int main(void)
   //write_char('@', 1);
   //max_clear();
 
+  State_MEF_t estado;
+
   /* USER CODE END 2 */
 
   /* Infinite loop */
   /* USER CODE BEGIN WHILE */
+
+  estado = SET;
 
 
   init_led();
@@ -131,16 +149,28 @@ int main(void)
 
     /* USER CODE BEGIN 3 */
 
-	  update_led(ghost1);
+	  estado = actualizarMEF(&Delay1);
 
-	  HAL_Delay(1000);
-
-	  clear_led();
-	  HAL_Delay(500);
-
-	  lit_led();
-	  HAL_Delay(500);
-
+	  switch (estado){
+		case SET_ini:
+			lit_led();
+			break;
+		case FIRST:
+			update_led(A);
+			break;
+		case SECOND:
+			update_led(B);
+			break;
+		case THIRD:
+			update_led(C);
+			break;
+		case GOOD:
+			update_led(smileyFace);
+			break;
+		case BAD:
+			update_led(ghost1);
+			break;
+	  }
 
   /* USER CODE END 3 */
   }

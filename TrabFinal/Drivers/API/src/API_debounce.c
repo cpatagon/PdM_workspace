@@ -13,7 +13,7 @@
 #include "stm32f4xx_nucleo_144.h" 	/* <- BSP include */
 
 #include <assert.h>
-#include "API_debounce.h"
+#include <API_debounce.h>
 
 /*
  * Definition of the states for the state machine

@@ -9,24 +9,21 @@ C_SRCS += \
 ../Drivers/API/src/API_delay.c \
 ../Drivers/API/src/API_led.c \
 ../Drivers/API/src/API_spi.c \
-../Drivers/API/src/App_MEF.c \
-../Drivers/API/src/max_matrix_stm32.c 
+../Drivers/API/src/App_MEF.c 
 
 OBJS += \
 ./Drivers/API/src/API_debounce.o \
 ./Drivers/API/src/API_delay.o \
 ./Drivers/API/src/API_led.o \
 ./Drivers/API/src/API_spi.o \
-./Drivers/API/src/App_MEF.o \
-./Drivers/API/src/max_matrix_stm32.o 
+./Drivers/API/src/App_MEF.o 
 
 C_DEPS += \
 ./Drivers/API/src/API_debounce.d \
 ./Drivers/API/src/API_delay.d \
 ./Drivers/API/src/API_led.d \
 ./Drivers/API/src/API_spi.d \
-./Drivers/API/src/App_MEF.d \
-./Drivers/API/src/max_matrix_stm32.d 
+./Drivers/API/src/App_MEF.d 
 
 
 # Each subdirectory must supply rules for building sources it contributes
@@ -36,7 +33,7 @@ Drivers/API/src/%.o Drivers/API/src/%.su Drivers/API/src/%.cyclo: ../Drivers/API
 clean: clean-Drivers-2f-API-2f-src
 
 clean-Drivers-2f-API-2f-src:
-	-$(RM) ./Drivers/API/src/API_debounce.cyclo ./Drivers/API/src/API_debounce.d ./Drivers/API/src/API_debounce.o ./Drivers/API/src/API_debounce.su ./Drivers/API/src/API_delay.cyclo ./Drivers/API/src/API_delay.d ./Drivers/API/src/API_delay.o ./Drivers/API/src/API_delay.su ./Drivers/API/src/API_led.cyclo ./Drivers/API/src/API_led.d ./Drivers/API/src/API_led.o ./Drivers/API/src/API_led.su ./Drivers/API/src/API_spi.cyclo ./Drivers/API/src/API_spi.d ./Drivers/API/src/API_spi.o ./Drivers/API/src/API_spi.su ./Drivers/API/src/App_MEF.cyclo ./Drivers/API/src/App_MEF.d ./Drivers/API/src/App_MEF.o ./Drivers/API/src/App_MEF.su ./Drivers/API/src/max_matrix_stm32.cyclo ./Drivers/API/src/max_matrix_stm32.d ./Drivers/API/src/max_matrix_stm32.o ./Drivers/API/src/max_matrix_stm32.su
+	-$(RM) ./Drivers/API/src/API_debounce.cyclo ./Drivers/API/src/API_debounce.d ./Drivers/API/src/API_debounce.o ./Drivers/API/src/API_debounce.su ./Drivers/API/src/API_delay.cyclo ./Drivers/API/src/API_delay.d ./Drivers/API/src/API_delay.o ./Drivers/API/src/API_delay.su ./Drivers/API/src/API_led.cyclo ./Drivers/API/src/API_led.d ./Drivers/API/src/API_led.o ./Drivers/API/src/API_led.su ./Drivers/API/src/API_spi.cyclo ./Drivers/API/src/API_spi.d ./Drivers/API/src/API_spi.o ./Drivers/API/src/API_spi.su ./Drivers/API/src/App_MEF.cyclo ./Drivers/API/src/App_MEF.d ./Drivers/API/src/App_MEF.o ./Drivers/API/src/App_MEF.su
 
 .PHONY: clean-Drivers-2f-API-2f-src
 

@@ -1,3 +1,13 @@
+/*
+ * API_debounce.h
+ *
+ *  Created on: Aug 9, 2023
+ *      Author: lgomez
+ */
+
+#ifndef API_INC_API_DEBOUNCE_H_
+#define API_INC_API_DEBOUNCE_H_
+
 #include <stdint.h>  /* For standard uint32_t types */
 #include <stdbool.h> /* For standard boolean types */
 
@@ -46,4 +56,4 @@ void debounceFSM_update(delaydebounce_t* delay);
 char *readStatus();
 
 
-
+#endif /* API_INC_API_DEBOUNCE_H_ */

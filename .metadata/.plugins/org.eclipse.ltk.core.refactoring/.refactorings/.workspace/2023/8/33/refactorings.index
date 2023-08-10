@@ -4,3 +4,6 @@
 1691625085618	Delete resource 'TF'
 1691625844876	Delete resource 'TF/Core/Src/system_stm32f4xx.c'
 1691625862080	Delete resource 'TF'
+1691633666626	Delete resource 'TrabFinal/Drivers/API/inc/max_matrix_stm32.h'
+1691633672492	Delete resource 'TrabFinal/Drivers/API/src/max_matrix_stm32.c'
+1691633792346	Delete resource 'TrabFinal/Drivers/API/inc/API_debounce2.h'
