@@ -22,6 +22,8 @@
 /* Private includes ----------------------------------------------------------*/
 /* USER CODE BEGIN Includes */
 //#include "max_matrix_stm32.h" // BORRAR
+
+#include <stdint.h>  /* esta para incluir los tipos uint32_t */
 #include "main.h"
 #include "string.h"
 #include "API_spi.h"
