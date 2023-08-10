@@ -1,0 +1,35 @@
+/*
+ * API_spi.c
+ *
+ *  Created on: Aug 6, 2023
+ *      Author: lgomez
+ */
+
+#include <stdint.h>  /* esta para incluir los tipos uint32_t */
+#include <stdbool.h> /* esta para incluir los tipos bool (boolianos) */
+#include "API_spi.h"
+
+
+void spi_write_byte (uint8_t byte)
+{
+	for (uint8_t i =0; i<8; i++)
+	{
+		HAL_GPIO_WritePin (maxport, clock_Pin, 0);  // pull the clock pin low
+		HAL_GPIO_WritePin (maxport, data_Pin, byte&0x80);  // write the MS0b bit to the data pin
+		byte = byte<<1;  // shift left
+		HAL_GPIO_WritePin (maxport, clock_Pin, 1);  // pull the clock pin HIGH
+	}
+}
+
+
+void spi_write(uint8_t address, uint8_t cmd)
+{
+	HAL_GPIO_WritePin (maxport, cs_Pin, 0);  // pull the CS pin LOW
+	for (uint8_t i=0;i<num; i++)
+	{
+		write_byte (address);
+		write_byte (cmd);
+	}
+	HAL_GPIO_WritePin (maxport, cs_Pin, 0);  // pull the CS pin LOW
+	HAL_GPIO_WritePin (maxport, cs_Pin, 1);  // pull the CS pin HIGH
+}

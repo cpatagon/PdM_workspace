@@ -1,0 +1,24 @@
+/*
+ * API_Led.c
+ *
+ *  Created on: Aug 6, 2023
+ *      Author: lgomez
+ */
+
+typedef enum{
+	SET_ini,
+	A,
+	B,
+	C,
+	GOOD,
+	BAD,
+} def_Led_t;
+
+void init_LED(void){
+	spi_write(0x09, 0x00);       //  no decoding
+	spi_write(0x0b, 0x07);       //  scan limit = 8 LEDs
+	spi_write(0x0c, 0x01);       //  power down =0,normal mode = 1
+	spi_write(0x0f, 0x00);       //  no test display
+};
+
+void update_LED(char);

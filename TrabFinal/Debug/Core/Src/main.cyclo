@@ -1,0 +1,8 @@
+main.c:85:5:main	1
+main.c:151:6:SystemClock_Config	3
+main.c:197:13:MX_ETH_Init	2
+main.c:246:13:MX_SPI3_Init	2
+main.c:284:13:MX_USART3_UART_Init	2
+main.c:317:13:MX_USB_OTG_FS_PCD_Init	2
+main.c:352:13:MX_GPIO_Init	1
+main.c:427:6:Error_Handler	1

@@ -26,6 +26,7 @@
 #include "API_uart.h"
 #include "API_delay.h"
 #include "API_debounce.h"
+#include <string.h>
 
 
 /* Private typedef -----------------------------------------------------------*/
@@ -102,9 +103,14 @@ int main(void)
 
    char *status;
 
-   uint8_t myString[] = "Hello, World!";
-   uint16_t sizeToSend = strlen((char *)myString) / 2;
-   uartSendStringSize(myString, sizeToSend);
+
+   /* Probamos que la función uartSendStringSize()
+    * es capaz de enviar una cantidad de caracteres definidos
+    * en sizeToSend */
+
+   uint8_t myString[] = "Hello, World!"; // frase enviada al UART
+   uint16_t sizeToSend = strlen((char *)myString) / 2; // calcula la mitad de su tamaño
+   uartSendStringSize(myString, sizeToSend);    // envia la frase completa y la cantidad de caracteres que se quiere imprimir
 
 
 

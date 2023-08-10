@@ -1,0 +1,17 @@
+/*
+ * API_Led.h
+ *
+ *  Created on: Aug 6, 2023
+ *      Author: lgomez
+ */
+
+#ifndef API_INC_API_LED_H_
+#define API_INC_API_LED_H_
+
+uint8_t Led_address[] = {0x01,0x02, 0x03, 0x04, 0x05, 0x06, 0x07, 0x08};
+
+void init_LED(void);
+
+void update_LED(char);
+
+#endif /* API_INC_API_LED_H_ */

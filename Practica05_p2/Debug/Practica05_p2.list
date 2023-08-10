@@ -29,23 +29,23 @@ Idx Name          Size      VMA       LMA       File off  Algn
                   ALLOC
  12 .ARM.attributes 00000030  00000000  00000000  00020088  2**0
                   CONTENTS, READONLY
- 13 .debug_info   00009c1c  00000000  00000000  000200b8  2**0
+ 13 .debug_info   00009c2d  00000000  00000000  000200b8  2**0
                   CONTENTS, READONLY, DEBUGGING, OCTETS
- 14 .debug_abbrev 00001e42  00000000  00000000  00029cd4  2**0
+ 14 .debug_abbrev 00001e2f  00000000  00000000  00029ce5  2**0
                   CONTENTS, READONLY, DEBUGGING, OCTETS
  15 .debug_aranges 00000898  00000000  00000000  0002bb18  2**3
                   CONTENTS, READONLY, DEBUGGING, OCTETS
  16 .debug_ranges 000007a0  00000000  00000000  0002c3b0  2**3
                   CONTENTS, READONLY, DEBUGGING, OCTETS
- 17 .debug_macro  00026bf2  00000000  00000000  0002cb50  2**0
+ 17 .debug_macro  00026c22  00000000  00000000  0002cb50  2**0
                   CONTENTS, READONLY, DEBUGGING, OCTETS
- 18 .debug_line   0000e15f  00000000  00000000  00053742  2**0
+ 18 .debug_line   0000e185  00000000  00000000  00053772  2**0
                   CONTENTS, READONLY, DEBUGGING, OCTETS
- 19 .debug_str    000e3280  00000000  00000000  000618a1  2**0
+ 19 .debug_str    000e3280  00000000  00000000  000618f7  2**0
                   CONTENTS, READONLY, DEBUGGING, OCTETS
- 20 .comment      00000050  00000000  00000000  00144b21  2**0
+ 20 .comment      00000050  00000000  00000000  00144b77  2**0
                   CONTENTS, READONLY
- 21 .debug_frame  00002920  00000000  00000000  00144b74  2**2
+ 21 .debug_frame  00002920  00000000  00000000  00144bc8  2**2
                   CONTENTS, READONLY, DEBUGGING, OCTETS
 
 Disassembly of section .text:
@@ -6009,24 +6009,25 @@ int main(void)
 	   BSP_LED_Toggle(LED1); // LED 1 que indica que se inicialiso las trasnmición UART correctamente
  8002788:	2000      	movs	r0, #0
  800278a:	f7fe f99f 	bl	8000acc <BSP_LED_Toggle>
-   }
 
-   char *status;
+   /* Probamos que la función uartSendStringSize()
+    * es capaz de enviar una cantidad de caracteres definidos
+    * en sizeToSend */
 
-   uint8_t myString[] = "Hello, World!";
+   uint8_t myString[] = "Hello, World!"; // frase enviada al UART
  800278e:	4b21      	ldr	r3, [pc, #132]	; (8002814 <main+0xf4>)
  8002790:	1d3c      	adds	r4, r7, #4
  8002792:	cb0f      	ldmia	r3, {r0, r1, r2, r3}
  8002794:	c407      	stmia	r4!, {r0, r1, r2}
  8002796:	8023      	strh	r3, [r4, #0]
-   uint16_t sizeToSend = strlen((char *)myString) / 2;
+   uint16_t sizeToSend = strlen((char *)myString) / 2; // calcula la mitad de su tamaño
  8002798:	1d3b      	adds	r3, r7, #4
  800279a:	4618      	mov	r0, r3
  800279c:	f7fd fd28 	bl	80001f0 <strlen>
  80027a0:	4603      	mov	r3, r0
  80027a2:	085b      	lsrs	r3, r3, #1
  80027a4:	877b      	strh	r3, [r7, #58]	; 0x3a
-   uartSendStringSize(myString, sizeToSend);
+   uartSendStringSize(myString, sizeToSend);    // envia la frase completa y la cantidad de caracteres que se quiere imprimir
  80027a6:	8f7a      	ldrh	r2, [r7, #58]	; 0x3a
  80027a8:	1d3b      	adds	r3, r7, #4
  80027aa:	4611      	mov	r1, r2

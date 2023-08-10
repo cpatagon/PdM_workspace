@@ -1,0 +1,12 @@
+/*
+ * API_Led.c
+ *
+ *  Created on: Aug 6, 2023
+ *      Author: lgomez
+ */
+
+typedef enum{} def_Led_t;
+
+void init_LED(void);
+
+void update_LED(char);

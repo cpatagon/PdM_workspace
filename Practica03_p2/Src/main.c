@@ -26,6 +26,7 @@
 
 /* Includes ------------------------------------------------------------------*/
 #include "main.h"
+#include <stdint.h>  /* esta para incluir los tipos uint32_t */
 
 
 /** @addtogroup STM32F4xx_HAL_Examples
@@ -91,8 +92,8 @@ int main(void)
 
     delayInit(&Delay1, TIME1); // Inicializa el retardo a 100 ticks
 
-    int LED_select = LED_init; // LED inicial
-    int Estado_LED = OFF ; // EStado de LED  inicial
+    int16_t LED_select = LED_init; // LED inicial
+    int16_t Estado_LED = OFF ; // EStado de LED  inicial
 
 
 	/* Infinite loop */

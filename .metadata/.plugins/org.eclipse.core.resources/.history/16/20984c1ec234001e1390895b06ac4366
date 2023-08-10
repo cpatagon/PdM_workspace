@@ -1,0 +1,20 @@
+/*
+ * App_MEF.h
+ *
+ *  Created on: Aug 6, 2023
+ *      Author: lgomez
+ */
+
+#include "API_delaydebounce.h" /* Inclusion of the file defining delay_t */
+
+#ifndef API_INC_APP_MEF_H_
+#define API_INC_APP_MEF_H_
+
+
+void inicializarMEF(void);
+
+void actualizarMEF(void);
+
+char *Lee_estado();
+
+#endif /* API_INC_APP_MEF_H_ */

@@ -1,10 +1,10 @@
-01:55:20 **** Incremental Build of configuration Debug for project TP ****
+20:04:58 **** Incremental Build of configuration Debug for project TP ****
 make -j8 all 
 arm-none-eabi-size   TP.elf 
    text	   data	    bss	    dec	    hex	filename
-  13432	   1036	   3652	  18120	   46c8	TP.elf
+  13652	     44	   3588	  17284	   4384	TP.elf
 Finished building: default.size.stdout
  
 
-01:55:20 Build Finished. 0 errors, 0 warnings. (took 731ms)
+20:04:59 Build Finished. 0 errors, 0 warnings. (took 786ms)
 
