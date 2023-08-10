@@ -1,13 +1,13 @@
 /*
  * API_debounce.c
  *
- *  Created on: 18-07-2023
- *      @Author: Luis Gómez
- *      @Hardware: STM32F429ZI
+ *  Created on: 	18-07-2023
+ *      @Author: 	Luis Gómez
+ *      @Hardware: 	STM32F429ZI
  *      @Objective: Implement a program that toggles the LED2 frequency
- *      between 100 ms and 500 ms each time the key is pressed. The
- *      program should use the debounce functions of the API debounce module
- *      and the non-blocking delays of the API_delay module.
+ *      			between 100 ms and 500 ms each time the key is pressed. The
+ *      			program should use the debounce functions of the API debounce module
+ *      			and the non-blocking delays of the API_delay module.
  */
 #include "stm32f4xx_hal.h"  		/* <- HAL include */
 #include "stm32f4xx_nucleo_144.h" 	/* <- BSP include */
@@ -59,7 +59,6 @@ bool_t readKey(){
  * @param
  * @retval  puntero de caracteres
  */
-
 
 char *readStatus(){
 	assert(&current_edge_state!=NULL);

@@ -2884,10 +2884,10 @@ void spi_write(uint8_t address, uint8_t cmd)
  800134c:	40020c00 	.word	0x40020c00
 
 08001350 <inicializarMEF>:
+#include <assert.h>
+#include "App_MEF.h"
 
-
-
-State_MEF_t  estadoMEF;
+State_MEF_t estadoMEF;
 
 void inicializarMEF(void){
  8001350:	b480      	push	{r7}
@@ -3113,7 +3113,7 @@ State_MEF_t actualizarMEF(delay_t * delay){
 			assert(0);
  80014ce:	4b0c      	ldr	r3, [pc, #48]	; (8001500 <actualizarMEF+0x198>)
  80014d0:	4a0c      	ldr	r2, [pc, #48]	; (8001504 <actualizarMEF+0x19c>)
- 80014d2:	2148      	movs	r1, #72	; 0x48
+ 80014d2:	2144      	movs	r1, #68	; 0x44
  80014d4:	480c      	ldr	r0, [pc, #48]	; (8001508 <actualizarMEF+0x1a0>)
  80014d6:	f002 fab1 	bl	8003a3c <__assert_func>
 			break;

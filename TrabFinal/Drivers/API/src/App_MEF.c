@@ -11,11 +11,7 @@
 #include <assert.h>
 #include "App_MEF.h"
 
-
-
-
-
-State_MEF_t  estadoMEF;
+State_MEF_t estadoMEF;
 
 void inicializarMEF(void){
 	/* Initialize Estado */
