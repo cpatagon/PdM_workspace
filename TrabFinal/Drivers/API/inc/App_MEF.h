@@ -10,6 +10,7 @@
 
 //#include "API_led.h"
 #include "API_delay.h" /* Inclusion of the file defining delay_t */
+#include "API_debounce.h"
 
 typedef enum{
 	SET_ini,
@@ -22,7 +23,7 @@ typedef enum{
 
 void inicializarMEF(void);
 
-State_MEF_t actualizarMEF(delay_t * delay);
+State_MEF_t actualizarMEF(delay_t *delay);
 
 //char *Lee_estado();
 

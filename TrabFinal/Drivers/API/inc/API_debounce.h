@@ -14,7 +14,7 @@
 #include "stm32f4xx_hal.h"          /* HAL library inclusion */
 #include "stm32f4xx_nucleo_144.h"   /* BSP library inclusion */
 
-#include "API_delaydebounce.h" /* Inclusion of the file defining delay_t */
+#include "API_delay.h" /* Inclusion of the file defining delay_t */
 
 typedef uint32_t tick_t; // Which library should be included for this to compile?
 typedef bool bool_t; // Which library should be included for this to compile?
@@ -34,7 +34,7 @@ bool_t readKey();
  * @param   None
  * @retval  None
  */
-void debounceFSM_init();
+void debounceFSM_init(delay_t *delayi);
 
 /**
  * @brief   Updates the debounce FSM.
@@ -44,8 +44,7 @@ void debounceFSM_init();
  * @param   delay: pointer to the delay instance
  * @retval  None
  */
-void debounceFSM_update(delaydebounce_t* delay);
-
+bool_t debounceFSM_update(void);
 
 /**
  * @brief   Funcion que identifica si es flanco de subida o flanco de bajada
@@ -53,7 +52,10 @@ void debounceFSM_update(delaydebounce_t* delay);
  * @param
  * @retval  puntero de caracteres
  */
-char *readStatus();
+char* readStatus();
 
+bool_t isbuttonPressed(void);
+
+static void buttonPressed();
 
 #endif /* API_INC_API_DEBOUNCE_H_ */

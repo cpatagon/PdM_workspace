@@ -1,5 +1,6 @@
-API_debounce.c:52:8:readKey	1
-API_debounce.c:63:7:readStatus	4
-API_debounce.c:92:6:debounceFSM_init	1
-API_debounce.c:108:6:debounceFSM_update	10
-API_debounce.c:179:13:buttonPressed	1
+API_debounce.c:56:6:debounceFSM_init	1
+API_debounce.c:69:8:readKey	1
+API_debounce.c:80:7:readStatus	4
+API_debounce.c:100:8:isbuttonPressed	2
+API_debounce.c:117:8:debounceFSM_update	10
+API_debounce.c:189:13:buttonPressed	1

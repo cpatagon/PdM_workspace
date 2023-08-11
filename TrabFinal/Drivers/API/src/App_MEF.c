@@ -10,64 +10,64 @@
 
 #include <assert.h>
 #include "App_MEF.h"
+#include "API_debounce.h"
 
 State_MEF_t estadoMEF;
 
-void inicializarMEF(void){
+void inicializarMEF(void) {
 	/* Initialize Estado */
-	estadoMEF=SET;
+	estadoMEF = SET;
 	return;
-};
+}
+;
 
-State_MEF_t actualizarMEF(delay_t * delay){
-		assert(&estadoMEF!=NULL);
-		switch (estadoMEF){
-		case SET_ini:
-			if (!BSP_PB_GetState(BUTTON_USER) && delayRead(delay)){
-			    	estadoMEF=FIRST;
-				}
-			break;
-		case FIRST:
-			if (!BSP_PB_GetState(BUTTON_USER) && delayRead(delay)){
-				    	estadoMEF=SECOND;
-					}
-			else if(BSP_PB_GetState(BUTTON_USER) && !delayRead(delay)){
-				estadoMEF=BAD;
-			}
-			break;
-		case SECOND:
-			if (!BSP_PB_GetState(BUTTON_USER) && delayRead(delay)){
-				    	estadoMEF=THIRD;
-					}
-			else if(BSP_PB_GetState(BUTTON_USER) && !delayRead(delay)){
-					estadoMEF=BAD;
-				}
-			break;
-		case THIRD:
-			if (!BSP_PB_GetState(BUTTON_USER) && delayRead(delay)){
-				estadoMEF=FIRST;
-			}
-			else if(BSP_PB_GetState(BUTTON_USER) && !delayRead(delay)){
-					estadoMEF=GOOD;
-				}
-			break;
-		case GOOD:
-			if (!BSP_PB_GetState(BUTTON_USER) && delayRead(delay)){
-				estadoMEF=SET;
-			}
-
-			break;
-		case BAD:
-			if (!BSP_PB_GetState(BUTTON_USER) && delayRead(delay)){
-				estadoMEF=SET;
-			}
-
-			break;
-		default:
-				/* Handle unexpected state */
-			assert(0);
+State_MEF_t actualizarMEF(delay_t *delay) {
+	assert(&estadoMEF!=NULL);
+	switch (estadoMEF) {
+	case SET_ini:
+		if (!debounceFSM_update() && delayRead(delay)) {
+			estadoMEF = FIRST;
 		}
- return(estadoMEF);
-};
+		break;
+	case FIRST:
+		if (!debounceFSM_update() && delayRead(delay)) {
+			estadoMEF = SECOND;
+		} else if (BSP_PB_GetState(BUTTON_USER) && !delayRead(delay)) {
+			estadoMEF = BAD;
+		}
+		break;
+	case SECOND:
+		if (!debounceFSM_update() && delayRead(delay)) {
+			estadoMEF = THIRD;
+		} else if (BSP_PB_GetState(BUTTON_USER) && !delayRead(delay)) {
+			estadoMEF = BAD;
+		}
+		break;
+	case THIRD:
+		if (!debounceFSM_update() && delayRead(delay)) {
+			estadoMEF = FIRST;
+		} else if (BSP_PB_GetState(BUTTON_USER) && !delayRead(delay)) {
+			estadoMEF = GOOD;
+		}
+		break;
+	case GOOD:
+		if (!BSP_PB_GetState(BUTTON_USER) && delayRead(delay)) {
+			estadoMEF = FIRST;
+		}
+
+		break;
+	case BAD:
+		if (!BSP_PB_GetState(BUTTON_USER) && delayRead(delay)) {
+			estadoMEF = FIRST;
+		}
+
+		break;
+	default:
+		/* Handle unexpected state */
+		assert(0);
+	}
+	return (estadoMEF);
+}
+;
 
 //char *Lee_estado(){};

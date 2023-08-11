@@ -1,10 +1,11 @@
-20:04:58 **** Incremental Build of configuration Debug for project TP ****
+19:00:28 **** Incremental Build of configuration Debug for project TP ****
 make -j8 all 
-arm-none-eabi-size   TP.elf 
-   text	   data	    bss	    dec	    hex	filename
-  13652	     44	   3588	  17284	   4384	TP.elf
-Finished building: default.size.stdout
- 
+arm-none-eabi-gcc "../Drivers/API/src/App_MEF.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F429xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -I"/home/lgomez/maestriauba/SMT32/TP/Core/Src" -I"/home/lgomez/maestriauba/SMT32/TP/Drivers/API/inc" -I"/home/lgomez/maestriauba/SMT32/TP/Drivers/API/src" -I"/home/lgomez/maestriauba/SMT32/TP/Drivers/API" -I"/home/lgomez/maestriauba/SMT32/TP/Drivers/BSP" -I"/home/lgomez/maestriauba/SMT32/TP/Drivers/BSP/STM32F4xx_Nucleo_144" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Drivers/API/src/App_MEF.d" -MT"Drivers/API/src/App_MEF.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Drivers/API/src/App_MEF.o"
+../Drivers/API/src/App_MEF.c:33:20: error: unknown type name 'delay_t'
+   33 | void actualizarMEF(delay_t * delay){
+      |                    ^~~~~~~
+make: *** [Drivers/API/src/subdir.mk:34: Drivers/API/src/App_MEF.o] Error 1
+"make -j8 all" terminated with exit code 2. Build might be incomplete.
 
-20:04:59 Build Finished. 0 errors, 0 warnings. (took 786ms)
+19:00:29 Build Failed. 2 errors, 0 warnings. (took 991ms)
 

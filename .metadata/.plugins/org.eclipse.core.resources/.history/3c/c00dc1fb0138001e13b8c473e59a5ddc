@@ -1,0 +1,80 @@
+/*
+ * API_led.h
+ *
+ *  Created on: Aug 6, 2023
+ *      Author: lgomez
+ *
+ */
+
+/*
+ * Librería encargada de manipular la matriz de led 8x8
+ * con el CI MAX7219ENG. Mediante un protocolo spi
+ * con distintas funciones:
+ *
+ * - init_led()   = de inicialización
+ * - clear_led()  = todos los led apagados
+ * - lit_led()    = todos los led encendidos
+ * - update_led() = grafica una imagen
+ *
+ * Toda la comunicación se realiza mediante el protocolo spi
+ * implementado en la libreria API_spi.h
+ *
+ * Tabien se inlcuye un conjunto imagenes prediseñadas listas para
+ * ser ocupadas en update_led()
+ * */
+
+#ifndef API_INC_API_LED_H_
+#define API_INC_API_LED_H_
+
+#include <stdint.h>
+
+/* @brief  	conjunto de listas orientados a generar figuras sobre la
+ * 			matriz led. Los valores representan una fila dentro de la matriz
+ * 			LED
+ * */
+static uint8_t led_ocho[] = { 0x3C, 0x42, 0x42, 0x3C, 0x42, 0x42, 0x42, 0x3C }; // 8
+static uint8_t smileyFace[] = { 0x3C, 0x42, 0xA5, 0x81, 0x5D, 0x99, 0x42, 0x3C }; // cara feliz
+static uint8_t badFace[] = { 0x00, 0x66, 0x66, 0x00, 0x18, 0x42, 0x3C, 0x00 }; // Cara Triste
+static uint8_t A[] = { 0x00, 0x3C, 0x42, 0x42, 0x7E, 0x42, 0x42, 0x00 }; // Letra A
+static uint8_t B[] = { 0x00, 0x7C, 0x42, 0x7C, 0x7C, 0x42, 0x7C, 0x00 }; // Letra B
+static uint8_t C[] = { 0x00, 0x3C, 0x42, 0x40, 0x40, 0x42, 0x3C, 0x00 }; // Letra C
+static uint8_t reloj[] = { 0x18, 0x24, 0x42, 0x81, 0x81, 0x42, 0x24, 0x18 }; // Reloj Analógico
+static uint8_t ghost1[] = { 0x18, 0x7e, 0xff, 0xbd, 0xff, 0xff, 0xff, 0xa5 };
+static uint8_t ghost2[] = { 0x18, 0x7e, 0xbd, 0xff, 0xff, 0xff, 0xff, 0xa5 };
+static uint8_t ghost3[] = { 0x18, 0x7e, 0xdb, 0xff, 0xff, 0xff, 0xff, 0xa5 };
+static uint8_t ghost4[] = { 0x18, 0x7e, 0xff, 0xdb, 0xff, 0xff, 0xff, 0xa5 };
+static uint8_t ghost5[] = { 0x18, 0x7e, 0x99, 0x99, 0xff, 0xff, 0xff, 0xa5 };
+static uint8_t ghost6[] = { 0x3c, 0x7e, 0xd7, 0xff, 0xc3, 0xff, 0xff, 0xdb };
+
+/* @brief  	función encargada de inicializar la matriz
+ * 			led
+ * @param 	void
+ * @retval  void
+ * */
+void init_led(void);
+
+/* @brief  	función encargada de limpiar la pantalla
+ * 			led dejado todos los valores de la matriz a 0
+ * @param 	void
+ * @retval  void
+ * */
+void clear_led(void);
+
+/* @brief  	función encargada encender todos los led
+ * 			de la matriz
+ * @param 	void
+ * @retval  void
+ * */
+void lit_led(void);
+
+/* @brief  	función encargada encender los led de acuerdo
+ * 			a la figura entregada en forma de lista
+ * @param 	paint_list[] lista donde cada fila representa
+ * 			un valor de una fila escrita en forma hexadecimal de una
+ * 			representación binaria de la fila en donde 0 es led apagado
+ * 			y 1 es led encendido
+ * @retval  void
+ * */
+void update_led(uint8_t paint_list[]);
+
+#endif /* API_INC_API_LED_H_ */
