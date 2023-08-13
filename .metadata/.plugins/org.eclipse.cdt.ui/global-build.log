@@ -1,4 +1,4 @@
-12:08:20 **** Incremental Build of configuration Debug for project TrabFinal ****
+16:23:58 **** Incremental Build of configuration Debug for project TrabFinal ****
 make -j8 all 
 arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F429xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -I"/home/lgomez/maestriauba/SMT32/PdM_workspace/TrabFinal/Core/Src" -I"/home/lgomez/maestriauba/SMT32/PdM_workspace/TrabFinal/Drivers/API/inc" -I"/home/lgomez/maestriauba/SMT32/PdM_workspace/TrabFinal/Drivers/API/src" -I"/home/lgomez/maestriauba/SMT32/PdM_workspace/TrabFinal/Drivers/API" -I"/home/lgomez/maestriauba/SMT32/PdM_workspace/TrabFinal/Drivers/BSP" -I"/home/lgomez/maestriauba/SMT32/PdM_workspace/TrabFinal/Drivers/BSP/STM32F4xx_Nucleo_144" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
 In file included from ../Core/Src/main.c:27:
@@ -14,15 +14,159 @@ Finished building target: TrabFinal.elf
 arm-none-eabi-size   TrabFinal.elf 
 arm-none-eabi-objdump -h -S  TrabFinal.elf  > "TrabFinal.list"
    text	   data	    bss	    dec	    hex	filename
-  20504	    216	   3680	  24400	   5f50	TrabFinal.elf
+  20464	    272	   3688	  24424	   5f68	TrabFinal.elf
 Finished building: default.size.stdout
  
 Finished building: TrabFinal.list
  
-12:08:29 **** Incremental Build of configuration Debug for project TrabFinal ****
+16:24:04 **** Incremental Build of configuration Debug for project TrabFinal ****
 make -j8 all 
 arm-none-eabi-size   TrabFinal.elf 
    text	   data	    bss	    dec	    hex	filename
-  20504	    216	   3680	  24400	   5f50	TrabFinal.elf
+  20464	    272	   3688	  24424	   5f68	TrabFinal.elf
+Finished building: default.size.stdout
+ 
+16:32:44 **** Incremental Build of configuration Debug for project TrabFinal ****
+make -j8 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F429xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -I"/home/lgomez/maestriauba/SMT32/PdM_workspace/TrabFinal/Core/Src" -I"/home/lgomez/maestriauba/SMT32/PdM_workspace/TrabFinal/Drivers/API/inc" -I"/home/lgomez/maestriauba/SMT32/PdM_workspace/TrabFinal/Drivers/API/src" -I"/home/lgomez/maestriauba/SMT32/PdM_workspace/TrabFinal/Drivers/API" -I"/home/lgomez/maestriauba/SMT32/PdM_workspace/TrabFinal/Drivers/BSP" -I"/home/lgomez/maestriauba/SMT32/PdM_workspace/TrabFinal/Drivers/BSP/STM32F4xx_Nucleo_144" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+In file included from ../Core/Src/main.c:27:
+/home/lgomez/maestriauba/SMT32/PdM_workspace/TrabFinal/Drivers/API/inc/API_spi.h:34:13: warning: 'MX_GPIO_Init' declared 'static' but never defined [-Wunused-function]
+   34 | static void MX_GPIO_Init(void);
+      |             ^~~~~~~~~~~~
+/home/lgomez/maestriauba/SMT32/PdM_workspace/TrabFinal/Drivers/API/inc/API_spi.h:35:13: warning: 'MX_SPI3_Init' declared 'static' but never defined [-Wunused-function]
+   35 | static void MX_SPI3_Init(void);
+      |             ^~~~~~~~~~~~
+arm-none-eabi-gcc -o "TrabFinal.elf" @"objects.list"   -mcpu=cortex-m4 -T"/home/lgomez/maestriauba/SMT32/PdM_workspace/TrabFinal/STM32F429ZITX_FLASH.ld" --specs=nosys.specs -Wl,-Map="TrabFinal.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: TrabFinal.elf
+ 
+arm-none-eabi-size   TrabFinal.elf 
+arm-none-eabi-objdump -h -S  TrabFinal.elf  > "TrabFinal.list"
+   text	   data	    bss	    dec	    hex	filename
+  20464	    272	   3688	  24424	   5f68	TrabFinal.elf
+Finished building: default.size.stdout
+ 
+Finished building: TrabFinal.list
+ 
+16:36:39 **** Incremental Build of configuration Debug for project TrabFinal ****
+make -j8 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F429xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -I"/home/lgomez/maestriauba/SMT32/PdM_workspace/TrabFinal/Core/Src" -I"/home/lgomez/maestriauba/SMT32/PdM_workspace/TrabFinal/Drivers/API/inc" -I"/home/lgomez/maestriauba/SMT32/PdM_workspace/TrabFinal/Drivers/API/src" -I"/home/lgomez/maestriauba/SMT32/PdM_workspace/TrabFinal/Drivers/API" -I"/home/lgomez/maestriauba/SMT32/PdM_workspace/TrabFinal/Drivers/BSP" -I"/home/lgomez/maestriauba/SMT32/PdM_workspace/TrabFinal/Drivers/BSP/STM32F4xx_Nucleo_144" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+In file included from ../Core/Src/main.c:27:
+/home/lgomez/maestriauba/SMT32/PdM_workspace/TrabFinal/Drivers/API/inc/API_spi.h:34:13: warning: 'MX_GPIO_Init' declared 'static' but never defined [-Wunused-function]
+   34 | static void MX_GPIO_Init(void);
+      |             ^~~~~~~~~~~~
+/home/lgomez/maestriauba/SMT32/PdM_workspace/TrabFinal/Drivers/API/inc/API_spi.h:35:13: warning: 'MX_SPI3_Init' declared 'static' but never defined [-Wunused-function]
+   35 | static void MX_SPI3_Init(void);
+      |             ^~~~~~~~~~~~
+arm-none-eabi-gcc -o "TrabFinal.elf" @"objects.list"   -mcpu=cortex-m4 -T"/home/lgomez/maestriauba/SMT32/PdM_workspace/TrabFinal/STM32F429ZITX_FLASH.ld" --specs=nosys.specs -Wl,-Map="TrabFinal.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: TrabFinal.elf
+ 
+arm-none-eabi-size   TrabFinal.elf 
+arm-none-eabi-objdump -h -S  TrabFinal.elf  > "TrabFinal.list"
+   text	   data	    bss	    dec	    hex	filename
+  20464	    272	   3688	  24424	   5f68	TrabFinal.elf
+Finished building: default.size.stdout
+ 
+Finished building: TrabFinal.list
+ 
+16:37:46 **** Incremental Build of configuration Debug for project TrabFinal ****
+make -j8 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F429xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -I"/home/lgomez/maestriauba/SMT32/PdM_workspace/TrabFinal/Core/Src" -I"/home/lgomez/maestriauba/SMT32/PdM_workspace/TrabFinal/Drivers/API/inc" -I"/home/lgomez/maestriauba/SMT32/PdM_workspace/TrabFinal/Drivers/API/src" -I"/home/lgomez/maestriauba/SMT32/PdM_workspace/TrabFinal/Drivers/API" -I"/home/lgomez/maestriauba/SMT32/PdM_workspace/TrabFinal/Drivers/BSP" -I"/home/lgomez/maestriauba/SMT32/PdM_workspace/TrabFinal/Drivers/BSP/STM32F4xx_Nucleo_144" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+In file included from ../Core/Src/main.c:27:
+/home/lgomez/maestriauba/SMT32/PdM_workspace/TrabFinal/Drivers/API/inc/API_spi.h:34:13: warning: 'MX_GPIO_Init' declared 'static' but never defined [-Wunused-function]
+   34 | static void MX_GPIO_Init(void);
+      |             ^~~~~~~~~~~~
+/home/lgomez/maestriauba/SMT32/PdM_workspace/TrabFinal/Drivers/API/inc/API_spi.h:35:13: warning: 'MX_SPI3_Init' declared 'static' but never defined [-Wunused-function]
+   35 | static void MX_SPI3_Init(void);
+      |             ^~~~~~~~~~~~
+arm-none-eabi-gcc -o "TrabFinal.elf" @"objects.list"   -mcpu=cortex-m4 -T"/home/lgomez/maestriauba/SMT32/PdM_workspace/TrabFinal/STM32F429ZITX_FLASH.ld" --specs=nosys.specs -Wl,-Map="TrabFinal.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: TrabFinal.elf
+ 
+arm-none-eabi-size   TrabFinal.elf 
+arm-none-eabi-objdump -h -S  TrabFinal.elf  > "TrabFinal.list"
+   text	   data	    bss	    dec	    hex	filename
+  20464	    272	   3688	  24424	   5f68	TrabFinal.elf
+Finished building: default.size.stdout
+ 
+Finished building: TrabFinal.list
+ 
+16:38:44 **** Incremental Build of configuration Debug for project TrabFinal ****
+make -j8 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F429xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -I"/home/lgomez/maestriauba/SMT32/PdM_workspace/TrabFinal/Core/Src" -I"/home/lgomez/maestriauba/SMT32/PdM_workspace/TrabFinal/Drivers/API/inc" -I"/home/lgomez/maestriauba/SMT32/PdM_workspace/TrabFinal/Drivers/API/src" -I"/home/lgomez/maestriauba/SMT32/PdM_workspace/TrabFinal/Drivers/API" -I"/home/lgomez/maestriauba/SMT32/PdM_workspace/TrabFinal/Drivers/BSP" -I"/home/lgomez/maestriauba/SMT32/PdM_workspace/TrabFinal/Drivers/BSP/STM32F4xx_Nucleo_144" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+In file included from ../Core/Src/main.c:27:
+/home/lgomez/maestriauba/SMT32/PdM_workspace/TrabFinal/Drivers/API/inc/API_spi.h:34:13: warning: 'MX_GPIO_Init' declared 'static' but never defined [-Wunused-function]
+   34 | static void MX_GPIO_Init(void);
+      |             ^~~~~~~~~~~~
+/home/lgomez/maestriauba/SMT32/PdM_workspace/TrabFinal/Drivers/API/inc/API_spi.h:35:13: warning: 'MX_SPI3_Init' declared 'static' but never defined [-Wunused-function]
+   35 | static void MX_SPI3_Init(void);
+      |             ^~~~~~~~~~~~
+arm-none-eabi-gcc -o "TrabFinal.elf" @"objects.list"   -mcpu=cortex-m4 -T"/home/lgomez/maestriauba/SMT32/PdM_workspace/TrabFinal/STM32F429ZITX_FLASH.ld" --specs=nosys.specs -Wl,-Map="TrabFinal.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: TrabFinal.elf
+ 
+arm-none-eabi-size   TrabFinal.elf 
+arm-none-eabi-objdump -h -S  TrabFinal.elf  > "TrabFinal.list"
+   text	   data	    bss	    dec	    hex	filename
+  20464	    272	   3688	  24424	   5f68	TrabFinal.elf
+Finished building: default.size.stdout
+ 
+Finished building: TrabFinal.list
+ 
+16:44:43 **** Incremental Build of configuration Debug for project TrabFinal ****
+make -j8 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F429xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -I"/home/lgomez/maestriauba/SMT32/PdM_workspace/TrabFinal/Core/Src" -I"/home/lgomez/maestriauba/SMT32/PdM_workspace/TrabFinal/Drivers/API/inc" -I"/home/lgomez/maestriauba/SMT32/PdM_workspace/TrabFinal/Drivers/API/src" -I"/home/lgomez/maestriauba/SMT32/PdM_workspace/TrabFinal/Drivers/API" -I"/home/lgomez/maestriauba/SMT32/PdM_workspace/TrabFinal/Drivers/BSP" -I"/home/lgomez/maestriauba/SMT32/PdM_workspace/TrabFinal/Drivers/BSP/STM32F4xx_Nucleo_144" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+In file included from ../Core/Src/main.c:27:
+/home/lgomez/maestriauba/SMT32/PdM_workspace/TrabFinal/Drivers/API/inc/API_spi.h:34:13: warning: 'MX_GPIO_Init' declared 'static' but never defined [-Wunused-function]
+   34 | static void MX_GPIO_Init(void);
+      |             ^~~~~~~~~~~~
+/home/lgomez/maestriauba/SMT32/PdM_workspace/TrabFinal/Drivers/API/inc/API_spi.h:35:13: warning: 'MX_SPI3_Init' declared 'static' but never defined [-Wunused-function]
+   35 | static void MX_SPI3_Init(void);
+      |             ^~~~~~~~~~~~
+arm-none-eabi-gcc -o "TrabFinal.elf" @"objects.list"   -mcpu=cortex-m4 -T"/home/lgomez/maestriauba/SMT32/PdM_workspace/TrabFinal/STM32F429ZITX_FLASH.ld" --specs=nosys.specs -Wl,-Map="TrabFinal.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: TrabFinal.elf
+ 
+arm-none-eabi-size   TrabFinal.elf 
+arm-none-eabi-objdump -h -S  TrabFinal.elf  > "TrabFinal.list"
+   text	   data	    bss	    dec	    hex	filename
+  20464	    272	   3688	  24424	   5f68	TrabFinal.elf
+Finished building: default.size.stdout
+ 
+Finished building: TrabFinal.list
+ 
+17:10:19 **** Incremental Build of configuration Debug for project TrabFinal ****
+make -j8 all 
+arm-none-eabi-gcc "../Drivers/API/src/API_led.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F429xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -I"/home/lgomez/maestriauba/SMT32/PdM_workspace/TrabFinal/Core/Src" -I"/home/lgomez/maestriauba/SMT32/PdM_workspace/TrabFinal/Drivers/API/inc" -I"/home/lgomez/maestriauba/SMT32/PdM_workspace/TrabFinal/Drivers/API/src" -I"/home/lgomez/maestriauba/SMT32/PdM_workspace/TrabFinal/Drivers/API" -I"/home/lgomez/maestriauba/SMT32/PdM_workspace/TrabFinal/Drivers/BSP" -I"/home/lgomez/maestriauba/SMT32/PdM_workspace/TrabFinal/Drivers/BSP/STM32F4xx_Nucleo_144" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Drivers/API/src/API_led.d" -MT"Drivers/API/src/API_led.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Drivers/API/src/API_led.o"
+../Drivers/API/src/API_led.c: In function 'init_led':
+../Drivers/API/src/API_led.c:45:2: warning: implicit declaration of function 'clear_led' [-Wimplicit-function-declaration]
+   45 |  clear_led();
+      |  ^~~~~~~~~
+../Drivers/API/src/API_led.c: At top level:
+../Drivers/API/src/API_led.c:54:6: warning: conflicting types for 'clear_led'
+   54 | void clear_led(void) {
+      |      ^~~~~~~~~
+../Drivers/API/src/API_led.c:45:2: note: previous implicit declaration of 'clear_led' was here
+   45 |  clear_led();
+      |  ^~~~~~~~~
+In file included from ../Drivers/API/src/API_led.c:9:
+/home/lgomez/maestriauba/SMT32/PdM_workspace/TrabFinal/Drivers/API/inc/API_spi.h:34:13: warning: 'MX_GPIO_Init' declared 'static' but never defined [-Wunused-function]
+   34 | static void MX_GPIO_Init(void);
+      |             ^~~~~~~~~~~~
+/home/lgomez/maestriauba/SMT32/PdM_workspace/TrabFinal/Drivers/API/inc/API_spi.h:35:13: warning: 'MX_SPI3_Init' declared 'static' but never defined [-Wunused-function]
+   35 | static void MX_SPI3_Init(void);
+      |             ^~~~~~~~~~~~
+arm-none-eabi-gcc -o "TrabFinal.elf" @"objects.list"   -mcpu=cortex-m4 -T"/home/lgomez/maestriauba/SMT32/PdM_workspace/TrabFinal/STM32F429ZITX_FLASH.ld" --specs=nosys.specs -Wl,-Map="TrabFinal.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: TrabFinal.elf
+ 
+arm-none-eabi-size   TrabFinal.elf 
+arm-none-eabi-objdump -h -S  TrabFinal.elf  > "TrabFinal.list"
+   text	   data	    bss	    dec	    hex	filename
+  20464	    272	   3688	  24424	   5f68	TrabFinal.elf
+Finished building: default.size.stdout
+ 
+Finished building: TrabFinal.list
+ 
+17:21:36 **** Incremental Build of configuration Debug for project TrabFinal ****
+make -j8 all 
+arm-none-eabi-size   TrabFinal.elf 
+   text	   data	    bss	    dec	    hex	filename
+  20464	    272	   3688	  24424	   5f68	TrabFinal.elf
 Finished building: default.size.stdout
  

@@ -19,7 +19,7 @@ State_MEF_t estadoMEF;
  * @brief Función para inicializar la MEF. Configura el estado inicial.
  */
 void inicializarMEF(void) {
-	estadoMEF = SET; /**< Configura el estado inicial. */
+	estadoMEF = SET_ini; /**< Configura el estado inicial. */
 	return;
 }
 ;
@@ -36,8 +36,10 @@ State_MEF_t actualizarMEF(delay_t *delay) {
 
 	switch (estadoMEF) {
 	case SET_ini:
-		if (!debounceFSM_update() && delayRead(delay)) {
+		if (delayRead(delay)) {
 			estadoMEF = FIRST;
+		} else if (!delayRead(delay)) {
+			//estadoMEF = ;
 		}
 		break;
 	case FIRST:
@@ -63,12 +65,12 @@ State_MEF_t actualizarMEF(delay_t *delay) {
 		break;
 	case GOOD:
 		if (!BSP_PB_GetState(BUTTON_USER) && delayRead(delay)) {
-			estadoMEF = FIRST;
+			estadoMEF = SET_ini;
 		}
 		break;
 	case BAD:
 		if (!BSP_PB_GetState(BUTTON_USER) && delayRead(delay)) {
-			estadoMEF = FIRST;
+			estadoMEF = SET_ini;
 		}
 		break;
 	default:

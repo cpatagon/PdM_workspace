@@ -1,10 +1,10 @@
-12:08:29 **** Incremental Build of configuration Debug for project TrabFinal ****
+17:21:36 **** Incremental Build of configuration Debug for project TrabFinal ****
 make -j8 all 
 arm-none-eabi-size   TrabFinal.elf 
    text	   data	    bss	    dec	    hex	filename
-  20504	    216	   3680	  24400	   5f50	TrabFinal.elf
+  20464	    272	   3688	  24424	   5f68	TrabFinal.elf
 Finished building: default.size.stdout
  
 
-12:08:30 Build Finished. 0 errors, 0 warnings. (took 722ms)
+17:21:37 Build Finished. 0 errors, 0 warnings. (took 722ms)
 

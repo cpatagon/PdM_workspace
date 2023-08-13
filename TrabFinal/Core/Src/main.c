@@ -150,6 +150,7 @@ int main(void) {
 
 	tick_t speed_play;
 	tick_t level[] = { 1000, 800, 500, 400 };
+	int16_t score = 0;
 	int16_t level_min = 0;
 	int16_t level_i = level_min;
 	int16_t level_max;
@@ -176,12 +177,16 @@ int main(void) {
 
 		// Actualizar la Máquina de Estados Finitos y obtener el estado actual.
 		estado = actualizarMEF(&Delay1);
+		if (score > 5) {
+			score = 0;
+		}
 
 		// Dependiendo del estado actual, mostrar un patrón o imagen específica en la matriz LED.
 		switch (estado) {
 		case SET_ini:
 			// En caso de estar en el estado inicial, iluminar la matriz LED de alguna forma específica.
-			lit_led();
+			update_led(levels_led[score]);
+			//lit_led();
 			break;
 
 		case FIRST:
@@ -205,10 +210,12 @@ int main(void) {
 			update_led(smileyFace);
 			if (flag) {
 				flag = false;
+				score = score + 1;
 				if (level_i >= level_max) {
 					level_i = level_min;
 					speed_play = level[level_i];
 					delayInit(&Delay1, speed_play);
+					//score = 0;
 				} else {
 					speed_play = level[level_i];
 					delayInit(&Delay1, speed_play);
@@ -222,11 +229,13 @@ int main(void) {
 			// En caso de perder muestra la imagen de fantasma
 			fantasma_led(&delayGhost);
 			if (flag) {
+				score = 0;
 				flag = false;
 				if (level_i >= level_max) {
 					level_i = level_min;
 					speed_play = level[level_i];
 					delayInit(&Delay1, speed_play);
+					//score = 0;
 				} else {
 					speed_play = level[level_i];
 					delayInit(&Delay1, speed_play);
