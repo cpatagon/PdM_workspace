@@ -110,7 +110,7 @@ int main(void) {
 	// Inicializar la estructura de delay 'Delay1', 'Delay2' y 'Delay3'
 	// con un tiempo específico definido por 'TIME1','TIME2' y 'TIME3'
 	// Esto configur un timer, que es  un contador para manejar delays.
-	delayInit(&Delay1, TIME1);
+	//delayInit(&Delay1, 1000);
 	delayInit(&Delay2, TIME2);
 	delayInit(&Delay3, TIME3);
 	delayInit(&delayGhost, TIMEGHOST);
@@ -147,6 +147,17 @@ int main(void) {
 	init_led();
 
 	estado = SET_ini;
+
+	tick_t speed_play;
+	speed_play = 1000;
+
+	//speed_play = (speed_play <= 200) ? 1000 : speed_play;
+	delayInit(&Delay1, speed_play);
+
+	bool_t flag;
+
+	flag = true;
+
 	/* USER CODE END 2 */
 
 	/* Infinite loop */
@@ -170,6 +181,7 @@ int main(void) {
 		case FIRST:
 			// En el primer estado, mostrar el patrón o imagen 'A' en la matriz LED.
 			update_led(A);
+			flag = true;
 			break;
 
 		case SECOND:
@@ -185,12 +197,22 @@ int main(void) {
 		case GOOD:
 			// Si todo va bien, mostrar una cara sonriente en la matriz LED.
 			update_led(smileyFace);
+			if (flag) {
+				speed_play = speed_play - 100;
+				delayInit(&Delay1, speed_play);
+				flag = false;
+			}
 
 			break;
 
 		case BAD:
 			// En caso de perder muestra la imagen de fantasma
 			fantasma_led(&delayGhost);
+			if (flag) {
+				speed_play = speed_play - 100;
+				delayInit(&Delay1, speed_play);
+				flag = false;
+			}
 			break;
 		}
 
