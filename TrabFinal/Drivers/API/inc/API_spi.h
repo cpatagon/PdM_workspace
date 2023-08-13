@@ -25,14 +25,7 @@
 #define num 1
 
 void spi_init(void);
-/**
- * @brief Funcion de Inicialización GPIO.
- *
- * @param nada.
- *
- */
-static void MX_GPIO_Init(void);
-static void MX_SPI3_Init(void);
+
 /**
  * @brief Envia una dirección y un comando al dispositivo MAX7219.
  *

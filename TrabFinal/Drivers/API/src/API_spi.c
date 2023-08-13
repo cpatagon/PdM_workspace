@@ -9,6 +9,15 @@
 #include <stdbool.h> ///< Incluye el tipo booleano (bool).
 #include "API_spi.h"
 
+/**
+ * @brief Funcion de Inicialización GPIO.
+ *
+ * @param nada.
+ *
+ */
+static void MX_GPIO_Init(void);
+static void MX_SPI3_Init(void);
+
 void spi_init(void) {
 	MX_GPIO_Init();
 	MX_SPI3_Init();

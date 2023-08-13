@@ -40,10 +40,18 @@
 /* Private define ------------------------------------------------------------*/
 /* USER CODE BEGIN PD */
 
-#define TIME1 1000
-#define TIME2 300
-#define TIME3 40 //tiempo antirrebote
+//#define TIME2 300
+#define TIME_DEBOUNCE 40 //tiempo antirrebote del boton
 #define TIMEGHOST 200
+
+// velocidades del juego mientras mas pequeño el valor mas rapido es
+#define SPEED1 1000
+#define SPEED2 800
+#define SPEED3 500
+#define SPEED4 400
+
+#define SCORE_INI 0 //valor nivel inicial
+#define LEVEL_MIN 0 // valor de la posición del nivel inicial
 
 /* USER CODE END PD */
 
@@ -66,10 +74,10 @@ PCD_HandleTypeDef hpcd_USB_OTG_FS;
 
 /* USER CODE BEGIN PV */
 
-delay_t Delay1;
-delay_t Delay2;
-delay_t Delay3;
-delay_t delayGhost;
+// inicializamos las variables que contentran los tiempos 
+delay_t Delay_play;  // tiempo de transición entre estados 
+delay_t DelayDebounce; // tiempo de antirrebote del boton
+delay_t delayGhost; // tiempo trancicion en animacion fantasma 
 
 State_MEF_t estado;
 
@@ -107,22 +115,20 @@ int main(void) {
 
 	/* USER CODE BEGIN Init */
 
-	// Inicializar la estructura de delay 'Delay1', 'Delay2' y 'Delay3'
-	// con un tiempo específico definido por 'TIME1','TIME2' y 'TIME3'
-	// Esto configur un timer, que es  un contador para manejar delays.
-	//delayInit(&Delay1, 1000);
-	delayInit(&Delay2, TIME2);
-	delayInit(&Delay3, TIME3);
+	// Inicializar la estructura de delay 'DelayDebounce,', 'delayGhost' y 'Delay3'
+	// con un tiempo específico definido por 'TIME_DEBOUNCE' y'TIMEGHOST y 'TIME3'
+	// Esto configura un timer, que es un contador para manejar delays. del antirrebote 
+	// y de la transisión de fantasmas 
+	delayInit(&DelayDebounce, TIME_DEBOUNCE);
 	delayInit(&delayGhost, TIMEGHOST);
 
-	// Inicializar la Máquina de Estados Finitos (FSM, por sus siglas
-	// en inglés) para el antirrebote.
+	// Inicializar la Máquina de Estados Finitos (FSM) para el antirrebote.
 	// Esta función maneja el comportamiento de botones o
 	// interruptores para asegurarse  de que una sola pulsación
 	// sea leída como una, y no múltiples debido al efecto rebote.
-	debounceFSM_init(&Delay3);
+	debounceFSM_init(&DelayDebounce);
 
-	// Inicializar la Máquina de Estados Finitos (MEF) principal del programa.
+	// Inicializar la Máquina de Estados Finitos (MEF) del juego.
 	// Esta función configura el estado inicial y prepare todo para que el programa
 	// funcione adecuadamente con base en la lógica de la MEF.
 	inicializarMEF();
@@ -138,6 +144,7 @@ int main(void) {
 
 	/* Initialize all configured peripherals */
 	spi_init();
+
 	MX_ETH_Init();
 	MX_USART3_UART_Init();
 	MX_USB_OTG_FS_PCD_Init();
@@ -149,17 +156,20 @@ int main(void) {
 	estado = SET_ini;
 
 	tick_t speed_play;
-	tick_t level[] = { 1000, 800, 500, 400 };
-	int16_t score = 0;
-	int16_t level_min = 0;
-	int16_t level_i = level_min;
-	int16_t level_max;
-	level_max = (int16_t) (sizeof(level) / sizeof(level[0]));
-	// inicializamos contado;
+	/*velocidad del juego que va de menos a mayor velocidad
+	 * a medida que se avanza en el juego
+	 */
+
+	tick_t level[] = { SPEED1, SPEED2, SPEED3, SPEED3 };
+	int16_t score = SCORE_INI;  // inicializamos el contador de puntos del juego
+	int16_t level_min = LEVEL_MIN; // establecemos una variable con el valor minimo de velocidad del juego 
+	int16_t level_i = level_min; //  establecemos ese valor minimo al valor con el que partirá el juego
+	int16_t level_max; // establecemos una  variable que definira la posición de la maxima velocidad 
+	level_max = (int16_t) (sizeof(level) / sizeof(level[0])); // calculamos el numero maximo de velocidaddes que con que establecio el juego
+	// inicializamos la velocidad con el nivel minimo;
 	speed_play = level[level_i];
 
-	//speed_play = (speed_play <= 200) ? 1000 : speed_play;
-	delayInit(&Delay1, speed_play);
+	delayInit(&Delay_play, speed_play);
 
 	bool_t flag;
 
@@ -176,7 +186,7 @@ int main(void) {
 		/* USER CODE BEGIN 3 */
 
 		// Actualizar la Máquina de Estados Finitos y obtener el estado actual.
-		estado = actualizarMEF(&Delay1);
+		estado = actualizarMEF(&Delay_play);
 		if (score > 5) {
 			score = 0;
 		}
@@ -214,11 +224,11 @@ int main(void) {
 				if (level_i >= level_max) {
 					level_i = level_min;
 					speed_play = level[level_i];
-					delayInit(&Delay1, speed_play);
+					delayInit(&Delay_play, speed_play);
 					//score = 0;
 				} else {
 					speed_play = level[level_i];
-					delayInit(&Delay1, speed_play);
+					delayInit(&Delay_play, speed_play);
 					level_i = level_i + 1;
 				}
 			}
@@ -234,11 +244,11 @@ int main(void) {
 				if (level_i >= level_max) {
 					level_i = level_min;
 					speed_play = level[level_i];
-					delayInit(&Delay1, speed_play);
+					delayInit(&Delay_play, speed_play);
 					//score = 0;
 				} else {
 					speed_play = level[level_i];
-					delayInit(&Delay1, speed_play);
+					delayInit(&Delay_play, speed_play);
 					level_i = level_i + 1;
 				}
 			}
