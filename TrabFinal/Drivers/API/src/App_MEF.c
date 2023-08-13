@@ -1,28 +1,39 @@
-/*
- * App_MEF.c
- *
- *  Created on: Aug 6, 2023
- *      Author: lgomez
+/**
+ * @file App_MEF.c
+ * @brief Implementación de la máquina de estados finitos (MEF) para la aplicación.
+ * @date Aug 6, 2023
+ * @author lgomez
  */
 
-#include "stm32f4xx_hal.h"  		/* <- HAL include */
-#include "stm32f4xx_nucleo_144.h" 	/* <- BSP include */
+#include "stm32f4xx_hal.h"  		/**< Inclusión de la biblioteca HAL. */
+#include "stm32f4xx_nucleo_144.h" 	/**< Inclusión de la biblioteca BSP. */
 
 #include <assert.h>
 #include "App_MEF.h"
 #include "API_debounce.h"
 
+/** Variable que mantiene el estado actual de la MEF. */
 State_MEF_t estadoMEF;
 
+/**
+ * @brief Función para inicializar la MEF. Configura el estado inicial.
+ */
 void inicializarMEF(void) {
-	/* Initialize Estado */
-	estadoMEF = SET;
+	estadoMEF = SET; /**< Configura el estado inicial. */
 	return;
 }
 ;
 
+/**
+ * @brief Actualiza la MEF en función del estado actual y las entradas.
+ * Esta función evalúa el estado actual de la MEF y determina el próximo estado en función de las condiciones de entrada.
+ *
+ * @param delay Puntero al tipo de dato delay_t que define la estructura de retardo.
+ * @return State_MEF_t: El estado actualizado de la MEF.
+ */
 State_MEF_t actualizarMEF(delay_t *delay) {
-	assert(&estadoMEF!=NULL);
+	assert(&estadoMEF!=NULL); /**< Asegura que el puntero al estado actual no es nulo. */
+
 	switch (estadoMEF) {
 	case SET_ini:
 		if (!debounceFSM_update() && delayRead(delay)) {
@@ -54,20 +65,25 @@ State_MEF_t actualizarMEF(delay_t *delay) {
 		if (!BSP_PB_GetState(BUTTON_USER) && delayRead(delay)) {
 			estadoMEF = FIRST;
 		}
-
 		break;
 	case BAD:
 		if (!BSP_PB_GetState(BUTTON_USER) && delayRead(delay)) {
 			estadoMEF = FIRST;
 		}
-
 		break;
 	default:
-		/* Handle unexpected state */
+		/** En caso de llegar a un estado no definido, se fuerza una interrupción. */
 		assert(0);
 	}
 	return (estadoMEF);
 }
 ;
 
+/**
+ * @brief Lee y retorna el estado actual de la MEF.
+ *
+ * @note Esta función está actualmente incompleta y debe ser implementada.
+ *
+ * @return char*: Una representación en cadena del estado actual.
+ */
 //char *Lee_estado(){};

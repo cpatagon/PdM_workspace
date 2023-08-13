@@ -16,6 +16,8 @@
 #include <API_debounce.h>
 #include "API_delay.h"
 
+static void buttonPressed(void); // para mas adelante
+
 /*
  * Definition of the states for the state machine
  */

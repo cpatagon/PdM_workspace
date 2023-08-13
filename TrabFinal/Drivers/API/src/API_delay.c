@@ -1,60 +1,68 @@
-/*
- * API_delay.c
- *
- *  Created on: 06-07-2023
- *      Author: lgomez
+/**
+ * @file API_delay.c
+ * @brief Implementación de funciones para manejar retardos en STM32F4xx.
+ * @date 06-07-2023
+ * @author lgomez
  */
-#include "stm32f4xx_hal.h"  		/* <- HAL include */
-#include "stm32f4xx_nucleo_144.h" 	/* <- BSP include */
 
+#include "stm32f4xx_hal.h"  		///< HAL (Hardware Abstraction Layer) para STM32F4.
+#include "stm32f4xx_nucleo_144.h" 	///< BSP (Board Support Package) para Nucleo-144.
 #include <assert.h>
 #include "API_delay.h"
 
-/* delayInit debe cargar el valor de duración del retardo en la estructura, en el campo
-correspondiente. No debe iniciar el conteo del retardo. Debe inicializar el flag running
-en `false´. */
-
-void delayInit( delay_t * delay, tick_t duration )
-{
+/**
+ * @brief Inicializa el objeto de retardo con la duración especificada.
+ *
+ * Esta función inicializa un objeto de retardo, estableciendo su duración y 
+ * marcando el flag `running` como false. No inicia el conteo del retardo.
+ *
+ * @param delay Puntero al objeto de retardo.
+ * @param duration Duración del retardo en ticks.
+ */
+void delayInit(delay_t *delay, tick_t duration) {
 	assert(delay != NULL);
-	assert(delay->duration >=0);
+	assert(duration >= 0);
 	delay->duration = duration;
 	delay->running = false;
 }
 
-/*  delayRead debe verificar el estado del flag running.
-○ false, tomar marca de tiempo y cambiar running a ‘true’
-○ true, hacer la cuenta para saber si el tiempo del retardo se cumplió o no:
-‘marca de tiempo actual - marca de tiempo inicial es mayor o igual a duración
-del retardo’ y devolver un valor booleano que indique si el tiempo se cumplió o no.
-○ Cuando el tiempo se cumple se debe cambiar el flag running a false.*/
-
-bool_t delayRead( delay_t * delay ){
-
-	static bool_t retValue; // variable estatica interna
+/**
+ * @brief Lee y actualiza el estado del objeto de retardo.
+ *
+ * Si el retardo no está corriendo, toma una marca de tiempo y lo inicia. 
+ * Si está corriendo, verifica si ha alcanzado su duración y, de ser así, 
+ * reinicia el objeto y devuelve true.
+ *
+ * @param delay Puntero al objeto de retardo.
+ * @return true si el retardo ha alcanzado su duración, false en caso contrario.
+ */
+bool_t delayRead(delay_t *delay) {
+	static bool_t retValue; ///< Variable estática interna para retener el valor de retorno.
 	retValue = false;
-	assert(delay !=NULL);
+	assert(delay != NULL);
 	assert(delay->duration >= 0);
 
-	if (delay->running == false){
+	if (!delay->running) {
 		delay->startTime = HAL_GetTick();
 		delay->running = true;
-	}
-	else{
-		 if((HAL_GetTick()-delay->startTime) >= delay->duration){
-			 delay->running = false;
-			 retValue = true;
-		 }
+	} else {
+		if ((HAL_GetTick() - delay->startTime) >= delay->duration) {
+			delay->running = false;
+			retValue = true;
+		}
 	}
 	return retValue;
 }
 
-
-/*delayWrite permite cambiar el tiempo de duración de un delay existente*/
-
-void delayWrite( delay_t * delay, tick_t duration ){
+/**
+ * @brief Establece una nueva duración para el objeto de retardo.
+ *
+ * @param delay Puntero al objeto de retardo.
+ * @param duration Nueva duración en ticks.
+ */
+void delayWrite(delay_t *delay, tick_t duration) {
 	assert(delay != NULL);
-	assert(delay->duration >= 0);
-	delay->duration=duration;
+	assert(duration >= 0);
+	delay->duration = duration;
 }
 

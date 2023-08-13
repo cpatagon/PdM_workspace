@@ -1,31 +1,36 @@
-/*
- * API_spi.h
- *
- *  Created on: Aug 6, 2023
- *      Author: lgomez
+/**
+ * @file API_spi.h
+ * @brief Biblioteca para comunicación SPI con el chip MAX7219.
+ * @date Aug 6, 2023
+ * @author lgomez
  */
+
 #ifndef API_INC_API_SPI_H_
 #define API_INC_API_SPI_H_
 
+#include <stdint.h>   /**< Incluye tipos de definición estándar, como uint32_t. */
+#include <stdbool.h>  /**< Incluye el tipo booleano (bool). */
+#include "main.h"     /**< Archivo principal con configuraciones y prototipos relevantes. */
 
-#include <stdint.h>  /* esta para incluir los tipos uint32_t */
-#include <stdbool.h> /* esta para incluir los tipos bool (boolianos) */
-
-#include "main.h"
-#include "stdbool.h"
-
-
-// change the max7219 PORT and Pins below
+/** @brief Puerto GPIO definido para la comunicación con MAX7219. */
 #define maxport GPIOD
-#define data_Pin DIN_Pin //GPIO_PIN_5
-#define cs_Pin CS_Pin //GPIO_PIN_3
-#define clock_Pin CLK_Pin //GPIO_PIN_4
+/** @brief Pin de datos (DIN) para el MAX7219. */
+#define data_Pin DIN_Pin
+/** @brief Pin de selección de chip (CS) para el MAX7219. */
+#define cs_Pin CS_Pin
+/** @brief Pin de reloj (CLK) para el MAX7219. */
+#define clock_Pin CLK_Pin
 
-// Set the number of dot-matrix-displays being used
+/** @brief Número de módulos de matriz de puntos (dot-matrix-displays) en uso. */
 #define num 1
 
-// spi_write(0x09, 0x00);
+/**
+ * @brief Envia una dirección y un comando al dispositivo MAX7219.
+ *
+ * @param address Dirección o registro al que se escribirá el comando.
+ * @param cmd Comando o dato a ser escrito.
+ */
 void spi_write(uint8_t address, uint8_t cmd);
 
-
 #endif /* API_INC_API_SPI_H_ */
+

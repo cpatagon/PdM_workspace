@@ -1,29 +1,59 @@
-/*
- * API_delay2.h
+/**
+ * @file API_delay.h
+ * @brief Interfaz para manejar retardos (delays) de tiempo en STM32F4xx.
+ * @date 07-08-2023
+ * @author lgomez
  *
- *  Created on: 07-08-2023
- *      Author: lgomez
+ * Este archivo de cabecera define una interfaz para manejar retardos de tiempo.
+ * Se pueden inicializar, leer y ajustar los retardos según se requiera.
+ * La implementación utiliza la HAL (Hardware Abstraction Layer) y BSP (Board Support Package)
+ * específicos para la tarjeta STM32F4xx Nucleo-144.
  */
 
 #ifndef API_INC_API_DELAY_H_
 #define API_INC_API_DELAY_H_
 
-#include <stdint.h>  /* esta para incluir los tipos uint32_t */
-#include <stdbool.h> /* esta para incluir los tipos bool (boolianos) */
+#include <stdint.h>  // Para tipos de definición estándar, como uint32_t.
+#include <stdbool.h> // Para el tipo booleano (bool).
+#include "stm32f4xx_hal.h"          ///< HAL (Hardware Abstraction Layer) para STM32F4.
+#include "stm32f4xx_nucleo_144.h"   ///< BSP (Board Support Package) para Nucleo-144.
 
-#include "stm32f4xx_hal.h"  		/* <- HAL include */
-#include "stm32f4xx_nucleo_144.h" 	/* <- BSP include */
+/// Define el tipo 'tick_t' para manejar ticks de tiempo.
+typedef uint32_t tick_t;
 
-typedef uint32_t tick_t; // biblioteca se debe incluir para que esto compile
-typedef bool bool_t; // biblioteca se debe incluir para que esto compile
-typedef struct{
-		tick_t startTime;
-		tick_t duration;
-		bool_t running;
-	} delay_t;
+/// Define el tipo 'bool_t' para manejar valores booleanos.
+typedef bool bool_t;
 
-void delayInit( delay_t * delay, tick_t duration );
-bool_t delayRead( delay_t * delay );
-void delayWrite( delay_t * delay, tick_t duration );
+/// @brief Estructura para manejar un retardo de tiempo.
+typedef struct {
+	tick_t startTime; ///< Marca de tiempo cuando se inicia el retardo.
+	tick_t duration;  ///< Duración del retardo en ticks.
+	bool_t running;   ///< Indica si el retardo está activo o no.
+} delay_t;
 
-#endif /* API_INC_API_DELAY2_H_ */
+/**
+ * @brief Inicializa un objeto de retardo.
+ *
+ * @param delay Puntero al objeto delay a inicializar.
+ * @param duration Duración del retardo en ticks.
+ */
+void delayInit(delay_t *delay, tick_t duration);
+
+/**
+ * @brief Lee y actualiza el estado del objeto de retardo.
+ *
+ * @param delay Puntero al objeto delay a leer.
+ * @return true si el tiempo del retardo ha expirado, false en caso contrario.
+ */
+bool_t delayRead(delay_t *delay);
+
+/**
+ * @brief Establece una nueva duración para el retardo.
+ *
+ * @param delay Puntero al objeto delay a modificar.
+ * @param duration Nueva duración del retardo en ticks.
+ */
+void delayWrite(delay_t *delay, tick_t duration);
+
+#endif /* API_INC_API_DELAY_H_ */
+

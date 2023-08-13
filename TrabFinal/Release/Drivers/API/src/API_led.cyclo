@@ -1,4 +1,0 @@
-API_led.c:25:6:init_led	1
-API_led.c:32:6:clear_led	2
-API_led.c:38:6:lit_led	2
-API_led.c:47:6:update_led	2

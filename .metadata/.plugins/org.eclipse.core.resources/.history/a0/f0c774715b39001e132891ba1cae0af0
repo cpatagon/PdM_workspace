@@ -1,0 +1,42 @@
+/*
+ * API_delay2.h
+ *
+ *  Created on: 07-08-2023
+ *      Author: lgomez
+ *  
+ *  Descripción:
+ *  Este archivo de cabecera define una interfaz para manejar retardos (delays) de tiempo.
+ *  Se pueden inicializar, leer y ajustar los retardos según se requiera.
+ *  
+ *  Dependencias:
+ *  La implementación utiliza la HAL (Hardware Abstraction Layer) y BSP (Board Support Package) 
+ *  específicos para la tarjeta STM32F4xx Nucleo-144.
+ */
+
+#ifndef API_INC_API_DELAY_H_
+#define API_INC_API_DELAY_H_
+
+#include <stdint.h>  // Incluye tipos de definición estándar, como uint32_t.
+#include <stdbool.h> // Incluye el tipo booleano (bool).
+
+#include "stm32f4xx_hal.h"          // HAL (Hardware Abstraction Layer) para STM32F4.
+#include "stm32f4xx_nucleo_144.h"   // BSP (Board Support Package) para Nucleo-144.
+
+// Definiciones de tipos:
+typedef uint32_t tick_t; // Define el tipo 'tick_t' para manejar ticks de tiempo.
+typedef bool bool_t;  // Define el tipo 'bool_t' para manejar valores booleanos.
+
+// Estructura para manejar un retardo de tiempo.
+typedef struct {
+	tick_t startTime; // Marca de tiempo cuando se inicia el retardo.
+	tick_t duration;  // Duración del retardo en ticks.
+	bool_t running;   // Indica si el retardo está activo o no.
+} delay_t;
+
+// Prototipos de funciones:
+void delayInit(delay_t *delay, tick_t duration); // Inicializa un objeto de retardo.
+bool_t delayRead(delay_t *delay); // Lee y actualiza el estado del objeto de retardo.
+void delayWrite(delay_t *delay, tick_t duration); // Establece una nueva duración para el retardo.
+
+#endif /* API_INC_API_DELAY_H_ */
+
