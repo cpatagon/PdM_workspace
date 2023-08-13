@@ -178,6 +178,9 @@ int main(void) {
 		case SET_ini:
 			// En caso de estar en el estado inicial, iluminar la matriz LED de alguna forma específica.
 			lit_led();
+			if (i >= 4) {
+				i = 0;
+			}
 			break;
 
 		case FIRST:
@@ -203,9 +206,6 @@ int main(void) {
 				i = i + 1;
 				delayInit(&Delay1, level[i]);
 				flag = false;
-				if (i >= 4) {
-					i = 0;
-				}
 			}
 
 			break;
@@ -217,9 +217,6 @@ int main(void) {
 				i = i + 1;
 				delayInit(&Delay1, level[i]);
 				flag = false;
-				if (i >= 4) {
-					i = 0;
-				}
 			}
 			break;
 		}
