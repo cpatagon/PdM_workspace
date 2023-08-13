@@ -149,9 +149,13 @@ int main(void) {
 	estado = SET_ini;
 
 	tick_t speed_play;
-	tick_t level[] = { 1000, 800, 500, 300 };
-	int16_t i = 0;
-	speed_play = level[i];
+	tick_t level[] = { 1000, 800, 500, 400 };
+	int16_t level_min = 0;
+	int16_t level_i = level_min;
+	int16_t level_max;
+	level_max = (int16_t) (sizeof(level) / sizeof(level[0]));
+	// inicializamos contado;
+	speed_play = level[level_i];
 
 	//speed_play = (speed_play <= 200) ? 1000 : speed_play;
 	delayInit(&Delay1, speed_play);
@@ -182,8 +186,8 @@ int main(void) {
 
 		case FIRST:
 			// En el primer estado, mostrar el patrón o imagen 'A' en la matriz LED.
-			update_led(A);
 			flag = true;
+			update_led(A);
 			break;
 
 		case SECOND:
@@ -200,11 +204,15 @@ int main(void) {
 			// Si todo va bien, mostrar una cara sonriente en la matriz LED.
 			update_led(smileyFace);
 			if (flag) {
-				i = i + 1;
-				delayInit(&Delay1, level[i]);
 				flag = false;
-				if (i >= 4) {
-					i = 0;
+				if (level_i >= level_max) {
+					level_i = level_min;
+					speed_play = level[level_i];
+					delayInit(&Delay1, speed_play);
+				} else {
+					speed_play = level[level_i];
+					delayInit(&Delay1, speed_play);
+					level_i = level_i + 1;
 				}
 			}
 
@@ -214,11 +222,15 @@ int main(void) {
 			// En caso de perder muestra la imagen de fantasma
 			fantasma_led(&delayGhost);
 			if (flag) {
-				i = i + 1;
-				delayInit(&Delay1, level[i]);
 				flag = false;
-				if (i >= 4) {
-					i = 0;
+				if (level_i >= level_max) {
+					level_i = level_min;
+					speed_play = level[level_i];
+					delayInit(&Delay1, speed_play);
+				} else {
+					speed_play = level[level_i];
+					delayInit(&Delay1, speed_play);
+					level_i = level_i + 1;
 				}
 			}
 			break;

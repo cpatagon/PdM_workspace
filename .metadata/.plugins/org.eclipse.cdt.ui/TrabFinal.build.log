@@ -1,24 +1,10 @@
-23:21:09 **** Incremental Build of configuration Debug for project TrabFinal ****
+12:08:29 **** Incremental Build of configuration Debug for project TrabFinal ****
 make -j8 all 
-arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F429xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -I"/home/lgomez/maestriauba/SMT32/PdM_workspace/TrabFinal/Core/Src" -I"/home/lgomez/maestriauba/SMT32/PdM_workspace/TrabFinal/Drivers/API/inc" -I"/home/lgomez/maestriauba/SMT32/PdM_workspace/TrabFinal/Drivers/API/src" -I"/home/lgomez/maestriauba/SMT32/PdM_workspace/TrabFinal/Drivers/API" -I"/home/lgomez/maestriauba/SMT32/PdM_workspace/TrabFinal/Drivers/BSP" -I"/home/lgomez/maestriauba/SMT32/PdM_workspace/TrabFinal/Drivers/BSP/STM32F4xx_Nucleo_144" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
-In file included from ../Core/Src/main.c:27:
-/home/lgomez/maestriauba/SMT32/PdM_workspace/TrabFinal/Drivers/API/inc/API_spi.h:34:13: warning: 'MX_GPIO_Init' declared 'static' but never defined [-Wunused-function]
-   34 | static void MX_GPIO_Init(void);
-      |             ^~~~~~~~~~~~
-/home/lgomez/maestriauba/SMT32/PdM_workspace/TrabFinal/Drivers/API/inc/API_spi.h:35:13: warning: 'MX_SPI3_Init' declared 'static' but never defined [-Wunused-function]
-   35 | static void MX_SPI3_Init(void);
-      |             ^~~~~~~~~~~~
-arm-none-eabi-gcc -o "TrabFinal.elf" @"objects.list"   -mcpu=cortex-m4 -T"/home/lgomez/maestriauba/SMT32/PdM_workspace/TrabFinal/STM32F429ZITX_FLASH.ld" --specs=nosys.specs -Wl,-Map="TrabFinal.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
-Finished building target: TrabFinal.elf
- 
 arm-none-eabi-size   TrabFinal.elf 
-arm-none-eabi-objdump -h -S  TrabFinal.elf  > "TrabFinal.list"
    text	   data	    bss	    dec	    hex	filename
-  20432	    216	   3680	  24328	   5f08	TrabFinal.elf
+  20504	    216	   3680	  24400	   5f50	TrabFinal.elf
 Finished building: default.size.stdout
  
-Finished building: TrabFinal.list
- 
 
-23:21:10 Build Finished. 0 errors, 2 warnings. (took 1s.124ms)
+12:08:30 Build Finished. 0 errors, 0 warnings. (took 722ms)
 

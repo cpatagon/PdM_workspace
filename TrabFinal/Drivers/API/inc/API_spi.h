@@ -33,7 +33,6 @@ void spi_init(void);
  */
 static void MX_GPIO_Init(void);
 static void MX_SPI3_Init(void);
-
 /**
  * @brief Envia una dirección y un comando al dispositivo MAX7219.
  *
