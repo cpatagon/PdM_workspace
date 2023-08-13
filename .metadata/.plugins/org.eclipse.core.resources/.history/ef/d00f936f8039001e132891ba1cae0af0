@@ -1,0 +1,67 @@
+/**
+ * @file API_spi.c
+ * @brief Implementación de funciones para manejo manual del protocolo SPI en STM32F4xx.
+ * @date Aug 6, 2023
+ * @author lgomez
+ */
+
+#include <stdint.h>  ///< Incluye tipos de definición estándar, como uint32_t.
+#include <stdbool.h> ///< Incluye el tipo booleano (bool).
+#include "API_spi.h"
+
+/**
+ * @brief Envía un byte de datos utilizando el protocolo SPI manualmente.
+ *
+ * Esta función realiza operaciones bit a bit para transmitir un byte de datos
+ * utilizando el protocolo SPI. No utiliza las capacidades de hardware SPI del
+ * microcontrolador, sino que implementa la transmisión manualmente.
+ *
+ * @param byte Byte de datos que se desea enviar a través de SPI.
+ */
+void spi_write_byte(uint8_t byte) {
+	// Itera a través de cada uno de los 8 bits del byte proporcionado.
+	for (uint8_t i = 0; i < 8; i++) {
+		// Establece el pin del reloj (clock) en estado bajo.
+		HAL_GPIO_WritePin(maxport, clock_Pin, 0);
+
+		// Escribe el bit más significativo (MSB) del byte en el pin de datos (data).
+		HAL_GPIO_WritePin(maxport, data_Pin, byte & 0x80);
+
+		// Desplaza el byte a la izquierda para preparar el siguiente bit.
+		byte = byte << 1;
+
+		// Establece el pin del reloj (clock) en estado alto.
+		HAL_GPIO_WritePin(maxport, clock_Pin, 1);
+	}
+}
+
+/**
+ * @brief Envía una dirección y un comando utilizando el protocolo SPI manualmente.
+ *
+ * Esta función envía un byte de dirección seguido de un byte de comando utilizando
+ * el protocolo SPI. La función envía el par de bytes (dirección y comando)
+ * múltiples veces según el valor predefinido de 'num'.
+ *
+ * @param address Byte de dirección que se desea enviar a través de SPI.
+ * @param cmd Byte de comando que se desea enviar a través de SPI.
+ */
+void spi_write(uint8_t address, uint8_t cmd) {
+	// Establece el pin CS (Chip Select) en estado bajo.
+	HAL_GPIO_WritePin(maxport, cs_Pin, 0);
+
+	// Envía el par de bytes (dirección y comando) 'num' veces.
+	for (uint8_t i = 0; i < num; i++) {
+		// Envía el byte de dirección.
+		spi_write_byte(address);
+
+		// Envía el byte de comando.
+		spi_write_byte(cmd);
+	}
+
+	// Establece el pin CS (Chip Select) en estado bajo.
+	HAL_GPIO_WritePin(maxport, cs_Pin, 0);
+
+	// Establece el pin CS (Chip Select) en estado alto.
+	HAL_GPIO_WritePin(maxport, cs_Pin, 1);
+}
+
