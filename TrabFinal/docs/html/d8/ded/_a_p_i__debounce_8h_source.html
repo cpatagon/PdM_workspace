@@ -1,0 +1,116 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.17"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>JUEGO DE DESTREZA Y TIMING CON STM32 Y SPI: Fichero Fuente Drivers/API/inc/API_debounce.h</title>
+<link href="../../tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="../../jquery.js"></script>
+<script type="text/javascript" src="../../dynsections.js"></script>
+<link href="../../search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="../../search/searchdata.js"></script>
+<script type="text/javascript" src="../../search/search.js"></script>
+<link href="../../doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectlogo"><img alt="Logo" src="../../logo_cara.jpeg"/></td>
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">JUEGO DE DESTREZA Y TIMING CON STM32 Y SPI
+   &#160;<span id="projectnumber">0.1</span>
+   </div>
+   <div id="projectbrief">juego elaborado para el proyecto del ramo de Programación y Protocolos en Sistemas Embebidos</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Generado por Doxygen 1.8.17 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+var searchBox = new SearchBox("searchBox", "../../search",false,'Buscar');
+/* @license-end */
+</script>
+<script type="text/javascript" src="../../menudata.js"></script>
+<script type="text/javascript" src="../../menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(function() {
+  initMenu('../../',true,false,'search.php','Buscar');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */</script>
+<div id="main-nav"></div>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="../../dir_60925fc218da8ca7908795bf5f624060.html">Drivers</a></li><li class="navelem"><a class="el" href="../../dir_9c636daed8643477636976788dd786b5.html">API</a></li><li class="navelem"><a class="el" href="../../dir_3687d230d630a5ddd385a272243b3a24.html">inc</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div class="header">
+  <div class="headertitle">
+<div class="title">API_debounce.h</div>  </div>
+</div><!--header-->
+<div class="contents">
+<a href="../../d8/ded/_a_p_i__debounce_8h.html">Ir a la documentación de este archivo.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160; </div>
+<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="preprocessor">#ifndef API_INC_API_DEBOUNCE_H_</span></div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="preprocessor">#define API_INC_API_DEBOUNCE_H_</span></div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160; </div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="preprocessor">#include &lt;stdint.h&gt;</span>  </div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="preprocessor">#include &lt;stdbool.h&gt;</span> </div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="../../d7/d59/stm32f4xx__hal_8h.html">stm32f4xx_hal.h</a>&quot;</span>          </div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="../../da/d63/stm32f4xx__nucleo__144_8h.html">stm32f4xx_nucleo_144.h</a>&quot;</span>   </div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="../../d7/d7d/_a_p_i__delay_8h.html">API_delay.h</a>&quot;</span> </div>
+<div class="line"><a name="l00019"></a><span class="lineno"><a class="line" href="../../d8/ded/_a_p_i__debounce_8h.html#a451a7d205dfb766727eba25c6e61c687">   19</a></span>&#160;<span class="keyword">typedef</span> uint32_t <a class="code" href="../../d8/ded/_a_p_i__debounce_8h.html#a451a7d205dfb766727eba25c6e61c687">tick_t</a>; </div>
+<div class="line"><a name="l00020"></a><span class="lineno"><a class="line" href="../../d8/ded/_a_p_i__debounce_8h.html#a2b21255bd7f7192db778983b15089208">   20</a></span>&#160;<span class="keyword">typedef</span> <span class="keywordtype">bool</span> <a class="code" href="../../d8/ded/_a_p_i__debounce_8h.html#a2b21255bd7f7192db778983b15089208">bool_t</a>; </div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;<a class="code" href="../../d8/ded/_a_p_i__debounce_8h.html#a2b21255bd7f7192db778983b15089208">bool_t</a> <a class="code" href="../../d8/ded/_a_p_i__debounce_8h.html#ada13dbdbe1db700bf44255cc2cc02252">readKey</a>();</div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160; </div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;<span class="keywordtype">void</span> <a class="code" href="../../d8/ded/_a_p_i__debounce_8h.html#ac7e2402b734e7262b8b0f54b3ef2aa80">debounceFSM_init</a>(<a class="code" href="../../d4/d1d/structdelay__t.html">delay_t</a> *delayi);</div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160; </div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;<a class="code" href="../../d8/ded/_a_p_i__debounce_8h.html#a2b21255bd7f7192db778983b15089208">bool_t</a> <a class="code" href="../../d8/ded/_a_p_i__debounce_8h.html#aa026692fe4dbcf4681f9983959e53311">debounceFSM_update</a>(<span class="keywordtype">void</span>);</div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160; </div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;<span class="keywordtype">char</span>* <a class="code" href="../../d8/ded/_a_p_i__debounce_8h.html#a97d3cee57ccbfabf368ac8c17f6fe388">readStatus</a>();</div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160; </div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;<a class="code" href="../../d8/ded/_a_p_i__debounce_8h.html#a2b21255bd7f7192db778983b15089208">bool_t</a> <a class="code" href="../../d8/ded/_a_p_i__debounce_8h.html#a48a6aaf5794590cc5c20b06e0fa98d80">isbuttonPressed</a>(<span class="keywordtype">void</span>);</div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160; </div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;<span class="preprocessor">#endif </span><span class="comment">/* API_INC_API_DEBOUNCE_H_ */</span><span class="preprocessor"></span></div>
+</div><!-- fragment --></div><!-- contents -->
+<div class="ttc" id="a_a_p_i__debounce_8h_html_a48a6aaf5794590cc5c20b06e0fa98d80"><div class="ttname"><a href="../../d8/ded/_a_p_i__debounce_8h.html#a48a6aaf5794590cc5c20b06e0fa98d80">isbuttonPressed</a></div><div class="ttdeci">bool_t isbuttonPressed(void)</div><div class="ttdoc">Checks if the button is pressed.</div><div class="ttdef"><b>Definition:</b> API_debounce.c:102</div></div>
+<div class="ttc" id="a_a_p_i__debounce_8h_html_ac7e2402b734e7262b8b0f54b3ef2aa80"><div class="ttname"><a href="../../d8/ded/_a_p_i__debounce_8h.html#ac7e2402b734e7262b8b0f54b3ef2aa80">debounceFSM_init</a></div><div class="ttdeci">void debounceFSM_init(delay_t *delayi)</div><div class="ttdoc">Initializes the debounce FSM, setting the initial state.</div><div class="ttdef"><b>Definition:</b> API_debounce.c:58</div></div>
+<div class="ttc" id="astm32f4xx__nucleo__144_8h_html"><div class="ttname"><a href="../../da/d63/stm32f4xx__nucleo__144_8h.html">stm32f4xx_nucleo_144.h</a></div><div class="ttdoc">This file contains definitions for:</div></div>
+<div class="ttc" id="a_a_p_i__debounce_8h_html_a451a7d205dfb766727eba25c6e61c687"><div class="ttname"><a href="../../d8/ded/_a_p_i__debounce_8h.html#a451a7d205dfb766727eba25c6e61c687">tick_t</a></div><div class="ttdeci">uint32_t tick_t</div><div class="ttdef"><b>Definition:</b> API_debounce.h:19</div></div>
+<div class="ttc" id="astructdelay__t_html"><div class="ttname"><a href="../../d4/d1d/structdelay__t.html">delay_t</a></div><div class="ttdoc">Estructura para manejar un retardo de tiempo.</div><div class="ttdef"><b>Definition:</b> API_delay.h:28</div></div>
+<div class="ttc" id="a_a_p_i__debounce_8h_html_a97d3cee57ccbfabf368ac8c17f6fe388"><div class="ttname"><a href="../../d8/ded/_a_p_i__debounce_8h.html#a97d3cee57ccbfabf368ac8c17f6fe388">readStatus</a></div><div class="ttdeci">char * readStatus()</div><div class="ttdoc">Identifies if the edge is rising or falling.</div><div class="ttdef"><b>Definition:</b> API_debounce.c:82</div></div>
+<div class="ttc" id="astm32f4xx__hal_8h_html"><div class="ttname"><a href="../../d7/d59/stm32f4xx__hal_8h.html">stm32f4xx_hal.h</a></div><div class="ttdoc">This file contains all the functions prototypes for the HAL module driver.</div></div>
+<div class="ttc" id="a_a_p_i__debounce_8h_html_a2b21255bd7f7192db778983b15089208"><div class="ttname"><a href="../../d8/ded/_a_p_i__debounce_8h.html#a2b21255bd7f7192db778983b15089208">bool_t</a></div><div class="ttdeci">bool bool_t</div><div class="ttdef"><b>Definition:</b> API_debounce.h:20</div></div>
+<div class="ttc" id="a_a_p_i__debounce_8h_html_aa026692fe4dbcf4681f9983959e53311"><div class="ttname"><a href="../../d8/ded/_a_p_i__debounce_8h.html#aa026692fe4dbcf4681f9983959e53311">debounceFSM_update</a></div><div class="ttdeci">bool_t debounceFSM_update(void)</div><div class="ttdoc">Updates the debounce FSM. This function reads the inputs, evaluates the transition conditions accordi...</div><div class="ttdef"><b>Definition:</b> API_debounce.c:119</div></div>
+<div class="ttc" id="a_a_p_i__debounce_8h_html_ada13dbdbe1db700bf44255cc2cc02252"><div class="ttname"><a href="../../d8/ded/_a_p_i__debounce_8h.html#ada13dbdbe1db700bf44255cc2cc02252">readKey</a></div><div class="ttdeci">bool_t readKey()</div><div class="ttdoc">Reads an internal variable and returns whether the key was pressed. If the function returns true,...</div><div class="ttdef"><b>Definition:</b> API_debounce.c:71</div></div>
+<div class="ttc" id="a_a_p_i__delay_8h_html"><div class="ttname"><a href="../../d7/d7d/_a_p_i__delay_8h.html">API_delay.h</a></div><div class="ttdoc">Interfaz para manejar retardos (delays) de tiempo en STM32F4xx.</div></div>
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+Generado por &#160;<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="../../doxygen.png" alt="doxygen"/>
+</a> 1.8.17
+</small></address>
+</body>
+</html>

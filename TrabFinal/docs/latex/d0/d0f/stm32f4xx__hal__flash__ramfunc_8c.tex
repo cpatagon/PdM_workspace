@@ -1,0 +1,55 @@
+\hypertarget{stm32f4xx__hal__flash__ramfunc_8c}{}\doxysection{Referencia del Archivo Drivers/\+S\+T\+M32\+F4xx\+\_\+\+H\+A\+L\+\_\+\+Driver/\+Src/stm32f4xx\+\_\+hal\+\_\+flash\+\_\+ramfunc.c}
+\label{stm32f4xx__hal__flash__ramfunc_8c}\index{Drivers/STM32F4xx\_HAL\_Driver/Src/stm32f4xx\_hal\_flash\_ramfunc.c@{Drivers/STM32F4xx\_HAL\_Driver/Src/stm32f4xx\_hal\_flash\_ramfunc.c}}
+
+
+F\+L\+A\+SH R\+A\+M\+F\+U\+NC module driver. This file provides a F\+L\+A\+SH firmware functions which should be executed from internal S\+R\+AM.  
+
+
+{\ttfamily \#include \char`\"{}stm32f4xx\+\_\+hal.\+h\char`\"{}}\newline
+Dependencia gráfica adjunta para stm32f4xx\+\_\+hal\+\_\+flash\+\_\+ramfunc.\+c\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d4/d8b/stm32f4xx__hal__flash__ramfunc_8c__incl}
+\end{center}
+\end{figure}
+
+
+\doxysubsection{Descripción detallada}
+F\+L\+A\+SH R\+A\+M\+F\+U\+NC module driver. This file provides a F\+L\+A\+SH firmware functions which should be executed from internal S\+R\+AM. 
+
+\begin{DoxyAuthor}{Autor}
+M\+CD Application Team
+\begin{DoxyItemize}
+\item Stop/\+Start the flash interface while System Run
+\item Enable/\+Disable the flash sleep while System Run \begin{DoxyVerb}==============================================================================
+                  ##### APIs executed from Internal RAM #####
+==============================================================================
+[..]
+  *** ARM Compiler ***
+  --------------------
+  [..] RAM functions are defined using the toolchain options. 
+       Functions that are be executed in RAM should reside in a separate
+       source module. Using the 'Options for File' dialog you can simply change
+       the 'Code / Const' area of a module to a memory space in physical RAM.
+       Available memory areas are declared in the 'Target' tab of the 
+       Options for Target' dialog.
+
+  *** ICCARM Compiler ***
+  -----------------------
+  [..] RAM functions are defined using a specific toolchain keyword "__ramfunc".
+
+  *** GNU Compiler ***
+  --------------------
+  [..] RAM functions are defined using a specific toolchain attribute
+       "__attribute__((section(".RamFunc")))".\end{DoxyVerb}
+
+\end{DoxyItemize}
+\end{DoxyAuthor}
+\begin{DoxyAttention}{Atención}
+
+\end{DoxyAttention}
+Copyright (c) 2017 S\+T\+Microelectronics. All rights reserved.
+
+This software is licensed under terms that can be found in the L\+I\+C\+E\+N\+SE file in the root directory of this software component. If no L\+I\+C\+E\+N\+SE file comes with this software, it is provided A\+S-\/\+IS. 

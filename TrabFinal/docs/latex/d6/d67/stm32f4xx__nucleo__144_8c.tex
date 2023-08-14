@@ -1,0 +1,92 @@
+\hypertarget{stm32f4xx__nucleo__144_8c}{}\doxysection{Referencia del Archivo Drivers/\+B\+S\+P/\+S\+T\+M32\+F4xx\+\_\+\+Nucleo\+\_\+144/stm32f4xx\+\_\+nucleo\+\_\+144.c}
+\label{stm32f4xx__nucleo__144_8c}\index{Drivers/BSP/STM32F4xx\_Nucleo\_144/stm32f4xx\_nucleo\_144.c@{Drivers/BSP/STM32F4xx\_Nucleo\_144/stm32f4xx\_nucleo\_144.c}}
+
+
+This file provides set of firmware functions to manage\+:  
+
+
+{\ttfamily \#include \char`\"{}stm32f4xx\+\_\+nucleo\+\_\+144.\+h\char`\"{}}\newline
+Dependencia gráfica adjunta para stm32f4xx\+\_\+nucleo\+\_\+144.\+c\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d0/d6f/stm32f4xx__nucleo__144_8c__incl}
+\end{center}
+\end{figure}
+\doxysubsection*{defines}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{group___s_t_m32_f4_x_x___n_u_c_l_e_o__144___l_o_w___l_e_v_e_l___private___defines_ga2b6a4c950c75c3d26cf812f1d40acd9f}{\+\_\+\+\_\+\+S\+T\+M32\+F4xx\+\_\+\+N\+U\+C\+L\+E\+O\+\_\+\+B\+S\+P\+\_\+\+V\+E\+R\+S\+I\+O\+N\+\_\+\+M\+A\+IN}}~(0x01)
+\begin{DoxyCompactList}\small\item\em S\+T\+M32\+F4xx N\+U\+C\+L\+EO B\+SP Driver version number V1.\+0.\+3. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group___s_t_m32_f4_x_x___n_u_c_l_e_o__144___l_o_w___l_e_v_e_l___private___defines_gaf5257f7da4629f71e722144467bf7523}{\+\_\+\+\_\+\+S\+T\+M32\+F4xx\+\_\+\+N\+U\+C\+L\+E\+O\+\_\+\+B\+S\+P\+\_\+\+V\+E\+R\+S\+I\+O\+N\+\_\+\+S\+U\+B1}}~(0x00)
+\item 
+\#define \mbox{\hyperlink{group___s_t_m32_f4_x_x___n_u_c_l_e_o__144___l_o_w___l_e_v_e_l___private___defines_gae111709fa84404c57d317f2a5f19d54f}{\+\_\+\+\_\+\+S\+T\+M32\+F4xx\+\_\+\+N\+U\+C\+L\+E\+O\+\_\+\+B\+S\+P\+\_\+\+V\+E\+R\+S\+I\+O\+N\+\_\+\+S\+U\+B2}}~(0x03)
+\item 
+\#define \mbox{\hyperlink{group___s_t_m32_f4_x_x___n_u_c_l_e_o__144___l_o_w___l_e_v_e_l___private___defines_ga5dff22197ed127f01b382384d0332e3e}{\+\_\+\+\_\+\+S\+T\+M32\+F4xx\+\_\+\+N\+U\+C\+L\+E\+O\+\_\+\+B\+S\+P\+\_\+\+V\+E\+R\+S\+I\+O\+N\+\_\+\+RC}}~(0x00)
+\item 
+\#define {\bfseries \+\_\+\+\_\+\+S\+T\+M32\+F4xx\+\_\+\+N\+U\+C\+L\+E\+O\+\_\+\+B\+S\+P\+\_\+\+V\+E\+R\+S\+I\+ON}
+\item 
+\#define \mbox{\hyperlink{group___s_t_m32_f4_x_x___n_u_c_l_e_o__144___l_o_w___l_e_v_e_l___private___defines_ga799a94721d29661d31a1b2a3c5bd0f40}{S\+D\+\_\+\+D\+U\+M\+M\+Y\+\_\+\+B\+Y\+TE}}~0x\+FF
+\begin{DoxyCompactList}\small\item\em L\+I\+NK SD Card. \end{DoxyCompactList}\item 
+\#define {\bfseries S\+D\+\_\+\+N\+O\+\_\+\+R\+E\+S\+P\+O\+N\+S\+E\+\_\+\+E\+X\+P\+E\+C\+T\+ED}~0x80
+\end{DoxyCompactItemize}
+\doxysubsection*{Funciones}
+\begin{DoxyCompactItemize}
+\item 
+uint32\+\_\+t \mbox{\hyperlink{group___s_t_m32_f4_x_x___n_u_c_l_e_o__144___l_o_w___l_e_v_e_l___private___functions_ga65d13608f7010a8068614154cb142cd6}{B\+S\+P\+\_\+\+Get\+Version}} (void)
+\begin{DoxyCompactList}\small\item\em This method returns the S\+T\+M32\+F4xx N\+U\+C\+L\+EO B\+SP Driver revision. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group___s_t_m32_f4_x_x___n_u_c_l_e_o__144___l_o_w___l_e_v_e_l___private___functions_gab58a4f16a476a53653c5c400e3bed158}{B\+S\+P\+\_\+\+L\+E\+D\+\_\+\+Init}} (Led\+\_\+\+Type\+Def Led)
+\begin{DoxyCompactList}\small\item\em Configures L\+ED G\+P\+IO. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group___s_t_m32_f4_x_x___n_u_c_l_e_o__144___l_o_w___l_e_v_e_l___private___functions_ga8cb1d5b32557d492b8bf0f7109bd6d3f}{B\+S\+P\+\_\+\+L\+E\+D\+\_\+\+De\+Init}} (Led\+\_\+\+Type\+Def Led)
+\begin{DoxyCompactList}\small\item\em De\+Init L\+E\+Ds. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group___s_t_m32_f4_x_x___n_u_c_l_e_o__144___l_o_w___l_e_v_e_l___private___functions_gaee9c16b16384834c69efabf58f423d6f}{B\+S\+P\+\_\+\+L\+E\+D\+\_\+\+On}} (Led\+\_\+\+Type\+Def Led)
+\begin{DoxyCompactList}\small\item\em Turns selected L\+ED On. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group___s_t_m32_f4_x_x___n_u_c_l_e_o__144___l_o_w___l_e_v_e_l___private___functions_gaef268680154ca15c45066d64d41f9467}{B\+S\+P\+\_\+\+L\+E\+D\+\_\+\+Off}} (Led\+\_\+\+Type\+Def Led)
+\begin{DoxyCompactList}\small\item\em Turns selected L\+ED Off. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group___s_t_m32_f4_x_x___n_u_c_l_e_o__144___l_o_w___l_e_v_e_l___private___functions_ga1b9eabba7d498f41d6f16587ec0f9732}{B\+S\+P\+\_\+\+L\+E\+D\+\_\+\+Toggle}} (Led\+\_\+\+Type\+Def Led)
+\begin{DoxyCompactList}\small\item\em Toggles the selected L\+ED. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group___s_t_m32_f4_x_x___n_u_c_l_e_o__144___l_o_w___l_e_v_e_l___private___functions_gad31c8db50a71c1f6dbfe132d72ba0bc6}{B\+S\+P\+\_\+\+P\+B\+\_\+\+Init}} (Button\+\_\+\+Type\+Def Button, Button\+Mode\+\_\+\+Type\+Def Button\+Mode)
+\begin{DoxyCompactList}\small\item\em Configures Button G\+P\+IO and E\+X\+TI Line. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group___s_t_m32_f4_x_x___n_u_c_l_e_o__144___l_o_w___l_e_v_e_l___private___functions_gac1bd746e7f6037d50ca3784ebe05686e}{B\+S\+P\+\_\+\+P\+B\+\_\+\+De\+Init}} (Button\+\_\+\+Type\+Def Button)
+\begin{DoxyCompactList}\small\item\em Push Button De\+Init. \end{DoxyCompactList}\item 
+uint32\+\_\+t \mbox{\hyperlink{group___s_t_m32_f4_x_x___n_u_c_l_e_o__144___l_o_w___l_e_v_e_l___private___functions_ga8f0978b6cffda9c67266ddfdb3a0abf7}{B\+S\+P\+\_\+\+P\+B\+\_\+\+Get\+State}} (Button\+\_\+\+Type\+Def Button)
+\begin{DoxyCompactList}\small\item\em Returns the selected Button state. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{struct_g_p_i_o___type_def}{G\+P\+I\+O\+\_\+\+Type\+Def}} $\ast$ {\bfseries G\+P\+I\+O\+\_\+\+P\+O\+RT} \mbox{[}L\+E\+Dn\mbox{]} = \{L\+E\+D1\+\_\+\+G\+P\+I\+O\+\_\+\+P\+O\+RT, L\+E\+D2\+\_\+\+G\+P\+I\+O\+\_\+\+P\+O\+RT, L\+E\+D3\+\_\+\+G\+P\+I\+O\+\_\+\+P\+O\+RT\}
+\item 
+const uint16\+\_\+t {\bfseries G\+P\+I\+O\+\_\+\+P\+IN} \mbox{[}L\+E\+Dn\mbox{]} = \{L\+E\+D1\+\_\+\+P\+IN, L\+E\+D2\+\_\+\+P\+IN, L\+E\+D3\+\_\+\+P\+IN\}
+\item 
+\mbox{\hyperlink{struct_g_p_i_o___type_def}{G\+P\+I\+O\+\_\+\+Type\+Def}} $\ast$ {\bfseries B\+U\+T\+T\+O\+N\+\_\+\+P\+O\+RT} \mbox{[}B\+U\+T\+T\+O\+Nn\mbox{]} = \{U\+S\+E\+R\+\_\+\+B\+U\+T\+T\+O\+N\+\_\+\+G\+P\+I\+O\+\_\+\+P\+O\+RT\}
+\item 
+const uint16\+\_\+t {\bfseries B\+U\+T\+T\+O\+N\+\_\+\+P\+IN} \mbox{[}B\+U\+T\+T\+O\+Nn\mbox{]} = \{\mbox{\hyperlink{group___s_t_m32_f4_x_x___n_u_c_l_e_o__144___l_o_w___l_e_v_e_l___b_u_t_t_o_n_ga34df6915e3013d6a0c74131d3946b659}{U\+S\+E\+R\+\_\+\+B\+U\+T\+T\+O\+N\+\_\+\+P\+IN}}\}
+\item 
+const uint8\+\_\+t {\bfseries B\+U\+T\+T\+O\+N\+\_\+\+I\+R\+Qn} \mbox{[}B\+U\+T\+T\+O\+Nn\mbox{]} = \{U\+S\+E\+R\+\_\+\+B\+U\+T\+T\+O\+N\+\_\+\+E\+X\+T\+I\+\_\+\+I\+R\+Qn\}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Descripción detallada}
+This file provides set of firmware functions to manage\+: 
+
+\begin{DoxyAuthor}{Autor}
+M\+CD Application Team
+\begin{DoxyItemize}
+\item L\+E\+Ds and push-\/button available on S\+T\+M32\+F4\+X\+X-\/\+Nucleo-\/144 Kit from S\+T\+Microelectronics
+\item L\+CD, joystick and micro\+SD available on Adafruit 1.\+8" T\+FT L\+CD shield (reference ID 802)
+\end{DoxyItemize}
+\end{DoxyAuthor}
+\begin{DoxyAttention}{Atención}
+
+\end{DoxyAttention}
+\doxysubsubsection*{\begin{center}\copyright{} C\+O\+P\+Y\+R\+I\+G\+H\+T(c) 2016 S\+T\+Microelectronics\end{center} }
+
+Redistribution and use in source and binary forms, with or without modification, are permitted provided that the following conditions are met\+:
+\begin{DoxyEnumerate}
+\item Redistributions of source code must retain the above copyright notice, this list of conditions and the following disclaimer.
+\item Redistributions in binary form must reproduce the above copyright notice, this list of conditions and the following disclaimer in the documentation and/or other materials provided with the distribution.
+\item Neither the name of S\+T\+Microelectronics nor the names of its contributors may be used to endorse or promote products derived from this software without specific prior written permission.
+\end{DoxyEnumerate}
+
+T\+H\+IS S\+O\+F\+T\+W\+A\+RE IS P\+R\+O\+V\+I\+D\+ED BY T\+HE C\+O\+P\+Y\+R\+I\+G\+HT H\+O\+L\+D\+E\+RS A\+ND C\+O\+N\+T\+R\+I\+B\+U\+T\+O\+RS \char`\"{}\+A\+S I\+S\char`\"{} A\+ND A\+NY E\+X\+P\+R\+E\+SS OR I\+M\+P\+L\+I\+ED W\+A\+R\+R\+A\+N\+T\+I\+ES, I\+N\+C\+L\+U\+D\+I\+NG, B\+UT N\+OT L\+I\+M\+I\+T\+ED TO, T\+HE I\+M\+P\+L\+I\+ED W\+A\+R\+R\+A\+N\+T\+I\+ES OF M\+E\+R\+C\+H\+A\+N\+T\+A\+B\+I\+L\+I\+TY A\+ND F\+I\+T\+N\+E\+SS F\+OR A P\+A\+R\+T\+I\+C\+U\+L\+AR P\+U\+R\+P\+O\+SE A\+RE D\+I\+S\+C\+L\+A\+I\+M\+ED. IN NO E\+V\+E\+NT S\+H\+A\+LL T\+HE C\+O\+P\+Y\+R\+I\+G\+HT H\+O\+L\+D\+ER OR C\+O\+N\+T\+R\+I\+B\+U\+T\+O\+RS BE L\+I\+A\+B\+LE F\+OR A\+NY D\+I\+R\+E\+CT, I\+N\+D\+I\+R\+E\+CT, I\+N\+C\+I\+D\+E\+N\+T\+AL, S\+P\+E\+C\+I\+AL, E\+X\+E\+M\+P\+L\+A\+RY, OR C\+O\+N\+S\+E\+Q\+U\+E\+N\+T\+I\+AL D\+A\+M\+A\+G\+ES (I\+N\+C\+L\+U\+D\+I\+NG, B\+UT N\+OT L\+I\+M\+I\+T\+ED TO, P\+R\+O\+C\+U\+R\+E\+M\+E\+NT OF S\+U\+B\+S\+T\+I\+T\+U\+TE G\+O\+O\+DS OR S\+E\+R\+V\+I\+C\+ES; L\+O\+SS OF U\+SE, D\+A\+TA, OR P\+R\+O\+F\+I\+TS; OR B\+U\+S\+I\+N\+E\+SS I\+N\+T\+E\+R\+R\+U\+P\+T\+I\+ON) H\+O\+W\+E\+V\+ER C\+A\+U\+S\+ED A\+ND ON A\+NY T\+H\+E\+O\+RY OF L\+I\+A\+B\+I\+L\+I\+TY, W\+H\+E\+T\+H\+ER IN C\+O\+N\+T\+R\+A\+CT, S\+T\+R\+I\+CT L\+I\+A\+B\+I\+L\+I\+TY, OR T\+O\+RT (I\+N\+C\+L\+U\+D\+I\+NG N\+E\+G\+L\+I\+G\+E\+N\+CE OR O\+T\+H\+E\+R\+W\+I\+SE) A\+R\+I\+S\+I\+NG IN A\+NY W\+AY O\+UT OF T\+HE U\+SE OF T\+H\+IS S\+O\+F\+T\+W\+A\+RE, E\+V\+EN IF A\+D\+V\+I\+S\+ED OF T\+HE P\+O\+S\+S\+I\+B\+I\+L\+I\+TY OF S\+U\+CH D\+A\+M\+A\+GE. 
