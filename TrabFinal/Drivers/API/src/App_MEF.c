@@ -31,7 +31,7 @@ void inicializarMEF(void) {
  * @param delay Puntero al tipo de dato delay_t que define la estructura de retardo.
  * @return State_MEF_t: El estado actualizado de la MEF.
  */
-State_MEF_t actualizarMEF(delay_t *delay) {
+State_MEF_t update_MEF(delay_t *delay) {
 	assert(&estadoMEF!=NULL); /**< Asegura que el puntero al estado actual no es nulo. */
 
 	switch (estadoMEF) {

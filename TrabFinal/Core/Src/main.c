@@ -49,10 +49,10 @@
 #define SPEED2 800
 #define SPEED3 500
 #define SPEED4 400
-
 #define SCORE_INI 0 //valor nivel inicial
 #define LEVEL_MIN 0 // valor de la posición del nivel inicial
-
+#define LEVEL_MAX 3 // valor de la posición del nivel inicial
+#define SCORE_MAX 5
 /* USER CODE END PD */
 
 /* Private macro -------------------------------------------------------------*/
@@ -74,12 +74,20 @@ PCD_HandleTypeDef hpcd_USB_OTG_FS;
 
 /* USER CODE BEGIN PV */
 
-// inicializamos las variables que contentran los tiempos 
-delay_t Delay_play;  // tiempo de transición entre estados 
+// inicializamos las variables que contentran los tiempos
+delay_t Delay_play;  // tiempo de transición entre estados
 delay_t DelayDebounce; // tiempo de antirrebote del boton
-delay_t delayGhost; // tiempo trancicion en animacion fantasma 
+delay_t delayGhost; // tiempo trancicion en animacion fantasma
 
 State_MEF_t estado;
+
+const tick_t level[] = { SPEED1, SPEED2, SPEED3, SPEED4 };
+//	const int16_t level_min = LEVEL_MIN; // establecemos una variable con el valor minimo de velocidad del juego
+int16_t score = SCORE_INI;  // inicializamos el contador de puntos del juego
+int16_t level_i = LEVEL_MIN; //  establecemos ese valor minimo al valor con el que partirá el juego
+int16_t level_max; // establecemos una  variable que definira la posición de la maxima velocidad
+tick_t speed_play;
+bool_t flag;
 
 /* USER CODE END PV */
 
@@ -97,6 +105,13 @@ static void MX_USB_OTG_FS_PCD_Init(void);
 /* Private user code ---------------------------------------------------------*/
 /* USER CODE BEGIN 0 */
 
+/**
+ * @brief Level Speed Udate Function
+ * @param posición del nivel de velocidad
+ * @retval debuelve el valor del nivel de velocidad  actualizado
+ */
+static int16_t level_speed_update(int16_t);
+
 /* USER CODE END 0 */
 
 /**
@@ -105,6 +120,14 @@ static void MX_USB_OTG_FS_PCD_Init(void);
  */
 int main(void) {
 	/* USER CODE BEGIN 1 */
+
+	/**
+	 * Inicializamos algunas  variables
+	 * */
+
+	estado = SET_ini;              // Definimos el estado inicial
+	speed_play = level[LEVEL_MIN]; // inicializamos la velocidad con el nivel minimo;
+	flag = true;
 
 	/* USER CODE END 1 */
 
@@ -117,8 +140,8 @@ int main(void) {
 
 	// Inicializar la estructura de delay 'DelayDebounce,', 'delayGhost' y 'Delay3'
 	// con un tiempo específico definido por 'TIME_DEBOUNCE' y'TIMEGHOST y 'TIME3'
-	// Esto configura un timer, que es un contador para manejar delays. del antirrebote 
-	// y de la transisión de fantasmas 
+	// Esto configura un timer, que es un contador para manejar delays. del antirrebote
+	// y de la transisión de fantasmas
 	delayInit(&DelayDebounce, TIME_DEBOUNCE);
 	delayInit(&delayGhost, TIMEGHOST);
 
@@ -133,6 +156,14 @@ int main(void) {
 	// funcione adecuadamente con base en la lógica de la MEF.
 	inicializarMEF();
 
+	/**
+	 * Inicializamos algunas funciones
+	 * */
+	spi_init(); //inicialmos la libreria API_spi
+	init_led(); // iniciamos la API_led
+
+	delayInit(&Delay_play, speed_play); // definimos la velocidad de Delay como minimo
+
 	/* USER CODE END Init */
 
 	/* Configure the system clock */
@@ -143,7 +174,6 @@ int main(void) {
 	/* USER CODE END SysInit */
 
 	/* Initialize all configured peripherals */
-	spi_init();
 
 	MX_ETH_Init();
 	MX_USART3_UART_Init();
@@ -151,30 +181,8 @@ int main(void) {
 
 	/* USER CODE BEGIN 2 */
 
-	init_led();
-
-	estado = SET_ini;
-
-	tick_t speed_play;
-	/*velocidad del juego que va de menos a mayor velocidad
-	 * a medida que se avanza en el juego
-	 */
-
-	tick_t level[] = { SPEED1, SPEED2, SPEED3, SPEED3 };
-	int16_t score = SCORE_INI;  // inicializamos el contador de puntos del juego
-	int16_t level_min = LEVEL_MIN; // establecemos una variable con el valor minimo de velocidad del juego 
-	int16_t level_i = level_min; //  establecemos ese valor minimo al valor con el que partirá el juego
-	int16_t level_max; // establecemos una  variable que definira la posición de la maxima velocidad 
-	level_max = (int16_t) (sizeof(level) / sizeof(level[0])); // calculamos el numero maximo de velocidaddes que con que establecio el juego
-	// inicializamos la velocidad con el nivel minimo;
-	speed_play = level[level_i];
-
-	delayInit(&Delay_play, speed_play);
-
-	bool_t flag;
-
-	flag = true;
-
+	// calculamos el numero maximo de velocidaddes que con que establecio el juego
+	//level_max = (int16_t) (sizeof(level) / sizeof(level[0]));
 	/* USER CODE END 2 */
 
 	/* Infinite loop */
@@ -186,22 +194,23 @@ int main(void) {
 		/* USER CODE BEGIN 3 */
 
 		// Actualizar la Máquina de Estados Finitos y obtener el estado actual.
-		estado = actualizarMEF(&Delay_play);
-		if (score > 5) {
-			score = 0;
+		estado = update_MEF(&Delay_play);
+		// Para evitar que el puntaje se revalse
+		if (score > SCORE_MAX) {
+			score = SCORE_INI;
 		}
 
 		// Dependiendo del estado actual, mostrar un patrón o imagen específica en la matriz LED.
 		switch (estado) {
 		case SET_ini:
-			// En caso de estar en el estado inicial, iluminar la matriz LED de alguna forma específica.
+			flag = true;
+			// Iluminar la matriz LED  incdicando el puntaje obtenido
 			update_led(levels_led[score]);
 			//lit_led();
 			break;
 
 		case FIRST:
 			// En el primer estado, mostrar el patrón o imagen 'A' en la matriz LED.
-			flag = true;
 			update_led(A);
 			break;
 
@@ -220,37 +229,22 @@ int main(void) {
 			update_led(smileyFace);
 			if (flag) {
 				flag = false;
-				score = score + 1;
-				if (level_i >= level_max) {
-					level_i = level_min;
-					speed_play = level[level_i];
-					delayInit(&Delay_play, speed_play);
-					//score = 0;
-				} else {
-					speed_play = level[level_i];
-					delayInit(&Delay_play, speed_play);
-					level_i = level_i + 1;
-				}
+				score = score + 1;          // incrementa el puntaje en uno
+				level_i = level_i + 1;       // incrementa nivel de la velocidad
+				level_i = level_speed_update(level_i); // incrementa la velocidad del juego
 			}
 
 			break;
 
 		case BAD:
-			// En caso de perder muestra la imagen de fantasma
+			// En caso de perder, muestra la imagen de fantasma
 			fantasma_led(&delayGhost);
+			// entramos a recetaer valor del SCORE a 0 porque se pierde partida
 			if (flag) {
-				score = 0;
 				flag = false;
-				if (level_i >= level_max) {
-					level_i = level_min;
-					speed_play = level[level_i];
-					delayInit(&Delay_play, speed_play);
-					//score = 0;
-				} else {
-					speed_play = level[level_i];
-					delayInit(&Delay_play, speed_play);
-					level_i = level_i + 1;
-				}
+				score = SCORE_INI;          // elimina el puntaje obtenido
+				level_i = level_i + 1; // incrementa el nivel para incrementar la velocidad
+				level_i = level_speed_update(level_i);
 			}
 			break;
 		}
@@ -258,7 +252,6 @@ int main(void) {
 		/* USER CODE END 3 */
 	}
 }
-
 /**
  * @brief System Clock Configuration
  * @retval None
@@ -414,6 +407,21 @@ static void MX_USB_OTG_FS_PCD_Init(void) {
 }
 
 /* USER CODE BEGIN 4 */
+
+/**
+ * @brief Level Speed Udate Function
+ * @param posición del nivel de velocidad
+ * @retval devuelde el valor de la posición de la velocidad actualizada
+ */
+static int16_t level_speed_update(int16_t level_n) {
+	if (level_n > LEVEL_MAX) {
+		level_n = LEVEL_MIN;
+	}
+	speed_play = level[level_n];
+	delayInit(&Delay_play, speed_play); // define velocidad de juego}
+
+	return level_n;
+}
 
 /* USER CODE END 4 */
 

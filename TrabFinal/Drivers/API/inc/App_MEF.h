@@ -35,13 +35,13 @@ void inicializarMEF(void);
  * @param delay Puntero a la estructura de retardo.
  * @return State_MEF_t: El estado actualizado de la MEF.
  */
-State_MEF_t actualizarMEF(delay_t *delay);
+State_MEF_t update_MEF(delay_t *delay);
 
 /**
  * @brief Lee y retorna el estado actual de la MEF.
- * 
+ *
  * @note Esta función está actualmente incompleta y debe ser implementada.
- * 
+ *
  * @return char*: Una representación en cadena del estado actual.
  */
 //char *Lee_estado();

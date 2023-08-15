@@ -17,6 +17,7 @@
  */
 static void MX_GPIO_Init(void);
 static void MX_SPI3_Init(void);
+static void spi_write_byte(uint8_t);
 
 void spi_init(void) {
 	MX_GPIO_Init();
@@ -30,12 +31,12 @@ SPI_HandleTypeDef hspi3;
  *
  * Esta función realiza operaciones bit a bit para transmitir un byte de datos
  * utilizando el protocolo SPI. No utiliza las capacidades de hardware SPI del
- * microcontrolador, sino que implementa la transmisión manualmente.
+ * microcontrolador (HAL), sino que implementa la transmisión manualmente.
  *
  * @param byte Byte de datos que se desea enviar a través de SPI.
  *
  */
-void spi_write_byte(uint8_t byte) {
+static void spi_write_byte(uint8_t byte) {
 	// Itera a través de cada uno de los 8 bits del byte proporcionado.
 	for (uint8_t i = 0; i < 8; i++) {
 		// Establece el pin del reloj (clock) en estado bajo.

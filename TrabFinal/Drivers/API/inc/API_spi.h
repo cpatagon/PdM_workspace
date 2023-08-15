@@ -21,8 +21,12 @@
 /** @brief Pin de reloj (CLK) para el MAX7219. */
 #define clock_Pin CLK_Pin
 
-/** @brief Número de módulos de matriz de puntos (dot-matrix-displays) en uso. */
+/** @brief Número de módulos de matriz de puntos en uso . */
 #define num 1
+/**
+ * @brief funcion  de inicialización de protocolo SPI
+ *
+ */
 
 void spi_init(void);
 
