@@ -39,13 +39,13 @@ Idx Name          Size      VMA       LMA       File off  Algn
                   CONTENTS, READONLY, DEBUGGING, OCTETS
  17 .debug_macro  00026435  00000000  00000000  000382f8  2**0
                   CONTENTS, READONLY, DEBUGGING, OCTETS
- 18 .debug_line   000127f9  00000000  00000000  0005e72d  2**0
+ 18 .debug_line   000127fd  00000000  00000000  0005e72d  2**0
                   CONTENTS, READONLY, DEBUGGING, OCTETS
- 19 .debug_str    000df04e  00000000  00000000  00070f26  2**0
+ 19 .debug_str    000df04e  00000000  00000000  00070f2a  2**0
                   CONTENTS, READONLY, DEBUGGING, OCTETS
- 20 .comment      00000050  00000000  00000000  0014ff74  2**0
+ 20 .comment      00000050  00000000  00000000  0014ff78  2**0
                   CONTENTS, READONLY
- 21 .debug_frame  000049c4  00000000  00000000  0014ffc4  2**2
+ 21 .debug_frame  000049c4  00000000  00000000  0014ffc8  2**2
                   CONTENTS, READONLY, DEBUGGING, OCTETS
 
 Disassembly of section .text:
@@ -3071,13 +3071,14 @@ static void spi_write_byte(uint8_t byte) {
  800145c:	73fb      	strb	r3, [r7, #15]
  800145e:	e01b      	b.n	8001498 <spi_write_byte+0x48>
 		// Establece el pin del reloj (clock) en estado bajo.
+		// que establece el envio de un byte
 		HAL_GPIO_WritePin(maxport, clock_Pin, ESTADO_BAJO);
  8001460:	2200      	movs	r2, #0
  8001462:	f44f 5100 	mov.w	r1, #8192	; 0x2000
  8001466:	4810      	ldr	r0, [pc, #64]	; (80014a8 <spi_write_byte+0x58>)
  8001468:	f001 f8be 	bl	80025e8 <HAL_GPIO_WritePin>
-
-		// Escribe el bit más significativo (MSB) del byte en el pin de datos (data).
+		// De acuerdo a los requerimientos del CI, envia el bit más
+		// significativo (MSB) del byte en el pin de datos (MOSI).
 		HAL_GPIO_WritePin(maxport, data_Pin, byte & BITSIGNIFICATIVO);
  800146c:	79fb      	ldrb	r3, [r7, #7]
  800146e:	f023 037f 	bic.w	r3, r3, #127	; 0x7f
@@ -3086,14 +3087,15 @@ static void spi_write_byte(uint8_t byte) {
  8001476:	f44f 5180 	mov.w	r1, #4096	; 0x1000
  800147a:	480b      	ldr	r0, [pc, #44]	; (80014a8 <spi_write_byte+0x58>)
  800147c:	f001 f8b4 	bl	80025e8 <HAL_GPIO_WritePin>
-
 		// Desplaza el byte a la izquierda para preparar el siguiente bit.
+		// Esto permite que se envie del bit mas siginificativo al menos
+		// significativo de acuerdo a CI empleado
 		byte = byte << BITSIGUIENTE;
  8001480:	79fb      	ldrb	r3, [r7, #7]
  8001482:	005b      	lsls	r3, r3, #1
  8001484:	71fb      	strb	r3, [r7, #7]
-
-		// Establece el pin del reloj (clock) en estado alto.
+		// Establece el pin del reloj (clock) en estado alto
+		// indicando que se finalizaso el envio del bit
 		HAL_GPIO_WritePin(maxport, clock_Pin, ESTADO_ALTO);
  8001486:	2201      	movs	r2, #1
  8001488:	f44f 5100 	mov.w	r1, #8192	; 0x2000
@@ -3116,7 +3118,7 @@ static void spi_write_byte(uint8_t byte) {
  80014a8:	40020c00 	.word	0x40020c00
 
 080014ac <spi_write>:
- * múltiples veces según el valor predefinido de 'num'.
+ * de pantallas led). se recomienda ver el datasheet de CI MAX7219
  *
  * @param address Byte de dirección que se desea enviar a través de SPI.
  * @param cmd Byte de comando que se desea enviar a través de SPI.
@@ -3132,23 +3134,29 @@ void spi_write(uint8_t address, uint8_t cmd) {
  80014ba:	71bb      	strb	r3, [r7, #6]
 	assert_param(address != NULL);
 	assert_param(cmd != NULL);
-	// Establece el pin CS (Chip Select) en estado bajo.
+	/** Establece el pin CS (Chip Select) en estado bajo para
+	 * iniciar la comunicación con el dispositivo esclavo conectado
+	 * puerto cs_PIn mediante el cable CS. */
 	HAL_GPIO_WritePin(maxport, cs_Pin, ESTADO_BAJO);
  80014bc:	2200      	movs	r2, #0
  80014be:	f44f 6100 	mov.w	r1, #2048	; 0x800
  80014c2:	4812      	ldr	r0, [pc, #72]	; (800150c <spi_write+0x60>)
  80014c4:	f001 f890 	bl	80025e8 <HAL_GPIO_WritePin>
-	// Envía el par de bytes (dirección y comando) 'num' veces.
+	/** Envía el par de bytes (dirección y comando) 'num' veces
+	 * en caso de tener multiples pantallas. */
 	for (uint8_t i = 0; i < num; i++) {
  80014c8:	2300      	movs	r3, #0
  80014ca:	73fb      	strb	r3, [r7, #15]
  80014cc:	e00a      	b.n	80014e4 <spi_write+0x38>
-		// Envía el byte de dirección.
+		/* Envía el byte de dirección al CI del LED que indica que hacer.
+		 estos puden ser de encender una determinada fila a definir
+		 el brillo de los led */
 		spi_write_byte(address);
  80014ce:	79fb      	ldrb	r3, [r7, #7]
  80014d0:	4618      	mov	r0, r3
  80014d2:	f7ff ffbd 	bl	8001450 <spi_write_byte>
-		// Envía el byte de comando.
+		/* Envía el byte de comando que debe hacer en la direccion anterio.
+		 * donde indica lo que se va hacer en esa posición de memoria */
 		spi_write_byte(cmd);
  80014d6:	79bb      	ldrb	r3, [r7, #6]
  80014d8:	4618      	mov	r0, r3
@@ -3161,13 +3169,15 @@ void spi_write(uint8_t address, uint8_t cmd) {
  80014e6:	2b00      	cmp	r3, #0
  80014e8:	d0f1      	beq.n	80014ce <spi_write+0x22>
 	}
-	// Establece el pin CS (Chip Select) en estado bajo.
+	/** Establece el pin CS (Chip Select) en estado bajo indicando
+	 * indicando que se terminará con  la comunicación */
 	HAL_GPIO_WritePin(maxport, cs_Pin, ESTADO_BAJO);
  80014ea:	2200      	movs	r2, #0
  80014ec:	f44f 6100 	mov.w	r1, #2048	; 0x800
  80014f0:	4806      	ldr	r0, [pc, #24]	; (800150c <spi_write+0x60>)
  80014f2:	f001 f879 	bl	80025e8 <HAL_GPIO_WritePin>
-	// Establece el pin CS (Chip Select) en estado alto.
+	/* Establece el pin CS (Chip Select) en estado alto dejando al
+	 * esclavo liberado */
 	HAL_GPIO_WritePin(maxport, cs_Pin, ESTADO_ALTO);
  80014f6:	2201      	movs	r2, #1
  80014f8:	f44f 6100 	mov.w	r1, #2048	; 0x800
