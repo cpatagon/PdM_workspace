@@ -24,7 +24,7 @@ void spi_init(void) {
 	MX_SPI3_Init();
 }
 
-SPI_HandleTypeDef hspi3;
+static SPI_HandleTypeDef hspi3;
 
 /**
  * @brief Envía un byte de datos utilizando el protocolo SPI manualmente.

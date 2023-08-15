@@ -24,7 +24,7 @@
 #include <stdint.h>  /* esta para incluir los tipos uint32_t */
 #include "main.h"
 #include "string.h" // permite que el codigo corra sin error
-#include "API_spi.h"
+// #include "API_spi.h" // se incluira e inicializará  en API_led.c
 
 #include "API_delay.h"
 #include "API_led.h"
@@ -41,8 +41,7 @@
 /* USER CODE BEGIN PD */
 
 //#define TIME2 300
-#define TIME_DEBOUNCE 40 //tiempo antirrebote del boton
-#define TIMEGHOST 200
+//#define TIME_DEBOUNCE 40 //tiempo antirrebote del boton
 
 // velocidades del juego mientras mas pequeño el valor mas rapido es
 #define SPEED1 1000
@@ -76,17 +75,15 @@ PCD_HandleTypeDef hpcd_USB_OTG_FS;
 
 // inicializamos las variables que contentran los tiempos
 delay_t Delay_play;  // tiempo de transición entre estados
-delay_t DelayDebounce; // tiempo de antirrebote del boton
-delay_t delayGhost; // tiempo trancicion en animacion fantasma
+//delay_t DelayDebounce; // tiempo de antirrebote del boton
 
 State_MEF_t estado;
 
-const tick_t level[] = { SPEED1, SPEED2, SPEED3, SPEED4 };
-//	const int16_t level_min = LEVEL_MIN; // establecemos una variable con el valor minimo de velocidad del juego
+const tick_t level[] = { SPEED1, SPEED2, SPEED3, SPEED4 }; // distintas velocidades de la partida de acuerdo al nivel del juego
 int16_t score = SCORE_INI;  // inicializamos el contador de puntos del juego
 int16_t level_i = LEVEL_MIN; //  establecemos ese valor minimo al valor con el que partirá el juego
 int16_t level_max; // establecemos una  variable que definira la posición de la maxima velocidad
-tick_t speed_play;
+tick_t speed_play; // creamos variable que tendra la velocidad de la partida
 bool_t flag;
 
 /* USER CODE END PV */
@@ -142,24 +139,22 @@ int main(void) {
 	// con un tiempo específico definido por 'TIME_DEBOUNCE' y'TIMEGHOST y 'TIME3'
 	// Esto configura un timer, que es un contador para manejar delays. del antirrebote
 	// y de la transisión de fantasmas
-	delayInit(&DelayDebounce, TIME_DEBOUNCE);
-	delayInit(&delayGhost, TIMEGHOST);
+	//delayInit(&DelayDebounce, TIME_DEBOUNCE);
 
 	// Inicializar la Máquina de Estados Finitos (FSM) para el antirrebote.
 	// Esta función maneja el comportamiento de botones o
 	// interruptores para asegurarse  de que una sola pulsación
 	// sea leída como una, y no múltiples debido al efecto rebote.
-	debounceFSM_init(&DelayDebounce);
-
+	//debounceFSM_init(&DelayDebounce);
 	// Inicializar la Máquina de Estados Finitos (MEF) del juego.
 	// Esta función configura el estado inicial y prepare todo para que el programa
 	// funcione adecuadamente con base en la lógica de la MEF.
-	inicializarMEF();
+	init_MEF();
 
 	/**
 	 * Inicializamos algunas funciones
 	 * */
-	spi_init(); //inicialmos la libreria API_spi
+	//spi_init(); //inicialmos la libreria API_spi
 	init_led(); // iniciamos la API_led
 
 	delayInit(&Delay_play, speed_play); // definimos la velocidad de Delay como minimo
@@ -238,7 +233,7 @@ int main(void) {
 
 		case BAD:
 			// En caso de perder, muestra la imagen de fantasma
-			fantasma_led(&delayGhost);
+			fantasma_led();
 			// entramos a recetaer valor del SCORE a 0 porque se pierde partida
 			if (flag) {
 				flag = false;

@@ -27,7 +27,7 @@ typedef enum {
 /**
  * @brief Inicializa la máquina de estados finitos.
  */
-void inicializarMEF(void);
+void init_MEF(void);
 
 /**
  * @brief Actualiza el estado actual de la MEF basado en entradas y condiciones.

@@ -1,7 +1,7 @@
 LaunchTargetManager/org.eclipse.launchbar.core.launchTargetType.local,Local/arch=x86_64
 LaunchTargetManager/org.eclipse.launchbar.core.launchTargetType.local,Local/name=Local
 LaunchTargetManager/org.eclipse.launchbar.core.launchTargetType.local,Local/os=linux
-configDescList=org.eclipse.launchbar.core.descriptorType.default\:PdM-main,org.eclipse.launchbar.core.descriptorType.default\:New_configuration (2),org.eclipse.cdt.dsf.gdb.gdbRemotedescriptorType\:PW4_Excercise2 Configuration,org.eclipse.cdt.dsf.gdb.gdbRemotedescriptorType\:PW4_Excercise2 Configuration (1),org.eclipse.launchbar.core.descriptorType.default\:PdM-main (1),org.eclipse.launchbar.core.descriptorType.default\:PdM_workspace-main Default,org.eclipse.launchbar.core.descriptorType.default\:New_configuration,org.eclipse.launchbar.core.descriptorType.default\:New_configuration (1),org.eclipse.cdt.dsf.gdb.gdbRemotedescriptorType\:TP,org.eclipse.cdt.dsf.gdb.gdbRemotedescriptorType\:TrabFinal
+configDescList=org.eclipse.launchbar.core.descriptorType.default\:PdM-main,org.eclipse.launchbar.core.descriptorType.default\:New_configuration (2),org.eclipse.cdt.dsf.gdb.gdbRemotedescriptorType\:PW4_Excercise2 Configuration,org.eclipse.cdt.dsf.gdb.gdbRemotedescriptorType\:PW4_Excercise2 Configuration (1),org.eclipse.launchbar.core.descriptorType.default\:PdM-main (1),org.eclipse.launchbar.core.descriptorType.default\:PdM_workspace-main Default,org.eclipse.launchbar.core.descriptorType.default\:New_configuration,org.eclipse.launchbar.core.descriptorType.default\:New_configuration (1),org.eclipse.cdt.dsf.gdb.gdbRemotedescriptorType\:TP,org.eclipse.cdt.dsf.gdb.gdbRemotedescriptorType\:Ej1_pushButton Debug,org.eclipse.cdt.dsf.gdb.gdbRemotedescriptorType\:Practica01_p2,org.eclipse.cdt.dsf.gdb.gdbRemotedescriptorType\:Practica02_p1,org.eclipse.cdt.dsf.gdb.gdbRemotedescriptorType\:TrabFinal
 eclipse.preferences.version=1
 org.eclipse.cdt.dsf.gdb.gdbRemotedescriptorType\:1.Ejemplo_led\ Debug/activeLaunchMode=run
 org.eclipse.cdt.dsf.gdb.gdbRemotedescriptorType\:1.Ejemplo_led\ Debug/activeLaunchTarget=null\:---
@@ -45,7 +45,7 @@ org.eclipse.cdt.dsf.gdb.gdbRemotedescriptorType\:SPI_SD/activeLaunchMode=run
 org.eclipse.cdt.dsf.gdb.gdbRemotedescriptorType\:TP/activeLaunchMode=debug
 org.eclipse.cdt.dsf.gdb.gdbRemotedescriptorType\:TP/activeLaunchTarget=null\:---
 org.eclipse.cdt.dsf.gdb.gdbRemotedescriptorType\:TrabFinal\ (1)/activeLaunchMode=debug
-org.eclipse.cdt.dsf.gdb.gdbRemotedescriptorType\:TrabFinal/activeLaunchMode=run
+org.eclipse.cdt.dsf.gdb.gdbRemotedescriptorType\:TrabFinal/activeLaunchMode=debug
 org.eclipse.launchbar.core.descriptorType.default\:New_configuration\ (1)/activeLaunchMode=run
 org.eclipse.launchbar.core.descriptorType.default\:New_configuration\ (1)/activeLaunchTarget=org.eclipse.launchbar.core.launchTargetType.local\:Local
 org.eclipse.launchbar.core.descriptorType.default\:New_configuration/activeLaunchMode=run

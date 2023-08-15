@@ -12,14 +12,21 @@
 #include "App_MEF.h"
 #include "API_debounce.h"
 
+#define TIME_DEBOUNCE 40 //tiempo antirrebote del boton
+
 /** Variable que mantiene el estado actual de la MEF. */
-State_MEF_t estadoMEF;
+static State_MEF_t estadoMEF;
+
+static delay_t DelayDebounce; // tiempo de antirrebote del boton
 
 /**
  * @brief Función para inicializar la MEF. Configura el estado inicial.
  */
-void inicializarMEF(void) {
+void init_MEF(void) {
 	estadoMEF = SET_ini; /**< Configura el estado inicial. */
+	// Inicializar la Máquina de Estados Finitos (FSM) para el antirrebote.
+	delayInit(&DelayDebounce, TIME_DEBOUNCE);
+	debounceFSM_init(&DelayDebounce);
 	return;
 }
 ;

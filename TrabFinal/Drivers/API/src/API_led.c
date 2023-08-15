@@ -9,6 +9,8 @@
 #include "API_spi.h"
 #include "API_delay.h"
 
+#define TIMEGHOST 200
+
 uint8_t led_address[] = { 0x01, 0x02, 0x03, 0x04, 0x05, 0x06, 0x07, 0x08 };
 uint8_t clear[] = { 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00 };
 uint8_t matrizEncendida[] = { 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF };
@@ -18,6 +20,8 @@ static uint8_t ghost2[] = { 0xFC, 0xFE, 0x6F, 0xEB, 0xEF, 0x6B, 0xfE, 0xFC };
 static uint8_t ghost3[] = { 0xFC, 0xFE, 0x7F, 0xEB, 0xEF, 0x6B, 0xfE, 0xFC };
 static uint8_t ghost4[] = { 0xFC, 0xFE, 0x7F, 0xFB, 0xEF, 0x6B, 0xfE, 0xFC };
 static uint8_t ghost5[] = { 0xFC, 0xFE, 0x7B, 0xFF, 0xEF, 0x6B, 0xfE, 0xFC };
+
+delay_t delayGhost; // tiempo trancicion en animacion fantasma
 
 /**
  * @brief Enumeración para definir estados o modos de operación de los LEDs.
@@ -33,20 +37,6 @@ typedef enum {
 State_GHOT_t tipo_fantasma = GHOST1;
 
 /**
- * @brief Inicializa los LEDs.
- *
- * Esta función configura los LEDs y establece sus valores iniciales.
- */
-void init_led(void) {
-	spi_write(0x09, 0x00);       // No decoding.
-	spi_write(0x0b, 0x07);       // Scan limit = 8 LEDs.
-	spi_write(0x0c, 0x01);       // Power down = 0, normal mode = 1.
-	spi_write(0x0f, 0x00);       // No test display.
-	clear_led();
-	spi_write(0x0a, 0x05);       // Brightness intensity.
-}
-
-/**
  * @brief Limpia o apaga todos los LEDs.
  *
  * Esta función recorre todas las direcciones de LEDs y les asigna el valor de apagado.
@@ -55,6 +45,22 @@ void clear_led(void) {
 	for (int j = 0; j < 8; j++) {
 		spi_write(led_address[j], clear[j]);
 	}
+}
+
+/**
+ * @brief Inicializa los LEDs.
+ *
+ * Esta función configura los LEDs y establece sus valores iniciales.
+ */
+void init_led(void) {
+	delayInit(&delayGhost, TIMEGHOST);
+	spi_init();                  // inicializa api_spi
+	spi_write(0x09, 0x00);       // No decoding.
+	spi_write(0x0b, 0x07);       // Scan limit = 8 LEDs.
+	spi_write(0x0c, 0x01);       // Power down = 0, normal mode = 1.
+	spi_write(0x0f, 0x00);       // No test display.
+	clear_led();
+	spi_write(0x0a, 0x05);       // Brightness intensity.
 }
 
 /**
@@ -104,41 +110,41 @@ void fila_led(uint8_t fila) {
  *
  * @param vacio
  */
-void fantasma_led(delay_t *delay_Ghost) {
+void fantasma_led() {
 	switch (tipo_fantasma) {
 	case (GHOST1):
 		update_led(ghost1);
-		if (delayRead(delay_Ghost)) {
+		if (delayRead(&delayGhost)) {
 			tipo_fantasma = GHOST2;
 		}
 		break;
 	case (GHOST2):
 		update_led(ghost2);
-		if (delayRead(delay_Ghost)) {
+		if (delayRead(&delayGhost)) {
 			tipo_fantasma = GHOST3;
 		}
 		break;
 	case (GHOST3):
 		update_led(ghost3);
-		if (delayRead(delay_Ghost)) {
+		if (delayRead(&delayGhost)) {
 			tipo_fantasma = GHOST4;
 		}
 		break;
 	case (GHOST4):
 		update_led(ghost4);
-		if (delayRead(delay_Ghost)) {
+		if (delayRead(&delayGhost)) {
 			tipo_fantasma = GHOST5;
 		}
 		break;
 	case (GHOST5):
 		update_led(ghost5);
-		if (delayRead(delay_Ghost)) {
+		if (delayRead(&delayGhost)) {
 			tipo_fantasma = GHOST6;
 		}
 		break;
 	case (GHOST6):
 		update_led(ghost5);
-		if (delayRead(delay_Ghost)) {
+		if (delayRead(&delayGhost)) {
 			tipo_fantasma = GHOST1;
 		}
 		break;

@@ -96,6 +96,6 @@ void fila_led(uint8_t fila);
  *
  * @param vacio
  */
-void fantasma_led(delay_t *delay_Ghost);
+void fantasma_led(void);
 
 #endif /* API_INC_API_LED_H_ */
