@@ -1,0 +1,101 @@
+\hypertarget{_a_p_i__spi_8c}{}\doxysection{Referencia del Archivo Drivers/\+A\+P\+I/src/\+A\+P\+I\+\_\+spi.c}
+\label{_a_p_i__spi_8c}\index{Drivers/API/src/API\_spi.c@{Drivers/API/src/API\_spi.c}}
+
+
+Implementación de funciones para manejo manual del protocolo S\+PI en S\+T\+M32\+F4xx.  
+
+
+{\ttfamily \#include $<$stdint.\+h$>$}\newline
+{\ttfamily \#include $<$stdbool.\+h$>$}\newline
+{\ttfamily \#include \char`\"{}A\+P\+I\+\_\+spi.\+h\char`\"{}}\newline
+Dependencia gráfica adjunta para A\+P\+I\+\_\+spi.\+c\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{_a_p_i__spi_8c__incl}
+\end{center}
+\end{figure}
+\doxysubsection*{defines}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{_a_p_i__spi_8c_aed076139f54c6d6c24991c35d1398bc9}{E\+S\+T\+A\+D\+O\+\_\+\+A\+L\+TO}}~1
+\begin{DoxyCompactList}\small\item\em $<$ Incluye el tipo booleano (bool). \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{_a_p_i__spi_8c_a8cfa7659d44400b9f03c6cedc4870198}\label{_a_p_i__spi_8c_a8cfa7659d44400b9f03c6cedc4870198}} 
+\#define {\bfseries E\+S\+T\+A\+D\+O\+\_\+\+B\+A\+JO}~0
+\item 
+\mbox{\Hypertarget{_a_p_i__spi_8c_abe0568f71f13ba1162b171911659160d}\label{_a_p_i__spi_8c_abe0568f71f13ba1162b171911659160d}} 
+\#define {\bfseries B\+I\+T\+S\+I\+G\+N\+I\+F\+I\+C\+A\+T\+I\+VO}~0x80
+\item 
+\mbox{\Hypertarget{_a_p_i__spi_8c_ab61f85b68ce8f1fcb6cca0c64085d4f0}\label{_a_p_i__spi_8c_ab61f85b68ce8f1fcb6cca0c64085d4f0}} 
+\#define {\bfseries B\+I\+T\+S\+I\+G\+U\+I\+E\+N\+TE}~1
+\end{DoxyCompactItemize}
+\doxysubsection*{Funciones}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{_a_p_i__spi_8c_ae909944aa85ae98323073c628be541aa}{spi\+\_\+init}} (void)
+\begin{DoxyCompactList}\small\item\em funcion de inicialización de protocolo S\+PI \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{_a_p_i__spi_8c_a88a613c3d12cd2e7eca4168dc52d206c}{spi\+\_\+write}} (uint8\+\_\+t address, uint8\+\_\+t cmd)
+\begin{DoxyCompactList}\small\item\em Envía una dirección y un comando utilizando el protocolo S\+PI manualmente. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Descripción detallada}
+Implementación de funciones para manejo manual del protocolo S\+PI en S\+T\+M32\+F4xx. 
+
+\begin{DoxyDate}{Fecha}
+Aug 6, 2023 
+\end{DoxyDate}
+\begin{DoxyAuthor}{Autor}
+lgomez 
+\end{DoxyAuthor}
+
+
+\doxysubsection{Documentación de los \textquotesingle{}defines\textquotesingle{}}
+\mbox{\Hypertarget{_a_p_i__spi_8c_aed076139f54c6d6c24991c35d1398bc9}\label{_a_p_i__spi_8c_aed076139f54c6d6c24991c35d1398bc9}} 
+\index{API\_spi.c@{API\_spi.c}!ESTADO\_ALTO@{ESTADO\_ALTO}}
+\index{ESTADO\_ALTO@{ESTADO\_ALTO}!API\_spi.c@{API\_spi.c}}
+\doxysubsubsection{\texorpdfstring{ESTADO\_ALTO}{ESTADO\_ALTO}}
+{\footnotesize\ttfamily \#define E\+S\+T\+A\+D\+O\+\_\+\+A\+L\+TO~1}
+
+
+
+$<$ Incluye el tipo booleano (bool). 
+
+$<$ Incluye tipos de definición estándar, como uint32\+\_\+t. 
+
+\doxysubsection{Documentación de las funciones}
+\mbox{\Hypertarget{_a_p_i__spi_8c_ae909944aa85ae98323073c628be541aa}\label{_a_p_i__spi_8c_ae909944aa85ae98323073c628be541aa}} 
+\index{API\_spi.c@{API\_spi.c}!spi\_init@{spi\_init}}
+\index{spi\_init@{spi\_init}!API\_spi.c@{API\_spi.c}}
+\doxysubsubsection{\texorpdfstring{spi\_init()}{spi\_init()}}
+{\footnotesize\ttfamily void spi\+\_\+init (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+funcion de inicialización de protocolo S\+PI 
+
+\mbox{\Hypertarget{_a_p_i__spi_8c_a88a613c3d12cd2e7eca4168dc52d206c}\label{_a_p_i__spi_8c_a88a613c3d12cd2e7eca4168dc52d206c}} 
+\index{API\_spi.c@{API\_spi.c}!spi\_write@{spi\_write}}
+\index{spi\_write@{spi\_write}!API\_spi.c@{API\_spi.c}}
+\doxysubsubsection{\texorpdfstring{spi\_write()}{spi\_write()}}
+{\footnotesize\ttfamily void spi\+\_\+write (\begin{DoxyParamCaption}\item[{uint8\+\_\+t}]{address,  }\item[{uint8\+\_\+t}]{cmd }\end{DoxyParamCaption})}
+
+
+
+Envía una dirección y un comando utilizando el protocolo S\+PI manualmente. 
+
+Envia una dirección y un comando al dispositivo M\+A\+X7219.
+
+Esta función envía un byte de dirección seguido de un byte de comando utilizando el protocolo S\+PI. La función envía el par de bytes (dirección y comando) múltiples veces según el valor predefinido de \textquotesingle{}num\textquotesingle{} (numero de pantallas led). se recomienda ver el datasheet de CI M\+A\+X7219
+
+
+\begin{DoxyParams}{Parámetros}
+{\em address} & Byte de dirección que se desea enviar a través de S\+PI. \\
+\hline
+{\em cmd} & Byte de comando que se desea enviar a través de S\+PI. \\
+\hline
+\end{DoxyParams}
+Establece el pin CS (Chip Select) en estado bajo para iniciar la comunicación con el dispositivo esclavo conectado puerto cs\+\_\+\+P\+In mediante el cable CS.
+
+Envía el par de bytes (dirección y comando) \textquotesingle{}num\textquotesingle{} veces en caso de tener multiples pantallas.
+
+Establece el pin CS (Chip Select) en estado bajo indicando indicando que se terminará con la comunicación

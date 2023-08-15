@@ -1,0 +1,167 @@
+\hypertarget{_a_p_i__delay_8h}{}\doxysection{Referencia del Archivo Drivers/\+A\+P\+I/inc/\+A\+P\+I\+\_\+delay.h}
+\label{_a_p_i__delay_8h}\index{Drivers/API/inc/API\_delay.h@{Drivers/API/inc/API\_delay.h}}
+
+
+Interfaz para manejar retardos (delays) de tiempo en S\+T\+M32\+F4xx.  
+
+
+{\ttfamily \#include $<$stdint.\+h$>$}\newline
+{\ttfamily \#include $<$stdbool.\+h$>$}\newline
+{\ttfamily \#include \char`\"{}stm32f4xx\+\_\+hal.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}stm32f4xx\+\_\+nucleo\+\_\+144.\+h\char`\"{}}\newline
+Dependencia gráfica adjunta para A\+P\+I\+\_\+delay.\+h\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{_a_p_i__delay_8h__incl}
+\end{center}
+\end{figure}
+Gráfico de los archivos que directa o indirectamente incluyen a este archivo\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{_a_p_i__delay_8h__dep__incl}
+\end{center}
+\end{figure}
+\doxysubsection*{Estructuras de datos}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{structdelay__t}{delay\+\_\+t}}
+\begin{DoxyCompactList}\small\item\em Estructura para manejar un retardo de tiempo. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{typedefs}
+\begin{DoxyCompactItemize}
+\item 
+typedef uint32\+\_\+t \mbox{\hyperlink{_a_p_i__delay_8h_a451a7d205dfb766727eba25c6e61c687}{tick\+\_\+t}}
+\begin{DoxyCompactList}\small\item\em $<$ B\+SP (Board Support Package) para Nucleo-\/144. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{_a_p_i__delay_8h_a2b21255bd7f7192db778983b15089208}\label{_a_p_i__delay_8h_a2b21255bd7f7192db778983b15089208}} 
+typedef bool \mbox{\hyperlink{_a_p_i__delay_8h_a2b21255bd7f7192db778983b15089208}{bool\+\_\+t}}
+\begin{DoxyCompactList}\small\item\em Define el tipo \textquotesingle{}bool\+\_\+t\textquotesingle{} para manejar valores booleanos. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Funciones}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{_a_p_i__delay_8h_a6613427678149cadd03bac79e79475f3}{delay\+Init}} (\mbox{\hyperlink{structdelay__t}{delay\+\_\+t}} $\ast$delay, \mbox{\hyperlink{_a_p_i__debounce_8h_a451a7d205dfb766727eba25c6e61c687}{tick\+\_\+t}} duration)
+\begin{DoxyCompactList}\small\item\em Inicializa un objeto de retardo. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{_a_p_i__debounce_8h_a2b21255bd7f7192db778983b15089208}{bool\+\_\+t}} \mbox{\hyperlink{_a_p_i__delay_8h_afecaa44225b94ebfb354e4b6b7e6e9ce}{delay\+Read}} (\mbox{\hyperlink{structdelay__t}{delay\+\_\+t}} $\ast$delay)
+\begin{DoxyCompactList}\small\item\em Lee y actualiza el estado del objeto de retardo. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{_a_p_i__delay_8h_a2af041ac01bb3db8ecf87ce371fac67d}{delay\+Write}} (\mbox{\hyperlink{structdelay__t}{delay\+\_\+t}} $\ast$delay, \mbox{\hyperlink{_a_p_i__debounce_8h_a451a7d205dfb766727eba25c6e61c687}{tick\+\_\+t}} duration)
+\begin{DoxyCompactList}\small\item\em Establece una nueva duración para el retardo. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Descripción detallada}
+Interfaz para manejar retardos (delays) de tiempo en S\+T\+M32\+F4xx. 
+
+\begin{DoxyDate}{Fecha}
+07-\/08-\/2023 
+\end{DoxyDate}
+\begin{DoxyAuthor}{Autor}
+lgomez
+\end{DoxyAuthor}
+Este archivo de cabecera define una interfaz para manejar retardos de tiempo. Se pueden inicializar, leer y ajustar los retardos según se requiera. La implementación utiliza la H\+AL (Hardware Abstraction Layer) y B\+SP (Board Support Package) específicos para la tarjeta S\+T\+M32\+F4xx Nucleo-\/144. 
+
+\doxysubsection{Documentación de los \textquotesingle{}typedefs\textquotesingle{}}
+\mbox{\Hypertarget{_a_p_i__delay_8h_a451a7d205dfb766727eba25c6e61c687}\label{_a_p_i__delay_8h_a451a7d205dfb766727eba25c6e61c687}} 
+\index{API\_delay.h@{API\_delay.h}!tick\_t@{tick\_t}}
+\index{tick\_t@{tick\_t}!API\_delay.h@{API\_delay.h}}
+\doxysubsubsection{\texorpdfstring{tick\_t}{tick\_t}}
+{\footnotesize\ttfamily typedef uint32\+\_\+t \mbox{\hyperlink{_a_p_i__debounce_8h_a451a7d205dfb766727eba25c6e61c687}{tick\+\_\+t}}}
+
+
+
+$<$ B\+SP (Board Support Package) para Nucleo-\/144. 
+
+$<$ H\+AL (Hardware Abstraction Layer) para S\+T\+M32\+F4. Define el tipo \textquotesingle{}tick\+\_\+t\textquotesingle{} para manejar ticks de tiempo. 
+
+\doxysubsection{Documentación de las funciones}
+\mbox{\Hypertarget{_a_p_i__delay_8h_a6613427678149cadd03bac79e79475f3}\label{_a_p_i__delay_8h_a6613427678149cadd03bac79e79475f3}} 
+\index{API\_delay.h@{API\_delay.h}!delayInit@{delayInit}}
+\index{delayInit@{delayInit}!API\_delay.h@{API\_delay.h}}
+\doxysubsubsection{\texorpdfstring{delayInit()}{delayInit()}}
+{\footnotesize\ttfamily void delay\+Init (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structdelay__t}{delay\+\_\+t}} $\ast$}]{delay,  }\item[{\mbox{\hyperlink{_a_p_i__debounce_8h_a451a7d205dfb766727eba25c6e61c687}{tick\+\_\+t}}}]{duration }\end{DoxyParamCaption})}
+
+
+
+Inicializa un objeto de retardo. 
+
+
+\begin{DoxyParams}{Parámetros}
+{\em delay} & Puntero al objeto delay a inicializar. \\
+\hline
+{\em duration} & Duración del retardo en ticks.\\
+\hline
+\end{DoxyParams}
+Inicializa un objeto de retardo.
+
+$<$ H\+AL (Hardware Abstraction Layer) para S\+T\+M32\+F4.
+
+Inicializa el objeto de retardo con la duración especificada.
+
+Esta función inicializa un objeto de retardo, estableciendo su duración y marcando el flag {\ttfamily running} como false. No inicia el conteo del retardo.
+
+
+\begin{DoxyParams}{Parámetros}
+{\em delay} & Puntero al objeto de retardo. \\
+\hline
+{\em duration} & Duración del retardo en ticks. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{_a_p_i__delay_8h_afecaa44225b94ebfb354e4b6b7e6e9ce}\label{_a_p_i__delay_8h_afecaa44225b94ebfb354e4b6b7e6e9ce}} 
+\index{API\_delay.h@{API\_delay.h}!delayRead@{delayRead}}
+\index{delayRead@{delayRead}!API\_delay.h@{API\_delay.h}}
+\doxysubsubsection{\texorpdfstring{delayRead()}{delayRead()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{_a_p_i__debounce_8h_a2b21255bd7f7192db778983b15089208}{bool\+\_\+t}} delay\+Read (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structdelay__t}{delay\+\_\+t}} $\ast$}]{delay }\end{DoxyParamCaption})}
+
+
+
+Lee y actualiza el estado del objeto de retardo. 
+
+
+\begin{DoxyParams}{Parámetros}
+{\em delay} & Puntero al objeto delay a leer. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Devuelve}
+true si el tiempo del retardo ha expirado, false en caso contrario.
+\end{DoxyReturn}
+Si el retardo no está corriendo, toma una marca de tiempo y lo inicia. Si está corriendo, verifica si ha alcanzado su duración y, de ser así, reinicia el objeto y devuelve true.
+
+
+\begin{DoxyParams}{Parámetros}
+{\em delay} & Puntero al objeto de retardo. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Devuelve}
+true si el retardo ha alcanzado su duración, false en caso contrario. 
+\end{DoxyReturn}
+$<$ Variable estática interna para retener el valor de retorno.Gráfico de llamadas para esta función\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=262pt]{_a_p_i__delay_8h_afecaa44225b94ebfb354e4b6b7e6e9ce_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{_a_p_i__delay_8h_a2af041ac01bb3db8ecf87ce371fac67d}\label{_a_p_i__delay_8h_a2af041ac01bb3db8ecf87ce371fac67d}} 
+\index{API\_delay.h@{API\_delay.h}!delayWrite@{delayWrite}}
+\index{delayWrite@{delayWrite}!API\_delay.h@{API\_delay.h}}
+\doxysubsubsection{\texorpdfstring{delayWrite()}{delayWrite()}}
+{\footnotesize\ttfamily void delay\+Write (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structdelay__t}{delay\+\_\+t}} $\ast$}]{delay,  }\item[{\mbox{\hyperlink{_a_p_i__debounce_8h_a451a7d205dfb766727eba25c6e61c687}{tick\+\_\+t}}}]{duration }\end{DoxyParamCaption})}
+
+
+
+Establece una nueva duración para el retardo. 
+
+
+\begin{DoxyParams}{Parámetros}
+{\em delay} & Puntero al objeto delay a modificar. \\
+\hline
+{\em duration} & Nueva duración del retardo en ticks.\\
+\hline
+\end{DoxyParams}
+Establece una nueva duración para el retardo.
+
+
+\begin{DoxyParams}{Parámetros}
+{\em delay} & Puntero al objeto de retardo. \\
+\hline
+{\em duration} & Nueva duración en ticks. \\
+\hline
+\end{DoxyParams}

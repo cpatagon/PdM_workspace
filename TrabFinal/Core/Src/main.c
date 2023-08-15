@@ -75,7 +75,7 @@ PCD_HandleTypeDef hpcd_USB_OTG_FS;
 delay_t Delay_play;  // tiempo de transición entre estados
 State_MEF_t estado;
 
-const tick_t level[] = { SPEED1, SPEED2, SPEED3, SPEED4 }; // distintas velocidades de la partida de acuerdo al nivel del juego
+const static tick_t level[] = { SPEED1, SPEED2, SPEED3, SPEED4 }; // distintas velocidades de la partida de acuerdo al nivel del juego
 static int16_t score = SCORE_INI; // inicializamos el contador de puntos del juego
 static int16_t level_i = LEVEL_MIN; //  establecemos ese valor minimo al valor con el que partirá el juego
 static tick_t speed_play; // creamos variable que tendra la velocidad de la partida

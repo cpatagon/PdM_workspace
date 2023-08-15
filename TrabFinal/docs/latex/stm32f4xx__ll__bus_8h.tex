@@ -1,0 +1,42 @@
+\hypertarget{stm32f4xx__ll__bus_8h}{}\doxysection{Referencia del Archivo Drivers/\+S\+T\+M32\+F4xx\+\_\+\+H\+A\+L\+\_\+\+Driver/\+Inc/stm32f4xx\+\_\+ll\+\_\+bus.h}
+\label{stm32f4xx__ll__bus_8h}\index{Drivers/STM32F4xx\_HAL\_Driver/Inc/stm32f4xx\_ll\_bus.h@{Drivers/STM32F4xx\_HAL\_Driver/Inc/stm32f4xx\_ll\_bus.h}}
+
+
+Header file of B\+US LL module.  
+
+
+{\ttfamily \#include \char`\"{}stm32f4xx.\+h\char`\"{}}\newline
+Dependencia gráfica adjunta para stm32f4xx\+\_\+ll\+\_\+bus.\+h\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=217pt]{stm32f4xx__ll__bus_8h__incl}
+\end{center}
+\end{figure}
+
+
+\doxysubsection{Descripción detallada}
+Header file of B\+US LL module. 
+
+\begin{DoxyAuthor}{Autor}
+M\+CD Application Team \begin{DoxyVerb}                    ##### RCC Limitations #####
+==============================================================================
+  [..]
+    A delay between an RCC peripheral clock enable and the effective peripheral
+    enabling should be taken into account in order to manage the peripheral read/write
+    from/to registers.
+    (+) This delay depends on the peripheral mapping.
+      (++) AHB & APB peripherals, 1 dummy read is necessary
+
+  [..]
+    Workarounds:
+    (#) For AHB & APB peripherals, a dummy read to the peripheral register has been
+        inserted in each LL_{BUS}_GRP{x}_EnableClock() function.\end{DoxyVerb}
+
+\end{DoxyAuthor}
+\begin{DoxyAttention}{Atención}
+
+\end{DoxyAttention}
+Copyright (c) 2017 S\+T\+Microelectronics. All rights reserved.
+
+This software is licensed under terms that can be found in the L\+I\+C\+E\+N\+SE file in the root directory of this software component. If no L\+I\+C\+E\+N\+SE file comes with this software, it is provided A\+S-\/\+IS. 

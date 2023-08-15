@@ -1,0 +1,156 @@
+\hypertarget{_a_p_i__debounce_8h}{}\doxysection{Referencia del Archivo Drivers/\+A\+P\+I/inc/\+A\+P\+I\+\_\+debounce.h}
+\label{_a_p_i__debounce_8h}\index{Drivers/API/inc/API\_debounce.h@{Drivers/API/inc/API\_debounce.h}}
+
+
+Interfaz de funciones para manejo y eliminación de rebotes en pulsadores.  
+
+
+{\ttfamily \#include $<$stdint.\+h$>$}\newline
+{\ttfamily \#include $<$stdbool.\+h$>$}\newline
+{\ttfamily \#include \char`\"{}stm32f4xx\+\_\+hal.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}stm32f4xx\+\_\+nucleo\+\_\+144.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}A\+P\+I\+\_\+delay.\+h\char`\"{}}\newline
+Dependencia gráfica adjunta para A\+P\+I\+\_\+debounce.\+h\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{_a_p_i__debounce_8h__incl}
+\end{center}
+\end{figure}
+Gráfico de los archivos que directa o indirectamente incluyen a este archivo\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=302pt]{_a_p_i__debounce_8h__dep__incl}
+\end{center}
+\end{figure}
+\doxysubsection*{typedefs}
+\begin{DoxyCompactItemize}
+\item 
+typedef uint32\+\_\+t \mbox{\hyperlink{_a_p_i__debounce_8h_a451a7d205dfb766727eba25c6e61c687}{tick\+\_\+t}}
+\item 
+typedef bool \mbox{\hyperlink{_a_p_i__debounce_8h_a2b21255bd7f7192db778983b15089208}{bool\+\_\+t}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Funciones}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{_a_p_i__debounce_8h_a2b21255bd7f7192db778983b15089208}{bool\+\_\+t}} \mbox{\hyperlink{_a_p_i__debounce_8h_ada13dbdbe1db700bf44255cc2cc02252}{read\+Key}} ()
+\begin{DoxyCompactList}\small\item\em Reads an internal variable and returns whether the key was pressed. If the function returns true, it resets the state of the variable (sets it to false). \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{_a_p_i__debounce_8h_ac7e2402b734e7262b8b0f54b3ef2aa80}{debounce\+F\+S\+M\+\_\+init}} (\mbox{\hyperlink{structdelay__t}{delay\+\_\+t}} $\ast$delayi)
+\begin{DoxyCompactList}\small\item\em Initializes the debounce F\+SM, setting the initial state. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{_a_p_i__debounce_8h_a2b21255bd7f7192db778983b15089208}{bool\+\_\+t}} \mbox{\hyperlink{_a_p_i__debounce_8h_aa026692fe4dbcf4681f9983959e53311}{debounce\+F\+S\+M\+\_\+update}} (void)
+\begin{DoxyCompactList}\small\item\em Updates the debounce F\+SM. This function reads the inputs, evaluates the transition conditions according to the F\+SM\textquotesingle{}s current state, and updates the current state and outputs accordingly. \end{DoxyCompactList}\item 
+char $\ast$ \mbox{\hyperlink{_a_p_i__debounce_8h_a97d3cee57ccbfabf368ac8c17f6fe388}{read\+Status}} ()
+\begin{DoxyCompactList}\small\item\em Identifies if the edge is rising or falling. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{_a_p_i__debounce_8h_a2b21255bd7f7192db778983b15089208}{bool\+\_\+t}} \mbox{\hyperlink{_a_p_i__debounce_8h_a48a6aaf5794590cc5c20b06e0fa98d80}{isbutton\+Pressed}} (void)
+\begin{DoxyCompactList}\small\item\em Checks if the button is pressed. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Descripción detallada}
+Interfaz de funciones para manejo y eliminación de rebotes en pulsadores. 
+
+\begin{DoxyDate}{Fecha}
+Aug 9, 2023 
+\end{DoxyDate}
+\begin{DoxyAuthor}{Autor}
+lgomez 
+\end{DoxyAuthor}
+
+
+\doxysubsection{Documentación de los \textquotesingle{}typedefs\textquotesingle{}}
+\mbox{\Hypertarget{_a_p_i__debounce_8h_a2b21255bd7f7192db778983b15089208}\label{_a_p_i__debounce_8h_a2b21255bd7f7192db778983b15089208}} 
+\index{API\_debounce.h@{API\_debounce.h}!bool\_t@{bool\_t}}
+\index{bool\_t@{bool\_t}!API\_debounce.h@{API\_debounce.h}}
+\doxysubsubsection{\texorpdfstring{bool\_t}{bool\_t}}
+{\footnotesize\ttfamily typedef bool \mbox{\hyperlink{_a_p_i__debounce_8h_a2b21255bd7f7192db778983b15089208}{bool\+\_\+t}}}
+
+Define bool\+\_\+t as a type alias for bool. Required library\+: stdbool.\+h \mbox{\Hypertarget{_a_p_i__debounce_8h_a451a7d205dfb766727eba25c6e61c687}\label{_a_p_i__debounce_8h_a451a7d205dfb766727eba25c6e61c687}} 
+\index{API\_debounce.h@{API\_debounce.h}!tick\_t@{tick\_t}}
+\index{tick\_t@{tick\_t}!API\_debounce.h@{API\_debounce.h}}
+\doxysubsubsection{\texorpdfstring{tick\_t}{tick\_t}}
+{\footnotesize\ttfamily typedef uint32\+\_\+t \mbox{\hyperlink{_a_p_i__debounce_8h_a451a7d205dfb766727eba25c6e61c687}{tick\+\_\+t}}}
+
+$<$ For standard uint32\+\_\+t types $<$ For standard boolean types $<$ H\+AL library inclusion $<$ B\+SP library inclusion Define tick\+\_\+t as a type alias for uint32\+\_\+t. Required library\+: stdint.\+h 
+
+\doxysubsection{Documentación de las funciones}
+\mbox{\Hypertarget{_a_p_i__debounce_8h_ac7e2402b734e7262b8b0f54b3ef2aa80}\label{_a_p_i__debounce_8h_ac7e2402b734e7262b8b0f54b3ef2aa80}} 
+\index{API\_debounce.h@{API\_debounce.h}!debounceFSM\_init@{debounceFSM\_init}}
+\index{debounceFSM\_init@{debounceFSM\_init}!API\_debounce.h@{API\_debounce.h}}
+\doxysubsubsection{\texorpdfstring{debounceFSM\_init()}{debounceFSM\_init()}}
+{\footnotesize\ttfamily void debounce\+F\+S\+M\+\_\+init (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structdelay__t}{delay\+\_\+t}} $\ast$}]{delayi }\end{DoxyParamCaption})}
+
+
+
+Initializes the debounce F\+SM, setting the initial state. 
+
+
+\begin{DoxyParams}{Parámetros}
+{\em delayi} & Pointer to the delay instance. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{_a_p_i__debounce_8h_aa026692fe4dbcf4681f9983959e53311}\label{_a_p_i__debounce_8h_aa026692fe4dbcf4681f9983959e53311}} 
+\index{API\_debounce.h@{API\_debounce.h}!debounceFSM\_update@{debounceFSM\_update}}
+\index{debounceFSM\_update@{debounceFSM\_update}!API\_debounce.h@{API\_debounce.h}}
+\doxysubsubsection{\texorpdfstring{debounceFSM\_update()}{debounceFSM\_update()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{_a_p_i__debounce_8h_a2b21255bd7f7192db778983b15089208}{bool\+\_\+t}} debounce\+F\+S\+M\+\_\+update (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+Updates the debounce F\+SM. This function reads the inputs, evaluates the transition conditions according to the F\+SM\textquotesingle{}s current state, and updates the current state and outputs accordingly. 
+
+\begin{DoxyReturn}{Devuelve}
+bool\+\_\+t\+: the updated state of the F\+SM (true or false). 
+\end{DoxyReturn}
+Gráfico de llamadas para esta función\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=341pt]{_a_p_i__debounce_8h_aa026692fe4dbcf4681f9983959e53311_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{_a_p_i__debounce_8h_a48a6aaf5794590cc5c20b06e0fa98d80}\label{_a_p_i__debounce_8h_a48a6aaf5794590cc5c20b06e0fa98d80}} 
+\index{API\_debounce.h@{API\_debounce.h}!isbuttonPressed@{isbuttonPressed}}
+\index{isbuttonPressed@{isbuttonPressed}!API\_debounce.h@{API\_debounce.h}}
+\doxysubsubsection{\texorpdfstring{isbuttonPressed()}{isbuttonPressed()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{_a_p_i__debounce_8h_a2b21255bd7f7192db778983b15089208}{bool\+\_\+t}} isbutton\+Pressed (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+Checks if the button is pressed. 
+
+\begin{DoxyReturn}{Devuelve}
+bool\+\_\+t\+: true if the button is pressed, false otherwise. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{_a_p_i__debounce_8h_ada13dbdbe1db700bf44255cc2cc02252}\label{_a_p_i__debounce_8h_ada13dbdbe1db700bf44255cc2cc02252}} 
+\index{API\_debounce.h@{API\_debounce.h}!readKey@{readKey}}
+\index{readKey@{readKey}!API\_debounce.h@{API\_debounce.h}}
+\doxysubsubsection{\texorpdfstring{readKey()}{readKey()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{_a_p_i__debounce_8h_a2b21255bd7f7192db778983b15089208}{bool\+\_\+t}} read\+Key (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Reads an internal variable and returns whether the key was pressed. If the function returns true, it resets the state of the variable (sets it to false). 
+
+\begin{DoxyReturn}{Devuelve}
+bool\+\_\+t\+: the state of the key (true if the key was pressed, false otherwise) 
+\end{DoxyReturn}
+\mbox{\Hypertarget{_a_p_i__debounce_8h_a97d3cee57ccbfabf368ac8c17f6fe388}\label{_a_p_i__debounce_8h_a97d3cee57ccbfabf368ac8c17f6fe388}} 
+\index{API\_debounce.h@{API\_debounce.h}!readStatus@{readStatus}}
+\index{readStatus@{readStatus}!API\_debounce.h@{API\_debounce.h}}
+\doxysubsubsection{\texorpdfstring{readStatus()}{readStatus()}}
+{\footnotesize\ttfamily char$\ast$ read\+Status (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Identifies if the edge is rising or falling. 
+
+\begin{DoxyReturn}{Devuelve}
+Pointer to a character string indicating the status.
+\end{DoxyReturn}
+Identifies if the edge is rising or falling.
+
+
+\begin{DoxyParams}{Parámetros}
+{\em } & \\
+\hline
+\end{DoxyParams}

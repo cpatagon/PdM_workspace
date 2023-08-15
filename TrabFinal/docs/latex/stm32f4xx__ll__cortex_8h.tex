@@ -1,0 +1,96 @@
+\hypertarget{stm32f4xx__ll__cortex_8h}{}\doxysection{Referencia del Archivo Drivers/\+S\+T\+M32\+F4xx\+\_\+\+H\+A\+L\+\_\+\+Driver/\+Inc/stm32f4xx\+\_\+ll\+\_\+cortex.h}
+\label{stm32f4xx__ll__cortex_8h}\index{Drivers/STM32F4xx\_HAL\_Driver/Inc/stm32f4xx\_ll\_cortex.h@{Drivers/STM32F4xx\_HAL\_Driver/Inc/stm32f4xx\_ll\_cortex.h}}
+
+
+Header file of C\+O\+R\+T\+EX LL module.  
+
+
+{\ttfamily \#include \char`\"{}stm32f4xx.\+h\char`\"{}}\newline
+Dependencia gráfica adjunta para stm32f4xx\+\_\+ll\+\_\+cortex.\+h\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=217pt]{stm32f4xx__ll__cortex_8h__incl}
+\end{center}
+\end{figure}
+\doxysubsection*{defines}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{group___c_o_r_t_e_x___l_l___e_c___c_l_k_s_o_u_r_c_e___h_c_l_k_gab13c4588c1b1a8b867541a4ad928d205}{L\+L\+\_\+\+S\+Y\+S\+T\+I\+C\+K\+\_\+\+C\+L\+K\+S\+O\+U\+R\+C\+E\+\_\+\+H\+C\+L\+K\+\_\+\+D\+I\+V8}}~0x00000000U
+\item 
+\#define \mbox{\hyperlink{group___c_o_r_t_e_x___l_l___e_c___c_l_k_s_o_u_r_c_e___h_c_l_k_gaa92530d2f2cd8ce785297e4aed960ff0}{L\+L\+\_\+\+S\+Y\+S\+T\+I\+C\+K\+\_\+\+C\+L\+K\+S\+O\+U\+R\+C\+E\+\_\+\+H\+C\+LK}}~\mbox{\hyperlink{group___c_m_s_i_s___sys_tick_gaa41d06039797423a46596bd313d57373}{Sys\+Tick\+\_\+\+C\+T\+R\+L\+\_\+\+C\+L\+K\+S\+O\+U\+R\+C\+E\+\_\+\+Msk}}
+\item 
+\#define \mbox{\hyperlink{group___c_o_r_t_e_x___l_l___e_c___f_a_u_l_t_gadbac946ab3d6ddf6e039f892f15777d9}{L\+L\+\_\+\+H\+A\+N\+D\+L\+E\+R\+\_\+\+F\+A\+U\+L\+T\+\_\+\+U\+SG}}~\mbox{\hyperlink{group___c_m_s_i_s___s_c_b_ga056fb6be590857bbc029bed48b21dd79}{S\+C\+B\+\_\+\+S\+H\+C\+S\+R\+\_\+\+U\+S\+G\+F\+A\+U\+L\+T\+E\+N\+A\+\_\+\+Msk}}
+\item 
+\#define \mbox{\hyperlink{group___c_o_r_t_e_x___l_l___e_c___f_a_u_l_t_ga115d536ac8df55563b54b89397fdf465}{L\+L\+\_\+\+H\+A\+N\+D\+L\+E\+R\+\_\+\+F\+A\+U\+L\+T\+\_\+\+B\+US}}~\mbox{\hyperlink{group___c_m_s_i_s___s_c_b_ga43e8cbe619c9980e0d1aacc85d9b9e47}{S\+C\+B\+\_\+\+S\+H\+C\+S\+R\+\_\+\+B\+U\+S\+F\+A\+U\+L\+T\+E\+N\+A\+\_\+\+Msk}}
+\item 
+\#define \mbox{\hyperlink{group___c_o_r_t_e_x___l_l___e_c___f_a_u_l_t_ga6d126af175425807712344e17d75152b}{L\+L\+\_\+\+H\+A\+N\+D\+L\+E\+R\+\_\+\+F\+A\+U\+L\+T\+\_\+\+M\+EM}}~\mbox{\hyperlink{group___c_m_s_i_s___s_c_b_gaf084424fa1f69bea36a1c44899d83d17}{S\+C\+B\+\_\+\+S\+H\+C\+S\+R\+\_\+\+M\+E\+M\+F\+A\+U\+L\+T\+E\+N\+A\+\_\+\+Msk}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Funciones}
+\begin{DoxyCompactItemize}
+\item 
+\+\_\+\+\_\+\+S\+T\+A\+T\+I\+C\+\_\+\+I\+N\+L\+I\+NE uint32\+\_\+t \mbox{\hyperlink{group___c_o_r_t_e_x___l_l___e_f___s_y_s_t_i_c_k_gaf5dfb37d859552753594f9cc66431ba6}{L\+L\+\_\+\+S\+Y\+S\+T\+I\+C\+K\+\_\+\+Is\+Active\+Counter\+Flag}} (void)
+\begin{DoxyCompactList}\small\item\em This function checks if the Systick counter flag is active or not. \end{DoxyCompactList}\item 
+\+\_\+\+\_\+\+S\+T\+A\+T\+I\+C\+\_\+\+I\+N\+L\+I\+NE void \mbox{\hyperlink{group___c_o_r_t_e_x___l_l___e_f___s_y_s_t_i_c_k_gaaf98ae8e0298b44c5d58a3ba9ef358f7}{L\+L\+\_\+\+S\+Y\+S\+T\+I\+C\+K\+\_\+\+Set\+Clk\+Source}} (uint32\+\_\+t Source)
+\begin{DoxyCompactList}\small\item\em Configures the Sys\+Tick clock source @rmtoll S\+T\+K\+\_\+\+C\+T\+RL C\+L\+K\+S\+O\+U\+R\+CE L\+L\+\_\+\+S\+Y\+S\+T\+I\+C\+K\+\_\+\+Set\+Clk\+Source. \end{DoxyCompactList}\item 
+\+\_\+\+\_\+\+S\+T\+A\+T\+I\+C\+\_\+\+I\+N\+L\+I\+NE uint32\+\_\+t \mbox{\hyperlink{group___c_o_r_t_e_x___l_l___e_f___s_y_s_t_i_c_k_ga2cfeb1396db13a9fbc208cc659064b19}{L\+L\+\_\+\+S\+Y\+S\+T\+I\+C\+K\+\_\+\+Get\+Clk\+Source}} (void)
+\begin{DoxyCompactList}\small\item\em Get the Sys\+Tick clock source @rmtoll S\+T\+K\+\_\+\+C\+T\+RL C\+L\+K\+S\+O\+U\+R\+CE L\+L\+\_\+\+S\+Y\+S\+T\+I\+C\+K\+\_\+\+Get\+Clk\+Source. \end{DoxyCompactList}\item 
+\+\_\+\+\_\+\+S\+T\+A\+T\+I\+C\+\_\+\+I\+N\+L\+I\+NE void \mbox{\hyperlink{group___c_o_r_t_e_x___l_l___e_f___s_y_s_t_i_c_k_ga770fac4394ddde9a53e1a236c81538f0}{L\+L\+\_\+\+S\+Y\+S\+T\+I\+C\+K\+\_\+\+Enable\+IT}} (void)
+\begin{DoxyCompactList}\small\item\em Enable Sys\+Tick exception request @rmtoll S\+T\+K\+\_\+\+C\+T\+RL T\+I\+C\+K\+I\+NT L\+L\+\_\+\+S\+Y\+S\+T\+I\+C\+K\+\_\+\+Enable\+IT. \end{DoxyCompactList}\item 
+\+\_\+\+\_\+\+S\+T\+A\+T\+I\+C\+\_\+\+I\+N\+L\+I\+NE void \mbox{\hyperlink{group___c_o_r_t_e_x___l_l___e_f___s_y_s_t_i_c_k_ga11d0d066050805c9e8d24718d8a15e4d}{L\+L\+\_\+\+S\+Y\+S\+T\+I\+C\+K\+\_\+\+Disable\+IT}} (void)
+\begin{DoxyCompactList}\small\item\em Disable Sys\+Tick exception request @rmtoll S\+T\+K\+\_\+\+C\+T\+RL T\+I\+C\+K\+I\+NT L\+L\+\_\+\+S\+Y\+S\+T\+I\+C\+K\+\_\+\+Disable\+IT. \end{DoxyCompactList}\item 
+\+\_\+\+\_\+\+S\+T\+A\+T\+I\+C\+\_\+\+I\+N\+L\+I\+NE uint32\+\_\+t \mbox{\hyperlink{group___c_o_r_t_e_x___l_l___e_f___s_y_s_t_i_c_k_gab34484042fd5a82aa80ba94223b6fbde}{L\+L\+\_\+\+S\+Y\+S\+T\+I\+C\+K\+\_\+\+Is\+Enabled\+IT}} (void)
+\begin{DoxyCompactList}\small\item\em Checks if the S\+Y\+S\+T\+I\+CK interrupt is enabled or disabled. @rmtoll S\+T\+K\+\_\+\+C\+T\+RL T\+I\+C\+K\+I\+NT L\+L\+\_\+\+S\+Y\+S\+T\+I\+C\+K\+\_\+\+Is\+Enabled\+IT. \end{DoxyCompactList}\item 
+\+\_\+\+\_\+\+S\+T\+A\+T\+I\+C\+\_\+\+I\+N\+L\+I\+NE void \mbox{\hyperlink{group___c_o_r_t_e_x___l_l___e_f___l_o_w___p_o_w_e_r___m_o_d_e_gab55eabc37e5abe00df558c0ba1c37508}{L\+L\+\_\+\+L\+P\+M\+\_\+\+Enable\+Sleep}} (void)
+\begin{DoxyCompactList}\small\item\em Processor uses sleep as its low power mode @rmtoll S\+C\+B\+\_\+\+S\+CR S\+L\+E\+E\+P\+D\+E\+EP L\+L\+\_\+\+L\+P\+M\+\_\+\+Enable\+Sleep. \end{DoxyCompactList}\item 
+\+\_\+\+\_\+\+S\+T\+A\+T\+I\+C\+\_\+\+I\+N\+L\+I\+NE void \mbox{\hyperlink{group___c_o_r_t_e_x___l_l___e_f___l_o_w___p_o_w_e_r___m_o_d_e_ga37d70238e98ca1214e3fe4113b119474}{L\+L\+\_\+\+L\+P\+M\+\_\+\+Enable\+Deep\+Sleep}} (void)
+\begin{DoxyCompactList}\small\item\em Processor uses deep sleep as its low power mode @rmtoll S\+C\+B\+\_\+\+S\+CR S\+L\+E\+E\+P\+D\+E\+EP L\+L\+\_\+\+L\+P\+M\+\_\+\+Enable\+Deep\+Sleep. \end{DoxyCompactList}\item 
+\+\_\+\+\_\+\+S\+T\+A\+T\+I\+C\+\_\+\+I\+N\+L\+I\+NE void \mbox{\hyperlink{group___c_o_r_t_e_x___l_l___e_f___l_o_w___p_o_w_e_r___m_o_d_e_gabb2b2648dff19d88209af8761fc34c30}{L\+L\+\_\+\+L\+P\+M\+\_\+\+Enable\+Sleep\+On\+Exit}} (void)
+\begin{DoxyCompactList}\small\item\em Configures sleep-\/on-\/exit when returning from Handler mode to Thread mode. \end{DoxyCompactList}\item 
+\+\_\+\+\_\+\+S\+T\+A\+T\+I\+C\+\_\+\+I\+N\+L\+I\+NE void \mbox{\hyperlink{group___c_o_r_t_e_x___l_l___e_f___l_o_w___p_o_w_e_r___m_o_d_e_ga88768c6c5f53de30a647123241451eb9}{L\+L\+\_\+\+L\+P\+M\+\_\+\+Disable\+Sleep\+On\+Exit}} (void)
+\begin{DoxyCompactList}\small\item\em Do not sleep when returning to Thread mode. @rmtoll S\+C\+B\+\_\+\+S\+CR S\+L\+E\+E\+P\+O\+N\+E\+X\+IT L\+L\+\_\+\+L\+P\+M\+\_\+\+Disable\+Sleep\+On\+Exit. \end{DoxyCompactList}\item 
+\+\_\+\+\_\+\+S\+T\+A\+T\+I\+C\+\_\+\+I\+N\+L\+I\+NE void \mbox{\hyperlink{group___c_o_r_t_e_x___l_l___e_f___l_o_w___p_o_w_e_r___m_o_d_e_gaf1c01ae00b4a13c5b6531f82a9677b90}{L\+L\+\_\+\+L\+P\+M\+\_\+\+Enable\+Event\+On\+Pend}} (void)
+\begin{DoxyCompactList}\small\item\em Enabled events and all interrupts, including disabled interrupts, can wakeup the processor. @rmtoll S\+C\+B\+\_\+\+S\+CR S\+E\+V\+E\+O\+N\+P\+E\+ND L\+L\+\_\+\+L\+P\+M\+\_\+\+Enable\+Event\+On\+Pend. \end{DoxyCompactList}\item 
+\+\_\+\+\_\+\+S\+T\+A\+T\+I\+C\+\_\+\+I\+N\+L\+I\+NE void \mbox{\hyperlink{group___c_o_r_t_e_x___l_l___e_f___l_o_w___p_o_w_e_r___m_o_d_e_gaf4ebb8351f09676067aa0ce1fe08321b}{L\+L\+\_\+\+L\+P\+M\+\_\+\+Disable\+Event\+On\+Pend}} (void)
+\begin{DoxyCompactList}\small\item\em Only enabled interrupts or events can wakeup the processor, disabled interrupts are excluded @rmtoll S\+C\+B\+\_\+\+S\+CR S\+E\+V\+E\+O\+N\+P\+E\+ND L\+L\+\_\+\+L\+P\+M\+\_\+\+Disable\+Event\+On\+Pend. \end{DoxyCompactList}\item 
+\+\_\+\+\_\+\+S\+T\+A\+T\+I\+C\+\_\+\+I\+N\+L\+I\+NE void \mbox{\hyperlink{group___c_o_r_t_e_x___l_l___e_f___h_a_n_d_l_e_r_ga904eb6ce46a723dd47b468241c6b0a2c}{L\+L\+\_\+\+H\+A\+N\+D\+L\+E\+R\+\_\+\+Enable\+Fault}} (uint32\+\_\+t Fault)
+\begin{DoxyCompactList}\small\item\em Enable a fault in System handler control register (S\+H\+C\+SR) @rmtoll S\+C\+B\+\_\+\+S\+H\+C\+SR M\+E\+M\+F\+A\+U\+L\+T\+E\+NA L\+L\+\_\+\+H\+A\+N\+D\+L\+E\+R\+\_\+\+Enable\+Fault. \end{DoxyCompactList}\item 
+\+\_\+\+\_\+\+S\+T\+A\+T\+I\+C\+\_\+\+I\+N\+L\+I\+NE void \mbox{\hyperlink{group___c_o_r_t_e_x___l_l___e_f___h_a_n_d_l_e_r_ga8b6826c996c587651a651a6138c44e1e}{L\+L\+\_\+\+H\+A\+N\+D\+L\+E\+R\+\_\+\+Disable\+Fault}} (uint32\+\_\+t Fault)
+\begin{DoxyCompactList}\small\item\em Disable a fault in System handler control register (S\+H\+C\+SR) @rmtoll S\+C\+B\+\_\+\+S\+H\+C\+SR M\+E\+M\+F\+A\+U\+L\+T\+E\+NA L\+L\+\_\+\+H\+A\+N\+D\+L\+E\+R\+\_\+\+Disable\+Fault. \end{DoxyCompactList}\item 
+\+\_\+\+\_\+\+S\+T\+A\+T\+I\+C\+\_\+\+I\+N\+L\+I\+NE uint32\+\_\+t \mbox{\hyperlink{group___c_o_r_t_e_x___l_l___e_f___m_c_u___i_n_f_o_ga648a5236b7fa08786086fcc4ce42b4b9}{L\+L\+\_\+\+C\+P\+U\+I\+D\+\_\+\+Get\+Implementer}} (void)
+\begin{DoxyCompactList}\small\item\em Get Implementer code @rmtoll S\+C\+B\+\_\+\+C\+P\+U\+ID I\+M\+P\+L\+E\+M\+E\+N\+T\+ER L\+L\+\_\+\+C\+P\+U\+I\+D\+\_\+\+Get\+Implementer. \end{DoxyCompactList}\item 
+\+\_\+\+\_\+\+S\+T\+A\+T\+I\+C\+\_\+\+I\+N\+L\+I\+NE uint32\+\_\+t \mbox{\hyperlink{group___c_o_r_t_e_x___l_l___e_f___m_c_u___i_n_f_o_ga1f843da5f8524bace7fcf8dcce7996cb}{L\+L\+\_\+\+C\+P\+U\+I\+D\+\_\+\+Get\+Variant}} (void)
+\begin{DoxyCompactList}\small\item\em Get Variant number (The r value in the rnpn product revision identifier) @rmtoll S\+C\+B\+\_\+\+C\+P\+U\+ID V\+A\+R\+I\+A\+NT L\+L\+\_\+\+C\+P\+U\+I\+D\+\_\+\+Get\+Variant. \end{DoxyCompactList}\item 
+\+\_\+\+\_\+\+S\+T\+A\+T\+I\+C\+\_\+\+I\+N\+L\+I\+NE uint32\+\_\+t \mbox{\hyperlink{group___c_o_r_t_e_x___l_l___e_f___m_c_u___i_n_f_o_ga787f8b30eaa7a4c304fd5784daa98d6c}{L\+L\+\_\+\+C\+P\+U\+I\+D\+\_\+\+Get\+Constant}} (void)
+\begin{DoxyCompactList}\small\item\em Get Constant number @rmtoll S\+C\+B\+\_\+\+C\+P\+U\+ID A\+R\+C\+H\+I\+T\+E\+C\+T\+U\+RE L\+L\+\_\+\+C\+P\+U\+I\+D\+\_\+\+Get\+Constant. \end{DoxyCompactList}\item 
+\+\_\+\+\_\+\+S\+T\+A\+T\+I\+C\+\_\+\+I\+N\+L\+I\+NE uint32\+\_\+t \mbox{\hyperlink{group___c_o_r_t_e_x___l_l___e_f___m_c_u___i_n_f_o_gac98fd56ad9162c3f372004bd07038bdb}{L\+L\+\_\+\+C\+P\+U\+I\+D\+\_\+\+Get\+Par\+No}} (void)
+\begin{DoxyCompactList}\small\item\em Get Part number @rmtoll S\+C\+B\+\_\+\+C\+P\+U\+ID P\+A\+R\+T\+NO L\+L\+\_\+\+C\+P\+U\+I\+D\+\_\+\+Get\+Par\+No. \end{DoxyCompactList}\item 
+\+\_\+\+\_\+\+S\+T\+A\+T\+I\+C\+\_\+\+I\+N\+L\+I\+NE uint32\+\_\+t \mbox{\hyperlink{group___c_o_r_t_e_x___l_l___e_f___m_c_u___i_n_f_o_ga7372821defd92c49ea4563da407acd01}{L\+L\+\_\+\+C\+P\+U\+I\+D\+\_\+\+Get\+Revision}} (void)
+\begin{DoxyCompactList}\small\item\em Get Revision number (The p value in the rnpn product revision identifier, indicates patch release) @rmtoll S\+C\+B\+\_\+\+C\+P\+U\+ID R\+E\+V\+I\+S\+I\+ON L\+L\+\_\+\+C\+P\+U\+I\+D\+\_\+\+Get\+Revision. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Descripción detallada}
+Header file of C\+O\+R\+T\+EX LL module. 
+
+\begin{DoxyAuthor}{Autor}
+M\+CD Application Team \begin{DoxyVerb}==============================================================================
+                   ##### How to use this driver #####
+==============================================================================
+  [..]
+  The LL CORTEX driver contains a set of generic APIs that can be
+  used by user:
+    (+) SYSTICK configuration used by LL_mDelay and LL_Init1msTick
+        functions
+    (+) Low power mode configuration (SCB register of Cortex-MCU)
+    (+) MPU API to configure and enable regions
+        (MPU services provided only on some devices)
+    (+) API to access to MCU info (CPUID register)
+    (+) API to enable fault handler (SHCSR accesses)\end{DoxyVerb}
+
+\end{DoxyAuthor}
+\begin{DoxyAttention}{Atención}
+
+\end{DoxyAttention}
+Copyright (c) 2017 S\+T\+Microelectronics. All rights reserved.
+
+This software is licensed under terms that can be found in the L\+I\+C\+E\+N\+SE file in the root directory of this software component. If no L\+I\+C\+E\+N\+SE file comes with this software, it is provided A\+S-\/\+IS. 

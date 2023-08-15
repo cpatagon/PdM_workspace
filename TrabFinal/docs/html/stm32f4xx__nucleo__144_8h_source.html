@@ -1,0 +1,425 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.17"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Trabajo Final: Fichero Fuente Drivers/BSP/STM32F4xx_Nucleo_144/stm32f4xx_nucleo_144.h</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectlogo"><img alt="Logo" src="logo_cara.jpeg"/></td>
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">Trabajo Final
+   &#160;<span id="projectnumber">0.2</span>
+   </div>
+   <div id="projectbrief">JUEGO DE DESTREZA Y TIMING CON STM32 Y SPI</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Generado por Doxygen 1.8.17 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+var searchBox = new SearchBox("searchBox", "search",false,'Buscar');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(function() {
+  initMenu('',true,false,'search.php','Buscar');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(document).ready(function(){initNavTree('stm32f4xx__nucleo__144_8h_source.html',''); initResizable(); });
+/* @license-end */
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div class="header">
+  <div class="headertitle">
+<div class="title">stm32f4xx_nucleo_144.h</div>  </div>
+</div><!--header-->
+<div class="contents">
+<a href="stm32f4xx__nucleo__144_8h.html">Ir a la documentación de este archivo.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160; </div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;<span class="comment">/* Define to prevent recursive inclusion -------------------------------------*/</span></div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;<span class="preprocessor">#ifndef __STM32F4XX_NUCLEO_144_H</span></div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;<span class="preprocessor">#define __STM32F4XX_NUCLEO_144_H</span></div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160; </div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;<span class="preprocessor">#ifdef __cplusplus</span></div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160; <span class="keyword">extern</span> <span class="stringliteral">&quot;C&quot;</span> {</div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160; </div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;<span class="comment">/* Includes ------------------------------------------------------------------*/</span></div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="stm32f4xx__hal_8h.html">stm32f4xx_hal.h</a>&quot;</span></div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;   </div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;<span class="comment">/* To be defined only if the board is provided with the related shield */</span></div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;<span class="comment">/* https://www.adafruit.com/products/802 */</span></div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;<span class="preprocessor">#ifndef ADAFRUIT_TFT_JOY_SD_ID802</span></div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;<span class="preprocessor">#define ADAFRUIT_TFT_JOY_SD_ID802</span></div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;   </div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;<span class="keyword">typedef</span> <span class="keyword">enum</span> </div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;{</div>
+<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;  LED1 = 0,</div>
+<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;  LED_GREEN = LED1,</div>
+<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;  LED2 = 1,</div>
+<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;  LED_BLUE = LED2,</div>
+<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;  LED3 = 2,</div>
+<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;  LED_RED = LED3</div>
+<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;}Led_TypeDef;</div>
+<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160; </div>
+<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;<span class="keyword">typedef</span> <span class="keyword">enum</span> </div>
+<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;{  </div>
+<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;  BUTTON_USER = 0,</div>
+<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;  <span class="comment">/* Alias */</span></div>
+<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;  BUTTON_KEY = BUTTON_USER</div>
+<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;}Button_TypeDef;</div>
+<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160; </div>
+<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;<span class="keyword">typedef</span> <span class="keyword">enum</span> </div>
+<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;{  </div>
+<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;  BUTTON_MODE_GPIO = 0,</div>
+<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;  BUTTON_MODE_EXTI = 1</div>
+<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;}ButtonMode_TypeDef;</div>
+<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160; </div>
+<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;<span class="keyword">typedef</span> <span class="keyword">enum</span> </div>
+<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;{ </div>
+<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;  JOY_NONE  = 0,</div>
+<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;  JOY_SEL   = 1,</div>
+<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;  JOY_DOWN  = 2,</div>
+<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;  JOY_LEFT  = 3,</div>
+<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;  JOY_RIGHT = 4,</div>
+<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;  JOY_UP    = 5</div>
+<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;}JOYState_TypeDef;</div>
+<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160; </div>
+<div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160;<span class="preprocessor">#if !defined (USE_STM32F4XX_NUCLEO_144)</span></div>
+<div class="line"><a name="l00117"></a><span class="lineno"><a class="line" href="group___s_t_m32_f4_x_x___n_u_c_l_e_o__144___l_o_w___l_e_v_e_l___exported___constants.html#ga08dc86ee4898487b1a52bdc320095fe4">  117</a></span>&#160;<span class="preprocessor"> #define USE_STM32F4XX_NUCLEO_144</span></div>
+<div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160; </div>
+<div class="line"><a name="l00123"></a><span class="lineno">  123</span>&#160;<span class="preprocessor">#define LEDn                                    3</span></div>
+<div class="line"><a name="l00124"></a><span class="lineno">  124</span>&#160; </div>
+<div class="line"><a name="l00125"></a><span class="lineno">  125</span>&#160;<span class="preprocessor">#define LED1_PIN                                GPIO_PIN_0</span></div>
+<div class="line"><a name="l00126"></a><span class="lineno">  126</span>&#160;<span class="preprocessor">#define LED1_GPIO_PORT                          GPIOB</span></div>
+<div class="line"><a name="l00127"></a><span class="lineno">  127</span>&#160;<span class="preprocessor">#define LED1_GPIO_CLK_ENABLE()                  __HAL_RCC_GPIOB_CLK_ENABLE()</span></div>
+<div class="line"><a name="l00128"></a><span class="lineno">  128</span>&#160;<span class="preprocessor">#define LED1_GPIO_CLK_DISABLE()                 __HAL_RCC_GPIOB_CLK_DISABLE()  </span></div>
+<div class="line"><a name="l00129"></a><span class="lineno">  129</span>&#160; </div>
+<div class="line"><a name="l00130"></a><span class="lineno">  130</span>&#160;<span class="preprocessor">#define LED2_PIN                                GPIO_PIN_7</span></div>
+<div class="line"><a name="l00131"></a><span class="lineno">  131</span>&#160;<span class="preprocessor">#define LED2_GPIO_PORT                          GPIOB</span></div>
+<div class="line"><a name="l00132"></a><span class="lineno">  132</span>&#160;<span class="preprocessor">#define LED2_GPIO_CLK_ENABLE()                  __HAL_RCC_GPIOB_CLK_ENABLE()</span></div>
+<div class="line"><a name="l00133"></a><span class="lineno">  133</span>&#160;<span class="preprocessor">#define LED2_GPIO_CLK_DISABLE()                 __HAL_RCC_GPIOB_CLK_DISABLE()  </span></div>
+<div class="line"><a name="l00134"></a><span class="lineno">  134</span>&#160; </div>
+<div class="line"><a name="l00135"></a><span class="lineno">  135</span>&#160;<span class="preprocessor">#define LED3_PIN                                GPIO_PIN_14</span></div>
+<div class="line"><a name="l00136"></a><span class="lineno">  136</span>&#160;<span class="preprocessor">#define LED3_GPIO_PORT                          GPIOB</span></div>
+<div class="line"><a name="l00137"></a><span class="lineno">  137</span>&#160;<span class="preprocessor">#define LED3_GPIO_CLK_ENABLE()                  __HAL_RCC_GPIOB_CLK_ENABLE()</span></div>
+<div class="line"><a name="l00138"></a><span class="lineno">  138</span>&#160;<span class="preprocessor">#define LED3_GPIO_CLK_DISABLE()                 __HAL_RCC_GPIOB_CLK_DISABLE()  </span></div>
+<div class="line"><a name="l00139"></a><span class="lineno">  139</span>&#160; </div>
+<div class="line"><a name="l00140"></a><span class="lineno">  140</span>&#160;<span class="preprocessor">#define LEDx_GPIO_CLK_ENABLE(__INDEX__)   do { if((__INDEX__) == 0) {__HAL_RCC_GPIOB_CLK_ENABLE();} else\</span></div>
+<div class="line"><a name="l00141"></a><span class="lineno">  141</span>&#160;<span class="preprocessor">                                                                    {__HAL_RCC_GPIOB_CLK_ENABLE();   }} while(0)    </span></div>
+<div class="line"><a name="l00142"></a><span class="lineno">  142</span>&#160;<span class="preprocessor">#define LEDx_GPIO_CLK_DISABLE(__INDEX__)  do { if((__INDEX__) == 0) {__HAL_RCC_GPIOB_CLK_DISABLE();} else\</span></div>
+<div class="line"><a name="l00143"></a><span class="lineno">  143</span>&#160;<span class="preprocessor">                                                                    {__HAL_RCC_GPIOB_CLK_DISABLE();   }} while(0)   </span></div>
+<div class="line"><a name="l00144"></a><span class="lineno">  144</span>&#160; </div>
+<div class="line"><a name="l00151"></a><span class="lineno">  151</span>&#160;<span class="preprocessor">#define BUTTONn                                 1  </span></div>
+<div class="line"><a name="l00152"></a><span class="lineno">  152</span>&#160; </div>
+<div class="line"><a name="l00156"></a><span class="lineno"><a class="line" href="group___s_t_m32_f4_x_x___n_u_c_l_e_o__144___l_o_w___l_e_v_e_l___b_u_t_t_o_n.html#ga34df6915e3013d6a0c74131d3946b659">  156</a></span>&#160;<span class="preprocessor">#define USER_BUTTON_PIN                          GPIO_PIN_13</span></div>
+<div class="line"><a name="l00157"></a><span class="lineno">  157</span>&#160;<span class="preprocessor">#define USER_BUTTON_GPIO_PORT                    GPIOC</span></div>
+<div class="line"><a name="l00158"></a><span class="lineno">  158</span>&#160;<span class="preprocessor">#define USER_BUTTON_GPIO_CLK_ENABLE()            __HAL_RCC_GPIOC_CLK_ENABLE()</span></div>
+<div class="line"><a name="l00159"></a><span class="lineno">  159</span>&#160;<span class="preprocessor">#define USER_BUTTON_GPIO_CLK_DISABLE()           __HAL_RCC_GPIOC_CLK_DISABLE()</span></div>
+<div class="line"><a name="l00160"></a><span class="lineno">  160</span>&#160;<span class="preprocessor">#define USER_BUTTON_EXTI_LINE                    GPIO_PIN_13</span></div>
+<div class="line"><a name="l00161"></a><span class="lineno">  161</span>&#160;<span class="preprocessor">#define USER_BUTTON_EXTI_IRQn                    EXTI15_10_IRQn</span></div>
+<div class="line"><a name="l00162"></a><span class="lineno">  162</span>&#160; </div>
+<div class="line"><a name="l00163"></a><span class="lineno">  163</span>&#160;<span class="preprocessor">#define BUTTONx_GPIO_CLK_ENABLE(__INDEX__)      USER_BUTTON_GPIO_CLK_ENABLE()</span></div>
+<div class="line"><a name="l00164"></a><span class="lineno">  164</span>&#160;<span class="preprocessor">#define BUTTONx_GPIO_CLK_DISABLE(__INDEX__)     USER_BUTTON_GPIO_CLK_DISABLE() </span></div>
+<div class="line"><a name="l00165"></a><span class="lineno">  165</span>&#160; </div>
+<div class="line"><a name="l00166"></a><span class="lineno">  166</span>&#160;<span class="comment">/* Aliases */</span></div>
+<div class="line"><a name="l00167"></a><span class="lineno">  167</span>&#160;<span class="preprocessor">#define KEY_BUTTON_PIN                       USER_BUTTON_PIN</span></div>
+<div class="line"><a name="l00168"></a><span class="lineno">  168</span>&#160;<span class="preprocessor">#define KEY_BUTTON_GPIO_PORT                 USER_BUTTON_GPIO_PORT</span></div>
+<div class="line"><a name="l00169"></a><span class="lineno">  169</span>&#160;<span class="preprocessor">#define KEY_BUTTON_GPIO_CLK_ENABLE()         USER_BUTTON_GPIO_CLK_ENABLE()</span></div>
+<div class="line"><a name="l00170"></a><span class="lineno">  170</span>&#160;<span class="preprocessor">#define KEY_BUTTON_GPIO_CLK_DISABLE()        USER_BUTTON_GPIO_CLK_DISABLE()</span></div>
+<div class="line"><a name="l00171"></a><span class="lineno">  171</span>&#160;<span class="preprocessor">#define KEY_BUTTON_EXTI_LINE                 USER_BUTTON_EXTI_LINE</span></div>
+<div class="line"><a name="l00172"></a><span class="lineno">  172</span>&#160;<span class="preprocessor">#define KEY_BUTTON_EXTI_IRQn                 USER_BUTTON_EXTI_IRQn</span></div>
+<div class="line"><a name="l00173"></a><span class="lineno">  173</span>&#160; </div>
+<div class="line"><a name="l00174"></a><span class="lineno">  174</span>&#160; </div>
+<div class="line"><a name="l00180"></a><span class="lineno"><a class="line" href="group___s_t_m32_f4_x_x___n_u_c_l_e_o__144___l_o_w___l_e_v_e_l___b_u_t_t_o_n.html#ga3cf9c98cf0667dd5d2a652d209b57b50">  180</a></span>&#160;<span class="preprocessor">#define OTG_FS1_OVER_CURRENT_PIN                  GPIO_PIN_7</span></div>
+<div class="line"><a name="l00181"></a><span class="lineno">  181</span>&#160;<span class="preprocessor">#define OTG_FS1_OVER_CURRENT_PORT                 GPIOG</span></div>
+<div class="line"><a name="l00182"></a><span class="lineno">  182</span>&#160;<span class="preprocessor">#define OTG_FS1_OVER_CURRENT_PORT_CLK_ENABLE()     __HAL_RCC_GPIOG_CLK_ENABLE()</span></div>
+<div class="line"><a name="l00183"></a><span class="lineno">  183</span>&#160; </div>
+<div class="line"><a name="l00184"></a><span class="lineno">  184</span>&#160;<span class="preprocessor">#define OTG_FS1_POWER_SWITCH_PIN                  GPIO_PIN_6</span></div>
+<div class="line"><a name="l00185"></a><span class="lineno">  185</span>&#160;<span class="preprocessor">#define OTG_FS1_POWER_SWITCH_PORT                 GPIOG</span></div>
+<div class="line"><a name="l00186"></a><span class="lineno">  186</span>&#160;<span class="preprocessor">#define OTG_FS1_POWER_SWITCH_PORT_CLK_ENABLE()     __HAL_RCC_GPIOG_CLK_ENABLE()</span></div>
+<div class="line"><a name="l00187"></a><span class="lineno">  187</span>&#160; </div>
+<div class="line"><a name="l00195"></a><span class="lineno">  195</span>&#160;<span class="comment">/*############################### SPI_A #######################################*/</span></div>
+<div class="line"><a name="l00196"></a><span class="lineno">  196</span>&#160;<span class="preprocessor">#ifdef HAL_SPI_MODULE_ENABLED</span></div>
+<div class="line"><a name="l00197"></a><span class="lineno">  197</span>&#160; </div>
+<div class="line"><a name="l00198"></a><span class="lineno">  198</span>&#160;<span class="preprocessor">#define NUCLEO_SPIx                                     SPI1</span></div>
+<div class="line"><a name="l00199"></a><span class="lineno">  199</span>&#160;<span class="preprocessor">#define NUCLEO_SPIx_CLK_ENABLE()                        __HAL_RCC_SPI1_CLK_ENABLE()</span></div>
+<div class="line"><a name="l00200"></a><span class="lineno">  200</span>&#160; </div>
+<div class="line"><a name="l00201"></a><span class="lineno">  201</span>&#160;<span class="preprocessor">#define NUCLEO_SPIx_SCK_AF                              GPIO_AF5_SPI1</span></div>
+<div class="line"><a name="l00202"></a><span class="lineno">  202</span>&#160;<span class="preprocessor">#define NUCLEO_SPIx_SCK_GPIO_PORT                       GPIOA</span></div>
+<div class="line"><a name="l00203"></a><span class="lineno">  203</span>&#160;<span class="preprocessor">#define NUCLEO_SPIx_SCK_PIN                             GPIO_PIN_5</span></div>
+<div class="line"><a name="l00204"></a><span class="lineno">  204</span>&#160;<span class="preprocessor">#define NUCLEO_SPIx_SCK_GPIO_CLK_ENABLE()               __HAL_RCC_GPIOA_CLK_ENABLE()</span></div>
+<div class="line"><a name="l00205"></a><span class="lineno">  205</span>&#160;<span class="preprocessor">#define NUCLEO_SPIx_SCK_GPIO_CLK_DISABLE()              __HAL_RCC_GPIOA_CLK_DISABLE()</span></div>
+<div class="line"><a name="l00206"></a><span class="lineno">  206</span>&#160; </div>
+<div class="line"><a name="l00207"></a><span class="lineno">  207</span>&#160;<span class="preprocessor">#define NUCLEO_SPIx_MISO_MOSI_AF                        GPIO_AF5_SPI1</span></div>
+<div class="line"><a name="l00208"></a><span class="lineno">  208</span>&#160;<span class="preprocessor">#define NUCLEO_SPIx_MISO_MOSI_GPIO_PORT                 GPIOA</span></div>
+<div class="line"><a name="l00209"></a><span class="lineno">  209</span>&#160;<span class="preprocessor">#define NUCLEO_SPIx_MISO_MOSI_GPIO_CLK_ENABLE()         __HAL_RCC_GPIOA_CLK_ENABLE()</span></div>
+<div class="line"><a name="l00210"></a><span class="lineno">  210</span>&#160;<span class="preprocessor">#define NUCLEO_SPIx_MISO_MOSI_GPIO_CLK_DISABLE()        __HAL_RCC_GPIOA_CLK_DISABLE()</span></div>
+<div class="line"><a name="l00211"></a><span class="lineno">  211</span>&#160;<span class="preprocessor">#define NUCLEO_SPIx_MISO_PIN                            GPIO_PIN_6</span></div>
+<div class="line"><a name="l00212"></a><span class="lineno">  212</span>&#160;<span class="preprocessor">#define NUCLEO_SPIx_MOSI_PIN                            GPIO_PIN_7</span></div>
+<div class="line"><a name="l00213"></a><span class="lineno">  213</span>&#160;<span class="comment">/* Maximum Timeout values for flags waiting loops. These timeout are not based</span></div>
+<div class="line"><a name="l00214"></a><span class="lineno">  214</span>&#160;<span class="comment">   on accurate values, they just guarantee that the application will not remain</span></div>
+<div class="line"><a name="l00215"></a><span class="lineno">  215</span>&#160;<span class="comment">   stuck if the SPI communication is corrupted.</span></div>
+<div class="line"><a name="l00216"></a><span class="lineno">  216</span>&#160;<span class="comment">   You may modify these timeout values depending on CPU frequency and application</span></div>
+<div class="line"><a name="l00217"></a><span class="lineno">  217</span>&#160;<span class="comment">   conditions (interrupts routines ...). */</span>   </div>
+<div class="line"><a name="l00218"></a><span class="lineno">  218</span>&#160;<span class="preprocessor">#define NUCLEO_SPIx_TIMEOUT_MAX                   1000</span></div>
+<div class="line"><a name="l00219"></a><span class="lineno">  219</span>&#160; </div>
+<div class="line"><a name="l00220"></a><span class="lineno">  220</span>&#160;<span class="preprocessor">#define NUCLEO_SPIx_CS_GPIO_PORT                        GPIOD</span></div>
+<div class="line"><a name="l00221"></a><span class="lineno">  221</span>&#160;<span class="preprocessor">#define NUCLEO_SPIx_CS_PIN                              GPIO_PIN_14</span></div>
+<div class="line"><a name="l00222"></a><span class="lineno">  222</span>&#160;<span class="preprocessor">#define NUCLEO_SPIx_CS_GPIO_CLK_ENABLE()                __HAL_RCC_GPIOD_CLK_ENABLE()</span></div>
+<div class="line"><a name="l00223"></a><span class="lineno">  223</span>&#160;<span class="preprocessor">#define NUCLEO_SPIx_CS_GPIO_CLK_DISABLE()               __HAL_RCC_GPIOD_CLK_DISABLE()</span></div>
+<div class="line"><a name="l00224"></a><span class="lineno">  224</span>&#160; </div>
+<div class="line"><a name="l00225"></a><span class="lineno">  225</span>&#160;<span class="preprocessor">#define SPIx__CS_LOW()       HAL_GPIO_WritePin(NUCLEO_SPIx_CS_GPIO_PORT, NUCLEO_SPIx_CS_PIN, GPIO_PIN_RESET)</span></div>
+<div class="line"><a name="l00226"></a><span class="lineno">  226</span>&#160;<span class="preprocessor">#define SPIx__CS_HIGH()      HAL_GPIO_WritePin(NUCLEO_SPIx_CS_GPIO_PORT, NUCLEO_SPIx_CS_PIN, GPIO_PIN_SET)</span></div>
+<div class="line"><a name="l00227"></a><span class="lineno">  227</span>&#160; </div>
+<div class="line"><a name="l00231"></a><span class="lineno">  231</span>&#160;<span class="preprocessor">#define SD_CS_LOW()       HAL_GPIO_WritePin(SD_CS_GPIO_PORT, SD_CS_PIN, GPIO_PIN_RESET)</span></div>
+<div class="line"><a name="l00232"></a><span class="lineno">  232</span>&#160;<span class="preprocessor">#define SD_CS_HIGH()      HAL_GPIO_WritePin(SD_CS_GPIO_PORT, SD_CS_PIN, GPIO_PIN_SET)</span></div>
+<div class="line"><a name="l00233"></a><span class="lineno">  233</span>&#160; </div>
+<div class="line"><a name="l00237"></a><span class="lineno">  237</span>&#160;<span class="preprocessor">#define LCD_CS_LOW()      HAL_GPIO_WritePin(LCD_CS_GPIO_PORT, LCD_CS_PIN, GPIO_PIN_RESET)</span></div>
+<div class="line"><a name="l00238"></a><span class="lineno">  238</span>&#160;<span class="preprocessor">#define LCD_CS_HIGH()     HAL_GPIO_WritePin(LCD_CS_GPIO_PORT, LCD_CS_PIN, GPIO_PIN_SET)</span></div>
+<div class="line"><a name="l00239"></a><span class="lineno">  239</span>&#160;<span class="preprocessor">#define LCD_DC_LOW()      HAL_GPIO_WritePin(LCD_DC_GPIO_PORT, LCD_DC_PIN, GPIO_PIN_RESET)</span></div>
+<div class="line"><a name="l00240"></a><span class="lineno">  240</span>&#160;<span class="preprocessor">#define LCD_DC_HIGH()     HAL_GPIO_WritePin(LCD_DC_GPIO_PORT, LCD_DC_PIN, GPIO_PIN_SET)</span></div>
+<div class="line"><a name="l00241"></a><span class="lineno">  241</span>&#160;     </div>
+<div class="line"><a name="l00245"></a><span class="lineno">  245</span>&#160;<span class="preprocessor">#define SD_CS_PIN                                 GPIO_PIN_14</span></div>
+<div class="line"><a name="l00246"></a><span class="lineno">  246</span>&#160;<span class="preprocessor">#define SD_CS_GPIO_PORT                           GPIOF</span></div>
+<div class="line"><a name="l00247"></a><span class="lineno">  247</span>&#160;<span class="preprocessor">#define SD_CS_GPIO_CLK_ENABLE()                 __HAL_RCC_GPIOF_CLK_ENABLE()</span></div>
+<div class="line"><a name="l00248"></a><span class="lineno">  248</span>&#160;<span class="preprocessor">#define SD_CS_GPIO_CLK_DISABLE()                __HAL_RCC_GPIOF_CLK_DISABLE()</span></div>
+<div class="line"><a name="l00249"></a><span class="lineno">  249</span>&#160; </div>
+<div class="line"><a name="l00253"></a><span class="lineno">  253</span>&#160;<span class="preprocessor">#define LCD_CS_PIN                                 GPIO_PIN_14</span></div>
+<div class="line"><a name="l00254"></a><span class="lineno">  254</span>&#160;<span class="preprocessor">#define LCD_CS_GPIO_PORT                           GPIOD</span></div>
+<div class="line"><a name="l00255"></a><span class="lineno">  255</span>&#160;<span class="preprocessor">#define LCD_CS_GPIO_CLK_ENABLE()                 __HAL_RCC_GPIOD_CLK_ENABLE()</span></div>
+<div class="line"><a name="l00256"></a><span class="lineno">  256</span>&#160;<span class="preprocessor">#define LCD_CS_GPIO_CLK_DISABLE()                __HAL_RCC_GPIOD_CLK_DISABLE()</span></div>
+<div class="line"><a name="l00257"></a><span class="lineno">  257</span>&#160;    </div>
+<div class="line"><a name="l00261"></a><span class="lineno">  261</span>&#160;<span class="preprocessor">#define LCD_DC_PIN                                 GPIO_PIN_12</span></div>
+<div class="line"><a name="l00262"></a><span class="lineno">  262</span>&#160;<span class="preprocessor">#define LCD_DC_GPIO_PORT                           GPIOF</span></div>
+<div class="line"><a name="l00263"></a><span class="lineno">  263</span>&#160;<span class="preprocessor">#define LCD_DC_GPIO_CLK_ENABLE()                 __HAL_RCC_GPIOF_CLK_ENABLE()</span></div>
+<div class="line"><a name="l00264"></a><span class="lineno">  264</span>&#160;<span class="preprocessor">#define LCD_DC_GPIO_CLK_DISABLE()                __HAL_RCC_GPIOF_CLK_DISABLE()</span></div>
+<div class="line"><a name="l00265"></a><span class="lineno">  265</span>&#160; </div>
+<div class="line"><a name="l00266"></a><span class="lineno">  266</span>&#160;<span class="preprocessor">#endif </span><span class="comment">/* HAL_SPI_MODULE_ENABLED */</span><span class="preprocessor"></span></div>
+<div class="line"><a name="l00267"></a><span class="lineno">  267</span>&#160; </div>
+<div class="line"><a name="l00268"></a><span class="lineno">  268</span>&#160;<span class="comment">/*################################ ADCx for Nucleo 144 board ######################################*/</span></div>
+<div class="line"><a name="l00274"></a><span class="lineno">  274</span>&#160;<span class="comment">/* For some Nucleo144 boards, Arduino UNO pin7 (A3) is connected to PF3 in others to PC01 */</span> </div>
+<div class="line"><a name="l00275"></a><span class="lineno">  275</span>&#160;<span class="preprocessor">#if defined(ADC3) </span></div>
+<div class="line"><a name="l00276"></a><span class="lineno">  276</span>&#160;<span class="preprocessor">#define NUCLEO_ADCx                          ADC3</span></div>
+<div class="line"><a name="l00277"></a><span class="lineno">  277</span>&#160;<span class="preprocessor">#define NUCLEO_ADCx_CLK_ENABLE()             __HAL_RCC_ADC3_CLK_ENABLE()</span></div>
+<div class="line"><a name="l00278"></a><span class="lineno">  278</span>&#160;<span class="preprocessor">#define NUCLEO_ADCx_CLK_DISABLE()            __HAL_RCC_ADC3_CLK_DISABLE()</span></div>
+<div class="line"><a name="l00279"></a><span class="lineno">  279</span>&#160; </div>
+<div class="line"><a name="l00280"></a><span class="lineno">  280</span>&#160;<span class="preprocessor">#define NUCLEO_ADCx_CHANNEL                  ADC_CHANNEL_9</span></div>
+<div class="line"><a name="l00281"></a><span class="lineno">  281</span>&#160;<span class="preprocessor">#define NUCLEO_ADCx_GPIO_PORT                GPIOF</span></div>
+<div class="line"><a name="l00282"></a><span class="lineno">  282</span>&#160;<span class="preprocessor">#define NUCLEO_ADCx_GPIO_PIN                 GPIO_PIN_3</span></div>
+<div class="line"><a name="l00283"></a><span class="lineno">  283</span>&#160;<span class="preprocessor">#define NUCLEO_ADCx_GPIO_CLK_ENABLE()        __HAL_RCC_GPIOF_CLK_ENABLE()</span></div>
+<div class="line"><a name="l00284"></a><span class="lineno">  284</span>&#160;<span class="preprocessor">#define NUCLEO_ADCx_GPIO_CLK_DISABLE()       __HAL_RCC_GPIOF_CLK_DISABLE()</span></div>
+<div class="line"><a name="l00285"></a><span class="lineno">  285</span>&#160; </div>
+<div class="line"><a name="l00286"></a><span class="lineno">  286</span>&#160;<span class="preprocessor">#else</span></div>
+<div class="line"><a name="l00287"></a><span class="lineno"><a class="line" href="group___s_t_m32_f4_x_x___n_u_c_l_e_o__144___l_o_w___l_e_v_e_l___b_u_s.html#ga3ee6ef6d95ffdf4a62a17cc50e18851e">  287</a></span>&#160;<span class="preprocessor">#define NUCLEO_ADCx                          ADC1</span></div>
+<div class="line"><a name="l00288"></a><span class="lineno">  288</span>&#160;<span class="preprocessor">#define NUCLEO_ADCx_CLK_ENABLE()             __HAL_RCC_ADC1_CLK_ENABLE()</span></div>
+<div class="line"><a name="l00289"></a><span class="lineno">  289</span>&#160;<span class="preprocessor">#define NUCLEO_ADCx_CLK_DISABLE()            __HAL_RCC_ADC1_CLK_DISABLE()</span></div>
+<div class="line"><a name="l00290"></a><span class="lineno">  290</span>&#160;<span class="preprocessor">#define NUCLEO_ADCx_CHANNEL                  ADC_CHANNEL_11</span></div>
+<div class="line"><a name="l00291"></a><span class="lineno">  291</span>&#160;   </div>
+<div class="line"><a name="l00292"></a><span class="lineno">  292</span>&#160;<span class="preprocessor">#define NUCLEO_ADCx_GPIO_PORT                GPIOC</span></div>
+<div class="line"><a name="l00293"></a><span class="lineno">  293</span>&#160;<span class="preprocessor">#define NUCLEO_ADCx_GPIO_PIN                 GPIO_PIN_1</span></div>
+<div class="line"><a name="l00294"></a><span class="lineno">  294</span>&#160;<span class="preprocessor">#define NUCLEO_ADCx_GPIO_CLK_ENABLE()        __HAL_RCC_GPIOC_CLK_ENABLE()</span></div>
+<div class="line"><a name="l00295"></a><span class="lineno">  295</span>&#160;<span class="preprocessor">#define NUCLEO_ADCx_GPIO_CLK_DISABLE()       __HAL_RCC_GPIOC_CLK_DISABLE()</span></div>
+<div class="line"><a name="l00296"></a><span class="lineno">  296</span>&#160;<span class="preprocessor">#endif </span><span class="comment">/* HAL_ADC_MODULE_ENABLED */</span><span class="preprocessor"></span></div>
+<div class="line"><a name="l00297"></a><span class="lineno">  297</span>&#160; </div>
+<div class="line"><a name="l00316"></a><span class="lineno">  316</span>&#160;uint32_t         <a class="code" href="group___s_t_m32_f4_x_x___n_u_c_l_e_o__144___l_o_w___l_e_v_e_l___exported___functions.html#ga65d13608f7010a8068614154cb142cd6">BSP_GetVersion</a>(<span class="keywordtype">void</span>);  </div>
+<div class="line"><a name="l00317"></a><span class="lineno">  317</span>&#160;<span class="keywordtype">void</span>             <a class="code" href="group___s_t_m32_f4_x_x___n_u_c_l_e_o__144___l_o_w___l_e_v_e_l___exported___functions.html#gab58a4f16a476a53653c5c400e3bed158">BSP_LED_Init</a>(Led_TypeDef Led);</div>
+<div class="line"><a name="l00318"></a><span class="lineno">  318</span>&#160;<span class="keywordtype">void</span>             <a class="code" href="group___s_t_m32_f4_x_x___n_u_c_l_e_o__144___l_o_w___l_e_v_e_l___exported___functions.html#ga8cb1d5b32557d492b8bf0f7109bd6d3f">BSP_LED_DeInit</a>(Led_TypeDef Led);</div>
+<div class="line"><a name="l00319"></a><span class="lineno">  319</span>&#160;<span class="keywordtype">void</span>             <a class="code" href="group___s_t_m32_f4_x_x___n_u_c_l_e_o__144___l_o_w___l_e_v_e_l___exported___functions.html#gaee9c16b16384834c69efabf58f423d6f">BSP_LED_On</a>(Led_TypeDef Led);</div>
+<div class="line"><a name="l00320"></a><span class="lineno">  320</span>&#160;<span class="keywordtype">void</span>             <a class="code" href="group___s_t_m32_f4_x_x___n_u_c_l_e_o__144___l_o_w___l_e_v_e_l___exported___functions.html#gaef268680154ca15c45066d64d41f9467">BSP_LED_Off</a>(Led_TypeDef Led);</div>
+<div class="line"><a name="l00321"></a><span class="lineno">  321</span>&#160;<span class="keywordtype">void</span>             <a class="code" href="group___s_t_m32_f4_x_x___n_u_c_l_e_o__144___l_o_w___l_e_v_e_l___exported___functions.html#ga1b9eabba7d498f41d6f16587ec0f9732">BSP_LED_Toggle</a>(Led_TypeDef Led);</div>
+<div class="line"><a name="l00322"></a><span class="lineno">  322</span>&#160;<span class="keywordtype">void</span>             <a class="code" href="group___s_t_m32_f4_x_x___n_u_c_l_e_o__144___l_o_w___l_e_v_e_l___exported___functions.html#gad31c8db50a71c1f6dbfe132d72ba0bc6">BSP_PB_Init</a>(Button_TypeDef Button, ButtonMode_TypeDef ButtonMode);</div>
+<div class="line"><a name="l00323"></a><span class="lineno">  323</span>&#160;<span class="keywordtype">void</span>             <a class="code" href="group___s_t_m32_f4_x_x___n_u_c_l_e_o__144___l_o_w___l_e_v_e_l___exported___functions.html#gac1bd746e7f6037d50ca3784ebe05686e">BSP_PB_DeInit</a>(Button_TypeDef Button);</div>
+<div class="line"><a name="l00324"></a><span class="lineno">  324</span>&#160;uint32_t         <a class="code" href="group___s_t_m32_f4_x_x___n_u_c_l_e_o__144___l_o_w___l_e_v_e_l___exported___functions.html#ga8f0978b6cffda9c67266ddfdb3a0abf7">BSP_PB_GetState</a>(Button_TypeDef Button);</div>
+<div class="line"><a name="l00325"></a><span class="lineno">  325</span>&#160;<span class="preprocessor">#ifdef HAL_ADC_MODULE_ENABLED</span></div>
+<div class="line"><a name="l00326"></a><span class="lineno">  326</span>&#160;uint8_t          BSP_JOY_Init(<span class="keywordtype">void</span>);</div>
+<div class="line"><a name="l00327"></a><span class="lineno">  327</span>&#160;JOYState_TypeDef BSP_JOY_GetState(<span class="keywordtype">void</span>);</div>
+<div class="line"><a name="l00328"></a><span class="lineno">  328</span>&#160;<span class="keywordtype">void</span>             BSP_JOY_DeInit(<span class="keywordtype">void</span>);</div>
+<div class="line"><a name="l00329"></a><span class="lineno">  329</span>&#160;<span class="preprocessor">#endif </span><span class="comment">/* HAL_ADC_MODULE_ENABLED */</span><span class="preprocessor"></span></div>
+<div class="line"><a name="l00330"></a><span class="lineno">  330</span>&#160; </div>
+<div class="line"><a name="l00331"></a><span class="lineno">  331</span>&#160;  </div>
+<div class="line"><a name="l00348"></a><span class="lineno">  348</span>&#160;<span class="preprocessor">#ifdef __cplusplus</span></div>
+<div class="line"><a name="l00349"></a><span class="lineno">  349</span>&#160;}</div>
+<div class="line"><a name="l00350"></a><span class="lineno">  350</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00351"></a><span class="lineno">  351</span>&#160; </div>
+<div class="line"><a name="l00352"></a><span class="lineno">  352</span>&#160;<span class="preprocessor">#endif </span><span class="comment">/* __STM32F4XX_NUCLEO_144_H */</span><span class="preprocessor"></span></div>
+<div class="line"><a name="l00353"></a><span class="lineno">  353</span>&#160; </div>
+<div class="line"><a name="l00354"></a><span class="lineno">  354</span>&#160;<span class="comment">/************************ (C) COPYRIGHT STMicroelectronics *****END OF FILE****/</span></div>
+</div><!-- fragment --></div><!-- contents -->
+</div><!-- doc-content -->
+<div class="ttc" id="a_a_p_i__debounce_8h_html_a48a6aaf5794590cc5c20b06e0fa98d80"><div class="ttname"><a href="_a_p_i__debounce_8h.html#a48a6aaf5794590cc5c20b06e0fa98d80">isbuttonPressed</a></div><div class="ttdeci">bool_t isbuttonPressed(void)</div><div class="ttdoc">Checks if the button is pressed.</div><div class="ttdef"><b>Definition:</b> API_debounce.c:101</div></div>
+<div class="ttc" id="agroup___g_p_i_o__mode__define_html_ga526c72c5264316fc05c775b6cad4aa6a"><div class="ttname"><a href="group___g_p_i_o__mode__define.html#ga526c72c5264316fc05c775b6cad4aa6a">GPIO_MODE_AF_PP</a></div><div class="ttdeci">#define GPIO_MODE_AF_PP</div><div class="ttdef"><b>Definition:</b> stm32f4xx_hal_gpio.h:120</div></div>
+<div class="ttc" id="a_a_p_i__delay_8c_html_a6613427678149cadd03bac79e79475f3"><div class="ttname"><a href="_a_p_i__delay_8c.html#a6613427678149cadd03bac79e79475f3">delayInit</a></div><div class="ttdeci">void delayInit(delay_t *delay, tick_t duration)</div><div class="ttdoc">&lt; BSP (Board Support Package) para Nucleo-144.</div><div class="ttdef"><b>Definition:</b> API_delay.c:22</div></div>
+<div class="ttc" id="agroup___s_t_m32_f4_x_x___n_u_c_l_e_o__144___l_o_w___l_e_v_e_l___exported___functions_html_ga8cb1d5b32557d492b8bf0f7109bd6d3f"><div class="ttname"><a href="group___s_t_m32_f4_x_x___n_u_c_l_e_o__144___l_o_w___l_e_v_e_l___exported___functions.html#ga8cb1d5b32557d492b8bf0f7109bd6d3f">BSP_LED_DeInit</a></div><div class="ttdeci">void BSP_LED_DeInit(Led_TypeDef Led)</div><div class="ttdoc">DeInit LEDs.</div><div class="ttdef"><b>Definition:</b> stm32f4xx_nucleo_144.c:216</div></div>
+<div class="ttc" id="astruct_g_p_i_o___init_type_def_html_a0ffc93ec511ed9cf1663f6939bd3e839"><div class="ttname"><a href="struct_g_p_i_o___init_type_def.html#a0ffc93ec511ed9cf1663f6939bd3e839">GPIO_InitTypeDef::Mode</a></div><div class="ttdeci">uint32_t Mode</div><div class="ttdef"><b>Definition:</b> stm32f4xx_hal_gpio.h:51</div></div>
+<div class="ttc" id="agroup___g_p_i_o__mode__define_html_ga1013838a64cec2f8c88f079c449d1982"><div class="ttname"><a href="group___g_p_i_o__mode__define.html#ga1013838a64cec2f8c88f079c449d1982">GPIO_MODE_OUTPUT_PP</a></div><div class="ttdeci">#define GPIO_MODE_OUTPUT_PP</div><div class="ttdef"><b>Definition:</b> stm32f4xx_hal_gpio.h:118</div></div>
+<div class="ttc" id="a_a_p_i__debounce_8h_html_ac7e2402b734e7262b8b0f54b3ef2aa80"><div class="ttname"><a href="_a_p_i__debounce_8h.html#ac7e2402b734e7262b8b0f54b3ef2aa80">debounceFSM_init</a></div><div class="ttdeci">void debounceFSM_init(delay_t *delayi)</div><div class="ttdoc">Initializes the debounce FSM, setting the initial state.</div><div class="ttdef"><b>Definition:</b> API_debounce.c:57</div></div>
+<div class="ttc" id="agroup___s_t_m32_f4_x_x___n_u_c_l_e_o__144___l_o_w___l_e_v_e_l___private___functions_html_gac1bd746e7f6037d50ca3784ebe05686e"><div class="ttname"><a href="group___s_t_m32_f4_x_x___n_u_c_l_e_o__144___l_o_w___l_e_v_e_l___private___functions.html#gac1bd746e7f6037d50ca3784ebe05686e">BSP_PB_DeInit</a></div><div class="ttdeci">void BSP_PB_DeInit(Button_TypeDef Button)</div><div class="ttdoc">Push Button DeInit.</div><div class="ttdef"><b>Definition:</b> stm32f4xx_nucleo_144.c:311</div></div>
+<div class="ttc" id="agroup___s_t_m32_f4_x_x___n_u_c_l_e_o__144___l_o_w___l_e_v_e_l___exported___functions_html_gad31c8db50a71c1f6dbfe132d72ba0bc6"><div class="ttname"><a href="group___s_t_m32_f4_x_x___n_u_c_l_e_o__144___l_o_w___l_e_v_e_l___exported___functions.html#gad31c8db50a71c1f6dbfe132d72ba0bc6">BSP_PB_Init</a></div><div class="ttdeci">void BSP_PB_Init(Button_TypeDef Button, ButtonMode_TypeDef ButtonMode)</div><div class="ttdoc">Configures Button GPIO and EXTI Line.</div><div class="ttdef"><b>Definition:</b> stm32f4xx_nucleo_144.c:274</div></div>
+<div class="ttc" id="astm32f4xx__nucleo__144_8h_html"><div class="ttname"><a href="stm32f4xx__nucleo__144_8h.html">stm32f4xx_nucleo_144.h</a></div><div class="ttdoc">This file contains definitions for:</div></div>
+<div class="ttc" id="agroup___s_t_m32_f4_x_x___n_u_c_l_e_o__144___l_o_w___l_e_v_e_l___private___functions_html_gad31c8db50a71c1f6dbfe132d72ba0bc6"><div class="ttname"><a href="group___s_t_m32_f4_x_x___n_u_c_l_e_o__144___l_o_w___l_e_v_e_l___private___functions.html#gad31c8db50a71c1f6dbfe132d72ba0bc6">BSP_PB_Init</a></div><div class="ttdeci">void BSP_PB_Init(Button_TypeDef Button, ButtonMode_TypeDef ButtonMode)</div><div class="ttdoc">Configures Button GPIO and EXTI Line.</div><div class="ttdef"><b>Definition:</b> stm32f4xx_nucleo_144.c:274</div></div>
+<div class="ttc" id="agroup___s_t_m32_f4_x_x___n_u_c_l_e_o__144___l_o_w___l_e_v_e_l___exported___functions_html_ga65d13608f7010a8068614154cb142cd6"><div class="ttname"><a href="group___s_t_m32_f4_x_x___n_u_c_l_e_o__144___l_o_w___l_e_v_e_l___exported___functions.html#ga65d13608f7010a8068614154cb142cd6">BSP_GetVersion</a></div><div class="ttdeci">uint32_t BSP_GetVersion(void)</div><div class="ttdoc">This method returns the STM32F4xx NUCLEO BSP Driver revision.</div><div class="ttdef"><b>Definition:</b> stm32f4xx_nucleo_144.c:177</div></div>
+<div class="ttc" id="a_app___m_e_f_8h_html_af837e73975afd6e36faa4440d80a24eaafe29bdbfb6e2165eec29bf28af429856"><div class="ttname"><a href="_app___m_e_f_8h.html#af837e73975afd6e36faa4440d80a24eaafe29bdbfb6e2165eec29bf28af429856">BAD</a></div><div class="ttdeci">@ BAD</div><div class="ttdef"><b>Definition:</b> App_MEF.h:24</div></div>
+<div class="ttc" id="agroup___s_t_m32_f4_x_x___n_u_c_l_e_o__144___l_o_w___l_e_v_e_l___b_u_t_t_o_n_html_ga34df6915e3013d6a0c74131d3946b659"><div class="ttname"><a href="group___s_t_m32_f4_x_x___n_u_c_l_e_o__144___l_o_w___l_e_v_e_l___b_u_t_t_o_n.html#ga34df6915e3013d6a0c74131d3946b659">USER_BUTTON_PIN</a></div><div class="ttdeci">#define USER_BUTTON_PIN</div><div class="ttdoc">Key push-button.</div><div class="ttdef"><b>Definition:</b> stm32f4xx_nucleo_144.h:156</div></div>
+<div class="ttc" id="astruct_____s_p_i___handle_type_def_html"><div class="ttname"><a href="struct_____s_p_i___handle_type_def.html">__SPI_HandleTypeDef</a></div><div class="ttdoc">SPI handle Structure definition.</div><div class="ttdef"><b>Definition:</b> stm32f4xx_hal_spi.h:104</div></div>
+<div class="ttc" id="astruct_s_p_i___init_type_def_html_ae4a064e48fd5945eda7210d515fed69c"><div class="ttname"><a href="struct_s_p_i___init_type_def.html#ae4a064e48fd5945eda7210d515fed69c">SPI_InitTypeDef::NSS</a></div><div class="ttdeci">uint32_t NSS</div><div class="ttdef"><b>Definition:</b> stm32f4xx_hal_spi.h:63</div></div>
+<div class="ttc" id="a_a_p_i__led_8c_html_aab8ea6510f636a08614e10baf5f767b2"><div class="ttname"><a href="_a_p_i__led_8c.html#aab8ea6510f636a08614e10baf5f767b2">def_Led_t</a></div><div class="ttdeci">def_Led_t</div><div class="ttdoc">Enumeración para definir estados o modos de operación de los LEDs.</div><div class="ttdef"><b>Definition:</b> API_led.c:31</div></div>
+<div class="ttc" id="a_a_p_i__led_8c_html_ad37464f7cb1328ae5cf6cbf07d178a55"><div class="ttname"><a href="_a_p_i__led_8c.html#ad37464f7cb1328ae5cf6cbf07d178a55">update_led</a></div><div class="ttdeci">void update_led(uint8_t paint_list[])</div><div class="ttdoc">Actualiza el estado de los LEDs basándose en una lista.</div><div class="ttdef"><b>Definition:</b> API_led.c:89</div></div>
+<div class="ttc" id="astruct_g_p_i_o___init_type_def_html_a871d0ab74071724e96b7cc9ae2a7532b"><div class="ttname"><a href="struct_g_p_i_o___init_type_def.html#a871d0ab74071724e96b7cc9ae2a7532b">GPIO_InitTypeDef::Pin</a></div><div class="ttdeci">uint32_t Pin</div><div class="ttdef"><b>Definition:</b> stm32f4xx_hal_gpio.h:48</div></div>
+<div class="ttc" id="a_a_p_i__debounce_8h_html_a451a7d205dfb766727eba25c6e61c687"><div class="ttname"><a href="_a_p_i__debounce_8h.html#a451a7d205dfb766727eba25c6e61c687">tick_t</a></div><div class="ttdeci">uint32_t tick_t</div><div class="ttdef"><b>Definition:</b> API_debounce.h:19</div></div>
+<div class="ttc" id="astructdelay__t_html_a873eb02d943c873d26b7ea9c74a0fb59"><div class="ttname"><a href="structdelay__t.html#a873eb02d943c873d26b7ea9c74a0fb59">delay_t::running</a></div><div class="ttdeci">bool_t running</div><div class="ttdoc">Indica si el retardo está activo o no.</div><div class="ttdef"><b>Definition:</b> API_delay.h:31</div></div>
+<div class="ttc" id="a_a_p_i__delay_8h_html_afecaa44225b94ebfb354e4b6b7e6e9ce"><div class="ttname"><a href="_a_p_i__delay_8h.html#afecaa44225b94ebfb354e4b6b7e6e9ce">delayRead</a></div><div class="ttdeci">bool_t delayRead(delay_t *delay)</div><div class="ttdoc">Lee y actualiza el estado del objeto de retardo.</div><div class="ttdef"><b>Definition:</b> API_delay.c:39</div></div>
+<div class="ttc" id="astructdelay__t_html"><div class="ttname"><a href="structdelay__t.html">delay_t</a></div><div class="ttdoc">Estructura para manejar un retardo de tiempo.</div><div class="ttdef"><b>Definition:</b> API_delay.h:28</div></div>
+<div class="ttc" id="a_a_p_i__debounce_8h_html"><div class="ttname"><a href="_a_p_i__debounce_8h.html">API_debounce.h</a></div><div class="ttdoc">Interfaz de funciones para manejo y eliminación de rebotes en pulsadores.</div></div>
+<div class="ttc" id="a_a_p_i__spi_8h_html_a4d9859b2bdb3a533c0eefe44299e5670"><div class="ttname"><a href="_a_p_i__spi_8h.html#a4d9859b2bdb3a533c0eefe44299e5670">data_Pin</a></div><div class="ttdeci">#define data_Pin</div><div class="ttdoc">Pin de datos (DIN) para el MAX7219.</div><div class="ttdef"><b>Definition:</b> API_spi.h:18</div></div>
+<div class="ttc" id="a_app___m_e_f_8h_html"><div class="ttname"><a href="_app___m_e_f_8h.html">App_MEF.h</a></div><div class="ttdoc">Definiciones y prototipos de funciones para la máquina de estados finitos (MEF) de la aplicación.</div></div>
+<div class="ttc" id="a_a_p_i__spi_8h_html_ae909944aa85ae98323073c628be541aa"><div class="ttname"><a href="_a_p_i__spi_8h.html#ae909944aa85ae98323073c628be541aa">spi_init</a></div><div class="ttdeci">void spi_init(void)</div><div class="ttdoc">funcion de inicialización de protocolo SPI</div><div class="ttdef"><b>Definition:</b> API_spi.c:27</div></div>
+<div class="ttc" id="agroup___g_p_i_o__mode__define_html_ga7a04f9ab65ad572ad20791a35009220c"><div class="ttname"><a href="group___g_p_i_o__mode__define.html#ga7a04f9ab65ad572ad20791a35009220c">GPIO_MODE_ANALOG</a></div><div class="ttdeci">#define GPIO_MODE_ANALOG</div><div class="ttdef"><b>Definition:</b> stm32f4xx_hal_gpio.h:123</div></div>
+<div class="ttc" id="agroup___s_t_m32_f4_x_x___n_u_c_l_e_o__144___l_o_w___l_e_v_e_l___private___functions_html_gaee9c16b16384834c69efabf58f423d6f"><div class="ttname"><a href="group___s_t_m32_f4_x_x___n_u_c_l_e_o__144___l_o_w___l_e_v_e_l___private___functions.html#gaee9c16b16384834c69efabf58f423d6f">BSP_LED_On</a></div><div class="ttdeci">void BSP_LED_On(Led_TypeDef Led)</div><div class="ttdoc">Turns selected LED On.</div><div class="ttdef"><b>Definition:</b> stm32f4xx_nucleo_144.c:233</div></div>
+<div class="ttc" id="agroup___s_t_m32_f4_x_x___n_u_c_l_e_o__144___l_o_w___l_e_v_e_l___private___functions_html_ga65d13608f7010a8068614154cb142cd6"><div class="ttname"><a href="group___s_t_m32_f4_x_x___n_u_c_l_e_o__144___l_o_w___l_e_v_e_l___private___functions.html#ga65d13608f7010a8068614154cb142cd6">BSP_GetVersion</a></div><div class="ttdeci">uint32_t BSP_GetVersion(void)</div><div class="ttdoc">This method returns the STM32F4xx NUCLEO BSP Driver revision.</div><div class="ttdef"><b>Definition:</b> stm32f4xx_nucleo_144.c:177</div></div>
+<div class="ttc" id="agroup___s_t_m32_f4_x_x___n_u_c_l_e_o__144___l_o_w___l_e_v_e_l___private___functions_html_gab58a4f16a476a53653c5c400e3bed158"><div class="ttname"><a href="group___s_t_m32_f4_x_x___n_u_c_l_e_o__144___l_o_w___l_e_v_e_l___private___functions.html#gab58a4f16a476a53653c5c400e3bed158">BSP_LED_Init</a></div><div class="ttdeci">void BSP_LED_Init(Led_TypeDef Led)</div><div class="ttdoc">Configures LED GPIO.</div><div class="ttdef"><b>Definition:</b> stm32f4xx_nucleo_144.c:190</div></div>
+<div class="ttc" id="a_app___m_e_f_8h_html_af837e73975afd6e36faa4440d80a24ea"><div class="ttname"><a href="_app___m_e_f_8h.html#af837e73975afd6e36faa4440d80a24ea">State_MEF_t</a></div><div class="ttdeci">State_MEF_t</div><div class="ttdoc">Enumeración de los posibles estados de la MEF.</div><div class="ttdef"><b>Definition:</b> App_MEF.h:18</div></div>
+<div class="ttc" id="astruct_s_p_i___type_def_html_a3df0d8dfcd1ec958659ffe21eb64fa94"><div class="ttname"><a href="struct_s_p_i___type_def.html#a3df0d8dfcd1ec958659ffe21eb64fa94">SPI_TypeDef::DR</a></div><div class="ttdeci">__IO uint32_t DR</div><div class="ttdef"><b>Definition:</b> stm32f429xx.h:833</div></div>
+<div class="ttc" id="astruct_g_p_i_o___init_type_def_html_ad04b2041f59d32492ec36a891418f3fd"><div class="ttname"><a href="struct_g_p_i_o___init_type_def.html#ad04b2041f59d32492ec36a891418f3fd">GPIO_InitTypeDef::Speed</a></div><div class="ttdeci">uint32_t Speed</div><div class="ttdef"><b>Definition:</b> stm32f4xx_hal_gpio.h:57</div></div>
+<div class="ttc" id="astruct_s_p_i___init_type_def_html_aba7183911cbc41063270dab182de768f"><div class="ttname"><a href="struct_s_p_i___init_type_def.html#aba7183911cbc41063270dab182de768f">SPI_InitTypeDef::CLKPhase</a></div><div class="ttdeci">uint32_t CLKPhase</div><div class="ttdef"><b>Definition:</b> stm32f4xx_hal_spi.h:60</div></div>
+<div class="ttc" id="a_a_p_i__spi_8c_html_aed076139f54c6d6c24991c35d1398bc9"><div class="ttname"><a href="_a_p_i__spi_8c.html#aed076139f54c6d6c24991c35d1398bc9">ESTADO_ALTO</a></div><div class="ttdeci">#define ESTADO_ALTO</div><div class="ttdoc">&lt; Incluye el tipo booleano (bool).</div><div class="ttdef"><b>Definition:</b> API_spi.c:12</div></div>
+<div class="ttc" id="a_a_p_i__spi_8h_html_a88a613c3d12cd2e7eca4168dc52d206c"><div class="ttname"><a href="_a_p_i__spi_8h.html#a88a613c3d12cd2e7eca4168dc52d206c">spi_write</a></div><div class="ttdeci">void spi_write(uint8_t address, uint8_t cmd)</div><div class="ttdoc">Envia una dirección y un comando al dispositivo MAX7219.</div><div class="ttdef"><b>Definition:</b> API_spi.c:76</div></div>
+<div class="ttc" id="agroup___g_p_i_o__pull__define_html_gae689bc8f5c42d6df7bd54a8dd372e072"><div class="ttname"><a href="group___g_p_i_o__pull__define.html#gae689bc8f5c42d6df7bd54a8dd372e072">GPIO_PULLUP</a></div><div class="ttdeci">#define GPIO_PULLUP</div><div class="ttdef"><b>Definition:</b> stm32f4xx_hal_gpio.h:154</div></div>
+<div class="ttc" id="agroup___h_a_l___exported___functions___group2_html_gac9b3a85a73735ac840d0dcb59bc0fdd6"><div class="ttname"><a href="group___h_a_l___exported___functions___group2.html#gac9b3a85a73735ac840d0dcb59bc0fdd6">HAL_GetTick</a></div><div class="ttdeci">uint32_t HAL_GetTick(void)</div><div class="ttdoc">Provides a tick value in millisecond.</div><div class="ttdef"><b>Definition:</b> stm32f4xx_hal.c:323</div></div>
+<div class="ttc" id="a_app___m_e_f_8h_html_af837e73975afd6e36faa4440d80a24eaa6a7856cca1833641e731676636b193f1"><div class="ttname"><a href="_app___m_e_f_8h.html#af837e73975afd6e36faa4440d80a24eaa6a7856cca1833641e731676636b193f1">FIRST</a></div><div class="ttdeci">@ FIRST</div><div class="ttdef"><b>Definition:</b> App_MEF.h:20</div></div>
+<div class="ttc" id="astm32f4xx__hal__def_8h_html_a63c0679d1cb8b8c684fbb0632743478f"><div class="ttname"><a href="stm32f4xx__hal__def_8h.html#a63c0679d1cb8b8c684fbb0632743478f">HAL_StatusTypeDef</a></div><div class="ttdeci">HAL_StatusTypeDef</div><div class="ttdoc">HAL Status structures definition</div><div class="ttdef"><b>Definition:</b> stm32f4xx_hal_def.h:38</div></div>
+<div class="ttc" id="astruct_g_p_i_o___init_type_def_html_a9a352764836bb14ec56a94f77697b52d"><div class="ttname"><a href="struct_g_p_i_o___init_type_def.html#a9a352764836bb14ec56a94f77697b52d">GPIO_InitTypeDef::Alternate</a></div><div class="ttdeci">uint32_t Alternate</div><div class="ttdef"><b>Definition:</b> stm32f4xx_hal_gpio.h:60</div></div>
+<div class="ttc" id="astruct_____s_p_i___handle_type_def_html_a33f0dc84acb181a4702b30c92f007ca6"><div class="ttname"><a href="struct_____s_p_i___handle_type_def.html#a33f0dc84acb181a4702b30c92f007ca6">__SPI_HandleTypeDef::Init</a></div><div class="ttdeci">SPI_InitTypeDef Init</div><div class="ttdef"><b>Definition:</b> stm32f4xx_hal_spi.h:108</div></div>
+<div class="ttc" id="astruct_g_p_i_o___init_type_def_html_a6cdde08eb507b710f8179a4326548e26"><div class="ttname"><a href="struct_g_p_i_o___init_type_def.html#a6cdde08eb507b710f8179a4326548e26">GPIO_InitTypeDef::Pull</a></div><div class="ttdeci">uint32_t Pull</div><div class="ttdef"><b>Definition:</b> stm32f4xx_hal_gpio.h:54</div></div>
+<div class="ttc" id="a_a_p_i__spi_8h_html_ad61bc1c5cd395158b16f796b6164e33a"><div class="ttname"><a href="_a_p_i__spi_8h.html#ad61bc1c5cd395158b16f796b6164e33a">maxport</a></div><div class="ttdeci">#define maxport</div><div class="ttdoc">Puerto GPIO definido para la comunicación con MAX7219.</div><div class="ttdef"><b>Definition:</b> API_spi.h:16</div></div>
+<div class="ttc" id="a_a_p_i__delay_8c_html_afecaa44225b94ebfb354e4b6b7e6e9ce"><div class="ttname"><a href="_a_p_i__delay_8c.html#afecaa44225b94ebfb354e4b6b7e6e9ce">delayRead</a></div><div class="ttdeci">bool_t delayRead(delay_t *delay)</div><div class="ttdoc">Lee y actualiza el estado del objeto de retardo.</div><div class="ttdef"><b>Definition:</b> API_delay.c:39</div></div>
+<div class="ttc" id="astruct_g_p_i_o___type_def_html"><div class="ttname"><a href="struct_g_p_i_o___type_def.html">GPIO_TypeDef</a></div><div class="ttdoc">General Purpose I/O.</div><div class="ttdef"><b>Definition:</b> stm32f429xx.h:574</div></div>
+<div class="ttc" id="agroup___s_t_m32_f4_x_x___n_u_c_l_e_o__144___l_o_w___l_e_v_e_l___b_u_s_html_ga3ee6ef6d95ffdf4a62a17cc50e18851e"><div class="ttname"><a href="group___s_t_m32_f4_x_x___n_u_c_l_e_o__144___l_o_w___l_e_v_e_l___b_u_s.html#ga3ee6ef6d95ffdf4a62a17cc50e18851e">NUCLEO_ADCx</a></div><div class="ttdeci">#define NUCLEO_ADCx</div><div class="ttdoc">ADCx Interface pins used to detect motion of Joystick available on Adafruit 1.8&quot; TFT shield.</div><div class="ttdef"><b>Definition:</b> stm32f4xx_nucleo_144.h:287</div></div>
+<div class="ttc" id="a_a_p_i__delay_8c_html_a2af041ac01bb3db8ecf87ce371fac67d"><div class="ttname"><a href="_a_p_i__delay_8c.html#a2af041ac01bb3db8ecf87ce371fac67d">delayWrite</a></div><div class="ttdeci">void delayWrite(delay_t *delay, tick_t duration)</div><div class="ttdoc">Establece una nueva duración para el objeto de retardo.</div><div class="ttdef"><b>Definition:</b> API_delay.c:63</div></div>
+<div class="ttc" id="astruct_s_p_i___type_def_html_af6aca2bbd40c0fb6df7c3aebe224a360"><div class="ttname"><a href="struct_s_p_i___type_def.html#af6aca2bbd40c0fb6df7c3aebe224a360">SPI_TypeDef::SR</a></div><div class="ttdeci">__IO uint32_t SR</div><div class="ttdef"><b>Definition:</b> stm32f429xx.h:832</div></div>
+<div class="ttc" id="agroup___g_p_i_o__pull__define_html_ga75d958d0410c36da7f27d1f4f5c36c14"><div class="ttname"><a href="group___g_p_i_o__pull__define.html#ga75d958d0410c36da7f27d1f4f5c36c14">GPIO_PULLDOWN</a></div><div class="ttdeci">#define GPIO_PULLDOWN</div><div class="ttdef"><b>Definition:</b> stm32f4xx_hal_gpio.h:155</div></div>
+<div class="ttc" id="agroup___g_p_i_o__mode__define_html_gaa166210a6da3ac7e8d7504702520e522"><div class="ttname"><a href="group___g_p_i_o__mode__define.html#gaa166210a6da3ac7e8d7504702520e522">GPIO_MODE_IT_FALLING</a></div><div class="ttdeci">#define GPIO_MODE_IT_FALLING</div><div class="ttdef"><b>Definition:</b> stm32f4xx_hal_gpio.h:126</div></div>
+<div class="ttc" id="agroup___s_t_m32_f4_x_x___n_u_c_l_e_o__144___l_o_w___l_e_v_e_l___private___functions_html_ga8f0978b6cffda9c67266ddfdb3a0abf7"><div class="ttname"><a href="group___s_t_m32_f4_x_x___n_u_c_l_e_o__144___l_o_w___l_e_v_e_l___private___functions.html#ga8f0978b6cffda9c67266ddfdb3a0abf7">BSP_PB_GetState</a></div><div class="ttdeci">uint32_t BSP_PB_GetState(Button_TypeDef Button)</div><div class="ttdoc">Returns the selected Button state.</div><div class="ttdef"><b>Definition:</b> stm32f4xx_nucleo_144.c:326</div></div>
+<div class="ttc" id="agroup___g_p_i_o__mode__define_html_ga088659562e68426d9a72821ea4fd8d50"><div class="ttname"><a href="group___g_p_i_o__mode__define.html#ga088659562e68426d9a72821ea4fd8d50">GPIO_MODE_IT_RISING</a></div><div class="ttdeci">#define GPIO_MODE_IT_RISING</div><div class="ttdef"><b>Definition:</b> stm32f4xx_hal_gpio.h:125</div></div>
+<div class="ttc" id="agroup___s_t_m32_f4_x_x___n_u_c_l_e_o__144___l_o_w___l_e_v_e_l___exported___functions_html_gac1bd746e7f6037d50ca3784ebe05686e"><div class="ttname"><a href="group___s_t_m32_f4_x_x___n_u_c_l_e_o__144___l_o_w___l_e_v_e_l___exported___functions.html#gac1bd746e7f6037d50ca3784ebe05686e">BSP_PB_DeInit</a></div><div class="ttdeci">void BSP_PB_DeInit(Button_TypeDef Button)</div><div class="ttdoc">Push Button DeInit.</div><div class="ttdef"><b>Definition:</b> stm32f4xx_nucleo_144.c:311</div></div>
+<div class="ttc" id="astruct_s_p_i___init_type_def_html_a2fa72ad4f27606fffa2ec9456bcb0a56"><div class="ttname"><a href="struct_s_p_i___init_type_def.html#a2fa72ad4f27606fffa2ec9456bcb0a56">SPI_InitTypeDef::BaudRatePrescaler</a></div><div class="ttdeci">uint32_t BaudRatePrescaler</div><div class="ttdef"><b>Definition:</b> stm32f4xx_hal_spi.h:67</div></div>
+<div class="ttc" id="a_a_p_i__led_8c_html_ae727837c14a2437ce1567e690da08dcb"><div class="ttname"><a href="_a_p_i__led_8c.html#ae727837c14a2437ce1567e690da08dcb">fantasma_led</a></div><div class="ttdeci">void fantasma_led(void)</div><div class="ttdoc">generra una animacion de fantasma.</div><div class="ttdef"><b>Definition:</b> API_led.c:119</div></div>
+<div class="ttc" id="a_a_p_i__led_8c_html_afc227daac655fc74c1537c0555055987"><div class="ttname"><a href="_a_p_i__led_8c.html#afc227daac655fc74c1537c0555055987">init_led</a></div><div class="ttdeci">void init_led(void)</div><div class="ttdoc">Inicializa los LEDs.</div><div class="ttdef"><b>Definition:</b> API_led.c:58</div></div>
+<div class="ttc" id="agroup___s_t_m32_f4_x_x___n_u_c_l_e_o__144___l_o_w___l_e_v_e_l___private___functions_html_ga8cb1d5b32557d492b8bf0f7109bd6d3f"><div class="ttname"><a href="group___s_t_m32_f4_x_x___n_u_c_l_e_o__144___l_o_w___l_e_v_e_l___private___functions.html#ga8cb1d5b32557d492b8bf0f7109bd6d3f">BSP_LED_DeInit</a></div><div class="ttdeci">void BSP_LED_DeInit(Led_TypeDef Led)</div><div class="ttdoc">DeInit LEDs.</div><div class="ttdef"><b>Definition:</b> stm32f4xx_nucleo_144.c:216</div></div>
+<div class="ttc" id="agroup___g_p_i_o__pull__define_html_ga5c2862579882c1cc64e36d38fbd07a4c"><div class="ttname"><a href="group___g_p_i_o__pull__define.html#ga5c2862579882c1cc64e36d38fbd07a4c">GPIO_NOPULL</a></div><div class="ttdeci">#define GPIO_NOPULL</div><div class="ttdef"><b>Definition:</b> stm32f4xx_hal_gpio.h:153</div></div>
+<div class="ttc" id="astructdelay__t_html_a6f490911ae4d6057a2a966d3db1a880c"><div class="ttname"><a href="structdelay__t.html#a6f490911ae4d6057a2a966d3db1a880c">delay_t::duration</a></div><div class="ttdeci">tick_t duration</div><div class="ttdoc">Duración del retardo en ticks.</div><div class="ttdef"><b>Definition:</b> API_delay.h:30</div></div>
+<div class="ttc" id="a_a_p_i__led_8c_html_a950ef052948438d345f6ef823d4895b3"><div class="ttname"><a href="_a_p_i__led_8c.html#a950ef052948438d345f6ef823d4895b3">fila_led</a></div><div class="ttdeci">void fila_led(uint8_t fila)</div><div class="ttdoc">Actualiza el estado de los LEDs basándose una fila.</div><div class="ttdef"><b>Definition:</b> API_led.c:104</div></div>
+<div class="ttc" id="a_app___m_e_f_8h_html_af837e73975afd6e36faa4440d80a24eaa7cb36ff0a80f238d5b987d9250d369e3"><div class="ttname"><a href="_app___m_e_f_8h.html#af837e73975afd6e36faa4440d80a24eaa7cb36ff0a80f238d5b987d9250d369e3">SECOND</a></div><div class="ttdeci">@ SECOND</div><div class="ttdef"><b>Definition:</b> App_MEF.h:21</div></div>
+<div class="ttc" id="astructdelay__t_html_ae1bce75339bd5ae09b4a0806b46d074c"><div class="ttname"><a href="structdelay__t.html#ae1bce75339bd5ae09b4a0806b46d074c">delay_t::startTime</a></div><div class="ttdeci">tick_t startTime</div><div class="ttdoc">Marca de tiempo cuando se inicia el retardo.</div><div class="ttdef"><b>Definition:</b> API_delay.h:29</div></div>
+<div class="ttc" id="agroup___s_t_m32_f4_x_x___n_u_c_l_e_o__144___l_o_w___l_e_v_e_l___exported___functions_html_ga8f0978b6cffda9c67266ddfdb3a0abf7"><div class="ttname"><a href="group___s_t_m32_f4_x_x___n_u_c_l_e_o__144___l_o_w___l_e_v_e_l___exported___functions.html#ga8f0978b6cffda9c67266ddfdb3a0abf7">BSP_PB_GetState</a></div><div class="ttdeci">uint32_t BSP_PB_GetState(Button_TypeDef Button)</div><div class="ttdoc">Returns the selected Button state.</div><div class="ttdef"><b>Definition:</b> stm32f4xx_nucleo_144.c:326</div></div>
+<div class="ttc" id="a_a_p_i__spi_8h_html_a00301a37ee700e0f935da7deffc0a8e9"><div class="ttname"><a href="_a_p_i__spi_8h.html#a00301a37ee700e0f935da7deffc0a8e9">cs_Pin</a></div><div class="ttdeci">#define cs_Pin</div><div class="ttdoc">Pin de selección de chip (CS) para el MAX7219.</div><div class="ttdef"><b>Definition:</b> API_spi.h:20</div></div>
+<div class="ttc" id="a_a_p_i__debounce_8h_html_a97d3cee57ccbfabf368ac8c17f6fe388"><div class="ttname"><a href="_a_p_i__debounce_8h.html#a97d3cee57ccbfabf368ac8c17f6fe388">readStatus</a></div><div class="ttdeci">char * readStatus()</div><div class="ttdoc">Identifies if the edge is rising or falling.</div><div class="ttdef"><b>Definition:</b> API_debounce.c:81</div></div>
+<div class="ttc" id="astruct_s_p_i___init_type_def_html_a83f278c9d173d3cd021644692bf3c435"><div class="ttname"><a href="struct_s_p_i___init_type_def.html#a83f278c9d173d3cd021644692bf3c435">SPI_InitTypeDef::CLKPolarity</a></div><div class="ttdeci">uint32_t CLKPolarity</div><div class="ttdef"><b>Definition:</b> stm32f4xx_hal_spi.h:57</div></div>
+<div class="ttc" id="a_app___m_e_f_8h_html_af837e73975afd6e36faa4440d80a24eaadfefd13f4267079ebbbc06a1f07e499a"><div class="ttname"><a href="_app___m_e_f_8h.html#af837e73975afd6e36faa4440d80a24eaadfefd13f4267079ebbbc06a1f07e499a">SET_ini</a></div><div class="ttdeci">@ SET_ini</div><div class="ttdef"><b>Definition:</b> App_MEF.h:19</div></div>
+<div class="ttc" id="a_a_p_i__delay_8h_html_a6613427678149cadd03bac79e79475f3"><div class="ttname"><a href="_a_p_i__delay_8h.html#a6613427678149cadd03bac79e79475f3">delayInit</a></div><div class="ttdeci">void delayInit(delay_t *delay, tick_t duration)</div><div class="ttdoc">Inicializa un objeto de retardo.</div><div class="ttdef"><b>Definition:</b> API_delay.c:22</div></div>
+<div class="ttc" id="a_app___m_e_f_8h_html_af837e73975afd6e36faa4440d80a24eaa8eb0135a04a7e7daf1ca4abf2c87832c"><div class="ttname"><a href="_app___m_e_f_8h.html#af837e73975afd6e36faa4440d80a24eaa8eb0135a04a7e7daf1ca4abf2c87832c">GOOD</a></div><div class="ttdeci">@ GOOD</div><div class="ttdef"><b>Definition:</b> App_MEF.h:23</div></div>
+<div class="ttc" id="agroup___s_t_m32_f4_x_x___n_u_c_l_e_o__144___l_o_w___l_e_v_e_l___exported___functions_html_gab58a4f16a476a53653c5c400e3bed158"><div class="ttname"><a href="group___s_t_m32_f4_x_x___n_u_c_l_e_o__144___l_o_w___l_e_v_e_l___exported___functions.html#gab58a4f16a476a53653c5c400e3bed158">BSP_LED_Init</a></div><div class="ttdeci">void BSP_LED_Init(Led_TypeDef Led)</div><div class="ttdoc">Configures LED GPIO.</div><div class="ttdef"><b>Definition:</b> stm32f4xx_nucleo_144.c:190</div></div>
+<div class="ttc" id="astruct_____s_p_i___handle_type_def_html_aa5c715deaf693cc2dbfa90f40681ee1d"><div class="ttname"><a href="struct_____s_p_i___handle_type_def.html#aa5c715deaf693cc2dbfa90f40681ee1d">__SPI_HandleTypeDef::Instance</a></div><div class="ttdeci">SPI_TypeDef * Instance</div><div class="ttdef"><b>Definition:</b> stm32f4xx_hal_spi.h:106</div></div>
+<div class="ttc" id="acore__armv8mbl_8h_html_aec43007d9998a0a0e01faede4133d6be"><div class="ttname"><a href="core__armv8mbl_8h.html#aec43007d9998a0a0e01faede4133d6be">__IO</a></div><div class="ttdeci">#define __IO</div><div class="ttdef"><b>Definition:</b> core_armv8mbl.h:196</div></div>
+<div class="ttc" id="a_app___m_e_f_8c_html_a36525081efeff5a5c325ff48f076a3e5"><div class="ttname"><a href="_app___m_e_f_8c.html#a36525081efeff5a5c325ff48f076a3e5">init_MEF</a></div><div class="ttdeci">void init_MEF(void)</div><div class="ttdoc">Función para inicializar la MEF. Configura el estado inicial.</div><div class="ttdef"><b>Definition:</b> App_MEF.c:25</div></div>
+<div class="ttc" id="amain_8h_html_a1730ffe1e560465665eb47d9264826f9"><div class="ttname"><a href="main_8h.html#a1730ffe1e560465665eb47d9264826f9">Error_Handler</a></div><div class="ttdeci">void Error_Handler(void)</div><div class="ttdoc">This function is executed in case of error occurrence.</div><div class="ttdef"><b>Definition:</b> main.c:415</div></div>
+<div class="ttc" id="astm32f4xx__hal_8h_html"><div class="ttname"><a href="stm32f4xx__hal_8h.html">stm32f4xx_hal.h</a></div><div class="ttdoc">This file contains all the functions prototypes for the HAL module driver.</div></div>
+<div class="ttc" id="agroup___s_p_i___exported___types_html_gga8891cb64e76198a860172d94c638c9b4adbc218df2c9841b561282b40b3ded69d"><div class="ttname"><a href="group___s_p_i___exported___types.html#gga8891cb64e76198a860172d94c638c9b4adbc218df2c9841b561282b40b3ded69d">HAL_SPI_STATE_RESET</a></div><div class="ttdeci">@ HAL_SPI_STATE_RESET</div><div class="ttdef"><b>Definition:</b> stm32f4xx_hal_spi.h:91</div></div>
+<div class="ttc" id="agroup___peripheral__interrupt__number__definition_html_ga7e1129cd8a196f4284d41db3e82ad5c8"><div class="ttname"><a href="group___peripheral__interrupt__number__definition.html#ga7e1129cd8a196f4284d41db3e82ad5c8">IRQn_Type</a></div><div class="ttdeci">IRQn_Type</div><div class="ttdoc">STM32F4XX Interrupt Number Definition, according to the selected device in Library_configuration_sect...</div><div class="ttdef"><b>Definition:</b> stm32f429xx.h:65</div></div>
+<div class="ttc" id="a_a_p_i__led_8c_html_aa039bd160e67da5edf5184486522a594"><div class="ttname"><a href="_a_p_i__led_8c.html#aa039bd160e67da5edf5184486522a594">clear_led</a></div><div class="ttdeci">void clear_led(void)</div><div class="ttdoc">Limpia o apaga todos los LEDs.</div><div class="ttdef"><b>Definition:</b> API_led.c:46</div></div>
+<div class="ttc" id="astruct_s_p_i___init_type_def_html_a9d334a47c34b01cbfa55ff66cfc1e0ce"><div class="ttname"><a href="struct_s_p_i___init_type_def.html#a9d334a47c34b01cbfa55ff66cfc1e0ce">SPI_InitTypeDef::CRCCalculation</a></div><div class="ttdeci">uint32_t CRCCalculation</div><div class="ttdef"><b>Definition:</b> stm32f4xx_hal_spi.h:79</div></div>
+<div class="ttc" id="a_app___m_e_f_8c_html_ace900466213fec4a9993e297edda7a45"><div class="ttname"><a href="_app___m_e_f_8c.html#ace900466213fec4a9993e297edda7a45">TIME_DEBOUNCE</a></div><div class="ttdeci">#define TIME_DEBOUNCE</div><div class="ttdef"><b>Definition:</b> App_MEF.c:15</div></div>
+<div class="ttc" id="agroup___s_t_m32_f4_x_x___n_u_c_l_e_o__144___l_o_w___l_e_v_e_l___exported___functions_html_gaee9c16b16384834c69efabf58f423d6f"><div class="ttname"><a href="group___s_t_m32_f4_x_x___n_u_c_l_e_o__144___l_o_w___l_e_v_e_l___exported___functions.html#gaee9c16b16384834c69efabf58f423d6f">BSP_LED_On</a></div><div class="ttdeci">void BSP_LED_On(Led_TypeDef Led)</div><div class="ttdoc">Turns selected LED On.</div><div class="ttdef"><b>Definition:</b> stm32f4xx_nucleo_144.c:233</div></div>
+<div class="ttc" id="agroup___s_t_m32_f4_x_x___n_u_c_l_e_o__144___l_o_w___l_e_v_e_l___private___functions_html_gaef268680154ca15c45066d64d41f9467"><div class="ttname"><a href="group___s_t_m32_f4_x_x___n_u_c_l_e_o__144___l_o_w___l_e_v_e_l___private___functions.html#gaef268680154ca15c45066d64d41f9467">BSP_LED_Off</a></div><div class="ttdeci">void BSP_LED_Off(Led_TypeDef Led)</div><div class="ttdoc">Turns selected LED Off.</div><div class="ttdef"><b>Definition:</b> stm32f4xx_nucleo_144.c:246</div></div>
+<div class="ttc" id="astruct_s_p_i___init_type_def_html_a3db685adbdc6f7bfc7ad0191ba5ab277"><div class="ttname"><a href="struct_s_p_i___init_type_def.html#a3db685adbdc6f7bfc7ad0191ba5ab277">SPI_InitTypeDef::TIMode</a></div><div class="ttdeci">uint32_t TIMode</div><div class="ttdef"><b>Definition:</b> stm32f4xx_hal_spi.h:76</div></div>
+<div class="ttc" id="astruct_s_p_i___init_type_def_html_a98999b0cd6e4c94f05b61b2554ee0371"><div class="ttname"><a href="struct_s_p_i___init_type_def.html#a98999b0cd6e4c94f05b61b2554ee0371">SPI_InitTypeDef::DataSize</a></div><div class="ttdeci">uint32_t DataSize</div><div class="ttdef"><b>Definition:</b> stm32f4xx_hal_spi.h:54</div></div>
+<div class="ttc" id="a_a_p_i__debounce_8h_html_a2b21255bd7f7192db778983b15089208"><div class="ttname"><a href="_a_p_i__debounce_8h.html#a2b21255bd7f7192db778983b15089208">bool_t</a></div><div class="ttdeci">bool bool_t</div><div class="ttdef"><b>Definition:</b> API_debounce.h:20</div></div>
+<div class="ttc" id="a_a_p_i__debounce_8h_html_aa026692fe4dbcf4681f9983959e53311"><div class="ttname"><a href="_a_p_i__debounce_8h.html#aa026692fe4dbcf4681f9983959e53311">debounceFSM_update</a></div><div class="ttdeci">bool_t debounceFSM_update(void)</div><div class="ttdoc">Updates the debounce FSM. This function reads the inputs, evaluates the transition conditions accordi...</div><div class="ttdef"><b>Definition:</b> API_debounce.c:118</div></div>
+<div class="ttc" id="agroup___h_a_l___exported___functions___group2_html_gab1dc1e6b438daacfe38a312a90221330"><div class="ttname"><a href="group___h_a_l___exported___functions___group2.html#gab1dc1e6b438daacfe38a312a90221330">HAL_Delay</a></div><div class="ttdeci">void HAL_Delay(uint32_t Delay)</div><div class="ttdoc">This function provides minimum delay (in milliseconds) based on variable incremented.</div><div class="ttdef"><b>Definition:</b> stm32f4xx_hal.c:389</div></div>
+<div class="ttc" id="a_a_p_i__spi_8c_html_ae909944aa85ae98323073c628be541aa"><div class="ttname"><a href="_a_p_i__spi_8c.html#ae909944aa85ae98323073c628be541aa">spi_init</a></div><div class="ttdeci">void spi_init(void)</div><div class="ttdoc">funcion de inicialización de protocolo SPI</div><div class="ttdef"><b>Definition:</b> API_spi.c:27</div></div>
+<div class="ttc" id="agroup___g_p_i_o__mode__define_html_gaf40bec3146810028a84b628d37d3b391"><div class="ttname"><a href="group___g_p_i_o__mode__define.html#gaf40bec3146810028a84b628d37d3b391">GPIO_MODE_INPUT</a></div><div class="ttdeci">#define GPIO_MODE_INPUT</div><div class="ttdef"><b>Definition:</b> stm32f4xx_hal_gpio.h:117</div></div>
+<div class="ttc" id="agroup___s_t_m32_f4_x_x___n_u_c_l_e_o__144___l_o_w___l_e_v_e_l___private___functions_html_ga1b9eabba7d498f41d6f16587ec0f9732"><div class="ttname"><a href="group___s_t_m32_f4_x_x___n_u_c_l_e_o__144___l_o_w___l_e_v_e_l___private___functions.html#ga1b9eabba7d498f41d6f16587ec0f9732">BSP_LED_Toggle</a></div><div class="ttdeci">void BSP_LED_Toggle(Led_TypeDef Led)</div><div class="ttdoc">Toggles the selected LED.</div><div class="ttdef"><b>Definition:</b> stm32f4xx_nucleo_144.c:259</div></div>
+<div class="ttc" id="astruct_s_p_i___init_type_def_html_ab94410c1333b512e271b1c135fe50916"><div class="ttname"><a href="struct_s_p_i___init_type_def.html#ab94410c1333b512e271b1c135fe50916">SPI_InitTypeDef::Direction</a></div><div class="ttdeci">uint32_t Direction</div><div class="ttdef"><b>Definition:</b> stm32f4xx_hal_spi.h:51</div></div>
+<div class="ttc" id="agroup___s_t_m32_f4_x_x___n_u_c_l_e_o__144___l_o_w___l_e_v_e_l___exported___functions_html_gaef268680154ca15c45066d64d41f9467"><div class="ttname"><a href="group___s_t_m32_f4_x_x___n_u_c_l_e_o__144___l_o_w___l_e_v_e_l___exported___functions.html#gaef268680154ca15c45066d64d41f9467">BSP_LED_Off</a></div><div class="ttdeci">void BSP_LED_Off(Led_TypeDef Led)</div><div class="ttdoc">Turns selected LED Off.</div><div class="ttdef"><b>Definition:</b> stm32f4xx_nucleo_144.c:246</div></div>
+<div class="ttc" id="a_app___m_e_f_8c_html_a7fad150abe7e69f47729607932446cb7"><div class="ttname"><a href="_app___m_e_f_8c.html#a7fad150abe7e69f47729607932446cb7">update_MEF</a></div><div class="ttdeci">State_MEF_t update_MEF(delay_t *delay)</div><div class="ttdoc">Actualiza la MEF en función del estado actual y las entradas. Esta función evalúa el estado actual de...</div><div class="ttdef"><b>Definition:</b> App_MEF.c:41</div></div>
+<div class="ttc" id="astruct_s_p_i___init_type_def_html_a48aef59cfd7bf0262b1ad993fef2fc7b"><div class="ttname"><a href="struct_s_p_i___init_type_def.html#a48aef59cfd7bf0262b1ad993fef2fc7b">SPI_InitTypeDef::CRCPolynomial</a></div><div class="ttdeci">uint32_t CRCPolynomial</div><div class="ttdef"><b>Definition:</b> stm32f4xx_hal_spi.h:82</div></div>
+<div class="ttc" id="a_app___m_e_f_8h_html_af837e73975afd6e36faa4440d80a24eaac88bc782686ee422ba7a5cb3bb3bf320"><div class="ttname"><a href="_app___m_e_f_8h.html#af837e73975afd6e36faa4440d80a24eaac88bc782686ee422ba7a5cb3bb3bf320">THIRD</a></div><div class="ttdeci">@ THIRD</div><div class="ttdef"><b>Definition:</b> App_MEF.h:22</div></div>
+<div class="ttc" id="agroup___s_t_m32_f4_x_x___n_u_c_l_e_o__144___l_o_w___l_e_v_e_l___private___defines_html_ga799a94721d29661d31a1b2a3c5bd0f40"><div class="ttname"><a href="group___s_t_m32_f4_x_x___n_u_c_l_e_o__144___l_o_w___l_e_v_e_l___private___defines.html#ga799a94721d29661d31a1b2a3c5bd0f40">SD_DUMMY_BYTE</a></div><div class="ttdeci">#define SD_DUMMY_BYTE</div><div class="ttdoc">LINK SD Card.</div><div class="ttdef"><b>Definition:</b> stm32f4xx_nucleo_144.c:85</div></div>
+<div class="ttc" id="a_a_p_i__spi_8h_html_a186f39a36ec738caf947465356b2d779"><div class="ttname"><a href="_a_p_i__spi_8h.html#a186f39a36ec738caf947465356b2d779">clock_Pin</a></div><div class="ttdeci">#define clock_Pin</div><div class="ttdoc">Pin de reloj (CLK) para el MAX7219.</div><div class="ttdef"><b>Definition:</b> API_spi.h:22</div></div>
+<div class="ttc" id="a_a_p_i__spi_8c_html_a88a613c3d12cd2e7eca4168dc52d206c"><div class="ttname"><a href="_a_p_i__spi_8c.html#a88a613c3d12cd2e7eca4168dc52d206c">spi_write</a></div><div class="ttdeci">void spi_write(uint8_t address, uint8_t cmd)</div><div class="ttdoc">Envía una dirección y un comando utilizando el protocolo SPI manualmente.</div><div class="ttdef"><b>Definition:</b> API_spi.c:76</div></div>
+<div class="ttc" id="astruct_s_p_i___init_type_def_html_a9740c535f073c87bb06668385ce96002"><div class="ttname"><a href="struct_s_p_i___init_type_def.html#a9740c535f073c87bb06668385ce96002">SPI_InitTypeDef::FirstBit</a></div><div class="ttdeci">uint32_t FirstBit</div><div class="ttdef"><b>Definition:</b> stm32f4xx_hal_spi.h:73</div></div>
+<div class="ttc" id="a_a_p_i__debounce_8h_html_ada13dbdbe1db700bf44255cc2cc02252"><div class="ttname"><a href="_a_p_i__debounce_8h.html#ada13dbdbe1db700bf44255cc2cc02252">readKey</a></div><div class="ttdeci">bool_t readKey()</div><div class="ttdoc">Reads an internal variable and returns whether the key was pressed. If the function returns true,...</div><div class="ttdef"><b>Definition:</b> API_debounce.c:70</div></div>
+<div class="ttc" id="a_a_p_i__delay_8h_html"><div class="ttname"><a href="_a_p_i__delay_8h.html">API_delay.h</a></div><div class="ttdoc">Interfaz para manejar retardos (delays) de tiempo en STM32F4xx.</div></div>
+<div class="ttc" id="a_a_p_i__led_8c_html_aa6c1a340bbb3cbe87d099ddda667f943"><div class="ttname"><a href="_a_p_i__led_8c.html#aa6c1a340bbb3cbe87d099ddda667f943">lit_led</a></div><div class="ttdeci">void lit_led(void)</div><div class="ttdoc">Enciende todos los LEDs.</div><div class="ttdef"><b>Definition:</b> API_led.c:74</div></div>
+<div class="ttc" id="astruct_g_p_i_o___init_type_def_html"><div class="ttname"><a href="struct_g_p_i_o___init_type_def.html">GPIO_InitTypeDef</a></div><div class="ttdoc">GPIO Init structure definition</div><div class="ttdef"><b>Definition:</b> stm32f4xx_hal_gpio.h:46</div></div>
+<div class="ttc" id="agroup___g_p_i_o__speed__define_html_gab7916c4265bfa1b26a5205ea9c1caa4e"><div class="ttname"><a href="group___g_p_i_o__speed__define.html#gab7916c4265bfa1b26a5205ea9c1caa4e">GPIO_SPEED_FREQ_LOW</a></div><div class="ttdeci">#define GPIO_SPEED_FREQ_LOW</div><div class="ttdef"><b>Definition:</b> stm32f4xx_hal_gpio.h:141</div></div>
+<div class="ttc" id="agroup___s_t_m32_f4_x_x___n_u_c_l_e_o__144___l_o_w___l_e_v_e_l___exported___functions_html_ga1b9eabba7d498f41d6f16587ec0f9732"><div class="ttname"><a href="group___s_t_m32_f4_x_x___n_u_c_l_e_o__144___l_o_w___l_e_v_e_l___exported___functions.html#ga1b9eabba7d498f41d6f16587ec0f9732">BSP_LED_Toggle</a></div><div class="ttdeci">void BSP_LED_Toggle(Led_TypeDef Led)</div><div class="ttdoc">Toggles the selected LED.</div><div class="ttdef"><b>Definition:</b> stm32f4xx_nucleo_144.c:259</div></div>
+<div class="ttc" id="a_a_p_i__spi_8h_html_aee1563ded26b0491400b3ed720011879"><div class="ttname"><a href="_a_p_i__spi_8h.html#aee1563ded26b0491400b3ed720011879">num</a></div><div class="ttdeci">#define num</div><div class="ttdoc">Número de módulos de matriz de puntos en uso .</div><div class="ttdef"><b>Definition:</b> API_spi.h:25</div></div>
+<div class="ttc" id="astruct_s_p_i___init_type_def_html_a0ffc93ec511ed9cf1663f6939bd3e839"><div class="ttname"><a href="struct_s_p_i___init_type_def.html#a0ffc93ec511ed9cf1663f6939bd3e839">SPI_InitTypeDef::Mode</a></div><div class="ttdeci">uint32_t Mode</div><div class="ttdef"><b>Definition:</b> stm32f4xx_hal_spi.h:48</div></div>
+<div class="ttc" id="a_a_p_i__spi_8h_html"><div class="ttname"><a href="_a_p_i__spi_8h.html">API_spi.h</a></div><div class="ttdoc">Biblioteca para comunicación SPI con el chip MAX7219.</div></div>
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="dir_60925fc218da8ca7908795bf5f624060.html">Drivers</a></li><li class="navelem"><a class="el" href="dir_0d65e5fa077ec095e65d7480f3bb9880.html">BSP</a></li><li class="navelem"><a class="el" href="dir_9c78add3ebdd85bba6e8ee9ef88a0f88.html">STM32F4xx_Nucleo_144</a></li><li class="navelem"><a class="el" href="stm32f4xx__nucleo__144_8h.html">stm32f4xx_nucleo_144.h</a></li>
+    <li class="footer">Generado por
+    <a href="http://www.doxygen.org/index.html">
+    <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.17 </li>
+  </ul>
+</div>
+</body>
+</html>

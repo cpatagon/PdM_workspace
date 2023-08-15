@@ -3546,7 +3546,7 @@ void init_MEF(void) {
  8001744:	2000094c 	.word	0x2000094c
 
 08001748 <update_MEF>:
- * Esta función evalúa el estado actual de la MEF y determina el próximo estado en función de las condiciones de entrada.
+ * estado en función de las condiciones de entrada.
  *
  * @param delay Puntero al tipo de dato delay_t que define la estructura de retardo.
  * @return State_MEF_t: El estado actualizado de la MEF.
@@ -3757,7 +3757,7 @@ State_MEF_t update_MEF(delay_t *delay) {
 		assert(0);
  80018b2:	4b0b      	ldr	r3, [pc, #44]	; (80018e0 <update_MEF+0x198>)
  80018b4:	4a0b      	ldr	r2, [pc, #44]	; (80018e4 <update_MEF+0x19c>)
- 80018b6:	2154      	movs	r1, #84	; 0x54
+ 80018b6:	2155      	movs	r1, #85	; 0x55
  80018b8:	480b      	ldr	r0, [pc, #44]	; (80018e8 <update_MEF+0x1a0>)
  80018ba:	f002 faaf 	bl	8003e1c <__assert_func>
 		break;

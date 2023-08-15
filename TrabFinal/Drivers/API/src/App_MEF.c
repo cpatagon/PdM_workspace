@@ -33,7 +33,8 @@ void init_MEF(void) {
 
 /**
  * @brief Actualiza la MEF en función del estado actual y las entradas.
- * Esta función evalúa el estado actual de la MEF y determina el próximo estado en función de las condiciones de entrada.
+ * Esta función evalúa el estado actual de la MEF y determina el próximo
+ * estado en función de las condiciones de entrada.
  *
  * @param delay Puntero al tipo de dato delay_t que define la estructura de retardo.
  * @return State_MEF_t: El estado actualizado de la MEF.
