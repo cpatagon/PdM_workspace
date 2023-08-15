@@ -76,10 +76,11 @@ delay_t Delay_play;  // tiempo de transición entre estados
 State_MEF_t estado;
 
 const tick_t level[] = { SPEED1, SPEED2, SPEED3, SPEED4 }; // distintas velocidades de la partida de acuerdo al nivel del juego
-static int16_t score = SCORE_INI; // inicializamos el contador de puntos del juego
-static int16_t level_i = LEVEL_MIN; //  establecemos ese valor minimo al valor con el que partirá el juego
-static tick_t speed_play; // creamos variable que tendra la velocidad de la partida
-static bool_t flag;
+int16_t score = SCORE_INI;  // inicializamos el contador de puntos del juego
+int16_t level_i = LEVEL_MIN; //  establecemos ese valor minimo al valor con el que partirá el juego
+int16_t level_max; // establecemos una  variable que definira la posición de la maxima velocidad
+tick_t speed_play; // creamos variable que tendra la velocidad de la partida
+bool_t flag;
 
 /* USER CODE END PV */
 
@@ -130,7 +131,7 @@ int main(void) {
 	/* USER CODE BEGIN Init */
 
 	/**
-	 * Inicializamos algunas funciones y librerias
+	 * Inicializamos algunas funciones y librerias 
 	 * */
 	// Inicializar la Máquina de Estados Finitos (MEF) del juego.
 	// Esta función configura el estado inicial y prepare todo para que el programa

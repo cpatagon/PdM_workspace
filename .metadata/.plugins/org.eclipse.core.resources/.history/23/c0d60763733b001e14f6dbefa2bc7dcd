@@ -42,16 +42,16 @@
 
 //#define TIME2 300
 //#define TIME_DEBOUNCE 40 //tiempo antirrebote del boton
+
 // velocidades del juego mientras mas pequeño el valor mas rapido es
 #define SPEED1 1000
 #define SPEED2 800
 #define SPEED3 500
 #define SPEED4 400
-#define SCORE_INI 0 // valor puntaje  inicial
-#define SCORE_MAX 5 // valor puntaje maximo
+#define SCORE_INI 0 //valor nivel inicial
 #define LEVEL_MIN 0 // valor de la posición del nivel inicial
 #define LEVEL_MAX 3 // valor de la posición del nivel inicial
-
+#define SCORE_MAX 5
 /* USER CODE END PD */
 
 /* Private macro -------------------------------------------------------------*/
@@ -66,20 +66,25 @@ ETH_DMADescTypeDef DMARxDscrTab[ETH_RX_DESC_CNT]; /* Ethernet Rx DMA Descriptors
 ETH_DMADescTypeDef DMATxDscrTab[ETH_TX_DESC_CNT]; /* Ethernet Tx DMA Descriptors */
 
 ETH_HandleTypeDef heth;
+
 UART_HandleTypeDef huart3;
+
 PCD_HandleTypeDef hpcd_USB_OTG_FS;
 
 /* USER CODE BEGIN PV */
 
 // inicializamos las variables que contentran los tiempos
 delay_t Delay_play;  // tiempo de transición entre estados
+//delay_t DelayDebounce; // tiempo de antirrebote del boton
+
 State_MEF_t estado;
 
 const tick_t level[] = { SPEED1, SPEED2, SPEED3, SPEED4 }; // distintas velocidades de la partida de acuerdo al nivel del juego
-static int16_t score = SCORE_INI; // inicializamos el contador de puntos del juego
-static int16_t level_i = LEVEL_MIN; //  establecemos ese valor minimo al valor con el que partirá el juego
-static tick_t speed_play; // creamos variable que tendra la velocidad de la partida
-static bool_t flag;
+int16_t score = SCORE_INI;  // inicializamos el contador de puntos del juego
+int16_t level_i = LEVEL_MIN; //  establecemos ese valor minimo al valor con el que partirá el juego
+int16_t level_max; // establecemos una  variable que definira la posición de la maxima velocidad
+tick_t speed_play; // creamos variable que tendra la velocidad de la partida
+bool_t flag;
 
 /* USER CODE END PV */
 
@@ -118,6 +123,7 @@ int main(void) {
 	 * */
 
 	estado = SET_ini;              // Definimos el estado inicial
+	speed_play = level[LEVEL_MIN]; // inicializamos la velocidad con el nivel minimo;
 	flag = true;
 
 	/* USER CODE END 1 */
@@ -129,19 +135,29 @@ int main(void) {
 
 	/* USER CODE BEGIN Init */
 
-	/**
-	 * Inicializamos algunas funciones y librerias
-	 * */
+	// Inicializar la estructura de delay 'DelayDebounce,', 'delayGhost' y 'Delay3'
+	// con un tiempo específico definido por 'TIME_DEBOUNCE' y'TIMEGHOST y 'TIME3'
+	// Esto configura un timer, que es un contador para manejar delays. del antirrebote
+	// y de la transisión de fantasmas
+	//delayInit(&DelayDebounce, TIME_DEBOUNCE);
+
+	// Inicializar la Máquina de Estados Finitos (FSM) para el antirrebote.
+	// Esta función maneja el comportamiento de botones o
+	// interruptores para asegurarse  de que una sola pulsación
+	// sea leída como una, y no múltiples debido al efecto rebote.
+	//debounceFSM_init(&DelayDebounce);
 	// Inicializar la Máquina de Estados Finitos (MEF) del juego.
 	// Esta función configura el estado inicial y prepare todo para que el programa
 	// funcione adecuadamente con base en la lógica de la MEF.
 	init_MEF();
+
+	/**
+	 * Inicializamos algunas funciones
+	 * */
 	//spi_init(); //inicialmos la libreria API_spi
 	init_led(); // iniciamos la API_led
 
-	// definimos la velocidad de Delay como minimo
-	speed_play = level[LEVEL_MIN]; // inicializamos la velocidad con el nivel minimo;
-	delayInit(&Delay_play, speed_play);
+	delayInit(&Delay_play, speed_play); // definimos la velocidad de Delay como minimo
 
 	/* USER CODE END Init */
 

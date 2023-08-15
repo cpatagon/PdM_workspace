@@ -29,23 +29,23 @@ Idx Name          Size      VMA       LMA       File off  Algn
                   ALLOC
  12 .ARM.attributes 00000030  00000000  00000000  00020108  2**0
                   CONTENTS, READONLY
- 13 .debug_info   000136a8  00000000  00000000  00020138  2**0
+ 13 .debug_info   00013693  00000000  00000000  00020138  2**0
                   CONTENTS, READONLY, DEBUGGING, OCTETS
- 14 .debug_abbrev 00002b55  00000000  00000000  000337e0  2**0
+ 14 .debug_abbrev 00002b55  00000000  00000000  000337cb  2**0
                   CONTENTS, READONLY, DEBUGGING, OCTETS
- 15 .debug_aranges 00000fb0  00000000  00000000  00036338  2**3
+ 15 .debug_aranges 00000fb0  00000000  00000000  00036320  2**3
                   CONTENTS, READONLY, DEBUGGING, OCTETS
- 16 .debug_ranges 00000e88  00000000  00000000  000372e8  2**3
+ 16 .debug_ranges 00000e88  00000000  00000000  000372d0  2**3
                   CONTENTS, READONLY, DEBUGGING, OCTETS
- 17 .debug_macro  000263de  00000000  00000000  00038170  2**0
+ 17 .debug_macro  000263de  00000000  00000000  00038158  2**0
                   CONTENTS, READONLY, DEBUGGING, OCTETS
- 18 .debug_line   000126f7  00000000  00000000  0005e54e  2**0
+ 18 .debug_line   000126f9  00000000  00000000  0005e536  2**0
                   CONTENTS, READONLY, DEBUGGING, OCTETS
- 19 .debug_str    000df00a  00000000  00000000  00070c45  2**0
+ 19 .debug_str    000df000  00000000  00000000  00070c2f  2**0
                   CONTENTS, READONLY, DEBUGGING, OCTETS
- 20 .comment      00000050  00000000  00000000  0014fc4f  2**0
+ 20 .comment      00000050  00000000  00000000  0014fc2f  2**0
                   CONTENTS, READONLY
- 21 .debug_frame  000049c4  00000000  00000000  0014fca0  2**2
+ 21 .debug_frame  000049c4  00000000  00000000  0014fc80  2**2
                   CONTENTS, READONLY, DEBUGGING, OCTETS
 
 Disassembly of section .text:
@@ -430,38 +430,35 @@ int main(void) {
  8000598:	4b52      	ldr	r3, [pc, #328]	; (80006e4 <main+0x150>)
  800059a:	2200      	movs	r2, #0
  800059c:	701a      	strb	r2, [r3, #0]
-	speed_play = level[LEVEL_MIN]; // inicializamos la velocidad con el nivel minimo;
- 800059e:	f44f 727a 	mov.w	r2, #1000	; 0x3e8
- 80005a2:	4b51      	ldr	r3, [pc, #324]	; (80006e8 <main+0x154>)
- 80005a4:	601a      	str	r2, [r3, #0]
 	flag = true;
- 80005a6:	4b51      	ldr	r3, [pc, #324]	; (80006ec <main+0x158>)
- 80005a8:	2201      	movs	r2, #1
- 80005aa:	701a      	strb	r2, [r3, #0]
+ 800059e:	4b52      	ldr	r3, [pc, #328]	; (80006e8 <main+0x154>)
+ 80005a0:	2201      	movs	r2, #1
+ 80005a2:	701a      	strb	r2, [r3, #0]
 	/* USER CODE END 1 */
 
 	/* MCU Configuration--------------------------------------------------------*/
 
 	/* Reset of all peripherals, Initializes the Flash interface and the Systick. */
 	HAL_Init();
- 80005ac:	f001 f972 	bl	8001894 <HAL_Init>
-	// sea leída como una, y no múltiples debido al efecto rebote.
-	//debounceFSM_init(&DelayDebounce);
+ 80005a4:	f001 f976 	bl	8001894 <HAL_Init>
+	 * Inicializamos algunas funciones y librerias
+	 * */
 	// Inicializar la Máquina de Estados Finitos (MEF) del juego.
 	// Esta función configura el estado inicial y prepare todo para que el programa
 	// funcione adecuadamente con base en la lógica de la MEF.
 	init_MEF();
- 80005b0:	f001 f876 	bl	80016a0 <init_MEF>
-
-	/**
-	 * Inicializamos algunas funciones
-	 * */
+ 80005a8:	f001 f87a 	bl	80016a0 <init_MEF>
 	//spi_init(); //inicialmos la libreria API_spi
 	init_led(); // iniciamos la API_led
- 80005b4:	f000 fe40 	bl	8001238 <init_led>
+ 80005ac:	f000 fe44 	bl	8001238 <init_led>
 
-	delayInit(&Delay_play, speed_play); // definimos la velocidad de Delay como minimo
- 80005b8:	4b4b      	ldr	r3, [pc, #300]	; (80006e8 <main+0x154>)
+	// definimos la velocidad de Delay como minimo
+	speed_play = level[LEVEL_MIN]; // inicializamos la velocidad con el nivel minimo;
+ 80005b0:	f44f 727a 	mov.w	r2, #1000	; 0x3e8
+ 80005b4:	4b4d      	ldr	r3, [pc, #308]	; (80006ec <main+0x158>)
+ 80005b6:	601a      	str	r2, [r3, #0]
+	delayInit(&Delay_play, speed_play);
+ 80005b8:	4b4c      	ldr	r3, [pc, #304]	; (80006ec <main+0x158>)
  80005ba:	681b      	ldr	r3, [r3, #0]
  80005bc:	4619      	mov	r1, r3
  80005be:	484c      	ldr	r0, [pc, #304]	; (80006f0 <main+0x15c>)
@@ -523,7 +520,7 @@ int main(void) {
  8000614:	0800069b 	.word	0x0800069b
 		case SET_ini:
 			flag = true;
- 8000618:	4b34      	ldr	r3, [pc, #208]	; (80006ec <main+0x158>)
+ 8000618:	4b33      	ldr	r3, [pc, #204]	; (80006e8 <main+0x154>)
  800061a:	2201      	movs	r2, #1
  800061c:	701a      	strb	r2, [r3, #0]
 			// Iluminar la matriz LED  incdicando el puntaje obtenido
@@ -569,12 +566,12 @@ int main(void) {
  800064c:	482e      	ldr	r0, [pc, #184]	; (8000708 <main+0x174>)
  800064e:	f000 fe15 	bl	800127c <update_led>
 			if (flag) {
- 8000652:	4b26      	ldr	r3, [pc, #152]	; (80006ec <main+0x158>)
+ 8000652:	4b25      	ldr	r3, [pc, #148]	; (80006e8 <main+0x154>)
  8000654:	781b      	ldrb	r3, [r3, #0]
  8000656:	2b00      	cmp	r3, #0
  8000658:	d03f      	beq.n	80006da <main+0x146>
 				flag = false;
- 800065a:	4b24      	ldr	r3, [pc, #144]	; (80006ec <main+0x158>)
+ 800065a:	4b23      	ldr	r3, [pc, #140]	; (80006e8 <main+0x154>)
  800065c:	2200      	movs	r2, #0
  800065e:	701a      	strb	r2, [r3, #0]
 				score = score + 1;          // incrementa el puntaje en uno
@@ -615,12 +612,12 @@ int main(void) {
  800069a:	f000 fe0f 	bl	80012bc <fantasma_led>
 			// entramos a recetaer valor del SCORE a 0 porque se pierde partida
 			if (flag) {
- 800069e:	4b13      	ldr	r3, [pc, #76]	; (80006ec <main+0x158>)
+ 800069e:	4b12      	ldr	r3, [pc, #72]	; (80006e8 <main+0x154>)
  80006a0:	781b      	ldrb	r3, [r3, #0]
  80006a2:	2b00      	cmp	r3, #0
  80006a4:	d01b      	beq.n	80006de <main+0x14a>
 				flag = false;
- 80006a6:	4b11      	ldr	r3, [pc, #68]	; (80006ec <main+0x158>)
+ 80006a6:	4b10      	ldr	r3, [pc, #64]	; (80006e8 <main+0x154>)
  80006a8:	2200      	movs	r2, #0
  80006aa:	701a      	strb	r2, [r3, #0]
 				score = SCORE_INI;          // elimina el puntaje obtenido
@@ -657,8 +654,8 @@ int main(void) {
  80006e0:	e778      	b.n	80005d4 <main+0x40>
  80006e2:	bf00      	nop
  80006e4:	200008b0 	.word	0x200008b0
- 80006e8:	200008b8 	.word	0x200008b8
- 80006ec:	200008bc 	.word	0x200008bc
+ 80006e8:	200008bc 	.word	0x200008bc
+ 80006ec:	200008b8 	.word	0x200008b8
  80006f0:	200008a4 	.word	0x200008a4
  80006f4:	200008b2 	.word	0x200008b2
  80006f8:	20000048 	.word	0x20000048
