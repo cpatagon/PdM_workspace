@@ -43,7 +43,6 @@ static Edge_State_t current_edge_state;
  * and is set to false when the readKey() function is called.
  */
 static bool_t PressButton = true;
-
 static delay_t *delay;
 
 /* Function -------------------------------------------------------------------------------- */
@@ -188,7 +187,7 @@ bool_t debounceFSM_update() {
  * @param   None
  * @retval  None
  */
-static void buttonPressed() {
+static void buttonPressed(void) {
 	PressButton = !(PressButton);
 	return;
 }

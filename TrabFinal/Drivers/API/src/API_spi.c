@@ -9,6 +9,11 @@
 #include <stdbool.h> ///< Incluye el tipo booleano (bool).
 #include "API_spi.h"
 
+#define ESTADO_ALTO 1
+#define ESTADO_BAJO 0
+#define BITSIGNIFICATIVO 0x80
+#define BITSIGUIENTE 1
+
 /**
  * @brief Funcion de Inicialización GPIO.
  *
@@ -37,19 +42,20 @@ static SPI_HandleTypeDef hspi3;
  *
  */
 static void spi_write_byte(uint8_t byte) {
+	assert_param(byte);
 	// Itera a través de cada uno de los 8 bits del byte proporcionado.
 	for (uint8_t i = 0; i < 8; i++) {
 		// Establece el pin del reloj (clock) en estado bajo.
-		HAL_GPIO_WritePin(maxport, clock_Pin, 0);
+		HAL_GPIO_WritePin(maxport, clock_Pin, ESTADO_BAJO);
 
 		// Escribe el bit más significativo (MSB) del byte en el pin de datos (data).
-		HAL_GPIO_WritePin(maxport, data_Pin, byte & 0x80);
+		HAL_GPIO_WritePin(maxport, data_Pin, byte & BITSIGNIFICATIVO);
 
 		// Desplaza el byte a la izquierda para preparar el siguiente bit.
-		byte = byte << 1;
+		byte = byte << BITSIGUIENTE;
 
 		// Establece el pin del reloj (clock) en estado alto.
-		HAL_GPIO_WritePin(maxport, clock_Pin, 1);
+		HAL_GPIO_WritePin(maxport, clock_Pin, ESTADO_ALTO);
 	}
 }
 
@@ -64,23 +70,21 @@ static void spi_write_byte(uint8_t byte) {
  * @param cmd Byte de comando que se desea enviar a través de SPI.
  */
 void spi_write(uint8_t address, uint8_t cmd) {
+	assert_param(address != NULL);
+	assert_param(cmd != NULL);
 	// Establece el pin CS (Chip Select) en estado bajo.
-	HAL_GPIO_WritePin(maxport, cs_Pin, 0);
-
+	HAL_GPIO_WritePin(maxport, cs_Pin, ESTADO_BAJO);
 	// Envía el par de bytes (dirección y comando) 'num' veces.
 	for (uint8_t i = 0; i < num; i++) {
 		// Envía el byte de dirección.
 		spi_write_byte(address);
-
 		// Envía el byte de comando.
 		spi_write_byte(cmd);
 	}
-
 	// Establece el pin CS (Chip Select) en estado bajo.
-	HAL_GPIO_WritePin(maxport, cs_Pin, 0);
-
+	HAL_GPIO_WritePin(maxport, cs_Pin, ESTADO_BAJO);
 	// Establece el pin CS (Chip Select) en estado alto.
-	HAL_GPIO_WritePin(maxport, cs_Pin, 1);
+	HAL_GPIO_WritePin(maxport, cs_Pin, ESTADO_ALTO);
 }
 
 /**

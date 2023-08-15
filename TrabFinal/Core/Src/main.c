@@ -79,7 +79,7 @@ const tick_t level[] = { SPEED1, SPEED2, SPEED3, SPEED4 }; // distintas velocida
 static int16_t score = SCORE_INI; // inicializamos el contador de puntos del juego
 static int16_t level_i = LEVEL_MIN; //  establecemos ese valor minimo al valor con el que partirá el juego
 static tick_t speed_play; // creamos variable que tendra la velocidad de la partida
-static bool_t flag;
+static bool_t flag; // esta bandera es para evitar que se pase dos veces por el incremento  de puntaje o velocidad
 
 /* USER CODE END PV */
 
@@ -226,6 +226,9 @@ int main(void) {
 				level_i = level_speed_update(level_i);
 			}
 			break;
+		default:
+			/* Handle unexpected state */
+			assert(0);
 		}
 
 		/* USER CODE END 3 */
@@ -393,6 +396,7 @@ static void MX_USB_OTG_FS_PCD_Init(void) {
  * @retval devuelde el valor de la posición de la velocidad actualizada
  */
 static int16_t level_speed_update(int16_t level_n) {
+	assert(level_n >= 0);
 	if (level_n > LEVEL_MAX) {
 		level_n = LEVEL_MIN;
 	}

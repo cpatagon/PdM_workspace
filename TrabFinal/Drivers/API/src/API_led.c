@@ -8,8 +8,10 @@
 #include <stdint.h>
 #include "API_spi.h"
 #include "API_delay.h"
+#include <assert.h>
 
 #define TIMEGHOST 200
+#define ROW_MATRIX 8
 
 uint8_t led_address[] = { 0x01, 0x02, 0x03, 0x04, 0x05, 0x06, 0x07, 0x08 };
 uint8_t clear[] = { 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00 };
@@ -42,7 +44,8 @@ State_GHOT_t tipo_fantasma = GHOST1;
  * Esta función recorre todas las direcciones de LEDs y les asigna el valor de apagado.
  */
 void clear_led(void) {
-	for (int j = 0; j < 8; j++) {
+	assert(led_address !=NULL);
+	for (int16_t j = 0; j < 8; j++) {
 		spi_write(led_address[j], clear[j]);
 	}
 }
@@ -69,7 +72,8 @@ void init_led(void) {
  * Esta función recorre todas las direcciones de LEDs y les asigna el valor de encendido.
  */
 void lit_led(void) {
-	for (int j = 0; j < 8; j++) {
+	assert(led_address !=NULL);
+	for (int16_t j = 0; j < ROW_MATRIX; j++) {
 		spi_write(led_address[j], matrizEncendida[j]);
 	}
 }
@@ -83,7 +87,8 @@ void lit_led(void) {
  * @param paint_list Lista con los valores de los LEDs.
  */
 void update_led(uint8_t paint_list[]) {
-	for (int j = 0; j < 8; j++) {
+	assert(paint_list !=NULL);
+	for (int16_t j = 0; j < ROW_MATRIX; j++) {
 		spi_write(led_address[j], paint_list[j]);
 	}
 }
@@ -97,7 +102,8 @@ void update_led(uint8_t paint_list[]) {
  * @param paint_list Lista con los valores de los LEDs.
  */
 void fila_led(uint8_t fila) {
-	for (int j = 0; j < 8; j++) {
+	assert(fila >= 0);
+	for (int16_t j = 0; j < ROW_MATRIX; j++) {
 		spi_write(led_address[j], fila);
 	}
 }
@@ -110,7 +116,8 @@ void fila_led(uint8_t fila) {
  *
  * @param vacio
  */
-void fantasma_led() {
+void fantasma_led(void) {
+	assert(tipo_fantasma >= 0);
 	switch (tipo_fantasma) {
 	case (GHOST1):
 		update_led(ghost1);
@@ -148,5 +155,8 @@ void fantasma_led() {
 			tipo_fantasma = GHOST1;
 		}
 		break;
+	default:
+		/* Handle unexpected state */
+		assert(0);
 	}
 }

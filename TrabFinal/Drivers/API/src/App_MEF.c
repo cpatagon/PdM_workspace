@@ -40,7 +40,6 @@ void init_MEF(void) {
  */
 State_MEF_t update_MEF(delay_t *delay) {
 	assert(&estadoMEF!=NULL); /**< Asegura que el puntero al estado actual no es nulo. */
-
 	switch (estadoMEF) {
 	case SET_ini:
 		if (delayRead(delay)) {
