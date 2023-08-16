@@ -2612,10 +2612,10 @@ static void buttonPressed(void) {
  8001174:	20000064 	.word	0x20000064
 
 08001178 <delayInit>:
- * marcando el flag `running` como false. No inicia el conteo del retardo.
+ * marking the `running` flag as false. It doesn't start the delay count.
  *
- * @param delay Puntero al objeto de retardo.
- * @param duration Duración del retardo en ticks.
+ * @param delay Pointer to the delay object.
+ * @param duration Duration of the delay in ticks.
  */
 void delayInit(delay_t *delay, tick_t duration) {
  8001178:	b580      	push	{r7, lr}
@@ -2651,17 +2651,17 @@ void delayInit(delay_t *delay, tick_t duration) {
  80011b0:	08004f14 	.word	0x08004f14
 
 080011b4 <delayRead>:
- * reinicia el objeto y devuelve true.
+ * resets the object and returns true.
  *
- * @param delay Puntero al objeto de retardo.
- * @return true si el retardo ha alcanzado su duración, false en caso contrario.
+ * @param delay Pointer to the delay object.
+ * @return true if the delay has reached its duration, false otherwise.
  */
 bool_t delayRead(delay_t *delay) {
  80011b4:	b580      	push	{r7, lr}
  80011b6:	b082      	sub	sp, #8
  80011b8:	af00      	add	r7, sp, #0
  80011ba:	6078      	str	r0, [r7, #4]
-	static bool_t retValue; ///< Variable estática interna para retener el valor de retorno.
+	static bool_t retValue; ///< Internal static variable to hold the return value.
 	retValue = false;
  80011bc:	4b18      	ldr	r3, [pc, #96]	; (8001220 <delayRead+0x6c>)
  80011be:	2200      	movs	r2, #0

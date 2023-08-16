@@ -1,57 +1,57 @@
 /**
  * @file API_delay.h
- * @brief Interfaz para manejar retardos (delays) de tiempo en STM32F4xx.
+ * @brief Interface for handling time delays on STM32F4xx.
  * @date 07-08-2023
  * @author lgomez
  *
- * Este archivo de cabecera define una interfaz para manejar retardos de tiempo.
- * Se pueden inicializar, leer y ajustar los retardos según se requiera.
- * La implementación utiliza la HAL (Hardware Abstraction Layer) y BSP (Board Support Package)
- * específicos para la tarjeta STM32F4xx Nucleo-144.
+ * This header file defines an interface for managing time delays.
+ * Delays can be initialized, read, and adjusted as required.
+ * The implementation uses the specific HAL (Hardware Abstraction Layer) 
+ * and BSP (Board Support Package) for the STM32F4xx Nucleo-144 board.
  */
 
 #ifndef API_INC_API_DELAY_H_
 #define API_INC_API_DELAY_H_
 
-#include <stdint.h>  // Para tipos de definición estándar, como uint32_t.
-#include <stdbool.h> // Para el tipo booleano (bool).
-#include "stm32f4xx_hal.h"          ///< HAL (Hardware Abstraction Layer) para STM32F4.
-#include "stm32f4xx_nucleo_144.h"   ///< BSP (Board Support Package) para Nucleo-144.
+#include <stdint.h>  // For standard type definitions, e.g., uint32_t.
+#include <stdbool.h> // For the boolean type (bool).
+#include "stm32f4xx_hal.h"          ///< HAL (Hardware Abstraction Layer) for STM32F4.
+#include "stm32f4xx_nucleo_144.h"   ///< BSP (Board Support Package) for Nucleo-144.
 
-/// Define el tipo 'tick_t' para manejar ticks de tiempo.
+/// Defines the 'tick_t' type for managing time ticks.
 typedef uint32_t tick_t;
 
-/// Define el tipo 'bool_t' para manejar valores booleanos.
+/// Defines the 'bool_t' type for handling boolean values.
 typedef bool bool_t;
 
-/// @brief Estructura para manejar un retardo de tiempo.
+/// @brief Structure to manage a time delay.
 typedef struct {
-	tick_t startTime; ///< Marca de tiempo cuando se inicia el retardo.
-	tick_t duration;  ///< Duración del retardo en ticks.
-	bool_t running;   ///< Indica si el retardo está activo o no.
+	tick_t startTime; ///< Timestamp marking the start of the delay.
+	tick_t duration;  ///< Duration of the delay in ticks.
+	bool_t running;   ///< Indicates whether the delay is active or not.
 } delay_t;
 
 /**
- * @brief Inicializa un objeto de retardo.
+ * @brief Initialize a delay object.
  *
- * @param delay Puntero al objeto delay a inicializar.
- * @param duration Duración del retardo en ticks.
+ * @param delay Pointer to the delay object to initialize.
+ * @param duration Duration of the delay in ticks.
  */
 void delayInit(delay_t *delay, tick_t duration);
 
 /**
- * @brief Lee y actualiza el estado del objeto de retardo.
+ * @brief Reads and updates the status of the delay object.
  *
- * @param delay Puntero al objeto delay a leer.
- * @return true si el tiempo del retardo ha expirado, false en caso contrario.
+ * @param delay Pointer to the delay object to read.
+ * @return true if the delay time has elapsed, false otherwise.
  */
 bool_t delayRead(delay_t *delay);
 
 /**
- * @brief Establece una nueva duración para el retardo.
+ * @brief Sets a new duration for the delay.
  *
- * @param delay Puntero al objeto delay a modificar.
- * @param duration Nueva duración del retardo en ticks.
+ * @param delay Pointer to the delay object to modify.
+ * @param duration New duration of the delay in ticks.
  */
 void delayWrite(delay_t *delay, tick_t duration);
 

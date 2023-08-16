@@ -1,40 +1,45 @@
 /**
  * @file API_spi.h
- * @brief Biblioteca para comunicación SPI con el chip MAX7219.
+ * @brief Library for SPI communication with the MAX7219 chip.
  * @date Aug 6, 2023
  * @author lgomez
+ * 
+ * 	Library responsible for initializing and writing to the selected GPIO ports 
+ * 	using the SPI protocol. Configuration should be done using the STM32CubeIDE 
+ * 	for the Nucleo, setting the GPIO ports as DIN_Pin for MOSI, CS_Pin for CS, and CLK_Pin
+ * 	for the SPI communication clock.
+ * 
+ * 
  */
 
 #ifndef API_INC_API_SPI_H_
 #define API_INC_API_SPI_H_
 
-#include <stdint.h>   /**< Incluye tipos de definición estándar, como uint32_t. */
-#include <stdbool.h>  /**< Incluye el tipo booleano (bool). */
-#include "main.h"     /**< Archivo principal con configuraciones y prototipos relevantes. */
+#include <stdint.h>   /**< Includes standard definition types, such as uint32_t. */
+#include <stdbool.h>  /**< Includes the boolean type (bool). */
+#include "main.h"     /**< Main file with relevant configurations and prototypes. */
 
-/** @brief Puerto GPIO definido para la comunicación con MAX7219. */
+/** @brief GPIO port defined for communication with MAX7219. */
 #define maxport GPIOD
-/** @brief Pin de datos (DIN) para el MAX7219. */
+/** @brief MOSI (or DIN) data pin for the MAX7219. */
 #define data_Pin DIN_Pin
-/** @brief Pin de selección de chip (CS) para el MAX7219. */
+/** @brief Chip Select (CS) pin for the MAX7219. */
 #define cs_Pin CS_Pin
-/** @brief Pin de reloj (CLK) para el MAX7219. */
+/** @brief Clock (CLK) pin for the MAX7219. */
 #define clock_Pin CLK_Pin
-
-/** @brief Número de módulos de matriz de puntos en uso . */
+/** @brief Number of dot matrix modules in use. */
 #define num 1
 /**
- * @brief funcion  de inicialización de protocolo SPI
+ * @brief Function to initialize the SPI protocol.
  *
  */
-
 void spi_init(void);
 
 /**
- * @brief Envia una dirección y un comando al dispositivo MAX7219.
+ * @brief Sends an address and a command to the MAX7219 device.
  *
- * @param address Dirección o registro al que se escribirá el comando.
- * @param cmd Comando o dato a ser escrito.
+ * @param address Address or register to which the command will be written.
+ * @param cmd Command or data to be written to memory.
  */
 void spi_write(uint8_t address, uint8_t cmd);
 

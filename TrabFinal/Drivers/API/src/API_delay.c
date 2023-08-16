@@ -1,23 +1,23 @@
 /**
  * @file API_delay.c
- * @brief Implementación de funciones para manejar retardos en STM32F4xx.
+ * @brief Implementation of functions for managing delays on STM32F4xx.
  * @date 06-07-2023
  * @author lgomez
  */
 
-#include "stm32f4xx_hal.h"  		///< HAL (Hardware Abstraction Layer) para STM32F4.
-#include "stm32f4xx_nucleo_144.h" 	///< BSP (Board Support Package) para Nucleo-144.
+#include "stm32f4xx_hal.h"          ///< HAL (Hardware Abstraction Layer) for STM32F4.
+#include "stm32f4xx_nucleo_144.h"   ///< BSP (Board Support Package) for Nucleo-144.
 #include <assert.h>
 #include "API_delay.h"
 
 /**
- * @brief Inicializa el objeto de retardo con la duración especificada.
+ * @brief Initialize the delay object with the specified duration.
  *
- * Esta función inicializa un objeto de retardo, estableciendo su duración y 
- * marcando el flag `running` como false. No inicia el conteo del retardo.
+ * This function initializes a delay object, setting its duration and
+ * marking the `running` flag as false. It doesn't start the delay count.
  *
- * @param delay Puntero al objeto de retardo.
- * @param duration Duración del retardo en ticks.
+ * @param delay Pointer to the delay object.
+ * @param duration Duration of the delay in ticks.
  */
 void delayInit(delay_t *delay, tick_t duration) {
 	assert(delay != NULL);
@@ -27,17 +27,17 @@ void delayInit(delay_t *delay, tick_t duration) {
 }
 
 /**
- * @brief Lee y actualiza el estado del objeto de retardo.
+ * @brief Reads and updates the state of the delay object.
  *
- * Si el retardo no está corriendo, toma una marca de tiempo y lo inicia. 
- * Si está corriendo, verifica si ha alcanzado su duración y, de ser así, 
- * reinicia el objeto y devuelve true.
+ * If the delay is not running, it takes a timestamp and starts it.
+ * If it is running, it checks if the delay has reached its duration and, if so,
+ * resets the object and returns true.
  *
- * @param delay Puntero al objeto de retardo.
- * @return true si el retardo ha alcanzado su duración, false en caso contrario.
+ * @param delay Pointer to the delay object.
+ * @return true if the delay has reached its duration, false otherwise.
  */
 bool_t delayRead(delay_t *delay) {
-	static bool_t retValue; ///< Variable estática interna para retener el valor de retorno.
+	static bool_t retValue; ///< Internal static variable to hold the return value.
 	retValue = false;
 	assert(delay != NULL);
 	assert(delay->duration >= 0);
@@ -55,14 +55,13 @@ bool_t delayRead(delay_t *delay) {
 }
 
 /**
- * @brief Establece una nueva duración para el objeto de retardo.
+ * @brief Sets a new duration for the delay object.
  *
- * @param delay Puntero al objeto de retardo.
- * @param duration Nueva duración en ticks.
+ * @param delay Pointer to the delay object.
+ * @param duration New duration in ticks.
  */
 void delayWrite(delay_t *delay, tick_t duration) {
 	assert(delay != NULL);
 	assert(duration >= 0);
 	delay->duration = duration;
 }
-
