@@ -14,7 +14,7 @@
  * 	along with an LED matrix board with the integrated MAX7219 circuit (Maxim2023).
  * 	The game's state information will be displayed on an LED matrix screen.
  *
- * @attention 		: NUCLEO boards (STM32-F429ZI) and integrated MAX7219 circuit
+ * @attention 		: NUCLEO boards (STM32-F429ZI) and integrated (MAX7219) circuit
  *
  ******************************************************************************
  * @attention
