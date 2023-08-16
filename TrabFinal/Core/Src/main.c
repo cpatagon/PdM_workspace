@@ -1,7 +1,10 @@
 /* USER CODE BEGIN Header */
 /**
  ******************************************************************************
+ ******************************************************************************
+ * @author         : Luis Gómez (lgomez)
  * @file           : main.c
+ * @date           : 2023-08-16
  * @brief          : SKILL AND TIMING GAME WITH STM32
  *
  * 	The primary goal of this project is to develop an electronic game that
@@ -11,6 +14,7 @@
  * 	along with an LED matrix board with the integrated MAX7219 circuit (Maxim2023).
  * 	The game's state information will be displayed on an LED matrix screen.
  *
+ * @attention 		: NUCLEO boards (STM32-F429ZI) and integrated MAX7219 circuit
  *
  ******************************************************************************
  * @attention
@@ -432,7 +436,7 @@ static void MX_USB_OTG_FS_PCD_Init(void) {
  * @retval returns the value of the updated speed position
  */
 static int16_t level_speed_update(int16_t level_n) {
-	assert(level_n >= 0);
+	assert(level_n >= LEVEL_MIN);
 	if (level_n > LEVEL_MAX) {
 		level_n = LEVEL_MIN;
 	}

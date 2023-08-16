@@ -7,19 +7,19 @@ Idx Name          Size      VMA       LMA       File off  Algn
                   CONTENTS, ALLOC, LOAD, READONLY, DATA
   1 .text         00004ccc  080001b0  080001b0  000101b0  2**4
                   CONTENTS, ALLOC, LOAD, READONLY, CODE
-  2 .rodata       00000278  08004e7c  08004e7c  00014e7c  2**2
+  2 .rodata       00000280  08004e7c  08004e7c  00014e7c  2**2
                   CONTENTS, ALLOC, LOAD, READONLY, DATA
-  3 .ARM.extab    00000000  080050f4  080050f4  00020108  2**0
+  3 .ARM.extab    00000000  080050fc  080050fc  00020108  2**0
                   CONTENTS
-  4 .ARM          00000008  080050f4  080050f4  000150f4  2**2
+  4 .ARM          00000008  080050fc  080050fc  000150fc  2**2
                   CONTENTS, ALLOC, LOAD, READONLY, DATA
-  5 .preinit_array 00000000  080050fc  080050fc  00020108  2**0
+  5 .preinit_array 00000000  08005104  08005104  00020108  2**0
                   CONTENTS, ALLOC, LOAD, DATA
-  6 .init_array   00000004  080050fc  080050fc  000150fc  2**2
+  6 .init_array   00000004  08005104  08005104  00015104  2**2
                   CONTENTS, ALLOC, LOAD, DATA
-  7 .fini_array   00000004  08005100  08005100  00015100  2**2
+  7 .fini_array   00000004  08005108  08005108  00015108  2**2
                   CONTENTS, ALLOC, LOAD, DATA
-  8 .data         00000108  20000000  08005104  00020000  2**2
+  8 .data         00000108  20000000  0800510c  00020000  2**2
                   CONTENTS, ALLOC, LOAD, DATA
   9 .ccmram       00000000  10000000  10000000  00020108  2**0
                   CONTENTS
@@ -654,7 +654,7 @@ int main(void) {
 			assert(0);
  80006da:	4b10      	ldr	r3, [pc, #64]	; (800071c <main+0x188>)
  80006dc:	4a10      	ldr	r2, [pc, #64]	; (8000720 <main+0x18c>)
- 80006de:	f240 110b 	movw	r1, #267	; 0x10b
+ 80006de:	f240 110f 	movw	r1, #271	; 0x10f
  80006e2:	4810      	ldr	r0, [pc, #64]	; (8000724 <main+0x190>)
  80006e4:	f003 fb9a 	bl	8003e1c <__assert_func>
 			break;
@@ -676,7 +676,7 @@ int main(void) {
  8000714:	20000000 	.word	0x20000000
  8000718:	200008b4 	.word	0x200008b4
  800071c:	08004e7c 	.word	0x08004e7c
- 8000720:	08004f98 	.word	0x08004f98
+ 8000720:	08004fa0 	.word	0x08004fa0
  8000724:	08004e80 	.word	0x08004e80
 
 08000728 <SystemClock_Config>:
@@ -1072,13 +1072,13 @@ static int16_t level_speed_update(int16_t level_n) {
  8000950:	af00      	add	r7, sp, #0
  8000952:	4603      	mov	r3, r0
  8000954:	80fb      	strh	r3, [r7, #6]
-	assert(level_n >= 0);
+	assert(level_n >= LEVEL_MIN);
  8000956:	f9b7 3006 	ldrsh.w	r3, [r7, #6]
  800095a:	2b00      	cmp	r3, #0
  800095c:	da06      	bge.n	800096c <level_speed_update+0x20>
  800095e:	4b10      	ldr	r3, [pc, #64]	; (80009a0 <level_speed_update+0x54>)
  8000960:	4a10      	ldr	r2, [pc, #64]	; (80009a4 <level_speed_update+0x58>)
- 8000962:	f240 11b3 	movw	r1, #435	; 0x1b3
+ 8000962:	f240 11b7 	movw	r1, #439	; 0x1b7
  8000966:	4810      	ldr	r0, [pc, #64]	; (80009a8 <level_speed_update+0x5c>)
  8000968:	f003 fa58 	bl	8003e1c <__assert_func>
 	if (level_n > LEVEL_MAX) {
@@ -1111,9 +1111,9 @@ static int16_t level_speed_update(int16_t level_n) {
  800099c:	bd80      	pop	{r7, pc}
  800099e:	bf00      	nop
  80009a0:	08004e94 	.word	0x08004e94
- 80009a4:	08004fa0 	.word	0x08004fa0
+ 80009a4:	08004fa8 	.word	0x08004fa8
  80009a8:	08004e80 	.word	0x08004e80
- 80009ac:	08004f88 	.word	0x08004f88
+ 80009ac:	08004f90 	.word	0x08004f90
  80009b0:	200008b8 	.word	0x200008b8
  80009b4:	200008a4 	.word	0x200008a4
 
@@ -2342,7 +2342,7 @@ LoopFillZerobss:
   ldr r1, =_edata
  8000ff8:	20000108 	.word	0x20000108
   ldr r2, =_sidata
- 8000ffc:	08005104 	.word	0x08005104
+ 8000ffc:	0800510c 	.word	0x0800510c
   ldr r2, =_sbss
  8001000:	20000108 	.word	0x20000108
   ldr r4, =_ebss
@@ -2573,12 +2573,12 @@ bool_t debounceFSM_update() {
  8001128:	46bd      	mov	sp, r7
  800112a:	bd80      	pop	{r7, pc}
  800112c:	200008d0 	.word	0x200008d0
- 8001130:	08004ef0 	.word	0x08004ef0
- 8001134:	08004fcc 	.word	0x08004fcc
- 8001138:	08004ecc 	.word	0x08004ecc
+ 8001130:	08004ef8 	.word	0x08004ef8
+ 8001134:	08004fd4 	.word	0x08004fd4
+ 8001138:	08004ed4 	.word	0x08004ed4
  800113c:	200008cc 	.word	0x200008cc
  8001140:	200008cd 	.word	0x200008cd
- 8001144:	08004ec8 	.word	0x08004ec8
+ 8001144:	08004ed0 	.word	0x08004ed0
 
 08001148 <buttonPressed>:
  * @brief   Toggles the state of LED2.
@@ -2646,9 +2646,9 @@ void delayInit(delay_t *delay, tick_t duration) {
  80011a2:	3708      	adds	r7, #8
  80011a4:	46bd      	mov	sp, r7
  80011a6:	bd80      	pop	{r7, pc}
- 80011a8:	08004efc 	.word	0x08004efc
- 80011ac:	08004fe0 	.word	0x08004fe0
- 80011b0:	08004f0c 	.word	0x08004f0c
+ 80011a8:	08004f04 	.word	0x08004f04
+ 80011ac:	08004fe8 	.word	0x08004fe8
+ 80011b0:	08004f14 	.word	0x08004f14
 
 080011b4 <delayRead>:
  * reinicia el objeto y devuelve true.
@@ -2724,9 +2724,9 @@ bool_t delayRead(delay_t *delay) {
  800121c:	46bd      	mov	sp, r7
  800121e:	bd80      	pop	{r7, pc}
  8001220:	200008d4 	.word	0x200008d4
- 8001224:	08004efc 	.word	0x08004efc
- 8001228:	08004fec 	.word	0x08004fec
- 800122c:	08004f0c 	.word	0x08004f0c
+ 8001224:	08004f04 	.word	0x08004f04
+ 8001228:	08004ff4 	.word	0x08004ff4
+ 800122c:	08004f14 	.word	0x08004f14
 
 08001230 <clear_led>:
 /**
@@ -2866,9 +2866,9 @@ void update_led(uint8_t paint_list[]) {
  8001312:	46bd      	mov	sp, r7
  8001314:	bd80      	pop	{r7, pc}
  8001316:	bf00      	nop
- 8001318:	08004f2c 	.word	0x08004f2c
- 800131c:	08004ff8 	.word	0x08004ff8
- 8001320:	08004f40 	.word	0x08004f40
+ 8001318:	08004f34 	.word	0x08004f34
+ 800131c:	08005000 	.word	0x08005000
+ 8001320:	08004f48 	.word	0x08004f48
  8001324:	20000068 	.word	0x20000068
 
 08001328 <fantasma_led>:
@@ -3034,9 +3034,9 @@ void fantasma_led(void) {
  8001428:	20000080 	.word	0x20000080
  800142c:	20000088 	.word	0x20000088
  8001430:	20000090 	.word	0x20000090
- 8001434:	08004f60 	.word	0x08004f60
- 8001438:	08005004 	.word	0x08005004
- 800143c:	08004f40 	.word	0x08004f40
+ 8001434:	08004f68 	.word	0x08004f68
+ 8001438:	0800500c 	.word	0x0800500c
+ 800143c:	08004f48 	.word	0x08004f48
 
 08001440 <spi_init>:
  */
@@ -3787,9 +3787,9 @@ State_MEF_t update_MEF(delay_t *delay) {
  80018d8:	46bd      	mov	sp, r7
  80018da:	bd80      	pop	{r7, pc}
  80018dc:	20000948 	.word	0x20000948
- 80018e0:	08004f64 	.word	0x08004f64
- 80018e4:	08005014 	.word	0x08005014
- 80018e8:	08004f68 	.word	0x08004f68
+ 80018e0:	08004f6c 	.word	0x08004f6c
+ 80018e4:	0800501c 	.word	0x0800501c
+ 80018e8:	08004f70 	.word	0x08004f70
 
 080018ec <BSP_PB_GetState>:
   * @param  Button: Specifies the Button to be checked.
@@ -7676,7 +7676,7 @@ HAL_StatusTypeDef HAL_RCC_ClockConfig(RCC_ClkInitTypeDef  *RCC_ClkInitStruct, ui
  8002efa:	bf00      	nop
  8002efc:	40023c00 	.word	0x40023c00
  8002f00:	40023800 	.word	0x40023800
- 8002f04:	08004fb4 	.word	0x08004fb4
+ 8002f04:	08004fbc 	.word	0x08004fbc
  8002f08:	20000060 	.word	0x20000060
  8002f0c:	2000009c 	.word	0x2000009c
 
@@ -7978,7 +7978,7 @@ uint32_t HAL_RCC_GetPCLK1Freq(void)
  8003150:	4618      	mov	r0, r3
  8003152:	bd80      	pop	{r7, pc}
  8003154:	40023800 	.word	0x40023800
- 8003158:	08004fc4 	.word	0x08004fc4
+ 8003158:	08004fcc 	.word	0x08004fcc
 
 0800315c <HAL_RCC_GetPCLK2Freq>:
   * @note   Each time PCLK2 changes, this function must be called to update the
@@ -8004,7 +8004,7 @@ uint32_t HAL_RCC_GetPCLK2Freq(void)
  8003178:	4618      	mov	r0, r3
  800317a:	bd80      	pop	{r7, pc}
  800317c:	40023800 	.word	0x40023800
- 8003180:	08004fc4 	.word	0x08004fc4
+ 8003180:	08004fcc 	.word	0x08004fcc
 
 08003184 <HAL_SPI_Init>:
   * @param  hspi pointer to a SPI_HandleTypeDef structure that contains
@@ -9939,9 +9939,9 @@ static HAL_StatusTypeDef USB_CoreReset(USB_OTG_GlobalTypeDef *USBx)
  8003e44:	e7f3      	b.n	8003e2e <__assert_func+0x12>
  8003e46:	bf00      	nop
  8003e48:	200000a4 	.word	0x200000a4
- 8003e4c:	0800501f 	.word	0x0800501f
- 8003e50:	0800502c 	.word	0x0800502c
- 8003e54:	0800505a 	.word	0x0800505a
+ 8003e4c:	08005027 	.word	0x08005027
+ 8003e50:	08005034 	.word	0x08005034
+ 8003e54:	08005062 	.word	0x08005062
 
 08003e58 <__errno>:
  8003e58:	4b01      	ldr	r3, [pc, #4]	; (8003e60 <__errno+0x8>)
@@ -9992,10 +9992,10 @@ static HAL_StatusTypeDef USB_CoreReset(USB_OTG_GlobalTypeDef *USBx)
  8003eba:	4798      	blx	r3
  8003ebc:	3601      	adds	r6, #1
  8003ebe:	e7f2      	b.n	8003ea6 <__libc_init_array+0x1e>
- 8003ec0:	080050fc 	.word	0x080050fc
- 8003ec4:	080050fc 	.word	0x080050fc
- 8003ec8:	080050fc 	.word	0x080050fc
- 8003ecc:	08005100 	.word	0x08005100
+ 8003ec0:	08005104 	.word	0x08005104
+ 8003ec4:	08005104 	.word	0x08005104
+ 8003ec8:	08005104 	.word	0x08005104
+ 8003ecc:	08005108 	.word	0x08005108
 
 08003ed0 <memset>:
  8003ed0:	4402      	add	r2, r0
@@ -10287,14 +10287,14 @@ static HAL_StatusTypeDef USB_CoreReset(USB_OTG_GlobalTypeDef *USBx)
  800416c:	f000 f880 	bl	8004270 <_printf_i>
  8004170:	e7e4      	b.n	800413c <_vfiprintf_r+0x208>
  8004172:	bf00      	nop
- 8004174:	080050b4 	.word	0x080050b4
- 8004178:	080050d4 	.word	0x080050d4
- 800417c:	08005094 	.word	0x08005094
- 8004180:	08005060 	.word	0x08005060
- 8004184:	0800506a 	.word	0x0800506a
+ 8004174:	080050bc 	.word	0x080050bc
+ 8004178:	080050dc 	.word	0x080050dc
+ 800417c:	0800509c 	.word	0x0800509c
+ 8004180:	08005068 	.word	0x08005068
+ 8004184:	08005072 	.word	0x08005072
  8004188:	00000000 	.word	0x00000000
  800418c:	08003f0f 	.word	0x08003f0f
- 8004190:	08005066 	.word	0x08005066
+ 8004190:	0800506e 	.word	0x0800506e
 
 08004194 <_printf_common>:
  8004194:	e92d 47f0 	stmdb	sp!, {r4, r5, r6, r7, r8, r9, sl, lr}
@@ -10630,8 +10630,8 @@ static HAL_StatusTypeDef USB_CoreReset(USB_OTG_GlobalTypeDef *USBx)
  80044ac:	f104 0619 	add.w	r6, r4, #25
  80044b0:	e7f5      	b.n	800449e <_printf_i+0x22e>
  80044b2:	bf00      	nop
- 80044b4:	08005071 	.word	0x08005071
- 80044b8:	08005082 	.word	0x08005082
+ 80044b4:	08005079 	.word	0x08005079
+ 80044b8:	0800508a 	.word	0x0800508a
 
 080044bc <__swbuf_r>:
  80044bc:	b5f8      	push	{r3, r4, r5, r6, r7, lr}
@@ -10705,9 +10705,9 @@ static HAL_StatusTypeDef USB_CoreReset(USB_OTG_GlobalTypeDef *USBx)
  800454c:	f04f 37ff 	mov.w	r7, #4294967295	; 0xffffffff
  8004550:	e7ea      	b.n	8004528 <__swbuf_r+0x6c>
  8004552:	bf00      	nop
- 8004554:	080050b4 	.word	0x080050b4
- 8004558:	080050d4 	.word	0x080050d4
- 800455c:	08005094 	.word	0x08005094
+ 8004554:	080050bc 	.word	0x080050bc
+ 8004558:	080050dc 	.word	0x080050dc
+ 800455c:	0800509c 	.word	0x0800509c
 
 08004560 <__swsetup_r>:
  8004560:	4b32      	ldr	r3, [pc, #200]	; (800462c <__swsetup_r+0xcc>)
@@ -10799,9 +10799,9 @@ static HAL_StatusTypeDef USB_CoreReset(USB_OTG_GlobalTypeDef *USBx)
  8004628:	e7f7      	b.n	800461a <__swsetup_r+0xba>
  800462a:	bf00      	nop
  800462c:	200000a4 	.word	0x200000a4
- 8004630:	080050b4 	.word	0x080050b4
- 8004634:	080050d4 	.word	0x080050d4
- 8004638:	08005094 	.word	0x08005094
+ 8004630:	080050bc 	.word	0x080050bc
+ 8004634:	080050dc 	.word	0x080050dc
+ 8004638:	0800509c 	.word	0x0800509c
 
 0800463c <abort>:
  800463c:	b508      	push	{r3, lr}
@@ -10985,9 +10985,9 @@ static HAL_StatusTypeDef USB_CoreReset(USB_OTG_GlobalTypeDef *USBx)
  80047be:	bf08      	it	eq
  80047c0:	68ec      	ldreq	r4, [r5, #12]
  80047c2:	e7da      	b.n	800477a <_fflush_r+0x22>
- 80047c4:	080050b4 	.word	0x080050b4
- 80047c8:	080050d4 	.word	0x080050d4
- 80047cc:	08005094 	.word	0x08005094
+ 80047c4:	080050bc 	.word	0x080050bc
+ 80047c8:	080050dc 	.word	0x080050dc
+ 80047cc:	0800509c 	.word	0x0800509c
 
 080047d0 <std>:
  80047d0:	2300      	movs	r3, #0
@@ -11112,7 +11112,7 @@ static HAL_StatusTypeDef USB_CoreReset(USB_OTG_GlobalTypeDef *USBx)
  80048e2:	61a3      	str	r3, [r4, #24]
  80048e4:	e7d2      	b.n	800488c <__sinit+0xc>
  80048e6:	bf00      	nop
- 80048e8:	0800505c 	.word	0x0800505c
+ 80048e8:	08005064 	.word	0x08005064
  80048ec:	08004819 	.word	0x08004819
 
 080048f0 <__sfp>:
@@ -11167,7 +11167,7 @@ static HAL_StatusTypeDef USB_CoreReset(USB_OTG_GlobalTypeDef *USBx)
  800496e:	603b      	str	r3, [r7, #0]
  8004970:	e7ee      	b.n	8004950 <__sfp+0x60>
  8004972:	bf00      	nop
- 8004974:	0800505c 	.word	0x0800505c
+ 8004974:	08005064 	.word	0x08005064
  8004978:	ffff0001 	.word	0xffff0001
 
 0800497c <_fwalk_reent>:
