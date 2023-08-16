@@ -1,8 +1,22 @@
 /**
- * @file App_MEF.c
- * @brief Implementación de la máquina de estados finitos (MEF) para la aplicación.
- * @date Aug 6, 2023
- * @author lgomez
+ * @file 	:	App_MEF.c
+ * @date 	: 	Aug 6, 2023
+ * @author 	: 	lgomez
+ * @brief 	: 	"Implementation of the finite state machine."
+ *
+ * 				This FSM governs the game's operation through distinct logical sequences. Initially,
+ * 				the game showcases the starting score in the SET_ini state. Players then witness a
+ * 				rotating sequence of characters (A, B, C) on the screen, while awaiting a button press.
+ *
+ * 				A button press during the C state leads to a victory, incrementing the player's score
+ * 				by 1. Notably, both score tracking and game speed adjustments are handled in the main.c
+ * 				for enhanced configurability. However, if the button is pressed during either the A or B
+ * 				states, the player loses, forfeiting all accumulated points and restarting the game.
+ * 				After five consecutive wins, players are rewarded with a heart display on the LED screen.
+ *
+ * @attention : All functionalities related to game speeds, scores, and display rendering
+ * 				are controlled within main.c.
+ *
  */
 
 #include "stm32f4xx_hal.h"  		/**< Inclusión de la biblioteca HAL. */
@@ -12,87 +26,107 @@
 #include "App_MEF.h"
 #include "API_debounce.h"
 
-#define TIME_DEBOUNCE 40 //tiempo antirrebote del boton
+#define TIME_DEBOUNCE 40 // Debounce time for the button
 
-/** Variable que mantiene el estado actual de la MEF. */
+/** Variable that holds the current state of the FSM. */
 static State_MEF_t estadoMEF;
 
-static delay_t DelayDebounce; // tiempo de antirrebote del boton
+static delay_t DelayDebounce; // Debounce time for the button
 
 /**
- * @brief Función para inicializar la MEF. Configura el estado inicial.
+ * @brief Function to initialize the FSM. Sets the initial state.
  */
 void init_MEF(void) {
-	estadoMEF = SET_ini; /**< Configura el estado inicial. */
-	// Inicializar la Máquina de Estados Finitos (FSM) para el antirrebote.
+	estadoMEF = SET_ini; /**< Set the initial state. */
+	// Initialize the Finite State Machine (FSM) for debounce.
 	delayInit(&DelayDebounce, TIME_DEBOUNCE);
 	debounceFSM_init(&DelayDebounce);
 	return;
 }
-;
 
 /**
- * @brief Actualiza la MEF en función del estado actual y las entradas.
- * Esta función evalúa el estado actual de la MEF y determina el próximo
- * estado en función de las condiciones de entrada.
+ * @brief 	Updates the FSM based on the current state and inputs such as
+ * 			pressing the button and/or the passing of a certain amount of time.
  *
- * @param delay Puntero al tipo de dato delay_t que define la estructura de retardo.
- * @return State_MEF_t: El estado actualizado de la MEF.
+ * 			This function evaluates the current state of the FSM and determines the next
+ * 			state based on input conditions.
+ *
+ * @param 	delay Pointer to the delay_t data type that defines the delay structure,
+ * 			i.e., the game's transition speed.
+ * @return 	State_MEF_t represents the updated state of the FSM.
  */
 State_MEF_t update_MEF(delay_t *delay) {
-	assert(&estadoMEF!=NULL); /**< Asegura que el puntero al estado actual no es nulo. */
+	// Ensure the pointer to the current state is not null.
+	assert(&estadoMEF!=NULL);
+
+	// Switch case for the current state of the FSM.
 	switch (estadoMEF) {
 	case SET_ini:
+		// At this moment, the score is being displayed on the LED display.
+		// If the delay time has passed, transition to the FIRST state.
 		if (delayRead(delay)) {
 			estadoMEF = FIRST;
-		} else if (!delayRead(delay)) {
-			//estadoMEF = ;
 		}
 		break;
+
 	case FIRST:
+		// At this moment, the letter A is being displayed on the LED display.
+		// If the button debounce is handled and the delay time has passed, transition to the SECOND state.
+		// If the USER button is pressed and the delay time hasn't passed, transition to the BAD state.
 		if (!debounceFSM_update() && delayRead(delay)) {
 			estadoMEF = SECOND;
 		} else if (BSP_PB_GetState(BUTTON_USER) && !delayRead(delay)) {
 			estadoMEF = BAD;
 		}
 		break;
+
 	case SECOND:
+		// At this moment, the letter B is being displayed on the LED display.
+		// Similar logic as the FIRST state but transitions to the THIRD state.
 		if (!debounceFSM_update() && delayRead(delay)) {
 			estadoMEF = THIRD;
 		} else if (BSP_PB_GetState(BUTTON_USER) && !delayRead(delay)) {
 			estadoMEF = BAD;
 		}
 		break;
+
 	case THIRD:
+		// At this moment, the letter C is being displayed on the LED display.
+		// If the button debounce is handled and the delay time has passed, loop back to the FIRST state.
+		// If the USER button is pressed and the delay time hasn't passed, transition to the GOOD state.
 		if (!debounceFSM_update() && delayRead(delay)) {
 			estadoMEF = FIRST;
 		} else if (BSP_PB_GetState(BUTTON_USER) && !delayRead(delay)) {
 			estadoMEF = GOOD;
 		}
 		break;
+
 	case GOOD:
+		// The player wins the round and the score is incremented.
+		// At this moment, a smiling face is displayed on the LED screen, and the score counter increases.
+		// The gameplay speed also increases.
+		// If the USER button isn't pressed and the delay time has passed, reset to the SET_ini state.
 		if (!BSP_PB_GetState(BUTTON_USER) && delayRead(delay)) {
 			estadoMEF = SET_ini;
 		}
 		break;
+
 	case BAD:
+		// The player loses the round.
+		// At this moment, a ghost is displayed on the LED screen, and the score is reurnig to our.
+		// The gameplay speed also increases.
+		// If the USER button isn't pressed and the delay time has passed, reset to the SET_ini state.
 		if (!BSP_PB_GetState(BUTTON_USER) && delayRead(delay)) {
 			estadoMEF = SET_ini;
 		}
 		break;
+
 	default:
-		/** En caso de llegar a un estado no definido, se fuerza una interrupción. */
+		// In case of reaching an undefined state, force an interruption.
 		assert(0);
 	}
+
+	// Return the updated FSM state.
 	return (estadoMEF);
 }
-;
 
-/**
- * @brief Lee y retorna el estado actual de la MEF.
- *
- * @note Esta función está actualmente incompleta y debe ser implementada.
- *
- * @return char*: Una representación en cadena del estado actual.
- */
-//char *Lee_estado(){};

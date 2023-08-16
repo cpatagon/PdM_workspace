@@ -1,0 +1,104 @@
+/**
+ * @file 	:	App_MEF.c
+ * @date 	: 	Aug 6, 2023
+ * @author 	: 	lgomez
+ * @brief 	: 	"Implementation of the finite state machine."
+ *
+ * 				This FSM governs the game's operation through distinct logical sequences. Initially,
+ * 				the game showcases the starting score in the SET_ini state. Players then witness a
+ * 				rotating sequence of characters (A, B, C) on the screen, while awaiting a button press.
+ *
+ * 				A button press during the C state leads to a victory, incrementing the player's score
+ * 				by 1. Notably, both score tracking and game speed adjustments are handled in the main.c
+ * 				for enhanced configurability. However, if the button is pressed during either the A or B
+ * 				states, the player loses, forfeiting all accumulated points and restarting the game.
+ * 				After five consecutive wins, players are rewarded with a heart display on the LED screen.
+ *
+ * @attention : All functionalities related to game speeds, scores, and display rendering
+ * 				are controlled within main.c.
+ *
+ */
+
+#include "stm32f4xx_hal.h"  		/**< Inclusión de la biblioteca HAL. */
+#include "stm32f4xx_nucleo_144.h" 	/**< Inclusión de la biblioteca BSP. */
+
+#include <assert.h>
+#include "App_MEF.h"
+#include "API_debounce.h"
+
+#define TIME_DEBOUNCE 40 //tiempo antirrebote del boton
+
+/** Variable que mantiene el estado actual de la MEF. */
+static State_MEF_t estadoMEF;
+
+static delay_t DelayDebounce; // tiempo de antirrebote del boton
+
+/**
+ * @brief Función para inicializar la MEF. Configura el estado inicial.
+ */
+void init_MEF(void) {
+	estadoMEF = SET_ini; /**< Configura el estado inicial. */
+	// Inicializar la Máquina de Estados Finitos (FSM) para el antirrebote.
+	delayInit(&DelayDebounce, TIME_DEBOUNCE);
+	debounceFSM_init(&DelayDebounce);
+	return;
+}
+
+/**
+ * @brief 	Actualiza la MEF en función del estado actual y las entradas como lo es
+ * 			presionar el boton y/o transcurrir un determinado tiempo.
+ *
+ * 			Esta función evalúa el estado actual de la MEF y determina el próximo
+ * 			estado en función de las condiciones de entrada.
+ *
+ * @param 	delay Puntero al tipo de dato delay_t que define la estructura de retardo
+ * 			es decir la velocidad de transición del juego.
+ * @return 	State_MEF_t entre el estado actualizado de la MEF.
+ */
+State_MEF_t update_MEF(delay_t *delay) {
+	assert(&estadoMEF!=NULL); /**< Asegura que el puntero al estado actual no es nulo. */
+	switch (estadoMEF) {
+	case SET_ini:
+		if (delayRead(delay)) {
+			estadoMEF = FIRST;
+		} else if (!delayRead(delay)) {
+		}
+		break;
+	case FIRST:
+		if (!debounceFSM_update() && delayRead(delay)) {
+			estadoMEF = SECOND;
+		} else if (BSP_PB_GetState(BUTTON_USER) && !delayRead(delay)) {
+			estadoMEF = BAD;
+		}
+		break;
+	case SECOND:
+		if (!debounceFSM_update() && delayRead(delay)) {
+			estadoMEF = THIRD;
+		} else if (BSP_PB_GetState(BUTTON_USER) && !delayRead(delay)) {
+			estadoMEF = BAD;
+		}
+		break;
+	case THIRD:
+		if (!debounceFSM_update() && delayRead(delay)) {
+			estadoMEF = FIRST;
+		} else if (BSP_PB_GetState(BUTTON_USER) && !delayRead(delay)) {
+			estadoMEF = GOOD;
+		}
+		break;
+	case GOOD:
+		if (!BSP_PB_GetState(BUTTON_USER) && delayRead(delay)) {
+			estadoMEF = SET_ini;
+		}
+		break;
+	case BAD:
+		if (!BSP_PB_GetState(BUTTON_USER) && delayRead(delay)) {
+			estadoMEF = SET_ini;
+		}
+		break;
+	default:
+		/** En caso de llegar a un estado no definido, se fuerza una interrupción. */
+		assert(0);
+	}
+	return (estadoMEF);
+}
+

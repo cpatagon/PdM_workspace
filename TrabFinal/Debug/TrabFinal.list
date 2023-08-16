@@ -39,13 +39,13 @@ Idx Name          Size      VMA       LMA       File off  Algn
                   CONTENTS, READONLY, DEBUGGING, OCTETS
  17 .debug_macro  0002643b  00000000  00000000  000382f8  2**0
                   CONTENTS, READONLY, DEBUGGING, OCTETS
- 18 .debug_line   000127fb  00000000  00000000  0005e733  2**0
+ 18 .debug_line   00012800  00000000  00000000  0005e733  2**0
                   CONTENTS, READONLY, DEBUGGING, OCTETS
- 19 .debug_str    000df054  00000000  00000000  00070f2e  2**0
+ 19 .debug_str    000df054  00000000  00000000  00070f33  2**0
                   CONTENTS, READONLY, DEBUGGING, OCTETS
- 20 .comment      00000050  00000000  00000000  0014ff82  2**0
+ 20 .comment      00000050  00000000  00000000  0014ff87  2**0
                   CONTENTS, READONLY
- 21 .debug_frame  000049c4  00000000  00000000  0014ffd4  2**2
+ 21 .debug_frame  000049c4  00000000  00000000  0014ffd8  2**2
                   CONTENTS, READONLY, DEBUGGING, OCTETS
 
 Disassembly of section .text:
@@ -3521,19 +3521,19 @@ static void MX_SPI3_Init(void) {
  8001720:	40003c00 	.word	0x40003c00
 
 08001724 <init_MEF>:
-static delay_t DelayDebounce; // tiempo de antirrebote del boton
+static delay_t DelayDebounce; // Debounce time for the button
 
 /**
- * @brief Función para inicializar la MEF. Configura el estado inicial.
+ * @brief Function to initialize the FSM. Sets the initial state.
  */
 void init_MEF(void) {
  8001724:	b580      	push	{r7, lr}
  8001726:	af00      	add	r7, sp, #0
-	estadoMEF = SET_ini; /**< Configura el estado inicial. */
+	estadoMEF = SET_ini; /**< Set the initial state. */
  8001728:	4b05      	ldr	r3, [pc, #20]	; (8001740 <init_MEF+0x1c>)
  800172a:	2200      	movs	r2, #0
  800172c:	701a      	strb	r2, [r3, #0]
-	// Inicializar la Máquina de Estados Finitos (FSM) para el antirrebote.
+	// Initialize the Finite State Machine (FSM) for debounce.
 	delayInit(&DelayDebounce, TIME_DEBOUNCE);
  800172e:	2128      	movs	r1, #40	; 0x28
  8001730:	4804      	ldr	r0, [pc, #16]	; (8001744 <init_MEF+0x20>)
@@ -3549,243 +3549,267 @@ void init_MEF(void) {
  8001744:	2000094c 	.word	0x2000094c
 
 08001748 <update_MEF>:
- * estado en función de las condiciones de entrada.
  *
- * @param delay Puntero al tipo de dato delay_t que define la estructura de retardo.
- * @return State_MEF_t: El estado actualizado de la MEF.
+ * @param 	delay Pointer to the delay_t data type that defines the delay structure,
+ * 			i.e., the game's transition speed.
+ * @return 	State_MEF_t represents the updated state of the FSM.
  */
 State_MEF_t update_MEF(delay_t *delay) {
  8001748:	b580      	push	{r7, lr}
  800174a:	b082      	sub	sp, #8
  800174c:	af00      	add	r7, sp, #0
  800174e:	6078      	str	r0, [r7, #4]
-	assert(&estadoMEF!=NULL); /**< Asegura que el puntero al estado actual no es nulo. */
+	// Ensure the pointer to the current state is not null.
+	assert(&estadoMEF!=NULL);
+
+	// Switch case for the current state of the FSM.
 	switch (estadoMEF) {
  8001750:	4b62      	ldr	r3, [pc, #392]	; (80018dc <update_MEF+0x194>)
  8001752:	781b      	ldrb	r3, [r3, #0]
  8001754:	2b05      	cmp	r3, #5
- 8001756:	f200 80ac 	bhi.w	80018b2 <update_MEF+0x16a>
+ 8001756:	f200 80a9 	bhi.w	80018ac <update_MEF+0x164>
  800175a:	a201      	add	r2, pc, #4	; (adr r2, 8001760 <update_MEF+0x18>)
  800175c:	f852 f023 	ldr.w	pc, [r2, r3, lsl #2]
  8001760:	08001779 	.word	0x08001779
- 8001764:	08001795 	.word	0x08001795
- 8001768:	080017df 	.word	0x080017df
- 800176c:	08001829 	.word	0x08001829
- 8001770:	08001873 	.word	0x08001873
- 8001774:	08001893 	.word	0x08001893
+ 8001764:	0800178f 	.word	0x0800178f
+ 8001768:	080017d9 	.word	0x080017d9
+ 800176c:	08001823 	.word	0x08001823
+ 8001770:	0800186d 	.word	0x0800186d
+ 8001774:	0800188d 	.word	0x0800188d
 	case SET_ini:
+		// At this moment, the score is being displayed on the LED display.
+		// If the delay time has passed, transition to the FIRST state.
 		if (delayRead(delay)) {
  8001778:	6878      	ldr	r0, [r7, #4]
  800177a:	f7ff fd1b 	bl	80011b4 <delayRead>
  800177e:	4603      	mov	r3, r0
  8001780:	2b00      	cmp	r3, #0
- 8001782:	d003      	beq.n	800178c <update_MEF+0x44>
+ 8001782:	f000 8099 	beq.w	80018b8 <update_MEF+0x170>
 			estadoMEF = FIRST;
- 8001784:	4b55      	ldr	r3, [pc, #340]	; (80018dc <update_MEF+0x194>)
- 8001786:	2201      	movs	r2, #1
- 8001788:	701a      	strb	r2, [r3, #0]
-		} else if (!delayRead(delay)) {
-			//estadoMEF = ;
+ 8001786:	4b55      	ldr	r3, [pc, #340]	; (80018dc <update_MEF+0x194>)
+ 8001788:	2201      	movs	r2, #1
+ 800178a:	701a      	strb	r2, [r3, #0]
 		}
 		break;
- 800178a:	e0a1      	b.n	80018d0 <update_MEF+0x188>
-		} else if (!delayRead(delay)) {
- 800178c:	6878      	ldr	r0, [r7, #4]
- 800178e:	f7ff fd11 	bl	80011b4 <delayRead>
-		break;
- 8001792:	e09d      	b.n	80018d0 <update_MEF+0x188>
+ 800178c:	e094      	b.n	80018b8 <update_MEF+0x170>
+
 	case FIRST:
+		// At this moment, the letter A is being displayed on the LED display.
+		// If the button debounce is handled and the delay time has passed, transition to the SECOND state.
+		// If the USER button is pressed and the delay time hasn't passed, transition to the BAD state.
 		if (!debounceFSM_update() && delayRead(delay)) {
- 8001794:	f7ff fc54 	bl	8001040 <debounceFSM_update>
- 8001798:	4603      	mov	r3, r0
- 800179a:	f083 0301 	eor.w	r3, r3, #1
- 800179e:	b2db      	uxtb	r3, r3
- 80017a0:	2b00      	cmp	r3, #0
- 80017a2:	d009      	beq.n	80017b8 <update_MEF+0x70>
- 80017a4:	6878      	ldr	r0, [r7, #4]
- 80017a6:	f7ff fd05 	bl	80011b4 <delayRead>
- 80017aa:	4603      	mov	r3, r0
- 80017ac:	2b00      	cmp	r3, #0
- 80017ae:	d003      	beq.n	80017b8 <update_MEF+0x70>
+ 800178e:	f7ff fc57 	bl	8001040 <debounceFSM_update>
+ 8001792:	4603      	mov	r3, r0
+ 8001794:	f083 0301 	eor.w	r3, r3, #1
+ 8001798:	b2db      	uxtb	r3, r3
+ 800179a:	2b00      	cmp	r3, #0
+ 800179c:	d009      	beq.n	80017b2 <update_MEF+0x6a>
+ 800179e:	6878      	ldr	r0, [r7, #4]
+ 80017a0:	f7ff fd08 	bl	80011b4 <delayRead>
+ 80017a4:	4603      	mov	r3, r0
+ 80017a6:	2b00      	cmp	r3, #0
+ 80017a8:	d003      	beq.n	80017b2 <update_MEF+0x6a>
 			estadoMEF = SECOND;
- 80017b0:	4b4a      	ldr	r3, [pc, #296]	; (80018dc <update_MEF+0x194>)
- 80017b2:	2202      	movs	r2, #2
- 80017b4:	701a      	strb	r2, [r3, #0]
+ 80017aa:	4b4c      	ldr	r3, [pc, #304]	; (80018dc <update_MEF+0x194>)
+ 80017ac:	2202      	movs	r2, #2
+ 80017ae:	701a      	strb	r2, [r3, #0]
 		} else if (BSP_PB_GetState(BUTTON_USER) && !delayRead(delay)) {
 			estadoMEF = BAD;
 		}
 		break;
- 80017b6:	e082      	b.n	80018be <update_MEF+0x176>
+ 80017b0:	e084      	b.n	80018bc <update_MEF+0x174>
 		} else if (BSP_PB_GetState(BUTTON_USER) && !delayRead(delay)) {
- 80017b8:	2000      	movs	r0, #0
- 80017ba:	f000 f897 	bl	80018ec <BSP_PB_GetState>
- 80017be:	4603      	mov	r3, r0
- 80017c0:	2b00      	cmp	r3, #0
- 80017c2:	d07c      	beq.n	80018be <update_MEF+0x176>
- 80017c4:	6878      	ldr	r0, [r7, #4]
- 80017c6:	f7ff fcf5 	bl	80011b4 <delayRead>
- 80017ca:	4603      	mov	r3, r0
- 80017cc:	f083 0301 	eor.w	r3, r3, #1
- 80017d0:	b2db      	uxtb	r3, r3
- 80017d2:	2b00      	cmp	r3, #0
- 80017d4:	d073      	beq.n	80018be <update_MEF+0x176>
+ 80017b2:	2000      	movs	r0, #0
+ 80017b4:	f000 f89a 	bl	80018ec <BSP_PB_GetState>
+ 80017b8:	4603      	mov	r3, r0
+ 80017ba:	2b00      	cmp	r3, #0
+ 80017bc:	d07e      	beq.n	80018bc <update_MEF+0x174>
+ 80017be:	6878      	ldr	r0, [r7, #4]
+ 80017c0:	f7ff fcf8 	bl	80011b4 <delayRead>
+ 80017c4:	4603      	mov	r3, r0
+ 80017c6:	f083 0301 	eor.w	r3, r3, #1
+ 80017ca:	b2db      	uxtb	r3, r3
+ 80017cc:	2b00      	cmp	r3, #0
+ 80017ce:	d075      	beq.n	80018bc <update_MEF+0x174>
 			estadoMEF = BAD;
- 80017d6:	4b41      	ldr	r3, [pc, #260]	; (80018dc <update_MEF+0x194>)
- 80017d8:	2205      	movs	r2, #5
- 80017da:	701a      	strb	r2, [r3, #0]
+ 80017d0:	4b42      	ldr	r3, [pc, #264]	; (80018dc <update_MEF+0x194>)
+ 80017d2:	2205      	movs	r2, #5
+ 80017d4:	701a      	strb	r2, [r3, #0]
 		break;
- 80017dc:	e06f      	b.n	80018be <update_MEF+0x176>
+ 80017d6:	e071      	b.n	80018bc <update_MEF+0x174>
+
 	case SECOND:
+		// At this moment, the letter B is being displayed on the LED display.
+		// Similar logic as the FIRST state but transitions to the THIRD state.
 		if (!debounceFSM_update() && delayRead(delay)) {
- 80017de:	f7ff fc2f 	bl	8001040 <debounceFSM_update>
- 80017e2:	4603      	mov	r3, r0
- 80017e4:	f083 0301 	eor.w	r3, r3, #1
- 80017e8:	b2db      	uxtb	r3, r3
- 80017ea:	2b00      	cmp	r3, #0
- 80017ec:	d009      	beq.n	8001802 <update_MEF+0xba>
- 80017ee:	6878      	ldr	r0, [r7, #4]
- 80017f0:	f7ff fce0 	bl	80011b4 <delayRead>
- 80017f4:	4603      	mov	r3, r0
- 80017f6:	2b00      	cmp	r3, #0
- 80017f8:	d003      	beq.n	8001802 <update_MEF+0xba>
+ 80017d8:	f7ff fc32 	bl	8001040 <debounceFSM_update>
+ 80017dc:	4603      	mov	r3, r0
+ 80017de:	f083 0301 	eor.w	r3, r3, #1
+ 80017e2:	b2db      	uxtb	r3, r3
+ 80017e4:	2b00      	cmp	r3, #0
+ 80017e6:	d009      	beq.n	80017fc <update_MEF+0xb4>
+ 80017e8:	6878      	ldr	r0, [r7, #4]
+ 80017ea:	f7ff fce3 	bl	80011b4 <delayRead>
+ 80017ee:	4603      	mov	r3, r0
+ 80017f0:	2b00      	cmp	r3, #0
+ 80017f2:	d003      	beq.n	80017fc <update_MEF+0xb4>
 			estadoMEF = THIRD;
- 80017fa:	4b38      	ldr	r3, [pc, #224]	; (80018dc <update_MEF+0x194>)
- 80017fc:	2203      	movs	r2, #3
- 80017fe:	701a      	strb	r2, [r3, #0]
+ 80017f4:	4b39      	ldr	r3, [pc, #228]	; (80018dc <update_MEF+0x194>)
+ 80017f6:	2203      	movs	r2, #3
+ 80017f8:	701a      	strb	r2, [r3, #0]
 		} else if (BSP_PB_GetState(BUTTON_USER) && !delayRead(delay)) {
 			estadoMEF = BAD;
 		}
 		break;
- 8001800:	e05f      	b.n	80018c2 <update_MEF+0x17a>
+ 80017fa:	e061      	b.n	80018c0 <update_MEF+0x178>
 		} else if (BSP_PB_GetState(BUTTON_USER) && !delayRead(delay)) {
- 8001802:	2000      	movs	r0, #0
- 8001804:	f000 f872 	bl	80018ec <BSP_PB_GetState>
- 8001808:	4603      	mov	r3, r0
- 800180a:	2b00      	cmp	r3, #0
- 800180c:	d059      	beq.n	80018c2 <update_MEF+0x17a>
- 800180e:	6878      	ldr	r0, [r7, #4]
- 8001810:	f7ff fcd0 	bl	80011b4 <delayRead>
- 8001814:	4603      	mov	r3, r0
- 8001816:	f083 0301 	eor.w	r3, r3, #1
- 800181a:	b2db      	uxtb	r3, r3
- 800181c:	2b00      	cmp	r3, #0
- 800181e:	d050      	beq.n	80018c2 <update_MEF+0x17a>
+ 80017fc:	2000      	movs	r0, #0
+ 80017fe:	f000 f875 	bl	80018ec <BSP_PB_GetState>
+ 8001802:	4603      	mov	r3, r0
+ 8001804:	2b00      	cmp	r3, #0
+ 8001806:	d05b      	beq.n	80018c0 <update_MEF+0x178>
+ 8001808:	6878      	ldr	r0, [r7, #4]
+ 800180a:	f7ff fcd3 	bl	80011b4 <delayRead>
+ 800180e:	4603      	mov	r3, r0
+ 8001810:	f083 0301 	eor.w	r3, r3, #1
+ 8001814:	b2db      	uxtb	r3, r3
+ 8001816:	2b00      	cmp	r3, #0
+ 8001818:	d052      	beq.n	80018c0 <update_MEF+0x178>
 			estadoMEF = BAD;
- 8001820:	4b2e      	ldr	r3, [pc, #184]	; (80018dc <update_MEF+0x194>)
- 8001822:	2205      	movs	r2, #5
- 8001824:	701a      	strb	r2, [r3, #0]
+ 800181a:	4b30      	ldr	r3, [pc, #192]	; (80018dc <update_MEF+0x194>)
+ 800181c:	2205      	movs	r2, #5
+ 800181e:	701a      	strb	r2, [r3, #0]
 		break;
- 8001826:	e04c      	b.n	80018c2 <update_MEF+0x17a>
+ 8001820:	e04e      	b.n	80018c0 <update_MEF+0x178>
+
 	case THIRD:
+		// At this moment, the letter C is being displayed on the LED display.
+		// If the button debounce is handled and the delay time has passed, loop back to the FIRST state.
+		// If the USER button is pressed and the delay time hasn't passed, transition to the GOOD state.
 		if (!debounceFSM_update() && delayRead(delay)) {
- 8001828:	f7ff fc0a 	bl	8001040 <debounceFSM_update>
- 800182c:	4603      	mov	r3, r0
- 800182e:	f083 0301 	eor.w	r3, r3, #1
- 8001832:	b2db      	uxtb	r3, r3
- 8001834:	2b00      	cmp	r3, #0
- 8001836:	d009      	beq.n	800184c <update_MEF+0x104>
- 8001838:	6878      	ldr	r0, [r7, #4]
- 800183a:	f7ff fcbb 	bl	80011b4 <delayRead>
- 800183e:	4603      	mov	r3, r0
- 8001840:	2b00      	cmp	r3, #0
- 8001842:	d003      	beq.n	800184c <update_MEF+0x104>
+ 8001822:	f7ff fc0d 	bl	8001040 <debounceFSM_update>
+ 8001826:	4603      	mov	r3, r0
+ 8001828:	f083 0301 	eor.w	r3, r3, #1
+ 800182c:	b2db      	uxtb	r3, r3
+ 800182e:	2b00      	cmp	r3, #0
+ 8001830:	d009      	beq.n	8001846 <update_MEF+0xfe>
+ 8001832:	6878      	ldr	r0, [r7, #4]
+ 8001834:	f7ff fcbe 	bl	80011b4 <delayRead>
+ 8001838:	4603      	mov	r3, r0
+ 800183a:	2b00      	cmp	r3, #0
+ 800183c:	d003      	beq.n	8001846 <update_MEF+0xfe>
 			estadoMEF = FIRST;
- 8001844:	4b25      	ldr	r3, [pc, #148]	; (80018dc <update_MEF+0x194>)
- 8001846:	2201      	movs	r2, #1
- 8001848:	701a      	strb	r2, [r3, #0]
+ 800183e:	4b27      	ldr	r3, [pc, #156]	; (80018dc <update_MEF+0x194>)
+ 8001840:	2201      	movs	r2, #1
+ 8001842:	701a      	strb	r2, [r3, #0]
 		} else if (BSP_PB_GetState(BUTTON_USER) && !delayRead(delay)) {
 			estadoMEF = GOOD;
 		}
 		break;
- 800184a:	e03c      	b.n	80018c6 <update_MEF+0x17e>
+ 8001844:	e03e      	b.n	80018c4 <update_MEF+0x17c>
 		} else if (BSP_PB_GetState(BUTTON_USER) && !delayRead(delay)) {
- 800184c:	2000      	movs	r0, #0
- 800184e:	f000 f84d 	bl	80018ec <BSP_PB_GetState>
- 8001852:	4603      	mov	r3, r0
- 8001854:	2b00      	cmp	r3, #0
- 8001856:	d036      	beq.n	80018c6 <update_MEF+0x17e>
- 8001858:	6878      	ldr	r0, [r7, #4]
- 800185a:	f7ff fcab 	bl	80011b4 <delayRead>
- 800185e:	4603      	mov	r3, r0
- 8001860:	f083 0301 	eor.w	r3, r3, #1
- 8001864:	b2db      	uxtb	r3, r3
- 8001866:	2b00      	cmp	r3, #0
- 8001868:	d02d      	beq.n	80018c6 <update_MEF+0x17e>
+ 8001846:	2000      	movs	r0, #0
+ 8001848:	f000 f850 	bl	80018ec <BSP_PB_GetState>
+ 800184c:	4603      	mov	r3, r0
+ 800184e:	2b00      	cmp	r3, #0
+ 8001850:	d038      	beq.n	80018c4 <update_MEF+0x17c>
+ 8001852:	6878      	ldr	r0, [r7, #4]
+ 8001854:	f7ff fcae 	bl	80011b4 <delayRead>
+ 8001858:	4603      	mov	r3, r0
+ 800185a:	f083 0301 	eor.w	r3, r3, #1
+ 800185e:	b2db      	uxtb	r3, r3
+ 8001860:	2b00      	cmp	r3, #0
+ 8001862:	d02f      	beq.n	80018c4 <update_MEF+0x17c>
 			estadoMEF = GOOD;
- 800186a:	4b1c      	ldr	r3, [pc, #112]	; (80018dc <update_MEF+0x194>)
- 800186c:	2204      	movs	r2, #4
- 800186e:	701a      	strb	r2, [r3, #0]
+ 8001864:	4b1d      	ldr	r3, [pc, #116]	; (80018dc <update_MEF+0x194>)
+ 8001866:	2204      	movs	r2, #4
+ 8001868:	701a      	strb	r2, [r3, #0]
 		break;
- 8001870:	e029      	b.n	80018c6 <update_MEF+0x17e>
+ 800186a:	e02b      	b.n	80018c4 <update_MEF+0x17c>
 	case GOOD:
+		// The player wins the round and the score is incremented.
+		// At this moment, a smiling face is displayed on the LED screen, and the score counter increases.
+		// The gameplay speed also increases.
+		// If the USER button isn't pressed and the delay time has passed, reset to the SET_ini state.
 		if (!BSP_PB_GetState(BUTTON_USER) && delayRead(delay)) {
- 8001872:	2000      	movs	r0, #0
- 8001874:	f000 f83a 	bl	80018ec <BSP_PB_GetState>
- 8001878:	4603      	mov	r3, r0
- 800187a:	2b00      	cmp	r3, #0
- 800187c:	d125      	bne.n	80018ca <update_MEF+0x182>
- 800187e:	6878      	ldr	r0, [r7, #4]
- 8001880:	f7ff fc98 	bl	80011b4 <delayRead>
- 8001884:	4603      	mov	r3, r0
- 8001886:	2b00      	cmp	r3, #0
- 8001888:	d01f      	beq.n	80018ca <update_MEF+0x182>
+ 800186c:	2000      	movs	r0, #0
+ 800186e:	f000 f83d 	bl	80018ec <BSP_PB_GetState>
+ 8001872:	4603      	mov	r3, r0
+ 8001874:	2b00      	cmp	r3, #0
+ 8001876:	d127      	bne.n	80018c8 <update_MEF+0x180>
+ 8001878:	6878      	ldr	r0, [r7, #4]
+ 800187a:	f7ff fc9b 	bl	80011b4 <delayRead>
+ 800187e:	4603      	mov	r3, r0
+ 8001880:	2b00      	cmp	r3, #0
+ 8001882:	d021      	beq.n	80018c8 <update_MEF+0x180>
 			estadoMEF = SET_ini;
- 800188a:	4b14      	ldr	r3, [pc, #80]	; (80018dc <update_MEF+0x194>)
- 800188c:	2200      	movs	r2, #0
- 800188e:	701a      	strb	r2, [r3, #0]
+ 8001884:	4b15      	ldr	r3, [pc, #84]	; (80018dc <update_MEF+0x194>)
+ 8001886:	2200      	movs	r2, #0
+ 8001888:	701a      	strb	r2, [r3, #0]
 		}
 		break;
- 8001890:	e01b      	b.n	80018ca <update_MEF+0x182>
+ 800188a:	e01d      	b.n	80018c8 <update_MEF+0x180>
 	case BAD:
+		// The player loses the round.
+		// At this moment, a ghost is displayed on the LED screen, and the score is reurnig to our.
+		// The gameplay speed also increases.
+		// If the USER button isn't pressed and the delay time has passed, reset to the SET_ini state.
 		if (!BSP_PB_GetState(BUTTON_USER) && delayRead(delay)) {
- 8001892:	2000      	movs	r0, #0
- 8001894:	f000 f82a 	bl	80018ec <BSP_PB_GetState>
- 8001898:	4603      	mov	r3, r0
- 800189a:	2b00      	cmp	r3, #0
- 800189c:	d117      	bne.n	80018ce <update_MEF+0x186>
- 800189e:	6878      	ldr	r0, [r7, #4]
- 80018a0:	f7ff fc88 	bl	80011b4 <delayRead>
- 80018a4:	4603      	mov	r3, r0
- 80018a6:	2b00      	cmp	r3, #0
- 80018a8:	d011      	beq.n	80018ce <update_MEF+0x186>
+ 800188c:	2000      	movs	r0, #0
+ 800188e:	f000 f82d 	bl	80018ec <BSP_PB_GetState>
+ 8001892:	4603      	mov	r3, r0
+ 8001894:	2b00      	cmp	r3, #0
+ 8001896:	d119      	bne.n	80018cc <update_MEF+0x184>
+ 8001898:	6878      	ldr	r0, [r7, #4]
+ 800189a:	f7ff fc8b 	bl	80011b4 <delayRead>
+ 800189e:	4603      	mov	r3, r0
+ 80018a0:	2b00      	cmp	r3, #0
+ 80018a2:	d013      	beq.n	80018cc <update_MEF+0x184>
 			estadoMEF = SET_ini;
- 80018aa:	4b0c      	ldr	r3, [pc, #48]	; (80018dc <update_MEF+0x194>)
- 80018ac:	2200      	movs	r2, #0
- 80018ae:	701a      	strb	r2, [r3, #0]
+ 80018a4:	4b0d      	ldr	r3, [pc, #52]	; (80018dc <update_MEF+0x194>)
+ 80018a6:	2200      	movs	r2, #0
+ 80018a8:	701a      	strb	r2, [r3, #0]
 		}
 		break;
- 80018b0:	e00d      	b.n	80018ce <update_MEF+0x186>
+ 80018aa:	e00f      	b.n	80018cc <update_MEF+0x184>
+
 	default:
-		/** En caso de llegar a un estado no definido, se fuerza una interrupción. */
+		// In case of reaching an undefined state, force an interruption.
 		assert(0);
- 80018b2:	4b0b      	ldr	r3, [pc, #44]	; (80018e0 <update_MEF+0x198>)
- 80018b4:	4a0b      	ldr	r2, [pc, #44]	; (80018e4 <update_MEF+0x19c>)
- 80018b6:	2155      	movs	r1, #85	; 0x55
- 80018b8:	480b      	ldr	r0, [pc, #44]	; (80018e8 <update_MEF+0x1a0>)
- 80018ba:	f002 faaf 	bl	8003e1c <__assert_func>
+ 80018ac:	4b0c      	ldr	r3, [pc, #48]	; (80018e0 <update_MEF+0x198>)
+ 80018ae:	4a0d      	ldr	r2, [pc, #52]	; (80018e4 <update_MEF+0x19c>)
+ 80018b0:	217e      	movs	r1, #126	; 0x7e
+ 80018b2:	480d      	ldr	r0, [pc, #52]	; (80018e8 <update_MEF+0x1a0>)
+ 80018b4:	f002 fab2 	bl	8003e1c <__assert_func>
 		break;
- 80018be:	bf00      	nop
- 80018c0:	e006      	b.n	80018d0 <update_MEF+0x188>
+ 80018b8:	bf00      	nop
+ 80018ba:	e008      	b.n	80018ce <update_MEF+0x186>
 		break;
- 80018c2:	bf00      	nop
- 80018c4:	e004      	b.n	80018d0 <update_MEF+0x188>
+ 80018bc:	bf00      	nop
+ 80018be:	e006      	b.n	80018ce <update_MEF+0x186>
 		break;
- 80018c6:	bf00      	nop
- 80018c8:	e002      	b.n	80018d0 <update_MEF+0x188>
+ 80018c0:	bf00      	nop
+ 80018c2:	e004      	b.n	80018ce <update_MEF+0x186>
 		break;
- 80018ca:	bf00      	nop
- 80018cc:	e000      	b.n	80018d0 <update_MEF+0x188>
+ 80018c4:	bf00      	nop
+ 80018c6:	e002      	b.n	80018ce <update_MEF+0x186>
 		break;
- 80018ce:	bf00      	nop
+ 80018c8:	bf00      	nop
+ 80018ca:	e000      	b.n	80018ce <update_MEF+0x186>
+		break;
+ 80018cc:	bf00      	nop
 	}
+
+	// Return the updated FSM state.
 	return (estadoMEF);
- 80018d0:	4b02      	ldr	r3, [pc, #8]	; (80018dc <update_MEF+0x194>)
- 80018d2:	781b      	ldrb	r3, [r3, #0]
+ 80018ce:	4b03      	ldr	r3, [pc, #12]	; (80018dc <update_MEF+0x194>)
+ 80018d0:	781b      	ldrb	r3, [r3, #0]
 }
- 80018d4:	4618      	mov	r0, r3
- 80018d6:	3708      	adds	r7, #8
- 80018d8:	46bd      	mov	sp, r7
- 80018da:	bd80      	pop	{r7, pc}
+ 80018d2:	4618      	mov	r0, r3
+ 80018d4:	3708      	adds	r7, #8
+ 80018d6:	46bd      	mov	sp, r7
+ 80018d8:	bd80      	pop	{r7, pc}
+ 80018da:	bf00      	nop
  80018dc:	20000948 	.word	0x20000948
  80018e0:	08004f6c 	.word	0x08004f6c
  80018e4:	0800501c 	.word	0x0800501c

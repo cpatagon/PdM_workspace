@@ -1,8 +1,22 @@
 /**
- * @file App_MEF.h
- * @brief Definitions and function prototypes for the application's finite state machine (FSM).
- * @date Aug 6, 2023
- * @author lgomez
+ * @file 	:	App_MEF.h
+ * @date 	: 	Aug 6, 2023
+ * @author 	: 	lgomez
+ * @brief 	: 	Definitions and function prototypes for the game's finite state machine (FSM).
+ *
+ * 				This FSM governs the game's operation through distinct logical sequences. Initially,
+ * 				the game showcases the starting score in the SET_ini state. Players then witness a
+ * 				rotating sequence of characters (A, B, C) on the screen, while awaiting a button press.
+ *
+ * 				A button press during the C state leads to a victory, incrementing the player's score
+ * 				by 1. Notably, both score tracking and game speed adjustments are handled in the main.c
+ * 				for enhanced configurability. However, if the button is pressed during either the A or B
+ * 				states, the player loses, forfeiting all accumulated points and restarting the game.
+ * 				After five consecutive wins, players are rewarded with a heart display on the LED screen.
+ *
+ * @attention : All functionalities related to game speeds, scores, and display rendering
+ * 				are controlled within main.c.
+ *
  */
 
 #ifndef API_INC_APP_MEF_H_
@@ -12,10 +26,10 @@
 #include "API_debounce.h"    /**< Includes the library to manage button debouncing. */
 
 /**
- * @brief Enumeration of the possible states of the FSM.
+ * @brief Enumeration of the possible states of the FSM of the game.
  */
 typedef enum {
-	SET_ini, /**< Initial state of the FSM. */
+	SET_ini, /**< Initial state of the FSM and show score. */
 	FIRST, /**< First state after the start. */
 	SECOND, /**< Second state. */
 	THIRD, /**< Third state. */
@@ -36,13 +50,5 @@ void init_MEF(void);
  */
 State_MEF_t update_MEF(delay_t *delay);
 
-/**
- * @brief Reads and returns the current state of the FSM.
- *
- * @note This function is currently incomplete and needs to be implemented.
- *
- * @return char*: A string representation of the current state.
- */
-//char *Lee_estado();
 #endif /* API_INC_APP_MEF_H_ */
 
