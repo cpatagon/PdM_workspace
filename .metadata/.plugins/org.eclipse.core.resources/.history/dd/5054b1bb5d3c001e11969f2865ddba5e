@@ -427,9 +427,9 @@ static void MX_USB_OTG_FS_PCD_Init(void) {
 /* USER CODE BEGIN 4 */
 
 /**
- * @brief Level Speed Update Function
- * @param position of the speed level
- * @retval returns the value of the updated speed position
+ * @brief Level Speed Udate Function
+ * @param posición del nivel de velocidad
+ * @retval devuelde el valor de la posición de la velocidad actualizada
  */
 static int16_t level_speed_update(int16_t level_n) {
 	assert(level_n >= 0);
@@ -437,7 +437,7 @@ static int16_t level_speed_update(int16_t level_n) {
 		level_n = LEVEL_MIN;
 	}
 	speed_play = level[level_n];
-	delayInit(&Delay_play, speed_play); // sets game speed
+	delayInit(&Delay_play, speed_play); // define velocidad de juego}
 
 	return level_n;
 }

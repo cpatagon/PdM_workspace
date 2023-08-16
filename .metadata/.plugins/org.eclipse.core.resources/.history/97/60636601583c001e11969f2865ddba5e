@@ -50,6 +50,8 @@
 /* *
  * @brief Game speed and score configuration parameters
  * game speeds; the smaller the value, the faster it is
+ *
+ *
  */
 #define SPEED1 1000 // minimum speed
 #define SPEED2 800
@@ -82,16 +84,15 @@ PCD_HandleTypeDef hpcd_USB_OTG_FS;
 /**
  * @ brief declaration and initialization of game variables
  *
- * 	For example, speeds, initial and
- * 	maximum scores, a flag that prevents the score from
- * 	being incremented twice, etc.
- * 	we initialize the variables that will contain the times
- *
+ * For example, speeds, initial and
+ * maximum scores, a flag that prevents the score from
+ * being incremented twice, etc.
+ * we initialize the variables that will contain the times
  *  */
 // variable that handles the transition times (speeds) between states of the FSM (game)
 static delay_t Delay_play;
 // initialization of state variables of the finite state model FSM that controls the game
-static State_MEF_t state_FSM;
+static State_MEF_t estado;
 // variable (type list) that contains the different game speeds according to the game level
 const static tick_t level[] = { SPEED1, SPEED2, SPEED3, SPEED4 };
 // we initialize the game's point counter
@@ -120,13 +121,9 @@ static void MX_USB_OTG_FS_PCD_Init(void);
 /* USER CODE BEGIN 0 */
 
 /**
- * @brief Level Speed Update Function
- *
- * 		Function that controls the game delay speed
- * 		according to the previously set configuration.
- *
- * @param speed level position (int16_t)
- * @retval returns the updated speed level value (int16_t)
+ * @brief Level Speed Udate Function
+ * @param posición del nivel de velocidad
+ * @retval debuelve el valor del nivel de velocidad  actualizado
  */
 static int16_t level_speed_update(int16_t);
 
@@ -140,11 +137,10 @@ int main(void) {
 	/* USER CODE BEGIN 1 */
 
 	/**
-	 * We initialize some variables related to
-	 * the states of the FSM and the flag that prevents
-	 * counting the speed and score increase twice.
-	 */
-	state_FSM = SET_ini;              // We define the initial state
+	 * Inicializamos algunas  variables
+	 * */
+
+	estado = SET_ini;              // Definimos el estado inicial
 	flag = true;
 
 	/* USER CODE END 1 */
@@ -157,21 +153,17 @@ int main(void) {
 	/* USER CODE BEGIN Init */
 
 	/**
-	 * @brief Initialize some functions and libraries
-	 *
-	 * Initialize the game's Finite State Machine (FSM).
-	 * This function sets up the initial state and prepares it
-	 * to be properly initialized.
-	 */
+	 * Inicializamos algunas funciones y librerias
+	 * */
+	// Inicializar la Máquina de Estados Finitos (MEF) del juego.
+	// Esta función configura el estado inicial y prepare todo para que el programa
+	// funcione adecuadamente con base en la lógica de la MEF.
 	init_MEF();
+	//spi_init(); //inicialmos la libreria API_spi
+	init_led(); // iniciamos la API_led
 
-	/* We initialize the API_spi library that controls the operation
-	 * of the 8x8 LED screen */
-	init_led();
-
-	/* We define the Delay speed at the initial level, which is the
-	 * slowest according to the delay */
-	speed_play = level[LEVEL_MIN]; // we set the speed to the minimum level;
+	// definimos la velocidad de Delay como minimo
+	speed_play = level[LEVEL_MIN]; // inicializamos la velocidad con el nivel minimo;
 	delayInit(&Delay_play, speed_play);
 
 	/* USER CODE END Init */
@@ -203,62 +195,57 @@ int main(void) {
 
 		/* USER CODE BEGIN 3 */
 
-		/* *
-		 * Update the Finite State Machine and get the
-		 * current state, which can be SET_ini (score update),
-		 * FIRST (A), SECOND (B), THIRD (C), GOOD (smiley face) or BAD (ghost).
-		 * */
-		state_FSM = update_MEF(&Delay_play);
-		// To prevent the score from overflowing
+		// Actualizar la Máquina de Estados Finitos y obtener el estado actual.
+		estado = update_MEF(&Delay_play);
+		// Para evitar que el puntaje se revalse
 		if (score > SCORE_MAX) {
 			score = SCORE_INI;
 		}
 
-		/* Depending on the current state, display a specific
-		 * pattern or image on the LED matrix.
-		 * */
-		switch (state_FSM) {
+		// Dependiendo del estado actual, mostrar un patrón o imagen específica en la matriz LED.
+		switch (estado) {
 		case SET_ini:
 			flag = true;
-			// Light up the LED matrix indicating the achieved score
+			// Iluminar la matriz LED  incdicando el puntaje obtenido
 			update_led(levels_led[score]);
-			// lit_led();
+			//lit_led();
 			break;
 
 		case FIRST:
-			// In the first state, display the pattern or image 'A' on the LED matrix.
+			// En el primer estado, mostrar el patrón o imagen 'A' en la matriz LED.
 			update_led(A);
 			break;
 
 		case SECOND:
-			// In the second state, display the pattern or image 'B'.
+			// En el segundo estado, mostrar el patrón o imagen 'B'.
 			update_led(B);
 			break;
 
 		case THIRD:
-			// In the third state, display the pattern or image 'C'.
+			// En el tercer estado, mostrar el patrón o imagen 'C'.
 			update_led(C);
 			break;
 
 		case GOOD:
-			// If everything is good, display a smiley face on the LED matrix.
+			// Si todo va bien, mostrar una cara sonriente en la matriz LED.
 			update_led(smileyFace);
 			if (flag) {
 				flag = false;
-				score = score + 1;          // increase the score by one
-				level_i = level_i + 1;       // increase the speed level
-				level_i = level_speed_update(level_i); // increase the game speed
+				score = score + 1;          // incrementa el puntaje en uno
+				level_i = level_i + 1;       // incrementa nivel de la velocidad
+				level_i = level_speed_update(level_i); // incrementa la velocidad del juego
 			}
+
 			break;
 
 		case BAD:
-			// In case of loss, display the ghost image
+			// En caso de perder, muestra la imagen de fantasma
 			fantasma_led();
-			// We reset the SCORE value to 0 because the game is lost
+			// entramos a recetaer valor del SCORE a 0 porque se pierde partida
 			if (flag) {
 				flag = false;
-				score = SCORE_INI;          // reset the achieved score
-				level_i = level_i + 1;  // increase the level to raise the speed
+				score = SCORE_INI;          // elimina el puntaje obtenido
+				level_i = level_i + 1; // incrementa el nivel para incrementar la velocidad
 				level_i = level_speed_update(level_i);
 			}
 			break;
@@ -427,9 +414,9 @@ static void MX_USB_OTG_FS_PCD_Init(void) {
 /* USER CODE BEGIN 4 */
 
 /**
- * @brief Level Speed Update Function
- * @param position of the speed level
- * @retval returns the value of the updated speed position
+ * @brief Level Speed Udate Function
+ * @param posición del nivel de velocidad
+ * @retval devuelde el valor de la posición de la velocidad actualizada
  */
 static int16_t level_speed_update(int16_t level_n) {
 	assert(level_n >= 0);
@@ -437,7 +424,7 @@ static int16_t level_speed_update(int16_t level_n) {
 		level_n = LEVEL_MIN;
 	}
 	speed_play = level[level_n];
-	delayInit(&Delay_play, speed_play); // sets game speed
+	delayInit(&Delay_play, speed_play); // define velocidad de juego}
 
 	return level_n;
 }
