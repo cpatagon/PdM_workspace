@@ -2,7 +2,16 @@
 /**
  ******************************************************************************
  * @file           : main.c
- * @brief          : Main program body
+ * @brief          : SKILL AND TIMING GAME WITH STM32
+ *
+ * 	The primary goal of this project is to develop an electronic game that
+ * 	indicates to the user whether they have pressed a button at the right time.
+ * 	Depending on the player's accuracy, the response can be good or bad.
+ * 	To carry out the work, commercial NUCLEO boards (STM32-F429ZI) will be used,
+ * 	along with an LED matrix board with the integrated MAX7219 circuit (Maxim2023).
+ * 	The game's state information will be displayed on an LED matrix screen.
+ *
+ *
  ******************************************************************************
  * @attention
  *
@@ -21,12 +30,12 @@
 /* Private includes ----------------------------------------------------------*/
 /* USER CODE BEGIN Includes */
 
-#include <stdint.h>  /* esta para incluir los tipos uint32_t */
+#include <stdint.h>  /* this is to include the uint32_t types */
 #include "main.h"
-#include "string.h" /* libreria para el manejo de cadenas de caracteres */
-#include "API_delay.h" /* libreria encargada de manejar los tiempos retardante */
-#include "API_led.h" /* libreria encarada de manejar la plantalla led */
-#include "App_MEF.h" /* libreria encargada de cargar el modelo de estados finitos (MEF) del juego */
+#include "string.h" /* library for string handling */
+#include "API_delay.h" /* library responsible for handling delay times */
+#include "API_led.h" /* library in charge of managing the LED display */
+#include "App_MEF.h" /* library responsible for loading the finite state model (FSM) of the game */
 
 /* USER CODE END Includes */
 
@@ -39,19 +48,19 @@
 /* USER CODE BEGIN PD */
 
 /* *
- * @brief Parametros de configuracion de velocidades y puntajes juego
- * velocidades del juego mientras mas pequeño el valor mas rapido es
+ * @brief Game speed and score configuration parameters
+ * game speeds; the smaller the value, the faster it is
  *
  *
  */
-#define SPEED1 1000 // minima velocidad
+#define SPEED1 1000 // minimum speed
 #define SPEED2 800
 #define SPEED3 500
-#define SPEED4 400 // maxima velocidad
-#define SCORE_INI 0 // valor puntaje  inicial
-#define SCORE_MAX 5 // valor puntaje maximo
-#define LEVEL_MIN 0 // valor de la posición del nivel inicial de la velocidad del juego
-#define LEVEL_MAX 3 // valor de la posición del nivel inicial de la velocidad del juego
+#define SPEED4 400 // maximum speed
+#define SCORE_INI 0 // initial score value
+#define SCORE_MAX 5 // maximum score value
+#define LEVEL_MIN 0 // value of the initial level position of the game speed
+#define LEVEL_MAX 3 // value of the initial level position of the game speed
 
 /* USER CODE END PD */
 
@@ -73,26 +82,26 @@ PCD_HandleTypeDef hpcd_USB_OTG_FS;
 /* USER CODE BEGIN PV */
 
 /**
- * @ brief declaración e inicio de de variables del juego
+ * @ brief declaration and initialization of game variables
  *
- * Por ejemplo velocidades, puntage inicial y
- * máximo, bandera que evita que se pase dos veces por por el
- * incremento de puntaje, etc.
- *  inicializamos las variables que contentran los tiempos
+ * For example, speeds, initial and
+ * maximum scores, a flag that prevents the score from
+ * being incremented twice, etc.
+ * we initialize the variables that will contain the times
  *  */
-// variable que maneja los tiempos de transición (velocidades) entre estados de la MEF (juego)
+// variable that handles the transition times (speeds) between states of the FSM (game)
 static delay_t Delay_play;
-// inicialización del variables de estado del modelo de estados finitos MEF que controla al juego
+// initialization of state variables of the finite state model FSM that controls the game
 static State_MEF_t estado;
-// variable (tipo lista) que contiene las distintas velocidades de la partida de acuerdo al nivel del juego
+// variable (type list) that contains the different game speeds according to the game level
 const static tick_t level[] = { SPEED1, SPEED2, SPEED3, SPEED4 };
-// inicializamos el contador de puntos del juego
+// we initialize the game's point counter
 static int16_t score = SCORE_INI;
-//  establecemos ese valor minimo al valor con el que partirá el juego
+// we set the minimum value to the value with which the game will start
 static int16_t level_i = LEVEL_MIN;
-// creamos variable que indica la velocidad de la partida
+// we create a variable that indicates the speed of the game
 static tick_t speed_play;
-// esta bandera es para evitar que se pase dos veces por el incremento  de puntaje o velocidad
+// this flag is to prevent the score or speed from being incremented twice
 static bool_t flag;
 
 /* USER CODE END PV */

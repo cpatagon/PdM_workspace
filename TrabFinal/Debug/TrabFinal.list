@@ -650,7 +650,7 @@ int main(void) {
 			assert(0);
  80006da:	4b10      	ldr	r3, [pc, #64]	; (800071c <main+0x188>)
  80006dc:	4a10      	ldr	r2, [pc, #64]	; (8000720 <main+0x18c>)
- 80006de:	21f7      	movs	r1, #247	; 0xf7
+ 80006de:	21fe      	movs	r1, #254	; 0xfe
  80006e0:	4810      	ldr	r0, [pc, #64]	; (8000724 <main+0x190>)
  80006e2:	f003 fb9b 	bl	8003e1c <__assert_func>
 			break;
@@ -1075,7 +1075,7 @@ static int16_t level_speed_update(int16_t level_n) {
  800095c:	da06      	bge.n	800096c <level_speed_update+0x20>
  800095e:	4b10      	ldr	r3, [pc, #64]	; (80009a0 <level_speed_update+0x54>)
  8000960:	4a10      	ldr	r2, [pc, #64]	; (80009a4 <level_speed_update+0x58>)
- 8000962:	f240 119f 	movw	r1, #415	; 0x19f
+ 8000962:	f44f 71d3 	mov.w	r1, #422	; 0x1a6
  8000966:	4810      	ldr	r0, [pc, #64]	; (80009a8 <level_speed_update+0x5c>)
  8000968:	f003 fa58 	bl	8003e1c <__assert_func>
 	if (level_n > LEVEL_MAX) {
