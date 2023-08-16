@@ -20,15 +20,13 @@
 
 /* Private includes ----------------------------------------------------------*/
 /* USER CODE BEGIN Includes */
-//#include "max_matrix_stm32.h" // BORRAR
+
 #include <stdint.h>  /* esta para incluir los tipos uint32_t */
 #include "main.h"
-#include "string.h" // permite que el codigo corra sin error
-// #include "API_spi.h" // se incluira e inicializará  en API_led.c
-
-#include "API_delay.h"
-#include "API_led.h"
-#include "App_MEF.h"
+#include "string.h" /* libreria para el manejo de cadenas de caracteres */
+#include "API_delay.h" /* libreria encargada de manejar los tiempos retardante */
+#include "API_led.h" /* libreria encarada de manejar la plantalla led */
+#include "App_MEF.h" /* libreria encargada de cargar el modelo de estados finitos (MEF) del juego */
 
 /* USER CODE END Includes */
 
@@ -40,17 +38,20 @@
 /* Private define ------------------------------------------------------------*/
 /* USER CODE BEGIN PD */
 
-//#define TIME2 300
-//#define TIME_DEBOUNCE 40 //tiempo antirrebote del boton
-// velocidades del juego mientras mas pequeño el valor mas rapido es
-#define SPEED1 1000
+/* *
+ * @brief Parametros de configuracion de velocidades y puntajes juego
+ * velocidades del juego mientras mas pequeño el valor mas rapido es
+ *
+ *
+ */
+#define SPEED1 1000 // minima velocidad
 #define SPEED2 800
 #define SPEED3 500
-#define SPEED4 400
+#define SPEED4 400 // maxima velocidad
 #define SCORE_INI 0 // valor puntaje  inicial
 #define SCORE_MAX 5 // valor puntaje maximo
-#define LEVEL_MIN 0 // valor de la posición del nivel inicial
-#define LEVEL_MAX 3 // valor de la posición del nivel inicial
+#define LEVEL_MIN 0 // valor de la posición del nivel inicial de la velocidad del juego
+#define LEVEL_MAX 3 // valor de la posición del nivel inicial de la velocidad del juego
 
 /* USER CODE END PD */
 
@@ -71,15 +72,28 @@ PCD_HandleTypeDef hpcd_USB_OTG_FS;
 
 /* USER CODE BEGIN PV */
 
-// inicializamos las variables que contentran los tiempos
-delay_t Delay_play;  // tiempo de transición entre estados
-State_MEF_t estado;
-
-const static tick_t level[] = { SPEED1, SPEED2, SPEED3, SPEED4 }; // distintas velocidades de la partida de acuerdo al nivel del juego
-static int16_t score = SCORE_INI; // inicializamos el contador de puntos del juego
-static int16_t level_i = LEVEL_MIN; //  establecemos ese valor minimo al valor con el que partirá el juego
-static tick_t speed_play; // creamos variable que tendra la velocidad de la partida
-static bool_t flag; // esta bandera es para evitar que se pase dos veces por el incremento  de puntaje o velocidad
+/**
+ * @ brief declaración e inicio de de variables del juego
+ *
+ * Por ejemplo velocidades, puntage inicial y
+ * máximo, bandera que evita que se pase dos veces por por el
+ * incremento de puntaje, etc.
+ *  inicializamos las variables que contentran los tiempos
+ *  */
+// variable que maneja los tiempos de transición (velocidades) entre estados de la MEF (juego)
+static delay_t Delay_play;
+// inicialización del variables de estado del modelo de estados finitos MEF que controla al juego
+static State_MEF_t estado;
+// variable (tipo lista) que contiene las distintas velocidades de la partida de acuerdo al nivel del juego
+const static tick_t level[] = { SPEED1, SPEED2, SPEED3, SPEED4 };
+// inicializamos el contador de puntos del juego
+static int16_t score = SCORE_INI;
+//  establecemos ese valor minimo al valor con el que partirá el juego
+static int16_t level_i = LEVEL_MIN;
+// creamos variable que indica la velocidad de la partida
+static tick_t speed_play;
+// esta bandera es para evitar que se pase dos veces por el incremento  de puntaje o velocidad
+static bool_t flag;
 
 /* USER CODE END PV */
 

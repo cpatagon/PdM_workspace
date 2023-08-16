@@ -1,6 +1,6 @@
 /**
  * @file App_MEF.h
- * @brief Definiciones y prototipos de funciones para la máquina de estados finitos (MEF) de la aplicación.
+ * @brief Definitions and function prototypes for the application's finite state machine (FSM).
  * @date Aug 6, 2023
  * @author lgomez
  */
@@ -8,41 +8,40 @@
 #ifndef API_INC_APP_MEF_H_
 #define API_INC_APP_MEF_H_
 
-//#include "API_led.h"
-#include "API_delay.h"       /**< Inclusión del archivo que define delay_t. */
-#include "API_debounce.h"    /**< Inclusión de la biblioteca para gestionar el rebote de botones. */
+#include "API_delay.h"       /**< Includes the file that defines delay_t. */
+#include "API_debounce.h"    /**< Includes the library to manage button debouncing. */
 
 /**
- * @brief Enumeración de los posibles estados de la MEF.
+ * @brief Enumeration of the possible states of the FSM.
  */
 typedef enum {
-	SET_ini, /**< Estado inicial de la MEF. */
-	FIRST, /**< Primer estado después del inicio. */
-	SECOND, /**< Segundo estado. */
-	THIRD, /**< Tercer estado. */
-	GOOD, /**< Estado de 'bueno'. */
-	BAD /**< Estado de 'malo'. */
+	SET_ini, /**< Initial state of the FSM. */
+	FIRST, /**< First state after the start. */
+	SECOND, /**< Second state. */
+	THIRD, /**< Third state. */
+	GOOD, /**< 'Good' state. */
+	BAD /**< 'Bad' state. */
 } State_MEF_t;
 
 /**
- * @brief Inicializa la máquina de estados finitos.
+ * @brief Initializes the finite state machine.
  */
 void init_MEF(void);
 
 /**
- * @brief Actualiza el estado actual de la MEF basado en entradas y condiciones.
+ * @brief Updates the current state of the FSM based on inputs and conditions.
  *
- * @param delay Puntero a la estructura de retardo.
- * @return State_MEF_t: El estado actualizado de la MEF.
+ * @param delay Pointer to the delay structure.
+ * @return State_MEF_t: The updated state of the FSM.
  */
 State_MEF_t update_MEF(delay_t *delay);
 
 /**
- * @brief Lee y retorna el estado actual de la MEF.
+ * @brief Reads and returns the current state of the FSM.
  *
- * @note Esta función está actualmente incompleta y debe ser implementada.
+ * @note This function is currently incomplete and needs to be implemented.
  *
- * @return char*: Una representación en cadena del estado actual.
+ * @return char*: A string representation of the current state.
  */
 //char *Lee_estado();
 #endif /* API_INC_APP_MEF_H_ */

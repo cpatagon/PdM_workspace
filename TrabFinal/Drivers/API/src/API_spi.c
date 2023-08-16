@@ -1,23 +1,24 @@
 /**
  * @file API_spi.c
- * @brief Implementación de funciones para manejo manual del protocolo SPI en STM32F4xx.
+ * @brief Implementation of functions for manual management of the SPI protocol in STM32F4xx.
  * @date Aug 6, 2023
  * @author lgomez
  */
 
-#include <stdint.h>  ///< Incluye tipos de definición estándar, como uint32_t.
-#include <stdbool.h> ///< Incluye el tipo booleano (bool).
+#include <stdint.h>  ///< Includes standard definition types, such as uint32_t.
+#include <stdbool.h> ///< Includes the boolean type (bool).
 #include "API_spi.h"
 
-#define ESTADO_ALTO 1
-#define ESTADO_BAJO 0
-#define BITSIGNIFICATIVO 0x80
-#define BITSIGUIENTE 1
+#define STATE_HIGH 1
+#define STATE_LOW 0
+#define SIGNIFICANT_BIT 0x80
+#define NEXT_BIT 1
+#define NUM_BITS 8
 
 /**
- * @brief Funcion de Inicialización GPIO.
+ * @brief GPIO Initialization Function.
  *
- * @param nada.
+ * @param void.
  *
  */
 static void MX_GPIO_Init(void);
@@ -32,71 +33,71 @@ void spi_init(void) {
 static SPI_HandleTypeDef hspi3;
 
 /**
- * @brief Envía un byte de datos utilizando el protocolo SPI manualmente.
+ * @brief Sends a byte of data using the SPI protocol manually.
  *
- * Esta función realiza operaciones bit a bit para transmitir un byte de datos
- * utilizando el protocolo SPI. No utiliza las capacidades de hardware SPI del
- * microcontrolador (HAL), sino que implementa la transmisión manualmente.
+ * This function performs bit-by-bit operations to transmit a byte of data
+ * using the SPI protocol. It doesn't utilize the microcontroller's hardware SPI
+ * capabilities (HAL) but instead implements the transmission manually.
  *
- * @param byte Byte de datos que se desea enviar a través de SPI.
+ * @param byte The byte of data intended to be sent through SPI.
  *
  */
 static void spi_write_byte(uint8_t byte) {
 	assert_param(byte);
-	// Itera a través de cada uno de los 8 bits del byte proporcionado.
-	for (uint8_t i = 0; i < 8; i++) {
-		// Establece el pin del reloj (clock) en estado bajo.
-		// que establece el envio de un byte
-		HAL_GPIO_WritePin(maxport, clock_Pin, ESTADO_BAJO);
-		// De acuerdo a los requerimientos del CI, envia el bit más
-		// significativo (MSB) del byte en el pin de datos (MOSI).
-		HAL_GPIO_WritePin(maxport, data_Pin, byte & BITSIGNIFICATIVO);
-		// Desplaza el byte a la izquierda para preparar el siguiente bit.
-		// Esto permite que se envie del bit mas siginificativo al menos
-		// significativo de acuerdo a CI empleado
-		byte = byte << BITSIGUIENTE;
-		// Establece el pin del reloj (clock) en estado alto
-		// indicando que se finalizaso el envio del bit
-		HAL_GPIO_WritePin(maxport, clock_Pin, ESTADO_ALTO);
+	// Iterates through each of the 8 bits of the provided byte.
+	for (uint8_t i = 0; i < NUM_BITS; i++) {
+		// Sets the clock pin to a low state.
+		// which establishes the sending of a byte.
+		HAL_GPIO_WritePin(maxport, clock_Pin, STATE_LOW);
+		// According to the IC requirements, sends the most
+		// significant bit (MSB) of the byte on the data pin (MOSI).
+		HAL_GPIO_WritePin(maxport, data_Pin, byte & SIGNIFICANT_BIT);
+		// Shifts the byte to the left to prepare the next bit.
+		// This ensures the sending from the most significant bit
+		// to the least significant according to the employed IC.
+		byte = byte << NEXT_BIT;
+		// Sets the clock pin to a high state
+		// indicating the completion of the bit's transmission.
+		HAL_GPIO_WritePin(maxport, clock_Pin, STATE_HIGH);
 	}
 }
 
 /**
- * @brief Envía una dirección y un comando utilizando el protocolo SPI
- * manualmente
+ * @brief Sends an address and a command using the SPI protocol manually.
  *
- * Esta función envía un byte de dirección seguido de un byte de comando
- * utilizando el protocolo SPI. La función envía el par de bytes (dirección
- * y comando) múltiples veces según el valor predefinido de 'num' (numero
- * de pantallas led). se recomienda ver el datasheet de CI MAX7219
+ * This function sends a byte of address followed by a byte of command
+ * using the SPI protocol. The function sends the pair of bytes (address
+ * and command) multiple times based on the predefined value of 'num'
+ * (number of LED screens). It is recommended to consult the datasheet
+ * of the MAX7219 IC.
  *
- * @param address Byte de dirección que se desea enviar a través de SPI.
- * @param cmd Byte de comando que se desea enviar a través de SPI.
+ * @param address Byte of address intended to be sent through SPI.
+ * @param cmd Byte of command intended to be sent through SPI.
  */
 void spi_write(uint8_t address, uint8_t cmd) {
 	assert_param(address != NULL);
 	assert_param(cmd != NULL);
-	/** Establece el pin CS (Chip Select) en estado bajo para
-	 * iniciar la comunicación con el dispositivo esclavo conectado
-	 * puerto cs_PIn mediante el cable CS. */
-	HAL_GPIO_WritePin(maxport, cs_Pin, ESTADO_BAJO);
-	/** Envía el par de bytes (dirección y comando) 'num' veces
-	 * en caso de tener multiples pantallas. */
+	/** Sets the CS (Chip Select) pin to a low state to
+	 * initiate communication with the connected slave device
+	 * at port cs_Pin via the CS cable. */
+	HAL_GPIO_WritePin(maxport, cs_Pin, STATE_LOW);
+	/** Sends the pair of bytes (address and command) 'num' times
+	 * in case there are multiple screens. */
 	for (uint8_t i = 0; i < num; i++) {
-		/* Envía el byte de dirección al CI del LED que indica que hacer.
-		 estos puden ser de encender una determinada fila a definir
-		 el brillo de los led */
+		/* Sends the address byte to the LED IC indicating the action.
+		 * These actions can range from turning on a specific row to
+		 * defining the brightness of the LEDs. */
 		spi_write_byte(address);
-		/* Envía el byte de comando que debe hacer en la direccion anterio.
-		 * donde indica lo que se va hacer en esa posición de memoria */
+		/* Sends the command byte detailing what to do at the previously
+		 * specified address, defining what action to take at that memory position. */
 		spi_write_byte(cmd);
 	}
-	/** Establece el pin CS (Chip Select) en estado bajo indicando
-	 * indicando que se terminará con  la comunicación */
-	HAL_GPIO_WritePin(maxport, cs_Pin, ESTADO_BAJO);
-	/* Establece el pin CS (Chip Select) en estado alto dejando al
-	 * esclavo liberado */
-	HAL_GPIO_WritePin(maxport, cs_Pin, ESTADO_ALTO);
+	/** Sets the CS (Chip Select) pin to low, indicating
+	 * the communication will end. */
+	HAL_GPIO_WritePin(maxport, cs_Pin, STATE_LOW);
+	/* Sets the CS (Chip Select) pin to high, freeing
+	 * the slave. */
+	HAL_GPIO_WritePin(maxport, cs_Pin, STATE_HIGH);
 }
 
 /**
