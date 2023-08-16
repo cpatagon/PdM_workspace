@@ -1,0 +1,99 @@
+/*
+ * API_led.h
+ *
+ *  Created on: Aug 6, 2023
+ *      Author: lgomez
+ *
+ */
+
+/*
+ * Library responsible for manipulating the 8x8 led matrix
+ * with the IC MAX7219ENG. Through an SPI protocol
+ * with different functions:
+ *
+ * - init_led()   = for initialization
+ * - clear_led()  = all leds turned off
+ * - lit_led()    = all leds turned on
+ * - update_led() = displays an image
+ *
+ * All communication is carried out via the SPI protocol
+ * implemented in the API_spi.h library.
+ *
+ * Also included is a set of predefined images ready to
+ * be used in update_led()
+ * */
+
+#ifndef API_INC_API_LED_H_
+#define API_INC_API_LED_H_
+
+/* Includes ------------------------------------------------------------------*/
+#include <stdint.h>
+
+/* @brief   Function responsible for initializing the LED matrix.
+ * @param   void
+ * @retval  void
+ * */
+//static uint8_t led_ocho[] = { 0x3C, 0x42, 0x42, 0x3C, 0x42, 0x42, 0x42, 0x3C }; // 8
+static uint8_t smileyFace[] = { 0x3C, 0x42, 0x95, 0xA1, 0xA1, 0x95, 0x42, 0x3C }; // cara feliz
+//static uint8_t badFace[] = { 0x00, 0x66, 0x66, 0x00, 0x18, 0x42, 0x3C, 0x00 }; // Cara Triste
+static uint8_t A[] = { 0x00, 0x7c, 0x12, 0x12, 0x12, 0x12, 0x7c, 0x00 }; // Letra A
+static uint8_t B[] = { 0x00, 0x7E, 0x4A, 0x4A, 0x4A, 0x4A, 0x34, 0x00 }; // Letra B
+static uint8_t C[] = { 0x00, 0x3C, 0x42, 0x42, 0x42, 0x42, 0x24, 0x00 }; // Letra C
+static uint8_t cero[] = { 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00 };
+static uint8_t uno[] = { 0xC0, 0xC0, 0xC0, 0xC0, 0xC0, 0xC0, 0xC0, 0xC0 };
+static uint8_t dos[] = { 0xF0, 0xF0, 0xF0, 0xF0, 0xF0, 0xF0, 0xF0, 0xF0 };
+static uint8_t tres[] = { 0xFC, 0xFC, 0xFC, 0xFC, 0xFC, 0xFC, 0xFC, 0xFC };
+static uint8_t four[] = { 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF };
+static uint8_t heart[] = { 0x0C, 0x1E, 0x3E, 0x7C, 0x3E, 0x1E, 0x0C, 0x00 };
+static uint8_t *levels_led[] = { cero, uno, dos, tres, four, heart };
+
+/* @brief   Function responsible for initializing the LED matrix.
+ * @param   void
+ * @retval  void
+ * */
+void init_led(void);
+
+/* @brief   Function responsible for clearing the LED screen,
+ *          setting all the matrix values to 0.
+ * @param   void
+ * @retval  void
+ * */
+void clear_led(void);
+
+/* @brief   Function responsible for lighting up all the LEDs
+ *          in the matrix.
+ * @param   void
+ * @retval  void
+ * */
+void lit_led(void);
+
+/* @brief   Function responsible for lighting up the LEDs according
+ *          to the given design in list form.
+ * @param   paint_list[] List where each row represents
+ *          a value of a row written in hexadecimal form of a
+ *          binary representation of the row where 0 is LED off
+ *          and 1 is LED on.
+ * @retval  void
+ * */
+void update_led(uint8_t paint_list[]);
+
+/**
+ * @brief Updates the LED status based on a row.
+ *
+ * This function takes a list of values and updates the LED status according
+ * to the provided list.
+ *
+ * @param paint_list List with the LED values.
+ */
+void row_led(uint8_t fila);
+
+/**
+ * @brief Generates a ghost animation.
+ *
+ * This function creates a ghost function on the LED screen.
+ *
+ * @param void
+ */
+void ghost_led(void);
+
+#endif /* API_INC_API_LED_H_ */

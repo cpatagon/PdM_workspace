@@ -257,7 +257,7 @@ int main(void) {
 
 		case BAD:
 			// In case of loss, display the ghost image
-			fantasma_led();
+			ghost_led();
 			// We reset the SCORE value to 0 because the game is lost
 			if (flag) {
 				flag = false;

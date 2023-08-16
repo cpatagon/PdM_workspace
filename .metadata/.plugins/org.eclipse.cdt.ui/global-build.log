@@ -1,18 +1,73 @@
-13:53:26 **** Incremental Build of configuration Debug for project TrabFinal ****
+15:42:30 **** Incremental Build of configuration Debug for project TrabFinal ****
 make -j8 all 
+arm-none-eabi-gcc "../Drivers/API/src/API_led.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F429xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -I"/home/lgomez/maestriauba/SMT32/PdM_workspace/TrabFinal/Core/Src" -I"/home/lgomez/maestriauba/SMT32/PdM_workspace/TrabFinal/Drivers/API/inc" -I"/home/lgomez/maestriauba/SMT32/PdM_workspace/TrabFinal/Drivers/API/src" -I"/home/lgomez/maestriauba/SMT32/PdM_workspace/TrabFinal/Drivers/API" -I"/home/lgomez/maestriauba/SMT32/PdM_workspace/TrabFinal/Drivers/BSP" -I"/home/lgomez/maestriauba/SMT32/PdM_workspace/TrabFinal/Drivers/BSP/STM32F4xx_Nucleo_144" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Drivers/API/src/API_led.d" -MT"Drivers/API/src/API_led.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Drivers/API/src/API_led.o"
+arm-none-eabi-gcc -o "TrabFinal.elf" @"objects.list"   -mcpu=cortex-m4 -T"/home/lgomez/maestriauba/SMT32/PdM_workspace/TrabFinal/STM32F429ZITX_FLASH.ld" --specs=nosys.specs -Wl,-Map="TrabFinal.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: TrabFinal.elf
+ 
 arm-none-eabi-size   TrabFinal.elf 
+arm-none-eabi-objdump -h -S  TrabFinal.elf  > "TrabFinal.list"
    text	   data	    bss	    dec	    hex	filename
-  20728	    272	   3688	  24688	   6070	TrabFinal.elf
+  20732	    272	   3688	  24692	   6074	TrabFinal.elf
 Finished building: default.size.stdout
  
-13:53:31 **** Incremental Build of configuration Debug for project TrabFinal ****
+Finished building: TrabFinal.list
+ 
+15:44:08 **** Incremental Build of configuration Debug for project TrabFinal ****
 make -j8 all 
+arm-none-eabi-gcc "../Drivers/API/src/API_led.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F429xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -I"/home/lgomez/maestriauba/SMT32/PdM_workspace/TrabFinal/Core/Src" -I"/home/lgomez/maestriauba/SMT32/PdM_workspace/TrabFinal/Drivers/API/inc" -I"/home/lgomez/maestriauba/SMT32/PdM_workspace/TrabFinal/Drivers/API/src" -I"/home/lgomez/maestriauba/SMT32/PdM_workspace/TrabFinal/Drivers/API" -I"/home/lgomez/maestriauba/SMT32/PdM_workspace/TrabFinal/Drivers/BSP" -I"/home/lgomez/maestriauba/SMT32/PdM_workspace/TrabFinal/Drivers/BSP/STM32F4xx_Nucleo_144" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Drivers/API/src/API_led.d" -MT"Drivers/API/src/API_led.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Drivers/API/src/API_led.o"
+arm-none-eabi-gcc -o "TrabFinal.elf" @"objects.list"   -mcpu=cortex-m4 -T"/home/lgomez/maestriauba/SMT32/PdM_workspace/TrabFinal/STM32F429ZITX_FLASH.ld" --specs=nosys.specs -Wl,-Map="TrabFinal.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: TrabFinal.elf
+ 
 arm-none-eabi-size   TrabFinal.elf 
+arm-none-eabi-objdump -h -S  TrabFinal.elf  > "TrabFinal.list"
    text	   data	    bss	    dec	    hex	filename
-  20728	    272	   3688	  24688	   6070	TrabFinal.elf
+  20732	    272	   3688	  24692	   6074	TrabFinal.elf
 Finished building: default.size.stdout
  
-13:59:45 **** Incremental Build of configuration Debug for project TrabFinal ****
+Finished building: TrabFinal.list
+ 
+15:45:37 **** Incremental Build of configuration Debug for project TrabFinal ****
+make -j8 all 
+arm-none-eabi-gcc "../Drivers/API/src/API_led.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F429xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -I"/home/lgomez/maestriauba/SMT32/PdM_workspace/TrabFinal/Core/Src" -I"/home/lgomez/maestriauba/SMT32/PdM_workspace/TrabFinal/Drivers/API/inc" -I"/home/lgomez/maestriauba/SMT32/PdM_workspace/TrabFinal/Drivers/API/src" -I"/home/lgomez/maestriauba/SMT32/PdM_workspace/TrabFinal/Drivers/API" -I"/home/lgomez/maestriauba/SMT32/PdM_workspace/TrabFinal/Drivers/BSP" -I"/home/lgomez/maestriauba/SMT32/PdM_workspace/TrabFinal/Drivers/BSP/STM32F4xx_Nucleo_144" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Drivers/API/src/API_led.d" -MT"Drivers/API/src/API_led.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Drivers/API/src/API_led.o"
+arm-none-eabi-gcc -o "TrabFinal.elf" @"objects.list"   -mcpu=cortex-m4 -T"/home/lgomez/maestriauba/SMT32/PdM_workspace/TrabFinal/STM32F429ZITX_FLASH.ld" --specs=nosys.specs -Wl,-Map="TrabFinal.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: TrabFinal.elf
+ 
+arm-none-eabi-size   TrabFinal.elf 
+arm-none-eabi-objdump -h -S  TrabFinal.elf  > "TrabFinal.list"
+   text	   data	    bss	    dec	    hex	filename
+  20732	    272	   3688	  24692	   6074	TrabFinal.elf
+Finished building: default.size.stdout
+ 
+Finished building: TrabFinal.list
+ 
+16:29:56 **** Incremental Build of configuration Debug for project TrabFinal ****
+make -j8 all 
+arm-none-eabi-gcc "../Drivers/API/src/API_led.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F429xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -I"/home/lgomez/maestriauba/SMT32/PdM_workspace/TrabFinal/Core/Src" -I"/home/lgomez/maestriauba/SMT32/PdM_workspace/TrabFinal/Drivers/API/inc" -I"/home/lgomez/maestriauba/SMT32/PdM_workspace/TrabFinal/Drivers/API/src" -I"/home/lgomez/maestriauba/SMT32/PdM_workspace/TrabFinal/Drivers/API" -I"/home/lgomez/maestriauba/SMT32/PdM_workspace/TrabFinal/Drivers/BSP" -I"/home/lgomez/maestriauba/SMT32/PdM_workspace/TrabFinal/Drivers/BSP/STM32F4xx_Nucleo_144" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Drivers/API/src/API_led.d" -MT"Drivers/API/src/API_led.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Drivers/API/src/API_led.o"
+arm-none-eabi-gcc -o "TrabFinal.elf" @"objects.list"   -mcpu=cortex-m4 -T"/home/lgomez/maestriauba/SMT32/PdM_workspace/TrabFinal/STM32F429ZITX_FLASH.ld" --specs=nosys.specs -Wl,-Map="TrabFinal.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: TrabFinal.elf
+ 
+arm-none-eabi-size   TrabFinal.elf 
+arm-none-eabi-objdump -h -S  TrabFinal.elf  > "TrabFinal.list"
+   text	   data	    bss	    dec	    hex	filename
+  20732	    272	   3688	  24692	   6074	TrabFinal.elf
+Finished building: default.size.stdout
+ 
+Finished building: TrabFinal.list
+ 
+16:31:27 **** Incremental Build of configuration Debug for project TrabFinal ****
+make -j8 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F429xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -I"/home/lgomez/maestriauba/SMT32/PdM_workspace/TrabFinal/Core/Src" -I"/home/lgomez/maestriauba/SMT32/PdM_workspace/TrabFinal/Drivers/API/inc" -I"/home/lgomez/maestriauba/SMT32/PdM_workspace/TrabFinal/Drivers/API/src" -I"/home/lgomez/maestriauba/SMT32/PdM_workspace/TrabFinal/Drivers/API" -I"/home/lgomez/maestriauba/SMT32/PdM_workspace/TrabFinal/Drivers/BSP" -I"/home/lgomez/maestriauba/SMT32/PdM_workspace/TrabFinal/Drivers/BSP/STM32F4xx_Nucleo_144" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+In file included from ../Core/Src/main.c:41:
+/home/lgomez/maestriauba/SMT32/PdM_workspace/TrabFinal/Drivers/API/inc/API_led.h:50:34: error: 'cero' undeclared here (not in a function); did you mean 'zero'?
+   50 | static uint8_t *levels_led[] = { cero, uno, dos, tres, four, heart };
+      |                                  ^~~~
+      |                                  zero
+/home/lgomez/maestriauba/SMT32/PdM_workspace/TrabFinal/Drivers/API/inc/API_led.h:44:16: warning: 'zero' defined but not used [-Wunused-variable]
+   44 | static uint8_t zero[] = { 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00 };
+      |                ^~~~
+make: *** [Core/Src/subdir.mk:34: Core/Src/main.o] Error 1
+"make -j8 all" terminated with exit code 2. Build might be incomplete.
+16:33:35 **** Incremental Build of configuration Debug for project TrabFinal ****
 make -j8 all 
 arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F429xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -I"/home/lgomez/maestriauba/SMT32/PdM_workspace/TrabFinal/Core/Src" -I"/home/lgomez/maestriauba/SMT32/PdM_workspace/TrabFinal/Drivers/API/inc" -I"/home/lgomez/maestriauba/SMT32/PdM_workspace/TrabFinal/Drivers/API/src" -I"/home/lgomez/maestriauba/SMT32/PdM_workspace/TrabFinal/Drivers/API" -I"/home/lgomez/maestriauba/SMT32/PdM_workspace/TrabFinal/Drivers/BSP" -I"/home/lgomez/maestriauba/SMT32/PdM_workspace/TrabFinal/Drivers/BSP/STM32F4xx_Nucleo_144" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
 arm-none-eabi-gcc -o "TrabFinal.elf" @"objects.list"   -mcpu=cortex-m4 -T"/home/lgomez/maestriauba/SMT32/PdM_workspace/TrabFinal/STM32F429ZITX_FLASH.ld" --specs=nosys.specs -Wl,-Map="TrabFinal.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
@@ -21,14 +76,14 @@ Finished building target: TrabFinal.elf
 arm-none-eabi-size   TrabFinal.elf 
 arm-none-eabi-objdump -h -S  TrabFinal.elf  > "TrabFinal.list"
    text	   data	    bss	    dec	    hex	filename
-  20736	    272	   3688	  24696	   6078	TrabFinal.elf
+  20732	    272	   3688	  24692	   6074	TrabFinal.elf
 Finished building: default.size.stdout
  
 Finished building: TrabFinal.list
  
-14:04:29 **** Incremental Build of configuration Debug for project TrabFinal ****
+16:37:31 **** Incremental Build of configuration Debug for project TrabFinal ****
 make -j8 all 
-arm-none-eabi-gcc "../Drivers/API/src/App_MEF.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F429xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -I"/home/lgomez/maestriauba/SMT32/PdM_workspace/TrabFinal/Core/Src" -I"/home/lgomez/maestriauba/SMT32/PdM_workspace/TrabFinal/Drivers/API/inc" -I"/home/lgomez/maestriauba/SMT32/PdM_workspace/TrabFinal/Drivers/API/src" -I"/home/lgomez/maestriauba/SMT32/PdM_workspace/TrabFinal/Drivers/API" -I"/home/lgomez/maestriauba/SMT32/PdM_workspace/TrabFinal/Drivers/BSP" -I"/home/lgomez/maestriauba/SMT32/PdM_workspace/TrabFinal/Drivers/BSP/STM32F4xx_Nucleo_144" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Drivers/API/src/App_MEF.d" -MT"Drivers/API/src/App_MEF.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Drivers/API/src/App_MEF.o"
+arm-none-eabi-gcc "../Drivers/API/src/API_led.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F429xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -I"/home/lgomez/maestriauba/SMT32/PdM_workspace/TrabFinal/Core/Src" -I"/home/lgomez/maestriauba/SMT32/PdM_workspace/TrabFinal/Drivers/API/inc" -I"/home/lgomez/maestriauba/SMT32/PdM_workspace/TrabFinal/Drivers/API/src" -I"/home/lgomez/maestriauba/SMT32/PdM_workspace/TrabFinal/Drivers/API" -I"/home/lgomez/maestriauba/SMT32/PdM_workspace/TrabFinal/Drivers/BSP" -I"/home/lgomez/maestriauba/SMT32/PdM_workspace/TrabFinal/Drivers/BSP/STM32F4xx_Nucleo_144" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Drivers/API/src/API_led.d" -MT"Drivers/API/src/API_led.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Drivers/API/src/API_led.o"
 arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F429xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -I"/home/lgomez/maestriauba/SMT32/PdM_workspace/TrabFinal/Core/Src" -I"/home/lgomez/maestriauba/SMT32/PdM_workspace/TrabFinal/Drivers/API/inc" -I"/home/lgomez/maestriauba/SMT32/PdM_workspace/TrabFinal/Drivers/API/src" -I"/home/lgomez/maestriauba/SMT32/PdM_workspace/TrabFinal/Drivers/API" -I"/home/lgomez/maestriauba/SMT32/PdM_workspace/TrabFinal/Drivers/BSP" -I"/home/lgomez/maestriauba/SMT32/PdM_workspace/TrabFinal/Drivers/BSP/STM32F4xx_Nucleo_144" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
 arm-none-eabi-gcc -o "TrabFinal.elf" @"objects.list"   -mcpu=cortex-m4 -T"/home/lgomez/maestriauba/SMT32/PdM_workspace/TrabFinal/STM32F429ZITX_FLASH.ld" --specs=nosys.specs -Wl,-Map="TrabFinal.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
 Finished building target: TrabFinal.elf
@@ -36,14 +91,55 @@ Finished building target: TrabFinal.elf
 arm-none-eabi-size   TrabFinal.elf 
 arm-none-eabi-objdump -h -S  TrabFinal.elf  > "TrabFinal.list"
    text	   data	    bss	    dec	    hex	filename
-  20736	    272	   3688	  24696	   6078	TrabFinal.elf
+  20732	    272	   3688	  24692	   6074	TrabFinal.elf
 Finished building: default.size.stdout
  
 Finished building: TrabFinal.list
  
-14:18:23 **** Incremental Build of configuration Debug for project TrabFinal ****
+16:41:25 **** Incremental Build of configuration Debug for project TrabFinal ****
 make -j8 all 
-arm-none-eabi-gcc "../Drivers/API/src/App_MEF.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F429xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -I"/home/lgomez/maestriauba/SMT32/PdM_workspace/TrabFinal/Core/Src" -I"/home/lgomez/maestriauba/SMT32/PdM_workspace/TrabFinal/Drivers/API/inc" -I"/home/lgomez/maestriauba/SMT32/PdM_workspace/TrabFinal/Drivers/API/src" -I"/home/lgomez/maestriauba/SMT32/PdM_workspace/TrabFinal/Drivers/API" -I"/home/lgomez/maestriauba/SMT32/PdM_workspace/TrabFinal/Drivers/BSP" -I"/home/lgomez/maestriauba/SMT32/PdM_workspace/TrabFinal/Drivers/BSP/STM32F4xx_Nucleo_144" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Drivers/API/src/App_MEF.d" -MT"Drivers/API/src/App_MEF.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Drivers/API/src/App_MEF.o"
+arm-none-eabi-gcc "../Drivers/API/src/API_led.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F429xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -I"/home/lgomez/maestriauba/SMT32/PdM_workspace/TrabFinal/Core/Src" -I"/home/lgomez/maestriauba/SMT32/PdM_workspace/TrabFinal/Drivers/API/inc" -I"/home/lgomez/maestriauba/SMT32/PdM_workspace/TrabFinal/Drivers/API/src" -I"/home/lgomez/maestriauba/SMT32/PdM_workspace/TrabFinal/Drivers/API" -I"/home/lgomez/maestriauba/SMT32/PdM_workspace/TrabFinal/Drivers/BSP" -I"/home/lgomez/maestriauba/SMT32/PdM_workspace/TrabFinal/Drivers/BSP/STM32F4xx_Nucleo_144" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Drivers/API/src/API_led.d" -MT"Drivers/API/src/API_led.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Drivers/API/src/API_led.o"
+arm-none-eabi-gcc -o "TrabFinal.elf" @"objects.list"   -mcpu=cortex-m4 -T"/home/lgomez/maestriauba/SMT32/PdM_workspace/TrabFinal/STM32F429ZITX_FLASH.ld" --specs=nosys.specs -Wl,-Map="TrabFinal.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: TrabFinal.elf
+ 
+arm-none-eabi-size   TrabFinal.elf 
+arm-none-eabi-objdump -h -S  TrabFinal.elf  > "TrabFinal.list"
+   text	   data	    bss	    dec	    hex	filename
+  20732	    272	   3688	  24692	   6074	TrabFinal.elf
+Finished building: default.size.stdout
+ 
+Finished building: TrabFinal.list
+ 
+16:43:01 **** Incremental Build of configuration Debug for project TrabFinal ****
+make -j8 all 
+arm-none-eabi-gcc "../Drivers/API/src/API_led.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F429xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -I"/home/lgomez/maestriauba/SMT32/PdM_workspace/TrabFinal/Core/Src" -I"/home/lgomez/maestriauba/SMT32/PdM_workspace/TrabFinal/Drivers/API/inc" -I"/home/lgomez/maestriauba/SMT32/PdM_workspace/TrabFinal/Drivers/API/src" -I"/home/lgomez/maestriauba/SMT32/PdM_workspace/TrabFinal/Drivers/API" -I"/home/lgomez/maestriauba/SMT32/PdM_workspace/TrabFinal/Drivers/BSP" -I"/home/lgomez/maestriauba/SMT32/PdM_workspace/TrabFinal/Drivers/BSP/STM32F4xx_Nucleo_144" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Drivers/API/src/API_led.d" -MT"Drivers/API/src/API_led.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Drivers/API/src/API_led.o"
+arm-none-eabi-gcc -o "TrabFinal.elf" @"objects.list"   -mcpu=cortex-m4 -T"/home/lgomez/maestriauba/SMT32/PdM_workspace/TrabFinal/STM32F429ZITX_FLASH.ld" --specs=nosys.specs -Wl,-Map="TrabFinal.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: TrabFinal.elf
+ 
+arm-none-eabi-size   TrabFinal.elf 
+arm-none-eabi-objdump -h -S  TrabFinal.elf  > "TrabFinal.list"
+   text	   data	    bss	    dec	    hex	filename
+  20732	    272	   3688	  24692	   6074	TrabFinal.elf
+Finished building: default.size.stdout
+ 
+Finished building: TrabFinal.list
+ 
+16:44:24 **** Incremental Build of configuration Debug for project TrabFinal ****
+make -j8 all 
+arm-none-eabi-gcc "../Drivers/API/src/API_led.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F429xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -I"/home/lgomez/maestriauba/SMT32/PdM_workspace/TrabFinal/Core/Src" -I"/home/lgomez/maestriauba/SMT32/PdM_workspace/TrabFinal/Drivers/API/inc" -I"/home/lgomez/maestriauba/SMT32/PdM_workspace/TrabFinal/Drivers/API/src" -I"/home/lgomez/maestriauba/SMT32/PdM_workspace/TrabFinal/Drivers/API" -I"/home/lgomez/maestriauba/SMT32/PdM_workspace/TrabFinal/Drivers/BSP" -I"/home/lgomez/maestriauba/SMT32/PdM_workspace/TrabFinal/Drivers/BSP/STM32F4xx_Nucleo_144" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Drivers/API/src/API_led.d" -MT"Drivers/API/src/API_led.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Drivers/API/src/API_led.o"
+arm-none-eabi-gcc -o "TrabFinal.elf" @"objects.list"   -mcpu=cortex-m4 -T"/home/lgomez/maestriauba/SMT32/PdM_workspace/TrabFinal/STM32F429ZITX_FLASH.ld" --specs=nosys.specs -Wl,-Map="TrabFinal.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: TrabFinal.elf
+ 
+arm-none-eabi-size   TrabFinal.elf 
+arm-none-eabi-objdump -h -S  TrabFinal.elf  > "TrabFinal.list"
+   text	   data	    bss	    dec	    hex	filename
+  20732	    272	   3688	  24692	   6074	TrabFinal.elf
+Finished building: default.size.stdout
+ 
+Finished building: TrabFinal.list
+ 
+17:04:54 **** Incremental Build of configuration Debug for project TrabFinal ****
+make -j8 all 
 arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F429xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -I"/home/lgomez/maestriauba/SMT32/PdM_workspace/TrabFinal/Core/Src" -I"/home/lgomez/maestriauba/SMT32/PdM_workspace/TrabFinal/Drivers/API/inc" -I"/home/lgomez/maestriauba/SMT32/PdM_workspace/TrabFinal/Drivers/API/src" -I"/home/lgomez/maestriauba/SMT32/PdM_workspace/TrabFinal/Drivers/API" -I"/home/lgomez/maestriauba/SMT32/PdM_workspace/TrabFinal/Drivers/BSP" -I"/home/lgomez/maestriauba/SMT32/PdM_workspace/TrabFinal/Drivers/BSP/STM32F4xx_Nucleo_144" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
 arm-none-eabi-gcc -o "TrabFinal.elf" @"objects.list"   -mcpu=cortex-m4 -T"/home/lgomez/maestriauba/SMT32/PdM_workspace/TrabFinal/STM32F429ZITX_FLASH.ld" --specs=nosys.specs -Wl,-Map="TrabFinal.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
 Finished building target: TrabFinal.elf
@@ -51,36 +147,7 @@ Finished building target: TrabFinal.elf
 arm-none-eabi-size   TrabFinal.elf 
 arm-none-eabi-objdump -h -S  TrabFinal.elf  > "TrabFinal.list"
    text	   data	    bss	    dec	    hex	filename
-  20736	    272	   3688	  24696	   6078	TrabFinal.elf
-Finished building: default.size.stdout
- 
-Finished building: TrabFinal.list
- 
-14:26:25 **** Incremental Build of configuration Debug for project TrabFinal ****
-make -j8 all 
-arm-none-eabi-gcc "../Drivers/API/src/App_MEF.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F429xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -I"/home/lgomez/maestriauba/SMT32/PdM_workspace/TrabFinal/Core/Src" -I"/home/lgomez/maestriauba/SMT32/PdM_workspace/TrabFinal/Drivers/API/inc" -I"/home/lgomez/maestriauba/SMT32/PdM_workspace/TrabFinal/Drivers/API/src" -I"/home/lgomez/maestriauba/SMT32/PdM_workspace/TrabFinal/Drivers/API" -I"/home/lgomez/maestriauba/SMT32/PdM_workspace/TrabFinal/Drivers/BSP" -I"/home/lgomez/maestriauba/SMT32/PdM_workspace/TrabFinal/Drivers/BSP/STM32F4xx_Nucleo_144" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Drivers/API/src/App_MEF.d" -MT"Drivers/API/src/App_MEF.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Drivers/API/src/App_MEF.o"
-arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F429xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -I"/home/lgomez/maestriauba/SMT32/PdM_workspace/TrabFinal/Core/Src" -I"/home/lgomez/maestriauba/SMT32/PdM_workspace/TrabFinal/Drivers/API/inc" -I"/home/lgomez/maestriauba/SMT32/PdM_workspace/TrabFinal/Drivers/API/src" -I"/home/lgomez/maestriauba/SMT32/PdM_workspace/TrabFinal/Drivers/API" -I"/home/lgomez/maestriauba/SMT32/PdM_workspace/TrabFinal/Drivers/BSP" -I"/home/lgomez/maestriauba/SMT32/PdM_workspace/TrabFinal/Drivers/BSP/STM32F4xx_Nucleo_144" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
-arm-none-eabi-gcc -o "TrabFinal.elf" @"objects.list"   -mcpu=cortex-m4 -T"/home/lgomez/maestriauba/SMT32/PdM_workspace/TrabFinal/STM32F429ZITX_FLASH.ld" --specs=nosys.specs -Wl,-Map="TrabFinal.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
-Finished building target: TrabFinal.elf
- 
-arm-none-eabi-size   TrabFinal.elf 
-arm-none-eabi-objdump -h -S  TrabFinal.elf  > "TrabFinal.list"
-   text	   data	    bss	    dec	    hex	filename
-  20736	    272	   3688	  24696	   6078	TrabFinal.elf
-Finished building: default.size.stdout
- 
-Finished building: TrabFinal.list
- 
-14:46:13 **** Incremental Build of configuration Debug for project TrabFinal ****
-make -j8 all 
-arm-none-eabi-gcc "../Drivers/API/src/App_MEF.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F429xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -I"/home/lgomez/maestriauba/SMT32/PdM_workspace/TrabFinal/Core/Src" -I"/home/lgomez/maestriauba/SMT32/PdM_workspace/TrabFinal/Drivers/API/inc" -I"/home/lgomez/maestriauba/SMT32/PdM_workspace/TrabFinal/Drivers/API/src" -I"/home/lgomez/maestriauba/SMT32/PdM_workspace/TrabFinal/Drivers/API" -I"/home/lgomez/maestriauba/SMT32/PdM_workspace/TrabFinal/Drivers/BSP" -I"/home/lgomez/maestriauba/SMT32/PdM_workspace/TrabFinal/Drivers/BSP/STM32F4xx_Nucleo_144" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Drivers/API/src/App_MEF.d" -MT"Drivers/API/src/App_MEF.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Drivers/API/src/App_MEF.o"
-arm-none-eabi-gcc -o "TrabFinal.elf" @"objects.list"   -mcpu=cortex-m4 -T"/home/lgomez/maestriauba/SMT32/PdM_workspace/TrabFinal/STM32F429ZITX_FLASH.ld" --specs=nosys.specs -Wl,-Map="TrabFinal.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
-Finished building target: TrabFinal.elf
- 
-arm-none-eabi-size   TrabFinal.elf 
-arm-none-eabi-objdump -h -S  TrabFinal.elf  > "TrabFinal.list"
-   text	   data	    bss	    dec	    hex	filename
-  20736	    272	   3688	  24696	   6078	TrabFinal.elf
+  20732	    272	   3688	  24692	   6074	TrabFinal.elf
 Finished building: default.size.stdout
  
 Finished building: TrabFinal.list

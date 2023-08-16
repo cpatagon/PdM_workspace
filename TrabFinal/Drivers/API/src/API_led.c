@@ -1,6 +1,6 @@
 /**
  * @file API_led.c
- * @brief Implementación de funciones para el manejo de LEDs usando SPI.
+ * @brief Implementation of functions for LED management using SPI.
  * @date Aug 6, 2023
  * @author lgomez
  */
@@ -10,12 +10,44 @@
 #include "API_delay.h"
 #include <assert.h>
 
-#define TIMEGHOST 200
-#define ROW_MATRIX 8
+#define TIMEGHOST 200 // delay time between ghost animation
+#define ROW_MATRIX 8 // number of rows in a LED matrix display
 
-uint8_t led_address[] = { 0x01, 0x02, 0x03, 0x04, 0x05, 0x06, 0x07, 0x08 };
-uint8_t clear[] = { 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00 };
-uint8_t matrizEncendida[] = { 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF };
+/**
+ *  configuration parameters for the MAX7219 integrated circuit
+ *   address */
+#define ADDRESS_DECODING 		0x09     // No decoding.
+#define ADDRESS_SCAN_LIMIT 		0x0b     // Scan limit = 8 LEDs.
+#define ADDRESS_POWER 			0x0c     // Power down = 0, normal mode = 1.
+#define ADDRESS_TEST_DISPLAY 	0x0f     // No test display.
+#define ADDRESS_BRIGHTNESS 		0x0a     // Brightness intensity.
+/*  value */
+#define VALUE_DECODING 			0x00	// No decoding.
+#define VALUE_SCAN_LIMIT 		0x07	// Scan limit = 8 LEDs.
+#define VALUE_POWER 			0x01	// Power down = 0, normal mode = 1.
+#define VALUE_TEST_DISPLAY 		0x00	// No test display.
+#define VALUE_BRIGHTNESS 		0x05	// Brightness intensity.
+
+/* defines the addresses of the rows in the 8x8 LED matrix */
+
+#define ROW_1	0x01
+#define ROW_2	0x02
+#define ROW_3	0x03
+#define ROW_4	0x04
+#define ROW_5	0x05
+#define ROW_6	0x06
+#define ROW_7	0x07
+#define ROW_8	0x08
+
+#define LED_OFF  0x00 // LED ROWS OFF
+#define LED_ON   0xFF // LED ROWS ON
+
+uint8_t led_address[] =
+		{ ROW_1, ROW_2, ROW_3, ROW_4, ROW_5, ROW_6, ROW_7, ROW_8 };
+uint8_t clear[] = { LED_OFF, LED_OFF, LED_OFF, LED_OFF, LED_OFF, LED_OFF,
+LED_OFF, LED_OFF };
+uint8_t LitMatrix[] = { LED_ON, LED_ON, LED_ON, LED_ON, LED_ON, LED_ON, LED_ON,
+LED_ON };
 
 static uint8_t ghost1[] = { 0xFC, 0xFE, 0x6B, 0xEF, 0xEF, 0x6B, 0xfE, 0xFC };
 static uint8_t ghost2[] = { 0xFC, 0xFE, 0x6F, 0xEB, 0xEF, 0x6B, 0xfE, 0xFC };
@@ -23,136 +55,134 @@ static uint8_t ghost3[] = { 0xFC, 0xFE, 0x7F, 0xEB, 0xEF, 0x6B, 0xfE, 0xFC };
 static uint8_t ghost4[] = { 0xFC, 0xFE, 0x7F, 0xFB, 0xEF, 0x6B, 0xfE, 0xFC };
 static uint8_t ghost5[] = { 0xFC, 0xFE, 0x7B, 0xFF, 0xEF, 0x6B, 0xfE, 0xFC };
 
-delay_t delayGhost; // tiempo trancicion en animacion fantasma
+delay_t delayGhost; // transition time in ghost animation
 
 /**
- * @brief Enumeración para definir estados o modos de operación de los LEDs.
+ * @brief Enumeration of ghost types for the animation.
  */
-typedef enum {
-	SET_ini, A, B, C, GOOD, BAD,
-} def_Led_t;
-
 typedef enum {
 	GHOST1, GHOST2, GHOST3, GHOST4, GHOST5, GHOST6
 } State_GHOT_t;
 
-State_GHOT_t tipo_fantasma = GHOST1;
+/* Initialize the ghostType variable to the starting ghost of the animation */
 
+State_GHOT_t ghostType = GHOST1;
 /**
- * @brief Limpia o apaga todos los LEDs.
+ * @brief Clears or turns off all LEDs.
  *
- * Esta función recorre todas las direcciones de LEDs y les asigna el valor de apagado.
+ * This function iterates through all LED addresses and assigns them the off value.
  */
 void clear_led(void) {
-	assert(led_address !=NULL);
+	assert(led_address != NULL);
 	for (int16_t j = 0; j < 8; j++) {
 		spi_write(led_address[j], clear[j]);
 	}
 }
 
 /**
- * @brief Inicializa los LEDs.
+ * @brief Initializes the LEDs.
  *
- * Esta función configura los LEDs y establece sus valores iniciales.
+ * This function configures the LEDs and sets their initial values.
  */
+
 void init_led(void) {
 	delayInit(&delayGhost, TIMEGHOST);
-	spi_init();                  // inicializa api_spi
-	spi_write(0x09, 0x00);       // No decoding.
-	spi_write(0x0b, 0x07);       // Scan limit = 8 LEDs.
-	spi_write(0x0c, 0x01);       // Power down = 0, normal mode = 1.
-	spi_write(0x0f, 0x00);       // No test display.
+	spi_init();                  // initializes api_spi
+	spi_write(ADDRESS_DECODING, VALUE_DECODING);
+	spi_write(ADDRESS_SCAN_LIMIT, VALUE_SCAN_LIMIT);
+	spi_write(ADDRESS_POWER, VALUE_POWER);
+	spi_write(ADDRESS_TEST_DISPLAY, VALUE_TEST_DISPLAY);
 	clear_led();
-	spi_write(0x0a, 0x05);       // Brightness intensity.
+	spi_write(ADDRESS_BRIGHTNESS, VALUE_BRIGHTNESS);
 }
 
 /**
- * @brief Enciende todos los LEDs.
+ * @brief Turns on all LEDs.
  *
- * Esta función recorre todas las direcciones de LEDs y les asigna el valor de encendido.
+ * This function iterates through all LED addresses and assigns them the on value.
  */
+
 void lit_led(void) {
 	assert(led_address !=NULL);
 	for (int16_t j = 0; j < ROW_MATRIX; j++) {
-		spi_write(led_address[j], matrizEncendida[j]);
+		spi_write(led_address[j], LitMatrix[j]);
 	}
 }
-
 /**
- * @brief Actualiza el estado de los LEDs basándose en una lista.
+ * @brief Updates the state of the LEDs based on a list.
  *
- * Esta función toma una lista de valores y actualiza el estado de cada LED según
- * la lista proporcionada.
+ * This function takes a list of values and updates the state of each LED according to
+ * the provided list.
  *
- * @param paint_list Lista con los valores de los LEDs.
+ * @param paint_list List with the LED values.
  */
 void update_led(uint8_t paint_list[]) {
-	assert(paint_list !=NULL);
+	assert(paint_list != NULL);
 	for (int16_t j = 0; j < ROW_MATRIX; j++) {
 		spi_write(led_address[j], paint_list[j]);
 	}
 }
 
 /**
- * @brief Actualiza el estado de los LEDs basándose una fila.
+ * @brief Updates the state of the LEDs based on a row.
  *
- * Esta función toma una lista de valores y actualiza el estado de cada LED según
- * la lista proporcionada.
+ * This function takes a list of values and updates the state of each LED according to
+ * the provided list.
  *
- * @param paint_list Lista con los valores de los LEDs.
+ * @param paint_list List with the LED values.
  */
-void fila_led(uint8_t fila) {
-	assert(fila >= 0);
+void row_led(uint8_t row_led) {
+	assert(row_led >= 0);
 	for (int16_t j = 0; j < ROW_MATRIX; j++) {
-		spi_write(led_address[j], fila);
+		spi_write(led_address[j], row_led);
 	}
 }
 
 /**
- * @brief generra una animacion de fantasma.
+ * @brief Generates a ghost animation.
  *
- * Esta función genera una función de fantasma en la patalla led
+ * This function creates a ghost animation on the LED display.
  *
- *
- * @param vacio
+ * @param void
  */
-void fantasma_led(void) {
-	assert(tipo_fantasma >= 0);
-	switch (tipo_fantasma) {
+
+void ghost_led(void) {
+	assert(ghostType >= 0);
+	switch (ghostType) {
 	case (GHOST1):
 		update_led(ghost1);
 		if (delayRead(&delayGhost)) {
-			tipo_fantasma = GHOST2;
+			ghostType = GHOST2;
 		}
 		break;
 	case (GHOST2):
 		update_led(ghost2);
 		if (delayRead(&delayGhost)) {
-			tipo_fantasma = GHOST3;
+			ghostType = GHOST3;
 		}
 		break;
 	case (GHOST3):
 		update_led(ghost3);
 		if (delayRead(&delayGhost)) {
-			tipo_fantasma = GHOST4;
+			ghostType = GHOST4;
 		}
 		break;
 	case (GHOST4):
 		update_led(ghost4);
 		if (delayRead(&delayGhost)) {
-			tipo_fantasma = GHOST5;
+			ghostType = GHOST5;
 		}
 		break;
 	case (GHOST5):
 		update_led(ghost5);
 		if (delayRead(&delayGhost)) {
-			tipo_fantasma = GHOST6;
+			ghostType = GHOST6;
 		}
 		break;
 	case (GHOST6):
 		update_led(ghost5);
 		if (delayRead(&delayGhost)) {
-			tipo_fantasma = GHOST1;
+			ghostType = GHOST1;
 		}
 		break;
 	default:

@@ -7,19 +7,19 @@ Idx Name          Size      VMA       LMA       File off  Algn
                   CONTENTS, ALLOC, LOAD, READONLY, DATA
   1 .text         00004ccc  080001b0  080001b0  000101b0  2**4
                   CONTENTS, ALLOC, LOAD, READONLY, CODE
-  2 .rodata       00000280  08004e7c  08004e7c  00014e7c  2**2
+  2 .rodata       0000027c  08004e7c  08004e7c  00014e7c  2**2
                   CONTENTS, ALLOC, LOAD, READONLY, DATA
-  3 .ARM.extab    00000000  080050fc  080050fc  00020108  2**0
+  3 .ARM.extab    00000000  080050f8  080050f8  00020108  2**0
                   CONTENTS
-  4 .ARM          00000008  080050fc  080050fc  000150fc  2**2
+  4 .ARM          00000008  080050f8  080050f8  000150f8  2**2
                   CONTENTS, ALLOC, LOAD, READONLY, DATA
-  5 .preinit_array 00000000  08005104  08005104  00020108  2**0
+  5 .preinit_array 00000000  08005100  08005100  00020108  2**0
                   CONTENTS, ALLOC, LOAD, DATA
-  6 .init_array   00000004  08005104  08005104  00015104  2**2
+  6 .init_array   00000004  08005100  08005100  00015100  2**2
                   CONTENTS, ALLOC, LOAD, DATA
-  7 .fini_array   00000004  08005108  08005108  00015108  2**2
+  7 .fini_array   00000004  08005104  08005104  00015104  2**2
                   CONTENTS, ALLOC, LOAD, DATA
-  8 .data         00000108  20000000  0800510c  00020000  2**2
+  8 .data         00000108  20000000  08005108  00020000  2**2
                   CONTENTS, ALLOC, LOAD, DATA
   9 .ccmram       00000000  10000000  10000000  00020108  2**0
                   CONTENTS
@@ -29,23 +29,23 @@ Idx Name          Size      VMA       LMA       File off  Algn
                   ALLOC
  12 .ARM.attributes 00000030  00000000  00000000  00020108  2**0
                   CONTENTS, READONLY
- 13 .debug_info   00013807  00000000  00000000  00020138  2**0
+ 13 .debug_info   000137d9  00000000  00000000  00020138  2**0
                   CONTENTS, READONLY, DEBUGGING, OCTETS
- 14 .debug_abbrev 00002b81  00000000  00000000  0003393f  2**0
+ 14 .debug_abbrev 00002b9b  00000000  00000000  00033911  2**0
                   CONTENTS, READONLY, DEBUGGING, OCTETS
- 15 .debug_aranges 00000fb0  00000000  00000000  000364c0  2**3
+ 15 .debug_aranges 00000fb0  00000000  00000000  000364b0  2**3
                   CONTENTS, READONLY, DEBUGGING, OCTETS
- 16 .debug_ranges 00000e88  00000000  00000000  00037470  2**3
+ 16 .debug_ranges 00000e88  00000000  00000000  00037460  2**3
                   CONTENTS, READONLY, DEBUGGING, OCTETS
- 17 .debug_macro  0002643b  00000000  00000000  000382f8  2**0
+ 17 .debug_macro  000264b3  00000000  00000000  000382e8  2**0
                   CONTENTS, READONLY, DEBUGGING, OCTETS
- 18 .debug_line   00012800  00000000  00000000  0005e733  2**0
+ 18 .debug_line   00012802  00000000  00000000  0005e79b  2**0
                   CONTENTS, READONLY, DEBUGGING, OCTETS
- 19 .debug_str    000df054  00000000  00000000  00070f33  2**0
+ 19 .debug_str    000df18f  00000000  00000000  00070f9d  2**0
                   CONTENTS, READONLY, DEBUGGING, OCTETS
- 20 .comment      00000050  00000000  00000000  0014ff87  2**0
+ 20 .comment      00000050  00000000  00000000  0015012c  2**0
                   CONTENTS, READONLY
- 21 .debug_frame  000049c4  00000000  00000000  0014ffd8  2**2
+ 21 .debug_frame  000049c4  00000000  00000000  0015017c  2**2
                   CONTENTS, READONLY, DEBUGGING, OCTETS
 
 Disassembly of section .text:
@@ -612,8 +612,8 @@ int main(void) {
 
 		case BAD:
 			// In case of loss, display the ghost image
-			fantasma_led();
- 800069a:	f000 fe45 	bl	8001328 <fantasma_led>
+			ghost_led();
+ 800069a:	f000 fe45 	bl	8001328 <ghost_led>
 			// We reset the SCORE value to 0 because the game is lost
 			if (flag) {
  800069e:	4b15      	ldr	r3, [pc, #84]	; (80006f4 <main+0x160>)
@@ -2342,7 +2342,7 @@ LoopFillZerobss:
   ldr r1, =_edata
  8000ff8:	20000108 	.word	0x20000108
   ldr r2, =_sidata
- 8000ffc:	0800510c 	.word	0x0800510c
+ 8000ffc:	08005108 	.word	0x08005108
   ldr r2, =_sbss
  8001000:	20000108 	.word	0x20000108
   ldr r4, =_ebss
@@ -2730,15 +2730,15 @@ bool_t delayRead(delay_t *delay) {
 
 08001230 <clear_led>:
 /**
- * @brief Limpia o apaga todos los LEDs.
+ * @brief Clears or turns off all LEDs.
  *
- * Esta función recorre todas las direcciones de LEDs y les asigna el valor de apagado.
+ * This function iterates through all LED addresses and assigns them the off value.
  */
 void clear_led(void) {
  8001230:	b580      	push	{r7, lr}
  8001232:	b082      	sub	sp, #8
  8001234:	af00      	add	r7, sp, #0
-	assert(led_address !=NULL);
+	assert(led_address != NULL);
 	for (int16_t j = 0; j < 8; j++) {
  8001236:	2300      	movs	r3, #0
  8001238:	80fb      	strh	r3, [r7, #6]
@@ -2774,11 +2774,11 @@ void clear_led(void) {
  8001278:	200008d8 	.word	0x200008d8
 
 0800127c <init_led>:
-/**
- * @brief Inicializa los LEDs.
+ * @brief Initializes the LEDs.
  *
- * Esta función configura los LEDs y establece sus valores iniciales.
+ * This function configures the LEDs and sets their initial values.
  */
+
 void init_led(void) {
  800127c:	b580      	push	{r7, lr}
  800127e:	af00      	add	r7, sp, #0
@@ -2786,27 +2786,27 @@ void init_led(void) {
  8001280:	21c8      	movs	r1, #200	; 0xc8
  8001282:	480e      	ldr	r0, [pc, #56]	; (80012bc <init_led+0x40>)
  8001284:	f7ff ff78 	bl	8001178 <delayInit>
-	spi_init();                  // inicializa api_spi
+	spi_init();                  // initializes api_spi
  8001288:	f000 f8da 	bl	8001440 <spi_init>
-	spi_write(0x09, 0x00);       // No decoding.
+	spi_write(ADDRESS_DECODING, VALUE_DECODING);
  800128c:	2100      	movs	r1, #0
  800128e:	2009      	movs	r0, #9
  8001290:	f000 f90c 	bl	80014ac <spi_write>
-	spi_write(0x0b, 0x07);       // Scan limit = 8 LEDs.
+	spi_write(ADDRESS_SCAN_LIMIT, VALUE_SCAN_LIMIT);
  8001294:	2107      	movs	r1, #7
  8001296:	200b      	movs	r0, #11
  8001298:	f000 f908 	bl	80014ac <spi_write>
-	spi_write(0x0c, 0x01);       // Power down = 0, normal mode = 1.
+	spi_write(ADDRESS_POWER, VALUE_POWER);
  800129c:	2101      	movs	r1, #1
  800129e:	200c      	movs	r0, #12
  80012a0:	f000 f904 	bl	80014ac <spi_write>
-	spi_write(0x0f, 0x00);       // No test display.
+	spi_write(ADDRESS_TEST_DISPLAY, VALUE_TEST_DISPLAY);
  80012a4:	2100      	movs	r1, #0
  80012a6:	200f      	movs	r0, #15
  80012a8:	f000 f900 	bl	80014ac <spi_write>
 	clear_led();
  80012ac:	f7ff ffc0 	bl	8001230 <clear_led>
-	spi_write(0x0a, 0x05);       // Brightness intensity.
+	spi_write(ADDRESS_BRIGHTNESS, VALUE_BRIGHTNESS);
  80012b0:	2105      	movs	r1, #5
  80012b2:	200a      	movs	r0, #10
  80012b4:	f000 f8fa 	bl	80014ac <spi_write>
@@ -2816,23 +2816,23 @@ void init_led(void) {
  80012bc:	200008e0 	.word	0x200008e0
 
 080012c0 <update_led>:
- * Esta función toma una lista de valores y actualiza el estado de cada LED según
- * la lista proporcionada.
+ * This function takes a list of values and updates the state of each LED according to
+ * the provided list.
  *
- * @param paint_list Lista con los valores de los LEDs.
+ * @param paint_list List with the LED values.
  */
 void update_led(uint8_t paint_list[]) {
  80012c0:	b580      	push	{r7, lr}
  80012c2:	b084      	sub	sp, #16
  80012c4:	af00      	add	r7, sp, #0
  80012c6:	6078      	str	r0, [r7, #4]
-	assert(paint_list !=NULL);
+	assert(paint_list != NULL);
  80012c8:	687b      	ldr	r3, [r7, #4]
  80012ca:	2b00      	cmp	r3, #0
  80012cc:	d105      	bne.n	80012da <update_led+0x1a>
  80012ce:	4b12      	ldr	r3, [pc, #72]	; (8001318 <update_led+0x58>)
  80012d0:	4a12      	ldr	r2, [pc, #72]	; (800131c <update_led+0x5c>)
- 80012d2:	215a      	movs	r1, #90	; 0x5a
+ 80012d2:	2178      	movs	r1, #120	; 0x78
  80012d4:	4812      	ldr	r0, [pc, #72]	; (8001320 <update_led+0x60>)
  80012d6:	f002 fda1 	bl	8003e1c <__assert_func>
 	for (int16_t j = 0; j < ROW_MATRIX; j++) {
@@ -2871,22 +2871,22 @@ void update_led(uint8_t paint_list[]) {
  8001320:	08004f48 	.word	0x08004f48
  8001324:	20000068 	.word	0x20000068
 
-08001328 <fantasma_led>:
- * Esta función genera una función de fantasma en la patalla led
+08001328 <ghost_led>:
+ * This function creates a ghost animation on the LED display.
  *
- *
- * @param vacio
+ * @param void
  */
-void fantasma_led(void) {
+
+void ghost_led(void) {
  8001328:	b580      	push	{r7, lr}
  800132a:	af00      	add	r7, sp, #0
-	assert(tipo_fantasma >= 0);
-	switch (tipo_fantasma) {
- 800132c:	4b3a      	ldr	r3, [pc, #232]	; (8001418 <fantasma_led+0xf0>)
+	assert(ghostType >= 0);
+	switch (ghostType) {
+ 800132c:	4b3a      	ldr	r3, [pc, #232]	; (8001418 <ghost_led+0xf0>)
  800132e:	781b      	ldrb	r3, [r3, #0]
  8001330:	2b05      	cmp	r3, #5
- 8001332:	d85d      	bhi.n	80013f0 <fantasma_led+0xc8>
- 8001334:	a201      	add	r2, pc, #4	; (adr r2, 800133c <fantasma_led+0x14>)
+ 8001332:	d85d      	bhi.n	80013f0 <ghost_led+0xc8>
+ 8001334:	a201      	add	r2, pc, #4	; (adr r2, 800133c <ghost_led+0x14>)
  8001336:	f852 f023 	ldr.w	pc, [r2, r3, lsl #2]
  800133a:	bf00      	nop
  800133c:	08001355 	.word	0x08001355
@@ -2897,129 +2897,129 @@ void fantasma_led(void) {
  8001350:	080013d7 	.word	0x080013d7
 	case (GHOST1):
 		update_led(ghost1);
- 8001354:	4831      	ldr	r0, [pc, #196]	; (800141c <fantasma_led+0xf4>)
+ 8001354:	4831      	ldr	r0, [pc, #196]	; (800141c <ghost_led+0xf4>)
  8001356:	f7ff ffb3 	bl	80012c0 <update_led>
 		if (delayRead(&delayGhost)) {
- 800135a:	4831      	ldr	r0, [pc, #196]	; (8001420 <fantasma_led+0xf8>)
+ 800135a:	4831      	ldr	r0, [pc, #196]	; (8001420 <ghost_led+0xf8>)
  800135c:	f7ff ff2a 	bl	80011b4 <delayRead>
  8001360:	4603      	mov	r3, r0
  8001362:	2b00      	cmp	r3, #0
- 8001364:	d04a      	beq.n	80013fc <fantasma_led+0xd4>
-			tipo_fantasma = GHOST2;
- 8001366:	4b2c      	ldr	r3, [pc, #176]	; (8001418 <fantasma_led+0xf0>)
+ 8001364:	d04a      	beq.n	80013fc <ghost_led+0xd4>
+			ghostType = GHOST2;
+ 8001366:	4b2c      	ldr	r3, [pc, #176]	; (8001418 <ghost_led+0xf0>)
  8001368:	2201      	movs	r2, #1
  800136a:	701a      	strb	r2, [r3, #0]
 		}
 		break;
- 800136c:	e046      	b.n	80013fc <fantasma_led+0xd4>
+ 800136c:	e046      	b.n	80013fc <ghost_led+0xd4>
 	case (GHOST2):
 		update_led(ghost2);
- 800136e:	482d      	ldr	r0, [pc, #180]	; (8001424 <fantasma_led+0xfc>)
+ 800136e:	482d      	ldr	r0, [pc, #180]	; (8001424 <ghost_led+0xfc>)
  8001370:	f7ff ffa6 	bl	80012c0 <update_led>
 		if (delayRead(&delayGhost)) {
- 8001374:	482a      	ldr	r0, [pc, #168]	; (8001420 <fantasma_led+0xf8>)
+ 8001374:	482a      	ldr	r0, [pc, #168]	; (8001420 <ghost_led+0xf8>)
  8001376:	f7ff ff1d 	bl	80011b4 <delayRead>
  800137a:	4603      	mov	r3, r0
  800137c:	2b00      	cmp	r3, #0
- 800137e:	d03f      	beq.n	8001400 <fantasma_led+0xd8>
-			tipo_fantasma = GHOST3;
- 8001380:	4b25      	ldr	r3, [pc, #148]	; (8001418 <fantasma_led+0xf0>)
+ 800137e:	d03f      	beq.n	8001400 <ghost_led+0xd8>
+			ghostType = GHOST3;
+ 8001380:	4b25      	ldr	r3, [pc, #148]	; (8001418 <ghost_led+0xf0>)
  8001382:	2202      	movs	r2, #2
  8001384:	701a      	strb	r2, [r3, #0]
 		}
 		break;
- 8001386:	e03b      	b.n	8001400 <fantasma_led+0xd8>
+ 8001386:	e03b      	b.n	8001400 <ghost_led+0xd8>
 	case (GHOST3):
 		update_led(ghost3);
- 8001388:	4827      	ldr	r0, [pc, #156]	; (8001428 <fantasma_led+0x100>)
+ 8001388:	4827      	ldr	r0, [pc, #156]	; (8001428 <ghost_led+0x100>)
  800138a:	f7ff ff99 	bl	80012c0 <update_led>
 		if (delayRead(&delayGhost)) {
- 800138e:	4824      	ldr	r0, [pc, #144]	; (8001420 <fantasma_led+0xf8>)
+ 800138e:	4824      	ldr	r0, [pc, #144]	; (8001420 <ghost_led+0xf8>)
  8001390:	f7ff ff10 	bl	80011b4 <delayRead>
  8001394:	4603      	mov	r3, r0
  8001396:	2b00      	cmp	r3, #0
- 8001398:	d034      	beq.n	8001404 <fantasma_led+0xdc>
-			tipo_fantasma = GHOST4;
- 800139a:	4b1f      	ldr	r3, [pc, #124]	; (8001418 <fantasma_led+0xf0>)
+ 8001398:	d034      	beq.n	8001404 <ghost_led+0xdc>
+			ghostType = GHOST4;
+ 800139a:	4b1f      	ldr	r3, [pc, #124]	; (8001418 <ghost_led+0xf0>)
  800139c:	2203      	movs	r2, #3
  800139e:	701a      	strb	r2, [r3, #0]
 		}
 		break;
- 80013a0:	e030      	b.n	8001404 <fantasma_led+0xdc>
+ 80013a0:	e030      	b.n	8001404 <ghost_led+0xdc>
 	case (GHOST4):
 		update_led(ghost4);
- 80013a2:	4822      	ldr	r0, [pc, #136]	; (800142c <fantasma_led+0x104>)
+ 80013a2:	4822      	ldr	r0, [pc, #136]	; (800142c <ghost_led+0x104>)
  80013a4:	f7ff ff8c 	bl	80012c0 <update_led>
 		if (delayRead(&delayGhost)) {
- 80013a8:	481d      	ldr	r0, [pc, #116]	; (8001420 <fantasma_led+0xf8>)
+ 80013a8:	481d      	ldr	r0, [pc, #116]	; (8001420 <ghost_led+0xf8>)
  80013aa:	f7ff ff03 	bl	80011b4 <delayRead>
  80013ae:	4603      	mov	r3, r0
  80013b0:	2b00      	cmp	r3, #0
- 80013b2:	d029      	beq.n	8001408 <fantasma_led+0xe0>
-			tipo_fantasma = GHOST5;
- 80013b4:	4b18      	ldr	r3, [pc, #96]	; (8001418 <fantasma_led+0xf0>)
+ 80013b2:	d029      	beq.n	8001408 <ghost_led+0xe0>
+			ghostType = GHOST5;
+ 80013b4:	4b18      	ldr	r3, [pc, #96]	; (8001418 <ghost_led+0xf0>)
  80013b6:	2204      	movs	r2, #4
  80013b8:	701a      	strb	r2, [r3, #0]
 		}
 		break;
- 80013ba:	e025      	b.n	8001408 <fantasma_led+0xe0>
+ 80013ba:	e025      	b.n	8001408 <ghost_led+0xe0>
 	case (GHOST5):
 		update_led(ghost5);
- 80013bc:	481c      	ldr	r0, [pc, #112]	; (8001430 <fantasma_led+0x108>)
+ 80013bc:	481c      	ldr	r0, [pc, #112]	; (8001430 <ghost_led+0x108>)
  80013be:	f7ff ff7f 	bl	80012c0 <update_led>
 		if (delayRead(&delayGhost)) {
- 80013c2:	4817      	ldr	r0, [pc, #92]	; (8001420 <fantasma_led+0xf8>)
+ 80013c2:	4817      	ldr	r0, [pc, #92]	; (8001420 <ghost_led+0xf8>)
  80013c4:	f7ff fef6 	bl	80011b4 <delayRead>
  80013c8:	4603      	mov	r3, r0
  80013ca:	2b00      	cmp	r3, #0
- 80013cc:	d01e      	beq.n	800140c <fantasma_led+0xe4>
-			tipo_fantasma = GHOST6;
- 80013ce:	4b12      	ldr	r3, [pc, #72]	; (8001418 <fantasma_led+0xf0>)
+ 80013cc:	d01e      	beq.n	800140c <ghost_led+0xe4>
+			ghostType = GHOST6;
+ 80013ce:	4b12      	ldr	r3, [pc, #72]	; (8001418 <ghost_led+0xf0>)
  80013d0:	2205      	movs	r2, #5
  80013d2:	701a      	strb	r2, [r3, #0]
 		}
 		break;
- 80013d4:	e01a      	b.n	800140c <fantasma_led+0xe4>
+ 80013d4:	e01a      	b.n	800140c <ghost_led+0xe4>
 	case (GHOST6):
 		update_led(ghost5);
- 80013d6:	4816      	ldr	r0, [pc, #88]	; (8001430 <fantasma_led+0x108>)
+ 80013d6:	4816      	ldr	r0, [pc, #88]	; (8001430 <ghost_led+0x108>)
  80013d8:	f7ff ff72 	bl	80012c0 <update_led>
 		if (delayRead(&delayGhost)) {
- 80013dc:	4810      	ldr	r0, [pc, #64]	; (8001420 <fantasma_led+0xf8>)
+ 80013dc:	4810      	ldr	r0, [pc, #64]	; (8001420 <ghost_led+0xf8>)
  80013de:	f7ff fee9 	bl	80011b4 <delayRead>
  80013e2:	4603      	mov	r3, r0
  80013e4:	2b00      	cmp	r3, #0
- 80013e6:	d013      	beq.n	8001410 <fantasma_led+0xe8>
-			tipo_fantasma = GHOST1;
- 80013e8:	4b0b      	ldr	r3, [pc, #44]	; (8001418 <fantasma_led+0xf0>)
+ 80013e6:	d013      	beq.n	8001410 <ghost_led+0xe8>
+			ghostType = GHOST1;
+ 80013e8:	4b0b      	ldr	r3, [pc, #44]	; (8001418 <ghost_led+0xf0>)
  80013ea:	2200      	movs	r2, #0
  80013ec:	701a      	strb	r2, [r3, #0]
 		}
 		break;
- 80013ee:	e00f      	b.n	8001410 <fantasma_led+0xe8>
+ 80013ee:	e00f      	b.n	8001410 <ghost_led+0xe8>
 	default:
 		/* Handle unexpected state */
 		assert(0);
- 80013f0:	4b10      	ldr	r3, [pc, #64]	; (8001434 <fantasma_led+0x10c>)
- 80013f2:	4a11      	ldr	r2, [pc, #68]	; (8001438 <fantasma_led+0x110>)
- 80013f4:	21a0      	movs	r1, #160	; 0xa0
- 80013f6:	4811      	ldr	r0, [pc, #68]	; (800143c <fantasma_led+0x114>)
+ 80013f0:	4b10      	ldr	r3, [pc, #64]	; (8001434 <ghost_led+0x10c>)
+ 80013f2:	4a11      	ldr	r2, [pc, #68]	; (8001438 <ghost_led+0x110>)
+ 80013f4:	21be      	movs	r1, #190	; 0xbe
+ 80013f6:	4811      	ldr	r0, [pc, #68]	; (800143c <ghost_led+0x114>)
  80013f8:	f002 fd10 	bl	8003e1c <__assert_func>
 		break;
  80013fc:	bf00      	nop
- 80013fe:	e008      	b.n	8001412 <fantasma_led+0xea>
+ 80013fe:	e008      	b.n	8001412 <ghost_led+0xea>
 		break;
  8001400:	bf00      	nop
- 8001402:	e006      	b.n	8001412 <fantasma_led+0xea>
+ 8001402:	e006      	b.n	8001412 <ghost_led+0xea>
 		break;
  8001404:	bf00      	nop
- 8001406:	e004      	b.n	8001412 <fantasma_led+0xea>
+ 8001406:	e004      	b.n	8001412 <ghost_led+0xea>
 		break;
  8001408:	bf00      	nop
- 800140a:	e002      	b.n	8001412 <fantasma_led+0xea>
+ 800140a:	e002      	b.n	8001412 <ghost_led+0xea>
 		break;
  800140c:	bf00      	nop
- 800140e:	e000      	b.n	8001412 <fantasma_led+0xea>
+ 800140e:	e000      	b.n	8001412 <ghost_led+0xea>
 		break;
  8001410:	bf00      	nop
 	}
@@ -3812,7 +3812,7 @@ State_MEF_t update_MEF(delay_t *delay) {
  80018da:	bf00      	nop
  80018dc:	20000948 	.word	0x20000948
  80018e0:	08004f6c 	.word	0x08004f6c
- 80018e4:	0800501c 	.word	0x0800501c
+ 80018e4:	08005018 	.word	0x08005018
  80018e8:	08004f70 	.word	0x08004f70
 
 080018ec <BSP_PB_GetState>:
@@ -9963,9 +9963,9 @@ static HAL_StatusTypeDef USB_CoreReset(USB_OTG_GlobalTypeDef *USBx)
  8003e44:	e7f3      	b.n	8003e2e <__assert_func+0x12>
  8003e46:	bf00      	nop
  8003e48:	200000a4 	.word	0x200000a4
- 8003e4c:	08005027 	.word	0x08005027
- 8003e50:	08005034 	.word	0x08005034
- 8003e54:	08005062 	.word	0x08005062
+ 8003e4c:	08005023 	.word	0x08005023
+ 8003e50:	08005030 	.word	0x08005030
+ 8003e54:	0800505e 	.word	0x0800505e
 
 08003e58 <__errno>:
  8003e58:	4b01      	ldr	r3, [pc, #4]	; (8003e60 <__errno+0x8>)
@@ -10016,10 +10016,10 @@ static HAL_StatusTypeDef USB_CoreReset(USB_OTG_GlobalTypeDef *USBx)
  8003eba:	4798      	blx	r3
  8003ebc:	3601      	adds	r6, #1
  8003ebe:	e7f2      	b.n	8003ea6 <__libc_init_array+0x1e>
- 8003ec0:	08005104 	.word	0x08005104
- 8003ec4:	08005104 	.word	0x08005104
- 8003ec8:	08005104 	.word	0x08005104
- 8003ecc:	08005108 	.word	0x08005108
+ 8003ec0:	08005100 	.word	0x08005100
+ 8003ec4:	08005100 	.word	0x08005100
+ 8003ec8:	08005100 	.word	0x08005100
+ 8003ecc:	08005104 	.word	0x08005104
 
 08003ed0 <memset>:
  8003ed0:	4402      	add	r2, r0
@@ -10311,14 +10311,14 @@ static HAL_StatusTypeDef USB_CoreReset(USB_OTG_GlobalTypeDef *USBx)
  800416c:	f000 f880 	bl	8004270 <_printf_i>
  8004170:	e7e4      	b.n	800413c <_vfiprintf_r+0x208>
  8004172:	bf00      	nop
- 8004174:	080050bc 	.word	0x080050bc
- 8004178:	080050dc 	.word	0x080050dc
- 800417c:	0800509c 	.word	0x0800509c
- 8004180:	08005068 	.word	0x08005068
- 8004184:	08005072 	.word	0x08005072
+ 8004174:	080050b8 	.word	0x080050b8
+ 8004178:	080050d8 	.word	0x080050d8
+ 800417c:	08005098 	.word	0x08005098
+ 8004180:	08005064 	.word	0x08005064
+ 8004184:	0800506e 	.word	0x0800506e
  8004188:	00000000 	.word	0x00000000
  800418c:	08003f0f 	.word	0x08003f0f
- 8004190:	0800506e 	.word	0x0800506e
+ 8004190:	0800506a 	.word	0x0800506a
 
 08004194 <_printf_common>:
  8004194:	e92d 47f0 	stmdb	sp!, {r4, r5, r6, r7, r8, r9, sl, lr}
@@ -10654,8 +10654,8 @@ static HAL_StatusTypeDef USB_CoreReset(USB_OTG_GlobalTypeDef *USBx)
  80044ac:	f104 0619 	add.w	r6, r4, #25
  80044b0:	e7f5      	b.n	800449e <_printf_i+0x22e>
  80044b2:	bf00      	nop
- 80044b4:	08005079 	.word	0x08005079
- 80044b8:	0800508a 	.word	0x0800508a
+ 80044b4:	08005075 	.word	0x08005075
+ 80044b8:	08005086 	.word	0x08005086
 
 080044bc <__swbuf_r>:
  80044bc:	b5f8      	push	{r3, r4, r5, r6, r7, lr}
@@ -10729,9 +10729,9 @@ static HAL_StatusTypeDef USB_CoreReset(USB_OTG_GlobalTypeDef *USBx)
  800454c:	f04f 37ff 	mov.w	r7, #4294967295	; 0xffffffff
  8004550:	e7ea      	b.n	8004528 <__swbuf_r+0x6c>
  8004552:	bf00      	nop
- 8004554:	080050bc 	.word	0x080050bc
- 8004558:	080050dc 	.word	0x080050dc
- 800455c:	0800509c 	.word	0x0800509c
+ 8004554:	080050b8 	.word	0x080050b8
+ 8004558:	080050d8 	.word	0x080050d8
+ 800455c:	08005098 	.word	0x08005098
 
 08004560 <__swsetup_r>:
  8004560:	4b32      	ldr	r3, [pc, #200]	; (800462c <__swsetup_r+0xcc>)
@@ -10823,9 +10823,9 @@ static HAL_StatusTypeDef USB_CoreReset(USB_OTG_GlobalTypeDef *USBx)
  8004628:	e7f7      	b.n	800461a <__swsetup_r+0xba>
  800462a:	bf00      	nop
  800462c:	200000a4 	.word	0x200000a4
- 8004630:	080050bc 	.word	0x080050bc
- 8004634:	080050dc 	.word	0x080050dc
- 8004638:	0800509c 	.word	0x0800509c
+ 8004630:	080050b8 	.word	0x080050b8
+ 8004634:	080050d8 	.word	0x080050d8
+ 8004638:	08005098 	.word	0x08005098
 
 0800463c <abort>:
  800463c:	b508      	push	{r3, lr}
@@ -11009,9 +11009,9 @@ static HAL_StatusTypeDef USB_CoreReset(USB_OTG_GlobalTypeDef *USBx)
  80047be:	bf08      	it	eq
  80047c0:	68ec      	ldreq	r4, [r5, #12]
  80047c2:	e7da      	b.n	800477a <_fflush_r+0x22>
- 80047c4:	080050bc 	.word	0x080050bc
- 80047c8:	080050dc 	.word	0x080050dc
- 80047cc:	0800509c 	.word	0x0800509c
+ 80047c4:	080050b8 	.word	0x080050b8
+ 80047c8:	080050d8 	.word	0x080050d8
+ 80047cc:	08005098 	.word	0x08005098
 
 080047d0 <std>:
  80047d0:	2300      	movs	r3, #0
@@ -11136,7 +11136,7 @@ static HAL_StatusTypeDef USB_CoreReset(USB_OTG_GlobalTypeDef *USBx)
  80048e2:	61a3      	str	r3, [r4, #24]
  80048e4:	e7d2      	b.n	800488c <__sinit+0xc>
  80048e6:	bf00      	nop
- 80048e8:	08005064 	.word	0x08005064
+ 80048e8:	08005060 	.word	0x08005060
  80048ec:	08004819 	.word	0x08004819
 
 080048f0 <__sfp>:
@@ -11191,7 +11191,7 @@ static HAL_StatusTypeDef USB_CoreReset(USB_OTG_GlobalTypeDef *USBx)
  800496e:	603b      	str	r3, [r7, #0]
  8004970:	e7ee      	b.n	8004950 <__sfp+0x60>
  8004972:	bf00      	nop
- 8004974:	08005064 	.word	0x08005064
+ 8004974:	08005060 	.word	0x08005060
  8004978:	ffff0001 	.word	0xffff0001
 
 0800497c <_fwalk_reent>:
