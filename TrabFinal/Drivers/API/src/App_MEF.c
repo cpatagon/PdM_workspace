@@ -21,12 +21,12 @@
 
 #include "stm32f4xx_hal.h"  		/**< Inclusión de la biblioteca HAL. */
 #include "stm32f4xx_nucleo_144.h" 	/**< Inclusión de la biblioteca BSP. */
-
 #include <assert.h>
 #include "App_MEF.h"
 #include "API_debounce.h"
 
 #define TIME_DEBOUNCE 40 // Debounce time for the button
+#define ERROR_ASSERT 0 // value of error assert
 
 /** Variable that holds the current state of the FSM. */
 static State_MEF_t estadoMEF;
@@ -123,7 +123,7 @@ State_MEF_t update_MEF(delay_t *delay) {
 
 	default:
 		// In case of reaching an undefined state, force an interruption.
-		assert(0);
+		assert(ERROR_ASSERT);
 	}
 
 	// Return the updated FSM state.

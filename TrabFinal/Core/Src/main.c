@@ -246,8 +246,8 @@ int main(void) {
 			update_led(smileyFace);
 			if (flag) {
 				flag = false;
-				score = score + 1;          // increase the score by one
-				level_i = level_i + 1;       // increase the speed level
+				score++;          // increase the score by one
+				level_i++;       // increase the speed level
 				level_i = level_speed_update(level_i); // increase the game speed
 				// To prevent the score from overflowing
 				if (score > SCORE_MAX) {
@@ -263,7 +263,7 @@ int main(void) {
 			if (flag) {
 				flag = false;
 				score = SCORE_INI;          // reset the achieved score
-				level_i = level_i + 1;  // increase the level to raise the speed
+				level_i++;  // increase the level to raise the speed
 				level_i = level_speed_update(level_i);
 			}
 			break;

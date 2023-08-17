@@ -14,6 +14,8 @@
 #define SIGNIFICANT_BIT 0x80
 #define NEXT_BIT 1
 #define NUM_BITS 8
+#define NUM_BITS_INI 0
+#define MATRIX_INI 0
 
 /**
  * @brief GPIO Initialization Function.
@@ -45,20 +47,20 @@ static SPI_HandleTypeDef hspi3;
 static void spi_write_byte(uint8_t byte) {
 	assert_param(byte);
 	// Iterates through each of the 8 bits of the provided byte.
-	for (uint8_t i = 0; i < NUM_BITS; i++) {
+	for (uint8_t i = NUM_BITS_INI; i < NUM_BITS; i++) {
 		// Sets the clock pin to a low state.
 		// which establishes the sending of a byte.
-		HAL_GPIO_WritePin(maxport, clock_Pin, STATE_LOW);
+		HAL_GPIO_WritePin(MAXPORT, CLOCK_PIN, STATE_LOW);
 		// According to the IC requirements, sends the most
 		// significant bit (MSB) of the byte on the data pin (MOSI).
-		HAL_GPIO_WritePin(maxport, data_Pin, byte & SIGNIFICANT_BIT);
+		HAL_GPIO_WritePin(MAXPORT, DATA_PIN, byte & SIGNIFICANT_BIT);
 		// Shifts the byte to the left to prepare the next bit.
 		// This ensures the sending from the most significant bit
 		// to the least significant according to the employed IC.
 		byte = byte << NEXT_BIT;
 		// Sets the clock pin to a high state
 		// indicating the completion of the bit's transmission.
-		HAL_GPIO_WritePin(maxport, clock_Pin, STATE_HIGH);
+		HAL_GPIO_WritePin(MAXPORT, CLOCK_PIN, STATE_HIGH);
 	}
 }
 
@@ -80,10 +82,10 @@ void spi_write(uint8_t address, uint8_t cmd) {
 	/** Sets the CS (Chip Select) pin to a low state to
 	 * initiate communication with the connected slave device
 	 * at port cs_Pin via the CS cable. */
-	HAL_GPIO_WritePin(maxport, cs_Pin, STATE_LOW);
+	HAL_GPIO_WritePin(MAXPORT, CS_PIN, STATE_LOW);
 	/** Sends the pair of bytes (address and command) 'num' times
 	 * in case there are multiple screens. */
-	for (uint8_t i = 0; i < num; i++) {
+	for (uint8_t i = MATRIX_INI; i < NUM_MATRIX; i++) {
 		/* Sends the address byte to the LED IC indicating the action.
 		 * These actions can range from turning on a specific row to
 		 * defining the brightness of the LEDs. */
@@ -94,10 +96,10 @@ void spi_write(uint8_t address, uint8_t cmd) {
 	}
 	/** Sets the CS (Chip Select) pin to low, indicating
 	 * the communication will end. */
-	HAL_GPIO_WritePin(maxport, cs_Pin, STATE_LOW);
+	HAL_GPIO_WritePin(MAXPORT, CS_PIN, STATE_LOW);
 	/* Sets the CS (Chip Select) pin to high, freeing
 	 * the slave. */
-	HAL_GPIO_WritePin(maxport, cs_Pin, STATE_HIGH);
+	HAL_GPIO_WritePin(MAXPORT, CS_PIN, STATE_HIGH);
 }
 
 /**

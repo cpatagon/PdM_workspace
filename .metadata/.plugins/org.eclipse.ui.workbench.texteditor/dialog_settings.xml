@@ -1,13 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <section name="Workbench">
 	<section name="org.eclipse.ui.texteditor.FindReplaceDialog">
-		<item key="selection" value="level_max"/>
+		<item key="selection" value="DelayGame"/>
 		<item key="wrap" value="true"/>
 		<item key="casesensitive" value="false"/>
 		<item key="wholeword" value="false"/>
 		<item key="incremental" value="false"/>
 		<item key="isRegEx" value="false"/>
 		<list key="findhistory">
+			<item value="Delay_play"/>
+			<item value="LED_OFF"/>
+			<item value="LED_ON"/>
+			<item value="0xFF"/>
+			<item value="0x00"/>
+			<item value="static uint8_t smileyFace[] = { 0x3C, 0x42, 0x95, 0xA1, 0xA1, 0x95, 0x42, 0x3C }; // Smiley face for GOOD state"/>
 			<item value="level_max"/>
 			<item value="TIME1"/>
 			<item value="write_max_cmd "/>
@@ -17,15 +23,18 @@
 			<item value="COP "/>
 			<item value="COP"/>
 			<item value="LED"/>
-			<item value="LED3"/>
-			<item value="Infinite loop"/>
 		</list>
 		<list key="replacehistory">
+			<item value="DelayGame"/>
+			<item value="LD_OFF"/>
+			<item value="LD_ON"/>
+			<item value="LED_ON"/>
+			<item value="LED_OFF"/>
 		</list>
 	</section>
 	<section name="org.eclipse.ui.texteditor.FindReplaceDialog_dialogBounds">
 		<item key="DIALOG_X_ORIGIN" value="1302"/>
-		<item key="DIALOG_Y_ORIGIN" value="267"/>
+		<item key="DIALOG_Y_ORIGIN" value="266"/>
 		<item key="DIALOG_WIDTH" value="363"/>
 		<item key="DIALOG_HEIGHT" value="437"/>
 		<item key="DIALOG_FONT_NAME" value="1|Ubuntu|11.0|0|GTK|1|"/>

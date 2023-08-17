@@ -11,7 +11,10 @@
 #include <assert.h>
 
 #define TIMEGHOST 200 // delay time between ghost animation
+#define NULLGHOST 0 // Null ghost error
+#define NULLROW 0 // Null row error 
 #define ROW_MATRIX 8 // number of rows in a LED matrix display
+#define INI_ROW_MATRIX 0 // Count start row matrix led
 
 /**
  *  configuration parameters for the MAX7219 integrated circuit
@@ -74,7 +77,7 @@ State_GHOT_t ghostType = GHOST1;
  */
 void clear_led(void) {
 	assert(led_address != NULL);
-	for (int16_t j = 0; j < 8; j++) {
+	for (int16_t j = INI_ROW_MATRIX; j < ROW_MATRIX; j++) {
 		spi_write(led_address[j], clear[j]);
 	}
 }
@@ -104,7 +107,7 @@ void init_led(void) {
 
 void lit_led(void) {
 	assert(led_address !=NULL);
-	for (int16_t j = 0; j < ROW_MATRIX; j++) {
+	for (int16_t j = INI_ROW_MATRIX; j < ROW_MATRIX; j++) {
 		spi_write(led_address[j], LitMatrix[j]);
 	}
 }
@@ -118,7 +121,7 @@ void lit_led(void) {
  */
 void update_led(uint8_t paint_list[]) {
 	assert(paint_list != NULL);
-	for (int16_t j = 0; j < ROW_MATRIX; j++) {
+	for (int16_t j = INI_ROW_MATRIX; j < ROW_MATRIX; j++) {
 		spi_write(led_address[j], paint_list[j]);
 	}
 }
@@ -132,8 +135,8 @@ void update_led(uint8_t paint_list[]) {
  * @param paint_list List with the LED values.
  */
 void row_led(uint8_t row_led) {
-	assert(row_led >= 0);
-	for (int16_t j = 0; j < ROW_MATRIX; j++) {
+	assert(row_led >= NULLROW);
+	for (int16_t j = INI_ROW_MATRIX; j < ROW_MATRIX; j++) {
 		spi_write(led_address[j], row_led);
 	}
 }
@@ -147,7 +150,7 @@ void row_led(uint8_t row_led) {
  */
 
 void ghost_led(void) {
-	assert(ghostType >= 0);
+	assert(ghostType >= NULLGHOST);
 	switch (ghostType) {
 	case (GHOST1):
 		update_led(ghost1);

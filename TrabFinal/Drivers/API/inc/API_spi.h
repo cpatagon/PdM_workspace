@@ -3,13 +3,13 @@
  * @brief Library for SPI communication with the MAX7219 chip.
  * @date Aug 6, 2023
  * @author lgomez
- * 
- * 	Library responsible for initializing and writing to the selected GPIO ports 
- * 	using the SPI protocol. Configuration should be done using the STM32CubeIDE 
+ *
+ * 	Library responsible for initializing and writing to the selected GPIO ports
+ * 	using the SPI protocol. Configuration should be done using the STM32CubeIDE
  * 	for the Nucleo, setting the GPIO ports as DIN_Pin for MOSI, CS_Pin for CS, and CLK_Pin
  * 	for the SPI communication clock.
- * 
- * 
+ *
+ *
  */
 
 #ifndef API_INC_API_SPI_H_
@@ -20,15 +20,15 @@
 #include "main.h"     /**< Main file with relevant configurations and prototypes. */
 
 /** @brief GPIO port defined for communication with MAX7219. */
-#define maxport GPIOD
+#define MAXPORT GPIOD
 /** @brief MOSI (or DIN) data pin for the MAX7219. */
-#define data_Pin DIN_Pin
+#define DATA_PIN DIN_Pin
 /** @brief Chip Select (CS) pin for the MAX7219. */
-#define cs_Pin CS_Pin
+#define CS_PIN CS_Pin
 /** @brief Clock (CLK) pin for the MAX7219. */
-#define clock_Pin CLK_Pin
+#define CLOCK_PIN CLK_Pin
 /** @brief Number of dot matrix modules in use. */
-#define num 1
+#define NUM_MATRIX 1
 /**
  * @brief Function to initialize the SPI protocol.
  *

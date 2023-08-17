@@ -7,19 +7,19 @@ Idx Name          Size      VMA       LMA       File off  Algn
                   CONTENTS, ALLOC, LOAD, READONLY, DATA
   1 .text         00004ccc  080001b0  080001b0  000101b0  2**4
                   CONTENTS, ALLOC, LOAD, READONLY, CODE
-  2 .rodata       0000027c  08004e7c  08004e7c  00014e7c  2**2
+  2 .rodata       00000288  08004e7c  08004e7c  00014e7c  2**2
                   CONTENTS, ALLOC, LOAD, READONLY, DATA
-  3 .ARM.extab    00000000  080050f8  080050f8  00020108  2**0
+  3 .ARM.extab    00000000  08005104  08005104  00020108  2**0
                   CONTENTS
-  4 .ARM          00000008  080050f8  080050f8  000150f8  2**2
+  4 .ARM          00000008  08005104  08005104  00015104  2**2
                   CONTENTS, ALLOC, LOAD, READONLY, DATA
-  5 .preinit_array 00000000  08005100  08005100  00020108  2**0
+  5 .preinit_array 00000000  0800510c  0800510c  00020108  2**0
                   CONTENTS, ALLOC, LOAD, DATA
-  6 .init_array   00000004  08005100  08005100  00015100  2**2
+  6 .init_array   00000004  0800510c  0800510c  0001510c  2**2
                   CONTENTS, ALLOC, LOAD, DATA
-  7 .fini_array   00000004  08005104  08005104  00015104  2**2
+  7 .fini_array   00000004  08005110  08005110  00015110  2**2
                   CONTENTS, ALLOC, LOAD, DATA
-  8 .data         00000108  20000000  08005108  00020000  2**2
+  8 .data         00000108  20000000  08005114  00020000  2**2
                   CONTENTS, ALLOC, LOAD, DATA
   9 .ccmram       00000000  10000000  10000000  00020108  2**0
                   CONTENTS
@@ -37,15 +37,15 @@ Idx Name          Size      VMA       LMA       File off  Algn
                   CONTENTS, READONLY, DEBUGGING, OCTETS
  16 .debug_ranges 00000e88  00000000  00000000  00037460  2**3
                   CONTENTS, READONLY, DEBUGGING, OCTETS
- 17 .debug_macro  000264ce  00000000  00000000  000382e8  2**0
+ 17 .debug_macro  000264f2  00000000  00000000  000382e8  2**0
                   CONTENTS, READONLY, DEBUGGING, OCTETS
- 18 .debug_line   00012804  00000000  00000000  0005e7b6  2**0
+ 18 .debug_line   000127f9  00000000  00000000  0005e7da  2**0
                   CONTENTS, READONLY, DEBUGGING, OCTETS
- 19 .debug_str    000df19c  00000000  00000000  00070fba  2**0
+ 19 .debug_str    000df1f5  00000000  00000000  00070fd3  2**0
                   CONTENTS, READONLY, DEBUGGING, OCTETS
- 20 .comment      00000050  00000000  00000000  00150156  2**0
+ 20 .comment      00000050  00000000  00000000  001501c8  2**0
                   CONTENTS, READONLY
- 21 .debug_frame  000049c4  00000000  00000000  001501a8  2**2
+ 21 .debug_frame  000049c4  00000000  00000000  00150218  2**2
                   CONTENTS, READONLY, DEBUGGING, OCTETS
 
 Disassembly of section .text:
@@ -568,7 +568,7 @@ int main(void) {
  800064a:	4b2a      	ldr	r3, [pc, #168]	; (80006f4 <main+0x160>)
  800064c:	2200      	movs	r2, #0
  800064e:	701a      	strb	r2, [r3, #0]
-				score = score + 1;          // increase the score by one
+				score++;          // increase the score by one
  8000650:	4b2b      	ldr	r3, [pc, #172]	; (8000700 <main+0x16c>)
  8000652:	f9b3 3000 	ldrsh.w	r3, [r3]
  8000656:	b29b      	uxth	r3, r3
@@ -577,7 +577,7 @@ int main(void) {
  800065c:	b21a      	sxth	r2, r3
  800065e:	4b28      	ldr	r3, [pc, #160]	; (8000700 <main+0x16c>)
  8000660:	801a      	strh	r2, [r3, #0]
-				level_i = level_i + 1;       // increase the speed level
+				level_i++;       // increase the speed level
  8000662:	4b2d      	ldr	r3, [pc, #180]	; (8000718 <main+0x184>)
  8000664:	f9b3 3000 	ldrsh.w	r3, [r3]
  8000668:	b29b      	uxth	r3, r3
@@ -628,7 +628,7 @@ int main(void) {
  80006ac:	4b14      	ldr	r3, [pc, #80]	; (8000700 <main+0x16c>)
  80006ae:	2200      	movs	r2, #0
  80006b0:	801a      	strh	r2, [r3, #0]
-				level_i = level_i + 1;  // increase the level to raise the speed
+				level_i++;  // increase the level to raise the speed
  80006b2:	4b19      	ldr	r3, [pc, #100]	; (8000718 <main+0x184>)
  80006b4:	f9b3 3000 	ldrsh.w	r3, [r3]
  80006b8:	b29b      	uxth	r3, r3
@@ -676,7 +676,7 @@ int main(void) {
  8000714:	20000000 	.word	0x20000000
  8000718:	200008b4 	.word	0x200008b4
  800071c:	08004e7c 	.word	0x08004e7c
- 8000720:	08004fa0 	.word	0x08004fa0
+ 8000720:	08004fac 	.word	0x08004fac
  8000724:	08004e80 	.word	0x08004e80
 
 08000728 <SystemClock_Config>:
@@ -1110,9 +1110,9 @@ static int16_t level_speed_update(int16_t level_n) {
  800099c:	bd80      	pop	{r7, pc}
  800099e:	bf00      	nop
  80009a0:	08004e94 	.word	0x08004e94
- 80009a4:	08004fa8 	.word	0x08004fa8
+ 80009a4:	08004fb4 	.word	0x08004fb4
  80009a8:	08004e80 	.word	0x08004e80
- 80009ac:	08004f90 	.word	0x08004f90
+ 80009ac:	08004f9c 	.word	0x08004f9c
  80009b0:	200008b8 	.word	0x200008b8
  80009b4:	200008a4 	.word	0x200008a4
 
@@ -2341,7 +2341,7 @@ LoopFillZerobss:
   ldr r1, =_edata
  8000ff8:	20000108 	.word	0x20000108
   ldr r2, =_sidata
- 8000ffc:	08005108 	.word	0x08005108
+ 8000ffc:	08005114 	.word	0x08005114
   ldr r2, =_sbss
  8001000:	20000108 	.word	0x20000108
   ldr r4, =_ebss
@@ -2573,7 +2573,7 @@ bool_t debounceFSM_update() {
  800112a:	bd80      	pop	{r7, pc}
  800112c:	200008d0 	.word	0x200008d0
  8001130:	08004ef8 	.word	0x08004ef8
- 8001134:	08004fd4 	.word	0x08004fd4
+ 8001134:	08004fe0 	.word	0x08004fe0
  8001138:	08004ed4 	.word	0x08004ed4
  800113c:	200008cc 	.word	0x200008cc
  8001140:	200008cd 	.word	0x200008cd
@@ -2646,7 +2646,7 @@ void delayInit(delay_t *delay, tick_t duration) {
  80011a4:	46bd      	mov	sp, r7
  80011a6:	bd80      	pop	{r7, pc}
  80011a8:	08004f04 	.word	0x08004f04
- 80011ac:	08004fe8 	.word	0x08004fe8
+ 80011ac:	08004ff4 	.word	0x08004ff4
  80011b0:	08004f14 	.word	0x08004f14
 
 080011b4 <delayRead>:
@@ -2724,7 +2724,7 @@ bool_t delayRead(delay_t *delay) {
  800121e:	bd80      	pop	{r7, pc}
  8001220:	200008d4 	.word	0x200008d4
  8001224:	08004f04 	.word	0x08004f04
- 8001228:	08004ff4 	.word	0x08004ff4
+ 8001228:	08005000 	.word	0x08005000
  800122c:	08004f14 	.word	0x08004f14
 
 08001230 <clear_led>:
@@ -2738,7 +2738,7 @@ void clear_led(void) {
  8001232:	b082      	sub	sp, #8
  8001234:	af00      	add	r7, sp, #0
 	assert(led_address != NULL);
-	for (int16_t j = 0; j < 8; j++) {
+	for (int16_t j = INI_ROW_MATRIX; j < ROW_MATRIX; j++) {
  8001236:	2300      	movs	r3, #0
  8001238:	80fb      	strh	r3, [r7, #6]
  800123a:	e011      	b.n	8001260 <clear_led+0x30>
@@ -2752,7 +2752,7 @@ void clear_led(void) {
  800124c:	4619      	mov	r1, r3
  800124e:	4610      	mov	r0, r2
  8001250:	f000 f92c 	bl	80014ac <spi_write>
-	for (int16_t j = 0; j < 8; j++) {
+	for (int16_t j = INI_ROW_MATRIX; j < ROW_MATRIX; j++) {
  8001254:	f9b7 3006 	ldrsh.w	r3, [r7, #6]
  8001258:	b29b      	uxth	r3, r3
  800125a:	3301      	adds	r3, #1
@@ -2831,10 +2831,10 @@ void update_led(uint8_t paint_list[]) {
  80012cc:	d105      	bne.n	80012da <update_led+0x1a>
  80012ce:	4b12      	ldr	r3, [pc, #72]	; (8001318 <update_led+0x58>)
  80012d0:	4a12      	ldr	r2, [pc, #72]	; (800131c <update_led+0x5c>)
- 80012d2:	2178      	movs	r1, #120	; 0x78
+ 80012d2:	217b      	movs	r1, #123	; 0x7b
  80012d4:	4812      	ldr	r0, [pc, #72]	; (8001320 <update_led+0x60>)
  80012d6:	f002 fda1 	bl	8003e1c <__assert_func>
-	for (int16_t j = 0; j < ROW_MATRIX; j++) {
+	for (int16_t j = INI_ROW_MATRIX; j < ROW_MATRIX; j++) {
  80012da:	2300      	movs	r3, #0
  80012dc:	81fb      	strh	r3, [r7, #14]
  80012de:	e011      	b.n	8001304 <update_led+0x44>
@@ -2848,7 +2848,7 @@ void update_led(uint8_t paint_list[]) {
  80012f0:	781b      	ldrb	r3, [r3, #0]
  80012f2:	4619      	mov	r1, r3
  80012f4:	f000 f8da 	bl	80014ac <spi_write>
-	for (int16_t j = 0; j < ROW_MATRIX; j++) {
+	for (int16_t j = INI_ROW_MATRIX; j < ROW_MATRIX; j++) {
  80012f8:	f9b7 300e 	ldrsh.w	r3, [r7, #14]
  80012fc:	b29b      	uxth	r3, r3
  80012fe:	3301      	adds	r3, #1
@@ -2866,7 +2866,7 @@ void update_led(uint8_t paint_list[]) {
  8001314:	bd80      	pop	{r7, pc}
  8001316:	bf00      	nop
  8001318:	08004f34 	.word	0x08004f34
- 800131c:	08005000 	.word	0x08005000
+ 800131c:	0800500c 	.word	0x0800500c
  8001320:	08004f48 	.word	0x08004f48
  8001324:	20000068 	.word	0x20000068
 
@@ -2879,7 +2879,7 @@ void update_led(uint8_t paint_list[]) {
 void ghost_led(void) {
  8001328:	b580      	push	{r7, lr}
  800132a:	af00      	add	r7, sp, #0
-	assert(ghostType >= 0);
+	assert(ghostType >= NULLGHOST);
 	switch (ghostType) {
  800132c:	4b3a      	ldr	r3, [pc, #232]	; (8001418 <ghost_led+0xf0>)
  800132e:	781b      	ldrb	r3, [r3, #0]
@@ -3001,7 +3001,7 @@ void ghost_led(void) {
 		assert(0);
  80013f0:	4b10      	ldr	r3, [pc, #64]	; (8001434 <ghost_led+0x10c>)
  80013f2:	4a11      	ldr	r2, [pc, #68]	; (8001438 <ghost_led+0x110>)
- 80013f4:	21be      	movs	r1, #190	; 0xbe
+ 80013f4:	21c1      	movs	r1, #193	; 0xc1
  80013f6:	4811      	ldr	r0, [pc, #68]	; (800143c <ghost_led+0x114>)
  80013f8:	f002 fd10 	bl	8003e1c <__assert_func>
 		break;
@@ -3034,7 +3034,7 @@ void ghost_led(void) {
  800142c:	20000088 	.word	0x20000088
  8001430:	20000090 	.word	0x20000090
  8001434:	08004f68 	.word	0x08004f68
- 8001438:	0800500c 	.word	0x0800500c
+ 8001438:	08005018 	.word	0x08005018
  800143c:	08004f48 	.word	0x08004f48
 
 08001440 <spi_init>:
@@ -3068,20 +3068,20 @@ static void spi_write_byte(uint8_t byte) {
  8001458:	71fb      	strb	r3, [r7, #7]
 	assert_param(byte);
 	// Iterates through each of the 8 bits of the provided byte.
-	for (uint8_t i = 0; i < NUM_BITS; i++) {
+	for (uint8_t i = NUM_BITS_INI; i < NUM_BITS; i++) {
  800145a:	2300      	movs	r3, #0
  800145c:	73fb      	strb	r3, [r7, #15]
  800145e:	e01b      	b.n	8001498 <spi_write_byte+0x48>
 		// Sets the clock pin to a low state.
 		// which establishes the sending of a byte.
-		HAL_GPIO_WritePin(maxport, clock_Pin, STATE_LOW);
+		HAL_GPIO_WritePin(MAXPORT, CLOCK_PIN, STATE_LOW);
  8001460:	2200      	movs	r2, #0
  8001462:	f44f 5100 	mov.w	r1, #8192	; 0x2000
  8001466:	4810      	ldr	r0, [pc, #64]	; (80014a8 <spi_write_byte+0x58>)
  8001468:	f001 f8be 	bl	80025e8 <HAL_GPIO_WritePin>
 		// According to the IC requirements, sends the most
 		// significant bit (MSB) of the byte on the data pin (MOSI).
-		HAL_GPIO_WritePin(maxport, data_Pin, byte & SIGNIFICANT_BIT);
+		HAL_GPIO_WritePin(MAXPORT, DATA_PIN, byte & SIGNIFICANT_BIT);
  800146c:	79fb      	ldrb	r3, [r7, #7]
  800146e:	f023 037f 	bic.w	r3, r3, #127	; 0x7f
  8001472:	b2db      	uxtb	r3, r3
@@ -3098,12 +3098,12 @@ static void spi_write_byte(uint8_t byte) {
  8001484:	71fb      	strb	r3, [r7, #7]
 		// Sets the clock pin to a high state
 		// indicating the completion of the bit's transmission.
-		HAL_GPIO_WritePin(maxport, clock_Pin, STATE_HIGH);
+		HAL_GPIO_WritePin(MAXPORT, CLOCK_PIN, STATE_HIGH);
  8001486:	2201      	movs	r2, #1
  8001488:	f44f 5100 	mov.w	r1, #8192	; 0x2000
  800148c:	4806      	ldr	r0, [pc, #24]	; (80014a8 <spi_write_byte+0x58>)
  800148e:	f001 f8ab 	bl	80025e8 <HAL_GPIO_WritePin>
-	for (uint8_t i = 0; i < NUM_BITS; i++) {
+	for (uint8_t i = NUM_BITS_INI; i < NUM_BITS; i++) {
  8001492:	7bfb      	ldrb	r3, [r7, #15]
  8001494:	3301      	adds	r3, #1
  8001496:	73fb      	strb	r3, [r7, #15]
@@ -3139,14 +3139,14 @@ void spi_write(uint8_t address, uint8_t cmd) {
 	/** Sets the CS (Chip Select) pin to a low state to
 	 * initiate communication with the connected slave device
 	 * at port cs_Pin via the CS cable. */
-	HAL_GPIO_WritePin(maxport, cs_Pin, STATE_LOW);
+	HAL_GPIO_WritePin(MAXPORT, CS_PIN, STATE_LOW);
  80014bc:	2200      	movs	r2, #0
  80014be:	f44f 6100 	mov.w	r1, #2048	; 0x800
  80014c2:	4812      	ldr	r0, [pc, #72]	; (800150c <spi_write+0x60>)
  80014c4:	f001 f890 	bl	80025e8 <HAL_GPIO_WritePin>
 	/** Sends the pair of bytes (address and command) 'num' times
 	 * in case there are multiple screens. */
-	for (uint8_t i = 0; i < num; i++) {
+	for (uint8_t i = MATRIX_INI; i < NUM_MATRIX; i++) {
  80014c8:	2300      	movs	r3, #0
  80014ca:	73fb      	strb	r3, [r7, #15]
  80014cc:	e00a      	b.n	80014e4 <spi_write+0x38>
@@ -3163,7 +3163,7 @@ void spi_write(uint8_t address, uint8_t cmd) {
  80014d6:	79bb      	ldrb	r3, [r7, #6]
  80014d8:	4618      	mov	r0, r3
  80014da:	f7ff ffb9 	bl	8001450 <spi_write_byte>
-	for (uint8_t i = 0; i < num; i++) {
+	for (uint8_t i = MATRIX_INI; i < NUM_MATRIX; i++) {
  80014de:	7bfb      	ldrb	r3, [r7, #15]
  80014e0:	3301      	adds	r3, #1
  80014e2:	73fb      	strb	r3, [r7, #15]
@@ -3173,14 +3173,14 @@ void spi_write(uint8_t address, uint8_t cmd) {
 	}
 	/** Sets the CS (Chip Select) pin to low, indicating
 	 * the communication will end. */
-	HAL_GPIO_WritePin(maxport, cs_Pin, STATE_LOW);
+	HAL_GPIO_WritePin(MAXPORT, CS_PIN, STATE_LOW);
  80014ea:	2200      	movs	r2, #0
  80014ec:	f44f 6100 	mov.w	r1, #2048	; 0x800
  80014f0:	4806      	ldr	r0, [pc, #24]	; (800150c <spi_write+0x60>)
  80014f2:	f001 f879 	bl	80025e8 <HAL_GPIO_WritePin>
 	/* Sets the CS (Chip Select) pin to high, freeing
 	 * the slave. */
-	HAL_GPIO_WritePin(maxport, cs_Pin, STATE_HIGH);
+	HAL_GPIO_WritePin(MAXPORT, CS_PIN, STATE_HIGH);
  80014f6:	2201      	movs	r2, #1
  80014f8:	f44f 6100 	mov.w	r1, #2048	; 0x800
  80014fc:	4803      	ldr	r0, [pc, #12]	; (800150c <spi_write+0x60>)
@@ -3774,7 +3774,7 @@ State_MEF_t update_MEF(delay_t *delay) {
 
 	default:
 		// In case of reaching an undefined state, force an interruption.
-		assert(0);
+		assert(ERROR_ASSERT);
  80018ac:	4b0c      	ldr	r3, [pc, #48]	; (80018e0 <update_MEF+0x198>)
  80018ae:	4a0d      	ldr	r2, [pc, #52]	; (80018e4 <update_MEF+0x19c>)
  80018b0:	217e      	movs	r1, #126	; 0x7e
@@ -3811,8 +3811,8 @@ State_MEF_t update_MEF(delay_t *delay) {
  80018da:	bf00      	nop
  80018dc:	20000948 	.word	0x20000948
  80018e0:	08004f6c 	.word	0x08004f6c
- 80018e4:	08005018 	.word	0x08005018
- 80018e8:	08004f70 	.word	0x08004f70
+ 80018e4:	08005024 	.word	0x08005024
+ 80018e8:	08004f7c 	.word	0x08004f7c
 
 080018ec <BSP_PB_GetState>:
   * @param  Button: Specifies the Button to be checked.
@@ -7699,7 +7699,7 @@ HAL_StatusTypeDef HAL_RCC_ClockConfig(RCC_ClkInitTypeDef  *RCC_ClkInitStruct, ui
  8002efa:	bf00      	nop
  8002efc:	40023c00 	.word	0x40023c00
  8002f00:	40023800 	.word	0x40023800
- 8002f04:	08004fbc 	.word	0x08004fbc
+ 8002f04:	08004fc8 	.word	0x08004fc8
  8002f08:	20000060 	.word	0x20000060
  8002f0c:	2000009c 	.word	0x2000009c
 
@@ -8001,7 +8001,7 @@ uint32_t HAL_RCC_GetPCLK1Freq(void)
  8003150:	4618      	mov	r0, r3
  8003152:	bd80      	pop	{r7, pc}
  8003154:	40023800 	.word	0x40023800
- 8003158:	08004fcc 	.word	0x08004fcc
+ 8003158:	08004fd8 	.word	0x08004fd8
 
 0800315c <HAL_RCC_GetPCLK2Freq>:
   * @note   Each time PCLK2 changes, this function must be called to update the
@@ -8027,7 +8027,7 @@ uint32_t HAL_RCC_GetPCLK2Freq(void)
  8003178:	4618      	mov	r0, r3
  800317a:	bd80      	pop	{r7, pc}
  800317c:	40023800 	.word	0x40023800
- 8003180:	08004fcc 	.word	0x08004fcc
+ 8003180:	08004fd8 	.word	0x08004fd8
 
 08003184 <HAL_SPI_Init>:
   * @param  hspi pointer to a SPI_HandleTypeDef structure that contains
@@ -9962,9 +9962,9 @@ static HAL_StatusTypeDef USB_CoreReset(USB_OTG_GlobalTypeDef *USBx)
  8003e44:	e7f3      	b.n	8003e2e <__assert_func+0x12>
  8003e46:	bf00      	nop
  8003e48:	200000a4 	.word	0x200000a4
- 8003e4c:	08005023 	.word	0x08005023
- 8003e50:	08005030 	.word	0x08005030
- 8003e54:	0800505e 	.word	0x0800505e
+ 8003e4c:	0800502f 	.word	0x0800502f
+ 8003e50:	0800503c 	.word	0x0800503c
+ 8003e54:	0800506a 	.word	0x0800506a
 
 08003e58 <__errno>:
  8003e58:	4b01      	ldr	r3, [pc, #4]	; (8003e60 <__errno+0x8>)
@@ -10015,10 +10015,10 @@ static HAL_StatusTypeDef USB_CoreReset(USB_OTG_GlobalTypeDef *USBx)
  8003eba:	4798      	blx	r3
  8003ebc:	3601      	adds	r6, #1
  8003ebe:	e7f2      	b.n	8003ea6 <__libc_init_array+0x1e>
- 8003ec0:	08005100 	.word	0x08005100
- 8003ec4:	08005100 	.word	0x08005100
- 8003ec8:	08005100 	.word	0x08005100
- 8003ecc:	08005104 	.word	0x08005104
+ 8003ec0:	0800510c 	.word	0x0800510c
+ 8003ec4:	0800510c 	.word	0x0800510c
+ 8003ec8:	0800510c 	.word	0x0800510c
+ 8003ecc:	08005110 	.word	0x08005110
 
 08003ed0 <memset>:
  8003ed0:	4402      	add	r2, r0
@@ -10310,14 +10310,14 @@ static HAL_StatusTypeDef USB_CoreReset(USB_OTG_GlobalTypeDef *USBx)
  800416c:	f000 f880 	bl	8004270 <_printf_i>
  8004170:	e7e4      	b.n	800413c <_vfiprintf_r+0x208>
  8004172:	bf00      	nop
- 8004174:	080050b8 	.word	0x080050b8
- 8004178:	080050d8 	.word	0x080050d8
- 800417c:	08005098 	.word	0x08005098
- 8004180:	08005064 	.word	0x08005064
- 8004184:	0800506e 	.word	0x0800506e
+ 8004174:	080050c4 	.word	0x080050c4
+ 8004178:	080050e4 	.word	0x080050e4
+ 800417c:	080050a4 	.word	0x080050a4
+ 8004180:	08005070 	.word	0x08005070
+ 8004184:	0800507a 	.word	0x0800507a
  8004188:	00000000 	.word	0x00000000
  800418c:	08003f0f 	.word	0x08003f0f
- 8004190:	0800506a 	.word	0x0800506a
+ 8004190:	08005076 	.word	0x08005076
 
 08004194 <_printf_common>:
  8004194:	e92d 47f0 	stmdb	sp!, {r4, r5, r6, r7, r8, r9, sl, lr}
@@ -10653,8 +10653,8 @@ static HAL_StatusTypeDef USB_CoreReset(USB_OTG_GlobalTypeDef *USBx)
  80044ac:	f104 0619 	add.w	r6, r4, #25
  80044b0:	e7f5      	b.n	800449e <_printf_i+0x22e>
  80044b2:	bf00      	nop
- 80044b4:	08005075 	.word	0x08005075
- 80044b8:	08005086 	.word	0x08005086
+ 80044b4:	08005081 	.word	0x08005081
+ 80044b8:	08005092 	.word	0x08005092
 
 080044bc <__swbuf_r>:
  80044bc:	b5f8      	push	{r3, r4, r5, r6, r7, lr}
@@ -10728,9 +10728,9 @@ static HAL_StatusTypeDef USB_CoreReset(USB_OTG_GlobalTypeDef *USBx)
  800454c:	f04f 37ff 	mov.w	r7, #4294967295	; 0xffffffff
  8004550:	e7ea      	b.n	8004528 <__swbuf_r+0x6c>
  8004552:	bf00      	nop
- 8004554:	080050b8 	.word	0x080050b8
- 8004558:	080050d8 	.word	0x080050d8
- 800455c:	08005098 	.word	0x08005098
+ 8004554:	080050c4 	.word	0x080050c4
+ 8004558:	080050e4 	.word	0x080050e4
+ 800455c:	080050a4 	.word	0x080050a4
 
 08004560 <__swsetup_r>:
  8004560:	4b32      	ldr	r3, [pc, #200]	; (800462c <__swsetup_r+0xcc>)
@@ -10822,9 +10822,9 @@ static HAL_StatusTypeDef USB_CoreReset(USB_OTG_GlobalTypeDef *USBx)
  8004628:	e7f7      	b.n	800461a <__swsetup_r+0xba>
  800462a:	bf00      	nop
  800462c:	200000a4 	.word	0x200000a4
- 8004630:	080050b8 	.word	0x080050b8
- 8004634:	080050d8 	.word	0x080050d8
- 8004638:	08005098 	.word	0x08005098
+ 8004630:	080050c4 	.word	0x080050c4
+ 8004634:	080050e4 	.word	0x080050e4
+ 8004638:	080050a4 	.word	0x080050a4
 
 0800463c <abort>:
  800463c:	b508      	push	{r3, lr}
@@ -11008,9 +11008,9 @@ static HAL_StatusTypeDef USB_CoreReset(USB_OTG_GlobalTypeDef *USBx)
  80047be:	bf08      	it	eq
  80047c0:	68ec      	ldreq	r4, [r5, #12]
  80047c2:	e7da      	b.n	800477a <_fflush_r+0x22>
- 80047c4:	080050b8 	.word	0x080050b8
- 80047c8:	080050d8 	.word	0x080050d8
- 80047cc:	08005098 	.word	0x08005098
+ 80047c4:	080050c4 	.word	0x080050c4
+ 80047c8:	080050e4 	.word	0x080050e4
+ 80047cc:	080050a4 	.word	0x080050a4
 
 080047d0 <std>:
  80047d0:	2300      	movs	r3, #0
@@ -11135,7 +11135,7 @@ static HAL_StatusTypeDef USB_CoreReset(USB_OTG_GlobalTypeDef *USBx)
  80048e2:	61a3      	str	r3, [r4, #24]
  80048e4:	e7d2      	b.n	800488c <__sinit+0xc>
  80048e6:	bf00      	nop
- 80048e8:	08005060 	.word	0x08005060
+ 80048e8:	0800506c 	.word	0x0800506c
  80048ec:	08004819 	.word	0x08004819
 
 080048f0 <__sfp>:
@@ -11190,7 +11190,7 @@ static HAL_StatusTypeDef USB_CoreReset(USB_OTG_GlobalTypeDef *USBx)
  800496e:	603b      	str	r3, [r7, #0]
  8004970:	e7ee      	b.n	8004950 <__sfp+0x60>
  8004972:	bf00      	nop
- 8004974:	08005060 	.word	0x08005060
+ 8004974:	0800506c 	.word	0x0800506c
  8004978:	ffff0001 	.word	0xffff0001
 
 0800497c <_fwalk_reent>:
