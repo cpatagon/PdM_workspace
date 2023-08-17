@@ -37,15 +37,15 @@ Idx Name          Size      VMA       LMA       File off  Algn
                   CONTENTS, READONLY, DEBUGGING, OCTETS
  16 .debug_ranges 00000e88  00000000  00000000  00037460  2**3
                   CONTENTS, READONLY, DEBUGGING, OCTETS
- 17 .debug_macro  000264b3  00000000  00000000  000382e8  2**0
+ 17 .debug_macro  000264ce  00000000  00000000  000382e8  2**0
                   CONTENTS, READONLY, DEBUGGING, OCTETS
- 18 .debug_line   00012802  00000000  00000000  0005e79b  2**0
+ 18 .debug_line   00012804  00000000  00000000  0005e7b6  2**0
                   CONTENTS, READONLY, DEBUGGING, OCTETS
- 19 .debug_str    000df18f  00000000  00000000  00070f9d  2**0
+ 19 .debug_str    000df19d  00000000  00000000  00070fba  2**0
                   CONTENTS, READONLY, DEBUGGING, OCTETS
- 20 .comment      00000050  00000000  00000000  0015012c  2**0
+ 20 .comment      00000050  00000000  00000000  00150157  2**0
                   CONTENTS, READONLY
- 21 .debug_frame  000049c4  00000000  00000000  0015017c  2**2
+ 21 .debug_frame  000049c4  00000000  00000000  001501a8  2**2
                   CONTENTS, READONLY, DEBUGGING, OCTETS
 
 Disassembly of section .text:
@@ -495,117 +495,117 @@ int main(void) {
  80005dc:	461a      	mov	r2, r3
  80005de:	4b44      	ldr	r3, [pc, #272]	; (80006f0 <main+0x15c>)
  80005e0:	701a      	strb	r2, [r3, #0]
-		// To prevent the score from overflowing
-		if (score > SCORE_MAX) {
- 80005e2:	4b47      	ldr	r3, [pc, #284]	; (8000700 <main+0x16c>)
- 80005e4:	f9b3 3000 	ldrsh.w	r3, [r3]
- 80005e8:	2b05      	cmp	r3, #5
- 80005ea:	dd02      	ble.n	80005f2 <main+0x5e>
-			score = SCORE_INI;
- 80005ec:	4b44      	ldr	r3, [pc, #272]	; (8000700 <main+0x16c>)
- 80005ee:	2200      	movs	r2, #0
- 80005f0:	801a      	strh	r2, [r3, #0]
-		}
 
 		/* Depending on the current state, display a specific
 		 * pattern or image on the LED matrix.
 		 * */
 		switch (state_FSM) {
- 80005f2:	4b3f      	ldr	r3, [pc, #252]	; (80006f0 <main+0x15c>)
- 80005f4:	781b      	ldrb	r3, [r3, #0]
- 80005f6:	2b05      	cmp	r3, #5
- 80005f8:	d86f      	bhi.n	80006da <main+0x146>
- 80005fa:	a201      	add	r2, pc, #4	; (adr r2, 8000600 <main+0x6c>)
- 80005fc:	f852 f023 	ldr.w	pc, [r2, r3, lsl #2]
- 8000600:	08000619 	.word	0x08000619
- 8000604:	08000635 	.word	0x08000635
- 8000608:	0800063d 	.word	0x0800063d
- 800060c:	08000645 	.word	0x08000645
- 8000610:	0800064d 	.word	0x0800064d
- 8000614:	0800069b 	.word	0x0800069b
+ 80005e2:	4b43      	ldr	r3, [pc, #268]	; (80006f0 <main+0x15c>)
+ 80005e4:	781b      	ldrb	r3, [r3, #0]
+ 80005e6:	2b05      	cmp	r3, #5
+ 80005e8:	d877      	bhi.n	80006da <main+0x146>
+ 80005ea:	a201      	add	r2, pc, #4	; (adr r2, 80005f0 <main+0x5c>)
+ 80005ec:	f852 f023 	ldr.w	pc, [r2, r3, lsl #2]
+ 80005f0:	08000609 	.word	0x08000609
+ 80005f4:	08000625 	.word	0x08000625
+ 80005f8:	0800062d 	.word	0x0800062d
+ 80005fc:	08000635 	.word	0x08000635
+ 8000600:	0800063d 	.word	0x0800063d
+ 8000604:	0800069b 	.word	0x0800069b
 		case SET_ini:
 			flag = true;
- 8000618:	4b36      	ldr	r3, [pc, #216]	; (80006f4 <main+0x160>)
- 800061a:	2201      	movs	r2, #1
- 800061c:	701a      	strb	r2, [r3, #0]
+ 8000608:	4b3a      	ldr	r3, [pc, #232]	; (80006f4 <main+0x160>)
+ 800060a:	2201      	movs	r2, #1
+ 800060c:	701a      	strb	r2, [r3, #0]
 			// Light up the LED matrix indicating the achieved score
 			update_led(levels_led[score]);
- 800061e:	4b38      	ldr	r3, [pc, #224]	; (8000700 <main+0x16c>)
- 8000620:	f9b3 3000 	ldrsh.w	r3, [r3]
- 8000624:	461a      	mov	r2, r3
- 8000626:	4b37      	ldr	r3, [pc, #220]	; (8000704 <main+0x170>)
- 8000628:	f853 3022 	ldr.w	r3, [r3, r2, lsl #2]
- 800062c:	4618      	mov	r0, r3
- 800062e:	f000 fe47 	bl	80012c0 <update_led>
+ 800060e:	4b3c      	ldr	r3, [pc, #240]	; (8000700 <main+0x16c>)
+ 8000610:	f9b3 3000 	ldrsh.w	r3, [r3]
+ 8000614:	461a      	mov	r2, r3
+ 8000616:	4b3b      	ldr	r3, [pc, #236]	; (8000704 <main+0x170>)
+ 8000618:	f853 3022 	ldr.w	r3, [r3, r2, lsl #2]
+ 800061c:	4618      	mov	r0, r3
+ 800061e:	f000 fe4f 	bl	80012c0 <update_led>
 			// lit_led();
 			break;
- 8000632:	e05c      	b.n	80006ee <main+0x15a>
+ 8000622:	e064      	b.n	80006ee <main+0x15a>
 
 		case FIRST:
 			// In the first state, display the pattern or image 'A' on the LED matrix.
 			update_led(A);
- 8000634:	4834      	ldr	r0, [pc, #208]	; (8000708 <main+0x174>)
- 8000636:	f000 fe43 	bl	80012c0 <update_led>
+ 8000624:	4838      	ldr	r0, [pc, #224]	; (8000708 <main+0x174>)
+ 8000626:	f000 fe4b 	bl	80012c0 <update_led>
 			break;
- 800063a:	e058      	b.n	80006ee <main+0x15a>
+ 800062a:	e060      	b.n	80006ee <main+0x15a>
 
 		case SECOND:
 			// In the second state, display the pattern or image 'B'.
 			update_led(B);
- 800063c:	4833      	ldr	r0, [pc, #204]	; (800070c <main+0x178>)
- 800063e:	f000 fe3f 	bl	80012c0 <update_led>
+ 800062c:	4837      	ldr	r0, [pc, #220]	; (800070c <main+0x178>)
+ 800062e:	f000 fe47 	bl	80012c0 <update_led>
 			break;
- 8000642:	e054      	b.n	80006ee <main+0x15a>
+ 8000632:	e05c      	b.n	80006ee <main+0x15a>
 
 		case THIRD:
 			// In the third state, display the pattern or image 'C'.
 			update_led(C);
- 8000644:	4832      	ldr	r0, [pc, #200]	; (8000710 <main+0x17c>)
- 8000646:	f000 fe3b 	bl	80012c0 <update_led>
+ 8000634:	4836      	ldr	r0, [pc, #216]	; (8000710 <main+0x17c>)
+ 8000636:	f000 fe43 	bl	80012c0 <update_led>
 			break;
- 800064a:	e050      	b.n	80006ee <main+0x15a>
+ 800063a:	e058      	b.n	80006ee <main+0x15a>
 
 		case GOOD:
 			// If everything is good, display a smiley face on the LED matrix.
 			update_led(smileyFace);
- 800064c:	4831      	ldr	r0, [pc, #196]	; (8000714 <main+0x180>)
- 800064e:	f000 fe37 	bl	80012c0 <update_led>
+ 800063c:	4835      	ldr	r0, [pc, #212]	; (8000714 <main+0x180>)
+ 800063e:	f000 fe3f 	bl	80012c0 <update_led>
 			if (flag) {
- 8000652:	4b28      	ldr	r3, [pc, #160]	; (80006f4 <main+0x160>)
- 8000654:	781b      	ldrb	r3, [r3, #0]
- 8000656:	2b00      	cmp	r3, #0
- 8000658:	d046      	beq.n	80006e8 <main+0x154>
+ 8000642:	4b2c      	ldr	r3, [pc, #176]	; (80006f4 <main+0x160>)
+ 8000644:	781b      	ldrb	r3, [r3, #0]
+ 8000646:	2b00      	cmp	r3, #0
+ 8000648:	d04e      	beq.n	80006e8 <main+0x154>
 				flag = false;
- 800065a:	4b26      	ldr	r3, [pc, #152]	; (80006f4 <main+0x160>)
- 800065c:	2200      	movs	r2, #0
- 800065e:	701a      	strb	r2, [r3, #0]
+ 800064a:	4b2a      	ldr	r3, [pc, #168]	; (80006f4 <main+0x160>)
+ 800064c:	2200      	movs	r2, #0
+ 800064e:	701a      	strb	r2, [r3, #0]
 				score = score + 1;          // increase the score by one
- 8000660:	4b27      	ldr	r3, [pc, #156]	; (8000700 <main+0x16c>)
- 8000662:	f9b3 3000 	ldrsh.w	r3, [r3]
- 8000666:	b29b      	uxth	r3, r3
- 8000668:	3301      	adds	r3, #1
- 800066a:	b29b      	uxth	r3, r3
- 800066c:	b21a      	sxth	r2, r3
- 800066e:	4b24      	ldr	r3, [pc, #144]	; (8000700 <main+0x16c>)
- 8000670:	801a      	strh	r2, [r3, #0]
+ 8000650:	4b2b      	ldr	r3, [pc, #172]	; (8000700 <main+0x16c>)
+ 8000652:	f9b3 3000 	ldrsh.w	r3, [r3]
+ 8000656:	b29b      	uxth	r3, r3
+ 8000658:	3301      	adds	r3, #1
+ 800065a:	b29b      	uxth	r3, r3
+ 800065c:	b21a      	sxth	r2, r3
+ 800065e:	4b28      	ldr	r3, [pc, #160]	; (8000700 <main+0x16c>)
+ 8000660:	801a      	strh	r2, [r3, #0]
 				level_i = level_i + 1;       // increase the speed level
- 8000672:	4b29      	ldr	r3, [pc, #164]	; (8000718 <main+0x184>)
- 8000674:	f9b3 3000 	ldrsh.w	r3, [r3]
- 8000678:	b29b      	uxth	r3, r3
- 800067a:	3301      	adds	r3, #1
- 800067c:	b29b      	uxth	r3, r3
- 800067e:	b21a      	sxth	r2, r3
- 8000680:	4b25      	ldr	r3, [pc, #148]	; (8000718 <main+0x184>)
- 8000682:	801a      	strh	r2, [r3, #0]
+ 8000662:	4b2d      	ldr	r3, [pc, #180]	; (8000718 <main+0x184>)
+ 8000664:	f9b3 3000 	ldrsh.w	r3, [r3]
+ 8000668:	b29b      	uxth	r3, r3
+ 800066a:	3301      	adds	r3, #1
+ 800066c:	b29b      	uxth	r3, r3
+ 800066e:	b21a      	sxth	r2, r3
+ 8000670:	4b29      	ldr	r3, [pc, #164]	; (8000718 <main+0x184>)
+ 8000672:	801a      	strh	r2, [r3, #0]
 				level_i = level_speed_update(level_i); // increase the game speed
+ 8000674:	4b28      	ldr	r3, [pc, #160]	; (8000718 <main+0x184>)
+ 8000676:	f9b3 3000 	ldrsh.w	r3, [r3]
+ 800067a:	4618      	mov	r0, r3
+ 800067c:	f000 f966 	bl	800094c <level_speed_update>
+ 8000680:	4603      	mov	r3, r0
+ 8000682:	461a      	mov	r2, r3
  8000684:	4b24      	ldr	r3, [pc, #144]	; (8000718 <main+0x184>)
- 8000686:	f9b3 3000 	ldrsh.w	r3, [r3]
- 800068a:	4618      	mov	r0, r3
- 800068c:	f000 f95e 	bl	800094c <level_speed_update>
- 8000690:	4603      	mov	r3, r0
- 8000692:	461a      	mov	r2, r3
- 8000694:	4b20      	ldr	r3, [pc, #128]	; (8000718 <main+0x184>)
+ 8000686:	801a      	strh	r2, [r3, #0]
+				// To prevent the score from overflowing
+				if (score > SCORE_MAX) {
+ 8000688:	4b1d      	ldr	r3, [pc, #116]	; (8000700 <main+0x16c>)
+ 800068a:	f9b3 3000 	ldrsh.w	r3, [r3]
+ 800068e:	2b05      	cmp	r3, #5
+ 8000690:	dd2a      	ble.n	80006e8 <main+0x154>
+					score = SCORE_FIRST;
+ 8000692:	4b1b      	ldr	r3, [pc, #108]	; (8000700 <main+0x16c>)
+ 8000694:	2201      	movs	r2, #1
  8000696:	801a      	strh	r2, [r3, #0]
+				}
 			}
 			break;
  8000698:	e026      	b.n	80006e8 <main+0x154>
@@ -654,7 +654,7 @@ int main(void) {
 			assert(0);
  80006da:	4b10      	ldr	r3, [pc, #64]	; (800071c <main+0x188>)
  80006dc:	4a10      	ldr	r2, [pc, #64]	; (8000720 <main+0x18c>)
- 80006de:	f240 110f 	movw	r1, #271	; 0x10f
+ 80006de:	f44f 7188 	mov.w	r1, #272	; 0x110
  80006e2:	4810      	ldr	r0, [pc, #64]	; (8000724 <main+0x190>)
  80006e4:	f003 fb9a 	bl	8003e1c <__assert_func>
 			break;
@@ -1101,7 +1101,6 @@ static int16_t level_speed_update(int16_t level_n) {
  800098a:	4619      	mov	r1, r3
  800098c:	4809      	ldr	r0, [pc, #36]	; (80009b4 <level_speed_update+0x68>)
  800098e:	f000 fbf3 	bl	8001178 <delayInit>
-
 	return level_n;
  8000992:	f9b7 3006 	ldrsh.w	r3, [r7, #6]
 }

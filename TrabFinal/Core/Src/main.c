@@ -55,14 +55,15 @@
  * @brief Game speed and score configuration parameters
  * game speeds; the smaller the value, the faster it is
  */
-#define SPEED1 1000 // minimum speed
-#define SPEED2 800
-#define SPEED3 500
-#define SPEED4 400 // maximum speed
-#define SCORE_INI 0 // initial score value
-#define SCORE_MAX 5 // maximum score value
-#define LEVEL_MIN 0 // value of the initial level position of the game speed
-#define LEVEL_MAX 3 // value of the initial level position of the game speed
+#define SPEED1 		1000 	// minimum speed
+#define SPEED2 		800 	//     |
+#define SPEED3 		500 	//     |
+#define SPEED4 		400 	// maximum speed
+#define SCORE_INI 	0 		// initial score value
+#define SCORE_FIRST 1 		// initial score value
+#define SCORE_MAX 	5 		// maximum score value
+#define LEVEL_MIN 	0 		// value of the initial level position of the game speed
+#define LEVEL_MAX 	3 		// value of the initial level position of the game speed
 
 /* USER CODE END PD */
 
@@ -213,10 +214,6 @@ int main(void) {
 		 * FIRST (A), SECOND (B), THIRD (C), GOOD (smiley face) or BAD (ghost).
 		 * */
 		state_FSM = update_MEF(&Delay_play);
-		// To prevent the score from overflowing
-		if (score > SCORE_MAX) {
-			score = SCORE_INI;
-		}
 
 		/* Depending on the current state, display a specific
 		 * pattern or image on the LED matrix.
@@ -252,6 +249,10 @@ int main(void) {
 				score = score + 1;          // increase the score by one
 				level_i = level_i + 1;       // increase the speed level
 				level_i = level_speed_update(level_i); // increase the game speed
+				// To prevent the score from overflowing
+				if (score > SCORE_MAX) {
+					score = SCORE_FIRST;
+				}
 			}
 			break;
 
@@ -270,7 +271,6 @@ int main(void) {
 			/* Handle unexpected state */
 			assert(0);
 		}
-
 		/* USER CODE END 3 */
 	}
 }
@@ -442,7 +442,6 @@ static int16_t level_speed_update(int16_t level_n) {
 	}
 	speed_play = level[level_n];
 	delayInit(&Delay_play, speed_play); // sets game speed
-
 	return level_n;
 }
 
