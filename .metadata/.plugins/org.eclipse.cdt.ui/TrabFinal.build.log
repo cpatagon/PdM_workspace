@@ -1,17 +1,10 @@
-22:05:54 **** Incremental Build of configuration Debug for project TrabFinal ****
+23:04:22 **** Incremental Build of configuration Debug for project TrabFinal ****
 make -j8 all 
-arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F429xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -I"/home/lgomez/maestriauba/SMT32/PdM_workspace/TrabFinal/Core/Src" -I"/home/lgomez/maestriauba/SMT32/PdM_workspace/TrabFinal/Drivers/API/inc" -I"/home/lgomez/maestriauba/SMT32/PdM_workspace/TrabFinal/Drivers/API/src" -I"/home/lgomez/maestriauba/SMT32/PdM_workspace/TrabFinal/Drivers/API" -I"/home/lgomez/maestriauba/SMT32/PdM_workspace/TrabFinal/Drivers/BSP" -I"/home/lgomez/maestriauba/SMT32/PdM_workspace/TrabFinal/Drivers/BSP/STM32F4xx_Nucleo_144" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
-arm-none-eabi-gcc -o "TrabFinal.elf" @"objects.list"   -mcpu=cortex-m4 -T"/home/lgomez/maestriauba/SMT32/PdM_workspace/TrabFinal/STM32F429ZITX_FLASH.ld" --specs=nosys.specs -Wl,-Map="TrabFinal.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
-Finished building target: TrabFinal.elf
- 
 arm-none-eabi-size   TrabFinal.elf 
-arm-none-eabi-objdump -h -S  TrabFinal.elf  > "TrabFinal.list"
    text	   data	    bss	    dec	    hex	filename
   20732	    272	   3688	  24692	   6074	TrabFinal.elf
 Finished building: default.size.stdout
  
-Finished building: TrabFinal.list
- 
 
-22:05:55 Build Finished. 0 errors, 0 warnings. (took 1s.153ms)
+23:04:23 Build Finished. 0 errors, 0 warnings. (took 721ms)
 
