@@ -41,9 +41,9 @@ Idx Name          Size      VMA       LMA       File off  Algn
                   CONTENTS, READONLY, DEBUGGING, OCTETS
  18 .debug_line   00012804  00000000  00000000  0005e7b6  2**0
                   CONTENTS, READONLY, DEBUGGING, OCTETS
- 19 .debug_str    000df19d  00000000  00000000  00070fba  2**0
+ 19 .debug_str    000df19c  00000000  00000000  00070fba  2**0
                   CONTENTS, READONLY, DEBUGGING, OCTETS
- 20 .comment      00000050  00000000  00000000  00150157  2**0
+ 20 .comment      00000050  00000000  00000000  00150156  2**0
                   CONTENTS, READONLY
  21 .debug_frame  000049c4  00000000  00000000  001501a8  2**2
                   CONTENTS, READONLY, DEBUGGING, OCTETS
@@ -460,7 +460,7 @@ int main(void) {
  80005b0:	f44f 727a 	mov.w	r2, #1000	; 0x3e8
  80005b4:	4b50      	ldr	r3, [pc, #320]	; (80006f8 <main+0x164>)
  80005b6:	601a      	str	r2, [r3, #0]
-	delayInit(&Delay_play, speed_play);
+	delayInit(&DelayGame, speed_play);
  80005b8:	4b4f      	ldr	r3, [pc, #316]	; (80006f8 <main+0x164>)
  80005ba:	681b      	ldr	r3, [r3, #0]
  80005bc:	4619      	mov	r1, r3
@@ -488,7 +488,7 @@ int main(void) {
 		 * current state, which can be SET_ini (score update),
 		 * FIRST (A), SECOND (B), THIRD (C), GOOD (smiley face) or BAD (ghost).
 		 * */
-		state_FSM = update_MEF(&Delay_play);
+		state_FSM = update_MEF(&DelayGame);
  80005d4:	4849      	ldr	r0, [pc, #292]	; (80006fc <main+0x168>)
  80005d6:	f001 f8b7 	bl	8001748 <update_MEF>
  80005da:	4603      	mov	r3, r0
@@ -662,7 +662,7 @@ int main(void) {
  80006ea:	e773      	b.n	80005d4 <main+0x40>
 			break;
  80006ec:	bf00      	nop
-		state_FSM = update_MEF(&Delay_play);
+		state_FSM = update_MEF(&DelayGame);
  80006ee:	e771      	b.n	80005d4 <main+0x40>
  80006f0:	200008b0 	.word	0x200008b0
  80006f4:	200008bc 	.word	0x200008bc
@@ -1095,7 +1095,7 @@ static int16_t level_speed_update(int16_t level_n) {
  800097e:	f852 3023 	ldr.w	r3, [r2, r3, lsl #2]
  8000982:	4a0b      	ldr	r2, [pc, #44]	; (80009b0 <level_speed_update+0x64>)
  8000984:	6013      	str	r3, [r2, #0]
-	delayInit(&Delay_play, speed_play); // sets game speed
+	delayInit(&DelayGame, speed_play); // sets game speed
  8000986:	4b0a      	ldr	r3, [pc, #40]	; (80009b0 <level_speed_update+0x64>)
  8000988:	681b      	ldr	r3, [r3, #0]
  800098a:	4619      	mov	r1, r3

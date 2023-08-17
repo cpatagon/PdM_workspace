@@ -94,7 +94,7 @@ PCD_HandleTypeDef hpcd_USB_OTG_FS;
  *
  *  */
 // variable that handles the transition times (speeds) between states of the FSM (game)
-static delay_t Delay_play;
+static delay_t DelayGame;
 // initialization of state variables of the finite state model FSM that controls the game
 static State_MEF_t state_FSM;
 // variable (type list) that contains the different game speeds according to the game level
@@ -177,7 +177,7 @@ int main(void) {
 	/* We define the Delay speed at the initial level, which is the
 	 * slowest according to the delay */
 	speed_play = level[LEVEL_MIN]; // we set the speed to the minimum level;
-	delayInit(&Delay_play, speed_play);
+	delayInit(&DelayGame, speed_play);
 
 	/* USER CODE END Init */
 
@@ -213,7 +213,7 @@ int main(void) {
 		 * current state, which can be SET_ini (score update),
 		 * FIRST (A), SECOND (B), THIRD (C), GOOD (smiley face) or BAD (ghost).
 		 * */
-		state_FSM = update_MEF(&Delay_play);
+		state_FSM = update_MEF(&DelayGame);
 
 		/* Depending on the current state, display a specific
 		 * pattern or image on the LED matrix.
@@ -441,7 +441,7 @@ static int16_t level_speed_update(int16_t level_n) {
 		level_n = LEVEL_MIN;
 	}
 	speed_play = level[level_n];
-	delayInit(&Delay_play, speed_play); // sets game speed
+	delayInit(&DelayGame, speed_play); // sets game speed
 	return level_n;
 }
 
