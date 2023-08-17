@@ -34,12 +34,12 @@
 /* Private includes ----------------------------------------------------------*/
 /* USER CODE BEGIN Includes */
 
-#include <stdint.h>  /* this is to include the uint32_t types */
+#include <stdint.h>     /* this is to include the uint32_t types */
 #include "main.h"
-#include "string.h" /* library for string handling */
-#include "API_delay.h" /* library responsible for handling delay times */
-#include "API_led.h" /* library in charge of managing the LED display */
-#include "App_MEF.h" /* library responsible for loading the finite state model (FSM) of the game */
+#include "string.h"     /* library for string handling */
+#include "API_delay.h"  /* library responsible for handling delay times */
+#include "API_led.h"    /* library in charge of managing the LED display */
+#include "App_MEF.h"    /* library responsible for loading the finite state model (FSM) of the game */
 
 /* USER CODE END Includes */
 
